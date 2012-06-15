@@ -7,20 +7,19 @@ Stable tag: 3.4
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-Make your content shine with iPhone and iPad apps for your blog. The Mobiloud plugin delivers content from your blog to your apps and offers a free push notifications service.
+Make your content shine with iPhone and iPad apps for your blog. The plugin delivers content and push notifications to your apps.
 
 == Description ==
 
 = Get your app =
-The Mobiloud plugin allows you to deliver content to your Mobiloud iPhone and iPad apps. It also supports push notifications, letting you automatically notify your app's users when you publish a new post.
+The Mobiloud plugin delivers content to your Mobiloud iPhone and iPad apps. It also supports push notifications, letting you automatically notify your app's users when you publish a new post.
 
 Mobiloud is a service offering bloggers the chance to build custom designed native apps for their blog or brand on iPhone and iPad.
 
-= Try a demo =
-More info on <a href="http://www.mobiloud.com">Mobiloud.com</a>.
+Try a demo at <a href="http://www.mobiloud.com">Mobiloud.com</a>.
 
 = For app developers =
-The plugin can also be used as a free, open source solution to deliver content to any mobile app. It provides simple REST API calls any developer can use to extract JSON output. It is also gives you access to our free, hosted push notification service, <a href="http://mobiloud.com/free-push-service.html">Mobiloud Push</a>.
+The plugin can also be used as a free, open source solution to deliver content to any mobile app. It provides simple REST API calls any developer can use to extract JSON output for your content. It is also gives you access to our free, hosted push notification service, <a href="http://mobiloud.com/free-push-service.html">Mobiloud Push</a>.
 
 Plugin features include
 * view stats relating to app downloads and usage from within Wordpress.
