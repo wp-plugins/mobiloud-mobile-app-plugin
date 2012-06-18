@@ -6,7 +6,10 @@ function mobiloud_configuration_page()
 	global $ml_api_key, $ml_secret_key, $mobiloud_cert, $ml_cert_type, $ml_server_host, $ml_server_port;
 	global $ml_has_prod_cert, $ml_has_dev_cert;
 
-
+	//facebook
+	global $ml_fb_app_id, $ml_fb_secret_key;
+	
+	
 	//submit, elaboro
 	$ml_connection_message = NULL;
 	if(isset($_POST["send_test_notification"]))
@@ -46,7 +49,7 @@ function mobiloud_configuration_page()
 			$ml_cert_type = $_POST['ml_cert_type'];
 		}
 
-		//salvo il certificato
+		//save certificate
 		$cert_content = NULL;
 		if(isset($_FILES['mobiloud_cert']))
 		{
@@ -57,8 +60,24 @@ function mobiloud_configuration_page()
 			}
 		}	
 		
+		//save facebook id and secret
+		if(isset($_POST["ml_fb_app_id"]))
+		{
+			ml_set_fb_app_id($_POST["ml_fb_app_id"]);
+			$ml_fb_app_id = get_option('ml_fb_app_id');
+		}
+		
+		if(isset($_POST["ml_fb_secret_key"]))
+		{
+			ml_set_fb_secret_key($_POST["ml_fb_secret_key"]);
+			$ml_fb_secret_key = get_option('ml_fb_secret_key');
+		}
+
+		
 		//ml_send_certificate($cert_content,$ml_cert_type);			
 		ml_update_configuration($cert_content,$ml_cert_type);
+		
+		
 	}
 	
 	
@@ -217,6 +236,7 @@ function mobiloud_configuration_page()
 				</div>
 			</div>
 			</div>
+			
 			<div id="ml_secret_key" class="stuffbox">
 				<h3 style="font-family:arial;font-size:20px;font-weight:normal;padding:10px;">Keys</h3>
 				
@@ -243,7 +263,46 @@ function mobiloud_configuration_page()
 				
 			</div>
 			
-			
+			<!-- FACEBOOK -->
+			<div id="ml_facebook_keys" class="stuffbox">
+				<h3 style="font-family:arial;font-size:20px;font-weight:normal;padding:10px;">Facebook</h3>
+
+				<?php 
+					$fb_app = ml_facebook_get_app_info();
+					if($fb_app){
+						echo "<table><tr valign=top>";
+						echo "<td><div style='margin-left:10px;'><img src='".$fb_app['logo_url']."'></div></td>";
+						echo "<td><h2 style='font-size:20px;font-weight:normal;margin-left:10px;'>".$fb_app['name']."</h2></td>";
+						echo "</tr></table>";
+					}
+					else
+					{
+						//not connected to facebook
+						echo "<h4 style='font-size:15px;margin-left:10px;'>Not connected to Facebook</h4>";						
+					}
+				?>
+				
+
+				<h2 style="font-size:20px;font-weight:normal;padding:10px;">
+					App ID
+				</h2>
+
+				<!-- API KEY -->
+				<input id="ml_fb_app_id" placeholder="Insert App ID" name="ml_fb_app_id" type="text"
+					value="<?php echo $ml_fb_app_id ?>" style="padding:5px;font-size:20px;margin-left:5%;width:90%;"/>
+				<p></p>
+
+				
+				<!-- SECRET KEY -->
+				<h2 style="font-size:20px;font-weight:normal;padding:10px;">
+					Secret Key
+				</h2>
+				<input id="ml_fb_secret_key" placeholder="Insert Secret Key" name="ml_fb_secret_key" type="text" size="40" 
+				value="<?php echo $ml_fb_secret_key?>" 
+				style="padding:5px;font-size:20px;margin-left:5%;width:90%;"/>
+				<p></p>
+				
+			</div>
 			
 			<p class="submit" align="right"><input type="submit" name="save_configuration" value="<?php _e('Save'); ?>" /></p>
 			
