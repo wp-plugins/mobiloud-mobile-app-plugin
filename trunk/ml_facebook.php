@@ -1,6 +1,6 @@
 <?php
 
-require_once('libs/fb/facebook.php');
+include_once dirname( __FILE__ ) . '/libs/fb/facebook.php';
 
 
 function ml_facebook()
