@@ -1,4 +1,3 @@
-
 <?php
 
 
@@ -251,8 +250,4 @@ function mobiloud_display_charts()
 
 
 }
-
-
-
-
 ?>

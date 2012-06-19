@@ -83,7 +83,6 @@ function mobiloud_configuration_page()
 	
 	
 	$mobiloud_service = mobiloud_get_service_info();
-	
 	?>
 	
 	<div></div>
