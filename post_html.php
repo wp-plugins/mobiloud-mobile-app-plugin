@@ -31,16 +31,16 @@ function iphone_html($post)
 	}
 	
 	//JAVASCRIPT INCLUDES
-	$header_js = "<script type=\"text/javascript\" src=\"/wp-content/plugins/mobiloud/post_html/js/jquery.min.js\"></script>";
+	$header_js = "<script type=\"text/javascript\" src=\"/wp-content/plugins/mobiloud-mobile-app-plugin/post_html/js/jquery.min.js\"></script>";
 
-	$header_js .= "<script type=\"text/javascript\" src=\"/wp-content/plugins/mobiloud/post_html/js/mobiloud.js\"></script>";
+	$header_js .= "<script type=\"text/javascript\" src=\"/wp-content/plugins/mobiloud-mobile-app-plugin/post_html/js/mobiloud.js\"></script>";
 	//HEAD
 	$header = "<head>".$header_js;
 	
 	$header .= "<meta name=\"viewport\" content=\"width=device-width; minimum-scale=1.0; maximum-scale=1.0;\" />";
-	$header .= "<link rel=\"StyleSheet\" href=\"/wp-content/plugins/mobiloud/post_html/css/iphone.css\" type=\"text/css\"  media=\"screen\">";
+	$header .= "<link rel=\"StyleSheet\" href=\"/wp-content/plugins/mobiloud-mobile-app-plugin/post_html/css/iphone.css\" type=\"text/css\"  media=\"screen\">";
 
-	$header .= "<link rel=\"StyleSheet\" href=\"/wp-content/plugins/mobiloud/post_html/css/iphone_portrait.css\" type=\"text/css\"  media=\"screen\" id=\"orient_css\">";
+	$header .= "<link rel=\"StyleSheet\" href=\"/wp-content/plugins/mobiloud-mobile-app-plugin/post_html/css/iphone_portrait.css\" type=\"text/css\"  media=\"screen\" id=\"orient_css\">";
 	$header .= "</head>";
 
 	

@@ -14,7 +14,7 @@ function ml_render_header($platform="iphone")
 	<head>
 		
 		<meta name="viewport" content="width=device-width; minimum-scale=1.0; maximum-scale=1.0;" />
-		<link rel="StyleSheet" href="/wp-content/plugins/mobiloud/comments/css/<?php echo $platform;?>.css" type="text/css"  media="screen">
+		<link rel="StyleSheet" href="/wp-content/plugins/mobiloud-mobile-app-plugin/comments/css/<?php echo $platform;?>.css" type="text/css"  media="screen">
 		
 	</head>
 	
