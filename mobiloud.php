@@ -185,12 +185,4 @@ function ml_get_avatar($avatar,$comment)
 	}
 	return $avatar;
 }
-
-
-
-
-//push notifications
-
-
-
 ?>
