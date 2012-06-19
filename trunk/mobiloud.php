@@ -64,7 +64,8 @@ function ml_facebook_install()
 			  name varchar(255) NOT NULL,
 			  UNIQUE KEY id (id)
 			);";
-
+			
+		require_once(ABSPATH . 'wp-admin/includes/upgrade.php');
 		dbDelta($sql);
 		
 		$sql = "CREATE INDEX idx_fb_users ON $table_name(fb_id,email);";
