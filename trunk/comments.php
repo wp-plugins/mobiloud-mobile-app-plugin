@@ -1,9 +1,9 @@
 <?php
 include("../../../wp-blog-header.php");
-ini_set('display_errors', 1);
+//ini_set('display_errors', 1);
 
 include("comments/comment_iphone.php");
-//include("ml_facebook.php");
+include("ml_facebook.php");
 
 
 
