@@ -40,19 +40,20 @@ function ml_facebook_register_user_with_token($token=NULL)
 	global $wpdb;
 	$table_name = $wpdb->prefix . "mobiloud_fb_users";
 	$facebook = ml_facebook();
-	
+
 	if($facebook == NULL) return NULL;
-	
+
 	$facebook->setAccessToken($token);
 	$fb_id = $facebook->getUser();
 	$num = $wpdb->get_var( $wpdb->prepare( "SELECT COUNT(*) FROM $table_name WHERE fb_id = $fb_id" ));
 	$email = NULL;
-
+	$name = NULL;
 	$user_profile = $facebook->api("/me");	
 
 	if($user_profile)
 	{
 		$email = $user_profile['email'];
+		$name = $user_profile['name'];
 	}
 	
 	if($email)
@@ -64,7 +65,8 @@ function ml_facebook_register_user_with_token($token=NULL)
 			//updating email
 			$wpdb->update($table_name,
 				array(
-				'email' => $email
+				'email' => $email,
+				'name' => $name
 				),
 				array('fb_id' => $fb_id)
 			);
@@ -77,6 +79,7 @@ function ml_facebook_register_user_with_token($token=NULL)
 				array( 
 					'fb_id' => "$fb_id",
 					'email' => $email, 
+					'name' => $name
 				)
 			);	
 		}
