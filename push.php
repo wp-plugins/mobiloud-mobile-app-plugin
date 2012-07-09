@@ -1,7 +1,5 @@
 <?php
 
-
-
 //function that sets the last notified post
 function ml_set_post_id_as_notified($postID)
 {
