@@ -3,23 +3,26 @@ include("../../../wp-blog-header.php");
 include("post_html.php");
 
 
-ini_set('display_errors', 1);
+//ini_set('display_errors', 1);
 
 /*** POSTS LIST ***/
 
-$user_offset = $_GET["offset"];
-$user_post_count = $_GET["postcount"];
-$user_category = $_GET["category"];
+$user_offset = $_POST["offset"];
+$user_post_count = $_POST["postcount"];
+$user_category = $_POST["category"];
 
-$user_search = $_GET["search"];
-
+$user_search = $_POST["search"];
+$platform = $_POST["platform"];
 
 $user_limit = 15;
-if(isset($_GET["limit"]))
+if(isset($_POST["limit"]))
 {
-    $user_limit = $_GET["limit"];
+    $user_limit = $_POST["limit"];
 	if($user_limit > 30) $user_limit = 30;
 }
+
+if(!isset($platform) || $platform == NULL)
+	$platform = "iphone";
 
 
 $published_post_count = wp_count_posts()->publish;
@@ -51,9 +54,9 @@ $posts = query_posts(
 
 
 
-print_posts($posts,$published_post_count,$user_offset);
+print_posts($posts,$published_post_count,$user_offset,$platform);
 
-function print_posts($posts,$tot_count,$offset)
+function print_posts($posts,$tot_count,$offset,$platform)
 {
 	/** Genero l' output JSON **/
 	$final_posts = array("posts" => array(), "post-count" => $tot_count);
@@ -130,7 +133,11 @@ function print_posts($posts,$tot_count,$offset)
 		
 		$final_post["post_description"] = substr($post_desc,0,200);
 		$final_post["excerpt"] = strip_tags($post->post_excerpt);
-		$final_post["content"] = iphone_html($post);
+		
+		if($platform == "ipad")
+			$final_post["content"] = ipad_html($post);
+		else
+			$final_post["content"] = iphone_html($post);
 				
 		$final_posts["posts"][] = $final_post;
 	}
