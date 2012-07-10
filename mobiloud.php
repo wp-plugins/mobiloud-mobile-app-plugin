@@ -1,17 +1,16 @@
 <?php
 /**
  * @package Mobiloud
- * @version 1.2
+ * @version 1.2.1
  */
 /*
 Plugin Name: Mobiloud
 Plugin URI: http://www.mobiloud.com
 Description: Mobiloud  for Wordpress
 Author: Fifty Pixels Ltd
-Version: 1.2
+Version: 1.2.1
 Author URI: http://www.50pixels.com
 */
-
 
 
 define('MOBILOUD_PLUGIN_URL', plugin_dir_url( __FILE__ ));
