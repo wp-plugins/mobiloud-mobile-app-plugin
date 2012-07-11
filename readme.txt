@@ -3,7 +3,7 @@ Contributors: alvises, psac50
 Tags: mobile app, iOS, REST API, push notification
 Requires at least: 3.2
 Tested up to: 3.4
-Stable tag: 3.4
+Stable tag: 1.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -28,6 +28,7 @@ Increase your traffic and revenue today. Try a demo at <a href="http://www.mobil
 The plugin can also be used as a free, open source solution to deliver content to any mobile app. It provides simple REST API calls any developer can use to extract JSON output for your content. It is also gives you access to our free, hosted push notification service, <a href="http://mobiloud.com/free-push-service.html">Mobiloud Push</a>.
 
 Plugin features include:
+
 - View stats relating to app downloads and usage from within Wordpress
 
 - Integration with hosted iOS push notifications service
@@ -78,8 +79,8 @@ You can contact us at support@50pixels.com.
 
 == Screenshots ==
 
-1. iPhone
-2. iPad
+1. 
+2. 
 
 == Changelog ==
 
