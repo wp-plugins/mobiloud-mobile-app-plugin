@@ -11,14 +11,20 @@ Make your content shine with iPhone and iPad apps for your blog. The plugin deli
 
 == Description ==
 
-= Get your app =
-The Mobiloud plugin delivers content to your Mobiloud iPhone and iPad apps. It also supports push notifications, letting you automatically notify your app's users when you publish a new post.
+= An App for Your Blog =
+If you're not mobile, you're missing an opportunity.
 
-Mobiloud is a service offering bloggers the chance to build custom designed native apps for their blog or brand on iPhone and iPad.
+The Mobiloud platform allows us to create a custom, full-featured mobile app for your blog at an affordable price.
 
-Try a demo at <a href="http://www.mobiloud.com">Mobiloud.com</a>.
+Readers enjoy beautifully designed apps with a smooth, responsive user experience, offline access to your content and push notifications to stay up to date.
 
-= For app developers =
+Watch your traffic skyrocket as you take full advantage of the App Store for distribution and your users read more of your content thanks to quick, smooth access to your articles. Push notifications also allow you to keep them engaged with your content more effectively than any other subscription mechanism.
+
+Make more money with dedicated mobile ad networks offering higher CTR and mobile optimised ad formats.
+
+Increase your traffic and revenue today. Try a demo at <a href="http://www.mobiloud.com">Mobiloud.com</a>.
+
+= For App Developers =
 The plugin can also be used as a free, open source solution to deliver content to any mobile app. It provides simple REST API calls any developer can use to extract JSON output for your content. It is also gives you access to our free, hosted push notification service, <a href="http://mobiloud.com/free-push-service.html">Mobiloud Push</a>.
 
 Plugin features include:
