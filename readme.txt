@@ -68,7 +68,7 @@ Unlike web templates, Mobiloud also allows you to:
 
 - Sync your content to user's phones for offline viewing
 
-- Use push notifications to alert your users to new content - even when the app isn't open!
+- Use push notifications to alert your users to new content - even when the app isn't open
 
 Using the Mobiloud platform we can quickly and efficiently provide native apps for your blog or brand at an affordable price, mitigating the usual disadvantages of going native.
 
@@ -78,8 +78,8 @@ You can contact us at support@50pixels.com.
 
 == Screenshots ==
 
-1.
-2.
+1. iPhone
+2. iPad
 
 == Changelog ==
 
