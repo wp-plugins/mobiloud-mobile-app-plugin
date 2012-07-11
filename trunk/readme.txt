@@ -7,7 +7,7 @@ Stable tag: 3.4
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-Make your content shine with iPhone and iPad apps for your blog. The plugin delivers content and push notifications to your apps.
+Make your content shine with iPhone and iPad apps for your blog.
 
 == Description ==
 
@@ -28,9 +28,9 @@ Increase your traffic and revenue today. Try a demo at <a href="http://www.mobil
 The plugin can also be used as a free, open source solution to deliver content to any mobile app. It provides simple REST API calls any developer can use to extract JSON output for your content. It is also gives you access to our free, hosted push notification service, <a href="http://mobiloud.com/free-push-service.html">Mobiloud Push</a>.
 
 Plugin features include:
+- View stats relating to app downloads and usage from within Wordpress
 
-* View stats relating to app downloads and usage from within Wordpress
-* Integration with hosted iOS push notifications service
+- Integration with hosted iOS push notifications service
 
 == Installation ==
 
@@ -63,8 +63,11 @@ The push notification service offered is not exclusive to Mobiloud apps. You can
 Mobiloud is a native app, meaning it can draw on the full capabilities of modern smartphones. It's the optimal solution for a more responsive user experience, with smoother screen transitions and higher performance than web-based templates.
 
 Unlike web templates, Mobiloud also allows you to:
+
 - Promote your app on the App Store - a great way to exponentially increase readership
+
 - Sync your content to user's phones for offline viewing
+
 - Use push notifications to alert your users to new content - even when the app isn't open!
 
 Using the Mobiloud platform we can quickly and efficiently provide native apps for your blog or brand at an affordable price, mitigating the usual disadvantages of going native.
@@ -75,6 +78,8 @@ You can contact us at support@50pixels.com.
 
 == Screenshots ==
 
+1.
+2.
 
 == Changelog ==
 
