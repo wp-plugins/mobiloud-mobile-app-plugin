@@ -1,8 +1,6 @@
 <?php
-function ipad_html($post)
+function iphone_html($post)
 {
-	$prefiltered_html = str_replace("\n","<br>",$post->post_content);
-	
 	$html = str_get_html($post->post_content);	
 	
 	$img_tags = $html->find('img');
@@ -19,13 +17,8 @@ function ipad_html($post)
 		if(isset($e->width)) $e->width = null;
 		if(isset($e->height)) $e->height = null;
 
-		$e->style = "max-width:520px;margin-top:20px;margin-bottom;20px;";
-		if($e->tag == "iframe" || $e->tag == "object" || $e->tag == "embed")
-		{
-			//should be a video
-				$e->width = 500;
-				$e->height = 300;
-		}
+		$e->style = "max-width:280px;";
+		
 		//center
 		$e->outertext = "<center><div class=\"mobiloud_media\">" . $e->outertext . "</div></center><p></p>";
 	}
@@ -43,9 +36,9 @@ function ipad_html($post)
 	$header = "<head>".$header_js;
 	
 	$header .= "<meta name=\"viewport\" content=\"width=device-width; minimum-scale=1.0; maximum-scale=1.0;\" />";
-	$header .= "<link rel=\"StyleSheet\" href=\"/wp-content/plugins/mobiloud-mobile-app-plugin/post_html/css/ipad.css\" type=\"text/css\"  media=\"screen\">";
+	$header .= "<link rel=\"StyleSheet\" href=\"/wp-content/plugins/mobiloud-mobile-app-plugin/post_html/css/iphone.css\" type=\"text/css\"  media=\"screen\">";
 
-	$header .= "<link rel=\"StyleSheet\" href=\"/wp-content/plugins/mobiloud-mobile-app-plugin/post_html/css/ipad_portrait.css\" type=\"text/css\"  media=\"screen\" id=\"orient_css\">";
+	$header .= "<link rel=\"StyleSheet\" href=\"/wp-content/plugins/mobiloud-mobile-app-plugin/post_html/css/iphone_portrait.css\" type=\"text/css\"  media=\"screen\" id=\"orient_css\">";
 	$header .= "</head>";
 
 	
@@ -53,19 +46,10 @@ function ipad_html($post)
 	
 	$spaces = "<p>&nbsp;</p>";
 	
-	$title = "<h1 class='title' align='left'>".$post->post_title."</h1>";
-	$title .= $spaces;
-	$title .= "<div class='ml_hr'></div>";
-	$title .= "<p></p>";
-	$title .= "<div class='author'>".get_author_name($post->post_author)."</div>";
-	$title .= "<p></p>";
-	$title .= "<div class='article_date'>".mysql2date('l, F j, Y',$post->post_date)."</div>";
-	$title .= "<p></p>";
-	$title .= "<div class='ml_hr'></div>";
-
-	$title .= $spaces;
+	$title = "<h4 align='left'>".$post->post_title."</h4>";
+	$title .= "<table width='100%'><tr><td class='article_date' align=left>".mysql2date('l, F j, Y',$post->post_date)."</td><td class='author'  align=right>".get_author_name($post->post_author)."</td></tr></table><p>&nbsp;</p>";
 	
 	
-	return $init_html."<body><div id=\"content\">".$title.$html->save().$spaces."</div></body></html>";
+	return $init_html."<body onorientationchange=\"mobiloud_orient();\"><div id=\"content\"><p>&nbsp;</p>".$title.$html->save().$spaces."</div></body></html>";
 }
 ?>
