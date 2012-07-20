@@ -66,6 +66,6 @@ function ipad_html($post)
 	$title .= $spaces;
 	
 	
-	return $init_html."<body><div id=\"content\"><p>&nbsp;</p>".$title.$html->save().$spaces."</div></body></html>";
+	return $init_html."<body><div id=\"content\">".$title.$html->save().$spaces."</div></body></html>";
 }
 ?>
