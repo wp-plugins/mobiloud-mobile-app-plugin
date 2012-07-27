@@ -83,7 +83,9 @@ You can contact us at support@50pixels.com.
 2. 
 
 == Changelog ==
-= 1.2.3=
+
+
+= 1.2.3 =
 * iPad support
 
 = 1.0 =
