@@ -14,11 +14,20 @@ $user_category = $_POST["category"];
 $user_search = $_POST["search"];
 $platform = $_POST["platform"];
 
+
 $user_limit = 15;
+
 if(isset($_POST["limit"]))
 {
     $user_limit = $_POST["limit"];
 	if($user_limit > 30) $user_limit = 30;
+}
+$raw_content = false;
+print_r($_GET["rawcontent"]);
+
+if(isset($_GET["rawcontent"]))
+{
+	$raw_content = true;
 }
 
 if(!isset($platform) || $platform == NULL)
@@ -52,13 +61,13 @@ $posts = query_posts(
 		)
 );
 
+$posts_options = array("raw_content" => $raw_content);
 
+print_posts($posts,$published_post_count,$user_offset,$platform,$posts_options);
 
-print_posts($posts,$published_post_count,$user_offset,$platform);
-
-function print_posts($posts,$tot_count,$offset,$platform)
+function print_posts($posts,$tot_count,$offset,$platform,$options)
 {
-	/** Genero l' output JSON **/
+	/** JSON OUTPUT **/
 	$final_posts = array("posts" => array(), "post-count" => $tot_count);
 		
 	foreach($posts as $post)
@@ -133,8 +142,13 @@ function print_posts($posts,$tot_count,$offset,$platform)
 		
 		$final_post["post_description"] = substr($post_desc,0,200);
 		$final_post["excerpt"] = strip_tags($post->post_excerpt);
-		
-		if($platform == "ipad")
+
+		//raw content, for debugging
+		if($options["raw_content"])
+			$final_post["content"] = $post->post_content;
+
+
+		else if($platform == "ipad")
 			$final_post["content"] = ipad_html($post);
 		else
 			$final_post["content"] = iphone_html($post);
