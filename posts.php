@@ -22,9 +22,8 @@ if(isset($_POST["limit"]))
     $user_limit = $_POST["limit"];
 	if($user_limit > 30) $user_limit = 30;
 }
-$raw_content = false;
-print_r($_GET["rawcontent"]);
 
+$raw_content = false;
 if(isset($_GET["rawcontent"]))
 {
 	$raw_content = true;
