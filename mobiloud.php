@@ -1,14 +1,14 @@
 <?php
 /**
  * @package Mobiloud
- * @version 1.2.4
+ * @version 1.2.5
  */
 /*
 Plugin Name: Mobiloud
 Plugin URI: http://www.mobiloud.com
 Description: Mobiloud  for Wordpress
 Author: Fifty Pixels Ltd
-Version: 1.2.4
+Version: 1.2.5
 Author URI: http://www.50pixels.com
 */
 
