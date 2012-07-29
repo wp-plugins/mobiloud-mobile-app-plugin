@@ -7,7 +7,6 @@ $disqus_identifier_string = "$postID $site_url?p=$postID";
 $post_permalink = get_permalink($postID);
 $post_title = get_the_title($postID);
 ?>
-
 <html>
 	<style>
 		html, body{background:transparent; width:100%;}
