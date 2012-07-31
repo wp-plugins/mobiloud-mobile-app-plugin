@@ -54,7 +54,6 @@ function ipad_html($post)
 	$spaces = "<p>&nbsp;</p>";
 	
 	$title = "<h1 class='title' align='left'>".$post->post_title."</h1>";
-	$title .= $spaces;
 	$title .= "<div class='ml_hr'></div>";
 	$title .= "<p></p>";
 	$title .= "<div class='author'>".get_author_name($post->post_author)."</div>";
