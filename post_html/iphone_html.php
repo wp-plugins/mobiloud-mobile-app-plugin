@@ -1,7 +1,10 @@
 <?php
 function iphone_html($post)
 {
-	$html = str_get_html($post->post_content);	
+	$prefiltered_html = str_replace("\n","<p></p>",$post->post_content);
+ 	$prefiltered_html = preg_replace("/\[caption.*\[\/caption\]/", '', $prefiltered_html);
+
+	$html = str_get_html($prefiltered_html);	
 	
 	$img_tags = $html->find('img');
 	$iframe_tags = $html->find('iframe');
