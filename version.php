@@ -1,3 +1,3 @@
 <?php
-	echo "Mobiloud 1.2.4";
+	echo "Mobiloud 1.2.6";
 ?>
