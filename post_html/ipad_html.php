@@ -2,7 +2,8 @@
 function ipad_html($post)
 {
 	$prefiltered_html = str_replace("\n","<p></p>",$post->post_content);
-	$prefiltered_html = preg_replace("/\[caption.*\[\/caption\]/", '', $prefiltered_html);
+ 	$prefiltered_html = preg_replace("/\[caption.*\"\]/", '', $prefiltered_html);
+ 	$prefiltered_html = preg_replace("/\[\/caption\]/", '', $prefiltered_html);
  	
 	$html = str_get_html($prefiltered_html);	
 	
@@ -50,7 +51,7 @@ function ipad_html($post)
 	$header .= "</head>";
 
 	
-	$init_html = "<html>".$header;
+	$init_html = '<html manifest="/wp-content/plugins/mobiloud-mobile-app-plugin/manifest.php">'.$header;
 	
 	$spaces = "<p>&nbsp;</p>";
 	
