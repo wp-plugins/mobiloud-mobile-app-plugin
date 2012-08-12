@@ -218,7 +218,7 @@ function ml_init_ios_app_redirect()
 		   $ml_popup_message_on_mobile_message;
 	
 	$ml_popup_message_on_mobile_active = true;
-	$ml_popup_message_on_mobile_message = "Hey! Did you know we have an app?";
+	$ml_popup_message_on_mobile_message = "Hey! Did you know we have an app? Get it on App Store.";
 	
 	
 	ml_set_generic_option("ml_popup_message_on_mobile_active",$ml_popup_message_on_mobile_active);
