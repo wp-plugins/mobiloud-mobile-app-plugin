@@ -9,6 +9,11 @@ function mobiloud_configuration_page()
 	//facebook
 	global $ml_fb_app_id, $ml_fb_secret_key;
 	
+	//mobile promotional message
+	global $ml_popup_message_on_mobile_active, 
+		   $ml_popup_message_on_mobile_url,
+		   $ml_popup_message_on_mobile_message;
+
 	
 	//submit, elaboro
 	$ml_connection_message = NULL;
@@ -29,21 +34,46 @@ function mobiloud_configuration_page()
 	
 	else if(isset($_POST["save_configuration"]))
 	{
-		//salvo api key
+		//save api key
 		if(isset($_POST['ml_api_key']))
 		{
 			ml_set_api_key($_POST['ml_api_key']);
 			$ml_api_key = get_option('ml_api_key');
 		}
 
-		//salvo api secret
+		//save api secret
 		if(isset($_POST['ml_secret_key']))
 		{
 			ml_set_secret_key($_POST['ml_secret_key']);
 			$ml_secret_key = get_option('ml_secret_key');
 		}
+		/****************************************************************/
+		//App promotional message for mobile web users
+		if(isset($_POST['ml_popup_message_on_mobile_active']))
+		{
+			$ml_popup_message_on_mobile_active = ($_POST['ml_popup_message_on_mobile_active'] == "on");
 
+			ml_set_generic_option("ml_popup_message_on_mobile_active",
+								   $ml_popup_message_on_mobile_active);
+		}
+		
+		if(isset($_POST['ml_popup_message_on_mobile_url']))
+		{
+			$ml_popup_message_on_mobile_url = $_POST['ml_popup_message_on_mobile_url'];
 
+			ml_set_generic_option("ml_popup_message_on_mobile_url",
+								   $ml_popup_message_on_mobile_url);
+		}
+		
+		if(isset($_POST['ml_popup_message_on_mobile_message']))
+		{
+			$ml_popup_message_on_mobile_message = $_POST['ml_popup_message_on_mobile_message'];
+
+			ml_set_generic_option("ml_popup_message_on_mobile_message",
+								   $ml_popup_message_on_mobile_message);
+		}
+		/*****************************************************************/
+		
 		if(isset($_POST['ml_cert_type']))
 		{
 			$ml_cert_type = $_POST['ml_cert_type'];
@@ -244,7 +274,7 @@ function mobiloud_configuration_page()
 				</h2>
 
 				<!-- API KEY -->
-				<input id="key" placeholder="Insert API KEY" name="ml_api_key" type="text"
+				<input id="api_key" placeholder="Insert API KEY" name="ml_api_key" type="text"
 					value="<?php echo $ml_api_key ?>" style="padding:5px;font-size:20px;margin-left:5%;width:90%;"/>
 				<p></p>
 
@@ -253,13 +283,56 @@ function mobiloud_configuration_page()
 				<h2 style="font-size:20px;font-weight:normal;padding:10px;">
 					Secret Key
 				</h2>
-				<input id="key" placeholder="Insert Secret Key" name="ml_secret_key" type="text" size="40" 
+				<input id="secret_key" placeholder="Insert Secret Key" name="ml_secret_key" type="text" size="40" 
 				value="<?php echo $ml_secret_key?>" 
 				style="padding:5px;font-size:20px;margin-left:5%;width:90%;"/>
 				<p></p>
 				
 				
 				
+			</div>
+			
+			<div id="ml_app_redirect" class="stuffbox">
+				<h3 style="font-family:arial;font-size:20px;font-weight:normal;padding:10px;">
+					Mobile Promotional Message
+				</h3>
+				
+				<h2 style="font-size:20px;font-weight:normal;padding:10px;">
+					<input id="key" name="ml_popup_message_on_mobile_active" type="checkbox"
+						<?php echo ($ml_popup_message_on_mobile_active == 1 ? "checked='checked'":"") ?>/> Active
+				</h2>
+
+				<!-- ACTIVE ? -->
+				<p></p>
+
+				
+				<!-- REDIRECT URL -->
+				<h2 style="font-size:20px;font-weight:normal;padding:10px;">
+					iTunes App URL
+				</h2>
+				<input id="ml_popup_message_on_mobile_url" placeholder="Type here the iTunes URL of the app" 
+						name="ml_popup_message_on_mobile_url" type="text" size="40" 
+				value="<?php echo $ml_popup_message_on_mobile_url?>" 
+				style="padding:5px;font-size:20px;margin-left:5%;width:90%;"/>
+				<p></p>
+				
+				<!-- POPUP MESSAGE -->
+				<h2 style="font-size:20px;font-weight:normal;padding:10px;">
+					Message
+				</h2>
+				<input id="ml_popup_message_on_mobile_message" placeholder="Type here the message you want to be dispalyed" 
+						name="ml_popup_message_on_mobile_message" type="text" size="40" 
+				value="<?php echo $ml_popup_message_on_mobile_message?>" 
+				style="padding:5px;font-size:20px;margin-left:5%;width:90%;"/>
+				<p></p>
+				
+				<!-- DESCRIPTION -->
+				<div style="font-size:12px;padding:5px;margin-left:10%;margin-top:20px;margin-bottom:20px;width:70%;
+					text-align:justify;">
+						Notifies users who are using mobile web browsers about the availability of your app on the App Store. 
+						The user will receive a popup message with whatever text you choose and be redirected to your App Store URL. 
+						They will also have the option to cancel and continue viewing your website with the browser.				
+				</div>
 			</div>
 			
 			<!-- FACEBOOK -->
