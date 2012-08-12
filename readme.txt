@@ -85,6 +85,7 @@ You can contact us at support@50pixels.com.
 == Changelog ==
 
 = 1.3 =
+* iTunes app smart redirect for mobile devices
 * cache manifest for offline mode
 * [caption] on iPad
 
