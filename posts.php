@@ -1,5 +1,7 @@
 <?php
 include("../../../wp-blog-header.php");
+include_once("libs/img_resize.php");
+
 include("post_html.php");
 
 
@@ -111,6 +113,15 @@ function print_posts($posts,$tot_count,$offset,$platform,$options)
 		$video_id = get_the_first_youtube_id($post);
 		$main_image_url = get_the_first_image($post);
 
+		//resizing
+		$main_image_thumb_url = NULL;
+		$main_image_medium_thumb_url = NULL;
+		
+		if($main_image_url != NULL)
+		{
+			$main_image_thumb_url = ml_image_resize($main_image_url,100,65,true);
+			$main_image_big_thumb_url = ml_image_resize($main_image_url,320,150,true);						
+		}
 
 		$final_post["videos"] = array();
 		$final_post["images"] = array();
@@ -123,7 +134,9 @@ function print_posts($posts,$tot_count,$offset,$platform,$options)
 		
 		if($main_image_url != NULL)
 		{
-			$image = array( "full" => $main_image_url, "thumb" => $main_image_url); 
+			$image = array( "full" => $main_image_url, 
+							"thumb" => $main_image_thumb_url,
+							"big-thumb" => $main_image_big_thumb_url); 
 			$final_post["images"][] = $image;
 		}
 		
@@ -249,6 +262,7 @@ function youtubeID_from_link($link) {
 	}
 	else return NULL;
 }
+
 
 ?>
 
