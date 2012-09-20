@@ -318,7 +318,7 @@ function mobiloud_configuration_page()
 			
 			<!-- FACEBOOK -->
 			<div id="ml_facebook_keys" class="stuffbox">
-				<?php ml_configuration_facebook(); ?>
+				<?php ml_configuration_facebook_ajax_load(); ?>
 			</div>
 			<p class="submit" align="right"><input type="submit" name="save_configuration" value="<?php _e('Save'); ?>" /></p>
 			
