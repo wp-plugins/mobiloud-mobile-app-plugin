@@ -25,6 +25,26 @@ function ml_configuration_facebook_callback()
 	die();
 }
 
+function ml_configuration_facebook_ajax_load()
+{
+	?>
+	<script type="text/javascript" >
+	jQuery(document).ready(function($) {
+		var data = {
+			action: 'ml_configuration_facebook'
+		};
+		jQuery("#ml_facebook_keys").css("display","none");
+			
+		$.post(ajaxurl, data, function(response) {
+			//saving the result and reloading the div
+			jQuery("#ml_facebook_keys").html(response).fadeIn();
+
+		});			
+			
+	});
+	</script>
+	<?php
+}
 
 function ml_configuration_facebook()
 {
