@@ -1267,3 +1267,4 @@ abstract class BaseFacebook
    */
   abstract protected function clearAllPersistentData();
 }
+?>

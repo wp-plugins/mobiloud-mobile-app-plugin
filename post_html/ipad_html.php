@@ -1,9 +1,11 @@
 <?php
 function ipad_html($post)
 {
-	$prefiltered_html = str_replace("\n","<br>",$post->post_content);
-	
-	$html = str_get_html($post->post_content);	
+	$prefiltered_html = str_replace("\n","<p></p>",$post->post_content);
+ 	$prefiltered_html = preg_replace("/\[caption.*\"\]/", '', $prefiltered_html);
+ 	$prefiltered_html = preg_replace("/\[\/caption\]/", '', $prefiltered_html);
+ 	
+	$html = str_get_html($prefiltered_html);	
 	
 	$img_tags = $html->find('img');
 	$iframe_tags = $html->find('iframe');
@@ -19,7 +21,7 @@ function ipad_html($post)
 		if(isset($e->width)) $e->width = null;
 		if(isset($e->height)) $e->height = null;
 
-		$e->style = "max-width:520px;margin-top:20px;margin-bottom;20px;";
+		$e->style = "max-width:520px;margin-top:20px;margin-bottom:20px;";
 		if($e->tag == "iframe" || $e->tag == "object" || $e->tag == "embed")
 		{
 			//should be a video
@@ -49,23 +51,24 @@ function ipad_html($post)
 	$header .= "</head>";
 
 	
-	$init_html = "<html>".$header;
+	$init_html = '<html manifest="/wp-content/plugins/mobiloud-mobile-app-plugin/manifest.php">'.$header;
 	
 	$spaces = "<p>&nbsp;</p>";
 	
 	$title = "<h1 class='title' align='left'>".$post->post_title."</h1>";
-	$title .= $spaces;
-	$title .= "<div class='ml_hr'></div>";
+	
+	$title .= "<hr class='ml_hr'/>";
 	$title .= "<p></p>";
 	$title .= "<div class='author'>".get_author_name($post->post_author)."</div>";
 	$title .= "<p></p>";
 	$title .= "<div class='article_date'>".mysql2date('l, F j, Y',$post->post_date)."</div>";
 	$title .= "<p></p>";
-	$title .= "<div class='ml_hr'></div>";
+	$title .= "<hr class='ml_hr'/>";
 
 	$title .= $spaces;
+
 	
 	
-	return $init_html."<body><div id=\"content\">".$title.$html->save().$spaces."</div></body></html>";
+	return $init_html."<body><div id=\"content\">$spaces".$title.$html->save().$spaces."</div></body></html>";
 }
 ?>

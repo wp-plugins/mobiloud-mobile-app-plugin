@@ -1,7 +1,11 @@
 <?php
 function iphone_html($post)
 {
-	$html = str_get_html($post->post_content);	
+	$prefiltered_html = str_replace("\n","<p></p>",$post->post_content);
+ 	$prefiltered_html = preg_replace("/\[caption.*\"\]/", '', $prefiltered_html);
+ 	$prefiltered_html = preg_replace("/\[\/caption\]/", '', $prefiltered_html);
+
+	$html = str_get_html($prefiltered_html);	
 	
 	$img_tags = $html->find('img');
 	$iframe_tags = $html->find('iframe');
@@ -42,7 +46,7 @@ function iphone_html($post)
 	$header .= "</head>";
 
 	
-	$init_html = "<html>".$header;
+	$init_html = '<html manifest="/wp-content/plugins/mobiloud-mobile-app-plugin/manifest.php">'.$header;
 	
 	$spaces = "<p>&nbsp;</p>";
 	

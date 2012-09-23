@@ -1,25 +1,28 @@
 <?php
 /**
  * @package Mobiloud
- * @version 1.2.4
+ * @version 1.3.5
  */
 /*
 Plugin Name: Mobiloud
 Plugin URI: http://www.mobiloud.com
 Description: Mobiloud  for Wordpress
 Author: Fifty Pixels Ltd
-Version: 1.2.4
+Version: 1.3.5
 Author URI: http://www.50pixels.com
 */
 
+ini_set('display_errors', 1);
 
 define('MOBILOUD_PLUGIN_URL', plugin_dir_url( __FILE__ ));
 
 
-include_once dirname( __FILE__ ) . '/configuration.php';
 include_once dirname( __FILE__ ) . '/push.php';
 include_once dirname( __FILE__ ) . '/stats.php';
 include_once dirname( __FILE__ ) . '/ml_facebook.php';
+
+include_once dirname( __FILE__ ) . '/configuration.php';
+
 
 register_activation_hook(__FILE__,'mobiloud_install');
 add_action('init', 'mobiloud_plugin_init');
@@ -46,6 +49,8 @@ function mobiloud_install()
 	}
 	
 	ml_facebook_install();
+	
+	ml_init_ios_app_redirect();
 }
 
 
@@ -70,14 +75,16 @@ function ml_facebook_install()
 		$sql = "CREATE INDEX idx_fb_users ON $table_name(fb_id,email);";
 		dbDelta($sql);
 	}
+	
 }
 
 
-function mobiloud_plugin_menu() {
-	
+function mobiloud_plugin_menu() 
+{	
 	add_object_page("Mobiloud", "Mobiloud",NULL, "mobiloud_menu","activate_plugins",plugin_dir_url(__FILE__)."/menu_logo.png",25);
 	
 	add_submenu_page('mobiloud_menu', 'Mobiloud Analytics',"Analytics", "activate_plugins",'mobiloud_charts' , "mobiloud_charts"); 	
+	
 	add_submenu_page( 'mobiloud_menu', 'Mobiloud Configuration', 'Configuration', "activate_plugins", 'mobiloud_menu_configuration', 'mobiloud_configuration_page');
 }
 
@@ -101,6 +108,9 @@ function mobiloud_plugin_init()
 	//facebook
 	global $ml_fb_app_id, $ml_fb_secret_key;
 	
+	//mobile promotional message
+	global $ml_popup_message_on_mobile_active, $ml_popup_message_on_mobile_url;
+	
 	
 	$ml_cert_type = "development";
 	$ml_server_host = "https://api.mobiloud.com";
@@ -121,6 +131,9 @@ function mobiloud_plugin_init()
 	$ml_fb_app_id = get_option("ml_fb_app_id");
 	$ml_fb_secret_key = get_option("ml_fb_secret_key");
 	
+	$ml_popup_message_on_mobile_active = get_option("ml_popup_message_on_mobile_active");
+	$ml_popup_message_on_mobile_url = get_option("ml_popup_message_on_mobile_url");
+	
 	if( !class_exists( 'WP_Http' ) )
 	    include_once( ABSPATH . WPINC. '/class-http.php' );
 
@@ -131,7 +144,9 @@ function mobiloud_plugin_init()
 	
 	wp_register_style('mobiloud.css', MOBILOUD_PLUGIN_URL . 'mobiloud.css');
 	wp_enqueue_style("mobiloud.css");
-	
+		
+	//redirect feature
+	ml_add_ios_app_redirect();
 }
 
 
@@ -184,4 +199,35 @@ function ml_get_avatar($avatar,$comment)
 	}
 	return $avatar;
 }
+
+//iphone redirect to app
+function ml_add_ios_app_redirect()
+{
+	//mobile promotional message
+	global $ml_popup_message_on_mobile_active, $ml_popup_message_on_mobile_url, 
+		   $ml_popup_message_on_mobile_message;
+	
+	if(!isset($_GET["mobiloud"]) && $ml_popup_message_on_mobile_active)
+	{
+		$script_url = MOBILOUD_PLUGIN_URL."wp_ios_redirect.php";
+		$jquery_cookie = MOBILOUD_PLUGIN_URL."libs/jquery.cookie.js";
+
+		wp_enqueue_script("jquery.cookie.js",$jquery_cookie,NULL,"1.2",true);
+		wp_enqueue_script("ml_ios_app_redirect",$script_url,NULL,"1.0",true);		
+	}
+}
+
+function ml_init_ios_app_redirect() 
+{
+	global $ml_popup_message_on_mobile_active, $ml_popup_message_on_mobile_url, 
+		   $ml_popup_message_on_mobile_message;
+	
+	$ml_popup_message_on_mobile_active = false;
+	$ml_popup_message_on_mobile_message = "Hey! Did you know we have an app? Download it now from App Store!";
+	
+	
+	ml_set_generic_option("ml_popup_message_on_mobile_active",$ml_popup_message_on_mobile_active);
+	ml_set_generic_option("ml_popup_message_on_mobile_message",$ml_popup_message_on_mobile_message);
+}
+
 ?>
