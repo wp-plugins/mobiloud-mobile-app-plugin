@@ -12,7 +12,7 @@ Version: 1.3.5
 Author URI: http://www.50pixels.com
 */
 
-//ini_set('display_errors', 1);
+ini_set('display_errors', 1);
 
 define('MOBILOUD_PLUGIN_URL', plugin_dir_url( __FILE__ ));
 
@@ -222,7 +222,7 @@ function ml_init_ios_app_redirect()
 	global $ml_popup_message_on_mobile_active, $ml_popup_message_on_mobile_url, 
 		   $ml_popup_message_on_mobile_message;
 	
-	$ml_popup_message_on_mobile_active = true;
+	$ml_popup_message_on_mobile_active = false;
 	$ml_popup_message_on_mobile_message = "Hey! Did you know we have an app?";
 	
 	

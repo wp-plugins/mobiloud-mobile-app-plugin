@@ -59,6 +59,8 @@ function ml_configuration_facebook()
 		jQuery("#ml_configuration_facebook_submit").click(function(){
 			
 			jQuery("#ml_configuration_facebook_submit").val("<?php _e('Saving...'); ?>");
+			jQuery("#ml_configuration_facebook_submit").attr("disabled", true);
+
 			jQuery("#ml_facebook_keys").css("opacity","0.5");
 			
 			var data = {
@@ -72,6 +74,7 @@ function ml_configuration_facebook()
 				jQuery("#ml_facebook_keys").html(response).fadeIn();
 				jQuery("#ml_configuration_facebook_submit").val("<?php _e('Apply'); ?>");
 				jQuery("#ml_facebook_keys").css("opacity","1.0");
+				jQuery("#ml_configuration_facebook_submit").attr("disabled", false);
 
 			});			
 			
@@ -130,9 +133,11 @@ function ml_configuration_facebook_div()
 	style="padding:5px;font-size:20px;margin-left:5%;width:90%;"/>
 	<p></p>
 	
-	<p class="submit" align="right"><input type="submit" id="ml_configuration_facebook_submit" 
-										   value="<?php _e('Apply'); ?>" /></p>
-		
+	<div style="margin-right:20px;">
+		<p class="submit" align="right"><input type="submit" id="ml_configuration_facebook_submit" 
+											   value="<?php _e('Apply'); ?>" /></p>
+	</div>
+	
 	<?php
 }
 ?>
