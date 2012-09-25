@@ -120,7 +120,7 @@ function print_posts($posts,$tot_count,$offset,$platform,$options)
 		if($main_image_url != NULL)
 		{
 			$main_image_thumb_url = ml_image_resize($main_image_url,100,65,true);
-			$main_image_big_thumb_url = ml_image_resize($main_image_url,320,150,true);						
+			$main_image_big_thumb_url = ml_image_resize($main_image_url,320,220,true);						
 		}
 
 		$final_post["videos"] = array();
