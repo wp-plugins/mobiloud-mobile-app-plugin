@@ -1,14 +1,14 @@
 <?php
 /**
  * @package Mobiloud
- * @version 1.3.6
+ * @version 1.3.7
  */
 /*
 Plugin Name: Mobiloud
 Plugin URI: http://www.mobiloud.com
 Description: Mobiloud  for Wordpress
 Author: Fifty Pixels Ltd
-Version: 1.3.6
+Version: 1.3.7
 Author URI: http://www.50pixels.com
 */
 
@@ -138,13 +138,25 @@ function mobiloud_plugin_init()
 	    include_once( ABSPATH . WPINC. '/class-http.php' );
 
 	add_action('admin_menu','mobiloud_plugin_menu');
+	
+	//MOBILOUD AD
+	//delete_option("ml_mobiloud_ad_notice_disabled");
+	$ml_mobiloud_ad_notice_disabled = get_option("ml_mobiloud_ad_notice_disabled");
+	if(!$ml_mobiloud_ad_notice_disabled)
+	{
+		add_action('admin_notices','ml_mobiloud_ad_notice');
+		add_action('wp_ajax_ml_disable_mobiloud_ad_notice', 'ml_disable_mobiloud_ad_notice_callback');
+		
+	}
+
 	add_action('publish_post','ml_post_published_notification');
 
 	add_filter( 'get_avatar', 'ml_get_avatar',10,2);
 	
+	
 	wp_register_style('mobiloud.css', MOBILOUD_PLUGIN_URL . 'mobiloud.css');
 	wp_enqueue_style("mobiloud.css");
-		
+	
 	//redirect feature
 	ml_add_ios_app_redirect();
 }
@@ -228,6 +240,49 @@ function ml_init_ios_app_redirect()
 	
 	ml_set_generic_option("ml_popup_message_on_mobile_active",$ml_popup_message_on_mobile_active);
 	ml_set_generic_option("ml_popup_message_on_mobile_message",$ml_popup_message_on_mobile_message);
+}
+
+function ml_disable_mobiloud_ad_notice_callback()
+{
+	add_option("ml_mobiloud_ad_notice_disabled",true);
+	die();
+}
+
+function ml_mobiloud_ad_notice()
+{
+		
+	?>
+	<div class="updated" style="height:55px;padding:10px;" id="ml_mobiloud_ad_notice">
+		<p style="font-size:15px;" align="center">Congratulations, the Mobiloud plugin is now installed. Contact <a href="mailto:support@mobiloud.com">support@mobiloud.com</a> for help configuring it.
+		</p>
+		<p align="center" style="margin-top:8px;">
+			<a href="#" class="button-primary" id="ml_mobiloud_ad_notice_button">
+				Hide this message and visit Mobiloud.com to get an app designed for your site!
+			</a>
+		</p>
+	</div>
+	
+	<script type="text/javascript" >
+	jQuery(document).ready(function($) {
+		
+		jQuery("#ml_mobiloud_ad_notice_button").click(function(){
+			var data = {
+				action: 'ml_disable_mobiloud_ad_notice'
+			};
+
+			$.post(ajaxurl, data, function(response) {
+				eval(response);
+				//saving the result and reloading the div
+				jQuery("#ml_mobiloud_ad_notice").remove();
+				window.location = "http://www.mobiloud.com";
+			});			
+			
+		});
+
+			
+	});
+	</script>	
+	<?php
 }
 
 ?>
