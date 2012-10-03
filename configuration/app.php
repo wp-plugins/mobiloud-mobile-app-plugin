@@ -10,8 +10,8 @@ function ml_configuration_app_redirect_callback()
 		   $ml_popup_message_on_mobile_message;
 	if(isset($_POST['ml_popup_message_on_mobile_active']))
 	{
-		$ml_popup_message_on_mobile_active = $_POST['ml_popup_message_on_mobile_active'];
-
+		$ml_popup_message_on_mobile_active = $_POST['ml_popup_message_on_mobile_active'] == "true";
+		
 		ml_set_generic_option("ml_popup_message_on_mobile_active",
 							   $ml_popup_message_on_mobile_active);
 	}
@@ -117,7 +117,13 @@ function ml_configuration_app_redirect_div()
 	
 	<h2 style="font-size:20px;font-weight:normal;padding:10px;">
 		<input id="ml_popup_message_on_mobile_active" type="checkbox"
-			<?php echo ($ml_popup_message_on_mobile_active == 1 ? "checked='checked'":"") ?>/> Active
+			<?php
+				if($ml_popup_message_on_mobile_active)
+				{
+					echo " checked ";
+				}
+			?>
+			/> Active
 	</h2>
 
 	<!-- ACTIVE ? -->

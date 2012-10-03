@@ -84,6 +84,9 @@ You can contact us at support@50pixels.com.
 
 == Changelog ==
 
+= 1.3.7 =
+* Now wordpress could be installed on a subdirectory. Needs to be configured
+
 = 1.3.6 =
 * New thumbs dimension
 
