@@ -4,6 +4,7 @@ include_once dirname( __FILE__ ) . '/configuration/api.php';
 include_once dirname( __FILE__ ) . '/configuration/notifications.php';
 include_once dirname( __FILE__ ) . '/configuration/app.php';
 include_once dirname( __FILE__ ) . '/configuration/facebook.php';
+include_once dirname( __FILE__ ) . '/configuration/general.php';
 
 
 function mobiloud_configuration_page()
@@ -36,6 +37,11 @@ function mobiloud_configuration_page()
 			<!-- APP REDIRECT -->
 			<div id="ml_configuration_app_redirect" class="stuffbox">
 				<?php ml_configuration_app_redirect_ajax_load(); ?>
+			</div>
+
+			<!-- GENERAL -->
+			<div id="ml_configuration_general" class="stuffbox">
+				<?php ml_configuration_general_ajax_load(); ?>
 			</div>
 		
 			<!-- FACEBOOK -->

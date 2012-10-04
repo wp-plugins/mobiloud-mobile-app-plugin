@@ -68,9 +68,12 @@ print_posts($posts,$published_post_count,$user_offset,$platform,$posts_options);
 
 function print_posts($posts,$tot_count,$offset,$platform,$options)
 {
+	global $ml_automatic_image_resize;
+	$ml_automatic_image_resize = get_option("ml_automatic_image_resize");
+	
 	/** JSON OUTPUT **/
 	$final_posts = array("posts" => array(), "post-count" => $tot_count);
-		
+	
 	foreach($posts as $post)
 	{
 
@@ -119,8 +122,11 @@ function print_posts($posts,$tot_count,$offset,$platform,$options)
 		
 		if($main_image_url != NULL)
 		{
-			$main_image_thumb_url = ml_image_resize($main_image_url,100,65,true);
-			$main_image_big_thumb_url = ml_image_resize($main_image_url,320,220,true);						
+			if($ml_automatic_image_resize)
+			{
+				$main_image_thumb_url = ml_image_resize($main_image_url,100,65,true);
+				$main_image_big_thumb_url = ml_image_resize($main_image_url,320,220,true);										
+			}
 		}
 
 		$final_post["videos"] = array();

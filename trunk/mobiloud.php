@@ -1,14 +1,14 @@
 <?php
 /**
  * @package Mobiloud
- * @version 1.3.7
+ * @version 1.3.8
  */
 /*
 Plugin Name: Mobiloud
 Plugin URI: http://www.mobiloud.com
 Description: Mobiloud  for Wordpress
 Author: Fifty Pixels Ltd
-Version: 1.3.7
+Version: 1.3.8
 Author URI: http://www.50pixels.com
 */
 
@@ -51,6 +51,8 @@ function mobiloud_install()
 	ml_facebook_install();
 	
 	ml_init_ios_app_redirect();
+	ml_init_automatic_image_resize();
+	
 }
 
 
@@ -111,6 +113,8 @@ function mobiloud_plugin_init()
 	//mobile promotional message
 	global $ml_popup_message_on_mobile_active, $ml_popup_message_on_mobile_url;
 	
+	global $ml_automatic_image_resize;
+	
 	
 	$ml_cert_type = "development";
 	$ml_server_host = "https://api.mobiloud.com";
@@ -159,6 +163,7 @@ function mobiloud_plugin_init()
 	
 	//redirect feature
 	ml_add_ios_app_redirect();
+	
 }
 
 
@@ -240,6 +245,14 @@ function ml_init_ios_app_redirect()
 	
 	ml_set_generic_option("ml_popup_message_on_mobile_active",$ml_popup_message_on_mobile_active);
 	ml_set_generic_option("ml_popup_message_on_mobile_message",$ml_popup_message_on_mobile_message);
+}
+
+function ml_init_automatic_image_resize() 
+{
+	global $ml_automatic_image_resize;
+	
+	$ml_automatic_image_resize = true;
+	ml_set_generic_option("ml_automatic_image_resize",$ml_automatic_image_resize);
 }
 
 function ml_disable_mobiloud_ad_notice_callback()
