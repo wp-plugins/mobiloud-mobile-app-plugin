@@ -1,38 +1,54 @@
 <?php
-
 include_once dirname( __FILE__ ) . '/libs/fb/facebook.php';
 
 
 function ml_facebook()
 {
 	global $ml_fb_app_id, $ml_fb_secret_key;
-	
-	$config = array();
-	$config['appId'] = $ml_fb_app_id;
-	$config['secret'] = $ml_fb_secret_key;
-	$config['fileUpload'] = false; // optional
-	$config['cookie'] = false;
-	
 	if($ml_fb_app_id == NULL || $ml_fb_secret_key == NULL) return NULL;
+	try
+	{
+		$config = array();
+		$config['appId'] = $ml_fb_app_id;
+		$config['secret'] = $ml_fb_secret_key;
+		$config['fileUpload'] = false; // optional
+		$config['cookie'] = false;
+
+		$facebook = new Facebook($config);		
+	}
+	catch(Exception $e)
+	{
+		return NULL;
+	}
 	
-	$facebook = new Facebook($config);
 	return $facebook;
 }
 
 function ml_facebook_get_app_info()
 {
-	global $ml_fb_app_id;
+	global $ml_fb_app_id, $ml_fb_app_info;
+	
 	$facebook = ml_facebook();
 	
-	if($facebook == NULL)
+	if($facebook == NULL) return NULL;
+	
+	if($ml_fb_app_info == NULL)
 	{
-		//no valid facebook info
+		try
+		{
+			$ml_fb_app_info = $facebook->api("/$ml_fb_app_id");			
+		}catch(Exception $e)
+		{
+			return NULL;
+		}
+	}
+	
+	if($ml_fb_app_id == NULL)
+	{
 		return NULL;
 	}
-	else
-	{
-		return $facebook->api("/$ml_fb_app_id");
-	}
+	
+	return $ml_fb_app_info;
 }
 
 function ml_facebook_register_user_with_token($token=NULL)
@@ -109,6 +125,5 @@ function ml_facebook_get_picture_url($email,$size="square")
 	}
 	return NULL;
 }
-
 
 ?>
