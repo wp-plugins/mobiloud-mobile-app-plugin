@@ -3,7 +3,7 @@ Contributors: alvises, psac50
 Tags: mobile app, iOS, REST API, push notification
 Requires at least: 3.2
 Tested up to: 3.4
-Stable tag: 1.2.4
+Stable tag: 1.3.7
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -83,6 +83,34 @@ You can contact us at support@50pixels.com.
 2. 
 
 == Changelog ==
+
+= 1.3.7 =
+* Now wordpress could be installed on a subdirectory.
+
+= 1.3.6 =
+* New thumbs dimension
+
+= 1.3.5 =
+* Fixed bug about app smart redirect
+* New configuration screen with ajax save
+
+
+= 1.3 =
+* iTunes app smart redirect for mobile devices
+* cache manifest for offline mode
+* [caption] on iPad
+
+
+= 1.2.7 =
+* [caption] fixes
+* 
+
+= 1.2.6 =
+* Layout HTML fixes
+
+= 1.2.5 =
+* Disqus comments count
+
 
 = 1.2.4 =
 * Disqus support

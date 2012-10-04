@@ -5,4 +5,3 @@ require_once("ml_facebook.php");
 
 ml_facebook_register_user_with_token($_GET["token"]);
 ?>
-
