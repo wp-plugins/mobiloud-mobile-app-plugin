@@ -1,7 +1,8 @@
 <?php
 include("../../../wp-blog-header.php");
-//ini_set('display_errors', 1);
+ini_set('display_errors', 1);
 
+include("ml_facebook.php");
 include("comments/comment_iphone.php");
 
 
@@ -61,7 +62,6 @@ function ml_get_avatar_from_email($email)
 <HTML>
 
 <?php
-
 ml_render_header();
 ml_render_comments($_GET["post_id"]);
 ?>
