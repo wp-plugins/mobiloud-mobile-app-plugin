@@ -115,6 +115,12 @@ function print_posts($posts,$tot_count,$offset,$platform,$options)
 		
 		$video_id = get_the_first_youtube_id($post);
 		$main_image_url = get_the_first_image($post);
+		$post_thumb_url = get_first_attachment_url($post_id);
+
+		if($post_thumb_url)
+		{
+			$main_image_url = $post_thumb_url;
+		}
 
 		//resizing
 		$main_image_thumb_url = NULL;
@@ -188,6 +194,26 @@ function get_the_first_image($post) {
 		{
 			return $img->src;
 		}		
+	}
+	return NULL;
+}
+
+function get_first_attachment_url($post_id)
+{
+	$args = array(
+		'post_type' => 'attachment',
+		'numberposts' => null,
+		'post_status' => null,
+		'post_parent' => $post_id
+	); 
+	$attachments = get_posts($args);
+	if ($attachments && count($attachments) > 0) {
+		$att = $attachments[0];
+		$image = wp_get_attachment_image_src($att->ID, "full");
+		if($image && count($image)>0){
+			$url = $image[0];
+			return $url;
+		}
 	}
 	return NULL;
 }
