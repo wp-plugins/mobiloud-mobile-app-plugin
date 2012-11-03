@@ -2,7 +2,7 @@
 include("../../../wp-blog-header.php");
 ini_set('display_errors', 1);
 
-include("ml_facebook.php");
+//include("ml_facebook.php");
 include("comments/comment_iphone.php");
 
 
