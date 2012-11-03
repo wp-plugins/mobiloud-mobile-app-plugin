@@ -115,11 +115,18 @@ function print_posts($posts,$tot_count,$offset,$platform,$options)
 		
 		$video_id = get_the_first_youtube_id($post);
 		$main_image_url = get_the_first_image($post);
+		$post_thumb_url = get_first_attachment_url($post_id);
+
+		if($post_thumb_url)
+		{
+			$main_image_url = $post_thumb_url;
+		}
 
 		//resizing
 		$main_image_thumb_url = NULL;
 		$main_image_medium_thumb_url = NULL;
-		
+		$main_image_big_thumb_url = NULL;
+
 		if($main_image_url != NULL)
 		{
 			if($ml_automatic_image_resize)
@@ -128,6 +135,11 @@ function print_posts($posts,$tot_count,$offset,$platform,$options)
 				$main_image_big_thumb_url = ml_image_resize($main_image_url,320,220,true);										
 			}
 		}
+
+		if($main_image_big_thumb_url == NULL) $main_image_big_thumb_url = $main_image_url;
+		if($main_image_medium_thumb_url == NULL) $main_image_medium_thumb_url = $main_image_big_thumb_url;
+		if($main_image_thumb_url == NULL) $main_image_thumb_url = $main_image_medium_thumb_url;
+
 
 		$final_post["videos"] = array();
 		$final_post["images"] = array();
@@ -140,12 +152,13 @@ function print_posts($posts,$tot_count,$offset,$platform,$options)
 		
 		if($main_image_url != NULL)
 		{
-			$image = array( "full" => $main_image_url, 
-							"thumb" => $main_image_thumb_url,
-							"big-thumb" => $main_image_big_thumb_url); 
+			$image = array( 
+											"full" => $main_image_url, 
+											"thumb" => array("url" => $main_image_thumb_url),
+											"big-thumb" => array("url" => $main_image_big_thumb_url)
+										); 
 			$final_post["images"][] = $image;
-		}
-		
+		}		
 		
 		foreach ( (array) $images as $image ) {
 			$image = array();
@@ -188,6 +201,26 @@ function get_the_first_image($post) {
 		{
 			return $img->src;
 		}		
+	}
+	return NULL;
+}
+
+function get_first_attachment_url($post_id)
+{
+	$args = array(
+		'post_type' => 'attachment',
+		'numberposts' => null,
+		'post_status' => null,
+		'post_parent' => $post_id
+	); 
+	$attachments = get_posts($args);
+	if ($attachments && count($attachments) > 0) {
+		$att = $attachments[0];
+		$image = wp_get_attachment_image_src($att->ID, "full");
+		if($image && count($image)>0){
+			$url = $image[0];
+			return $url;
+		}
 	}
 	return NULL;
 }
