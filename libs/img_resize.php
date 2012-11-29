@@ -28,14 +28,7 @@ function ml_image_resize( $img_url, $width, $height, $crop = false, $jpeg_qualit
 		if ( file_exists( $cropped_img_path ) ) {
 
 			$cropped_img_url = str_replace( basename( $image_src[0] ), basename( $cropped_img_path ), $image_src[0] );
-			
-			$vt_image = array (
-				'url' => $cropped_img_url,
-				'width' => $width,
-				'height' => $height
-			);
-			
-			return $vt_image;
+			return $cropped_img_url;
 		}
 
 		// crop = false
@@ -49,14 +42,7 @@ function ml_image_resize( $img_url, $width, $height, $crop = false, $jpeg_qualit
 			if ( file_exists( $resized_img_path ) ) {
 			
 				$resized_img_url = str_replace( basename( $image_src[0] ), basename( $resized_img_path ), $image_src[0] );
-
-				$vt_image = array (
-					'url' => $resized_img_url,
-					'width' => $proportional_size[0],
-					'height' => $proportional_size[1]
-				);
-				
-				return $vt_image;
+				return $resized_img_url;
 			}
 		}
 
@@ -66,20 +52,10 @@ function ml_image_resize( $img_url, $width, $height, $crop = false, $jpeg_qualit
 		$new_img = str_replace( basename( $image_src[0] ), basename( $new_img_path ), $image_src[0] );
 
 		// resized output
-		$vt_image = array (
-			'url' => $new_img,
-			'width' => $new_img_size[0],
-			'height' => $new_img_size[1]
-		);
-		return $vt_image;
+		return $new_img;
 	}
 	
-	// default output - without resizing
-	$vt_image = array (
-		'url' => $image_src[0],
-		'width' => $image_src[1],
-		'height' => $image_src[2]
-	);
-	return $vt_image;
+
+	return $image_src[0];
 }
 ?>

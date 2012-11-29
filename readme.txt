@@ -96,6 +96,10 @@ You can contact us at support@50pixels.com.
 2. 
 
 == Changelog ==
+
+= 1.5
+* Fixed thumbs url when resized
+
 = 1.4.1
 * Fixed thumbs url inside JSON structure
 
