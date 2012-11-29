@@ -1,14 +1,14 @@
 <?php
 /**
  * @package Mobiloud
- * @version 1.3.8
+ * @version 1.5
  */
 /*
 Plugin Name: Mobiloud
 Plugin URI: http://www.mobiloud.com
 Description: Mobiloud  for Wordpress
 Author: Fifty Pixels Ltd
-Version: 1.3.8
+Version: 1.5
 Author URI: http://www.50pixels.com
 */
 
@@ -22,7 +22,7 @@ include_once dirname( __FILE__ ) . '/stats.php';
 include_once dirname( __FILE__ ) . '/ml_facebook.php';
 
 include_once dirname( __FILE__ ) . '/configuration.php';
-
+include_once dirname( __FILE__ ) . '/intercom.php';
 
 register_activation_hook(__FILE__,'mobiloud_install');
 add_action('init', 'mobiloud_plugin_init');
@@ -164,6 +164,8 @@ function mobiloud_plugin_init()
 	//redirect feature
 	ml_add_ios_app_redirect();
 	
+
+	ml_init_intercom();
 }
 
 

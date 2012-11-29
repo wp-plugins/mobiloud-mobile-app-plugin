@@ -20,7 +20,7 @@ function ml_configuration_api_keys_callback()
 		$ml_secret_key = get_option('ml_secret_key');
 	}
 	
-	ml_configuration_api_keys_div();
+	ml_configuration_api_keys();
 	die();
 }
 
@@ -28,6 +28,7 @@ function ml_configuration_api_keys_ajax_load()
 {
 	?>
 	<script type="text/javascript" >
+
 	jQuery(document).ready(function($) {
 		var data = {
 			action: 'ml_configuration_api_keys'
@@ -36,7 +37,7 @@ function ml_configuration_api_keys_ajax_load()
 			
 		$.post(ajaxurl, data, function(response) {
 			//saving the result and reloading the div
-			jQuery("#ml_configuration_api_keys").html(response).fadeIn().slideDown();
+			jQuery("#ml_configuration_api_keys").html(response).fadeIn();
 		});			
 			
 	});
@@ -54,8 +55,8 @@ function ml_configuration_api_keys()
 	
 	<script type="text/javascript" >
 	jQuery(document).ready(function($) {
+
 		jQuery("#ml_configuration_api_keys_submit").click(function(){
-			
 			jQuery("#ml_configuration_api_keys_submit").val("<?php _e('Saving...'); ?>");
 			jQuery("#ml_configuration_api_keys_submit").attr("disabled", true);
 			jQuery("#ml_configuration_api_keys").css("opacity","0.5");
