@@ -1,14 +1,14 @@
 <?php
 /**
  * @package Mobiloud
- * @version 1.3.8
+ * @version 1.5.1
  */
 /*
 Plugin Name: Mobiloud
 Plugin URI: http://www.mobiloud.com
 Description: Mobiloud  for Wordpress
 Author: Fifty Pixels Ltd
-Version: 1.3.8
+Version: 1.5.1
 Author URI: http://www.50pixels.com
 */
 
@@ -22,7 +22,7 @@ include_once dirname( __FILE__ ) . '/stats.php';
 include_once dirname( __FILE__ ) . '/ml_facebook.php';
 
 include_once dirname( __FILE__ ) . '/configuration.php';
-
+include_once dirname( __FILE__ ) . '/intercom.php';
 
 register_activation_hook(__FILE__,'mobiloud_install');
 add_action('init', 'mobiloud_plugin_init');
@@ -136,7 +136,7 @@ function mobiloud_plugin_init()
 	$ml_fb_secret_key = get_option("ml_fb_secret_key");
 	
 	$ml_popup_message_on_mobile_active = get_option("ml_popup_message_on_mobile_active");
-	$ml_popup_message_on_mobile_url = get_option("ml_popup_message_on_mobile_url");
+	$ml_popup_message_on_mobile_appid = get_option("ml_popup_message_on_mobile_appid");
 	
 	if( !class_exists( 'WP_Http' ) )
 	    include_once( ABSPATH . WPINC. '/class-http.php' );
@@ -154,16 +154,18 @@ function mobiloud_plugin_init()
 	}
 
 	add_action('publish_post','ml_post_published_notification');
+	add_action('wp_head', 'ml_add_ios_app_redirect');
 
 	add_filter( 'get_avatar', 'ml_get_avatar',10,2);
 	
+
 	
 	wp_register_style('mobiloud.css', MOBILOUD_PLUGIN_URL . 'mobiloud.css');
 	wp_enqueue_style("mobiloud.css");
 	
-	//redirect feature
-	ml_add_ios_app_redirect();
 	
+
+	ml_init_intercom();
 }
 
 
@@ -221,30 +223,23 @@ function ml_get_avatar($avatar,$comment)
 function ml_add_ios_app_redirect()
 {
 	//mobile promotional message
-	global $ml_popup_message_on_mobile_active, $ml_popup_message_on_mobile_url, 
-		   $ml_popup_message_on_mobile_message;
-	
+	global $ml_popup_message_on_mobile_active, $ml_popup_message_on_mobile_appid;
+
 	if(!isset($_GET["mobiloud"]) && $ml_popup_message_on_mobile_active)
 	{
-		$script_url = MOBILOUD_PLUGIN_URL."wp_ios_redirect.php";
-		$jquery_cookie = MOBILOUD_PLUGIN_URL."libs/jquery.cookie.js";
-
-		wp_enqueue_script("jquery.cookie.js",$jquery_cookie,NULL,"1.2",true);
-		wp_enqueue_script("ml_ios_app_redirect",$script_url,NULL,"1.0",true);		
+		$ml_popup_message_on_mobile_appid = get_option("ml_popup_message_on_mobile_appid");
+		echo "<meta name='apple-itunes-app' content=\"app-id=$ml_popup_message_on_mobile_appid\">";
 	}
 }
 
 function ml_init_ios_app_redirect() 
 {
-	global $ml_popup_message_on_mobile_active, $ml_popup_message_on_mobile_url, 
-		   $ml_popup_message_on_mobile_message;
+	global $ml_popup_message_on_mobile_active;
 	
 	$ml_popup_message_on_mobile_active = false;
-	$ml_popup_message_on_mobile_message = "Hey! Did you know we have an app? Download it now from App Store!";
 	
 	
 	ml_set_generic_option("ml_popup_message_on_mobile_active",$ml_popup_message_on_mobile_active);
-	ml_set_generic_option("ml_popup_message_on_mobile_message",$ml_popup_message_on_mobile_message);
 }
 
 function ml_init_automatic_image_resize() 

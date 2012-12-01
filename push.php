@@ -32,14 +32,14 @@ function ml_post_published_notification($post_id)
 	$alert = $post->post_title;
 	$custom_properties = array('post_id' => $post_id);
 	
-	ml_send_notification($alert, true,NULL,$custom_properties);
+	ml_send_notification($alert, true,NULL,$custom_properties,$post_id);
 }
 
 
 
 //true if the notification was sent successfully
 //false if there was an error
-function ml_send_notification($alert, $sound=true, $badge=NULL, $custom_properties=NULL)
+function ml_send_notification($alert, $sound=true, $badge=NULL, $custom_properties=NULL, $remote_identifier=NULL)
 {
 	global $ml_api_key, $ml_secret_key, $ml_server_host;
 	
@@ -55,6 +55,12 @@ function ml_send_notification($alert, $sound=true, $badge=NULL, $custom_properti
 		'notification' => $notification,
 	);
 	
+	//postID
+	if($remote_identifier)
+	{
+		$parameters['remote_identifier'] = "$remote_identifier";
+	}	
+
 	$request = new WP_Http;
 	$url = "$ml_server_host/notifications/send";
 	
