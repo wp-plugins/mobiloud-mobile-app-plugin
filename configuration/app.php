@@ -6,8 +6,7 @@ function ml_configuration_app_redirect_callback()
 {
 	//mobile promotional message
 	global $ml_popup_message_on_mobile_active, 
-		   $ml_popup_message_on_mobile_url,
-		   $ml_popup_message_on_mobile_message;
+		   $ml_popup_message_on_mobile_appid;
 	if(isset($_POST['ml_popup_message_on_mobile_active']))
 	{
 		$ml_popup_message_on_mobile_active = $_POST['ml_popup_message_on_mobile_active'] == "true";
@@ -16,21 +15,15 @@ function ml_configuration_app_redirect_callback()
 							   $ml_popup_message_on_mobile_active);
 	}
 	
-	if(isset($_POST['ml_popup_message_on_mobile_url']))
+	if(isset($_POST['ml_popup_message_on_mobile_appid']))
 	{
-		$ml_popup_message_on_mobile_url = $_POST['ml_popup_message_on_mobile_url'];
+		$ml_popup_message_on_mobile_appid = $_POST['ml_popup_message_on_mobile_appid'];
 
-		ml_set_generic_option("ml_popup_message_on_mobile_url",
-							   $ml_popup_message_on_mobile_url);
+		ml_set_generic_option("ml_popup_message_on_mobile_appid",
+							   $ml_popup_message_on_mobile_appid);
 	}
 	
-	if(isset($_POST['ml_popup_message_on_mobile_message']))
-	{
-		$ml_popup_message_on_mobile_message = $_POST['ml_popup_message_on_mobile_message'];
 
-		ml_set_generic_option("ml_popup_message_on_mobile_message",
-							   $ml_popup_message_on_mobile_message);
-	}
 	
 	ml_configuration_app_redirect();
 	
@@ -77,8 +70,7 @@ function ml_configuration_app_redirect()
 			var data = {
 				action: 'ml_configuration_app_redirect',
 				ml_popup_message_on_mobile_active: jQuery("#ml_popup_message_on_mobile_active").is(":checked"),
-				ml_popup_message_on_mobile_url: jQuery("#ml_popup_message_on_mobile_url").val(),
-				ml_popup_message_on_mobile_message: jQuery("#ml_popup_message_on_mobile_message").val()
+				ml_popup_message_on_mobile_appid: jQuery("#ml_popup_message_on_mobile_appid").val(),
 				
 			};
 			
@@ -102,13 +94,10 @@ function ml_configuration_app_redirect()
 function ml_configuration_app_redirect_div()
 {
 	//mobile promotional message
-	global $ml_popup_message_on_mobile_active, 
-		   $ml_popup_message_on_mobile_url,
-		   $ml_popup_message_on_mobile_message;
-	
+	global $ml_popup_message_on_mobile_active, $ml_popup_message_on_mobile_appid;
+
 	$ml_popup_message_on_mobile_active = get_option('ml_popup_message_on_mobile_active');
-	$ml_popup_message_on_mobile_url = get_option('ml_popup_message_on_mobile_url');
-	$ml_popup_message_on_mobile_message = get_option('ml_popup_message_on_mobile_message');
+	$ml_popup_message_on_mobile_appid = get_option('ml_popup_message_on_mobile_appid');
 	
 	?>
 	<h3 style="font-family:arial;font-size:20px;font-weight:normal;padding:10px;">
@@ -130,31 +119,21 @@ function ml_configuration_app_redirect_div()
 	<p></p>
 
 	
-	<!-- REDIRECT URL -->
+	<!-- APP ID -->
 	<h2 style="font-size:20px;font-weight:normal;padding:10px;">
-		iTunes App URL
+		App ID
 	</h2>
-	<input id="ml_popup_message_on_mobile_url" placeholder="Type here the iTunes URL of the app" 
-			name="ml_popup_message_on_mobile_url" type="text" size="40" 
-	value="<?php echo $ml_popup_message_on_mobile_url?>" 
-	style="padding:5px;font-size:20px;margin-left:5%;width:90%;"/>
+	<input id="ml_popup_message_on_mobile_appid" placeholder="Type here the App ID" 
+			name="ml_popup_message_on_mobile_appid" type="text" size="8" 
+	value="<?php echo $ml_popup_message_on_mobile_appid;?>" 
+	style="padding:5px;font-size:20px;margin-left:5%;width:50%;"/>
 	<p></p>
-	
-	<!-- POPUP MESSAGE -->
-	<h2 style="font-size:20px;font-weight:normal;padding:10px;">
-		Message
-	</h2>
-	<input id="ml_popup_message_on_mobile_message" placeholder="Type here the message you want to be dispalyed" 
-			name="ml_popup_message_on_mobile_message" type="text" size="40" 
-	value="<?php echo $ml_popup_message_on_mobile_message?>" 
-	style="padding:5px;font-size:20px;margin-left:5%;width:90%;"/>
-	<p></p>
-	
+		
 	<!-- DESCRIPTION -->
 	<div style="font-size:12px;padding:5px;margin-left:10%;margin-top:20px;margin-bottom:20px;width:70%;
 		text-align:justify;">
 			Notifies users who are using mobile web browsers about the availability of your app on the App Store. 
-			The user will receive a popup message with whatever text you choose and be redirected to your App Store URL. 
+			The user will receive a popup and be redirected to your App Store URL. 
 			They will also have the option to cancel and continue viewing your website with the browser.				
 	</div>
 	
