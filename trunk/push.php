@@ -72,6 +72,7 @@ function ml_send_notification($alert, $sound=true, $badge=NULL, $custom_properti
 		
 		if($response)
 		{
+			ml_set_post_id_as_notified($remote_identifier);
 			$r_code = $response['code'];
 			return $r_code == 200;
 		}		
