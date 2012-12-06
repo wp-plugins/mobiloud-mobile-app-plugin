@@ -1,21 +1,21 @@
 <?php
 /**
  * @package Mobiloud
- * @version 1.5.2
+ * @version 1.5.3
  */
 /*
 Plugin Name: Mobiloud
 Plugin URI: http://www.mobiloud.com
 Description: Mobiloud  for Wordpress
 Author: Fifty Pixels Ltd
-Version: 1.5.2
+Version: 1.5.3
 Author URI: http://www.50pixels.com
 */
 
 ini_set('display_errors', 1);
 
 define('MOBILOUD_PLUGIN_URL', plugin_dir_url( __FILE__ ));
-define('MOBILOUD_PLUGIN_VERSION', "1.5.2");
+define('MOBILOUD_PLUGIN_VERSION', "1.5.3");
 
 
 include_once dirname( __FILE__ ) . '/push.php';
@@ -156,6 +156,7 @@ function mobiloud_plugin_init()
 
 	add_action('publish_post','ml_post_published_notification');
 	add_action('wp_head', 'ml_add_ios_app_redirect');
+	add_action('admin_footer','ml_init_intercom');
 
 	add_filter( 'get_avatar', 'ml_get_avatar',10,2);
 	
@@ -165,8 +166,6 @@ function mobiloud_plugin_init()
 	wp_enqueue_style("mobiloud.css");
 	
 	
-
-	ml_init_intercom();
 }
 
 
