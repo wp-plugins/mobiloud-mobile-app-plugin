@@ -43,7 +43,12 @@ function ml_send_notification($alert, $sound=true, $badge=NULL, $custom_properti
 {
 	global $ml_api_key, $ml_secret_key, $ml_server_host;
 	
-	
+	//push notification only when api key is set
+	if(($ml_api_key == NULL || strlen($ml_api_key) < 5) &&
+		 ($ml_secret_key == NULL || strlen($ml_secret_key) < 5))
+	{
+		return false;
+	}
 	$notification = array('alert' => $alert);
 	if($sound) $notification['sound'] = $sound;
 	if($badge) $notification['badge'] = $badge;
