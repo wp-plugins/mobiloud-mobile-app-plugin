@@ -91,7 +91,12 @@ function print_posts($posts,$tot_count,$offset,$platform,$options)
 		
 		$final_post = array();
 		$final_post["post_id"] = "$post_id";
-		$final_post["comments-count"] = get_post_comment_count($post_id);
+		$comments_count = wp_count_comments($post_id);
+
+		$final_post["comments-count"] = 0;
+		if($comments_count) {
+			$final_post["comments-count"] = intval($comments_count->approved);
+		}
 		
 		$final_post["permalink"] = get_permalink($post_id);
 		

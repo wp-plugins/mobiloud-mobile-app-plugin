@@ -17,7 +17,7 @@ function ml_render_iphone_comment($comment)
 				<?php $uid_or_email = $comment->user_id != 0 ? $comment->user_id : $comment->comment_author_email;
 					  $link = ml_facebook_get_picture_url($uid_or_email);
 					  if($link) echo "<img src='$link' class='avatar avatar-50 photo' height=50 width=50>";
-					  get_avatar($uid_or_email,50);
+					  else echo get_avatar($uid_or_email,50);
 				?>
 			</div>
 		</div>
