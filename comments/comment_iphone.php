@@ -1,5 +1,6 @@
 <?php
 
+
 function ml_comment_content_to_html($content)
 {
 	return str_replace("\n","<br>",$content);
