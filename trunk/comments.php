@@ -2,7 +2,7 @@
 include("../../../wp-blog-header.php");
 ini_set('display_errors', 1);
 
-//include("ml_facebook.php");
+include("ml_facebook.php");
 include("comments/comment_iphone.php");
 
 
@@ -13,7 +13,7 @@ function ml_render_header($platform="iphone")
 	<head>
 		
 		<meta name="viewport" content="width=device-width; minimum-scale=1.0; maximum-scale=1.0;" />
-		<link rel="StyleSheet" href="<?=plugin_dir_url(__FILE__)?>comments/css/<?php echo $platform;?>.css" type="text/css"  media="screen">
+		<link rel="StyleSheet" href="<?php echo plugin_dir_url(__FILE__);?>comments/css/<?php echo $platform;?>.css" type="text/css"  media="screen">
 		
 	</head>
 	<?php

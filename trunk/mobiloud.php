@@ -8,14 +8,14 @@ Plugin Name: Mobiloud
 Plugin URI: http://www.mobiloud.com
 Description: Mobiloud  for Wordpress
 Author: Fifty Pixels Ltd
-Version: 1.5.4
+Version: 1.6
 Author URI: http://www.50pixels.com
 */
 
 ini_set('display_errors', 1);
 
 define('MOBILOUD_PLUGIN_URL', plugin_dir_url( __FILE__ ));
-define('MOBILOUD_PLUGIN_VERSION', "1.5.4");
+define('MOBILOUD_PLUGIN_VERSION', "1.6");
 
 
 include_once dirname( __FILE__ ) . '/push.php';
