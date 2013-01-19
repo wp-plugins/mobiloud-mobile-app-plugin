@@ -3,7 +3,7 @@ Contributors: alvises, psac50
 Tags: mobile app, iOS, REST API, push notification
 Requires at least: 3.2
 Tested up to: 3.4
-Stable tag: 1.3.8
+Stable tag: 1.6.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -11,21 +11,34 @@ Make your content shine with iPhone and iPad apps for your blog.
 
 == Description ==
 
-= An App for Your Blog =
-If you're not mobile, you're missing an opportunity.
+= Perfect apps for your blog. =
+If you're not mobile, you're missing an opportunity. The Mobiloud platform allows us to create a custom, full-featured mobile app for your blog at an affordable price and in a short timeframe (3-4 weeks). Try a demo or request pricing at <a href="http://www.mobiloud.com">Mobiloud.com</a>.
 
-The Mobiloud platform allows us to create a custom, full-featured mobile app for your blog at an affordable price.
+= Beautiful, fast, easy to use. =
+Mobiloud apps run on iPhone, iPod Touch and iPad with a simple to use but beautifully designed interface that can be completely customised to your taste and style. Readers enjoy apps with a smooth, responsive user experience, offline access to your content and push notifications. A fast native interface lets your readers comment on your posts, as easy as using the SMS app, helping you further build your community on mobile (we even integrated Facebook login to make commenting even faster).
 
-Readers enjoy beautifully designed apps with a smooth, responsive user experience, offline access to your content and push notifications to stay up to date.
+= Grow your traffic, build a loyal following. =
+Watch your traffic grow as you take full advantage of the App Store for distribution and your users read more of your content thanks to quick, smooth access to your articles (more articles are just a swipe away). Push notifications allow you to keep them engaged with your content more effectively than any other subscription mechanism. Similarly to a newsletter, with a mobile app you can finally convert casual visitors into loyal readers. Better then a newsletter, your readers access your content from a distraction-free mobile device and can keep browsing your articles to read more.
 
-Watch your traffic skyrocket as you take full advantage of the App Store for distribution and your users read more of your content thanks to quick, smooth access to your articles. Push notifications also allow you to keep them engaged with your content more effectively than any other subscription mechanism.
+= Make more money. =
+Native mobile ads generate on average 3x the click-through rates than standard web advertising. Other opportunities to monetise your apps include paid downloads, subscriptions or in-app purchase for premium content.
 
-Make more money with dedicated mobile ad networks offering higher CTR and mobile optimised ad formats.
+= Great value. =
+Our pricing is based on a flat setup fee and a monthly service fee covering license costs, unlimited push notifications, support and unlimited app updates. We have no long term contracts and you can cancel anytime. 
 
-Increase your traffic and revenue today. Try a demo at <a href="http://www.mobiloud.com">Mobiloud.com</a>.
+Increase your traffic and revenue today. Request pricing at <a href="http://www.mobiloud.com">Mobiloud.com</a>.
 
-= For App Developers =
-The plugin can also be used as a free, open source solution to deliver content to any mobile app. It provides simple REST API calls any developer can use to extract JSON output for your content. It is also gives you access to our free, hosted push notification service, <a href="http://mobiloud.com/free-push-service.html">Mobiloud Push</a>.
+= What our customers say. =
+"Mobiloud are pioneers in creating awesome apps for the mobile world. They left no stone unturned in making our app perfect! It has been a pleasure working with them."
+Paul Andrew, Founder of Speckyboy.com
+
+"An app is a great way to grow your audience and turn existing visitors into loyal readers. In no time, Mobiloud was able to develop a great looking app for Pandemia.info."
+Luca Conti, Author and Social Media Consultant
+
+"On CircusF1 we have been seeing traffic from mobile devices rapidly growing. The team at Mobiloud was able to design and build an iPhone and iPad app in a very short time."
+Andrea Gallazzi, owner CircusF1.com
+
+Read more at <a href="http://www.mobiloud.com">Mobiloud.com</a>
 
 Plugin features include:
 
@@ -83,6 +96,36 @@ You can contact us at support@50pixels.com.
 2. 
 
 == Changelog ==
+= 1.6.1
+* Fixed another problem in comments and layout
+
+= 1.6
+* Fixed Facebook comments integration
+* Added connection test to mobiloud server
+
+= 1.5.4
+* Push notification only when api key is set
+
+= 1.5.3
+* Fixed admin errors
+
+= 1.5.2
+* Push notification only when api key is set
+
+= 1.5.1
+* Smart App banner
+
+
+= 1.5
+* Fixed thumbs url when resized
+
+= 1.4.1
+* Fixed thumbs url inside JSON structure
+
+= 1.4
+* Fixed thumbnails bug
+* Fixed comments bug
+* Fixed configuration API keys bug
 
 = 1.3.8 =
 * General configuration tab
