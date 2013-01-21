@@ -1,7 +1,8 @@
 <?php
 include("../../../wp-blog-header.php");
-//ini_set('display_errors', 1);
+ini_set('display_errors', 1);
 
+include_once("ml_facebook.php");
 include("comments/comment_iphone.php");
 
 
@@ -12,7 +13,7 @@ function ml_render_header($platform="iphone")
 	<head>
 		
 		<meta name="viewport" content="width=device-width; minimum-scale=1.0; maximum-scale=1.0;" />
-		<link rel="StyleSheet" href="<?=plugin_dir_url(__FILE__)?>comments/css/<?php echo $platform;?>.css" type="text/css"  media="screen">
+		<link rel="StyleSheet" href="<?php echo plugin_dir_url(__FILE__);?>comments/css/<?php echo $platform;?>.css" type="text/css"  media="screen">
 		
 	</head>
 	<?php
@@ -61,7 +62,6 @@ function ml_get_avatar_from_email($email)
 <HTML>
 
 <?php
-
 ml_render_header();
 ml_render_comments($_GET["post_id"]);
 ?>
