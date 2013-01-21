@@ -1,21 +1,21 @@
 <?php
 /**
  * @package Mobiloud
- * @version 1.6.1
+ * @version 1.6.2
  */
 /*
 Plugin Name: Mobiloud
 Plugin URI: http://www.mobiloud.com
 Description: Mobiloud  for Wordpress
 Author: Fifty Pixels Ltd
-Version: 1.6.1
+Version: 1.6.2
 Author URI: http://www.50pixels.com
 */
 
 ini_set('display_errors', 1);
 
 define('MOBILOUD_PLUGIN_URL', plugin_dir_url( __FILE__ ));
-define('MOBILOUD_PLUGIN_VERSION', "1.6.1");
+define('MOBILOUD_PLUGIN_VERSION', "1.6.2");
 
 
 include_once dirname( __FILE__ ) . '/push.php';
@@ -33,6 +33,17 @@ add_action('init', 'mobiloud_plugin_init');
 //tables creation
 function mobiloud_install()
 {
+	
+	ml_notifications_install();
+	ml_facebook_install();
+
+	ml_init_ios_app_redirect();
+	ml_init_automatic_image_resize();
+	
+}
+
+function ml_notifications_install()
+{
 	global $wpdb;
 	$table_name = $wpdb->prefix . "mobiloud_notifications";
 	
@@ -48,12 +59,7 @@ function mobiloud_install()
 		require_once(ABSPATH . 'wp-admin/includes/upgrade.php');
 		dbDelta($sql);
 	}
-	
-	ml_facebook_install();
-	
-	ml_init_ios_app_redirect();
-	ml_init_automatic_image_resize();
-	
+
 }
 
 

@@ -18,7 +18,7 @@ function ml_is_notified($post_id)
 {
 	global $wpdb;
 	$table_name = $wpdb->prefix . "mobiloud_notifications";
-	$num = $wpdb->get_var( $wpdb->prepare( "SELECT COUNT(*) FROM $table_name WHERE post_id = $post_id" ));
+	$num = $wpdb->get_var( $wpdb->prepare( "SELECT COUNT(*) FROM %s WHERE post_id = %d",$table_name, $post_id));
 	return $num > 0;
 }
 

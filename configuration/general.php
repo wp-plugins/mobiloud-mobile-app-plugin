@@ -30,12 +30,7 @@ function ml_configuration_connection_test_callback(){
 
 	if($result)
 	{
-		if(isset($result['response'])) {
-			print_r($result['response']);		
-		}
-		else {
-			print_r($result);		
-		}
+		print_r($result);		
 	}
 	else
 	{
