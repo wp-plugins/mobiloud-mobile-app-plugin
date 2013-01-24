@@ -5,8 +5,6 @@ add_action('wp_ajax_ml_configuration_notifications', 'ml_configuration_notificat
 //sending test notification
 add_action('wp_ajax_ml_configuration_notifications_send_message', 'ml_configuration_notifications_send_message_callback');
 
-add_action('wp_ajax_ml_configuration_notifications_start_service', 'ml_configuration_notifications_start_service_callback');
-add_action('wp_ajax_ml_configuration_notifications_stop_service', 'ml_configuration_notifications_stop_service_callback');
 
 function ml_configuration_notifications_callback()
 {
@@ -93,40 +91,6 @@ function ml_configuration_notifications()
 			
 		});
 		
-		jQuery("#ml_start_service").click(function(){
-			jQuery("#ml_start_service").val("<?php _e('Starting...'); ?>");
-			jQuery("#ml_start_service").attr("disabled", true);
-			
-			
-			var data = {
-				action: 'ml_configuration_notifications_start_service'
-			};
-			
-			$.post(ajaxurl, data, function(response) {
-				//saving the result and reloading the div
-				jQuery("#ml_configuration_notifications").html(response);
-
-			});
-			
-		});
-		
-		
-		jQuery("#ml_stop_service").click(function(){
-			jQuery("#ml_stop_service").val("<?php _e('Stopping...'); ?>");
-			jQuery("#ml_stop_service").attr("disabled", true);
-			
-			var data = {
-				action: 'ml_configuration_notifications_stop_service'
-			};
-			
-			$.post(ajaxurl, data, function(response) {
-				//saving the result and reloading the div
-				jQuery("#ml_configuration_notifications").html(response);
-
-			});
-			
-		});
-		
 	});
 	</script>
 	
@@ -173,35 +137,6 @@ function ml_configuration_notifications_div()
 
 		</table>
 
-		<div style="text-align:left;">
-				<div class="submit" style="margin-left:5px;">
-			
-					<?php 
-						if(isset($mobiloud_service) && 
-						   isset($mobiloud_service["notifications"]) &&
-						   isset($mobiloud_service["notifications"]["service_running"]) &&
-						   $mobiloud_service["notifications"]["service_running"])
-						{
-							echo "<div class='mobiloud_service_running' style='margin-left:10px;'>Push service running</div>";
-							?>
-							<p></p>
-							<input type='submit' id='ml_stop_service' value="<?php _e('Stop push service &raquo;'); ?>">
-							<?php 
-						}  
-						else
-						{
-							echo "<div class='mobiloud_service_not_running' style='margin-left:10px;'>Push service not running</div>";
-							?>
-							<p></p>
-							<input type='submit' id='ml_start_service' value='<?php _e('Start push service &raquo;'); ?>'>
-							<?php 
-						
-						}
-				
-					?>
-			
-				</div>
-		</div>
 		
 		<input type="text" id="ml_configuration_notification_message_text" 
 			   style="padding:5px;font-size:18px;margin-left:5%;width:80%;" 
