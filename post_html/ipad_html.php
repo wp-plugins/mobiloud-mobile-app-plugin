@@ -1,7 +1,9 @@
 <?php
 function ipad_html($post)
 {
-	$prefiltered_html = str_replace("\n","<p></p>",$post->post_content);
+	$prefiltered_html = ml_filters_get_filtered($post->post_content);
+
+	$prefiltered_html = str_replace("\n","<p></p>",$prefiltered_html);
  	$prefiltered_html = preg_replace("/\[caption.*\"\]/", '', $prefiltered_html);
  	$prefiltered_html = preg_replace("/\[\/caption\]/", '', $prefiltered_html);
  	
