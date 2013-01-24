@@ -16,7 +16,7 @@
 	function ml_filters_init() {
 		global $ml_filters;
 
-		$fd = fopen( dirname( __FILE__ )."/filters.load","r");
+		$fd = fopen( dirname( __FILE__ )."/filters.txt","r");
 		if(!$fd) return false;
 		
 
