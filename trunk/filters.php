@@ -45,5 +45,4 @@
 
 	ml_filters_init();
 
-	echo ml_filters_get_filtered("we come va?");
 ?>
