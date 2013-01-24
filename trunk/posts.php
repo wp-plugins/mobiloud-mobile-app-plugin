@@ -2,6 +2,8 @@
 include("../../../wp-blog-header.php");
 include_once("libs/img_resize.php");
 
+
+include_once("filters.php");
 include("post_html.php");
 
 
