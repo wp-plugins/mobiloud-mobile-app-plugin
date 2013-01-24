@@ -3,7 +3,7 @@ Contributors: alvises, psac50
 Tags: mobile app, iOS, REST API, push notification
 Requires at least: 3.2
 Tested up to: 3.4
-Stable tag: 1.7
+Stable tag: 1.7.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -96,6 +96,9 @@ You can contact us at support@50pixels.com.
 2. 
 
 == Changelog ==
+= 1.7.1
+* Filters engine fix
+
 = 1.7
 * Filters engine
 

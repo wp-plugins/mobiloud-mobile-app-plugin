@@ -1,21 +1,21 @@
 <?php
 /**
  * @package Mobiloud
- * @version 1.7
+ * @version 1.7.1
  */
 /*
 Plugin Name: Mobiloud
 Plugin URI: http://www.mobiloud.com
 Description: Mobiloud  for Wordpress
 Author: Fifty Pixels Ltd
-Version: 1.7
+Version: 1.7.1
 Author URI: http://www.50pixels.com
 */
 
 ini_set('display_errors', 1);
 
 define('MOBILOUD_PLUGIN_URL', plugin_dir_url( __FILE__ ));
-define('MOBILOUD_PLUGIN_VERSION', "1.7");
+define('MOBILOUD_PLUGIN_VERSION', "1.7.1");
 
 
 include_once dirname( __FILE__ ) . '/push.php';
