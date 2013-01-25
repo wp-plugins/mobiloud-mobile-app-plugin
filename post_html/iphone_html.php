@@ -3,10 +3,8 @@ function iphone_html($post)
 {
 	$prefiltered_html = ml_filters_get_filtered($post->post_content);
 
-	$prefiltered_html = str_replace("\n","<p></p>",$post->post_content);
- 	$prefiltered_html = preg_replace("/\[caption.*\"\]/", '', $prefiltered_html);
- 	$prefiltered_html = preg_replace("/\[\/caption\]/", '', $prefiltered_html);
-
+	$prefiltered_html = str_replace("\n","<p></p>",$prefiltered_html);
+ 	
 	$html = str_get_html($prefiltered_html);	
 	
 	$img_tags = $html->find('img');
@@ -45,6 +43,9 @@ function iphone_html($post)
 	$header .= "<link rel=\"StyleSheet\" href=\"".plugin_dir_url(__FILE__)."css/iphone.css\" type=\"text/css\"  media=\"screen\">";
 
 	$header .= "<link rel=\"StyleSheet\" href=\"".plugin_dir_url(__FILE__)."css/iphone_portrait.css\" type=\"text/css\"  media=\"screen\" id=\"orient_css\">";
+	
+	$header .= ml_filters_header($post->postID);
+
 	$header .= "</head>";
 
 	
