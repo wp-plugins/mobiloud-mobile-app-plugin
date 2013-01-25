@@ -4,8 +4,6 @@ function ipad_html($post)
 	$prefiltered_html = ml_filters_get_filtered($post->post_content);
 
 	$prefiltered_html = str_replace("\n","<p></p>",$prefiltered_html);
- 	$prefiltered_html = preg_replace("/\[caption.*\"\]/", '', $prefiltered_html);
- 	$prefiltered_html = preg_replace("/\[\/caption\]/", '', $prefiltered_html);
  	
 	$html = str_get_html($prefiltered_html);	
 	
@@ -50,6 +48,9 @@ function ipad_html($post)
 	$header .= "<link rel=\"StyleSheet\" href=\"".plugin_dir_url(__FILE__)."css/ipad.css\" type=\"text/css\"  media=\"screen\">";
 
 	$header .= "<link rel=\"StyleSheet\" href=\"".plugin_dir_url(__FILE__)."css/ipad_portrait.css\" type=\"text/css\"  media=\"screen\" id=\"orient_css\">";
+
+	$header .= ml_filters_header($post->postID);
+
 	$header .= "</head>";
 
 	
