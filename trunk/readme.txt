@@ -96,9 +96,9 @@ You can contact us at support@50pixels.com.
 2. 
 
 == Changelog ==
+
 = 1.7.2
 * Example filter fix
-
 
 = 1.7.1
 * Filters engine fix
