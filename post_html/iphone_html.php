@@ -3,10 +3,8 @@ function iphone_html($post)
 {
 	$prefiltered_html = ml_filters_get_filtered($post->post_content);
 
-	$prefiltered_html = str_replace("\n","<p></p>",$post->post_content);
- 	$prefiltered_html = preg_replace("/\[caption.*\"\]/", '', $prefiltered_html);
- 	$prefiltered_html = preg_replace("/\[\/caption\]/", '', $prefiltered_html);
-
+	$prefiltered_html = str_replace("\n","<p></p>",$prefiltered_html);
+ 	
 	$html = str_get_html($prefiltered_html);	
 	
 	$img_tags = $html->find('img');
@@ -45,6 +43,9 @@ function iphone_html($post)
 	$header .= "<link rel=\"StyleSheet\" href=\"".plugin_dir_url(__FILE__)."css/iphone.css\" type=\"text/css\"  media=\"screen\">";
 
 	$header .= "<link rel=\"StyleSheet\" href=\"".plugin_dir_url(__FILE__)."css/iphone_portrait.css\" type=\"text/css\"  media=\"screen\" id=\"orient_css\">";
+	
+	$header .= ml_filters_header($post->postID);
+
 	$header .= "</head>";
 
 	
@@ -53,7 +54,7 @@ function iphone_html($post)
 	$spaces = "<p>&nbsp;</p>";
 	
 	$title = "<h4 align='left'>".$post->post_title."</h4>";
-	$title .= "<table width='100%'><tr><td class='article_date' align=left>".mysql2date('l, F j, Y',$post->post_date)."</td><td class='author'  align=right>".get_author_name($post->post_author)."</td></tr></table><p>&nbsp;</p>";
+	$title .= "<table width='100%'><tr><td class='article_date' align=left>".mysql2date('l j F Y',$post->post_date)."</td><td class='author'  align=right>".get_author_name($post->post_author)."</td></tr></table><p>&nbsp;</p>";
 	
 	
 	return $init_html."<body onorientationchange=\"mobiloud_orient();\"><div id=\"content\"><p>&nbsp;</p>".$title.$html->save().$spaces."</div></body></html>";

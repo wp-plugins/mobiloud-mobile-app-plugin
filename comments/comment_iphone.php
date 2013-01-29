@@ -30,7 +30,7 @@ function ml_render_iphone_comment($comment)
 
 					<div class="ml_comment_bottom">
 						<div class="ml_comment_date">
-							<?php echo mysql2date('l, F j, Y. G:i',$comment->comment_date);?>				
+							<?php echo mysql2date('l j F Y, G:i',$comment->comment_date);?>				
 						</div>
 					</div>
 				</td>
