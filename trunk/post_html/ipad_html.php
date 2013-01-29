@@ -64,7 +64,7 @@ function ipad_html($post)
 	$title .= "<p></p>";
 	$title .= "<div class='author'>".get_author_name($post->post_author)."</div>";
 	$title .= "<p></p>";
-	$title .= "<div class='article_date'>".mysql2date('l, F j, Y',$post->post_date)."</div>";
+	$title .= "<div class='article_date'>".mysql2date('l j F Y',$post->post_date)."</div>";
 	$title .= "<p></p>";
 	$title .= "<hr class='ml_hr'/>";
 

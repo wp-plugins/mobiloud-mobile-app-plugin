@@ -66,6 +66,7 @@ function mobiloud_display_charts()
 	<table width="100%">
 		<tr>
 			<td align="center">
+				<div id="mobiloud_subscriptions_chart" style="width: 400px; height: 400px;margin-top:50px;margin-left:50px;"></div>
 			</td>
 			<td align="center">
 				<div id="mobiloud_sessions_chart" style="width: 400px; height: 400px;margin-top:50px;margin-left:50px;"></div>

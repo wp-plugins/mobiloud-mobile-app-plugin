@@ -54,7 +54,7 @@ function iphone_html($post)
 	$spaces = "<p>&nbsp;</p>";
 	
 	$title = "<h4 align='left'>".$post->post_title."</h4>";
-	$title .= "<table width='100%'><tr><td class='article_date' align=left>".mysql2date('l, F j, Y',$post->post_date)."</td><td class='author'  align=right>".get_author_name($post->post_author)."</td></tr></table><p>&nbsp;</p>";
+	$title .= "<table width='100%'><tr><td class='article_date' align=left>".mysql2date('l j F Y',$post->post_date)."</td><td class='author'  align=right>".get_author_name($post->post_author)."</td></tr></table><p>&nbsp;</p>";
 	
 	
 	return $init_html."<body onorientationchange=\"mobiloud_orient();\"><div id=\"content\"><p>&nbsp;</p>".$title.$html->save().$spaces."</div></body></html>";
