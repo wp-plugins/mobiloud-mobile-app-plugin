@@ -1,6 +1,9 @@
 <?php
 function ipad_html($post)
 {
+	global $ml_html_banners_enable;
+	$ml_html_banners_enable = get_option("ml_html_banners_enable");
+
 	$prefiltered_html = ml_filters_get_filtered($post->post_content);
 
 	$prefiltered_html = str_replace("\n","<p></p>",$prefiltered_html);
@@ -71,7 +74,12 @@ function ipad_html($post)
 	$title .= $spaces;
 
 	
-	
-	return $init_html."<body><div id=\"content\">$spaces".$title.$html->save().$spaces."</div></body></html>";
+
+	$final_html = $init_html;
+	$final_html .= "<body><div id=\"content\">";
+	$final_html .= $spaces;
+	$final_html .= $title.$html->save().$spaces."</div></body></html>";
+
+	return $final_html;
 }
 ?>

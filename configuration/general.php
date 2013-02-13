@@ -6,13 +6,32 @@ add_action('wp_ajax_ml_configuration_connection_test', 'ml_configuration_connect
 function ml_configuration_general_callback()
 {
 	global $ml_automatic_image_resize;
-	//save api key
+	global $ml_push_notification_enabled;
+	global $ml_html_banners_enable;
+
 	if(isset($_POST['ml_automatic_image_resize']))
 	{
 		$ml_automatic_image_resize = $_POST['ml_automatic_image_resize'] == "true";
 		ml_set_generic_option("ml_automatic_image_resize",
 							   $ml_automatic_image_resize);
 	}
+
+	//push notifications enabled
+	if(isset($_POST['ml_push_notification_enabled']))
+	{
+		$ml_push_notification_enabled = $_POST['ml_push_notification_enabled'] == "true";
+		ml_set_generic_option("ml_push_notification_enabled",
+							   $ml_push_notification_enabled);
+	}
+
+	//html banners
+	if(isset($_POST['ml_html_banners_enable']))
+	{
+		$ml_html_banners_enable = $_POST['ml_html_banners_enable'] == "true";
+		ml_set_generic_option("ml_html_banners_enable",
+							   $ml_html_banners_enable);
+	}
+
 
 	ml_configuration_general();
 	die();
@@ -78,7 +97,9 @@ function ml_configuration_general()
 			
 			var data = {
 				action: 'ml_configuration_general',
-				ml_automatic_image_resize:  jQuery("#ml_automatic_image_resize_active").is(":checked")
+				ml_automatic_image_resize:  jQuery("#ml_automatic_image_resize_active").is(":checked"),
+				ml_push_notification_enabled: jQuery("#ml_push_notification_enabled").is(":checked"),
+				ml_html_banners_enable: jQuery("#ml_html_banners_enable").is(":checked"),
 			};
 			
 			$.post(ajaxurl, data, function(response) {
@@ -126,8 +147,13 @@ function ml_configuration_general()
 function ml_configuration_general_div()
 {
 	global $ml_automatic_image_resize;
-	
+	global $ml_push_notification_enabled;
+	global $ml_html_banners_enable;
+
 	$ml_automatic_image_resize = get_option('ml_automatic_image_resize');
+	$ml_push_notification_enabled = get_option('ml_push_notification_enabled');
+	$ml_html_banners_enable = get_option('ml_html_banners_enable');
+
 	?>
 	<h3 style="font-family:arial;font-size:20px;font-weight:normal;padding:10px;">General</h3>
 	
@@ -140,6 +166,28 @@ function ml_configuration_general_div()
 				}
 			?>
 			/> Automatic resize main post image
+	</h2>
+
+	<h2 style="font-size:20px;font-weight:normal;padding:10px;">
+	<input id="ml_push_notification_enabled" type="checkbox"
+		<?php
+			if($ml_push_notification_enabled)
+			{
+				echo " checked ";
+			}
+		?>
+		/> Push notifications enable
+	</h2>
+
+	<h2 style="font-size:20px;font-weight:normal;padding:10px;">
+	<input id="ml_html_banners_enable" type="checkbox"
+		<?php
+			if($ml_html_banners_enable)
+			{
+				echo " checked ";
+			}
+		?>
+		/> HTML banners enable
 	</h2>
 
 	<div style="margin-left:20px;">
