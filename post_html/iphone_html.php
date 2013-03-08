@@ -1,12 +1,13 @@
 <?php
 function iphone_html($post)
 {
+	global $ml_html_banners_enable;
+	$ml_html_banners_enable = get_option("ml_html_banners_enable");
+
 	$prefiltered_html = ml_filters_get_filtered($post->post_content);
 
-	$prefiltered_html = str_replace("\n","<p></p>",$post->post_content);
- 	$prefiltered_html = preg_replace("/\[caption.*\"\]/", '', $prefiltered_html);
- 	$prefiltered_html = preg_replace("/\[\/caption\]/", '', $prefiltered_html);
-
+	$prefiltered_html = str_replace("\n","<p></p>",$prefiltered_html);
+ 	
 	$html = str_get_html($prefiltered_html);	
 	
 	$img_tags = $html->find('img');
@@ -45,6 +46,9 @@ function iphone_html($post)
 	$header .= "<link rel=\"StyleSheet\" href=\"".plugin_dir_url(__FILE__)."css/iphone.css\" type=\"text/css\"  media=\"screen\">";
 
 	$header .= "<link rel=\"StyleSheet\" href=\"".plugin_dir_url(__FILE__)."css/iphone_portrait.css\" type=\"text/css\"  media=\"screen\" id=\"orient_css\">";
+	
+	$header .= ml_filters_header($post->postID);
+
 	$header .= "</head>";
 
 	
@@ -53,9 +57,22 @@ function iphone_html($post)
 	$spaces = "<p>&nbsp;</p>";
 	
 	$title = "<h4 align='left'>".$post->post_title."</h4>";
-	$title .= "<table width='100%'><tr><td class='article_date' align=left>".mysql2date('l, F j, Y',$post->post_date)."</td><td class='author'  align=right>".get_author_name($post->post_author)."</td></tr></table><p>&nbsp;</p>";
+	$title .= "<table width='100%'><tr><td class='article_date' align=left>".mysql2date('l j F Y',$post->post_date)."</td><td class='author'  align=right>".get_author_name($post->post_author)."</td></tr></table><p>&nbsp;</p>";
 	
+
+	$final_html = $init_html;
+
+	if($ml_html_banners_enable) {
+		$final_html .= "<body><div id=\"content\">";
+		$final_html .= $spaces;
+	}
+	else
+	{
+		$final_html .= "<body><div id=\"content\" style='margin-top:-17px;'>";
+	}
 	
-	return $init_html."<body onorientationchange=\"mobiloud_orient();\"><div id=\"content\"><p>&nbsp;</p>".$title.$html->save().$spaces."</div></body></html>";
+	$final_html .= $title.$html->save().$spaces."</div></body></html>";
+
+	return $final_html;
 }
 ?>
