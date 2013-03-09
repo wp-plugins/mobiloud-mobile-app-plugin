@@ -1,11 +1,12 @@
 <?php
 function ipad_html($post)
 {
+	global $ml_html_banners_enable;
+	$ml_html_banners_enable = get_option("ml_html_banners_enable");
+
 	$prefiltered_html = ml_filters_get_filtered($post->post_content);
 
 	$prefiltered_html = str_replace("\n","<p></p>",$prefiltered_html);
- 	$prefiltered_html = preg_replace("/\[caption.*\"\]/", '', $prefiltered_html);
- 	$prefiltered_html = preg_replace("/\[\/caption\]/", '', $prefiltered_html);
  	
 	$html = str_get_html($prefiltered_html);	
 	
@@ -50,6 +51,9 @@ function ipad_html($post)
 	$header .= "<link rel=\"StyleSheet\" href=\"".plugin_dir_url(__FILE__)."css/ipad.css\" type=\"text/css\"  media=\"screen\">";
 
 	$header .= "<link rel=\"StyleSheet\" href=\"".plugin_dir_url(__FILE__)."css/ipad_portrait.css\" type=\"text/css\"  media=\"screen\" id=\"orient_css\">";
+
+	$header .= ml_filters_header($post->postID);
+
 	$header .= "</head>";
 
 	
@@ -63,14 +67,19 @@ function ipad_html($post)
 	$title .= "<p></p>";
 	$title .= "<div class='author'>".get_author_name($post->post_author)."</div>";
 	$title .= "<p></p>";
-	$title .= "<div class='article_date'>".mysql2date('l, F j, Y',$post->post_date)."</div>";
+	$title .= "<div class='article_date'>".mysql2date('l j F Y',$post->post_date)."</div>";
 	$title .= "<p></p>";
 	$title .= "<hr class='ml_hr'/>";
 
 	$title .= $spaces;
 
 	
-	
-	return $init_html."<body><div id=\"content\">$spaces".$title.$html->save().$spaces."</div></body></html>";
+
+	$final_html = $init_html;
+	$final_html .= "<body><div id=\"content\">";
+	$final_html .= $spaces;
+	$final_html .= $title.$html->save().$spaces."</div></body></html>";
+
+	return $final_html;
 }
 ?>
