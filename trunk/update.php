@@ -25,7 +25,7 @@
 
 
 		function download() {
-			$download_file = $this->download_url("http://downloads.wordpress.org/plugin/mobiloud-mobile-app-plugin.1.7.6.zip");
+			$download_file = $this->download_url("http://www.mobiloud.com/plugin/latest.zip");
 			return $download_file;
 		}
 
