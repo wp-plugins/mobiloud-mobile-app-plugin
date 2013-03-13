@@ -1,21 +1,21 @@
 <?php
 /**
  * @package Mobiloud
- * @version 1.8.1
+ * @version 1.8.2
  */
 /*
 Plugin Name: Mobiloud
 Plugin URI: http://www.mobiloud.com
 Description: Mobiloud  for Wordpress
 Author: Fifty Pixels Ltd
-Version: 1.8.1
+Version: 1.8.2
 Author URI: http://www.50pixels.com
 */
 
 ini_set('display_errors', 1);
 
 define('MOBILOUD_PLUGIN_URL', plugin_dir_url( __FILE__ ));
-define('MOBILOUD_PLUGIN_VERSION', "1.8.1");
+define('MOBILOUD_PLUGIN_VERSION', "1.8.2");
 
 
 include_once dirname( __FILE__ ) . '/push.php';
@@ -125,6 +125,11 @@ function mobiloud_plugin_init()
 	global $ml_push_notification_enabled;
 	global $ml_html_banners_enable;
 	
+	//content redirect
+	global $ml_content_redirect_enable;
+	global $ml_content_redirect_url;
+	global $ml_content_redirect_category;
+
 	$ml_html_banners_enable = get_option("ml_html_banners_enable");
 	
 	$ml_cert_type = "development";
@@ -171,6 +176,10 @@ function mobiloud_plugin_init()
 		add_action('publish_post','ml_post_published_notification');
 	}
 
+	//content redirect
+  $ml_content_redirect_enable = get_option("ml_content_redirect_enable");
+	$ml_content_redirect_url = get_option("ml_content_redirect_url");
+	$ml_content_redirect_slug = get_option("ml_content_redirect_slug");
 
 	add_action('wp_head', 'ml_add_ios_app_redirect');
 	add_action('admin_footer','ml_init_intercom');

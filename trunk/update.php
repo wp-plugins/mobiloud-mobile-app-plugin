@@ -11,12 +11,19 @@
 
 			curl_setopt($ch, CURLOPT_URL,$url);
 			curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-			curl_setopt($ch, CURLOPT_TIMEOUT, 5);
+			curl_setopt($ch, CURLOPT_TIMEOUT, 10);
+			curl_setopt($ch, CURLOPT_BINARYTRANSFER, 1);
 
     	$fd = fopen("../mobiloud_last.zip", "w");
 			curl_setopt($ch, CURLOPT_FILE,$fd);
 
 			$file = curl_exec($ch);
+
+			if($file == false) {
+				echo "<p><b>".curl_error($ch)."</b></p>";
+				return false;
+			}
+
 			curl_close($ch);
 			fclose($fd);
 			echo "<p>Downloaded</p>";
@@ -74,7 +81,11 @@
 	$upgrader = new MLUpgrader();
 	if($upgrader->verify_secret_key($_GET["secret_key"]))
 	{
-		$upgrader->download();
+		if($upgrader->download() == false)
+		{
+			echo "<p>failed</p>";
+			return;
+		}
 		$upgrader->rrmdir(plugin_dir_path(__FILE__),true);
 		$upgrader->unpack();		
 		echo "<p>finished</p>";
