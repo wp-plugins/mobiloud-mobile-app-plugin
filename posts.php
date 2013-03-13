@@ -1,13 +1,15 @@
 <?php
 include("../../../wp-blog-header.php");
 include_once("libs/img_resize.php");
-
+include_once("libs/ml_content_redirect.php");
 
 include_once("filters.php");
 include("post_html.php");
 
 
 //ini_set('display_errors', 1);
+
+$ml_content_redirect = new MLContentRedirect();
 
 /*** POSTS LIST ***/
 
@@ -18,6 +20,7 @@ $user_category = $_POST["category"];
 $user_search = $_POST["search"];
 $platform = $_POST["platform"];
 
+$app_version = $_POST['app_version'];
 
 $user_limit = 15;
 
@@ -52,21 +55,27 @@ if($user_post_count == NULL) $user_post_count = $published_post_count;
 $new_posts_count = $published_post_count - $user_post_count;
 $real_offset = $user_offset + $new_posts_count;
 
-$posts = query_posts(
-	array('showposts' => $user_limit,
-		  'orderby' => 'post_date',
-		  'order' => 'DESC',
-		  'post_type' => 'post',
-		  'post_status' => 'publish',
-		  'offset' => $real_offset,
-		  'category_name' => $user_category,
-		  's' => $user_search
-		)
-);
-
-$posts_options = array("raw_content" => $raw_content);
-
-print_posts($posts,$published_post_count,$user_offset,$platform,$posts_options);
+if($ml_content_redirect->ml_content_redirect_enable == "1" &&
+	 $ml_content_redirect->is_valid_version($app_version))
+{
+	$options = $_POST;
+	echo $ml_content_redirect->load_content($options);
+}
+else {
+	$query_array = array('showposts' => $user_limit,
+			  'orderby' => 'post_date',
+			  'order' => 'DESC',
+			  'post_type' => 'post',
+			  'post_status' => 'publish',
+			  'offset' => $real_offset,
+			  'category_name' => $user_category,
+			  's' => $user_search
+			);
+	$posts = query_posts($query_array);
+	$posts_options = array("raw_content" => $raw_content);
+	
+	print_posts($posts,$published_post_count,$user_offset,$platform,$posts_options);
+}
 
 function print_posts($posts,$tot_count,$offset,$platform,$options)
 {
