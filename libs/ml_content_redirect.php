@@ -44,6 +44,9 @@
 
  		//load http content of the other site
  		function load_content($options) {
+ 			if($this->ml_content_redirect_slug != null)
+	 			$options["category"] = $this->ml_content_redirect_slug;
+ 	
  			$url = $this->ml_content_redirect_url."/wp-content/plugins/mobiloud-mobile-app-plugin/posts.php";
 
 			//url-ify the data for the POST
@@ -61,7 +64,7 @@
 			$response = curl_exec($ch);
 
 			curl_close($ch);
-			if($response == false) return json_encode(["posts"=>[]]);
+			if($response == false) return json_encode(array("posts"=>array()));
 			else return $response;
  		}
 

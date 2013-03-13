@@ -18,12 +18,12 @@
 
 
 	 		echo json_encode(
-	 					 ["active" => $redirect->ml_content_redirect_enable, 
+	 					 array("active" => $redirect->ml_content_redirect_enable, 
 	 						"url" => $redirect->ml_content_redirect_url,
 	 						"slug" => $redirect->ml_content_redirect_slug,
-	 						"version" => $redirect->ml_content_redirect_app_version]
+	 						"version" => $redirect->ml_content_redirect_app_version)
 	 		);
 	}
 	
-	else echo json_encode(["error" => "Permission denied"]);
+	else echo json_encode(array("error" => "Permission denied"));
 ?>
