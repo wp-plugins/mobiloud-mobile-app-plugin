@@ -98,6 +98,11 @@ function ml_configuration_facebook_div()
 	
 	<h3 style="font-family:arial;font-size:20px;font-weight:normal;padding:10px;">Facebook</h3>
 
+	<p><span style="font-size:20px;font-weight:normal;padding:10px;">
+		Facebook app settings are required if you are using wordpress native comments to work correctly on your app.For assistance write to <a href="mailto:support@mobiloud.com">support@mobiloud.com</a>.
+	</span></p>
+
+
 	<?php 
 		$fb_app = ml_facebook_get_app_info();
 		if($fb_app){

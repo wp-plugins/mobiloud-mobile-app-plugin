@@ -190,12 +190,6 @@ function ml_configuration_general_div()
 		/> HTML banners enable
 	</h2>
 
-	<div style="margin-left:20px;">
-		<p class="submit" align="left">
-			<input type="submit" id="ml_configuration_connection_test_submit" 
-											   value="<?php _e('Test connection to Mobiloud'); ?>" />
-		</p>
-	</div>
 
 	
 	<div style="margin-right:20px;">

@@ -3,6 +3,8 @@ include("../../../wp-blog-header.php");
 include_once("libs/img_resize.php");
 include_once("libs/ml_content_redirect.php");
 
+include_once("categories.php");
+
 include_once("filters.php");
 include("post_html.php");
 
@@ -74,6 +76,46 @@ else {
 	$posts = query_posts($query_array);
 	$posts_options = array("raw_content" => $raw_content);
 	
+	$sticky_category_1 = get_option('sticky_category_1');
+	$sticky_category_2 = get_option('sticky_category_2');
+
+	//must be the second, first because the first will be prepended
+	if($sticky_category_2 && ($real_offset == NULL || $real_offset == 0))
+	{
+		//loading second 3 posts of the sticky category
+		$cat = ml_get_category($sticky_category_2);
+		if($cat)
+		{
+			$query_array['showposts'] = 3;
+			$query_array['category_name'] = $cat->slug;
+			$cat_2_posts = query_posts($query_array);
+			foreach($cat_2_posts as $p)
+			{
+				$p->sticky = true;
+			}
+			$posts = array_merge($cat_2_posts,$posts);
+		}
+	}
+
+	if($sticky_category_1 && ($real_offset == NULL || $real_offset == 0))
+	{
+		//loading first 3 posts of the sticky category
+		$cat = get_category($sticky_category_1);
+		if($cat)
+		{
+			$query_array['showposts'] = 3;
+			$query_array['category_name'] = $cat->slug;
+			$cat_1_posts = query_posts($query_array);
+			foreach($cat_1_posts as $p)
+			{
+				$p->sticky = true;
+			}
+
+			$posts = array_merge($cat_1_posts,$posts);
+
+		}
+	}
+
 	print_posts($posts,$published_post_count,$user_offset,$platform,$posts_options);
 }
 
@@ -199,7 +241,11 @@ function print_posts($posts,$tot_count,$offset,$platform,$options)
 			$final_post["content"] = ipad_html($post);
 		else
 			$final_post["content"] = iphone_html($post);
-				
+		
+		//sticky ?
+		$final_post["sticky"] = is_sticky($post->ID) || $post->sticky;
+
+
 		$final_posts["posts"][] = $final_post;
 	}
 

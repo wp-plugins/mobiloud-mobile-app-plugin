@@ -1,21 +1,21 @@
 <?php
 /**
  * @package Mobiloud
- * @version 1.8.2
+ * @version 1.8.5
  */
 /*
 Plugin Name: Mobiloud
 Plugin URI: http://www.mobiloud.com
 Description: Mobiloud  for Wordpress
 Author: Fifty Pixels Ltd
-Version: 1.8.2
+Version: 1.8.5
 Author URI: http://www.50pixels.com
 */
 
 ini_set('display_errors', 1);
 
 define('MOBILOUD_PLUGIN_URL', plugin_dir_url( __FILE__ ));
-define('MOBILOUD_PLUGIN_VERSION', "1.8.2");
+define('MOBILOUD_PLUGIN_VERSION', "1.8.5");
 
 
 include_once dirname( __FILE__ ) . '/push.php';
@@ -28,13 +28,15 @@ include_once dirname( __FILE__ ) . '/intercom.php';
 register_activation_hook(__FILE__,'mobiloud_install');
 add_action('init', 'mobiloud_plugin_init');
 
-
 //INSTALLATION
 //tables creation
 function mobiloud_install()
 {
-	
 	ml_notifications_install();
+
+	ml_categories_install();
+	ml_pages_install();
+
 	ml_facebook_install();
 
 	ml_init_ios_app_redirect();
@@ -62,6 +64,45 @@ function ml_notifications_install()
 
 }
 
+function ml_categories_install()
+{
+	global $wpdb;
+	$table_name = $wpdb->prefix . "mobiloud_categories";
+	
+	if($wpdb->get_var("SHOW TABLES LIKE '$table_name'") != $table_name) {
+		//install della tabella
+		$sql = "CREATE TABLE " . $table_name . " (
+			  id bigint(11) NOT NULL AUTO_INCREMENT,
+			  time bigint(11) DEFAULT '0' NOT NULL,
+			  cat_ID bigint(11) NOT NULL,
+			  UNIQUE KEY id (id)
+			);";
+			
+		require_once(ABSPATH . 'wp-admin/includes/upgrade.php');
+		dbDelta($sql);
+	}
+
+}
+
+function ml_pages_install()
+{
+	global $wpdb;
+	$table_name = $wpdb->prefix . "mobiloud_pages";
+	
+	if($wpdb->get_var("SHOW TABLES LIKE '$table_name'") != $table_name) {
+		//install della tabella
+		$sql = "CREATE TABLE " . $table_name . " (
+			  id bigint(11) NOT NULL AUTO_INCREMENT,
+			  time bigint(11) DEFAULT '0' NOT NULL,
+			  page_ID bigint(11) NOT NULL,
+			  UNIQUE KEY id (id)
+			);";
+			
+		require_once(ABSPATH . 'wp-admin/includes/upgrade.php');
+		dbDelta($sql);
+	}
+
+}
 
 function ml_facebook_install()
 {
@@ -104,6 +145,8 @@ function mobiloud_plugin_menu()
 
 function mobiloud_plugin_init()
 {
+	ml_categories_install();
+
 	global $ml_api_key, $ml_secret_key, $ml_server_host, $ml_server_port;
 	global $ml_last_post_id;
 	

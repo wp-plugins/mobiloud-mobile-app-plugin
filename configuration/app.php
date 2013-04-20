@@ -105,6 +105,14 @@ function ml_configuration_app_redirect_div()
 	</h3>
 	
 	<h2 style="font-size:20px;font-weight:normal;padding:10px;">
+		<img src="<?=plugins_url("smartappbanner.png",dirname(__FILE__));?>" width="640" height="150">
+	</h2>
+
+	<p style="font-size:20px;font-weight:normal;padding:10px;">Smart&nbsp;App&nbsp;Banners&nbsp;help you promote your app from your website in a<br>
+simple and unobtrusive way. To enable them make sure your Apple ID is<br>
+entered below.</p>
+
+	<h2 style="font-size:20px;font-weight:normal;padding:10px;">
 		<input id="ml_popup_message_on_mobile_active" type="checkbox"
 			<?php
 				if($ml_popup_message_on_mobile_active)
@@ -112,7 +120,7 @@ function ml_configuration_app_redirect_div()
 					echo " checked ";
 				}
 			?>
-			/> Active
+			/> Active Smart App Banners
 	</h2>
 
 	<!-- ACTIVE ? -->
@@ -132,10 +140,16 @@ function ml_configuration_app_redirect_div()
 	<!-- DESCRIPTION -->
 	<div style="font-size:12px;padding:5px;margin-left:10%;margin-top:20px;margin-bottom:20px;width:70%;
 		text-align:justify;">
-			Notifies users who are using mobile web browsers about the availability of your app on the App Store. 
-			The user will receive a popup and be redirected to your App Store URL. 
-			They will also have the option to cancel and continue viewing your website with the browser.				
-	</div>
+	  <p>Once your app is live on App Store, find your app ID following the instructions below.	  </p>
+	  <ol>
+	    <li>Open iTunes.</li>
+	    <li>Search for your app.</li>
+	    <li>Click your app's name and copy the URL (right-click for PC users).</li>
+	    </ol>
+	  <p>App store URL’s will be in the following format:</p>
+	  <div>http://itunes.apple.com/[country]/app/[App –Name]/id[App-ID]?mt=8</div>
+	  <p><a href="http://support.google.com/admob/answer/1620111?hl=en" target="_blank"></a>Extract the [App-ID] part.</p>
+    </div>
 	
 	<div style="margin-right:20px;">
 		<p class="submit" align="right">
