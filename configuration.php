@@ -1,10 +1,17 @@
 <?php
 include_once dirname( __FILE__ ) . '/push.php';
+include_once dirname( __FILE__ ) . '/categories.php';
+include_once dirname( __FILE__ ) . '/pages.php';
+
 include_once dirname( __FILE__ ) . '/configuration/api.php';
 include_once dirname( __FILE__ ) . '/configuration/notifications.php';
 include_once dirname( __FILE__ ) . '/configuration/app.php';
-include_once dirname( __FILE__ ) . '/configuration/facebook.php';
 include_once dirname( __FILE__ ) . '/configuration/general.php';
+include_once dirname( __FILE__ ) . '/configuration/categories.php';
+include_once dirname( __FILE__ ) . '/configuration/pages.php';
+include_once dirname( __FILE__ ) . '/configuration/sticky_categories.php';
+include_once dirname( __FILE__ ) . '/configuration/facebook.php';
+
 
 
 function mobiloud_configuration_page()
@@ -23,7 +30,13 @@ function mobiloud_configuration_page()
 
 		<p>&nbsp;</p>
 		
-		<div class="narrow">			
+		<div class="narrow">
+
+			<!-- GENERAL -->
+			<div id="ml_configuration_general" class="stuffbox">
+				<?php ml_configuration_general_ajax_load(); ?>
+			</div>
+			
 			<!-- API -->
 			<div id="ml_configuration_api_keys" class="stuffbox">
 				<?php ml_configuration_api_keys_ajax_load(); ?>
@@ -39,11 +52,21 @@ function mobiloud_configuration_page()
 				<?php ml_configuration_app_redirect_ajax_load(); ?>
 			</div>
 
-			<!-- GENERAL -->
-			<div id="ml_configuration_general" class="stuffbox">
-				<?php ml_configuration_general_ajax_load(); ?>
+			<!-- CATEGORIES -->
+			<div id="ml_configuration_categories" class="stuffbox">
+				<?php ml_configuration_categories_ajax_load(); ?>
 			</div>
 		
+			<!-- STICKY CATEGORIES -->
+			<div id="ml_configuration_sticky_categories" class="stuffbox">
+				<?php ml_configuration_sticky_categories_ajax_load(); ?>
+			</div>
+
+			<!-- PAGES -->
+			<div id="ml_configuration_pages" class="stuffbox">
+				<?php ml_configuration_pages_ajax_load(); ?>
+			</div>
+
 			<!-- FACEBOOK -->
 			<div id="ml_facebook_keys" class="stuffbox">
 				<?php ml_configuration_facebook_ajax_load(); ?>

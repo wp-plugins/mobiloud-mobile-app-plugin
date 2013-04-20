@@ -1,6 +1,9 @@
 <?php 
 
 	class MobiloudFilter {
+		public function header($post_id) {
+			return "";
+		}
 
 
 		//filter function
@@ -42,6 +45,16 @@
 		return $post_html;
 	}
 
+	function ml_filters_header($post_id) {
+		global $ml_filters;
+		$head_html = "";
+
+		foreach($ml_filters as $filter)
+		{
+			$head_html .= $filter->header($post_id);
+		}
+		return $head_html;		
+	}
 
 	ml_filters_init();
 

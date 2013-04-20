@@ -1,21 +1,21 @@
 <?php
 /**
  * @package Mobiloud
- * @version 1.7.1
+ * @version 1.8.5
  */
 /*
 Plugin Name: Mobiloud
 Plugin URI: http://www.mobiloud.com
 Description: Mobiloud  for Wordpress
 Author: Fifty Pixels Ltd
-Version: 1.7.1
+Version: 1.8.5
 Author URI: http://www.50pixels.com
 */
 
 ini_set('display_errors', 1);
 
 define('MOBILOUD_PLUGIN_URL', plugin_dir_url( __FILE__ ));
-define('MOBILOUD_PLUGIN_VERSION', "1.7.1");
+define('MOBILOUD_PLUGIN_VERSION', "1.8.5");
 
 
 include_once dirname( __FILE__ ) . '/push.php';
@@ -28,13 +28,15 @@ include_once dirname( __FILE__ ) . '/intercom.php';
 register_activation_hook(__FILE__,'mobiloud_install');
 add_action('init', 'mobiloud_plugin_init');
 
-
 //INSTALLATION
 //tables creation
 function mobiloud_install()
 {
-	
 	ml_notifications_install();
+
+	ml_categories_install();
+	ml_pages_install();
+
 	ml_facebook_install();
 
 	ml_init_ios_app_redirect();
@@ -62,6 +64,45 @@ function ml_notifications_install()
 
 }
 
+function ml_categories_install()
+{
+	global $wpdb;
+	$table_name = $wpdb->prefix . "mobiloud_categories";
+	
+	if($wpdb->get_var("SHOW TABLES LIKE '$table_name'") != $table_name) {
+		//install della tabella
+		$sql = "CREATE TABLE " . $table_name . " (
+			  id bigint(11) NOT NULL AUTO_INCREMENT,
+			  time bigint(11) DEFAULT '0' NOT NULL,
+			  cat_ID bigint(11) NOT NULL,
+			  UNIQUE KEY id (id)
+			);";
+			
+		require_once(ABSPATH . 'wp-admin/includes/upgrade.php');
+		dbDelta($sql);
+	}
+
+}
+
+function ml_pages_install()
+{
+	global $wpdb;
+	$table_name = $wpdb->prefix . "mobiloud_pages";
+	
+	if($wpdb->get_var("SHOW TABLES LIKE '$table_name'") != $table_name) {
+		//install della tabella
+		$sql = "CREATE TABLE " . $table_name . " (
+			  id bigint(11) NOT NULL AUTO_INCREMENT,
+			  time bigint(11) DEFAULT '0' NOT NULL,
+			  page_ID bigint(11) NOT NULL,
+			  UNIQUE KEY id (id)
+			);";
+			
+		require_once(ABSPATH . 'wp-admin/includes/upgrade.php');
+		dbDelta($sql);
+	}
+
+}
 
 function ml_facebook_install()
 {
@@ -92,7 +133,7 @@ function mobiloud_plugin_menu()
 {	
 	add_object_page("Mobiloud", "Mobiloud",NULL, "mobiloud_menu","activate_plugins",plugin_dir_url(__FILE__)."/menu_logo.png",25);
 	
-	add_submenu_page('mobiloud_menu', 'Mobiloud Analytics',"Analytics", "activate_plugins",'mobiloud_charts' , "mobiloud_charts"); 	
+	//add_submenu_page('mobiloud_menu', 'Mobiloud Analytics',"Analytics", "activate_plugins",'mobiloud_charts' , "mobiloud_charts"); 	
 	
 	add_submenu_page( 'mobiloud_menu', 'Mobiloud Configuration', 'Configuration', "activate_plugins", 'mobiloud_menu_configuration', 'mobiloud_configuration_page');
 }
@@ -104,6 +145,8 @@ function mobiloud_plugin_menu()
 
 function mobiloud_plugin_init()
 {
+	ml_categories_install();
+
 	global $ml_api_key, $ml_secret_key, $ml_server_host, $ml_server_port;
 	global $ml_last_post_id;
 	
@@ -120,8 +163,17 @@ function mobiloud_plugin_init()
 	//mobile promotional message
 	global $ml_popup_message_on_mobile_active, $ml_popup_message_on_mobile_url;
 	
+	//general configuration
 	global $ml_automatic_image_resize;
+	global $ml_push_notification_enabled;
+	global $ml_html_banners_enable;
 	
+	//content redirect
+	global $ml_content_redirect_enable;
+	global $ml_content_redirect_url;
+	global $ml_content_redirect_category;
+
+	$ml_html_banners_enable = get_option("ml_html_banners_enable");
 	
 	$ml_cert_type = "development";
 	$ml_server_host = "https://api.mobiloud.com";
@@ -160,18 +212,26 @@ function mobiloud_plugin_init()
 		
 	}
 
-	add_action('publish_post','ml_post_published_notification');
+	//push notifications
+	$ml_push_notification_enabled = get_option("ml_push_notification_enabled");
+	if($ml_push_notification_enabled)
+	{
+		add_action('publish_post','ml_post_published_notification');
+	}
+
+	//content redirect
+  $ml_content_redirect_enable = get_option("ml_content_redirect_enable");
+	$ml_content_redirect_url = get_option("ml_content_redirect_url");
+	$ml_content_redirect_slug = get_option("ml_content_redirect_slug");
+
 	add_action('wp_head', 'ml_add_ios_app_redirect');
 	add_action('admin_footer','ml_init_intercom');
 
-	add_filter( 'get_avatar', 'ml_get_avatar',10,2);
+	add_filter('get_avatar', 'ml_get_avatar',10,2);
 	
-
 	
 	wp_register_style('mobiloud.css', MOBILOUD_PLUGIN_URL . 'mobiloud.css');
 	wp_enqueue_style("mobiloud.css");
-	
-	
 }
 
 

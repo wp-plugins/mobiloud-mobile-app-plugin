@@ -1,7 +1,8 @@
 <?php
 	include("../../../wp-blog-header.php");
 
-	$info = array("version" => "1.7.1",
+	$info = array("version" => "1.8.5",
+				 "name" => get_bloginfo("name"),
 				 "plugin_dir_url" => plugin_dir_url(__FILE__));
-	print_r($info);
+	echo json_encode($info);
 ?>

@@ -1,13 +1,17 @@
 <?php
 include("../../../wp-blog-header.php");
 include_once("libs/img_resize.php");
+include_once("libs/ml_content_redirect.php");
 
+include_once("categories.php");
 
 include_once("filters.php");
 include("post_html.php");
 
 
 //ini_set('display_errors', 1);
+
+$ml_content_redirect = new MLContentRedirect();
 
 /*** POSTS LIST ***/
 
@@ -18,6 +22,7 @@ $user_category = $_POST["category"];
 $user_search = $_POST["search"];
 $platform = $_POST["platform"];
 
+$app_version = $_POST['app_version'];
 
 $user_limit = 15;
 
@@ -52,21 +57,67 @@ if($user_post_count == NULL) $user_post_count = $published_post_count;
 $new_posts_count = $published_post_count - $user_post_count;
 $real_offset = $user_offset + $new_posts_count;
 
-$posts = query_posts(
-	array('showposts' => $user_limit,
-		  'orderby' => 'post_date',
-		  'order' => 'DESC',
-		  'post_type' => 'post',
-		  'post_status' => 'publish',
-		  'offset' => $real_offset,
-		  'category_name' => $user_category,
-		  's' => $user_search
-		)
-);
+if($ml_content_redirect->ml_content_redirect_enable == "1" &&
+	 $ml_content_redirect->is_valid_version($app_version))
+{
+	$options = $_POST;
+	echo $ml_content_redirect->load_content($options);
+}
+else {
+	$query_array = array('showposts' => $user_limit,
+			  'orderby' => 'post_date',
+			  'order' => 'DESC',
+			  'post_type' => 'post',
+			  'post_status' => 'publish',
+			  'offset' => $real_offset,
+			  'category_name' => $user_category,
+			  's' => $user_search
+			);
+	$posts = query_posts($query_array);
+	$posts_options = array("raw_content" => $raw_content);
+	
+	$sticky_category_1 = get_option('sticky_category_1');
+	$sticky_category_2 = get_option('sticky_category_2');
 
-$posts_options = array("raw_content" => $raw_content);
+	//must be the second, first because the first will be prepended
+	if($sticky_category_2 && ($real_offset == NULL || $real_offset == 0))
+	{
+		//loading second 3 posts of the sticky category
+		$cat = ml_get_category($sticky_category_2);
+		if($cat)
+		{
+			$query_array['showposts'] = 3;
+			$query_array['category_name'] = $cat->slug;
+			$cat_2_posts = query_posts($query_array);
+			foreach($cat_2_posts as $p)
+			{
+				$p->sticky = true;
+			}
+			$posts = array_merge($cat_2_posts,$posts);
+		}
+	}
 
-print_posts($posts,$published_post_count,$user_offset,$platform,$posts_options);
+	if($sticky_category_1 && ($real_offset == NULL || $real_offset == 0))
+	{
+		//loading first 3 posts of the sticky category
+		$cat = get_category($sticky_category_1);
+		if($cat)
+		{
+			$query_array['showposts'] = 3;
+			$query_array['category_name'] = $cat->slug;
+			$cat_1_posts = query_posts($query_array);
+			foreach($cat_1_posts as $p)
+			{
+				$p->sticky = true;
+			}
+
+			$posts = array_merge($cat_1_posts,$posts);
+
+		}
+	}
+
+	print_posts($posts,$published_post_count,$user_offset,$platform,$posts_options);
+}
 
 function print_posts($posts,$tot_count,$offset,$platform,$options)
 {
@@ -190,7 +241,11 @@ function print_posts($posts,$tot_count,$offset,$platform,$options)
 			$final_post["content"] = ipad_html($post);
 		else
 			$final_post["content"] = iphone_html($post);
-				
+		
+		//sticky ?
+		$final_post["sticky"] = is_sticky($post->ID) || $post->sticky;
+
+
 		$final_posts["posts"][] = $final_post;
 	}
 
