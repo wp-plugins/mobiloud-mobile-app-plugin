@@ -92,6 +92,12 @@ else {
 			foreach($cat_2_posts as $p)
 			{
 				$p->sticky = true;
+				foreach ( $posts as $i => $v ) 
+				{
+   	    	if ($v->ID == $p->ID) 
+		      	array_splice($posts, $i,1);
+  			}
+  
 			}
 			$posts = array_merge($cat_2_posts,$posts);
 		}
@@ -109,8 +115,13 @@ else {
 			foreach($cat_1_posts as $p)
 			{
 				$p->sticky = true;
+				foreach ( $posts as $i => $v ) 
+				{
+   	    	if ($v->ID == $p->ID) 
+		      	array_splice($posts, $i,1);
+  			}
+  
 			}
-
 			$posts = array_merge($cat_1_posts,$posts);
 
 		}
