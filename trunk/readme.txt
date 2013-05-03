@@ -1,6 +1,6 @@
 === Mobiloud Mobile App Plugin ===
 Contributors: alvises, psac50
-Tags: mobile app, iOS, REST API, push notification
+Tags: iOS, mobile app, push notification, REST, API, native app, wordpress plugin, iPad, iPhone, native, app, mobiloud, web app, iPhone app, mobile, touch, responsive, smartphone, tablet, mobile theme, mobile site
 Requires at least: 3.2
 Tested up to: 3.4
 Stable tag: 1.8.5
