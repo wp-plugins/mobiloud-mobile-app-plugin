@@ -76,8 +76,11 @@ else {
 	$posts = query_posts($query_array);
 	$posts_options = array("raw_content" => $raw_content);
 	
-	$sticky_category_1 = get_option('sticky_category_1');
-	$sticky_category_2 = get_option('sticky_category_2');
+	if($user_category == NULL)
+	{
+		$sticky_category_1 = get_option('sticky_category_1');
+		$sticky_category_2 = get_option('sticky_category_2');		
+	}
 
 	//must be the second, first because the first will be prepended
 	if($sticky_category_2 && ($real_offset == NULL || $real_offset == 0))
