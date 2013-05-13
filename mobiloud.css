@@ -72,3 +72,18 @@ a.ap_tab_button:hover, a.ap_tab_button_selected:link, a.ap_tab_button_selected:h
 {
 	color:#888;
 }
+
+.img_homepage{
+	text-align: center;
+}
+.img_homepage img{
+	width: 500px;
+}
+
+.ml_homepage_general{
+	width:100%;
+}
+
+.content{
+	padding: 50px 20px 10px 20px;
+}
