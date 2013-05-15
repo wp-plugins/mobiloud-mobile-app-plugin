@@ -87,3 +87,24 @@ a.ap_tab_button:hover, a.ap_tab_button_selected:link, a.ap_tab_button_selected:h
 .content{
 	padding: 50px 20px 10px 20px;
 }
+
+.center{
+	text-align: center;
+}
+
+.formContact{
+	margin-top: 20px;
+}
+
+.controls input{
+	height: 30px;
+}
+
+.controls{
+	display: block;
+}
+
+.controls label{
+	float: left;
+	margin-left: 100px;
+}
