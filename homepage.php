@@ -50,7 +50,7 @@ function mobiloud_home_page()
 						  <input type="email" id="email" name="email" placeholder="Enter your email" required>
 						</div>
 					  </div>
-					  <div class="control-group inputGroup">
+					  <div class="control-group inputGroup last">
 						<div class="controls">
 						  <label for="website">Your website</label>
 						  <input type="text" id="website" name="website" placeholder="Enter your website">
