@@ -5,7 +5,7 @@
 	
 	$website = trim($_POST['website']);
 
-	$emailTo = 'hello@mobiloud.com';
+	$emailTo = 'sales@mobiloud.com';
 	$subject = 'From '.$name;
 	$body = "New request from Mobiloud Plugin. \n\nName: $name \nEmail: $email \nWebsite: $website\n";
 	$headers = 'From: '.$name.' <'.$emailTo.'>' . "\r\n" . 'Reply-To: ' . $email;
