@@ -136,3 +136,8 @@ a.ap_tab_button:hover, a.ap_tab_button_selected:link, a.ap_tab_button_selected:h
 	font-size: 21px !important;
 	padding-top: 0 !important;
 }
+
+.bigtitle{
+	margin:0 !important;
+	padding-bottom: 10px !important;
+}
