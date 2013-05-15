@@ -27,7 +27,7 @@ function mobiloud_home_page()
 		
 		<p>&nbsp;</p>
 		
-		<div class="narrow">
+		<div class="narrow full">
 
 			<!-- GENERAL -->
 			<div class="ml_homepage_general">
@@ -57,7 +57,7 @@ function mobiloud_home_page()
 						</div>
 					  </div>
 					  
-		  			  <input type="checkbox" name="terms" value="agree" required>I agree to Mobiloud's <a href="http://mobiloud.com/terms.php">terms of service</a> and <a href="https://www.iubenda.com/privacy-policy/435863/legal">privacy policy</a>
+		  			  <input type="checkbox" name="terms" value="agree" required><span class="checkbox">I agree to Mobiloud's <a href="http://mobiloud.com/terms.php">terms of service</a> and <a href="https://www.iubenda.com/privacy-policy/435863/legal">privacy policy</span></a>
 		  			  <br /><br />
 		  			  
 					  <input type="submit" value="Get started now" id="submitted" name="submitted" class="btn-submit">

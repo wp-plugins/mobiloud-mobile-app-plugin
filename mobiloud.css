@@ -106,11 +106,22 @@ a.ap_tab_button:hover, a.ap_tab_button_selected:link, a.ap_tab_button_selected:h
 
 .controls label{
 	float: left;
-	margin-left: 100px;
+    padding-left: 15%;
+    text-align: left;
+    width: 20%;
 }
 
 .btn-submit{
 	background-color: #3dc22f;
 	color: #ffffff;
 	width: 70% !important;
+	height: 30px !important;
+}
+
+.full{
+	width: 100% !important;
+}
+
+.checkbox{
+	padding-left:20px;
 }
