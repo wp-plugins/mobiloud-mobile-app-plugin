@@ -98,6 +98,7 @@ a.ap_tab_button:hover, a.ap_tab_button_selected:link, a.ap_tab_button_selected:h
 
 .controls input{
 	height: 30px;
+	width: 300px;
 }
 
 .controls{
@@ -124,4 +125,8 @@ a.ap_tab_button:hover, a.ap_tab_button_selected:link, a.ap_tab_button_selected:h
 
 .checkbox{
 	padding-left:20px;
+}
+
+.last {
+	margin-bottom: 30px;
 }
