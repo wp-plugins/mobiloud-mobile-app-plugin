@@ -17,7 +17,7 @@ function mobiloud_home_page()
 			<div class="ml_homepage_general">
 				<div class='img_homepage'><img src="<?php echo MOBILOUD_PLUGIN_URL;?>/app_overview.png"></div>
 				<div class="content center">
-					<h1>Turn your site into a stunning app</h1>
+					<h1 class='bigtitle'>Turn your site into a stunning app</h1>
 					<h2 class='subtitle'>Enter your details below to get started</h2>
 					
 					<!-- FORM -->
