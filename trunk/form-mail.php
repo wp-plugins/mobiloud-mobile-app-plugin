@@ -12,5 +12,5 @@
 	
 	mail($emailTo, $subject, $body, $headers);
 	
-	header( 'Location: http://www.mobiloud.com/pricing.php' ) ;
+	header( 'Location: http://www.mobiloud.com/pricing.php?ref=plugin' ) ;
 ?>
