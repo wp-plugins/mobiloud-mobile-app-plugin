@@ -2,25 +2,9 @@
 
 function mobiloud_home_page()
 {
-	if(isset($_POST['submitted'])) {
-	
-	$name = trim($_POST['contactName']);
+	global $current_user;
+	get_currentuserinfo();
 
-	$email = trim($_POST['email']);
-	
-	$website = trim($_POST['website']);
-
-	$emailTo = 'hello@mobiloud.com';
-	$subject = 'From '.$name;
-	$body = "New request from Mobiloud Plugin. \n\nName: $name \nEmail: $email \nWebsite: $website\n";
-	$headers = 'From: '.$name.' <'.$emailTo.'>' . "\r\n" . 'Reply-To: ' . $email;
-	
-	mail($emailTo, $subject, $body, $headers);
-
-	$emailSent = true;
-
-}
- 
 	?>
 
 	<div class="wrap">
@@ -41,19 +25,19 @@ function mobiloud_home_page()
 					  <div class="control-group inputGroup" >
 						<div class="controls">
 						  <label for="contactName">Your name</label>
-						  <input type="text" id="contactName" name="contactName" placeholder="Enter your name" required>
+						  <input type="text" id="contactName" name="contactName" placeholder="Enter your name" value='<?= $current_user->display_name ?>' required>
 						</div>
 					  </div>
 					  <div class="control-group inputGroup">
 						<div class="controls">
 						  <label for="email">Your email</label>
-						  <input type="email" id="email" name="email" placeholder="Enter your email" required>
+						  <input type="email" id="email" name="email" placeholder="Enter your email" value='<?= $current_user->user_email ?>' required>
 						</div>
 					  </div>
 					  <div class="control-group inputGroup last">
 						<div class="controls">
 						  <label for="website">Your website</label>
-						  <input type="text" id="website" name="website" placeholder="Enter your website">
+						  <input type="text" id="website" name="website" placeholder="Enter your website" value='<?= $current_user->user_url ?>'>
 						</div>
 					  </div>
 					  
