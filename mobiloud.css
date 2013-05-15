@@ -108,3 +108,9 @@ a.ap_tab_button:hover, a.ap_tab_button_selected:link, a.ap_tab_button_selected:h
 	float: left;
 	margin-left: 100px;
 }
+
+.btn-submit{
+	background-color: #3dc22f;
+	color: #ffffff;
+	width: 70% !important;
+}
