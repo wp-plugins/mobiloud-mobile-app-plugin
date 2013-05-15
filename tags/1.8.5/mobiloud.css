@@ -1,0 +1,116 @@
+.mobiloud_page_title
+{
+	float:left;
+}
+.mobiloud_logo
+{
+	float:left;
+}
+
+a.ap_tab_button:link, a.ap_tab_button:visited
+{
+	padding:5px 30px 5px 30px;
+	background-color:#ddd;
+	color:#444;
+	text-decoration:none;
+	border:1px solid #888;
+	
+	-moz-border-radius: 15px;
+	-webkit-border-radius: 15px;
+	border-radius: 15px;
+}
+
+a.ap_tab_button:hover, a.ap_tab_button_selected:link, a.ap_tab_button_selected:hover, a.ap_tab_button_selected:visited
+{
+	padding:5px 30px 5px 30px;
+	background-color:#444;
+	border:1px solid #888;
+	text-decoration:none;
+	color:white;
+	
+	-moz-border-radius: 15px;
+	-webkit-border-radius: 15px;
+	border-radius: 15px;
+}
+
+
+.mobiloud_title, .mobiloud_text_normal, .mobiloud_service_description
+{
+	font-weight: normal;
+	font-family:"HelveticaNeue-Light","Helvetica Neue Light","Helvetica Neue",sans-serif;
+	font-size:13px;
+	color:#464646;
+}
+
+.mobiloud_service_description
+{
+	margin-left:10px;
+}
+
+.mobiloud_service_running
+{
+	font-family:"HelveticaNeue-Light","Helvetica Neue Light","Helvetica Neue",sans-serif;
+	color:green;
+}
+
+.mobiloud_service_not_running
+{
+	font-family:"HelveticaNeue-Light","Helvetica Neue Light","Helvetica Neue",sans-serif;
+	color:red;
+}
+
+.mobiloud_title
+{
+	color:gray;
+}
+.mobiloud_text_normal
+{
+	font-family:"HelveticaNeue-Light","Helvetica Neue Light","Helvetica Neue",sans-serif;
+}
+
+.mobiloud_service_description
+{
+	color:#888;
+}
+
+.img_homepage{
+	text-align: center;
+}
+.img_homepage img{
+	width: 500px;
+}
+
+.ml_homepage_general{
+	width:100%;
+}
+
+.content{
+	padding: 50px 20px 10px 20px;
+}
+
+.center{
+	text-align: center;
+}
+
+.formContact{
+	margin-top: 20px;
+}
+
+.controls input{
+	height: 30px;
+}
+
+.controls{
+	display: block;
+}
+
+.controls label{
+	float: left;
+	margin-left: 100px;
+}
+
+.btn-submit{
+	background-color: #3dc22f;
+	color: #ffffff;
+	width: 70% !important;
+}
