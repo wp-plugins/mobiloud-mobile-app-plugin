@@ -33,8 +33,8 @@ function mobiloud_home_page()
 			<div class="ml_homepage_general">
 				<div class='img_homepage'><img src="<?php echo MOBILOUD_PLUGIN_URL;?>/app_overview.png"></div>
 				<div class="content center">
-					<h1>Turn your app into a stunning app</h1>
-					<h2>Enter your details below to get started</h2>
+					<h1>Turn your site into a stunning app</h1>
+					<h2 class='subtitle'>Enter your details below to get started</h2>
 					
 					<!-- FORM -->
 					<form class="form-horizontal formContact" target="_blank" action="<?php echo MOBILOUD_PLUGIN_URL;?>form-mail.php" id="contactForm" method="post">
