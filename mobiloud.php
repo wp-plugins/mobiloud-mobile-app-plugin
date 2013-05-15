@@ -136,7 +136,7 @@ function mobiloud_plugin_menu()
 	
 	//add_submenu_page('mobiloud_menu', 'Mobiloud Analytics',"Analytics", "activate_plugins",'mobiloud_charts' , "mobiloud_charts"); 	
 	
-	add_submenu_page( 'mobiloud_menu', 'Mobiloud Homepage', 'Homepage', "activate_plugins", 'mobiloud_menu_homepage', 'mobiloud_home_page');
+	add_submenu_page( 'mobiloud_menu', 'Mobiloud Homepage', 'Welcome', "activate_plugins", 'mobiloud_menu_homepage', 'mobiloud_home_page');
 	add_submenu_page( 'mobiloud_menu', 'Mobiloud Configuration', 'Configuration', "activate_plugins", 'mobiloud_menu_configuration', 'mobiloud_configuration_page');
 }
 
