@@ -131,7 +131,7 @@ a.ap_tab_button:hover, a.ap_tab_button_selected:link, a.ap_tab_button_selected:h
 	margin-bottom: 30px;
 }
 
-h2 .subtitle{
+.subtitle{
 	color: #464646 !important;
 	font-size: 21px !important;
 	padding-top: 0 !important;
