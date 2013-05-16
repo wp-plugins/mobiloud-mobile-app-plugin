@@ -98,7 +98,8 @@ a.ap_tab_button:hover, a.ap_tab_button_selected:link, a.ap_tab_button_selected:h
 
 .controls input{
 	height: 30px;
-	width: 300px;
+	width: 40%;
+	margin-right: 150px;
 }
 
 .controls{
@@ -115,7 +116,7 @@ a.ap_tab_button:hover, a.ap_tab_button_selected:link, a.ap_tab_button_selected:h
 .btn-submit{
 	background-color: #3dc22f;
 	color: #ffffff;
-	width: 70% !important;
+	width: 50% !important;
 	height: 30px !important;
 }
 
