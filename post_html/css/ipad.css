@@ -17,7 +17,7 @@ body {
     margin-right:10%;
     width:80%;
     background:rgba(200,200,200,0.0);
-    text-align:justify;
+    text-align:left;
 }
 
 ol{} ul{} li{}
@@ -30,15 +30,15 @@ ol{} ul{} li{}
 
 hr.ml_hr
 {
-	text-align:center;
-	height:1px;
-  	border: 0;
-	background-color:#999;
+    text-align:center;
+    height:1px;
+    border: 0;
+    background-color:#999;
 }
 
 h1.title
 {
-	font-size:25px;
+    font-size:25px;
 }
 
 .author {
@@ -62,5 +62,5 @@ a:hover {color:gray;}
 
 .mobiloud_loader
 {
-	text-align:center;
+    text-align:center;
 }
