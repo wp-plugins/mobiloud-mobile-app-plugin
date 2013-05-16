@@ -12,51 +12,45 @@ body {
 
 #content
 {
-    padding:5px;
-    margin-left:1%px;
-    margin-right:1%px;                
+    padding: 0px 5px 5px 5px;
+    margin-left:10px;
+    margin-right:10px;                
     background:rgba(200,200,200,0.0);
-    text-align:justify;
+    text-align:left;
 
+}
+
+ol{} ul{} li{}
+
+.iphone_img
+{
+    text-align:center;
+    width:20px;
+}
+
+
+
+.author {
+    font-size:12px;
+    color:gray;
+}
+.article_date
+{
+    font-size:12px;
+    color:gray;
 }
 
 a:link {color:gray;}
 a:visited {color:gray;}
 a:hover {color:gray;}
 
-.ml_comment
+
+.mobiloud_media
 {
-	padding:5px;	
-	margin-top:10px;
-	background-color:rgba(245,245,245,0.4);
-	border:1px solid rgba(225,225,225,1.0);
-}
+	min-height:150px;
+}  
 
-.ml_comment_avatar
+.mobiloud_loader
 {
-	vertical-align:middle;
+	text-align:center;
 }
-
-.ml_comment_author {
-    font-size:12px;
-	font-weight:bold;
-	color: #555;
-	text-shadow: 1px  1px 0 #eee;
-}
-
-.ml_comment_text
-{
-	margin-top:5px;
-	margin-bottom:15px;
-	font-size:12px;
-	text-align: justify;
-}
-
-.ml_comment_date
-{
-	margin-bottom:5px;
-    font-size:12px;
-    color:#aaa;
-	font-weight:italic;
-}
-
