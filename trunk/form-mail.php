@@ -1,18 +1,4 @@
  <html>
-	 <head>
-		 <script type="text/javascript">
-			var _veroq = _veroq || [];
-
-			_veroq.push(['init', {
-			  api_key: '36bd54bf9afde30628102337cf6dc4306a6a212a',
-			  development_mode: true 
-			  // Turn this off when you decide to 'go live'.
-			} ]);
-
-			(function() {var ve = document.createElement('script'); ve.type = 'text/javascript'; ve.async = true; ve.src = '//getvero.com/assets/m.js'; var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ve, s);})();
-		</script>
-
-	</head>
 
 	<body>
 		<?php
@@ -33,13 +19,6 @@
 		?>
 
 		<script type="text/javascript">
-			_veroq.push(['user', {
-			  id: '1', // This ID must be unique per customer
-			  email: 'test@50pixels.com' // Replace this with the logged in customer's email
-			}]);
-	
-			_veroq.push(['track', 'new_app_init']); 
-	
 			window.location.href='http://www.mobiloud.com/pricing.php?ref=plugin';
 		</script>
 
