@@ -79,14 +79,12 @@ function mobiloud_home_page()
 			_veroq.push(['user', {
 			  id: email, 
 			  email: email,
-			  name: name
+			  name: name,
+			  website: website
 			}]);
 
 			_veroq.push(['track', 'new_app_init']); 
 			
-			jQuery("#email").val("");
-			jQuery("#website").val("");
-			jQuery("#contactName").val("");
 			jQuery("#confirm-msg").attr("style", "display:block;");
 
 		});
