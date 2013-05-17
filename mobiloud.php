@@ -326,38 +326,42 @@ function ml_disable_mobiloud_ad_notice_callback()
 
 function ml_mobiloud_ad_notice()
 {
-		
-	?>
-	<div class="updated" style="height:55px;padding:10px;" id="ml_mobiloud_ad_notice">
-		<p style="font-size:15px;" align="center">Congratulations, the Mobiloud plugin is now installed. Contact <a href="mailto:support@mobiloud.com">support@mobiloud.com</a> for help configuring it.
-		</p>
-		<p align="center" style="margin-top:8px;">
-			<a href="#" class="button-primary" id="ml_mobiloud_ad_notice_button">
-				Hide this message and visit Mobiloud.com to get an app designed for your site!
-			</a>
-		</p>
-	</div>
-	
-	<script type="text/javascript" >
-	jQuery(document).ready(function($) {
-		
-		jQuery("#ml_mobiloud_ad_notice_button").click(function(){
-			var data = {
-				action: 'ml_disable_mobiloud_ad_notice'
-			};
 
-			$.post(ajaxurl, data, function(response) {
-				eval(response);
-				//saving the result and reloading the div
-				jQuery("#ml_mobiloud_ad_notice").remove();
-				window.location = "http://www.mobiloud.com";
-			});			
+	if(get_admin_page_title() != "Mobiloud Homepage"){ //display yellow bar for all pages except Mobiloud Welcome page
+	
+		?>
+		<div class="updated" style="height:55px;padding:10px;" id="ml_mobiloud_ad_notice">
+			<p style="font-size:15px;" align="center">Congratulations, the Mobiloud plugin is now installed. Contact <a href="mailto:support@mobiloud.com">support@mobiloud.com</a> for help configuring it.
+			</p>
+			<p align="center" style="margin-top:8px;">
+				<a href="#" class="button-primary" id="ml_mobiloud_ad_notice_button">
+					Hide this message and visit Mobiloud.com to get an app designed for your site!
+				</a>
+			</p>
+		</div>
+	
+		<script type="text/javascript" >
+		jQuery(document).ready(function($) {
+		
+			jQuery("#ml_mobiloud_ad_notice_button").click(function(){
+				var data = {
+					action: 'ml_disable_mobiloud_ad_notice'
+				};
+
+				$.post(ajaxurl, data, function(response) {
+					eval(response);
+					//saving the result and reloading the div
+					jQuery("#ml_mobiloud_ad_notice").remove();
+					window.location = "http://www.mobiloud.com";
+				});			
+			
+			});
+
 			
 		});
-
-			
-	});
-	</script>	
-	<?php
+		</script>	
+		<?php
+	}
+	
 }
 ?>
