@@ -16,6 +16,7 @@ function mobiloud_home_page()
 		} ]);
 
 		(function() {var ve = document.createElement('script'); ve.type = 'text/javascript'; ve.async = true; ve.src = '//getvero.com/assets/m.js'; var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ve, s);})();
+	
 	</script>
 
 
@@ -69,8 +70,8 @@ function mobiloud_home_page()
 
 	</div>
 	<script type="text/javascript">
-
-		jQuery("#contactForm").submit(function(e){
+	
+		jQuery(document).ready(function($) {
 
 			var email = jQuery("#email").val();
 			var website = jQuery("#website").val();
@@ -85,8 +86,24 @@ function mobiloud_home_page()
 
 			_veroq.push(['track', 'new_app_init']); 
 			
-			jQuery("#confirm-msg").attr("style", "display:block;");
+			jQuery("#contactForm").submit(function(e){
 
+				var email = jQuery("#email").val();
+				var website = jQuery("#website").val();
+				var name = jQuery("#contactName").val();
+
+				_veroq.push(['user', {
+				  id: email, 
+				  email: email,
+				  name: name,
+				  website: website
+				}]);
+
+				_veroq.push(['track', 'get_started']); 
+			
+				jQuery("#confirm-msg").attr("style", "display:block;");
+
+			});
 		});
 	</script>
 
