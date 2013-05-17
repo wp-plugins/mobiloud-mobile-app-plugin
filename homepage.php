@@ -6,6 +6,18 @@ function mobiloud_home_page()
 	get_currentuserinfo();
 
 	?>
+	<script type="text/javascript">
+		var _veroq = _veroq || [];
+
+		_veroq.push(['init', {
+		  api_key: '36bd54bf9afde30628102337cf6dc4306a6a212a',
+		  development_mode: true 
+		  // Turn this off when you decide to 'go live'.
+		} ]);
+
+		(function() {var ve = document.createElement('script'); ve.type = 'text/javascript'; ve.async = true; ve.src = '//getvero.com/assets/m.js'; var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ve, s);})();
+	</script>
+
 
 	<div class="wrap">
 		
@@ -43,16 +55,45 @@ function mobiloud_home_page()
 					  
 		  			  <input type="checkbox" name="terms" value="agree" required><span class="checkbox">I agree to Mobiloud's <a href="http://mobiloud.com/terms.php">terms of service</a> and <a href="https://www.iubenda.com/privacy-policy/435863/legal">privacy policy</span></a>
 		  			  <br /><br />
-		  			  
-					  <input type="submit" value="Get started now" id="submitted" name="submitted" class="btn-submit">
+
+						<input type="submit" value="Get started now" id="submitted" name="submitted" class="btn-submit">
+	  			 					  
 					</form>
 					
+					<p id='confirm-msg' style='display:none;'>Thanks for getting started with Mobiloud!</p>
+
 				</div>
 				
 			</div>
 		</div>
 
 	</div>
+	<script type="text/javascript">
+
+		jQuery("#contactForm").submit(function(e){
+
+			var email = jQuery("#email").val();
+			var website = jQuery("#website").val();
+			var name = jQuery("#contactName").val();
+
+			_veroq.push(['user', {
+			  id: email, 
+			  email: email,
+			  name: name,
+			  website: website
+			}]);
+
+			_veroq.push(['track', 'new_app_init']); 
+			
+			jQuery("#email").val("");
+			jQuery("#website").val("");
+			jQuery("#contactName").val("");
+			jQuery("#confirm-msg").attr("style", "display:block;");
+
+		});
+	</script>
+
+
 	<?php
 }
 
