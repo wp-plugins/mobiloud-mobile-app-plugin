@@ -71,7 +71,7 @@ function iphone_html($post)
 		$final_html .= "<body><div id=\"content\" style='margin-top:-17px;'>";
 	}
 	
-	$final_html .= $title.$html->save().$spaces."</div></body></html>";
+	$final_html .= $spaces. $title.$html->save().$spaces."</div></body></html>";
 
 	return $final_html;
 }
