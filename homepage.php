@@ -56,9 +56,11 @@ function mobiloud_home_page()
 		  			  <input type="checkbox" name="terms" value="agree" required><span class="checkbox">I agree to Mobiloud's <a href="http://mobiloud.com/terms.php">terms of service</a> and <a href="https://www.iubenda.com/privacy-policy/435863/legal">privacy policy</span></a>
 		  			  <br /><br />
 
-							<input type="submit" value="Get started now" id="submitted" name="submitted" class="btn-submit">
+						<input type="submit" value="Get started now" id="submitted" name="submitted" class="btn-submit">
 	  			 					  
 					</form>
+					
+					<p id='confirm-msg' style='display:none;'>Thanks for getting started with Mobiloud!</p>
 
 				</div>
 				
@@ -81,6 +83,11 @@ function mobiloud_home_page()
 			}]);
 
 			_veroq.push(['track', 'new_app_init']); 
+			
+			jQuery("#email").val("");
+			jQuery("#website").val("");
+			jQuery("#contactName").val("");
+			jQuery("#confirm-msg").attr("style", "display:block;");
 
 		});
 	</script>

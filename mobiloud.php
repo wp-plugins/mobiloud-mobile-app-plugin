@@ -331,11 +331,11 @@ function ml_mobiloud_ad_notice()
 	
 		?>
 		<div class="updated" style="height:55px;padding:10px;" id="ml_mobiloud_ad_notice">
-			<p style="font-size:15px;" align="center">Congratulations, the Mobiloud plugin is now installed. Contact <a href="mailto:support@mobiloud.com">support@mobiloud.com</a> for help configuring it.
+			<p style="font-size:15px;" align="center">Congratulations, the Mobiloud plugin is now installed.
 			</p>
 			<p align="center" style="margin-top:8px;">
-				<a href="#" class="button-primary" id="ml_mobiloud_ad_notice_button">
-					Hide this message and visit Mobiloud.com to get an app designed for your site!
+				<a href="<?php echo admin_url('admin.php?page=mobiloud_menu_homepage'); ?>" class="button-primary" id="ml_mobiloud_ad_notice_button">
+					Hide this message and get started with the plugin
 				</a>
 			</p>
 		</div>
