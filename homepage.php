@@ -11,7 +11,7 @@ function mobiloud_home_page()
 
 		_veroq.push(['init', {
 		  api_key: '36bd54bf9afde30628102337cf6dc4306a6a212a',
-		  development_mode: true 
+		  development_mode: false 
 		  // Turn this off when you decide to 'go live'.
 		} ]);
 
