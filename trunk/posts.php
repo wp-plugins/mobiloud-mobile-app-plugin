@@ -298,6 +298,15 @@ function get_first_attachment_url($post_id)
 			return $url;
 		}
 	}
+	$thumb_id = get_post_thumbnail_id( $post_id );
+	if($thumb != NULL) {
+
+		$image = wp_get_attachment_image_src( $thumb, 'single-post-thumbnail' );
+		if($image && count($image)>0){
+			$url = $image[0];
+			return $url;
+		}
+	}
 	return NULL;
 }
 
