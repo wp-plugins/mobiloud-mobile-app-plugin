@@ -29,6 +29,7 @@ foreach($pages as $p)
 	$page["title"] = $p->post_title;
 	$page["link"] = get_permalink($p->ID);
 	$page["ml_link"] = plugins_url("get_page.php?page_ID=".$p->ID,__FILE__);
+	$page["ml_render"] = ml_page_get_render($p->ID);
 	$page["id"] = $p->ID;
 	array_push($final_pages,$page);
 }
