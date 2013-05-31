@@ -13,7 +13,7 @@ if(!isset($platform) || $platform == NULL)
 	$platform = "iphone";
 
 $page = get_page($page_ID);
-if($page->post_content == NULL || strlen($page->post_content))
+if($page->post_content == NULL || strlen($page->post_content) == 0)
 {
 	//redirect
 	$link = get_permalink($page_ID);
