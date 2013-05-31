@@ -13,7 +13,13 @@ if(!isset($platform) || $platform == NULL)
 	$platform = "iphone";
 
 $page = get_page($page_ID);
-
+if($page->post_content == NULL || strlen($page->post_content))
+{
+	//redirect
+	$link = get_permalink($page_ID);
+	header("Location: $link");
+	exit;
+}
 echo "<p>&nbsp;</p>";
 
 

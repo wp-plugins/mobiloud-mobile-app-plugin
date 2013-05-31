@@ -90,6 +90,7 @@ function ml_pages_install()
 	global $wpdb;
 	$table_name = $wpdb->prefix . "mobiloud_pages";
 	
+
 	if($wpdb->get_var("SHOW TABLES LIKE '$table_name'") != $table_name) {
 		//install della tabella
 		$sql = "CREATE TABLE " . $table_name . " (
@@ -103,6 +104,13 @@ function ml_pages_install()
 		dbDelta($sql);
 	}
 
+	//check if there is the column 'ml_render'
+	$results = $wpdb->get_results( "SHOW FULL COLUMNS FROM `" . $table_name."` LIKE 'ml_render'", ARRAY_A );
+	if($results == NULL || count($results) == 0) {
+		//update the table
+		$sql = "ALTER TABLE $table_name ADD ml_render TINYINT(1) NOT NULL DEFAULT 1;"; 
+		$wpdb->query($sql);
+	}
 }
 
 function ml_facebook_install()
