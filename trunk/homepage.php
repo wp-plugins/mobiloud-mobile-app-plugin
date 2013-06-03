@@ -38,19 +38,19 @@ function mobiloud_home_page()
 					  <div class="control-group inputGroup" >
 						<div class="controls">
 						  <label for="contactName">Your name</label>
-						  <input type="text" id="contactName" name="contactName" placeholder="Enter your name" value='<?= $current_user->display_name ?>' required>
+						  <input type="text" id="contactName" name="contactName" placeholder="Enter your name" value='<?php echo $current_user->display_name; ?>' required>
 						</div>
 					  </div>
 					  <div class="control-group inputGroup">
 						<div class="controls">
 						  <label for="email">Your email</label>
-						  <input type="email" id="email" name="email" placeholder="Enter your email" value='<?= $current_user->user_email ?>' required>
+						  <input type="email" id="email" name="email" placeholder="Enter your email" value='<?php echo $current_user->user_email; ?>' required>
 						</div>
 					  </div>
 					  <div class="control-group inputGroup last">
 						<div class="controls">
 						  <label for="website">Your website</label>
-						  <input type="text" id="website" name="website" placeholder="Enter your website" value='<?= get_site_url() ?>'>
+						  <input type="text" id="website" name="website" placeholder="Enter your website" value='<?php echo get_site_url(); ?>'>
 						</div>
 					  </div>
 					  
