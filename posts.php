@@ -57,6 +57,16 @@ if($user_post_count == NULL) $user_post_count = $published_post_count;
 $new_posts_count = $published_post_count - $user_post_count;
 $real_offset = $user_offset + $new_posts_count;
 
+//SINGLE POST REQUEST
+if(isset($_POST["post_id"]))
+{
+	$single_post_id = $_POST['post_id'];
+	$user_limit = 1;
+	$real_offset = null;
+	$user_category = null;
+	$user_search = null;
+}
+
 if($ml_content_redirect->ml_content_redirect_enable == "1" &&
 	 $ml_content_redirect->is_valid_version($app_version))
 {
@@ -293,15 +303,6 @@ function get_first_attachment_url($post_id)
 	if ($attachments && count($attachments) > 0) {
 		$att = $attachments[0];
 		$image = wp_get_attachment_image_src($att->ID, "full");
-		if($image && count($image)>0){
-			$url = $image[0];
-			return $url;
-		}
-	}
-	$thumb_id = get_post_thumbnail_id( $post_id );
-	if($thumb != NULL) {
-
-		$image = wp_get_attachment_image_src( $thumb, 'single-post-thumbnail' );
 		if($image && count($image)>0){
 			$url = $image[0];
 			return $url;
