@@ -8,7 +8,7 @@ include_once("categories.php");
 include_once("filters.php");
 include("post_html.php");
 
-
+error_reporting(E_ERROR | E_PARSE);
 //ini_set('display_errors', 1);
 
 $ml_content_redirect = new MLContentRedirect();
@@ -375,27 +375,6 @@ function youtubeID_from_link($link) {
             [\'"][^<>]*>  # Either inside a start tag,
           | </a>          # or inside <a> element text contents.
           )               # End recognized pre-linked alts.
-        )                 # End negative lookahead assertion.
-        [?=&+%\w-]*        # Consume any URL (query) remainder.
-        ~ix',
-        $link,$matches)) {
-	
-		if(count($matches) >= 2)
-		{
-			return $matches[1];
-		}
-	}
-	else return NULL;
-}
-
-
-?>
-
-
-
-
-
- # End recognized pre-linked alts.
         )                 # End negative lookahead assertion.
         [?=&+%\w-]*        # Consume any URL (query) remainder.
         ~ix',
