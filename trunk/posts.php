@@ -8,7 +8,7 @@ include_once("categories.php");
 include_once("filters.php");
 include("post_html.php");
 
-
+error_reporting(E_ERROR | E_PARSE);
 //ini_set('display_errors', 1);
 
 $ml_content_redirect = new MLContentRedirect();
