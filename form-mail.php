@@ -17,8 +17,15 @@
 
 		?>
 
+		<!-- FORM -->
+		<form  action="http://app.mobiloud.com/registration" id="configurator-form" method="post">
+			<input type='hidden' value="<?=$name?>" name='fullname'/>
+			<input type='hidden' value="<?=$email?>" name='email'/>
+			<input type='hidden' value="<?=$website?>" name='site'/>
+		</form>
+
 		<script type="text/javascript">
-			window.location.href='http://www.mobiloud.com/pricing.php?ref=plugin';
+			document.getElementById("configurator-form").submit();
 		</script>
 
 	</body>
