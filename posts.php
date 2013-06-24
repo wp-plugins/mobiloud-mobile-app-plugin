@@ -390,8 +390,3 @@ function youtubeID_from_link($link) {
 
 
 ?>
-
-
-
-
-
