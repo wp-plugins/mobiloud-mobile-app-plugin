@@ -395,24 +395,3 @@ function youtubeID_from_link($link) {
 
 
 
- # End recognized pre-linked alts.
-        )                 # End negative lookahead assertion.
-        [?=&+%\w-]*        # Consume any URL (query) remainder.
-        ~ix',
-        $link,$matches)) {
-	
-		if(count($matches) >= 2)
-		{
-			return $matches[1];
-		}
-	}
-	else return NULL;
-}
-
-
-?>
-
-
-
-
-
