@@ -15,7 +15,7 @@ Author URI: http://www.50pixels.com
 ini_set('display_errors', 1);
 
 define('MOBILOUD_PLUGIN_URL', plugin_dir_url( __FILE__ ));
-define('MOBILOUD_PLUGIN_VERSION', "1.8.6");
+define('MOBILOUD_PLUGIN_VERSION', "1.8.7");
 
 
 include_once dirname( __FILE__ ) . '/push.php';
