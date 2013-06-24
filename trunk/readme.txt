@@ -3,7 +3,7 @@ Contributors: alvises, psac50
 Tags: mobiloud, mobile app, push notification, native app, iOs, iOs app, iPhone, iPhone App, iPad, iPad App, android, HTML5 app, blog app, publishers app, app development, smartphone, smartphone app, mobile, mobile site, mobile theme, mobile theme maker, native, native app builder, web app, webapp, adsense for mobile, wordpress plugins, wp plugin, responsive, tablet, tablet App, touch, touch app, wptouch, REST, API
 Requires at least: 3.2
 Tested up to: 3.4
-Stable tag: 1.8.6
+Stable tag: 1.8.7
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -76,6 +76,9 @@ You can contact us at support@50pixels.com.
 2. 
 
 == Changelog ==
+
+= 1.8.7 =
+* Integration with Mobiloud app configurator
 
 = 1.8.6 =
 * API to download one specific post
