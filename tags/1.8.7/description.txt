@@ -1,5 +1,0 @@
-The Mobiloud Mobile App Plugin seamlessly delivers content to mobile apps straight from your Wordpress blog. Standard REST API calls expose your content and our free hosted service allows you to notify iOS users via push notifications (request an account at push@50pixels.com).
-
-Do you know what's cool about apps? It's that they can help your business grow exponentially. iTunes is currently one of the biggest mobile directories in the world, and Google Play recently surpassed 1 billion app downloads per month. Mobiloud is a bespoke service by 50pixels providing custom designed apps for your blog or website.
-
-For more information on Mobiloud, please get in touch at www.mobiloud.com.
