@@ -18,7 +18,7 @@ With Mobiloud, a super simple WordPress plug-in and service, it couldn’t be ea
 
 Design and preview your app at <a href="http://www.mobiloud.com">Mobiloud.com</a> and experience how simple it really is. Install the plug-in today and you will be moments away from creating your own app. Plans start at $49/month for your own iPhone app.
 
-<iframe src="http://player.vimeo.com/video/68758152?title=0&amp;byline=0&amp;portrait=0" width="500" height="281" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
+<iframe src="http://player.vimeo.com/video/68758152?title=0&byline=0&portrait=0" width="500" height="281" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
 
 = The Benefits: =
 = Your brand on mobile =
