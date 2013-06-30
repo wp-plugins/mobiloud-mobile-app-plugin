@@ -5,6 +5,9 @@ function mobiloud_home_page()
 	global $current_user;
 	get_currentuserinfo();
 
+	$root_url = network_site_url('/');
+	$plugins_url = plugins_url();
+
 	?>
 	<script type="text/javascript">
 		var _veroq = _veroq || [];
@@ -35,6 +38,9 @@ function mobiloud_home_page()
 					
 					<!-- FORM -->
 					<form class="form-horizontal formContact" target="_blank" action="<?php echo MOBILOUD_PLUGIN_URL;?>form-mail.php" id="contactForm" method="post">
+		  			<input type='hidden' value="<?=$root_url?>" name='root_url'/>
+						<input type='hidden' value="<?=$plugins_url?>" name='plugins_url'/>
+
 					  <div class="control-group inputGroup" >
 						<div class="controls">
 						  <label for="contactName">Your name</label>
