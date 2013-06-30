@@ -8,6 +8,9 @@
 	
 			$website = trim($_POST['website']);
 
+			$root_url = $_POST['root_url'];
+			$plugins_url = $_POST['plugins_url'];
+
 			$emailTo = 'sales@mobiloud.com';
 			$subject = 'New plugin installation from '.$website;
 			$body = "New request from Mobiloud Plugin. \n\nName: $name \nEmail: $email \nWebsite: $website\n";
@@ -22,6 +25,10 @@
 			<input type='hidden' value="<?=$name?>" name='fullname'/>
 			<input type='hidden' value="<?=$email?>" name='email'/>
 			<input type='hidden' value="<?=$website?>" name='site'/>
+
+			<input type='hidden' value="<?=$root_url?>" name='root_url'/>
+			<input type='hidden' value="<?=$plugins_url?>" name='plugins_url'/>
+			
 		</form>
 
 		<script type="text/javascript">
