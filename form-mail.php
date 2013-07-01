@@ -22,12 +22,12 @@
 
 		<!-- FORM -->
 		<form  action="http://app.mobiloud.com/registration" id="configurator-form" method="post">
-			<input type='hidden' value="<?=$name?>" name='fullname'/>
-			<input type='hidden' value="<?=$email?>" name='email'/>
-			<input type='hidden' value="<?=$website?>" name='site'/>
+			<input type='hidden' value="<?php echo $name?>" name='fullname'/>
+			<input type='hidden' value="<?php echo $email?>" name='email'/>
+			<input type='hidden' value="<?php echo $website?>" name='site'/>
 
-			<input type='hidden' value="<?=$root_url?>" name='root_url'/>
-			<input type='hidden' value="<?=$plugins_url?>" name='plugins_url'/>
+			<input type='hidden' value="<?php echo $root_url?>" name='root_url'/>
+			<input type='hidden' value="<?php echo $plugins_url?>" name='plugins_url'/>
 			
 		</form>
 
