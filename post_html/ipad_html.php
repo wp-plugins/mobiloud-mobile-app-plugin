@@ -59,22 +59,19 @@ function ipad_html($post)
 	
 	$init_html = "<html manifest=\"".plugin_dir_url(__FILE__+"../")."manifest.php\">".$header;
 	
-	$spaces = "<p>&nbsp;</p>";
-	
 	$title = "<h1 class='title' align='left'>".$post->post_title."</h1>";
 	
-	$title .= "<hr class='ml_hr'/>";
-	$title .= "<p></p>";
-	$title .= "<div class='author'>".get_author_name($post->post_author)."</div>";
-	$title .= "<p></p>";
-	$title .= "<div class='article_date'>".mysql2date('l j F Y',$post->post_date)."</div>";
-	$title .= "<p></p>";
-	$title .= "<hr class='ml_hr'/>";
-
-	$title .= $spaces;
-
+	$author = get_author_name($post->post_author);
 	
-
+	$text_author = "";
+	if(strcmp($author, "admin") != 0){
+		if(strcmp($author, "") != 0){
+			$text_author = " &bull; by ".get_author_name($post->post_author);
+		}
+	}
+	
+	$title .= "<p class='details'>".mysql2date('l j F Y',$post->post_date)."".$text_author."</p><p>&nbsp;</p>";
+	
 	$final_html = $init_html;
 	$final_html .= "<body><div id=\"content\">";
 	$final_html .= $spaces;
