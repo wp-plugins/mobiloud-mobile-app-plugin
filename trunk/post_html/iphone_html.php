@@ -57,9 +57,18 @@ function iphone_html($post)
 	$spaces = "<p>&nbsp;</p>";
 	
 	$title = "<h4 align='left'>".$post->post_title."</h4>";
-	$title .= "<table width='100%'><tr><td class='article_date' align=left>".mysql2date('l j F Y',$post->post_date)."</td><td class='author'  align=right>".get_author_name($post->post_author)."</td></tr></table><p>&nbsp;</p>";
 	
-
+	$author = get_author_name($post->post_author);
+	
+	$text_author = "";
+	if(strcmp($author, "admin") != 0){
+		if(strcmp($author, "") != 0){
+			$text_author = " &bull; by ".get_author_name($post->post_author);
+		}
+	}
+	
+	$title .= "<p class='details'>".mysql2date('l j F Y',$post->post_date)."".$text_author."</p><p>&nbsp;</p>";
+	
 	$final_html = $init_html;
 
 	if($ml_html_banners_enable) {
@@ -68,7 +77,7 @@ function iphone_html($post)
 	}
 	else
 	{
-		$final_html .= "<body><div id=\"content\" style='margin-top:-17px;'>";
+		$final_html .= "<body><div id=\"content\" >"; //style='margin-top:-17px;' removed from content
 	}
 	
 	$final_html .= $spaces. $title.$html->save().$spaces."</div></body></html>";
