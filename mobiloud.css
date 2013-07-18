@@ -84,61 +84,92 @@ a.ap_tab_button:hover, a.ap_tab_button_selected:link, a.ap_tab_button_selected:h
 	width:100%;
 }
 
-.content{
-	padding: 50px 20px 10px 20px;
-}
+
 
 .center{
 	text-align: center;
 }
 
-.formContact{
+.ml_homepage_general .formContact{
 	margin-top: 20px;
 }
 
-.controls input{
+.ml_homepage_general .controls input{
 	height: 30px;
 	width: 40%;
 	margin-right: 150px;
 }
 
-.controls{
+.ml_homepage_general .controls{
 	display: block;
 }
 
-.controls label{
+.ml_homepage_general .controls label{
 	float: left;
     padding-left: 15%;
     text-align: left;
     width: 20%;
 }
 
-.btn-submit{
+.ml_homepage_general .btn-submit{
 	background-color: #3dc22f;
 	color: #ffffff;
 	width: 50% !important;
 	height: 30px !important;
 }
 
-.full{
+.ml_homepage_general .full{
 	width: 100% !important;
 }
 
-.checkbox{
+.ml_homepage_general .checkbox{
 	padding-left:10px;
 }
 
-.last {
+.ml_homepage_general .last {
 	margin-bottom: 30px;
 }
 
-.subtitle{
+.ml_homepage_general .subtitle{
 	color: #464646 !important;
 	font-size: 21px !important;
 	padding-top: 0 !important;
 }
 
-.bigtitle{
+.ml_homepage_general .bigtitle{
 	margin:0 !important;
 	padding-bottom: 10px !important;
 }
+
+#ml-conf-app-pages{width:50%;margin-left:15px;margin-top:50px;}
+
+ul.ml-conf-pages li.page {
+		margin: 0 3px 3px 3px; 
+		background-color: #eee;
+		border:1px solid #ddd;
+		padding-top: 15px; 
+		padding-left: 1.5em; 
+		padding-right: 1.5em;
+		font-size: 13px; 
+		height: 50px;
+		padding-bottom: 15px;
+}
+ul.ml-conf-pages li.page span { 
+	float:left;
+	margin-left: -1.3em; 
+	margin-top: 20px;
+}
+ul.ml-conf-pages li.page .page-remove { 
+	float:right; color:#DC2600; 
+	margin-top: 15px;
+}
+
+label.switch > .switch {
+	float:left;
+	margin-left: 20px;
+}
+label.switch > h4{
+	float:left;
+}
+
+
