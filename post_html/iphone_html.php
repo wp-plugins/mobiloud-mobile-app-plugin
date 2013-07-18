@@ -50,13 +50,10 @@ function iphone_html($post)
 	$header .= ml_filters_header($post->postID);
 
 	$header .= "</head>";
-
 	
 	$init_html = "<html manifest=\"".plugin_dir_url(__FILE__+"../")."manifest.php\">".$header;
 	
-	$spaces = "<p>&nbsp;</p>";
-	
-	$title = "<h4 align='left'>".$post->post_title."</h4>";
+	$title = "<h1 align='left'>".$post->post_title."</h1>";
 	
 	$author = get_author_name($post->post_author);
 	
