@@ -6,7 +6,7 @@
 /*
 Plugin Name: Mobiloud
 Plugin URI: http://www.mobiloud.com
-Description: Mobiloud  for Wordpress
+Description: Turn your Wordpress site into stunning native mobile apps. No coding skills needed.
 Author: Fifty Pixels Ltd
 Version: 1.8.8
 Author URI: http://www.50pixels.com
