@@ -1,85 +1,59 @@
 === Mobiloud Mobile App Plugin ===
 Contributors: alvises, psac50
-Tags: mobiloud, mobile, mobile app, native app, web app, ios app, iphone, ipad, iphone app, ipad app, android, tablet, windows mobile, mobile pack, mobile web, HTML5, smartphone, mobile site, mobile plugin, wordpress mobileRequires at least: 3.2
+Tags: mobiloud, mobile app, push notification, native app, iOs, iOs app, iPhone, iPhone App, iPad, iPad App, android, HTML5 app, blog app, publishers app, app development, smartphone, smartphone app, mobile, mobile site, mobile theme, mobile theme maker, native, native app builder, web app, webapp, adsense for mobile, wordpress plugins, wp plugin, responsive, tablet, tablet App, touch, touch app, wptouch, REST, API
+Requires at least: 3.2
 Tested up to: 3.4
-Stable tag: 1.8.8
+Stable tag: 1.8.7
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-Design and build native mobile apps for your Wordpress site. No coding or design experience required.
+Make your content shine with iPhone and iPad apps for your blog.
 
 == Description ==
 
-= Be part of the app revolution =
-With Mobiloud it's really easy to transform your WordPress site into intuitive mobile apps that your readers and customers will love. The apps you'll build will be **native mobile applications** running on iOS devices (Android coming soon as an update). Give your mobile users access to your content with the best mobile user experience available.
+= Be a part of the app revolution =
+Smartphone and tablet apps are in greater demand than ever before. If you’ve dreamed of creating your own app empire, you’re one step closer to making your dreams a reality by reading this page. 
 
-Install the plugin now and you will be moments away from creating your mobile app.
+With Mobiloud, a super simple WordPress plug-in and service, it couldn’t be easier to transform your own WordPress site into an intuitive mobile app that your readers and customers will love.
 
-= Features =
-* Converts your WordPress website into stunning native mobile apps
-* You **create your own designs** in minutes, using our simple configurator
-* Automatically syncs with your WordPress site content: posts, pages, categories, images and video
-* Publish your **iPhone and iPad apps** on App Store
-* Support for **Admob, Adsense** and other mobile advertising options
-* Send **push notifications** to bring back mobile users to your content
-* Works with **Google Analytics**
-* (coming soon) Build **Android phone and tablet apps**
-
-
-= How it all really works =
-
-1. Install and activate the plugin
-2. Click on **Get Started** on the plugin's page on your site, and start designing your mobile app. It only takes a few minutes.
-3. You'll get to **see a live preview of your mobile app** which you can test online (100% like what you'll publish).
-4. Choose one of our plans and **publish the app** on the App Store (we do all the work for you!)
+Design and preview your app at <a href="http://www.mobiloud.com">Mobiloud.com</a> and experience how simple it really is. Install the plug-in today and you will be moments away from creating your own app. Plans start at $49/month for your own iPhone app.
 
 http://vimeo.com/68758152
 
-
-= The Benefits =
+= The Benefits: =
 = Your brand on mobile =
-With Mobiloud, you can create the mobile app you’ve always dreamed of without any of the programming hassle. It is incredibly easy to change the design of your launch screen, icon, and interface. This is **your branded mobile app**, so make it really yours!
-
-= Offer the best mobile user experience =
-Your app will be a **real native mobile app** (this is not a simple mobile site service). We're talking about a clean, shiny design, easy swipe actions to navigate your content and one-tap access to features like favourite articles, commenting and sharing.
+With Mobiloud, you can create the mobile app you’ve always dreamed of without any of the programming hassle. Your WordPress site and your brand will be entirely transformed into a mobile app – it is incredibly easy to change the design of your splash screen, icons, and app user interface. This is your branded app, and you can make it yours!
 
 = Your visitors will come back… again and again! =
-With your own mobile app, you'll have new ways to engage and communicate with your readers. **Send push notifications** to bring mobile users back to new content and keep them engaged. You'll notice more repeated visits! 
+With your customised app, you will be presented with new and exciting ways to engage and communicate with your readers, and vitally, new ways to keep them coming back time after time. With your app, you’ll be able to send push notifications, giving you the chance to engage your readers in a way that is far more compelling than newsletters and RSS feeds.
 
-= Increase your mobile traffic = 
-Mobile users tend to consume on average more content every time they load an app, compared to a desktop or mobile site. Your mobile app will also be featured in the App Store and Google's Play Store, giving you access to millions of app users from right around the world.
+= Achieve sky-high app traffic =
+The ease at which users can swipe through articles using a mobile app means that apps are now an essential tool for growing online traffic. App users look at around 3 articles each time they load an app, so pushing out your content via this medium will send your traffic soaring like never before. Plus, your app will be featured in the app store, providing visibility to millions of app users from right around the world.
 
-= Make it really simple to share =
-To grow your site and business, sharing is everything. It's like free marketing! And with your mobile app, you'll encourage **sharing with a single tap** via social media sites or email – simple!
+= Making your content super simple to share =
+In the online world, sharing is everything. And with your iPhone or iPad app, you will be able to encourage sharing at a tap of a Facebook, Twitter, Tumblr, or Pinterest icon – simple!
 
-= Make money from your mobile app =
-We support Google's Admob out of the box, the most popular mobile advertising solution, but you can use any ad server that outputs HTML code for your banners.
+= Make money from your app =
+Advertising on apps generate over three times more clicks than traditional online advertising - throw paid downloads, subscriptions and purchases for premium content into the mix.
 
 = App analytics =
-With support for Google Analytics, you will be able to **track downloads, usage, and other statistics** in real time – so you’ll have complete visibility and transparency over the success of your mobile app.
+With support for Google Analytics, you will be able to track downloads, usage, and other statistics relating to your mobile app in real time – so you’ll have complete visibility and transparency over the success of your stunning mobile app.
 
-There has never been a better time to go mobile, so why wait any longer? Design your mobile app at <a href="http://app.mobiloud.com?ref=plugin">Mobiloud.com</a> today. For any questions or feature requests, don’t hesitate to get in touch with the Mobiloud team at <a href="mailto:support@mobiloud.com">support@mobiloud.com</a>
-
-
+There has never been a better time to launch an app into the mobile app market, so why waste time? Design your app at <a href="http://www.mobiloud.com">Mobiloud.com</a> today. For any further questions relating to Mobiloud, don’t hesitate to get in touch with the Mobiloud team at <a href="mailto:support@mobiloud.com">support@mobiloud.com</a>
 
 == Installation ==
 
-1. Install the plugin from the Plugin Directory, or by uploading the plugin to the /wp-content/plugins/ directory.
+1. Install the Mobiloud Mobile App Plugin either via the WordPress.org Plugin Directory, or by uploading the files to the /wp-content/plugins/ directory.
 
 2. Activate the plugin through the ‘Plugins’ menu on WordPress.
 
-3. Click on Get Started on the 'Mobiloud' menu page on your site, and start designing your app online. It only takes a few minutes.
-
-4. You'll get to see a live preview of your app which you can test online (100% like what you'll publish).
-
-5. Choose one of our plans and publish your app on the App Store (we do all the work for you!)
-
+3. That’s it! Your WordPress blog is ready to start providing content to your Mobiloud app.
 
 == Frequently Asked Questions ==
 
 = I have the plugin, how do I get my app? =
 
-Find the 'Mobiloud' tab on your Wordpress admin menu, enter your details and click on Get Started. Start designing your app online. It only takes a few minutes. You'll get a live preview of your app, which will look 100% like the app we'll publish for you on App Store. More information on our service is available at <a href="http://www.mobiloud.com?ref=plugin">http://www.mobiloud.com</a>.
+To get started with Mobiloud, visit <a href="http://app.mobiloud.com">http://app.mobiloud.com</a> and start designing your own app. More information on our service is available at <a href="http://www.mobiloud.com">http://www.mobiloud.com</a>.
 
 = How much is the service? =
 
