@@ -14,7 +14,7 @@ Design and build native mobile apps for your Wordpress site. No coding or design
 = Be part of the app revolution =
 With Mobiloud it's really easy to transform your WordPress site into intuitive mobile apps that your readers and customers will love. The apps you'll build will be **native mobile applications** running on iOS devices (Android coming soon as an update). Give your mobile users access to your content with the best mobile user experience available.
 
-Install the plugin now and you will be moments away from creating your app.
+Install the plugin now and you will be moments away from creating your mobile app.
 
 = Features =
 * Converts your WordPress website into stunning native mobile apps
@@ -22,18 +22,16 @@ Install the plugin now and you will be moments away from creating your app.
 * Automatically syncs with your WordPress site content: posts, pages, categories, images and video
 * Publish your **iPhone and iPad apps** on App Store
 * Support for **Admob, Adsense** and other mobile advertising options
-* Send **push notifications** to alert readers to your content
+* Send **push notifications** to bring back mobile users to your content
 * Works with **Google Analytics**
-
-**Coming soon**
-* Build **Android phone and tablet apps**, publish to Google Play
+* (coming soon) Build **Android phone and tablet apps**
 
 
 = How it all really works =
 
 1. Install and activate the plugin
-2. Click on **Get Started** on the plugin's page on your site, and start designing your app. It only takes a few minutes.
-3. You'll get to **see a live preview of your app** which you can test online (100% like what you'll publish).
+2. Click on **Get Started** on the plugin's page on your site, and start designing your mobile app. It only takes a few minutes.
+3. You'll get to **see a live preview of your mobile app** which you can test online (100% like what you'll publish).
 4. Choose one of our plans and **publish the app** on the App Store (we do all the work for you!)
 
 http://vimeo.com/68758152
@@ -41,27 +39,27 @@ http://vimeo.com/68758152
 
 = The Benefits =
 = Your brand on mobile =
-With Mobiloud, you can create the mobile app you’ve always dreamed of without any of the programming hassle. It is incredibly easy to change the design of your launch screen, icon, and interface. This is **your branded app**, so make it really yours!
+With Mobiloud, you can create the mobile app you’ve always dreamed of without any of the programming hassle. It is incredibly easy to change the design of your launch screen, icon, and interface. This is **your branded mobile app**, so make it really yours!
 
 = Offer the best mobile user experience =
-Your app will be a **real native app** (this is not a simple mobile site service). We're talking about a clean, shiny design, easy swipe actions to navigate your content and one-tap access to features like favourite articles, commenting and sharing.
+Your app will be a **real native mobile app** (this is not a simple mobile site service). We're talking about a clean, shiny design, easy swipe actions to navigate your content and one-tap access to features like favourite articles, commenting and sharing.
 
 = Your visitors will come back… again and again! =
-With your own mobile app, you'll have new ways to engage and communicate with your readers. **Send push notifications** to bring your users back to new content and keep them engaged. You'll notice more repeated visits! 
+With your own mobile app, you'll have new ways to engage and communicate with your readers. **Send push notifications** to bring mobile users back to new content and keep them engaged. You'll notice more repeated visits! 
 
 = Increase your mobile traffic = 
-App users tend to consume on average more content every time they load an app, compared to a desktop or mobile site. Your app will also be featured in the App Store and Google's Play Store, offering you access to millions of app users from right around the world.
+Mobile users tend to consume on average more content every time they load an app, compared to a desktop or mobile site. Your mobile app will also be featured in the App Store and Google's Play Store, giving you access to millions of app users from right around the world.
 
 = Make it really simple to share =
-To grow your site and business, sharing is everything. It's like free marketing! And with your iPhone or iPad app, you'll encourage **sharing with a single tap** to social media sites or email – simple!
+To grow your site and business, sharing is everything. It's like free marketing! And with your mobile app, you'll encourage **sharing with a single tap** via social media sites or email – simple!
 
-= Make money from your app =
-We support Google's Admob out of the box, but you can use any ad server that outputs HTML code for your banners.
+= Make money from your mobile app =
+We support Google's Admob out of the box, the most popular mobile advertising solution, but you can use any ad server that outputs HTML code for your banners.
 
 = App analytics =
 With support for Google Analytics, you will be able to **track downloads, usage, and other statistics** in real time – so you’ll have complete visibility and transparency over the success of your mobile app.
 
-There has never been a better time to launch your app, so why wait any longer? Design your app at <a href="http://app.mobiloud.com?ref=plugin">Mobiloud.com</a> today. For any questions or feature requests, don’t hesitate to get in touch with the Mobiloud team at <a href="mailto:support@mobiloud.com">support@mobiloud.com</a>
+There has never been a better time to go mobile, so why wait any longer? Design your mobile app at <a href="http://app.mobiloud.com?ref=plugin">Mobiloud.com</a> today. For any questions or feature requests, don’t hesitate to get in touch with the Mobiloud team at <a href="mailto:support@mobiloud.com">support@mobiloud.com</a>
 
 
 
