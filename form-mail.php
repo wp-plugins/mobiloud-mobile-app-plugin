@@ -10,14 +10,14 @@
 
 			$root_url = $_POST['root_url'];
 			$plugins_url = $_POST['plugins_url'];
-
+/*
 			$emailTo = 'sales@mobiloud.com';
 			$subject = 'New plugin installation from '.$website;
 			$body = "New request from Mobiloud Plugin. \n\nName: $name \nEmail: $email \nWebsite: $website\n";
 			$headers = 'From: '.$name.' <'.$emailTo.'>' . "\r\n" . 'Reply-To: ' . $email;
 	
 			mail($emailTo, $subject, $body, $headers);
-
+*/
 		?>
 
 		<!-- FORM -->
