@@ -116,9 +116,9 @@ You can contact us at support@50pixels.com.
 
 == Screenshots ==
 
-1. 
-2. 
-3. 
+1. screenshot-1.png
+2. screenshot-2.png
+3. screenshot-3.png
 
 == Changelog ==
 
