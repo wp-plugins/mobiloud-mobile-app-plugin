@@ -1,7 +1,6 @@
 === Mobiloud Mobile App Plugin ===
 Contributors: alvises, psac50
-Tags: mobiloud, mobile, mobile app, native app, web app, ios app, iphone, ipad, iphone app, ipad app, android, tablet, windows mobile, mobile pack, mobile web, HTML5, smartphone, mobile site, mobile plugin, wordpress mobile, mobile detect, mobile themes, mobile website, mobile devices, mobile switcher, mobile theme, native, responsive, touch, touch app, wptouch
-Requires at least: 3.2
+Tags: mobiloud, mobile, mobile app, native app, web app, ios app, iphone, ipad, iphone app, ipad app, android, tablet, windows mobile, mobile pack, mobile web, HTML5, smartphone, mobile site, mobile plugin, wordpress mobileRequires at least: 3.2
 Tested up to: 3.4
 Stable tag: 1.8.8
 License: GPLv2 or later
