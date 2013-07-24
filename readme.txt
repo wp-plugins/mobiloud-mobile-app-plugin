@@ -1,6 +1,6 @@
 === Mobiloud Mobile App Plugin ===
 Contributors: alvises, psac50
-Tags: mobiloud, mobile app, push notification, native app, iOs, iOs app, iPhone, iPhone App, iPad, iPad App, android, HTML5 app, blog app, publishers app, app development, smartphone, smartphone app, mobile, mobile site, mobile theme, mobile theme maker, native, native app builder, web app, webapp, adsense for mobile, wordpress plugins, wp plugin, responsive, tablet, tablet App, touch, touch app, wptouch, REST, API
+Tags: mobiloud, mobile app, push notification, native app, iOs, iOs app, iPhone, iPhone App, iPad, iPad App, android, HTML5 app, blog app, publishers app, app development, smartphone, smartphone app
 Requires at least: 3.2
 Tested up to: 3.4
 Stable tag: 1.8.7
