@@ -3,7 +3,7 @@ Contributors: alvises, psac50
 Tags: mobiloud, mobile app, push notification, native app, iOs, iOs app, iPhone, iPhone App, iPad, iPad App, android, HTML5 app, blog app, publishers app, app development, smartphone, smartphone app
 Requires at least: 3.2
 Tested up to: 3.4
-Stable tag: 1.8.7
+Stable tag: 1.8.8
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
