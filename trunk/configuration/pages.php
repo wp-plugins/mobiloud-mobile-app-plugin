@@ -141,9 +141,11 @@ function ml_configuration_pages_div()
 {
 
 	?>
-	<h3 style="font-family:arial;font-size:20px;font-weight:normal;padding:10px;">Pages</h3>
+	<h3 style="font-family:arial;font-size:20px;font-weight:normal;padding:10px;">Add pages to your app's menu</h3>
 
-	<p><span style="font-size:20px;font-weight:normal;padding:10px;">Add pages to your app.</span></p>
+	<p><span style="font-size:20px;font-weight:normal;padding:10px;">Choose which pages to include in your app's navigation menu.
+
+</span></p>
 	
 	<table style="margin-left:15px;">
 		<tr valign="bottom">

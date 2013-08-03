@@ -101,16 +101,12 @@ function ml_configuration_app_redirect_div()
 	
 	?>
 	<h3 style="font-family:arial;font-size:20px;font-weight:normal;padding:10px;">
-		Mobile Promotional Message
+		Apple Smart App Banners (recommended)
 	</h3>
-	
-	<h2 style="font-size:20px;font-weight:normal;padding:10px;">
-		<img src="<?=plugins_url("smartappbanner.png",dirname(__FILE__));?>" width="640" height="150">
-	</h2>
 
-	<p style="font-size:20px;font-weight:normal;padding:10px;">Smart&nbsp;App&nbsp;Banners&nbsp;help you promote your app from your website in a<br>
-simple and unobtrusive way. To enable them make sure your Apple ID is<br>
-entered below.</p>
+
+	<p style="font-size:20px;font-weight:normal;padding:10px;">Apple created <a href="http://developer.apple.com/library/ios/#documentation/AppleApplications/Reference/SafariWebContent/PromotingAppswithAppBanners/PromotingAppswithAppBanners.html" target="_blank">Smart App Banners</a> to help you promote your app from your website in a<br>
+simple and polished way. Once active, a banner promoting your app will be visible only to visitors of your website using an iPhone or iPad and will allow them to download your app with one click.</p>
 
 	<h2 style="font-size:20px;font-weight:normal;padding:10px;">
 		<input id="ml_popup_message_on_mobile_active" type="checkbox"
@@ -120,12 +116,15 @@ entered below.</p>
 					echo " checked ";
 				}
 			?>
-			/> Active Smart App Banners
+			/> Activate Smart App Banners
 	</h2>
+
 
 	<!-- ACTIVE ? -->
 	<p></p>
 
+
+	<p style="font-size:20px;font-weight:normal;padding:10px;">To make the banner visible, enter your app's APP ID below.</p>
 	
 	<!-- APP ID -->
 	<h2 style="font-size:20px;font-weight:normal;padding:10px;">
@@ -134,11 +133,11 @@ entered below.</p>
 	<input id="ml_popup_message_on_mobile_appid" placeholder="Type here the App ID" 
 			name="ml_popup_message_on_mobile_appid" type="text" size="8" 
 	value="<?php echo $ml_popup_message_on_mobile_appid;?>" 
-	style="padding:5px;font-size:20px;margin-left:5%;width:50%;"/>
+	style="padding:5px;font-size:15px;margin-left:5%;width:50%;"/>
 	<p></p>
 		
 	<!-- DESCRIPTION -->
-	<div style="font-size:12px;padding:5px;margin-left:10%;margin-top:20px;margin-bottom:20px;width:70%;
+	<div style="font-size:20px;padding:5px;;margin-top:20px;margin-bottom:20px;width:70%;
 		text-align:justify;">
 	  <p>Once your app is live on App Store, find your app ID following the instructions below.	  </p>
 	  <ol>
@@ -146,9 +145,9 @@ entered below.</p>
 	    <li>Search for your app.</li>
 	    <li>Click your app's name and copy the URL (right-click for PC users).</li>
 	    </ol>
-	  <p>App store URL’s will be in the following format:</p>
+	  <p>App store URLs will be in the following format:</p>
 	  <div>http://itunes.apple.com/[country]/app/[App –Name]/id[App-ID]?mt=8</div>
-	  <p><a href="http://support.google.com/admob/answer/1620111?hl=en" target="_blank"></a>Extract the [App-ID] part.</p>
+	  <p><a href="http://support.google.com/admob/answer/1620111?hl=en" target="_blank"></a>Copy-paste the [App-ID] part.</p>
     </div>
 	
 	<div style="margin-right:20px;">

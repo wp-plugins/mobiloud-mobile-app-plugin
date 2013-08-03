@@ -142,7 +142,7 @@ function ml_configuration_categories_div()
 {
 
 	?>
-	<h3 style="font-family:arial;font-size:20px;font-weight:normal;padding:10px;">Categories</h3>
+	<h3 style="font-family:arial;font-size:20px;font-weight:normal;padding:10px;">Add categories to your app's menu</h3>
 	<p><span style="font-size:20px;font-weight:normal;padding:10px;">Choose which categories to include in your app's navigation menu.</span></p>
 	<table style="margin-left:15px;">
 		<tr valign="bottom">
