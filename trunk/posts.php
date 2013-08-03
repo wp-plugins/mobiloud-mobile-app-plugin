@@ -195,9 +195,12 @@ function print_posts($posts,$tot_count,$offset,$platform,$options)
 		$final_post["title"] = $post->post_title;
 		$final_post["date"] = $post->post_date;
 		
-
 		try {
 			$video_id = get_the_first_youtube_id($post);
+		}
+		catch (Exception $e) {}
+		
+		try {
 
 			//featured image
 			$main_image_url = get_the_first_image($post);
