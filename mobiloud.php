@@ -1,21 +1,21 @@
 <?php
 /**
  * @package Mobiloud
- * @version 1.8.8
+ * @version 1.8.9
  */
 /*
 Plugin Name: Mobiloud
 Plugin URI: http://www.mobiloud.com
 Description: Turn your Wordpress site into stunning native mobile apps. No coding skills needed.
 Author: Fifty Pixels Ltd
-Version: 1.8.8
+Version: 1.8.9
 Author URI: http://www.50pixels.com
 */
 
 ini_set('display_errors', 1);
 
 define('MOBILOUD_PLUGIN_URL', plugin_dir_url( __FILE__ ));
-define('MOBILOUD_PLUGIN_VERSION', "1.8.8");
+define('MOBILOUD_PLUGIN_VERSION', "1.8.9");
 
 
 include_once dirname( __FILE__ ) . '/push.php';
@@ -322,7 +322,7 @@ function ml_init_automatic_image_resize()
 {
 	global $ml_automatic_image_resize;
 	
-	$ml_automatic_image_resize = true;
+	$ml_automatic_image_resize = false;
 	ml_set_generic_option("ml_automatic_image_resize",$ml_automatic_image_resize);
 }
 

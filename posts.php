@@ -195,33 +195,38 @@ function print_posts($posts,$tot_count,$offset,$platform,$options)
 		$final_post["title"] = $post->post_title;
 		$final_post["date"] = $post->post_date;
 		
-		$video_id = get_the_first_youtube_id($post);
-		$main_image_url = get_the_first_image($post);
-		$post_thumb_url = get_first_attachment_url($post_id);
-
-		if($post_thumb_url)
-		{
-			$main_image_url = $post_thumb_url;
+		try {
+			$video_id = get_the_first_youtube_id($post);
 		}
+		catch (Exception $e) {}
+		
+		try {
 
-		//resizing
-		$main_image_thumb_url = NULL;
-		$main_image_medium_thumb_url = NULL;
-		$main_image_big_thumb_url = NULL;
+			//featured image
+			$main_image_url = get_the_first_image($post);
 
-		if($main_image_url != NULL)
-		{
-			if($ml_automatic_image_resize)
+			//resizing
+			$main_image_thumb_url = NULL;
+			$main_image_medium_thumb_url = NULL;
+			$main_image_big_thumb_url = NULL;
+
+			if($main_image_url != NULL)
 			{
-				$main_image_thumb_url = ml_image_resize($main_image_url,100,65,true);
-				$main_image_big_thumb_url = ml_image_resize($main_image_url,320,220,true);										
+				if($ml_automatic_image_resize)
+				{
+					$main_image_thumb_url = ml_image_resize($main_image_url,100,65,true);
+					$main_image_big_thumb_url = ml_image_resize($main_image_url,320,220,true);										
+				}
 			}
+
+		}
+		catch (Exception $e) {
+			//error getting or resizing the images
 		}
 
 		if($main_image_big_thumb_url == NULL) $main_image_big_thumb_url = $main_image_url;
 		if($main_image_medium_thumb_url == NULL) $main_image_medium_thumb_url = $main_image_big_thumb_url;
-		if($main_image_thumb_url == NULL) $main_image_thumb_url = $main_image_medium_thumb_url;
-
+		if($main_image_thumb_url == NULL) $main_image_thumb_url = $main_image_medium_thumb_url;			
 
 		$final_post["videos"] = array();
 		$final_post["images"] = array();
@@ -239,13 +244,13 @@ function print_posts($posts,$tot_count,$offset,$platform,$options)
 											"thumb" => array("url" => $main_image_thumb_url),
 											"big-thumb" => array("url" => $main_image_big_thumb_url)
 										); 
-			$final_post["images"][] = $image;
+			$final_post["images"][0] = $image;
 		}		
 		
 		foreach ( (array) $images as $image ) {
 			$image = array();
-			$image["full"] = wp_get_attachment_thumb_url($image->ID,false);
-			$image["thumb"] =   wp_get_attachment_url( $image->ID,'thumbnail');
+			$image["full"] = wp_get_attachment_image_src($image->ID,'full');
+			$image["thumb"] =  wp_get_attachment_image_src( $image->ID,'thumbnail');
 			$final_post["images"][] = $image;
 		}	
 
@@ -279,7 +284,21 @@ function print_posts($posts,$tot_count,$offset,$platform,$options)
 
 
 function get_the_first_image($post) {
+	//try to get the featured image
+	if (has_post_thumbnail( $post->ID ) ) {
+		$image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'full' );
+		if($image != NULL && count($image) > 0) {
+			return $image[0];
+		}
+	}
+
+	//if there is no featured image, check what's the first image
+	//inside the html. Before extracting the img tags, check if the post has content
+	if($post == NULL || $post->post_content == NULL || strlen(trim($post->post_content)) == 0)
+		return NULL
+
 	$html = str_get_html($post->post_content);	
+
 	$img_tags = $html->find('img');
 	foreach($img_tags as $img)
 	{
@@ -312,6 +331,9 @@ function get_first_attachment_url($post_id)
 }
 
 function get_the_first_youtube_id($post) {
+	if($post == NULL || $post->post_content == NULL || strlen(trim($post->post_content)) == 0)
+		return NULL
+
 	$html = str_get_html($post->post_content);	
 	$video_tags = $html->find('iframe');
 
