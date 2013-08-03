@@ -322,7 +322,7 @@ function ml_init_automatic_image_resize()
 {
 	global $ml_automatic_image_resize;
 	
-	$ml_automatic_image_resize = true;
+	$ml_automatic_image_resize = false;
 	ml_set_generic_option("ml_automatic_image_resize",$ml_automatic_image_resize);
 }
 
