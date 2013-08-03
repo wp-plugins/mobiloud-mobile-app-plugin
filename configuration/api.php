@@ -93,9 +93,9 @@ function ml_configuration_api_keys_div()
 	
 	
 	?>
-	<h3 style="font-family:arial;font-size:20px;font-weight:normal;padding:10px;">Mobiloud App Keys</h3>
+	<h3 style="font-family:arial;font-size:20px;font-weight:normal;padding:10px;">Mobiloud API Settings</h3>
 	
-	<h2 style="font-size:20px;font-weight:normal;padding:10px;">The following keys allow your app to communicate with your site. For assistance write to <a href="mailto:support@mobiloud.com">support@mobiloud.com</a>. </h2>
+	<h2 style="font-size:20px;font-weight:normal;padding:10px;">You'll receive instructions on how to configure this once your app goes live. </h2>
 	
 	<h2 style="font-size:20px;font-weight:normal;padding:10px;">
 		Api Key
@@ -103,7 +103,7 @@ function ml_configuration_api_keys_div()
 
 	<!-- API KEY -->
 	<input id="ml_configuration_api_key" placeholder="Insert API KEY" name="ml_api_key" type="text"
-		value="<?php echo $ml_api_key ?>" style="padding:5px;font-size:20px;margin-left:5%;width:90%;"/>
+		value="<?php echo $ml_api_key ?>" style="padding:5px;font-size:15px;margin-left:5%;width:90%;"/>
 	<p></p>
 
 	
@@ -113,7 +113,7 @@ function ml_configuration_api_keys_div()
 	</h2>
 	<input id="ml_configuration_secret_key" placeholder="Insert Secret Key" name="ml_secret_key" type="text" size="40" 
 	value="<?php echo $ml_secret_key?>" 
-	style="padding:5px;font-size:20px;margin-left:5%;width:90%;"/>
+	style="padding:5px;font-size:15px;margin-left:5%;width:90%;"/>
 	<p></p>
 	
 	<div style="margin-right:20px;">

@@ -96,10 +96,10 @@ function ml_configuration_facebook_div()
 	$ml_fb_secret_key = get_option('ml_fb_secret_key');
 	?>
 	
-	<h3 style="font-family:arial;font-size:20px;font-weight:normal;padding:10px;">Facebook</h3>
+	<h3 style="font-family:arial;font-size:20px;font-weight:normal;padding:10px;">Facebook API Settings</h3>
 
 	<p><span style="font-size:20px;font-weight:normal;padding:10px;">
-		Facebook app settings are required if you are using wordpress native comments to work correctly on your app.For assistance write to <a href="mailto:support@mobiloud.com">support@mobiloud.com</a>.
+		You'll receive instructions on how to configure this once your app goes live. 
 	</span></p>
 
 
@@ -125,7 +125,7 @@ function ml_configuration_facebook_div()
 
 	<!-- API KEY -->
 	<input id="ml_fb_app_id" placeholder="Insert App ID" name="ml_fb_app_id" type="text"
-		value="<?php echo $ml_fb_app_id ?>" style="padding:5px;font-size:20px;margin-left:5%;width:90%;"/>
+		value="<?php echo $ml_fb_app_id ?>" style="padding:5px;font-size:15px;margin-left:5%;width:90%;"/>
 	<p></p>
 
 
@@ -135,7 +135,7 @@ function ml_configuration_facebook_div()
 	</h2>
 	<input id="ml_fb_secret_key" placeholder="Insert Secret Key" name="ml_fb_secret_key" type="text" size="40" 
 	value="<?php echo $ml_fb_secret_key?>" 
-	style="padding:5px;font-size:20px;margin-left:5%;width:90%;"/>
+	style="padding:5px;font-size:15px;margin-left:5%;width:90%;"/>
 	<p></p>
 	
 	<div style="margin-right:20px;">

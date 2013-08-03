@@ -64,12 +64,12 @@ function iphone_html($post)
 		}
 	}
 	
-	$title .= "<p class='details'>".mysql2date('l j F Y',$post->post_date)."".$text_author."</p><p>&nbsp;</p>";
+	$title .= "<p class='details'>".mysql2date('F j Y',$post->post_date)."".$text_author."</p><p>&nbsp;</p>";
 	
 	$final_html = $init_html;
 
 	if($ml_html_banners_enable) {
-		$final_html .= "<body><div id=\"content\">";
+		$final_html .= "<body><div id=\"content\" style=\"margin-top:60px\">";
 		$final_html .= $spaces;
 	}
 	else

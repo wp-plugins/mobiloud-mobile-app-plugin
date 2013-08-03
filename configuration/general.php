@@ -155,7 +155,7 @@ function ml_configuration_general_div()
 	$ml_html_banners_enable = get_option('ml_html_banners_enable');
 
 	?>
-	<h3 style="font-family:arial;font-size:20px;font-weight:normal;padding:10px;">General</h3>
+	<h3 style="font-family:arial;font-size:20px;font-weight:normal;padding:10px;">General app settings</h3>
 	
 	<h2 style="font-size:20px;font-weight:normal;padding:10px;">
 		<input id="ml_automatic_image_resize_active" type="checkbox"
@@ -165,7 +165,7 @@ function ml_configuration_general_div()
 					echo " checked ";
 				}
 			?>
-			/> Automatic resize main post image
+			/> Automatically resize image thumbnails
 	</h2>
 
 	<h2 style="font-size:20px;font-weight:normal;padding:10px;">
@@ -176,7 +176,7 @@ function ml_configuration_general_div()
 				echo " checked ";
 			}
 		?>
-		/> Push notifications enable
+		/> Enable push notifications
 	</h2>
 
 	<h2 style="font-size:20px;font-weight:normal;padding:10px;">
@@ -187,7 +187,7 @@ function ml_configuration_general_div()
 				echo " checked ";
 			}
 		?>
-		/> HTML banners enable
+		/> Enable support for HTML banners
 	</h2>
 
 

@@ -137,6 +137,8 @@ function ml_configuration_notifications_div()
 
 		</table>
 
+		<p>&nbsp;</p>
+		
 		
 		<input type="text" id="ml_configuration_notification_message_text" 
 			   style="padding:5px;font-size:18px;margin-left:5%;width:80%;" 
