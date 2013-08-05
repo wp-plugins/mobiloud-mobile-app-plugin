@@ -293,9 +293,7 @@ function get_the_first_image($post) {
 	}
 
 	//if there is no featured image, check what's the first image
-	//inside the html. Before extracting the img tags, check if the post has content
-	if($post == NULL || $post->post_content == NULL || strlen(trim($post->post_content)) == 0)
-		return NULL
+	//inside the html.
 
 	$html = str_get_html($post->post_content);	
 
@@ -331,9 +329,6 @@ function get_first_attachment_url($post_id)
 }
 
 function get_the_first_youtube_id($post) {
-	if($post == NULL || $post->post_content == NULL || strlen(trim($post->post_content)) == 0)
-		return NULL
-
 	$html = str_get_html($post->post_content);	
 	$video_tags = $html->find('iframe');
 
