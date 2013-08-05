@@ -1,7 +1,7 @@
 <?php
 	include("../../../wp-blog-header.php");
 	global $wp_version, $required_php_version;
-	$info = array("version" => "1.8.9",
+	$info = array("version" => "1.8.10",
 				 "php_version" => phpversion(),
 				 "wp_version" => $wp_version,
 				 "required_php_version" => $required_php_version,
