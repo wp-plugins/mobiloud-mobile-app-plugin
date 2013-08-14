@@ -296,6 +296,8 @@ function get_the_first_image($post) {
 	//inside the html.
 
 	$html = str_get_html($post->post_content);	
+	if($html == NULL) 
+		return NULL;
 
 	$img_tags = $html->find('img');
 	foreach($img_tags as $img)
@@ -330,6 +332,9 @@ function get_first_attachment_url($post_id)
 
 function get_the_first_youtube_id($post) {
 	$html = str_get_html($post->post_content);	
+	if($html == NULL) 
+		return NULL;
+
 	$video_tags = $html->find('iframe');
 
 	foreach($video_tags as $v)
