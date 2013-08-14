@@ -9,7 +9,9 @@ function iphone_html($post)
 	$prefiltered_html = str_replace("\n","<p></p>",$prefiltered_html);
  	
 	$html = str_get_html($prefiltered_html);	
-	
+	if($html == NULL) 
+		return $prefiltered_html;
+
 	$img_tags = $html->find('img');
 	$iframe_tags = $html->find('iframe');
 	$object_tags = $html->find('object');
