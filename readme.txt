@@ -3,7 +3,7 @@ Contributors: alvises, psac50
 Tags: mobiloud, mobile, mobile app, native app, web app, iphone, ipad, iphone app, ipad app, android, tablet, windows mobile, mobile web, HTML5, mobile site, mobile plugin, wordpress mobile, mobile detect, mobile themes, mobile website, mobile theme, responsive, wptouch
 Requires at least: 3.2
 Tested up to: 3.6
-Stable tag: 1.8.9
+Stable tag: 1.8.11
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -119,6 +119,12 @@ You can contact us at support@50pixels.com.
 3. 
 
 == Changelog ==
+
+= 1.8.11 =
+* Fix in post html function
+
+= 1.8.10 =
+* Posts fix
 
 = 1.8.9 =
 * Post content extraction fixed

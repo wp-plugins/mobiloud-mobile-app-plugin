@@ -1,21 +1,21 @@
 <?php
 /**
  * @package Mobiloud
- * @version 1.8.9
+ * @version 1.8.10
  */
 /*
 Plugin Name: Mobiloud
 Plugin URI: http://www.mobiloud.com
 Description: Turn your Wordpress site into stunning native mobile apps. No coding skills needed.
 Author: Fifty Pixels Ltd
-Version: 1.8.9
+Version: 1.8.11
 Author URI: http://www.50pixels.com
 */
 
 ini_set('display_errors', 1);
 
 define('MOBILOUD_PLUGIN_URL', plugin_dir_url( __FILE__ ));
-define('MOBILOUD_PLUGIN_VERSION', "1.8.9");
+define('MOBILOUD_PLUGIN_VERSION', "1.8.11");
 
 
 include_once dirname( __FILE__ ) . '/push.php';
