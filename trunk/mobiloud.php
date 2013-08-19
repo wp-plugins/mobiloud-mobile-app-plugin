@@ -6,10 +6,10 @@
 /*
 Plugin Name: Mobiloud
 Plugin URI: http://www.mobiloud.com
-Description: Turn your Wordpress site into stunning native mobile apps. No coding skills needed.
-Author: Fifty Pixels Ltd
+Description: Turn your WordPress site into beautiful native mobile apps. No coding needed.
+Author: Mobiloud by 50pixels
 Version: 1.8.11
-Author URI: http://www.50pixels.com
+Author URI: http://www.mobiloud.com
 */
 
 ini_set('display_errors', 1);
