@@ -1,6 +1,6 @@
 === Mobiloud Mobile App Plugin ===
 Contributors: alvises, psac50
-Tags: mobiloud, mobile, mobile app, native app, web app, iphone, ipad, mobile edition, iphone app, ipad app, android, tablet, windows mobile, mobile web, HTML5, mobile site, mobile plugin, wordpress mobile, mobile detect, mobile themes, mobile website, mobile theme, responsive, wptouch
+Tags: mobiloud, mobile, mobile app, native app, web app, iphone, ipad, iphone app, ipad app, android, tablet, windows mobile, mobile web, HTML5, mobile site, mobile plugin, wordpress mobile, mobile detect, mobile themes, mobile website, mobile theme, responsive, wptouch
 Requires at least: 3.2
 Tested up to: 3.6
 Stable tag: 1.8.11
@@ -14,25 +14,24 @@ Design and build native mobile apps for your WordPress site. No coding required.
 = Build your own mobile app =
 With Mobiloud it's really easy to transform your WordPress site into beautiful, fast mobile apps that your readers and customers will love. The apps you'll build will be **native mobile applications** running on iPhone and iPad (Android coming soon). Give your mobile users easy access to your content and impress them with the best mobile user experience available. There has never been a better time to go mobile!
 
-Install the plugin now and you will be moments away from creating your mobile app. Design and test it for free, publish your app for cheap monthly rates or a small one-time fee.
+Install the plugin now and you will be moments away from creating your mobile app. Design and test it for free, publish your mobile app for cheap monthly rates or a small one-time fee.
 
 = Features =
 * Converts your WordPress website into stunning native mobile apps
-* Smooth and fast apps, way better then any HTML5 alternative
-* Publish your **iPhone and iPad apps** on App Store
-* (coming soon) Build **Android phone and tablet apps**
-* You **create your own designs** in minutes, using our simple configurator
 * Automatically syncs with your WordPress site content: posts, pages, categories, images and video
+* Publish your **iPhone and iPad apps** on App Store (Android coming soon)
+* You **create your own designs** in minutes, using our simple configurator
 * Support for **Admob, Adsense** and other mobile advertising options
 * Send **push notifications** to bring back mobile users to your content
 * Works with **Google Analytics**
+* Fast, smooth mobile apps (better then any HTML5 alternative)
 
 = How it all really works =
 
 1. Install and activate the plugin
 2. Click on **Get Started** on the plugin's page and start designing your mobile app. It only takes a few minutes.
 3. You'll get to **see a live preview of your mobile app** which you can test online.
-4. Choose one of our pricing plans and **publish the app** on the App Store (we do all the work for you!)
+4. Choose one of our pricing plans and **publish your mobile app** on the App Store (we do all the work for you!)
 
 http://vimeo.com/68758152
 
@@ -48,7 +47,7 @@ Your app will be a **real native mobile app** (this is not a simple mobile site 
 With your own mobile app, you can convert casual visitors into loyal followers that stick and come back to your content. It's like a newsletter on steroids. **Send push notifications** to bring your mobile users back and keep them engaged. You'll notice more repeated visits! 
 
 = Increase your mobile traffic = 
-Mobile users tend to consume on average more content every time they load an app, compared to a desktop or mobile site. Your mobile app will also be featured in the App Store and Google's Play Store, giving you access to millions of app users from right around the world.
+The experience in a mobile app is so good that mobile users tend to consume on average more content every time they load an app, compared to a desktop or mobile site (we see 5x more views/visit on apps). Your mobile app will also be featured in the App Store and Google's Play Store, giving you access to millions of mobile app users from right around the world.
 
 = Make money with mobile advertising =
 We support Google's Admob out of the box, the most popular mobile advertising solution, but you can add any HTML code to display your banners! And you can also sell the app if you wish.
@@ -62,52 +61,50 @@ With support for Google Analytics, you will be able to **track downloads, usage,
 
 = What our customers say about it =
 
-*“I had previously worked with four different app developers and none of them were able to get the job done for me the way I wanted it. It took just two days for Mobiloud to get my wordpress website into an iPhone App."*
+*“I had previously worked with four different mobile app developers and none of them were able to get the job done for me the way I wanted it. It took just two days for Mobiloud to get my wordpress website into an iPhone App."*
 Nick Coffey, The Cardinal Connect
 
+*"Mobiloud was very easy to work with to get my mobile app customized the way I wanted it. The online app builder was super helpful when creating images for my icons, background and splash screen. I would highly recommend Mobiloud for anyone looking to take their website mobile."*
+Chris Burhans, Founder of Sports Mockery
 
-*"They left no stone unturned in making our app perfect! It has been a pleasure working with them."*
+*"They left no stone unturned in making our mobile app perfect! It has been a pleasure working with them."*
 Paul Andrew, Founder of Speckyboy Magazine
 
+*"The team at Mobiloud built astonishing apps for the main blogs in our network. Fast development, great support, and of course beautiful mobile apps. What more could we ask for?"*
+Fernando Serer, CEO and founder of Blogestudio
 
 *"Thank you, Mobiloud, for developing the awesome Design You Trust mobile app and kicking my site into a mobile world. Very professional, fast and friendly!"*
 Dmitry Utkin, founder of Design You Trust
-
  
-*"The team at Mobiloud built astonishing apps for the main blogs in our network. Fast development, great support, and of course beautiful apps. What more could we ask for?"*
-Fernando Serer, CEO and founder of Blogestudio
-
- 
-*"An app is a great way to grow your audience and turn existing visitors into loyal readers. In no time, Mobiloud was able to develop a great looking app for Pandemia.info."*
+*"A mobile app is a great way to grow your audience and turn existing visitors into loyal readers. In no time, Mobiloud was able to develop a great looking mobile app for Pandemia.info."*
 Luca Conti, Author and Social Media Consultant
-
  
-*"On CircusF1 we have been seeing traffic from mobile devices rapidly growing. The team at Mobiloud was able to design and build an iPhone and iPad app in a very short time."*
+*"On CircusF1 we have been seeing traffic from mobile devices rapidly growing. The team at Mobiloud was able to design and build an iPhone and iPad mobile apps in a very short time."*
 Andrea Gallazzi, owner CircusF1.com
 
 
 
 = Pricing =
-Install the plugin and design your app for free. Try it as long as you want. To publish your app on App Store or Google Play, we charge small monthly fees or a one-time fee for our Starter plan. Check the [pricing plans on Mobiloud.com](http://www.mobiloud.com/pricing.php?ref=plugindesc).
+Install the plugin and design your mobile app for free. Try it as long as you want. To publish your app on App Store or Google Play, we charge small monthly fees or a one-time fee for our Starter plan. Check the [pricing plans on Mobiloud.com](http://www.mobiloud.com/pricing.php?ref=plugindesc).
 
 
 = 30 days 100% Satisfaction Guarantee - no risk or commitment, really! =
-Install the plugin and design your app today. Get a free preview. Pay only when you're ready to publish your app. If for any reason you're not happy with it, we'll fully refund any fees paid within 30 days from your order.
+Install the plugin and design your mobile app today. Get a free preview. Pay only when you're ready to publish your app. If for any reason you're not happy with it, we'll fully refund any fees paid within 30 days from your order.
 
 For any questions, don’t hesitate to get in touch with us at [hello@mobiloud.com](mailto:hello@mobiloud.com)
 
 
 == Installation ==
 
-1. Install the plugin from the Plugin Directory, or by uploading the plugin to the /wp-content/plugins/ directory.
+1. **Install** the plugin from the Plugin Directory, or downloand the files and upload them to /wp-content/plugins/
 
-2. Activate the plugin through the ‘Plugins’ menu on WordPress.
+2. **Activate** the plugin through the ‘Plugins’ menu on WordPress.
 
-3. Click on Get Started on the 'Mobiloud' menu page on your site, and start designing your app online. It only takes a few minutes.
+3. Click on **Get Started** on the 'Mobiloud' menu page on your site, and start designing your app online. It only takes a few minutes.
 
-4. You'll get to see a live preview of your app which you can test online.
+4. You'll get to see a **live preview** of your mobile app which you can test online.
 
-5. Choose one of our pricing plans and publish your app on the App Store (we do all the work for you!)
+5. Choose one of our **pricing plans** and publish your mobile app on the App Store (we do all the work for you!). You can use your own account, or Mobiloud's - you choose.
 
 = Any questions? =
 You can contact us at [hello@mobiloud.com](mailto:hello@mobiloud.com)
@@ -120,8 +117,10 @@ More and more, people are choosing to use their smartphones and tablets to read 
 
 With a mobile app you'll be able to convert casual visitors into loyal followers. Why? Because your app will be front and center, easily accessible from the home screen of their device. And because you can alert with push notifications whenever you post something new.
 
-= Will my app be a native mobile app? =
-Yes, all Mobiloud apps, on every platform, are native mobile apps. Most competing solutions instead give you HTML5 apps, which means really mobile sites re-packaged as apps. The big difference is in performance and user experience. Native apps are fast, run smoothly on the devices they were designed for, and make full use of each platform's capabilities. They're also easier to use, because they're designed to look and feel familiar on each mobile platform, be it iOS or Android. A Mobiloud app allows your users to receive push notifications, share with a single tap, quickly comment on articles and access content offline. In short, if you want to impress your users, go native and build a real mobile app!
+= What is a native mobile app? =
+Mobiloud apps, on every platform, are native mobile apps. Most competing solutions instead give you HTML5 apps, which means really mobile sites re-packaged as apps. The big difference is in performance and user experience. 
+
+Native apps are fast, run smoothly on the devices they are designed for, and make full use of each platform's capabilities. They're also easier to use, because they're designed to look and feel familiar on each mobile platform, be it iOS or Android. A Mobiloud app allows your users to receive push notifications, share with a single tap, quickly comment on articles and access content offline. In short, if you want to impress your users, go native and build a real mobile app!
 
 = Do I need to know how to code? =
 No, no programming required! With Mobiloud you design and build your mobile app online, using our simple Configurator. Content comes automatically from your WordPress site.
@@ -173,10 +172,10 @@ Here is our [Terms and Conditions](http://mobiloud.com/terms.php) and [Privacy P
 We offer a 30-day money back guarantee. If for any reason you're unhappy with your app, just send us an email at [support@mobiloud.com](mailto:support@mobiloud.com) and we'll refund all fees paid, no questions asked.
 
 = Where are you based? =
-We're a UK company based in London. Mobiloud is our trade name, and Fifty Pixels Ltd is the company name. Here's our full address Clerkenwell Workshops, 31 Clerkenwell Close, London, EC1R 0AT.
+We're a UK company based in London. Mobiloud is our trade name, and Fifty Pixels Ltd is the official company name. Here's our full address Clerkenwell Workshops, 31 Clerkenwell Close, London, EC1R 0AT.
 
 = Can I contact you over the phone? =
-Of course, just call us on +44 (0) 203 086 8650 or call us on Skype (skypename fiftypixels).
+Of course, just call us on **+44 (0) 203 086 8650** or call us on Skype (skypename fiftypixels).
 
 = Any questions? =
 You can contact us at [hello@mobiloud.com](mailto:hello@mobiloud.com)
