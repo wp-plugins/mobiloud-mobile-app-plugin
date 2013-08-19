@@ -123,17 +123,19 @@ With a mobile app you'll be able to convert casual visitors into loyal followers
 = Will my app be a native mobile app? =
 Yes, all Mobiloud apps, on every platform, are native mobile apps. Most competing solutions instead give you HTML5 apps, which means really mobile sites re-packaged as apps. The big difference is in performance and user experience. Native apps are fast, run smoothly on the devices they were designed for, and make full use of each platform's capabilities. They're also easier to use, because they're designed to look and feel familiar on each mobile platform, be it iOS or Android. A Mobiloud app allows your users to receive push notifications, share with a single tap, quickly comment on articles and access content offline. In short, if you want to impress your users, go native and build a real mobile app!
 
+= Do I need to know how to code? =
+No, no programming required! With Mobiloud you design and build your mobile app online, using our simple Configurator. Content comes automatically from your WordPress site.
+
+= Do I need a designer? =
+Not really! With Mobiloud's Configurator you can create your own unique app design by selecting colors, choosing background templates and uploading your logo or images, it's really simple and you can get a great result in a few minutes. If you can design with Photoshop, though, or have a designer who can help you out, you can also upload your own custom images for icon and launch screens.
+
 = How much does it cost? =
 The Mobile App Plugin is free to install. You can also design your own app at no cost and with no risk. Once you have designed your app and would like to publish it on the App Store, we have simple pricing plans you can choose from. Check the [pricing plans on Mobiloud.com](http://www.mobiloud.com/pricing.php?ref=plugindesc).
 
 = Does Mobiloud help me build a mobile site? =
 We don't provide a mobile site together with you app. It's a good idea to have a mobile site, so casual visitors can still have a decent experience on your site when using a mobile device. Of course, we recommend you also build a mobile app, to convert those casual visitors into loyal followers, increase your traffic and keep growing your audience.
 
-The following plugins are all compatible with Mobiloud:
-*WP-Touch
-*WordPress Mobile Edition
-*WordPress Mobile Pack
-*Mobile Press
+The following plugins are all compatible with Mobiloud: WP-Touch, WordPress Mobile Edition, WordPress Mobile Pack, Mobile Press.
 
 = What functionality will my mobile app offer? =
 Your app will automatically show the latest content from your site, with no need for you to update it manually. Your app will display posts and pages and optionally your Twitter and Facebook profile's content. Your users will be able to read content online and offline, share it with a single tap, save their favourites, leave comments on your articles and, most importantly, receive push notifications alerting them to new content.
@@ -161,8 +163,20 @@ Yes, we recommend you register your own Apple developer account, though it's not
 = How can I get a refund? =
 Just email us at [support@mobiloud.com](mailto:support@mobiloud.com) and request a refund. You have 30 days since your sign up to get a full refund, no questions answered.
 
+= Is there a long term contract? =
+No contracts here! You pay month-to-month, and if you're unhappy with the service, you can simply cancel by emailing us at [support@mobiloud.com](mailto:support@mobiloud.com). Simple. No risk.
+
+= What are the Terms and Conditions? =
+Here is our [Terms and Conditions](http://mobiloud.com/terms.php) and [Privacy Policy](https://www.iubenda.com/privacy-policy/435863/legal).
+
 = What if I'm not happy with it? Is there any guarantee? =
 We offer a 30-day money back guarantee. If for any reason you're unhappy with your app, just send us an email at [support@mobiloud.com](mailto:support@mobiloud.com) and we'll refund all fees paid, no questions asked.
+
+= Where are you based? =
+We're a UK company based in London. Mobiloud is our trade name, and Fifty Pixels Ltd is the company name. Here's our full address Clerkenwell Workshops, 31 Clerkenwell Close, London, EC1R 0AT.
+
+= Can I contact you over the phone? =
+Of course, just call us on +44 (0) 203 086 8650 or call us on Skype (skypename fiftypixels).
 
 = Any questions? =
 You can contact us at [hello@mobiloud.com](mailto:hello@mobiloud.com)
