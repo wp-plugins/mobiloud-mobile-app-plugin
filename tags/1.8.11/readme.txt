@@ -28,7 +28,7 @@ Install the plugin now and you will be moments away from creating your mobile ap
 
 = How it all really works =
 
-1. Install and activate the plugin
+1. **Install and Activate** the plugin
 2. Click on **Get Started** on the plugin's page and start designing your mobile app. It only takes a few minutes.
 3. You'll get to **see a live preview of your mobile app** which you can test online.
 4. Choose one of our pricing plans and **publish your mobile app** on the App Store (we do all the work for you!)
