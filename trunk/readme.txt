@@ -132,7 +132,7 @@ Not really! With Mobiloud's Configurator you can create your own unique app desi
 The Mobile App Plugin is free to install. You can also design your own app at no cost and with no risk. Once you have designed your app and would like to publish it on the App Store, we have simple pricing plans you can choose from. Check the [pricing plans on Mobiloud.com](http://www.mobiloud.com/pricing.php?ref=plugindesc).
 
 = Does Mobiloud help me build a mobile site? =
-We don't provide a mobile site together with you app. It's a good idea to have a mobile site, so casual visitors can still have a decent experience on your site when using a mobile device. Of course, we recommend you also build a mobile app, to convert those casual visitors into loyal followers, increase your traffic and keep growing your audience.
+We don't provide a mobile site together with your app. It's a good idea to have a mobile site, so casual visitors can still have a decent experience on your site when using a mobile device. Of course, we recommend you also build a mobile app, to convert those casual visitors into loyal followers, increase your traffic and keep growing your audience.
 
 The following plugins are all compatible with Mobiloud: WP-Touch, WordPress Mobile Edition, WordPress Mobile Pack, Mobile Press.
 
