@@ -8,6 +8,7 @@ include_once("categories.php");
 include_once("filters.php");
 include("post_html.php");
 
+include_once dirname( __FILE__ ) . "/libs/errors.php";
 
 $ml_content_redirect = new MLContentRedirect();
 
