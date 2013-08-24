@@ -8,8 +8,6 @@ include_once("categories.php");
 include_once("filters.php");
 include("post_html.php");
 
-error_reporting(E_ERROR | E_PARSE);
-//ini_set('display_errors', 1);
 
 $ml_content_redirect = new MLContentRedirect();
 
@@ -72,8 +70,17 @@ if($ml_content_redirect->ml_content_redirect_enable == "1" &&
 {
 	$options = $_POST;
 	echo $ml_content_redirect->load_content($options);
+	return;
+}
+
+if ($user_offset == 0 && ml_cache_exists('main_posts')) {
+	//returning cache
+	$result = ml_cache_get('main_posts');
+	echo $result;
+	return;
 }
 else {
+	//not cached 
 	$query_array = array('showposts' => $user_limit,
 			  'orderby' => 'post_date',
 			  'order' => 'DESC',
@@ -278,7 +285,13 @@ function print_posts($posts,$tot_count,$offset,$platform,$options)
 		$final_posts["posts"][] = $final_post;
 	}
 
-	echo json_encode($final_posts);
+	$json_string = json_encode($final_posts);
+	echo $json_string;
+
+	//caching json string if is main posts
+	if($offset == 0) {
+		ml_cache_set('main_posts',$json_string);
+	}
 }
 
 
