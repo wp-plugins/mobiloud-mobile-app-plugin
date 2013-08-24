@@ -27,7 +27,6 @@ include_once dirname( __FILE__ ) . '/configuration.php';
 include_once dirname( __FILE__ ) . '/homepage.php';
 include_once dirname( __FILE__ ) . '/intercom.php';
 
-include_once dirname( __FILE__ ) . "/libs/errors.php";
 
 register_activation_hook(__FILE__,'mobiloud_install');
 add_action('init', 'mobiloud_plugin_init');
