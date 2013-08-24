@@ -1,30 +1,33 @@
 <?php
 /**
  * @package Mobiloud
- * @version 1.8.10
+ * @version 1.8.12
  */
 /*
 Plugin Name: Mobiloud
 Plugin URI: http://www.mobiloud.com
 Description: Turn your WordPress site into beautiful native mobile apps. No coding needed.
 Author: Mobiloud by 50pixels
-Version: 1.8.11
+Version: 1.8.12
 Author URI: http://www.mobiloud.com
 */
 
-ini_set('display_errors', 1);
 
 define('MOBILOUD_PLUGIN_URL', plugin_dir_url( __FILE__ ));
-define('MOBILOUD_PLUGIN_VERSION', "1.8.11");
+define('MOBILOUD_PLUGIN_VERSION', "1.8.12");
 
 
 include_once dirname( __FILE__ ) . '/push.php';
+include_once dirname( __FILE__ ) . '/libs/cache.php';
+
 include_once dirname( __FILE__ ) . '/stats.php';
 include_once dirname( __FILE__ ) . '/ml_facebook.php';
 
 include_once dirname( __FILE__ ) . '/configuration.php';
 include_once dirname( __FILE__ ) . '/homepage.php';
 include_once dirname( __FILE__ ) . '/intercom.php';
+
+include_once dirname( __FILE__ ) . "/libs/errors.php";
 
 register_activation_hook(__FILE__,'mobiloud_install');
 add_action('init', 'mobiloud_plugin_init');
@@ -228,6 +231,12 @@ function mobiloud_plugin_init()
 	{
 		add_action('publish_post','ml_post_published_notification');
 	}
+
+	//cache
+	add_action('publish_post','ml_flush_posts_cache');
+	add_action('delete_post  ','ml_flush_posts_cache');
+	add_action('edit_post ','ml_flush_posts_cache');
+
 
 	//content redirect
   $ml_content_redirect_enable = get_option("ml_content_redirect_enable");
