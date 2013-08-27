@@ -7,5 +7,13 @@
 				 "required_php_version" => $required_php_version,
 				 "name" => get_bloginfo("name"),
 				 "plugin_dir_url" => plugin_dir_url(__FILE__));
+	$callback = $_GET['callback'];
+	if($callback) {
+		echo $callback."(";
+	}
 	echo json_encode($info);
+	if($callback) {
+		echo ")";
+	}
+
 ?>
