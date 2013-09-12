@@ -7,7 +7,6 @@ include_once dirname( __FILE__ ) . '/configuration/notifications.php';
 include_once dirname( __FILE__ ) . '/configuration/app.php';
 include_once dirname( __FILE__ ) . '/configuration/general.php';
 include_once dirname( __FILE__ ) . '/configuration/categories.php';
-include_once dirname( __FILE__ ) . '/configuration/pages.php';
 include_once dirname( __FILE__ ) . '/configuration/sticky_categories.php';
 include_once dirname( __FILE__ ) . '/configuration/facebook.php';
 
@@ -41,11 +40,6 @@ function mobiloud_configuration_page()
 				<?php ml_configuration_categories_ajax_load(); ?>
 			</div>
 
-			<!-- PAGES -->
-			<div id="ml_configuration_pages" class="stuffbox">
-				<?php ml_configuration_pages_ajax_load(); ?>
-			</div>
-		
 			<!-- STICKY CATEGORIES -->
 			<div id="ml_configuration_sticky_categories" class="stuffbox">
 				<?php ml_configuration_sticky_categories_ajax_load(); ?>
