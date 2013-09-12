@@ -16,6 +16,8 @@ Author URI: http://www.mobiloud.com
 define('MOBILOUD_PLUGIN_URL', plugin_dir_url( __FILE__ ));
 define('MOBILOUD_PLUGIN_VERSION', "1.8.12");
 
+define('MOBILOUD_HOME_MENU_URL', MOBILOUD_PLUGIN_URL."/configuration/home_menu");
+
 
 include_once dirname( __FILE__ ) . '/push.php';
 include_once dirname( __FILE__ ) . '/libs/cache.php';
@@ -24,6 +26,9 @@ include_once dirname( __FILE__ ) . '/stats.php';
 include_once dirname( __FILE__ ) . '/ml_facebook.php';
 
 include_once dirname( __FILE__ ) . '/configuration.php';
+include_once dirname( __FILE__ ) . '/configuration/home_menu/home_menu.php';
+include_once dirname( __FILE__ ) . '/home_menu/functions.php';
+
 include_once dirname( __FILE__ ) . '/homepage.php';
 include_once dirname( __FILE__ ) . '/intercom.php';
 
@@ -38,6 +43,7 @@ function mobiloud_install()
 	ml_notifications_install();
 
 	ml_categories_install();
+	ml_home_menu_install();
 	ml_pages_install();
 
 	ml_facebook_install();
@@ -147,6 +153,7 @@ function mobiloud_plugin_menu()
 	//add_submenu_page('mobiloud_menu', 'Mobiloud Analytics',"Analytics", "activate_plugins",'mobiloud_charts' , "mobiloud_charts"); 	
 	
 	add_submenu_page( 'mobiloud_menu', 'Mobiloud Homepage', 'Welcome', "activate_plugins", 'mobiloud_menu_homepage', 'mobiloud_home_page');
+	add_submenu_page( 'mobiloud_menu', 'Mobiloud Home Menu', 'Home Menu', "activate_plugins", 'mobiloud_menu_home_menu', 'ml_home_menu_page');
 	add_submenu_page( 'mobiloud_menu', 'Mobiloud Configuration', 'Configuration', "activate_plugins", 'mobiloud_menu_configuration', 'mobiloud_configuration_page');
 }
 
@@ -209,6 +216,14 @@ function mobiloud_plugin_init()
 	$ml_popup_message_on_mobile_active = get_option("ml_popup_message_on_mobile_active");
 	$ml_popup_message_on_mobile_appid = get_option("ml_popup_message_on_mobile_appid");
 	
+	//enqueue js and css
+	wp_enqueue_script('mobiloud',MOBILOUD_PLUGIN_URL.'mobiloud.js',array('jquery','jquery-ui'),MOBILOUD_PLUGIN_VERSION);
+	wp_register_style('mobiloud', MOBILOUD_PLUGIN_URL . 'mobiloud.css');
+	wp_register_style('mobiloud-iphone', MOBILOUD_PLUGIN_URL . "/css/iphone.css");
+	wp_enqueue_style("mobiloud.css");
+	wp_enqueue_style("mobiloud-iphone");
+
+
 	if( !class_exists( 'WP_Http' ) )
 	    include_once( ABSPATH . WPINC. '/class-http.php' );
 
@@ -247,9 +262,6 @@ function mobiloud_plugin_init()
 
 	add_filter('get_avatar', 'ml_get_avatar',10,2);
 	
-	
-	wp_register_style('mobiloud.css', MOBILOUD_PLUGIN_URL . 'mobiloud.css');
-	wp_enqueue_style("mobiloud.css");
 }
 
 
