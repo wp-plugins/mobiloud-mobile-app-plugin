@@ -4,11 +4,12 @@ include_once("libs/img_resize.php");
 include_once("libs/ml_content_redirect.php");
 
 include_once("categories.php");
-
 include_once("filters.php");
+
 include("post_html.php");
 
-include_once dirname( __FILE__ ) . "/libs/errors.php";
+
+//include_once dirname( __FILE__ ) . "/libs/errors.php";
 
 $ml_content_redirect = new MLContentRedirect();
 
@@ -74,12 +75,14 @@ if($ml_content_redirect->ml_content_redirect_enable == "1" &&
 	return;
 }
 
+/* cache system 
 if ($user_offset == 0 && ml_cache_exists('main_posts')) {
 	//returning cache
 	$result = ml_cache_get('main_posts');
 	echo $result;
 	return;
 }
+*/
 else {
 	//not cached 
 	$query_array = array('showposts' => $user_limit,
@@ -291,7 +294,7 @@ function print_posts($posts,$tot_count,$offset,$platform,$options)
 
 	//caching json string if is main posts
 	if($offset == 0) {
-		ml_cache_set('main_posts',$json_string);
+		//ml_cache_set('main_posts',$json_string);
 	}
 }
 
