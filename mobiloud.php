@@ -1,36 +1,38 @@
 <?php
 /**
  * @package Mobiloud
- * @version 1.8.12
+ * @version 1.8.15
  */
 /*
 Plugin Name: Mobiloud
 Plugin URI: http://www.mobiloud.com
 Description: Turn your WordPress site into beautiful native mobile apps. No coding needed.
 Author: Mobiloud by 50pixels
-Version: 1.8.12
+Version: 1.8.15
 Author URI: http://www.mobiloud.com
 */
 
 
 define('MOBILOUD_PLUGIN_URL', plugin_dir_url( __FILE__ ));
-define('MOBILOUD_PLUGIN_VERSION', "1.8.12");
+define('MOBILOUD_PLUGIN_VERSION', "1.8.15");
 
-define('MOBILOUD_HOME_MENU_URL', MOBILOUD_PLUGIN_URL."/configuration/home_menu");
+//define('MOBILOUD_HOME_MENU_URL', MOBILOUD_PLUGIN_URL."/configuration/home_menu");
 
 
 include_once dirname( __FILE__ ) . '/push.php';
-include_once dirname( __FILE__ ) . '/libs/cache.php';
+//include_once dirname( __FILE__ ) . '/libs/cache.php';
 
 include_once dirname( __FILE__ ) . '/stats.php';
 include_once dirname( __FILE__ ) . '/ml_facebook.php';
 
 include_once dirname( __FILE__ ) . '/configuration.php';
-include_once dirname( __FILE__ ) . '/configuration/home_menu/home_menu.php';
-include_once dirname( __FILE__ ) . '/home_menu/functions.php';
+//include_once dirname( __FILE__ ) . '/configuration/home_menu/home_menu.php';
+//include_once dirname( __FILE__ ) . '/home_menu/functions.php';
 
 include_once dirname( __FILE__ ) . '/homepage.php';
 include_once dirname( __FILE__ ) . '/intercom.php';
+
+include_once dirname( __FILE__ ) . '/admin_pointer.php';
 
 
 register_activation_hook(__FILE__,'mobiloud_install');
@@ -43,7 +45,7 @@ function mobiloud_install()
 	ml_notifications_install();
 
 	ml_categories_install();
-	ml_home_menu_install();
+	//ml_home_menu_install();
 	ml_pages_install();
 
 	ml_facebook_install();
@@ -153,7 +155,7 @@ function mobiloud_plugin_menu()
 	//add_submenu_page('mobiloud_menu', 'Mobiloud Analytics',"Analytics", "activate_plugins",'mobiloud_charts' , "mobiloud_charts"); 	
 	
 	add_submenu_page( 'mobiloud_menu', 'Mobiloud Homepage', 'Welcome', "activate_plugins", 'mobiloud_menu_homepage', 'mobiloud_home_page');
-	add_submenu_page( 'mobiloud_menu', 'Mobiloud Home Menu', 'Home Menu', "activate_plugins", 'mobiloud_menu_home_menu', 'ml_home_menu_page');
+	//add_submenu_page( 'mobiloud_menu', 'Mobiloud Home Menu', 'Home Menu', "activate_plugins", 'mobiloud_menu_home_menu', 'ml_home_menu_page');
 	add_submenu_page( 'mobiloud_menu', 'Mobiloud Configuration', 'Configuration', "activate_plugins", 'mobiloud_menu_configuration', 'mobiloud_configuration_page');
 }
 
@@ -229,15 +231,6 @@ function mobiloud_plugin_init()
 
 	add_action('admin_menu','mobiloud_plugin_menu');
 	
-	//MOBILOUD AD
-	//delete_option("ml_mobiloud_ad_notice_disabled");
-	$ml_mobiloud_ad_notice_disabled = get_option("ml_mobiloud_ad_notice_disabled");
-	if(!$ml_mobiloud_ad_notice_disabled)
-	{
-		add_action('admin_notices','ml_mobiloud_ad_notice');
-		add_action('wp_ajax_ml_disable_mobiloud_ad_notice', 'ml_disable_mobiloud_ad_notice_callback');
-		
-	}
 
 	//push notifications
 	$ml_push_notification_enabled = get_option("ml_push_notification_enabled");
@@ -247,9 +240,9 @@ function mobiloud_plugin_init()
 	}
 
 	//cache
-	add_action('publish_post','ml_flush_posts_cache');
-	add_action('delete_post  ','ml_flush_posts_cache');
-	add_action('edit_post ','ml_flush_posts_cache');
+	//add_action('publish_post','ml_flush_posts_cache');
+	//add_action('delete_post  ','ml_flush_posts_cache');
+	//add_action('edit_post ','ml_flush_posts_cache');
 
 
 	//content redirect
@@ -344,52 +337,5 @@ function ml_init_automatic_image_resize()
 	
 	$ml_automatic_image_resize = false;
 	ml_set_generic_option("ml_automatic_image_resize",$ml_automatic_image_resize);
-}
-
-function ml_disable_mobiloud_ad_notice_callback()
-{
-	add_option("ml_mobiloud_ad_notice_disabled",true);
-	die();
-}
-
-function ml_mobiloud_ad_notice()
-{
-
-	if(get_admin_page_title() != "Mobiloud Homepage"){ //display yellow bar for all pages except Mobiloud Welcome page
-	
-		?>
-		<div class="updated" style="height:55px;padding:10px;" id="ml_mobiloud_ad_notice">
-			<p style="font-size:15px;" align="center">Congratulations, the Mobiloud plugin is now installed.
-			</p>
-			<p align="center" style="margin-top:8px;">
-				<a href="<?php echo admin_url('admin.php?page=mobiloud_menu_homepage'); ?>" class="button-primary" id="ml_mobiloud_ad_notice_button">
-					Hide this message and get started with the plugin
-				</a>
-			</p>
-		</div>
-	
-		<script type="text/javascript" >
-		jQuery(document).ready(function($) {
-		
-			jQuery("#ml_mobiloud_ad_notice_button").click(function(){
-				var data = {
-					action: 'ml_disable_mobiloud_ad_notice'
-				};
-
-				$.post(ajaxurl, data, function(response) {
-					eval(response);
-					//saving the result and reloading the div
-					jQuery("#ml_mobiloud_ad_notice").remove();
-					window.location = "http://www.mobiloud.com";
-				});			
-			
-			});
-
-			
-		});
-		</script>	
-		<?php
-	}
-	
 }
 ?>
