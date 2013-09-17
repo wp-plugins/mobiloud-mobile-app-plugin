@@ -3,7 +3,7 @@ Contributors: alvises, psac50
 Tags: mobiloud, mobile, mobile app, native app, web app, iphone, ipad, iphone app, ipad app, android, tablet, windows mobile, mobile web, HTML5, mobile site, mobile plugin, wordpress mobile, mobile detect, mobile themes, mobile website, mobile theme, responsive, wptouch, ios app
 Requires at least: 3.2
 Tested up to: 3.6
-Stable tag: 1.8.14
+Stable tag: 1.8.15
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -187,6 +187,8 @@ You can contact us at [hello@mobiloud.com](mailto:hello@mobiloud.com)
 3. 
 
 == Changelog ==
+= 1.8.15
+* posts.php fix
 
 = 1.8.14 =
 * Admin pointer
