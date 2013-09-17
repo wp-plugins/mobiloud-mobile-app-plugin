@@ -1,20 +1,20 @@
 <?php
 /**
  * @package Mobiloud
- * @version 1.8.14
+ * @version 1.8.15
  */
 /*
 Plugin Name: Mobiloud
 Plugin URI: http://www.mobiloud.com
 Description: Turn your WordPress site into beautiful native mobile apps. No coding needed.
 Author: Mobiloud by 50pixels
-Version: 1.8.14
+Version: 1.8.15
 Author URI: http://www.mobiloud.com
 */
 
 
 define('MOBILOUD_PLUGIN_URL', plugin_dir_url( __FILE__ ));
-define('MOBILOUD_PLUGIN_VERSION', "1.8.14");
+define('MOBILOUD_PLUGIN_VERSION', "1.8.15");
 
 //define('MOBILOUD_HOME_MENU_URL', MOBILOUD_PLUGIN_URL."/configuration/home_menu");
 
