@@ -1,4 +1,4 @@
-=== Mobiloud Mobile App Plugin (iPhone, iPad, Android) ===
+=== Mobiloud - The Native Mobile App Plugin (iPhone, iPad, Android) ===
 Contributors: alvises, psac50
 Tags: mobiloud, mobile, mobile app, native app, web app, iphone, ipad, iphone app, ipad app, android, tablet, windows mobile, mobile web, HTML5, mobile site, mobile plugin, wordpress mobile, mobile detect, mobile themes, mobile website, mobile theme, responsive, wptouch, ios app
 Requires at least: 3.2
