@@ -39,13 +39,12 @@ Install the plugin now and you will be moments away from creating your mobile ap
 http://vimeo.com/68758152
 
 
-= Why Mobiloud =
 = Build your own app and get on mobile before your competitors =
-Mobile is huge. And growing. Smartphone and tablets are outselling PCs 4:1. Chances are, you're getting 30-40% of your traffic from mobile devices today, by next year it will be 50-60%.
+Mobile is huge. And growing. Smartphones and tablets are outselling PCs 4:1. Chances are you're getting 30-40% of your traffic from mobile devices today, rest assured, by 2015 it will be 50-60%.
 
-On mobile, apps are king. According to Internet research firm Comscore, mobile users spend 80% of their time inside apps. Users love the simplicty, speed and comfort offered by apps to access content and services.
+On mobile, apps are winning over websites. According to Internet research firm Comscore, mobile users spend 80% of their time inside apps. Users love the simplicty, speed and comfort apps can offer. 
 
-Mobile is the place you want to be if you want to grow your adience and gain traffic and popularity before your competitors do.
+In short, mobile is the place to be if you want to grow your audience and establish your presence where your readers are and will be before your competitors do.
 
 = Publish real native apps with no programming =
 With Mobiloud, you can create apps without any of the programming hassle. With Mobiloud's app builder it is incredibly easy to design your app's launch screen, icon, and interface. This is **your branded mobile app**, so make it really yours!
