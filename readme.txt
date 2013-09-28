@@ -18,6 +18,8 @@ Mobiloud is different from all other app builders out there. Our apps are real n
 
 Install the plugin now and you will be moments away from creating your mobile app. Design and test it for free, publish your mobile app at affordable monthly rates.
 
+**Promotion** Until next week, we're offering a 30% discount on our Professional and Publisher plans. Get it now while you can!
+
 = Features =
 * Converts your WordPress website into stunning native mobile apps
 * Automatically syncs with your WordPress site content: posts, pages, categories, images and video
