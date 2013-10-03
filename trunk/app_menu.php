@@ -8,7 +8,7 @@ header('Content-type: application/json');
 
 $final_pages = array();
 
-if(ml_is_app_menu_enable())
+if(false)
 {
 	$pages = ml_pages();
 
