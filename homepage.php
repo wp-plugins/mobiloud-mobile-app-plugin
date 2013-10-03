@@ -1,5 +1,6 @@
 <?php
 
+
 function mobiloud_home_page()
 {
 	global $current_user;
@@ -21,7 +22,7 @@ function mobiloud_home_page()
 		(function() {var ve = document.createElement('script'); ve.type = 'text/javascript'; ve.async = true; ve.src = '//getvero.com/assets/m.js'; var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ve, s);})();
 	
 	</script>
-
+<link rel='stylesheet' href="<?php echo MOBILOUD_PLUGIN_URL.'/mobiloud.css';?>" type='text/css' media='all' />
 
 	<div class="wrap">
 		
@@ -78,7 +79,6 @@ function mobiloud_home_page()
 	<script type="text/javascript">
 	
 		jQuery(document).ready(function($) {
-
 			var email = jQuery("#email").val();
 			var website = jQuery("#website").val();
 			var name = jQuery("#contactName").val();

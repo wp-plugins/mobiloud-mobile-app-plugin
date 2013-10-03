@@ -13,7 +13,7 @@ Author URI: http://www.mobiloud.com
 */
 
 
-define('MOBILOUD_PLUGIN_URL', plugin_dir_url( __FILE__ ));
+define('MOBILOUD_PLUGIN_URL', plugins_url()."/mobiloud-mobile-app-plugin");
 define('MOBILOUD_PLUGIN_VERSION', "1.8.15");
 
 //define('MOBILOUD_HOME_MENU_URL', MOBILOUD_PLUGIN_URL."/configuration/home_menu");
@@ -150,7 +150,7 @@ function ml_facebook_install()
 
 function mobiloud_plugin_menu() 
 {	
-	add_object_page("Mobiloud", "Mobiloud",NULL, "mobiloud_menu","activate_plugins",plugin_dir_url(__FILE__)."/menu_logo.png",25);
+	add_object_page("Mobiloud", "Mobiloud",NULL, "mobiloud_menu","activate_plugins",MOBILOUD_PLUGIN_URL."/menu_logo.png",25);
 	
 	//add_submenu_page('mobiloud_menu', 'Mobiloud Analytics',"Analytics", "activate_plugins",'mobiloud_charts' , "mobiloud_charts"); 	
 	
@@ -337,5 +337,10 @@ function ml_init_automatic_image_resize()
 	
 	$ml_automatic_image_resize = false;
 	ml_set_generic_option("ml_automatic_image_resize",$ml_automatic_image_resize);
+}
+
+function ml_admin_styles() {
+	wp_register_style('mobiloud', MOBILOUD_PLUGIN_URL . 'mobiloud.css');
+	wp_enqueue_style("mobiloud.css");
 }
 ?>
