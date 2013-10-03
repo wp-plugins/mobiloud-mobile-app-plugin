@@ -1,4 +1,7 @@
 <?php
+ini_set('display_errors',1);
+ini_set('display_startup_errors',1);
+error_reporting(-1);
 	include("../../../wp-blog-header.php");
 	global $wp_version, $required_php_version;
 	$info = array("version" => "1.8.16",
