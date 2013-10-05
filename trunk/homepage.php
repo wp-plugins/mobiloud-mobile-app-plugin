@@ -38,7 +38,7 @@ function mobiloud_home_page()
 					<h2 class='subtitle'>Enter your details below to get started</h2>
 					
 					<!-- FORM -->
-					<form class="form-horizontal formContact" target="_blank" action="<?php echo MOBILOUD_PLUGIN_URL;?>form-mail.php" id="contactForm" method="post">
+					<form class="form-horizontal formContact" target="_blank" action="<?php echo MOBILOUD_PLUGIN_URL;?>/form-mail.php" id="contactForm" method="post">
 		  			<input type='hidden' value="<?php echo $root_url?>" name='root_url'/>
 						<input type='hidden' value="<?php echo $plugins_url?>" name='plugins_url'/>
 
