@@ -10,7 +10,8 @@
 
 			$root_url = $_POST['root_url'];
 			$plugins_url = $_POST['plugins_url'];
-/*
+			$appname = $_POST['appname'];
+/*		
 			$emailTo = 'sales@mobiloud.com';
 			$subject = 'New plugin installation from '.$website;
 			$body = "New request from Mobiloud Plugin. \n\nName: $name \nEmail: $email \nWebsite: $website\n";
@@ -21,14 +22,15 @@
 		?>
 
 		<!-- FORM -->
-		<form  action="http://app.mobiloud.com/registration" id="configurator-form" method="post">
+		<form  action="https://app.mobiloud.com" id="configurator-form" method="post">
 			<input type='hidden' value="<?php echo $name?>" name='fullname'/>
 			<input type='hidden' value="<?php echo $email?>" name='email'/>
 			<input type='hidden' value="<?php echo $website?>" name='site'/>
 
 			<input type='hidden' value="<?php echo $root_url?>" name='root_url'/>
 			<input type='hidden' value="<?php echo $plugins_url?>" name='plugins_url'/>
-			
+			<input type='hidden' value="<?php echo $appname?>" name='app_name'/>
+
 		</form>
 
 		<script type="text/javascript">
