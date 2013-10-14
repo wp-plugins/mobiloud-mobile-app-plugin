@@ -1,4 +1,4 @@
-=== Mobiloud - The Native Mobile App Plugin (iPhone, iPad, Android) ===
+=== Mobiloud - Build Native Mobile Apps (iPhone, iPad, Android) ===
 Contributors: alvises, psac50
 Tags: mobiloud, mobile, mobile app, native app, web app, iphone, ipad, iphone app, ipad app, android, tablet, windows mobile, mobile web, HTML5, mobile site, mobile plugin, wordpress mobile, mobile detect, mobile themes, mobile website, mobile theme, responsive, wptouch, ios app
 Requires at least: 3.2
@@ -7,7 +7,7 @@ Stable tag: 1.8.16
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-Design and build native iPhone, iPad and Android mobile apps for your WordPress site. No coding required.
+Create native iPhone, iPad and Android mobile apps for your WordPress site. No coding required.
 
 == Description ==
 
@@ -18,7 +18,8 @@ Mobiloud is different from all other app builders out there. Our apps are real n
 
 Install the plugin now and you will be moments away from creating your mobile app. Design and test it for free, publish your mobile app at affordable monthly rates.
 
-**Promotion** Until next week, we're offering a 30% discount on our Professional and Publisher plans. Get it now while you can!
+= NEW: Android is here! =
+Sign up today and publish your native app on Android.
 
 = Features =
 * Converts your WordPress website into stunning native mobile apps
