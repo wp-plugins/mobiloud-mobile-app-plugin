@@ -55,6 +55,26 @@ function mobiloud_install()
 	
 }
 
+
+
+register_activation_hook(__FILE__, 'mobiloud_activate');
+add_action('admin_init', 'mobiloud_redirect');
+
+function mobiloud_activate() {
+    add_option('mobiloud_do_activation_redirect', true);
+}
+
+function mobiloud_redirect() {
+    if (get_option('mobiloud_do_activation_redirect', false)) {
+        delete_option('mobiloud_do_activation_redirect');
+        if(!isset($_GET['activate-multi']))
+        {
+            wp_redirect("admin.php?page=mobiloud_menu_homepage");
+        }
+    }
+}
+
+
 function ml_notifications_install()
 {
 	global $wpdb;
