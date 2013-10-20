@@ -21,8 +21,8 @@ function ml_enqueue_pointer_script_style( $hook_suffix ) {
 add_action('admin_enqueue_scripts','ml_enqueue_pointer_script_style');
 
 function ml_pointer_print_scripts() {
-	$pointer_content  = "<h3>Get Started Designing Your App!</h3>";
-  $pointer_content .= "<p>Start designing your mobile app from the <b>Mobiloud Welcome</b> tab</p>";
+	$pointer_content  = "<h3>Start Designing Your App!</h3>";
+  $pointer_content .= "<p>Design and preview your mobile app for free.</p>";
   ?>
   <script type="text/javascript">
   jQuery(document).ready( function($) {
