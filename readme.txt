@@ -14,12 +14,12 @@ Create native iPhone, iPad and Android mobile apps for your WordPress site. No c
 = Build your own mobile app =
 With Mobiloud it's really easy to transform your WordPress site into beautiful, fast mobile apps that your readers and customers will love. The apps you'll build will be **NATIVE mobile applications** running on iPhone, iPad and Android (beta). Give your mobile users easy access to your content and impress them with the best mobile user experience available.
 
-Mobiloud is different from all other app builders out there. Our apps are real native apps, not just a mobile site published as an app. Our apps are fast, run smoothly and their look and feel matches the platform you publish them on, be it iOS or Android.
+Mobiloud is different from all other app builders out there. Our apps are real native apps, not just a mobile site published as an app. Our apps are fast, run smoothly and their look and feel matches the platform you publish them on, be it iOS or Android. Unlike what our competitors offer, Mobiloud gives you an opportunity to build apps which are as smooth and professional as those from **sites like Techrunch, Buzzfeed and The Verge**.
 
-Install the plugin now and you will be moments away from creating your mobile app. Design and test it for free, publish your mobile app at affordable monthly rates.
+Install the plugin now and you will be moments away from creating your mobile app. Design and test it for free, publish your mobile app at **affordable monthly rates**.
 
-= NEW: Android is here! =
-Sign up today and publish your native app on Android.
+= NEW: Now you publish your apps on Android too! =
+Sign up today and build your native app on Android.
 
 = Features =
 * Converts your WordPress website into stunning native mobile apps
@@ -42,15 +42,15 @@ Sign up today and publish your native app on Android.
 http://vimeo.com/68758152
 
 
-= Build your own app and get on mobile before your competitors =
+= Build your own native iOS and Android apps =
 Mobile is huge. And growing. Smartphones and tablets are outselling PCs 4:1. Chances are you're getting 30-40% of your traffic from mobile devices today, rest assured, by 2015 it will be 50-60%.
 
 On mobile, apps are winning over websites. According to Internet research firm Comscore, mobile users spend 80% of their time inside apps. Users love the simplicty, speed and comfort apps can offer. 
 
-In short, mobile is the place to be if you want to grow your audience and establish your presence where your readers are and will be before your competitors do.
+In short, mobile is the place to be if you want to grow your audience and establish your presence where your readers are.
 
 = Publish real native apps with no programming =
-With Mobiloud, you can create apps without any of the programming hassle. With Mobiloud's app builder it is incredibly easy to design your app's launch screen, icon, and interface. This is **your branded mobile app**, so make it really yours!
+With Mobiloud, you can create apps without any of the programming hassle. With Mobiloud's app builder it is incredibly easy to design your app's launch screen and interface. This is **your branded mobile app**, so make it really yours!  
 
 = Offer the best mobile user experience =
 Your app will be a **real native mobile app**. We're talking about a clean, shiny design, easy swipe actions to navigate your content and one-tap access to features like favourite articles, commenting and sharing. Mobiloud apps are nothing like what our competitors offer, which are slow, poorly designed apps made using HTML.
