@@ -62,7 +62,7 @@ function iphone_html($post)
 	$text_author = "";
 	if(strcmp($author, "admin") != 0){
 		if(strcmp($author, "") != 0){
-			$text_author = " &bull; by ".get_author_name($post->post_author);
+			$text_author = " &bull; ".get_author_name($post->post_author);
 		}
 	}
 	

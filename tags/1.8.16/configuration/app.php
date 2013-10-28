@@ -139,15 +139,7 @@ simple and polished way. Once active, a banner promoting your app will be visibl
 	<!-- DESCRIPTION -->
 	<div style="font-size:20px;padding:5px;;margin-top:20px;margin-bottom:20px;width:70%;
 		text-align:justify;">
-	  <p>Once your app is live on App Store, find your app ID following the instructions below.	  </p>
-	  <ol>
-	    <li>Open iTunes.</li>
-	    <li>Search for your app.</li>
-	    <li>Click your app's name and copy the URL (right-click for PC users).</li>
-	    </ol>
-	  <p>App store URLs will be in the following format:</p>
-	  <div>http://itunes.apple.com/[country]/app/[App –Name]/id[App-ID]?mt=8</div>
-	  <p><a href="http://support.google.com/admob/answer/1620111?hl=en" target="_blank"></a>Copy-paste the [App-ID] part.</p>
+	  <p>Need to find your App-ID? <a href="http://mobiloud.com/faq.php#faq-14" target="_blank">Read how to</a>.</p>
     </div>
 	
 	<div style="margin-right:20px;">

@@ -57,10 +57,10 @@ function mobiloud_configuration_page()
 			</div>
 			
 			<!-- PUSH -->
-			<div id="ml_configuration_notifications" class="stuffbox">
+			<!-- <div id="ml_configuration_notifications" class="stuffbox">
 				<?php ml_configuration_notifications_ajax_load(); ?>
 			</div>
-			
+			 -->
 			<!-- API -->
 			<div id="ml_configuration_api_keys" class="stuffbox">
 				<?php ml_configuration_api_keys_ajax_load(); ?>
