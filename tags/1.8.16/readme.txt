@@ -14,12 +14,15 @@ Create native iPhone, iPad and Android mobile apps for your WordPress site. No c
 = Build your own mobile app =
 With Mobiloud it's really easy to transform your WordPress site into beautiful, fast mobile apps that your readers and customers will love. The apps you'll build will be **NATIVE mobile applications** running on iPhone, iPad and Android (beta). Give your mobile users easy access to your content and impress them with the best mobile user experience available.
 
-Mobiloud is different from all other app builders out there. Our apps are real native apps, not just a mobile site published as an app. Our apps are fast, run smoothly and their look and feel matches the platform you publish them on, be it iOS or Android. Unlike what our competitors offer, Mobiloud gives you an opportunity to build apps which are as smooth and professional as those from **sites like Techrunch, Buzzfeed and The Verge**.
+Mobiloud is different from all other app builders out there. **Our apps are real native apps**, not just a mobile site published as an app. Our apps are fast, run smoothly and their look and feel matches the platform you publish them on, be it iOS or Android. Unlike what our competitors offer, Mobiloud gives you an opportunity to build apps which are as smooth and professional as those from **sites like Techrunch, Buzzfeed and The Verge**.
 
-Install the plugin now and you will be moments away from creating your mobile app. Design and test it for free, publish your mobile app at **affordable monthly rates**.
+Install the plugin now and you will be moments away from creating your mobile app. 
 
-= NEW: Now you publish your apps on Android too! =
-Sign up today and build your native app on Android.
+= NEW: Now you can build Android apps too! =
+Sign up today and build your own native mobile app for Android.
+
+= Note: this is a commercial service =
+You can design and test your mobile native apps for free, then publish them on App Store and Google Play at **affordable monthly rates**, starting at $49 a month.
 
 = Features =
 * Converts your WordPress website into stunning native mobile apps
@@ -32,7 +35,7 @@ Sign up today and build your native app on Android.
 * Send **push notifications** to bring back mobile users to your content
 * Support for **Google Analytics** to track traffic on your app
 
-= How it all really works =
+= How it works =
 
 1. **Install and Activate** the plugin
 2. Click on **Get Started** on the plugin's page and start designing your mobile app. It only takes a few minutes.
@@ -42,12 +45,10 @@ Sign up today and build your native app on Android.
 http://vimeo.com/68758152
 
 
-= Build your own native iOS and Android apps =
-Mobile is huge. And growing. Smartphones and tablets are outselling PCs 4:1. Chances are you're getting 30-40% of your traffic from mobile devices today, rest assured, by 2015 it will be 50-60%.
+= Build your own native iOS and Android apps like Techcrunch or Buzzfeed =
+Mobile is huge. And growing. Smartphones and tablets are outselling PCs 4:1. Chances are you're getting 30-40% of your traffic from mobile devices today, rest assured, by 2015 it will be 50-60%. In short, your need to be on mobile if you want to be where your readers are.
 
-On mobile, apps are winning over websites. According to Internet research firm Comscore, mobile users spend 80% of their time inside apps. Users love the simplicty, speed and comfort apps can offer. 
-
-In short, mobile is the place to be if you want to grow your audience and establish your presence where your readers are.
+Mobile users spend 80% of their time inside apps. Users love the simplicty, speed and comfort apps can offer. With Mobiloud you can finally build native mobile apps for your blog, apps which are as good as those published by popular blogs Techcrunch and Buzzfeed.
 
 = Publish real native apps with no programming =
 With Mobiloud, you can create apps without any of the programming hassle. With Mobiloud's app builder it is incredibly easy to design your app's launch screen and interface. This is **your branded mobile app**, so make it really yours!  
