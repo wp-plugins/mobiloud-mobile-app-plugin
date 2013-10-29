@@ -12,17 +12,19 @@ Create native iPhone, iPad and Android mobile apps for your WordPress site. No c
 == Description ==
 
 = Build your own mobile app =
-With Mobiloud it's really easy to transform your WordPress site into beautiful, fast mobile apps that your readers and customers will love. The apps you'll build will be **NATIVE mobile applications** running on iPhone, iPad and Android (beta). Give your mobile users easy access to your content and impress them with the best mobile user experience available.
+With Mobiloud it's really easy to transform your WordPress site into beautiful, fast mobile apps that your readers and customers will love. The apps you'll build will be **Native mobile applications** running on iPhone, iPad and Android (beta). Give your mobile users easy access to your content and impress them with the best mobile user experience available.
 
-Mobiloud is different from all other app builders out there. **Our apps are real native apps**, not just a mobile site published as an app. Our apps are fast, run smoothly and their look and feel matches the platform you publish them on, be it iOS or Android. Unlike what our competitors offer, Mobiloud gives you an opportunity to build apps which are as smooth and professional as those from **sites like Techrunch, Buzzfeed and The Verge**.
+**Mobiloud is different** from all other app builders out there. **Our apps are real native apps**, not just a mobile site published as an app. 
+
+Our apps are fast, run smoothly and their look and feel matches the platform you publish them on, be it iOS or Android. Unlike what our competitors offer, Mobiloud gives you an opportunity to build apps which run **smooth and fast and look professional**, as those from sites like Techrunch, Buzzfeed and The Verge.
 
 Install the plugin now and you will be moments away from creating your mobile app. 
 
-= NEW: Now you can build Android apps too! =
-Sign up today and build your own native mobile app for Android.
-
-= Note: this is a commercial service =
+= Note this is a premium commercial service, but you can try it out for free =
 You can design and test your mobile native apps for free, then publish them on App Store and Google Play at **affordable monthly rates**, starting at $49 a month.
+
+= NEW: You can now build native Android apps too! =
+Sign up today and build your own native mobile app for Android.
 
 = Features =
 * Converts your WordPress website into stunning native mobile apps
