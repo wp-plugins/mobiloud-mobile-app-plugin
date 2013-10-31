@@ -20,8 +20,8 @@ Our apps are fast, run smoothly and their look and feel matches the platform you
 
 Install the plugin now and you will be moments away from creating your mobile app. 
 
-= Note this is a premium commercial service, but you can try it out for free =
-You can design and test your mobile native apps for free, then publish them on App Store and Google Play at **affordable monthly rates**, starting at $49 a month.
+= Note this is a premium commercial service - try it out for free! =
+You can design and test your mobile native apps for free. When you're happy with your design, publish them on App Store and Google Play at **affordable monthly rates**, starting at $49 a month. Or ask us about our one-off pricing.
 
 = NEW: You can now build native Android apps too! =
 Sign up today and build your own native mobile app for Android.
