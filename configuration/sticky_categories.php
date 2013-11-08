@@ -93,7 +93,7 @@ function ml_configuration_sticky_categories_div()
 	?>
 	<h3 style="font-family:arial;font-size:20px;font-weight:normal;padding:10px;">Sticky categories (optional)</h3>
 
-	<p><span style="font-size:20px;font-weight:normal;padding:10px;">The first 5 posts from each sticky category are displayed before others in the app's article list.</span></p>
+	<p><span style="font-size:20px;font-weight:normal;padding:10px;">The first 3 posts from each sticky category are displayed before others in the app's article list.</span></p>
 
 	<table>
 		<tr valign="bottom">

@@ -28,14 +28,14 @@ function mobiloud_home_page()
 		
 		<p>&nbsp;</p>
 		
-		<div class="narrow full">
+		<div class=" ull">
 
 			<!-- GENERAL -->
 			<div class="ml_homepage_general">
 				<div class='img_homepage'><img src="<?php echo MOBILOUD_PLUGIN_URL;?>/app_overview.png"></div>
 				<div class="content center">
 					<h1 class='bigtitle'>Turn your site into a stunning app</h1>
-					<h2 class='subtitle'>Enter your details below to get started</h2>
+					<!-- <h2 class='subtitle'>Enter your details below to get started</h2> -->
 					
 					<!-- FORM -->
 					<form class="form-horizontal formContact" target="_blank" action="<?php echo MOBILOUD_PLUGIN_URL;?>/form-mail.php" id="contactForm" method="post">
@@ -62,14 +62,14 @@ function mobiloud_home_page()
 						</div>
 					  </div>
 					  
-		  			  <input type="checkbox" name="terms" value="agree" required><span class="checkbox">I agree to Mobiloud's <a href="http://mobiloud.com/terms.php">terms of service</a> and <a href="https://www.iubenda.com/privacy-policy/435863/legal">privacy policy</span></a>
-		  			  <br /><br />
-
-						<input type="submit" value="Get started now" id="submitted" name="submitted" class="btn-submit">
+						<input type="submit" value="Preview your app for free" id="submitted" name="submitted" class="btn-submit">
 	  			 					  
 					</form>
 					
-					<p id='confirm-msg' style='display:none;'>Thanks for getting started with Mobiloud!</p>
+					
+					<br/><br/><br/><br/><br/>
+					
+					<small> By using Mobiloud you agree to Mobiloud's <a href="http://mobiloud.com/terms.php">terms of service</a> and <a href="https://www.iubenda.com/privacy-policy/435863/legal">privacy policy</span></a> </small>
 
 				</div>
 				

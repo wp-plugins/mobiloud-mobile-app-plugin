@@ -55,6 +55,26 @@ function mobiloud_install()
 	
 }
 
+
+
+register_activation_hook(__FILE__, 'mobiloud_activate');
+add_action('admin_init', 'mobiloud_redirect');
+
+function mobiloud_activate() {
+    add_option('mobiloud_do_activation_redirect', true);
+}
+
+function mobiloud_redirect() {
+    if (get_option('mobiloud_do_activation_redirect', false)) {
+        delete_option('mobiloud_do_activation_redirect');
+        if(!isset($_GET['activate-multi']))
+        {
+            wp_redirect("admin.php?page=mobiloud_menu_homepage");
+        }
+    }
+}
+
+
 function ml_notifications_install()
 {
 	global $wpdb;
@@ -154,7 +174,7 @@ function mobiloud_plugin_menu()
 	
 	//add_submenu_page('mobiloud_menu', 'Mobiloud Analytics',"Analytics", "activate_plugins",'mobiloud_charts' , "mobiloud_charts"); 	
 	
-	add_submenu_page( 'mobiloud_menu', 'Mobiloud Homepage', 'Welcome', "activate_plugins", 'mobiloud_menu_homepage', 'mobiloud_home_page');
+	add_submenu_page( 'mobiloud_menu', 'Mobiloud Homepage', 'Design your app', "activate_plugins", 'mobiloud_menu_homepage', 'mobiloud_home_page');
 	//add_submenu_page( 'mobiloud_menu', 'Mobiloud Home Menu', 'Home Menu', "activate_plugins", 'mobiloud_menu_home_menu', 'ml_home_menu_page');
 	add_submenu_page( 'mobiloud_menu', 'Mobiloud Configuration', 'Configuration', "activate_plugins", 'mobiloud_menu_configuration', 'mobiloud_configuration_page');
 }
