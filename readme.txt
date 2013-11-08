@@ -207,6 +207,10 @@ You can contact us at [hello@mobiloud.com](mailto:hello@mobiloud.com)
 
 == Changelog ==
 
+
+= 1.8.17
+* improved post html
+
 = 1.8.16
 * app_menu.php fix
 
