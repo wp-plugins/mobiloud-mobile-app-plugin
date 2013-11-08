@@ -70,12 +70,14 @@ function ipad_html($post)
 		}
 	}
 	
-	$title .= "<p class='details'>".mysql2date('l j F Y',$post->post_date)."".$text_author."</p><p>&nbsp;</p>";
-	
+	if ( get_post_type($post->ID) != "page") {
+		$title .= "<p class='details'>".mysql2date('F j Y',$post->post_date)."".$text_author."</p><p>&nbsp;</p>";
+	}
+		
 	$final_html = $init_html;
 	$final_html .= "<body><div id=\"content\">";
 	$final_html .= $spaces;
-	$final_html .= $title.$html->save().$spaces."</div></body></html>";
+	$final_html .= $title.$html->save().$spaces."<br/><br/><br/><br/><br/><br/><br/><br/></div></body></html>";
 
 	return $final_html;
 }

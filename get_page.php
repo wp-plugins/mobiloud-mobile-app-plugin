@@ -20,7 +20,7 @@ if($page->post_content == NULL || strlen($page->post_content) == 0)
 	header("Location: $link");
 	exit;
 }
-echo "<p>&nbsp;</p>";
+// echo "<p>&nbsp;</p>";
 
 
 if($platform == "ipad")
