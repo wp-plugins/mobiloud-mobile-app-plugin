@@ -66,7 +66,9 @@ function iphone_html($post)
 		}
 	}
 	
-	$title .= "<p class='details'>".mysql2date('F j Y',$post->post_date)."".$text_author."</p><p>&nbsp;</p>";
+	if ( get_post_type($post->ID) != "page") {
+		$title .= "<p class='details'>".mysql2date('F j Y',$post->post_date)."".$text_author."</p><p>&nbsp;</p>";
+	}
 	
 	$final_html = $init_html;
 
@@ -79,7 +81,10 @@ function iphone_html($post)
 		$final_html .= "<body><div id=\"content\" >"; //style='margin-top:-17px;' removed from content
 	}
 	
-	$final_html .= $spaces. $title.$html->save().$spaces."</div></body></html>";
+	// $final_html .= get_post_type($post->ID); 
+	
+	
+	$final_html .= $spaces. $title.$html->save().$spaces."<br/><br/><br/><br/><br/><br/><br/><br/></div></body></html>";
 
 	return $final_html;
 }
