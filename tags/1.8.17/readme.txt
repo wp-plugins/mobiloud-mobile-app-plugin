@@ -12,9 +12,7 @@ Create native iPhone, iPad and Android mobile apps for your WordPress site. No c
 == Description ==
 
 = Build your own mobile app =
-With Mobiloud it's really easy to transform your WordPress site into beautiful, fast mobile apps that your readers and customers will love. The apps you'll build will be **Native mobile applications** running on iPhone, iPad and Android (beta). Give your mobile users easy access to your content and impress them with the best mobile user experience available.
-
-**Mobiloud is different** from all other app builders out there. **Our apps are real native apps**, not just a mobile site published as an app. 
+With Mobiloud it's really easy to transform your WordPress site into beautiful, fast mobile apps that your readers and customers will love. The apps you'll build will be **Native mobile applications** running on iPhone, iPad and Android (beta). Give your mobile users easy access to your content and impress them with the best mobile user experience available. Mobiloud is different from all other app builders out there. **Mobiloud apps are real native apps**, not just a mobile site published as an app. 
 
 Our apps are fast, run smoothly and their look and feel matches the platform you publish them on, be it iOS or Android. Unlike what our competitors offer, Mobiloud gives you an opportunity to build apps which run **smooth and fast and look professional**, as those from sites like Techrunch, Buzzfeed and The Verge.
 
