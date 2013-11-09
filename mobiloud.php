@@ -1,7 +1,7 @@
 <?php
 /**
  * @package Mobiloud
- * @version 1.8.16
+ * @version 1.8.17
  */
 /*
 Plugin Name: Mobiloud
@@ -14,7 +14,7 @@ Author URI: http://www.mobiloud.com
 
 
 define('MOBILOUD_PLUGIN_URL', plugins_url()."/mobiloud-mobile-app-plugin");
-define('MOBILOUD_PLUGIN_VERSION', "1.8.16");
+define('MOBILOUD_PLUGIN_VERSION', "1.8.17");
 
 //define('MOBILOUD_HOME_MENU_URL', MOBILOUD_PLUGIN_URL."/configuration/home_menu");
 
