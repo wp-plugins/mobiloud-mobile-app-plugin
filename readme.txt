@@ -1,38 +1,43 @@
-=== Mobiloud - Build Native Mobile Apps (iPhone, iPad, Android) ===
+=== Mobiloud - WordPress Native Mobile Apps Builder (iPhone, iPad, Android) ===
 Contributors: alvises, psac50
-Tags: mobiloud, mobile, mobile app, native app, web app, iphone, ipad, iphone app, ipad app, android, tablet, windows mobile, mobile web, HTML5, mobile site, mobile plugin, wordpress mobile, mobile detect, mobile themes, mobile website, mobile theme, responsive, wptouch, ios app
+Tags: mobiloud, mobile, mobile app, native app, web app, iphone, ipad, iphone app, ipad app, android, tablet, windows mobile, mobile web, HTML5, mobile site, mobile plugin, wordpress mobile, adsense, google, mobile theme, mobile template, mobile website, mobile theme, responsive, wptouch, ios app
 Requires at least: 3.2
 Tested up to: 3.7
 Stable tag: 1.9.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-Create native iPhone, iPad and Android mobile apps for your WordPress site. No coding required.
+This plugin lets you create mobile apps for iPhone, iPad and Android with your WordPress content. No coding required.
 
 == Description ==
 
 = Build your own mobile app =
-With Mobiloud it's really easy to transform your WordPress site into beautiful, fast mobile apps that your readers and customers will love. The apps you'll build will be **Native mobile applications** running on iPhone, iPad and Android (beta). Give your mobile users easy access to your content and impress them with the best mobile user experience available. Mobiloud is different from all other app builders out there. **Mobiloud apps are real native apps**, not just a mobile site published as an app. 
+A year ago we were looking for an effective way to turn a WordPress site into mobile apps. We couldn't find any service which met our needs. We wanted real native apps, something like the apps Techcrunch or Engadget have built for their own blogs. All app builders on the market provide HTML web apps wrapped in a native container - not what we wanted. So we built [Mobiloud](http://www.mobiloud.com), and today you can use it yourself to build stunning native apps on iOS and Android.
 
-Our apps are fast, run smoothly and their look and feel matches the platform you publish them on, be it iOS or Android. Unlike what our competitors offer, Mobiloud gives you an opportunity to build apps which run **smooth and fast and look professional**, as those from sites like Techrunch, Buzzfeed and The Verge.
+**It's not for everyone though**. Mobiloud is for bloggers and publishers who want to have high quality **native mobile apps** available on App Store and Google Play, apps like those published by TechCrunch, The Verge, The Huffington Post. **It's not a free service**, and it doesn't help you publish a mobile site. If it sounds like what you need, then read on.
 
-Install the plugin now and you will be moments away from creating your mobile app. 
+Our apps are fast, run smoothly and their look and feel matches the platform you publish them on, be it iOS or Android. The apps support **mobile ad networks** such as Admob and Adsense, allow you to add your own advertising, support **WordPress, Disqus and Facebook comments** and allow you to **automatic push notifications** alerts when you publish new content. Your users will be able to choose which categories to receive notifications for.
 
-= Note this is a premium commercial service - try it out for free! =
-You can design and test your mobile native apps for free. When you're happy with your design, publish them on App Store and Google Play at **affordable monthly rates**, starting at $49 a month. Or ask us about our one-off pricing.
+We're professional app developers, so we can provide you with further customisation for your apps and more functionalities as required. Request a custom app by filling in the [Custom Mobiloud Request](http://mobiloud.com/custom.html) form. If you're an agency or developer, check out our [Whitelabel Program](http://www.mobiloud.com/whitelabel.php).
+
+Install the plugin now and you will be moments away from creating your mobile app. Designing an app takes 2-3 minutes, and you can further customise it from the plugin configuration pages. You can **immediately get a preview of the app** and test it online.
+
 
 = NEW: You can now build native Android apps too! =
 Sign up today and build your own native mobile app for Android.
 
 = Features =
-* Converts your WordPress website into stunning native mobile apps
+* Converts your WordPress site or blog into stunning native mobile apps
 * Automatically syncs with your WordPress site content: posts, pages, categories, images and video
+* Users can comment direclty from the apps using WordPress, Disqus and Facebook comments (your choice)
 * Fast, smooth mobile apps (better then any HTML5 alternative)
-* Publish your **iPhone and Android apps** on App Store and Google Play (Android in beta)
+* Publish your **iPhone and Android apps** on App Store and Google Play
+* Support for iPhone, iPad (iOS6 and iOS7 supported), Android phones and tablets (Android 4.x)
 * You **create your own designs** in minutes, using our simple configurator
 * Support for **Admob, Adsense** and other mobile advertising options
 * Support for **Disqus and Facebook comments**
-* Send **push notifications** to bring back mobile users to your content
+* Send **push notifications** automatically to bring back mobile users to your content
+* Users can choose which categories to receive push messages for
 * Support for **Google Analytics** to track traffic on your app
 
 = How it works =
@@ -40,18 +45,19 @@ Sign up today and build your own native mobile app for Android.
 1. **Install and Activate** the plugin
 2. Click on **Get Started** on the plugin's page and start designing your mobile app. It only takes a few minutes.
 3. Test-drive a **live preview of your mobile app** online, from your browser.
-4. When you're ready **publish your mobile app** on the App Store and Google Play (we do all the work for you!)
+4. When you're ready **publish your mobile app** on the App Store and Google Play
+5. We build the apps in 5 working days and submit them for you
 
 http://vimeo.com/68758152
 
 
-= Build your own native iOS and Android apps like Techcrunch or Buzzfeed =
+= Build your own native iOS and Android apps =
 Mobile is huge. And growing. Smartphones and tablets are outselling PCs 4:1. Chances are you're getting 30-40% of your traffic from mobile devices today, rest assured, by 2015 it will be 50-60%. In short, your need to be on mobile if you want to be where your readers are.
 
-Mobile users spend 80% of their time inside apps. Users love the simplicty, speed and comfort apps can offer. With Mobiloud you can finally build native mobile apps for your blog, apps which are as good as those published by popular blogs Techcrunch and Buzzfeed.
+Mobile users spend 80% of their time inside apps. Users love the simplicty, speed and comfort apps can offer. With Mobiloud you can finally build native mobile apps for your blog, apps which are as good as those published by major blogs and online publishers.
 
-= Publish real native apps with no programming =
-With Mobiloud, you can create apps without any of the programming hassle. With Mobiloud's app builder it is incredibly easy to design your app's launch screen and interface. This is **your branded mobile app**, so make it really yours!  
+= No programming necessary =
+With Mobiloud, you can create apps without any of the programming hassle. With Mobiloud's app builder it is incredibly easy to design your app's launch screen and interface. This is **your branded mobile app**, so make it yours!  
 
 = Offer the best mobile user experience =
 Your app will be a **real native mobile app**. We're talking about a clean, shiny design, easy swipe actions to navigate your content and one-tap access to features like favourite articles, commenting and sharing. Mobiloud apps are nothing like what our competitors offer, which are slow, poorly designed apps made using HTML.
@@ -100,9 +106,6 @@ Andrea Gallazzi, owner CircusF1.com
 = Pricing =
 Install the plugin and design your mobile app for free. Try it as long as you want. To publish your app on App Store or Google Play, we charge small monthly fees. Check the [pricing plans on Mobiloud.com](http://www.mobiloud.com/pricing.php?ref=plugindesc).
 
-
-= 30 days 100% Satisfaction Guarantee - no risk or commitment, really! =
-Install the plugin and design your mobile app today. Get a free preview. Pay only when you're ready to publish your app. If for any reason you're not happy with it, we'll fully refund any fees paid within 30 days from your order.
 
 For any questions, don’t hesitate to get in touch with us at [hello@mobiloud.com](mailto:hello@mobiloud.com)
 
@@ -184,14 +187,11 @@ No contracts here! You pay month-to-month, and if you're unhappy with the servic
 = What are the Terms and Conditions? =
 Here is our [Terms and Conditions](http://mobiloud.com/terms.php) and [Privacy Policy](https://www.iubenda.com/privacy-policy/435863/legal).
 
-= What if I'm not happy with it? Is there any guarantee? =
-We offer a 30-day money back guarantee. If for any reason you're unhappy with your app, just send us an email at [support@mobiloud.com](mailto:support@mobiloud.com) and we'll refund all fees paid, no questions asked.
-
 = Where are you based? =
-We're a UK company based in London. Mobiloud is our trade name, and Fifty Pixels Ltd is the official company name. Here's our full address Clerkenwell Workshops, 31 Clerkenwell Close, London, EC1R 0AT.
+We're a UK company based in London. Mobiloud a trademark of Fifty Pixels Ltd. Come meet us at Clerkenwell Workshops, 31 Clerkenwell Close, London, EC1R 0AT.
 
 = Can I contact you over the phone? =
-Of course, just call us on **+44 (0) 203 086 8650** or call us on Skype (skypename fiftypixels).
+Just call us on **+1 415 5130 886** or on Skype (skypename fiftypixels).
 
 = Any questions? =
 You can contact us at [hello@mobiloud.com](mailto:hello@mobiloud.com)
