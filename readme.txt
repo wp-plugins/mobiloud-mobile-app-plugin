@@ -12,13 +12,13 @@ This plugin lets you create mobile apps for iPhone, iPad and Android with your W
 == Description ==
 
 = Build your own mobile app =
-A year ago we were looking for an effective way to turn a WordPress site into mobile apps. We couldn't find any service which met our needs. We wanted real native apps, something like the apps Techcrunch or Engadget have built for their own blogs. All app builders on the market provide HTML web apps wrapped in a native container - not what we wanted. So we built [Mobiloud](http://www.mobiloud.com), and today you can use it yourself to build stunning native apps on iOS and Android.
+A year ago we were looking for a simple way to turn a WordPress site into mobile apps. We were frustrated with what the market offered. We wanted real native apps, something like the apps TechCrunch or Engadget have built. All app builders on the market instead provide HTML web apps wrapped in a native container - not what we wanted, the experience was really poor. So we built [Mobiloud](http://www.mobiloud.com), and published a number of beautiful native apps, which helped us grow traffic and revenue for our customers. Today you can use it yourself to build stunning native apps on iOS and Android, in just minutes.
 
-**It's not for everyone though**. Mobiloud is for bloggers and publishers who want to have high quality **native mobile apps** available on App Store and Google Play, apps like those published by TechCrunch, The Verge, The Huffington Post. **It's not a free service**, and it doesn't help you publish a mobile site. If it sounds like what you need, then read on.
+**It's not for everyone though**. Mobiloud is for people who want to have fully branded **native mobile apps** available on the Apple App Store and Google Play, offering content from their WordPress site or blog (similar apps are published by TechCrunch, The Verge, The Huffington Post). **It's not a free service**, and it doesn't help you publish a mobile site. If it sounds like what you need, then read on.
 
 Our apps are fast, run smoothly and their look and feel matches the platform you publish them on, be it iOS or Android. The apps support **mobile ad networks** such as Admob and Adsense, allow you to add your own advertising, support **WordPress, Disqus and Facebook comments** and allow you to **automatic push notifications** alerts when you publish new content. Your users will be able to choose which categories to receive notifications for.
 
-We're professional app developers, so we can provide you with further customisation for your apps and more functionalities as required. Request a custom app by filling in the [Custom Mobiloud Request](http://mobiloud.com/custom.html) form. If you're an agency or developer, check out our [Whitelabel Program](http://www.mobiloud.com/whitelabel.php).
+We're professional app developers, so we can provide you with further customisation for your apps and more functionalities as required. If you're site has more functionality then a blog and you want it available on the app, then send us a request by filling in the [Custom Mobiloud Request](http://mobiloud.com/custom.html) form. If you're an agency or developer, check out our [Whitelabel Program](http://www.mobiloud.com/whitelabel.php).
 
 Install the plugin now and you will be moments away from creating your mobile app. Designing an app takes 2-3 minutes, and you can further customise it from the plugin configuration pages. You can **immediately get a preview of the app** and test it online.
 
@@ -27,15 +27,14 @@ Install the plugin now and you will be moments away from creating your mobile ap
 Sign up today and build your own native mobile app for Android.
 
 = Features =
-* Converts your WordPress site or blog into stunning native mobile apps
-* Automatically syncs with your WordPress site content: posts, pages, categories, images and video
-* Users can comment direclty from the apps using WordPress, Disqus and Facebook comments (your choice)
-* Fast, smooth mobile apps (better then any HTML5 alternative)
+* Converts your WordPress site or blog into **stunning mobile apps**
+* **Automatically syncs with your WordPress site content**: posts, pages, categories, images and video
+* Fast, smooth and well designed mobile apps (better then any HTML5 alternative)
 * Publish your **iPhone and Android apps** on App Store and Google Play
-* Support for iPhone, iPad (iOS6 and iOS7 supported), Android phones and tablets (Android 4.x)
+* Support for **iPhone, iPad** (iOS6 and iOS7 supported), **Android phones and tablets** (Android 4.x)
 * You **create your own designs** in minutes, using our simple configurator
 * Support for **Admob, Adsense** and other mobile advertising options
-* Support for **Disqus and Facebook comments**
+* Support for WordPress, **Disqus and Facebook comments** (your choice)
 * Send **push notifications** automatically to bring back mobile users to your content
 * Users can choose which categories to receive push messages for
 * Support for **Google Analytics** to track traffic on your app
