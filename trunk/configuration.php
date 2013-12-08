@@ -1,9 +1,6 @@
 <?php
-include_once dirname( __FILE__ ) . '/push.php';
 include_once dirname( __FILE__ ) . '/categories.php';
 include_once dirname( __FILE__ ) . '/pages.php';
-include_once dirname( __FILE__ ) . '/configuration/api.php';
-include_once dirname( __FILE__ ) . '/configuration/notifications.php';
 include_once dirname( __FILE__ ) . '/configuration/app.php';
 include_once dirname( __FILE__ ) . '/configuration/general.php';
 include_once dirname( __FILE__ ) . '/configuration/categories.php';
@@ -56,16 +53,7 @@ function mobiloud_configuration_page()
 				<?php ml_configuration_app_redirect_ajax_load(); ?>
 			</div>
 			
-			<!-- PUSH -->
-			<!-- <div id="ml_configuration_notifications" class="stuffbox">
-				<?php ml_configuration_notifications_ajax_load(); ?>
-			</div>
-			 -->
-			<!-- API -->
-			<div id="ml_configuration_api_keys" class="stuffbox">
-				<?php ml_configuration_api_keys_ajax_load(); ?>
-			</div>
-		
+			
 			<!-- FACEBOOK -->
 			<div id="ml_facebook_keys" class="stuffbox">
 				<?php ml_configuration_facebook_ajax_load(); ?>
@@ -77,40 +65,7 @@ function mobiloud_configuration_page()
 }
 
 
-function mobiloud_get_service_info()
-{
-	global $ml_api_key, $ml_secret_key, $ml_server_host, $ml_server_port;
-	
-	$parameters = array('api_key' => $ml_api_key,'secret_key' => $ml_secret_key);
-						
-	$request = new WP_Http;
-	$url = "$ml_server_host/notifications/details";
-	$result = $request->request( $url, array('method' => 'POST', 
-											 'timeout' => 5,
-											 'body' => $parameters) );
-	
-	if($result != NULL && !isset($result->errors))
-	{
-		$dict = json_decode($result['body']);
-		$service = NULL;
-		if($dict)
-		{
-			$service = array();
-			$service["name"] = $dict->name;
-			$service["description"] = $dict->description;
-			$service["device_count"] = $dict->device_count;
-			
-			$service["notifications"] = array();
-			$service["notifications"]["count"] = $dict->push_sent;
-			$service["notifications"]["service_running"] = $dict->is_service_running;			
-			$service["notifications"]["environment"] = $dict->apn_env;	
-		}
-		
-		return $service;
-	}	
-	
-	return NULL;
-}
+
 
 function ml_update_configuration($cert_content,$ml_cert_type)
 {

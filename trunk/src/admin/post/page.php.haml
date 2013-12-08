@@ -1,0 +1,80 @@
+%script{:type => "text/javascript", :src => "#{MOBILOUD_PLUGIN_URL}/admin/post/stripslashes.js"}
+%script{:type => "text/javascript", :src => "#{MOBILOUD_PLUGIN_URL}/admin/post/post.js"}
+
+#ml_admin_post
+	%h1 Mobiloud Post Customization
+
+	%input#ml_admin_post_save_btn{:type => 'submit', :value => "Save", :class => 'button button-primary button-large', :data-label => "Save", :data-saving-label => "Saving..."}
+
+	%select#ml_admin_post_customization_select
+
+		%option{:value => 'ml_null'} Select a customization...
+
+		%option{:value => 'ml_post_head'} PHP Inside HEAD tag
+
+		%option{:value => 'ml_post_custom_js'} Custom JS
+		%option{:value => 'ml_post_custom_css'} Custom CSS
+
+		%option{:value => 'ml_post_start_body'} PHP at the beginning of BODY tag
+
+		%option{:value => 'ml_post_before_top_banner'} PHP before top Banner
+		%option{:value => 'ml_post_after_top_banner'} PHP after top Banner
+
+		%option{:value => 'ml_post_before_details'} PHP before post details
+		%option{:value => 'ml_post_after_details'} PHP after post details
+
+		%option{:value => 'ml_post_before_content'} PHP before Content
+		%option{:value => 'ml_post_after_content'} PHP after Content
+
+		%option{:value => 'ml_post_before_footer_banner'} PHP before footer Banner
+		%option{:value => 'ml_post_after_footer_banner'} PHP after footer Banner
+
+		%option{:value => 'ml_post_after_body'} PHP at the end of BODY tag
+
+		%option{:value => 'ml_post_footer'} PHP Footer
+	.clearfix
+
+	%textarea#ml_admin_post_textarea
+	%textarea.hidden{:name => 'ml_post_head'}=htmlspecialchars(get_option('ml_post_head'))
+	%textarea.hidden{:name => 'ml_post_custom_js'}=htmlspecialchars(get_option('ml_post_custom_js'))
+	%textarea.hidden{:name => 'ml_post_custom_css'}=htmlspecialchars(get_option('ml_post_custom_css'))
+	%textarea.hidden{:name => 'ml_post_start_body'}=htmlspecialchars(get_option('ml_post_start_body'))
+	%textarea.hidden{:name => 'ml_post_before_top_banner'}=htmlspecialchars(get_option('ml_post_before_top_banner'))
+	%textarea.hidden{:name => 'ml_post_after_top_banner'}=htmlspecialchars(get_option('ml_post_after_top_banner'))
+	%textarea.hidden{:name => 'ml_post_before_details'}=htmlspecialchars(get_option('ml_post_before_details'))
+	%textarea.hidden{:name => 'ml_post_after_details'}=htmlspecialchars(get_option('ml_post_after_details'))
+	%textarea.hidden{:name => 'ml_post_before_content'}=htmlspecialchars(get_option('ml_post_before_content'))
+	%textarea.hidden{:name => 'ml_post_after_content'}=htmlspecialchars(get_option('ml_post_after_content'))
+	%textarea.hidden{:name => 'ml_post_before_footer_banner'}=htmlspecialchars(get_option('ml_post_before_footer_banner'))
+	%textarea.hidden{:name => 'ml_post_after_footer_banner'}=htmlspecialchars(get_option('ml_post_after_footer_banner'))
+	%textarea.hidden{:name => 'ml_post_after_body'}=htmlspecialchars(get_option('ml_post_after_body'))
+	%textarea.hidden{:name => 'ml_post_footer'}=htmlspecialchars(get_option('ml_post_footer'))
+
+
+.wrap
+	.narrow
+		#ml_admin_post_options{:class => 'stuffbox'}
+			%h3 Options
+				%h2{:style => 'text-decoration:underline'} Posts
+				
+				%h2
+					%input{:type => 'checkbox', :name => 'ml_eager_loading_enable', :data-checked => "#{get_option('ml_eager_loading_enable',false)}"}
+					Preload the content
+
+				%h2
+					%input{:type => 'checkbox', :name => 'ml_post_author_enabled', :data-checked => "#{get_option('ml_post_author_enabled',false)}"}
+					Show author name
+
+				%h2
+					%input{:type => 'checkbox', :name => 'ml_post_date_enabled', :data-checked => "#{get_option('ml_post_date_enabled',false)}"}
+					Show date
+
+				%h2{:style => 'text-decoration:underline'} Pages
+				%h2
+					%input{:type => 'checkbox', :name => 'ml_page_author_enabled', :data-checked => "#{get_option('ml_page_author_enabled',false)}"}
+					Show author name
+
+				%h2
+					%input{:type => 'checkbox', :name => 'ml_page_date_enabled', :data-checked => "#{get_option('ml_page_date_enabled',false)}"}
+					Show date
+			%input{:type => 'submit', :value => "Save", :class => 'button button-primary button-large', :data-label => "Save", :data-saving-label => "Saving..."}

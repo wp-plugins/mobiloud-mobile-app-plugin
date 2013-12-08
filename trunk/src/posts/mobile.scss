@@ -1,0 +1,161 @@
+$background_color: rgba(255, 255, 255, 0);
+$font_color: #444;
+$font_size: 18px;
+$font_family: Lato;
+$content_padding: 10px;
+$content_lineheight: 25px;
+$content_maxwidth: 300;
+
+$tablet_width: 768px;
+$iphone_width: 320px;
+$iphone_land_width: 480px;
+
+//font
+@import url("http://fonts.googleapis.com/css?family=Lato:400,700,700italic,900,400italic,300");
+
+
+html {
+  color: $font_color;
+  background: $background_color;
+
+  font-family: $font_family;
+  font-size: $font_size;
+  line-height: $content_lineheight;
+
+  padding-bottom:80px;
+
+  @media all and (max-width:$iphone_width) and (orientation:portrait) {
+    font-size: 15px;
+    line-height: 20px;
+  }
+
+  @media all and (max-width:$iphone_width) and (orientation:landscape) {
+    font-size: 10px;
+    line-height: 13px;
+  }
+
+}
+
+body {}
+h1, h2, h3, h4, h5, h6 {color: #444; font-weight:bold}
+
+h1 { font-size: 1.6em; line-height: 33px }
+h2 { font-size: 1.2em }
+h3 { font-size: 0.934em }
+h4 { font-size: 0.8em }
+h5 { font-size: 0.667em }
+h6 { font-size: 0.534em }
+
+
+//ol{} ul{} li{}
+
+.post-content {
+  padding: $content_padding;     
+  text-align:left;
+  background:$background_color;
+  max-width: $content_maxwidth;
+
+
+  #loading_spinner {
+    position:fixed;
+    top: 30%;
+    left:50%;
+
+  }
+}
+
+#post_header {
+  border-bottom:1px solid #eee;
+  font-size: $font_size;
+
+  .post-title {
+    margin-bottom:50px; 
+    text-align: left;
+
+    @media all and (max-width:$iphone_width) {
+      font-size: 1.1em;
+      line-height: 1.3em;
+    }
+
+
+  }
+
+  .second-line {
+    height:20px;
+    .date {
+      float:left;
+      font-size:12px;
+      font-style: italic;
+    }
+
+    .author-name {
+      float:right;
+      font-size:14px;
+    }
+  }   
+
+}
+
+#main_content {
+  margin-top:40px;
+}
+
+.wp-caption {
+	text-align: center;
+	img {
+		width: 80% !important;
+		margin-left: auto !important;
+		margin-right: auto !important;
+	}
+}
+
+img{display:none}
+
+.media-container {
+  //centering the image
+  text-align: center;
+  width:100% !important;
+  display:block;
+  
+  margin-top:30px;
+  margin-bottom:30px;
+
+  img, embed, object, video {
+    margin-left: auto !important;
+    margin-right: auto !important;
+    height:auto !important;
+    max-width:100% !important;
+  }
+
+  .spinner {
+    margin-left:auto;
+    margin-right:auto;
+    left:40px !important;
+    top:40px !important;
+    width:80px;
+    height:80px;
+  }
+}
+
+
+.details {
+  font-size:15px;
+  color:gray;
+  font-style: italic; 
+}
+
+a:link {color:gray;}
+a:visited {color:gray;}
+a:hover {color:gray;}
+
+
+.clearfix:after {
+  visibility: hidden;
+  display: block;
+  font-size: 0;
+  content: " ";
+  clear: both;
+  height: 0;
+  }
+* html .clearfix             { zoom: 1; } /* IE6 */
+*:first-child+html .clearfix { zoom: 1; } /* IE7 */
