@@ -1,20 +1,26 @@
 <?php
 /**
  * @package Mobiloud
- * @version 1.9.0
+ * @version 1.9.1
  */
 /*
 Plugin Name: Mobiloud
 Plugin URI: http://www.mobiloud.com
 Description: Turn your WordPress site into beautiful native mobile apps. No coding needed.
 Author: Mobiloud by 50pixels
-Version: 1.9.0
+Version: 1.9.1
 Author URI: http://www.mobiloud.com
 */
-
-
+header_remove('X-Frame-Options');
+ini_set('display_errors', 1);
 define('MOBILOUD_PLUGIN_URL', plugins_url()."/mobiloud-mobile-app-plugin");
-define('MOBILOUD_PLUGIN_VERSION', "1.9.0");
+define('MOBILOUD_PLUGIN_VERSION', "2.0");
+define('MOBILOUD_PUSH_API_PUBLISH_URL', "https://push.mobiloud.com/api/notifications/publish");
+
+define('MOBILOUD_POST_ASSETS_URL', "http://www.mobiloud.com/api/post");
+//define('MOBILOUD_POST_ASSETS_URL', MOBILOUD_PLUGIN_URL."/post");
+
+
 
 //define('MOBILOUD_HOME_MENU_URL', MOBILOUD_PLUGIN_URL."/configuration/home_menu");
 
@@ -25,7 +31,17 @@ include_once dirname( __FILE__ ) . '/push.php';
 include_once dirname( __FILE__ ) . '/stats.php';
 include_once dirname( __FILE__ ) . '/ml_facebook.php';
 
+include_once dirname( __FILE__ ) . '/subscriptions/functions.php';
+
+include_once dirname( __FILE__ ) . '/admin/categories_pages/categories_pages.php';
+include_once dirname( __FILE__ ) . '/admin/banners/banners.php';
+include_once dirname( __FILE__ ) . '/admin/post/post.php';
+include_once dirname( __FILE__ ) . '/admin/license/license.php';
+include_once dirname( __FILE__ ) . '/admin/subscriptions/subscriptions.php';
+
 include_once dirname( __FILE__ ) . '/configuration.php';
+include_once dirname( __FILE__ ) . '/push_notifications/menu.php';
+
 //include_once dirname( __FILE__ ) . '/configuration/home_menu/home_menu.php';
 //include_once dirname( __FILE__ ) . '/home_menu/functions.php';
 
@@ -37,7 +53,6 @@ include_once dirname( __FILE__ ) . '/admin_pointer.php';
 
 register_activation_hook(__FILE__,'mobiloud_install');
 add_action('init', 'mobiloud_plugin_init');
-
 //INSTALLATION
 //tables creation
 function mobiloud_install()
@@ -176,7 +191,13 @@ function mobiloud_plugin_menu()
 	
 	add_submenu_page( 'mobiloud_menu', 'Mobiloud Homepage', 'Design your app', "activate_plugins", 'mobiloud_menu_homepage', 'mobiloud_home_page');
 	//add_submenu_page( 'mobiloud_menu', 'Mobiloud Home Menu', 'Home Menu', "activate_plugins", 'mobiloud_menu_home_menu', 'ml_home_menu_page');
+	//add_submenu_page( 'mobiloud_menu', 'Mobiloud Categories and Pages', 'Categories & Pages', "activate_plugins", 'mobiloud_menu_categories_pages', 'ml_admin_categories_pages_page');
+	add_submenu_page( 'mobiloud_menu', 'Mobiloud Post Customization', 'Post Customization', "activate_plugins", 'mobiloud_menu_post', 'ml_admin_post_page');
+	add_submenu_page( 'mobiloud_menu', 'Mobiloud Push Notifications', 'Push Notifications', "activate_plugins", 'mobiloud_menu_push_notifications', 'mobiloud_push_notifications_page');
+	//add_submenu_page( 'mobiloud_menu', 'Mobiloud Banners', 'Banners', "activate_plugins", 'mobiloud_menu_banners', 'ml_admin_banners_page');
+	add_submenu_page( 'mobiloud_menu', 'Mobiloud Subscriptions', 'Subscriptions', "activate_plugins", 'mobiloud_menu_subscriptions', 'ml_admin_subscriptions_page');		
 	add_submenu_page( 'mobiloud_menu', 'Mobiloud Configuration', 'Configuration', "activate_plugins", 'mobiloud_menu_configuration', 'mobiloud_configuration_page');
+	add_submenu_page( 'mobiloud_menu', 'Mobiloud License', 'License', "activate_plugins", 'mobiloud_menu_license', 'ml_admin_license_page');
 }
 
 
@@ -240,6 +261,7 @@ function mobiloud_plugin_init()
 	
 	//enqueue js and css
 	wp_enqueue_script('mobiloud',MOBILOUD_PLUGIN_URL.'mobiloud.js',array('jquery','jquery-ui'),MOBILOUD_PLUGIN_VERSION);
+	
 	wp_register_style('mobiloud', MOBILOUD_PLUGIN_URL . 'mobiloud.css');
 	wp_register_style('mobiloud-iphone', MOBILOUD_PLUGIN_URL . "/css/iphone.css");
 	wp_enqueue_style("mobiloud.css");
@@ -290,6 +312,7 @@ function ml_set_api_key($new_api_key)
 	$ml_api_key = $new_api_key;
 	ml_set_generic_option('ml_api_key',$ml_api_key);
 }
+
 function ml_set_secret_key($new_secret_key)
 {
 	$ml_secret_key= $new_secret_key;
@@ -358,5 +381,6 @@ function ml_init_automatic_image_resize()
 	$ml_automatic_image_resize = false;
 	ml_set_generic_option("ml_automatic_image_resize",$ml_automatic_image_resize);
 }
+
 
 ?>
