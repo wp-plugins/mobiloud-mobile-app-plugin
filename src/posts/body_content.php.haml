@@ -8,7 +8,7 @@
 	-$post = get_post($post_id)
 
 -$post_type = get_post_type($post->ID)
--$post_content = $post->post_content
+-$post_content = wpautop($post->post_content)
 
 %script{:type=>"text/javascript"}=stripslashes(get_option('ml_post_custom_js'))
 %style{:type=>"text/css"}=stripslashes(get_option('ml_post_custom_css'))

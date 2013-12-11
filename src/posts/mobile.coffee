@@ -10,21 +10,13 @@ window.mobiloud_mobile_init = ->
 
 	loadImages = ->
 		for img in $('img')
-			$(img).removeAttr('width').removeAttr('height')
-			#if $(img).hasClass 'attachment-thumbnail'
+			$(img).removeAttr('width').removeAttr('height').removeAttr('class')
+			$(img).closest("[id^=attachment]").removeAttr('style').removeAttr('class')
 			$(img).show()
-			#else
-				#$(img).parent().spin()
-				#preload images
-				#image = new Image()
-				#image.onload = ->
-				#	$(img).parent().spin(false)
-				#	$(img).show()
-				#	console.log $(img)
 
-				#image.src = $(img).attr('src')
+			
 	loadImages()
-	#setTimeout(loadImages,500)
+
 	makeFluidMedia()
 
 	#wrap the text outside tags
