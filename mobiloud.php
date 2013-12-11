@@ -1,7 +1,7 @@
 <?php
 /**
  * @package Mobiloud
- * @version 1.9.1
+ * @version 2.0
  */
 /*
 Plugin Name: Mobiloud
