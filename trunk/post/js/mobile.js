@@ -16,7 +16,8 @@
       _results = [];
       for (_i = 0, _len = _ref.length; _i < _len; _i++) {
         img = _ref[_i];
-        $(img).removeAttr('width').removeAttr('height');
+        $(img).removeAttr('width').removeAttr('height').removeAttr('class');
+        $(img).closest("[id^=attachment]").removeAttr('style').removeAttr('class');
         _results.push($(img).show());
       }
       return _results;

@@ -30,6 +30,8 @@
 		-include(dirname(__FILE__)."/body_content.php")
 	-else
 		#lazy_body
+			#lazy_content_spinner
+
 		%div{:id => 'mobiloud_lazy_load', :data-url => "#{MOBILOUD_PLUGIN_URL}/post/content_json.php", :data-post_id => "#{$post->ID}"}
 		%script{:type=>"text/javascript", :src=>"#{MOBILOUD_POST_ASSETS_URL}/js/lazy_load.js"}
 

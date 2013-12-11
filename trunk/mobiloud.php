@@ -8,7 +8,7 @@ Plugin Name: Mobiloud
 Plugin URI: http://www.mobiloud.com
 Description: Turn your WordPress site into beautiful native mobile apps. No coding needed.
 Author: Mobiloud by 50pixels
-Version: 1.9.1
+Version: 2.0
 Author URI: http://www.mobiloud.com
 */
 header_remove('X-Frame-Options');
@@ -17,8 +17,8 @@ define('MOBILOUD_PLUGIN_URL', plugins_url()."/mobiloud-mobile-app-plugin");
 define('MOBILOUD_PLUGIN_VERSION', "2.0");
 define('MOBILOUD_PUSH_API_PUBLISH_URL', "https://push.mobiloud.com/api/notifications/publish");
 
-define('MOBILOUD_POST_ASSETS_URL', "http://www.mobiloud.com/api/post");
-//define('MOBILOUD_POST_ASSETS_URL', MOBILOUD_PLUGIN_URL."/post");
+//define('MOBILOUD_POST_ASSETS_URL', "http://www.mobiloud.com/api/post");
+define('MOBILOUD_POST_ASSETS_URL', MOBILOUD_PLUGIN_URL."/post");
 
 
 
@@ -39,7 +39,7 @@ include_once dirname( __FILE__ ) . '/admin/post/post.php';
 include_once dirname( __FILE__ ) . '/admin/license/license.php';
 include_once dirname( __FILE__ ) . '/admin/subscriptions/subscriptions.php';
 
-include_once dirname( __FILE__ ) . '/configuration.php';
+include_once dirname( __FILE__ ) . '/admin/configuration/configuration.php';
 include_once dirname( __FILE__ ) . '/push_notifications/menu.php';
 
 //include_once dirname( __FILE__ ) . '/configuration/home_menu/home_menu.php';
@@ -192,7 +192,7 @@ function mobiloud_plugin_menu()
 	add_submenu_page( 'mobiloud_menu', 'Mobiloud Homepage', 'Design your app', "activate_plugins", 'mobiloud_menu_homepage', 'mobiloud_home_page');
 	//add_submenu_page( 'mobiloud_menu', 'Mobiloud Home Menu', 'Home Menu', "activate_plugins", 'mobiloud_menu_home_menu', 'ml_home_menu_page');
 	//add_submenu_page( 'mobiloud_menu', 'Mobiloud Categories and Pages', 'Categories & Pages', "activate_plugins", 'mobiloud_menu_categories_pages', 'ml_admin_categories_pages_page');
-	add_submenu_page( 'mobiloud_menu', 'Mobiloud Post Customization', 'Post Customization', "activate_plugins", 'mobiloud_menu_post', 'ml_admin_post_page');
+	//add_submenu_page( 'mobiloud_menu', 'Mobiloud Post Customization', 'Post Customization', "activate_plugins", 'mobiloud_menu_post', 'ml_admin_post_page');
 	add_submenu_page( 'mobiloud_menu', 'Mobiloud Push Notifications', 'Push Notifications', "activate_plugins", 'mobiloud_menu_push_notifications', 'mobiloud_push_notifications_page');
 	//add_submenu_page( 'mobiloud_menu', 'Mobiloud Banners', 'Banners', "activate_plugins", 'mobiloud_menu_banners', 'ml_admin_banners_page');
 	add_submenu_page( 'mobiloud_menu', 'Mobiloud Subscriptions', 'Subscriptions', "activate_plugins", 'mobiloud_menu_subscriptions', 'ml_admin_subscriptions_page');		

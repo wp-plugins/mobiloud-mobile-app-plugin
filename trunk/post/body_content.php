@@ -9,7 +9,7 @@
 <?php $post = get_post($post_id); ?>
 <?php } ?>
 <?php $post_type = get_post_type($post->ID); ?>
-<?php $post_content = $post->post_content; ?>
+<?php $post_content = wpautop($post->post_content); ?>
 <script type="text/javascript">
 <?php echo stripslashes(get_option('ml_post_custom_js')); ?>
 

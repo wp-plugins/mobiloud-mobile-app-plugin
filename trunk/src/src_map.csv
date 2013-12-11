@@ -5,6 +5,8 @@ admin/post/stripslashes.js  ../admin/post/stripslashes.js
 admin/banners/banners.php  ../admin/banners/banners.php
 admin/categories_pages/categories_pages.php  ../admin/categories_pages/categories_pages.php
 admin/subscriptions/subscriptions.php  ../admin/subscriptions/subscriptions.php
+admin/configuration/configuration.php  ../admin/configuration/configuration.php
+admin/configuration/general/general.php  ../admin/configuration/general/general.php
 posts/posts.php  ../posts.php
 posts/content_json.php  ../post/content_json.php
 subscriptions/functions.php  ../subscriptions/functions.php

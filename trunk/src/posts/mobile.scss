@@ -20,7 +20,7 @@ html {
 
   font-family: $font_family;
   font-size: $font_size;
-  line-height: $content_lineheight;
+  //line-height: $content_lineheight;
 
   padding-bottom:80px;
 
@@ -45,6 +45,14 @@ h3 { font-size: 0.934em }
 h4 { font-size: 0.8em }
 h5 { font-size: 0.667em }
 h6 { font-size: 0.534em }
+
+
+#lazy_content_spinner {
+  position:fixed;
+  top: 30%;
+  left:50%;
+
+}
 
 
 //ol{} ul{} li{}
@@ -109,6 +117,13 @@ h6 { font-size: 0.534em }
 	}
 }
 
+.wp-caption-text {
+  font-weight: italic;
+  font-size:0.7em;
+  margin-left:20%;
+  margin-right:20%;
+  text-align: center;
+}
 img{display:none}
 
 .media-container {

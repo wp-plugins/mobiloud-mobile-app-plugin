@@ -23,7 +23,8 @@
 <?php } else { ?>
 
 <div id="lazy_body">
-</div><div data-post_id="<?php echo $post->ID; ?>" data-url="<?php echo MOBILOUD_PLUGIN_URL; ?>/post/content_json.php" id="mobiloud_lazy_load">
+<div id="lazy_content_spinner">
+</div></div><div data-post_id="<?php echo $post->ID; ?>" data-url="<?php echo MOBILOUD_PLUGIN_URL; ?>/post/content_json.php" id="mobiloud_lazy_load">
 </div><script src="<?php echo MOBILOUD_POST_ASSETS_URL; ?>/js/lazy_load.js" type="text/javascript">
 </script><?php } ?>
 </body><?php eval(stripslashes(get_option('ml_post_footer'))); ?>
