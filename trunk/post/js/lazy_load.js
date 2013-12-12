@@ -33,8 +33,8 @@
     post_id = $lazy_info.data('post_id');
     makePageSpinner();
     mobiloudLazyLoadContent = function(data) {
-      var $body_content;
-      return $body_content = $(data.body_content);
+      $('#lazy_body').hide().html(data).show();
+      return mobiloud_mobile_init();
     };
     return $.ajax({
       type: 'GET',
@@ -52,8 +52,9 @@
       },
       complete: function(jqXHR) {
         console.log("lazy_load: complete (status " + jqXHR.status + ")");
-        $('#lazy_body').hide().html(jqXHR.responseText).show();
-        return mobiloud_mobile_init();
+        if (jqXHR.status !== 200) {
+          return mobiloudLazyLoadContent(jqXHR.responseText);
+        }
       }
     });
   });

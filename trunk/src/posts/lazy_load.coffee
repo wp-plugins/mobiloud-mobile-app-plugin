@@ -28,8 +28,9 @@ $(document).ready ->
 	makePageSpinner()
 	#data is a json object
 	mobiloudLazyLoadContent=(data)->
-		$body_content = $(data.body_content)
-
+		$('#lazy_body').hide().html(data).show()
+		mobiloud_mobile_init()
+	
 	$.ajax
 		type: 'GET'
 		url: url
@@ -43,5 +44,5 @@ $(document).ready ->
 			mobiloudLazyLoadContent(data)
 		complete:(jqXHR)->
 			console.log "lazy_load: complete (status #{jqXHR.status})"
-			$('#lazy_body').hide().html(jqXHR.responseText).show()
-			mobiloud_mobile_init()
+			if jqXHR.status != 200
+				mobiloudLazyLoadContent(jqXHR.responseText)
