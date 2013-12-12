@@ -1,5 +1,4 @@
 <?php
-	//ini_set('display_errors', 1);
 	include_once("../../../../wp-blog-header.php");
 
 	if(array_key_exists('callback', $_GET)) {

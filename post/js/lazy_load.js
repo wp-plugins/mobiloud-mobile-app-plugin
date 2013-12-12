@@ -34,16 +34,12 @@
     makePageSpinner();
     mobiloudLazyLoadContent = function(data) {
       var $body_content;
-      $body_content = $(data.body_content);
-      $('#lazy_body').hide().html($body_content).show();
-      return mobiloud_mobile_init();
+      return $body_content = $(data.body_content);
     };
     return $.ajax({
       type: 'GET',
       url: url,
-      contentType: 'application/json',
-      dataType: 'jsonp',
-      jsonpCallback: 'mobiloudLazyLoadContent',
+      dataType: 'html',
       data: {
         post_id: post_id
       },
@@ -56,9 +52,8 @@
       },
       complete: function(jqXHR) {
         console.log("lazy_load: complete (status " + jqXHR.status + ")");
-        if (jqXHR.status !== 200) {
-          return eval(jqXHR.responseText);
-        }
+        $('#lazy_body').hide().html(jqXHR.responseText).show();
+        return mobiloud_mobile_init();
       }
     });
   });
