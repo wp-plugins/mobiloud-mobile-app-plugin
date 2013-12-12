@@ -29,15 +29,11 @@ $(document).ready ->
 	#data is a json object
 	mobiloudLazyLoadContent=(data)->
 		$body_content = $(data.body_content)
-		$('#lazy_body').hide().html($body_content).show()
-		mobiloud_mobile_init()
 
 	$.ajax
 		type: 'GET'
 		url: url
-		contentType: 'application/json'
-		dataType: 'jsonp'
-		jsonpCallback: 'mobiloudLazyLoadContent'
+		dataType: 'html'
 		data: 
 			post_id: post_id
 		error: (data,status,error) ->
@@ -47,6 +43,5 @@ $(document).ready ->
 			mobiloudLazyLoadContent(data)
 		complete:(jqXHR)->
 			console.log "lazy_load: complete (status #{jqXHR.status})"
-			if jqXHR.status != 200
-				eval(jqXHR.responseText)
-				
+			$('#lazy_body').hide().html(jqXHR.responseText).show()
+			mobiloud_mobile_init()
