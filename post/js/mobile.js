@@ -36,7 +36,6 @@
     $fluidEl = $('.post-content');
     newWidth = $fluidEl.width() - 30;
     $medias = $('embed, object, video, iframe');
-    console.log(newWidth);
     return $medias.each(function() {
       var $el;
       $el = $(this);
@@ -44,8 +43,6 @@
       return $el.attr('height', newWidth * $el.data('aspect-ratio'));
     });
   };
-
-  console.log('here');
 
   makeFluidMedia = function() {
     var $fluidEl, $medias;
