@@ -51,7 +51,8 @@
         return console.log(error);
       },
       success: function(data) {
-        return console.log("lazy_load: success");
+        console.log("lazy_load: success");
+        return mobiloudLazyLoadContent(data);
       },
       complete: function(jqXHR) {
         console.log("lazy_load: complete (status " + jqXHR.status + ")");
