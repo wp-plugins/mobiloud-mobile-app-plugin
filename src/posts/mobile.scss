@@ -59,7 +59,7 @@ h6 { font-size: 0.534em }
 
 .post-content {
   padding: $content_padding;     
-  text-align:left;
+  text-align:start;
   background:$background_color;
   max-width: $content_maxwidth;
 
@@ -78,7 +78,7 @@ h6 { font-size: 0.534em }
 
   .post-title {
     margin-bottom:50px; 
-    text-align: left;
+    text-align: start;
 
     @media all and (max-width:$iphone_width) {
       font-size: 1.1em;

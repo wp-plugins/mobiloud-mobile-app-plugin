@@ -44,7 +44,7 @@ h6 {
 
 .post-content {
   padding: 10px;
-  text-align: left;
+  text-align: start;
   background: rgba(255, 255, 255, 0);
   max-width: 300; }
   .post-content #loading_spinner {
@@ -57,7 +57,7 @@ h6 {
   font-size: 18px; }
   #post_header .post-title {
     margin-bottom: 50px;
-    text-align: left; }
+    text-align: start; }
     @media all and (max-width: 320px) {
       #post_header .post-title {
         font-size: 1.1em;
