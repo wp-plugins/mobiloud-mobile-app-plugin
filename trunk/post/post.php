@@ -4,6 +4,10 @@
 <?php $post_id = $_GET['post_id']; ?>
 <?php $post = get_post($post_id); ?>
 <?php } ?>
+<?php if(get_option('ml_debug') == 'true') { ?>
+
+<?php ini_set('display_errors', 1);; ?>
+<?php } ?>
 <?php $post_type = get_post_type($post->ID); ?>
 <?php $post_content = $post->post_content; ?>
 <?php $post_text_direction = (get_option('ml_rtl_text_enable') == 'true') ? 'RTL' : 'LTR'; ?>

@@ -22,6 +22,9 @@
 	-$post_id = $_GET['post_id']
 	-$post = get_post($post_id)
 
+-if(get_option('ml_debug') == 'true')
+	-ini_set('display_errors', 1);	
+
 -$post_type = get_post_type($post->ID)
 -$post_content = $post->post_content
 -$post_text_direction = (get_option('ml_rtl_text_enable') == 'true') ? 'RTL' : 'LTR'

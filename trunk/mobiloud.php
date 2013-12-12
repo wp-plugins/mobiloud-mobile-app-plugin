@@ -11,8 +11,10 @@ Author: Mobiloud by 50pixels
 Version: 2.0
 Author URI: http://www.mobiloud.com
 */
-header_remove('X-Frame-Options');
-ini_set('display_errors', 1);
+
+if(get_option('ml_debug') == 'true')
+	ini_set('display_errors', 1);	
+
 define('MOBILOUD_PLUGIN_URL', plugins_url()."/mobiloud-mobile-app-plugin");
 define('MOBILOUD_PLUGIN_VERSION', "2.0");
 define('MOBILOUD_PUSH_API_PUBLISH_URL', "https://push.mobiloud.com/api/notifications/publish");
