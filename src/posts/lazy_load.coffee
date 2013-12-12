@@ -44,7 +44,7 @@ $(document).ready ->
 			console.log error			
 		success: (data)->
 			console.log "lazy_load: success"
-			#mobiloudLazyLoadContent(data)
+			mobiloudLazyLoadContent(data)
 		complete:(jqXHR)->
 			console.log "lazy_load: complete (status #{jqXHR.status})"
 			if jqXHR.status != 200
