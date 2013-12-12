@@ -35,9 +35,12 @@ function ml_configuration_general_callback()
 	//right to left text
 	if(isset($_POST['ml_rtl_text_enable']))
 	{
-		$ml_rtl_text_enable = $_POST['ml_rtl_text_enable'] == "true";
-		ml_set_generic_option("ml_rtl_text_enable",
-							   $ml_rtl_text_enable);
+		if($_POST['ml_rtl_text_enable'] == 'true') {
+			ml_set_generic_option("ml_rtl_text_enable","true");			
+		}
+		else {
+			delete_option("ml_rtl_text_enable");
+		}
 	}
 
 	ml_configuration_general();

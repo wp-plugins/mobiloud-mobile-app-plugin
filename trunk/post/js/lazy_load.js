@@ -5,10 +5,10 @@
   makePageSpinner = function() {
     var opts, spinner, target;
     opts = {
-      lines: 13,
-      length: 20,
-      width: 10,
-      radius: 30,
+      lines: 10,
+      length: 10,
+      width: 5,
+      radius: 10,
       corners: 1,
       rotate: 0,
       direction: 1,
@@ -27,16 +27,23 @@
   };
 
   $(document).ready(function() {
-    var $lazy_info, post_id, url;
+    var $lazy_info, mobiloudLazyLoadContent, post_id, url;
     $lazy_info = $('#mobiloud_lazy_load');
     url = $lazy_info.data('url');
     post_id = $lazy_info.data('post_id');
     makePageSpinner();
+    mobiloudLazyLoadContent = function(data) {
+      var $body_content;
+      $body_content = $(data.body_content);
+      $('#lazy_body').hide().html($body_content).show();
+      return mobiloud_mobile_init();
+    };
     return $.ajax({
       type: 'GET',
       url: url,
       contentType: 'application/json',
       dataType: 'jsonp',
+      jsonpCallback: 'mobiloudLazyLoadContent',
       data: {
         post_id: post_id
       },
@@ -44,18 +51,12 @@
         return console.log(error);
       },
       success: function(data) {
-        var $body_content;
-        $body_content = $(data.body_content);
-        $('#lazy_body').hide().html($body_content).show();
-        return mobiloud_mobile_init();
+        return console.log("lazy_load: success");
       },
       complete: function(jqXHR) {
-        var $body_content, data;
+        console.log("lazy_load: complete (status " + jqXHR.status + ")");
         if (jqXHR.status !== 200) {
-          data = $.parseJSON(jqXHR.responseText);
-          $body_content = $(data.body_content);
-          $('#lazy_body').html($body_content).show();
-          return mobiloud_mobile_init();
+          return eval(jqXHR.responseText);
         }
       }
     });

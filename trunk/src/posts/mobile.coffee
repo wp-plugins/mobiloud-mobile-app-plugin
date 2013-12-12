@@ -31,13 +31,12 @@ updateMedia = ->
 	$fluidEl = $('.post-content')
 	newWidth = $fluidEl.width() - 30
 	$medias = $('embed, object, video, iframe')
-	console.log newWidth
+
 	$medias.each ->
 		$el = $(@)
 		$el.attr('width',newWidth)
 		$el.attr('height',newWidth * $el.data('aspect-ratio'))
 
-console.log 'here'
 makeFluidMedia = ->
 	$fluidEl = $('.post-content')
 
