@@ -1,9 +1,9 @@
 === Mobiloud - WordPress Native Mobile Apps Builder (iPhone, iPad, Android) ===
 Contributors: alvises, psac50
-Tags: mobiloud, mobile, mobile app, native app, web app, iphone, ipad, iphone app, ipad app, android, tablet, windows mobile, mobile web, HTML5, mobile site, mobile plugin, wordpress mobile, adsense, google, mobile theme, mobile template, mobile website, mobile theme, responsive, wptouch, ios app
+Tags: mobiloud, mobile, mobile app, native app, web app, iphone, ipad, iphone app, ipad app, android, tablet, windows mobile, mobile web, HTML5, mobile site, mobile plugin, wordpress mobile, admob, adsense mobile, mobile theme, mobile template, mobile website, mobile theme, responsive, wptouch, ios app
 Requires at least: 3.2
 Tested up to: 3.7
-Stable tag: 1.9.1
+Stable tag: 1.9.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -16,7 +16,7 @@ A year ago we were looking for a simple way to turn a WordPress site into mobile
 
 **It's not for everyone though**. Mobiloud is for people who want to have fully branded **native mobile apps** available on the Apple App Store and Google Play, offering content from their WordPress site or blog (similar apps are published by TechCrunch, The Verge, The Huffington Post). **It's not a free service**, and it doesn't help you publish a mobile site. If it sounds like what you need, then read on.
 
-Our apps are fast, run smoothly and their look and feel matches the platform you publish them on, be it iOS or Android. The apps support **mobile ad networks** such as Admob and Adsense, allow you to add your own advertising, support **WordPress, Disqus and Facebook comments** and allow you to **automatic push notifications** alerts when you publish new content. Your users will be able to choose which categories to receive notifications for.
+Our apps are fast, run smoothly and their look and feel matches the platform you publish them on, be it iOS or Android. The apps support **mobile ad networks** such as Admob and Adsense, allow you to add your own advertising, support **WordPress, Disqus and Facebook comments** and allow you to **automatically send push notifications** when you publish new content. Your users will be able to choose which categories to receive notifications for.
 
 We're professional app developers, so we can provide you with further **customisation for your apps and more functionalities** as required. If you're site has more functionality then a blog and you want it available on the app, then send us a request by filling in the [Custom Mobiloud Request](http://mobiloud.com/custom.html) form. If you're an agency or developer, check out our [Whitelabel Program](http://www.mobiloud.com/whitelabel.php).
 
@@ -200,8 +200,6 @@ You can contact us at [hello@mobiloud.com](mailto:hello@mobiloud.com)
 
 == Changelog ==
 
-= 1.9.1
-* fixed sicurity issue
 
 = 1.9.0
 * improved post html
