@@ -1,24 +1,24 @@
 === Mobiloud - WordPress Native Mobile Apps Builder (iPhone, iPad, Android) ===
 Contributors: alvises, psac50
-Tags: mobiloud, mobile, mobile app, native app, web app, iphone, ipad, iphone app, ipad app, android, tablet, windows mobile, mobile web, HTML5, mobile site, mobile plugin, wordpress mobile, adsense, google, mobile theme, mobile template, mobile website, mobile theme, responsive, wptouch, ios app
+Tags: mobiloud, mobile, mobile app, native app, web app, iphone, ipad, iphone app, ipad app, android, tablet, windows mobile, mobile web, HTML5, mobile site, mobile plugin, wordpress mobile, admob, adsense mobile, mobile theme, mobile template, mobile website, mobile theme, responsive, wptouch, ios app
 Requires at least: 3.2
-Tested up to: 3.7
+Tested up to: 3.8
 Stable tag: 1.9.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-This plugin lets you create mobile apps for iPhone, iPad and Android with your WordPress content. No coding required.
+Create real mobile apps for iPhone, iPad and Android with your WordPress content. No coding required.
 
 == Description ==
 
 = Build real native mobile apps =
-A year ago we were looking for a simple way to turn a WordPress site into mobile apps. We were frustrated with what the market offered. We wanted real native apps, something like the apps TechCrunch or Engadget have built. All app builders on the market instead provided HTML web apps wrapped in a native container - not what we wanted, the experience was really poor. So we built [Mobiloud](http://www.mobiloud.com), and published a number of beautiful mobile apps, which helped our customers grow their traffic and revenue. Today you can use it yourself to **build stunning native apps on iOS and Android, in just minutes**.
+A year ago we were looking for a simple way to turn a WordPress site into mobile apps. We were frustrated with what the market offered. We wanted real native apps, something like the apps TechCrunch or Engadget have built. All app builders on the market instead provided HTML web apps wrapped in a native container - not what we wanted, the experience was really poor. So we built [Mobiloud](http://www.mobiloud.com?ref=plugindesc), and published a number of beautiful mobile apps, which helped our customers grow their traffic and revenue. Today you can use it yourself to **build stunning native apps on iOS and Android, in just minutes**.
 
-**It's not for everyone though**. Mobiloud is for people who want to have fully branded **native mobile apps** available on the Apple App Store and Google Play, offering content from their WordPress site or blog (similar apps are published by TechCrunch, The Verge, The Huffington Post). **It's not a free service**, and it doesn't help you publish a mobile site. If it sounds like what you need, then read on.
+**It's not for everyone though**. Mobiloud is for people who want to have fully branded **native mobile apps** available on the Apple App Store and Google Play, offering content from their WordPress site or blog (similar apps are published by TechCrunch, The Verge, The Huffington Post). **It's not a free service** (check out the [pricing](http://www.mobiloud.com/pricing.php?ref=plugindesc)), and it doesn't help you publish a mobile site. If it sounds like what you need, then read on.
 
-Our apps are fast, run smoothly and their look and feel matches the platform you publish them on, be it iOS or Android. The apps support **mobile ad networks** such as Admob and Adsense, allow you to add your own advertising, support **WordPress, Disqus and Facebook comments** and allow you to **automatic push notifications** alerts when you publish new content. Your users will be able to choose which categories to receive notifications for.
+Our apps are fast, run smoothly and their look and feel matches the platform you publish them on, be it iOS or Android. The apps support **mobile ad networks** such as Admob and Adsense, allow you to add your own advertising, support **WordPress, Disqus and Facebook comments** and allow you to **automatically send push notifications** when you publish new content. Your users will be able to choose which categories to receive notifications for.
 
-We're professional app developers, so we can provide you with further **customisation for your apps and more functionalities** as required. If you're site has more functionality then a blog and you want it available on the app, then send us a request by filling in the [Custom Mobiloud Request](http://mobiloud.com/custom.html) form. If you're an agency or developer, check out our [Whitelabel Program](http://www.mobiloud.com/whitelabel.php).
+We're a team of app developers, so we can provide you with further **customisation for your apps and more functionalities** as required. If you're site has more functionality then a blog and you want it available on the app, then send us a request by filling in the [Custom Mobiloud Request](http://www.mobiloud.com/custom.html) form. If you're an agency or developer, check out our [Whitelabel Program](http://www.mobiloud.com/whitelabel.php?ref=plugindesc).
 
 **Install the plugin now** and you will be moments away from creating your mobile app. **Designing an app takes 3 minutes**, and you can further customise it from the plugin configuration pages. You can **immediately get a preview of the app** and test it online.
 
@@ -34,6 +34,10 @@ We're professional app developers, so we can provide you with further **customis
 * Send **push notifications** automatically to bring back mobile users to your content
 * Users can choose which categories to receive push messages for
 * Support for **Google Analytics** to track traffic on your app
+
+
+= Examples =
+Check out our [online demo](http://www.mobiloud.com/demo.php?ref=plugindesc), or try one of the apps from our [customers](http://www.mobiloud.com/examples.php?ref=plugindesc).
 
 = How it works =
 
@@ -73,7 +77,11 @@ To grow your site and business, sharing is everything. It's like free marketing!
 With support for Google Analytics, you will be able to **track downloads, usage, and other statistics** in real time – so you’ll have complete visibility and transparency over the success of your mobile app.
 
 
-= What our customers say about it =
+= What some of our customers say about it =
+
+
+*"They left no stone unturned in making our mobile app perfect! It has been a pleasure working with them."*
+Paul Andrew, Founder of Speckyboy Magazine
 
 *“I had previously worked with four different mobile app developers and none of them were able to get the job done for me the way I wanted it. It took just two days for Mobiloud to get my wordpress website into an iPhone App."*
 Nick Coffey, The Cardinal Connect
@@ -81,21 +89,11 @@ Nick Coffey, The Cardinal Connect
 *"Mobiloud was very easy to work with to get my mobile app customized the way I wanted it. The online app builder was super helpful when creating images for my icons, background and splash screen. I would highly recommend Mobiloud for anyone looking to take their website mobile."*
 Chris Burhans, Founder of Sports Mockery
 
-*"They left no stone unturned in making our mobile app perfect! It has been a pleasure working with them."*
-Paul Andrew, Founder of Speckyboy Magazine
-
 *"The team at Mobiloud built astonishing apps for the main blogs in our network. Fast development, great support, and of course beautiful mobile apps. What more could we ask for?"*
 Fernando Serer, CEO and founder of Blogestudio
 
 *"Thank you, Mobiloud, for developing the awesome Design You Trust mobile app and kicking my site into a mobile world. Very professional, fast and friendly!"*
 Dmitry Utkin, founder of Design You Trust
- 
-*"A mobile app is a great way to grow your audience and turn existing visitors into loyal readers. In no time, Mobiloud was able to develop a great looking mobile app for Pandemia.info."*
-Luca Conti, Author and Social Media Consultant
- 
-*"On CircusF1 we have been seeing traffic from mobile devices rapidly growing. The team at Mobiloud was able to design and build an iPhone and iPad mobile apps in a very short time."*
-Andrea Gallazzi, owner CircusF1.com
-
 
 
 = Pricing =
@@ -123,6 +121,35 @@ You can contact us at [hello@mobiloud.com](mailto:hello@mobiloud.com)
 
 == Frequently Asked Questions ==
 
+
+= How much does it cost? =
+The Mobile App Plugin is free to install. You can also design your own app at no cost and with no risk. Once you have designed your app and would like to publish it on the App Store, we have simple pricing plans you can choose from. Check the [pricing plans on Mobiloud.com](http://www.mobiloud.com/pricing.php?ref=plugindesc).
+
+= Does Mobiloud help me build a mobile site? =
+We don't provide a mobile site together with your app. It's a good idea to have a mobile site, so casual visitors can still have a decent experience on your site when using a mobile device. Of course, we recommend you also build a mobile app, to convert those casual visitors into loyal followers, increase your traffic and keep growing your audience.
+
+The following plugins are all compatible with Mobiloud: WP-Touch, WordPress Mobile Edition, WordPress Mobile Pack, Mobile Press.
+
+= What functionality will my mobile app offer? =
+Your app will automatically show the latest content from your site, with no need for you to update it manually. Your app will display posts and pages, comments and categories. Your users will be able to read content online and offline, share it with a single tap, save their favourites, leave comments on your articles and, most importantly, receive push notifications alerting them to new content.
+
+= Can I test out my app online before I buy? =
+Yes, after installing the plugin, start designing your app and you can quickly get a live preview of your app over the web. Even before that, you can also try our [example application](http://www.mobiloud.com/demo.php?ref=plugindesc) to get a feel of how Mobiloud apps work.
+
+= Can I try an example app on my iPhone or iPad? =
+Sure, we have published many apps you can try directly. Just open up App Store on your phone or iPad and search for *9clouds*, *Armenian Weekly* or *Cardinal Connect*.
+
+Check out the [Examples page](http://www.mobiloud.com/examples.php?ref=plugindesc) on our site for more apps to try.
+
+= Can I have advertising on my app? =
+Of course! We support **Admob and Adwords**, out of the box. You can also add your own code for HTML banners.
+
+= Can you add more functionality to the app? =
+Yes, we can easily integrate additional content or functionality in your app, such as your Twitter feed, podcast, image or video galleries. Get in touch at [hello@mobiloud.com](mailto:hello@mobiloud.com) to get a quote.
+
+= Can you design my app for me? =
+Yes, we offer a VIP setup option which includes icon and app design, with 2 revisions from our designers. Just email us at [design@mobiloud.com](mailto:design@mobiloud.com) for a quote.
+
 = Why should I build a mobile app for my blog? =
 More and more, people are choosing to use their smartphones and tablets to read online content. Not only these devices make reading more comfortable, which explains why people prefer them to PCs, but there are now millions of mobile users who have just started accessing online content, as they never really used a PC before. On these mobile devices, users spend 80% of their time on apps. So no wonder, they expect to find your content in the form of a mobile app!
 
@@ -139,48 +166,17 @@ No, no programming required! With Mobiloud you design and build your mobile app 
 = Do I need a designer? =
 Not really! With Mobiloud's Configurator you can create your own unique app design by selecting colors, choosing background templates and uploading your logo or images, it's really simple and you can get a great result in a few minutes. If you can design with Photoshop, though, or have a designer who can help you out, you can also upload your own custom images for icon and launch screens.
 
-= How much does it cost? =
-The Mobile App Plugin is free to install. You can also design your own app at no cost and with no risk. Once you have designed your app and would like to publish it on the App Store, we have simple pricing plans you can choose from. Check the [pricing plans on Mobiloud.com](http://www.mobiloud.com/pricing.php?ref=plugindesc).
-
-= Does Mobiloud help me build a mobile site? =
-We don't provide a mobile site together with your app. It's a good idea to have a mobile site, so casual visitors can still have a decent experience on your site when using a mobile device. Of course, we recommend you also build a mobile app, to convert those casual visitors into loyal followers, increase your traffic and keep growing your audience.
-
-The following plugins are all compatible with Mobiloud: WP-Touch, WordPress Mobile Edition, WordPress Mobile Pack, Mobile Press.
-
-= What functionality will my mobile app offer? =
-Your app will automatically show the latest content from your site, with no need for you to update it manually. Your app will display posts and pages and optionally your Twitter and Facebook profile's content. Your users will be able to read content online and offline, share it with a single tap, save their favourites, leave comments on your articles and, most importantly, receive push notifications alerting them to new content.
-
-= Can I test out my app online before I buy? =
-Yes, after installing the plugin, start designing your app and you can quickly get a live preview of your app over the web. You can also try our [example application](http://mobiloud.com/demo.php) to get a feel of how Mobiloud apps work.
-
-= Can I try an example app on my iPhone or iPad? =
-Sure, we have published many apps you can try directly. Just open up App Store on your phone or iPad and search for *9clouds*, *Armenian Weekly* or *Cardinal Connect*.
-
-Check out the [Examples page](http://mobiloud.com/examples.php) on our site for more apps to try.
-
-= Can I have advertising on my app? =
-Of course! We support **Admob and Adwords**, out of the box. You can also add your own code for HTML banners.
-
-= Can you add more functionality to the app? =
-Yes, we can easily integrate additional content or functionality in your app, such as your Twitter feed, podcast, image or video galleries. Get in touch at [hello@mobiloud.com](mailto:hello@mobiloud.com) to get a quote.
-
-= Can you design my app for me? =
-Yes, we offer a VIP setup option which includes icon and app design, with 2 revisions from our designers. Just email us at [design@mobiloud.com](mailto:design@mobiloud.com) for a quote.
-
 = Can I use Disqus or Facebook comments? =
 Yes, you can use Disqus or Facebook for comments on your app to replace the standard Wordpress commenting system.
 
 = Can I use my own Apple account? =
 Yes, we recommend you register your own Apple developer account, though it's not requried. You can get yours [here](https://developer.apple.com/programs/ios/).
 
-= How can I get a refund? =
-Just email us at [support@mobiloud.com](mailto:support@mobiloud.com) and request a refund. You have 30 days since your sign up to get a full refund, no questions answered.
-
 = Is there a long term contract? =
 No contracts here! You pay month-to-month, and if you're unhappy with the service, you can simply cancel by emailing us at [support@mobiloud.com](mailto:support@mobiloud.com). Simple. No risk.
 
 = What are the Terms and Conditions? =
-Here is our [Terms and Conditions](http://mobiloud.com/terms.php) and [Privacy Policy](https://www.iubenda.com/privacy-policy/435863/legal).
+Here is our [Terms and Conditions](http://www.mobiloud.com/terms.php?ref=plugindesc) and [Privacy Policy](http://www.mobiloud.com/privacy.php?ref=plugindesc).
 
 = Where are you based? =
 We're a UK company based in London. Mobiloud a trademark of Fifty Pixels Ltd. Come meet us at Clerkenwell Workshops, 31 Clerkenwell Close, London, EC1R 0AT.
@@ -200,19 +196,19 @@ You can contact us at [hello@mobiloud.com](mailto:hello@mobiloud.com)
 
 == Changelog ==
 
-= 1.9.2
-* fixed categories json problem
+= 1.9.2 =
+* fixed categories json serialization
 
-= 1.9.1
-* fixed sicurity issue
+= 1.9.1 =
+* fixed security issue
 
-= 1.9.0
+= 1.9.0 =
 * improved post html
-
-= 1.8.16
+ 
+= 1.8.16 =
 * app_menu.php fix
 
-= 1.8.15
+= 1.8.15 =
 * posts.php fix
 
 = 1.8.14 =
