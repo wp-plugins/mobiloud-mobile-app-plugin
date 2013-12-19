@@ -18,7 +18,7 @@ A year ago we were looking for a simple way to turn a WordPress site into mobile
 
 Our apps are fast, run smoothly and their look and feel matches the platform you publish them on, be it iOS or Android. The apps support **mobile ad networks** such as Admob and Adsense, allow you to add your own advertising, support **WordPress, Disqus and Facebook comments** and allow you to **automatically send push notifications** when you publish new content. Your users will be able to choose which categories to receive notifications for.
 
-We're professional app developers, so we can provide you with further **customisation for your apps and more functionalities** as required. If you're site has more functionality then a blog and you want it available on the app, then send us a request by filling in the [Custom Mobiloud Request](http://www.mobiloud.com/custom.html) form. If you're an agency or developer, check out our [Whitelabel Program](http://www.mobiloud.com/whitelabel.php?ref=plugindesc).
+We're a team of app developers, so we can provide you with further **customisation for your apps and more functionalities** as required. If you're site has more functionality then a blog and you want it available on the app, then send us a request by filling in the [Custom Mobiloud Request](http://www.mobiloud.com/custom.html) form. If you're an agency or developer, check out our [Whitelabel Program](http://www.mobiloud.com/whitelabel.php?ref=plugindesc).
 
 **Install the plugin now** and you will be moments away from creating your mobile app. **Designing an app takes 3 minutes**, and you can further customise it from the plugin configuration pages. You can **immediately get a preview of the app** and test it online.
 
