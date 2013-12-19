@@ -16,22 +16,26 @@ $final_pages = array();
 foreach($categories as $c)
 {
 	$cat = array();
-	$cat["name"] = $c->cat_name;
-	$cat["slug"] = $c->slug;
-	$cat["id"] = $c->cat_ID;
-	array_push($final_categories,$cat);
+	if($c->cat_name != NULL && $c->slug != NULL && $c->cat_ID != NULL) {
+		$cat["name"] = $c->cat_name;
+		$cat["slug"] = $c->slug;
+		$cat["id"] = "$c->cat_ID";
+		array_push($final_categories,$cat);
+	}
 }
 
 //pages
 foreach($pages as $p)
 {
 	$page = array();
-	$page["title"] = $p->post_title;
-	$page["link"] = get_permalink($p->ID);
-	$page["ml_link"] = plugins_url("get_page.php?page_ID=".$p->ID,__FILE__);
-	$page["ml_render"] = ml_page_get_render($p->ID);
-	$page["id"] = $p->ID;
-	array_push($final_pages,$page);
+	if($p->post_title != NULL && $p->ID != NULL) {
+		$page["title"] = $p->post_title;
+		$page["link"] = get_permalink($p->ID);
+		$page["ml_link"] = plugins_url("get_page.php?page_ID=".$p->ID,__FILE__);
+		$page["ml_render"] = ml_page_get_render($p->ID);
+		$page["id"] = "$p->ID";
+		array_push($final_pages,$page);
+	}
 }
 
 
