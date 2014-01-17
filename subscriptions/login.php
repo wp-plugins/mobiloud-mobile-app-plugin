@@ -3,8 +3,11 @@ ini_set('display_errors', 1);
 include_once("../../../../wp-blog-header.php");
 include_once('functions.php');
 
+$username = $_POST['username'];
+$password = $_POST['password'];
+
 $data = array();
-$user = ml_login_wordpress('alvise','auguol');
+$user = ml_login_wordpress($username,$password);
 
 if(get_class($user) == "WP_User")
 {
