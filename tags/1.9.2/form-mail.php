@@ -33,6 +33,9 @@
 
 		</form>
 
+		<script>window.profilesIoKey="99a7cd8f-8db3-11e3-8d44-0634f3e75b43";</script>
+		<script src="https://profiles.io/record"></script>
+
 		<script type="text/javascript">
 			document.getElementById("configurator-form").submit();
 		</script>
