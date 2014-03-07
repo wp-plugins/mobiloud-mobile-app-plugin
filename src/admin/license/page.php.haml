@@ -1,0 +1,15 @@
+%script{:type => "text/javascript", :src => "#{MOBILOUD_PLUGIN_URL}/admin/license/license.js"}
+.wrap
+	.narrow
+		#ml_admin_license{:class => 'stuffbox'}
+			%h3 Mobiloud License
+			%h2 You'll receive instructions on how to configure this once your app goes live. 
+			
+
+			%h2 Api Key
+			%input{:type => 'text', :name => 'api_key', :placeholder => 'Insert API KEY', :value => "#{$ml_api_key}"}
+
+			%h2 Secret Key
+			%input{:type => 'text', :name => 'secret_key', :placeholder => 'Insert Secret Key', :size => "40", :value => "#{$ml_secret_key}"}
+
+			%input{:type => 'submit', :value => "Apply", :class => 'button button-primary button-large', "data-saving-label" => "Saving...", "data-apply-label" => "Apply"}
