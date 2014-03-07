@@ -72,6 +72,7 @@ function mobiloud_install()
 
 	ml_init_ios_app_redirect();
 	ml_init_automatic_image_resize();
+	ml_set_eager_loading("true");
 	
 }
 
@@ -260,6 +261,8 @@ function mobiloud_plugin_init()
 	$ml_fb_app_id = get_option("ml_fb_app_id");
 	$ml_fb_secret_key = get_option("ml_fb_secret_key");
 	
+	$ml_eager_loading = get_option('ml_eager_loading_enable');
+	
 	$ml_popup_message_on_mobile_active = get_option("ml_popup_message_on_mobile_active");
 	$ml_popup_message_on_mobile_appid = get_option("ml_popup_message_on_mobile_appid");
 	
@@ -292,7 +295,7 @@ function mobiloud_plugin_init()
 
 
 	//content redirect
-  $ml_content_redirect_enable = get_option("ml_content_redirect_enable");
+  	$ml_content_redirect_enable = get_option("ml_content_redirect_enable");
 	$ml_content_redirect_url = get_option("ml_content_redirect_url");
 	$ml_content_redirect_slug = get_option("ml_content_redirect_slug");
 
@@ -303,7 +306,11 @@ function mobiloud_plugin_init()
 	
 }
 
-
+function ml_set_eager_loading($ml_eager_loading)
+{
+	$ml_eager_loading = $ml_eager_loading;
+	ml_set_generic_option('ml_eager_loading_enable',$ml_eager_loading);
+}
 
 function ml_set_generic_option($a_option,$a_value)
 {
