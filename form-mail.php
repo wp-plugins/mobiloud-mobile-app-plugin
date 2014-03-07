@@ -11,18 +11,10 @@
 			$root_url = $_POST['root_url'];
 			$plugins_url = $_POST['plugins_url'];
 			$appname = $_POST['appname'];
-/*		
-			$emailTo = 'sales@mobiloud.com';
-			$subject = 'New plugin installation from '.$website;
-			$body = "New request from Mobiloud Plugin. \n\nName: $name \nEmail: $email \nWebsite: $website\n";
-			$headers = 'From: '.$name.' <'.$emailTo.'>' . "\r\n" . 'Reply-To: ' . $email;
-	
-			mail($emailTo, $subject, $body, $headers);
-*/
 		?>
 
 		<!-- FORM -->
-		<form  action="https://app.mobiloud.com" id="configurator-form" method="post">
+		<form  action="http://www.mobiloud.com/service/" id="configurator-form" method="get">
 			<input type='hidden' value="<?php echo $name?>" name='fullname'/>
 			<input type='hidden' value="<?php echo $email?>" name='email'/>
 			<input type='hidden' value="<?php echo $website?>" name='site'/>

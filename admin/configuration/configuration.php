@@ -6,7 +6,7 @@ include_once dirname( __FILE__ ) . '/general/general.php';
 include_once dirname( __FILE__ ) . '/categories.php';
 include_once dirname( __FILE__ ) . '/pages.php';
 include_once dirname( __FILE__ ) . '/sticky_categories.php';
-include_once dirname( __FILE__ ) . '/facebook.php';
+// include_once dirname( __FILE__ ) . '/facebook.php';
 
 
 
@@ -29,35 +29,34 @@ function mobiloud_configuration_page()
 		<div class="narrow">
 
 			<!-- GENERAL -->
-			<div id="ml_configuration_general" class="stuffbox">
+			<div id="ml_configuration_general" class="stuffbox" style="padding:20px;">
 				<?php ml_configuration_general_ajax_load(); ?>
 			</div>
 
 			<!-- CATEGORIES -->
-			<div id="ml_configuration_categories" class="stuffbox">
+			<div id="ml_configuration_categories" class="stuffbox" style="padding:20px;">
 				<?php ml_configuration_categories_ajax_load(); ?>
 			</div>
 
 			<!-- PAGES -->
-			<div id="ml_configuration_pages" class="stuffbox">
+			<div id="ml_configuration_pages" class="stuffbox" style="padding:20px;">
 				<?php ml_configuration_pages_ajax_load(); ?>
 			</div>
 		
 			<!-- STICKY CATEGORIES -->
-			<div id="ml_configuration_sticky_categories" class="stuffbox">
+			<div id="ml_configuration_sticky_categories" class="stuffbox" style="padding:20px;">
 				<?php ml_configuration_sticky_categories_ajax_load(); ?>
 			</div>
 			
 			<!-- APP REDIRECT -->
-			<div id="ml_configuration_app_redirect" class="stuffbox">
+			<div id="ml_configuration_app_redirect" class="stuffbox" style="padding:20px;">
 				<?php ml_configuration_app_redirect_ajax_load(); ?>
 			</div>
 			
-			
 			<!-- FACEBOOK -->
-			<div id="ml_facebook_keys" class="stuffbox">
-				<?php ml_configuration_facebook_ajax_load(); ?>
-			</div>
+			<!-- <div id="ml_facebook_keys" class="stuffbox">
+				<?php // ml_configuration_facebook_ajax_load(); ?>
+			</div> -->
 		</div>
 
 	</div>

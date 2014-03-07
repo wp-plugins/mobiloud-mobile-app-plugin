@@ -8,6 +8,7 @@
 
 -$post_type = get_post_type($post->ID)
 -$post_content = $post->post_content
+-$eager_loading = $_GET['eager']
 
 %head
 	//meta tags
@@ -26,13 +27,16 @@
 	=get_option('ml_post_head')
 
 %body
-	-if(get_option('ml_eager_loading_enable') == 'true' || $post_type == 'page')
+	-if(get_option('ml_eager_loading_enable') == 'true' || $eager_loading == "true" || $post_type == 'page')
 		-include(dirname(__FILE__)."/body_content.php")
 	-else
 		#lazy_body
+			#post_header
+				%h1.post-title 
+					=$post->post_title
 			#lazy_content_spinner
 
-		%div{:id => 'mobiloud_lazy_load', :data-url => "#{MOBILOUD_PLUGIN_URL}/post/body_content.php", :data-post_id => "#{$post->ID}"}
+		%div{:id => 'mobiloud_lazy_load', :data-url => "#{MOBILOUD_PLUGIN_RELATIVE_URL}/post/body_content.php", :data-post_id => "#{$post->ID}"}
 		%script{:type=>"text/javascript", :src=>"#{MOBILOUD_POST_ASSETS_URL}/js/lazy_load.js"}
 
 

@@ -36,7 +36,7 @@ html {
 
 }
 
-body {}
+body {margin-top:30px}
 h1, h2, h3, h4, h5, h6 {color: #444; font-weight:bold}
 
 h1 { font-size: 1.6em; line-height: 33px }
@@ -49,7 +49,7 @@ h6 { font-size: 0.534em }
 
 #lazy_content_spinner {
   position:fixed;
-  top: 30%;
+  top: 50%;
   left:50%;
 
 }
@@ -152,6 +152,19 @@ img{display:none}
   }
 }
 
+.ml-banner {
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: -8px;
+  &.phone {
+    width:320px;
+    height:50px;
+  }
+  &.tablet {
+    width:730px;
+    height:90px;
+  }
+}
 
 .details {
   font-size:15px;

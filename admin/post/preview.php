@@ -42,16 +42,9 @@ Preview
 </div><div class="clearfix">
 </div></div><div class="description">
 <p>
-You can customize CSS, JavaScript and PHP code.
-</p><p>
-In PHP customizations you have the object
-<b>
-$post
-</b>available.
-<br />To see if $post is representing a page, just use the wordpress code
-</p><b>
-is_page($post->ID)
-</b></div></div><div id="preview_popup_content">
+	
+</p>
+</div></div><div id="preview_popup_content">
 <div class="iphone5s_device">
 <iframe id="preview_popup_iframe">
 </iframe></div><div class="ipadmini_device">

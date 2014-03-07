@@ -16,22 +16,31 @@
 		%option{:value => 'ml_post_custom_css'} Custom CSS
 
 		%option{:value => 'ml_post_start_body'} PHP at the beginning of BODY tag
+		%option{:value => 'ml_html_post_start_body'} HTML at the beginning of BODY tag
 
 		%option{:value => 'ml_post_before_top_banner'} PHP before top Banner
 		%option{:value => 'ml_post_after_top_banner'} PHP after top Banner
 
 		%option{:value => 'ml_post_before_details'} PHP before post details
+		%option{:value => 'ml_html_post_before_details'} HTML before post details
+
 		%option{:value => 'ml_post_after_details'} PHP after post details
+		%option{:value => 'ml_html_post_after_details'} HTML after post details
 
 		%option{:value => 'ml_post_before_content'} PHP before Content
+		%option{:value => 'ml_html_post_before_content'} HTML before Content
+
 		%option{:value => 'ml_post_after_content'} PHP after Content
+		%option{:value => 'ml_html_post_after_content'} HTML after Content
 
 		%option{:value => 'ml_post_before_footer_banner'} PHP before footer Banner
 		%option{:value => 'ml_post_after_footer_banner'} PHP after footer Banner
 
 		%option{:value => 'ml_post_after_body'} PHP at the end of BODY tag
+		%option{:value => 'ml_html_post_after_body'} HTML at the end of BODY tag
 
 		%option{:value => 'ml_post_footer'} PHP Footer
+
 	.clearfix
 
 	%textarea#ml_admin_post_textarea
@@ -39,15 +48,21 @@
 	%textarea.hidden{:name => 'ml_post_custom_js'}=htmlspecialchars(get_option('ml_post_custom_js'))
 	%textarea.hidden{:name => 'ml_post_custom_css'}=htmlspecialchars(get_option('ml_post_custom_css'))
 	%textarea.hidden{:name => 'ml_post_start_body'}=htmlspecialchars(get_option('ml_post_start_body'))
+	%textarea.hidden{:name => 'ml_html_post_start_body'}=htmlspecialchars(get_option('ml_html_post_start_body'))
 	%textarea.hidden{:name => 'ml_post_before_top_banner'}=htmlspecialchars(get_option('ml_post_before_top_banner'))
 	%textarea.hidden{:name => 'ml_post_after_top_banner'}=htmlspecialchars(get_option('ml_post_after_top_banner'))
 	%textarea.hidden{:name => 'ml_post_before_details'}=htmlspecialchars(get_option('ml_post_before_details'))
+	%textarea.hidden{:name => 'ml_html_post_before_details'}=htmlspecialchars(get_option('ml_html_post_before_details'))
 	%textarea.hidden{:name => 'ml_post_after_details'}=htmlspecialchars(get_option('ml_post_after_details'))
+	%textarea.hidden{:name => 'ml_html_post_after_details'}=htmlspecialchars(get_option('ml_html_post_after_details'))
 	%textarea.hidden{:name => 'ml_post_before_content'}=htmlspecialchars(get_option('ml_post_before_content'))
+	%textarea.hidden{:name => 'ml_html_post_before_content'}=htmlspecialchars(get_option('ml_html_post_before_content'))
 	%textarea.hidden{:name => 'ml_post_after_content'}=htmlspecialchars(get_option('ml_post_after_content'))
+	%textarea.hidden{:name => 'ml_html_post_after_content'}=htmlspecialchars(get_option('ml_html_post_after_content'))
 	%textarea.hidden{:name => 'ml_post_before_footer_banner'}=htmlspecialchars(get_option('ml_post_before_footer_banner'))
 	%textarea.hidden{:name => 'ml_post_after_footer_banner'}=htmlspecialchars(get_option('ml_post_after_footer_banner'))
 	%textarea.hidden{:name => 'ml_post_after_body'}=htmlspecialchars(get_option('ml_post_after_body'))
+	%textarea.hidden{:name => 'ml_html_post_after_body'}=htmlspecialchars(get_option('ml_html_post_after_body'))
 	%textarea.hidden{:name => 'ml_post_footer'}=htmlspecialchars(get_option('ml_post_footer'))
 
 

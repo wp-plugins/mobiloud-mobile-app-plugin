@@ -24,24 +24,39 @@ function ml_is_notified($post_id)
 
 function ml_post_published_notification($post_id)
 {
-	if(ml_is_notified($post_id))
-		return;
-
 	$post = get_post($post_id,OBJECT);
 	
 	$alert = $post->post_title;
 	$custom_properties = array('post_id' => $post_id);
 	
-	ml_send_notification($alert, true,NULL,$custom_properties,$post_id);
+	//tags
+	$tags = array();
+	//subscriptions
+	// if(ml_subscriptions_enable()) {
+	// 	$tags[] = "all";
+	// 	$capabilities = ml_subscriptions_post_capabilities($post);
+	// 	foreach($capabilities as $c) {
+	// 		$tags[] = $c;
+	// 	}
+	// } else {
+	$tags[] = "all";
+	$categories = wp_get_post_categories($post->ID);
+	foreach($categories as $c) {
+		if($c != NULL) $tags[] = $c;
+	}
+
+	// ml_send_notification($alert, true,NULL,$custom_properties,$tags,$post_id);
+	ml_send_notification($alert, true,NULL,$custom_properties,NULL,$post_id);
+
 }
 
 
 
 //true if the notification was sent successfully
 //false if there was an error
-function ml_send_notification($alert, $sound=true, $badge=NULL, $custom_properties=NULL, $remote_identifier=NULL)
+function ml_send_notification($alert, $sound=true, $badge=NULL, $custom_properties=NULL, $tags=NULL,$remote_identifier=NULL)
 {
-	global $ml_api_key, $ml_secret_key, $ml_server_host;
+	global $ml_api_key, $ml_secret_key;
 	
 	//push notification only when api key is set
 	if(($ml_api_key == NULL || strlen($ml_api_key) < 5) &&
@@ -53,10 +68,11 @@ function ml_send_notification($alert, $sound=true, $badge=NULL, $custom_properti
 	if($sound) $notification['sound'] = $sound;
 	if($badge) $notification['badge'] = $badge;
 	if($custom_properties) $notification['custom_properties'] = $custom_properties;
+	if($tags) $notification['tags'] = $tags;
 
 	$parameters = array(
 		'api_key' => $ml_api_key,	
-		'secret_key' => $ml_secret_key,	
+		'api_secret' => $ml_secret_key,	
 		'notification' => $notification,
 	);
 	
@@ -67,22 +83,9 @@ function ml_send_notification($alert, $sound=true, $badge=NULL, $custom_properti
 	}	
 
 	$request = new WP_Http;
-	$url = "$ml_server_host/notifications/send";
-	
-	$result = $request->request($url,
-		array('method' => 'POST', 'timeout' => 10,'body' => $parameters) );
-	if($result)
-	{
-		$response = $result->response;
-		
-		if($response)
-		{
-			ml_set_post_id_as_notified($remote_identifier);
-			$r_code = $response['code'];
-			return $r_code == 200;
-		}		
-
-	}
+	$headers = array('Content-Type: application/json');
+	$result = $request->request(MOBILOUD_PUSH_API_PUBLISH_URL,
+		array('method' => 'POST', 'timeout' => 10,'body' => $parameters, 'headers' => $headers) );
 	return false;
 } 
 

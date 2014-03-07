@@ -1,4 +1,5 @@
 //includes and post setting
+-header('Access-Control-Allow-Origin: *')
 -include_once(dirname(__FILE__)."/../../../../wp-blog-header.php")
 -if(isset($post_id) == false)
 	-$post_id = $_GET['post_id']
@@ -15,11 +16,12 @@
 
 
 -eval(stripslashes(get_option('ml_post_start_body')))
-
+=stripslashes(get_option('ml_html_post_start_body'))
 #post_content{:class => 'post-content'}
 	#loading_spinner
 	#post_header
 		-eval(stripslashes(get_option('ml_post_before_details')))
+		=stripslashes(get_option('ml_html_post_before_details'))
 		%h1.post-title
 			=$post->post_title
 
@@ -34,11 +36,15 @@
 			.clearfix
 		.clearfix
 		-eval(stripslashes(get_option('ml_post_after_details')))
+		=stripslashes(get_option('ml_html_post_after_details'))
 
 
 	-eval(stripslashes(get_option('ml_post_before_content')))
+	=stripslashes(get_option('ml_html_post_before_content'))
 	#main_content
 		=do_shortcode($post_content)
 	-eval(stripslashes(get_option('ml_post_after_content')))
+	=stripslashes(get_option('ml_html_post_after_content'))
 
 -eval(stripslashes(get_option('ml_post_end_body')))
+=stripslashes(get_option('ml_html_post_end_body'))

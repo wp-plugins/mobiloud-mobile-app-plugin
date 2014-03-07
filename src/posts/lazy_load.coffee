@@ -22,8 +22,14 @@ makePageSpinner = ->
 
 $(document).ready ->
 	$lazy_info = $('#mobiloud_lazy_load')
-	url = $lazy_info.data('url')
+	relative_url = $lazy_info.data('url')
 	post_id = $lazy_info.data('post_id')
+
+	#url
+	http = location.protocol;
+	slashes = http.concat("//");
+	host = slashes.concat(window.location.hostname);
+	url = "#{host}:#{location.port}/#{relative_url}"
 
 	makePageSpinner()
 	#data is a json object
@@ -46,3 +52,4 @@ $(document).ready ->
 			console.log "lazy_load: complete (status #{jqXHR.status})"
 			if jqXHR.status != 200
 				mobiloudLazyLoadContent(jqXHR.responseText)
+				alert url

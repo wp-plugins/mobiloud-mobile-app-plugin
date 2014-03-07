@@ -1,14 +1,14 @@
 <?php
 /**
  * @package Mobiloud
- * @version 2.0
+ * @version 2.1.1
  */
 /*
 Plugin Name: Mobiloud
 Plugin URI: http://www.mobiloud.com
 Description: Turn your WordPress site into beautiful native mobile apps. No coding needed.
-Author: Mobiloud by 50pixels
-Version: 2.0
+Author: 50pixels
+Version: 2.1.1
 Author URI: http://www.mobiloud.com
 */
 
@@ -16,6 +16,9 @@ if(get_option('ml_debug') == 'true')
 	ini_set('display_errors', 1);	
 
 define('MOBILOUD_PLUGIN_URL', plugins_url()."/mobiloud-mobile-app-plugin");
+define('MOBILOUD_PLUGIN_RELATIVE_URL',"/wp-content/plugins/mobiloud-mobile-app-plugin");
+
+
 define('MOBILOUD_PLUGIN_VERSION', "2.0");
 define('MOBILOUD_PUSH_API_PUBLISH_URL', "https://push.mobiloud.com/api/notifications/publish");
 
@@ -188,18 +191,17 @@ function ml_facebook_install()
 function mobiloud_plugin_menu() 
 {	
 	add_object_page("Mobiloud", "Mobiloud",NULL, "mobiloud_menu","activate_plugins",MOBILOUD_PLUGIN_URL."/menu_logo.png",25);
-	
-	//add_submenu_page('mobiloud_menu', 'Mobiloud Analytics',"Analytics", "activate_plugins",'mobiloud_charts' , "mobiloud_charts"); 	
-	
-	add_submenu_page( 'mobiloud_menu', 'Mobiloud Homepage', 'Design your app', "activate_plugins", 'mobiloud_menu_homepage', 'mobiloud_home_page');
-	//add_submenu_page( 'mobiloud_menu', 'Mobiloud Home Menu', 'Home Menu', "activate_plugins", 'mobiloud_menu_home_menu', 'ml_home_menu_page');
-	//add_submenu_page( 'mobiloud_menu', 'Mobiloud Categories and Pages', 'Categories & Pages', "activate_plugins", 'mobiloud_menu_categories_pages', 'ml_admin_categories_pages_page');
-	add_submenu_page( 'mobiloud_menu', 'Mobiloud Post Customization', 'Post Customization', "activate_plugins", 'mobiloud_menu_post', 'ml_admin_post_page');
-	add_submenu_page( 'mobiloud_menu', 'Mobiloud Push Notifications', 'Push Notifications', "activate_plugins", 'mobiloud_menu_push_notifications', 'mobiloud_push_notifications_page');
-	//add_submenu_page( 'mobiloud_menu', 'Mobiloud Banners', 'Banners', "activate_plugins", 'mobiloud_menu_banners', 'ml_admin_banners_page');
-	//add_submenu_page( 'mobiloud_menu', 'Mobiloud Subscriptions', 'Subscriptions', "activate_plugins", 'mobiloud_menu_subscriptions', 'ml_admin_subscriptions_page');		
+	add_submenu_page( 'mobiloud_menu', 'Mobiloud Homepage', 'Design your app', "activate_plugins", 'mobiloud_menu_homepage', 'mobiloud_home_page');	
 	add_submenu_page( 'mobiloud_menu', 'Mobiloud Configuration', 'Configuration', "activate_plugins", 'mobiloud_menu_configuration', 'mobiloud_configuration_page');
 	add_submenu_page( 'mobiloud_menu', 'Mobiloud License', 'License', "activate_plugins", 'mobiloud_menu_license', 'ml_admin_license_page');
+	
+	add_submenu_page( 'mobiloud_menu', 'Mobiloud Post Customization', 'Post Customization', "activate_plugins", 'mobiloud_menu_post', 'ml_admin_post_page');
+	add_submenu_page( 'mobiloud_menu', 'Mobiloud Push Notifications', 'Push Notifications', "activate_plugins", 'mobiloud_menu_push_notifications', 'mobiloud_push_notifications_page');
+	add_submenu_page( 'mobiloud_menu', 'Mobiloud Subscriptions', 'Subscriptions', "activate_plugins", 'mobiloud_menu_subscriptions', 'ml_admin_subscriptions_page');		
+	//add_submenu_page('mobiloud_menu', 'Mobiloud Analytics',"Analytics", "activate_plugins",'mobiloud_charts' , "mobiloud_charts"); 	
+	//add_submenu_page( 'mobiloud_menu', 'Mobiloud Banners', 'Banners', "activate_plugins", 'mobiloud_menu_banners', 'ml_admin_banners_page');
+	//add_submenu_page( 'mobiloud_menu', 'Mobiloud Categories and Pages', 'Categories & Pages', "activate_plugins", 'mobiloud_menu_categories_pages', 'ml_admin_categories_pages_page');
+	//add_submenu_page( 'mobiloud_menu', 'Mobiloud Home Menu', 'Home Menu', "activate_plugins", 'mobiloud_menu_home_menu', 'ml_home_menu_page');
 }
 
 

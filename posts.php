@@ -63,6 +63,8 @@ if($ml_content_redirect->ml_content_redirect_enable == "1" &&
 	return;
 }
 
+
+
 else {
 	//not cached 
 	$query_array = array('showposts' => $user_limit,
@@ -76,6 +78,15 @@ else {
 			);
 	$posts = query_posts($query_array);
 	$posts_options = array();
+	
+	//SINGLE POST REQUEST
+	if(isset($_POST["post_id"]))
+	{
+		$single_post_id = $_POST['post_id'];
+		$posts = array();
+		$posts[0] = get_post($single_post_id);
+	}
+	
 	
 	if($user_category == NULL)
 	{
@@ -224,6 +235,7 @@ function print_posts($posts,$tot_count,$offset,$options)
 		{
 			$image = array( 
 											"full" => $main_image_url, 
+											"thumb" => array("url" => $main_image_url),
 											"big-thumb" => array("url" => $main_image_url)
 										); 
 			$final_post["images"][0] = $image;

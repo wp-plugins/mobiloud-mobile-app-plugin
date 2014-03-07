@@ -7,11 +7,11 @@ Subscriptions
 </h1><?php if(ml_has_groups_library() == false) { ?>
 
 <div class="error">
-You need to install or activate
-<a href="http://www.itthinx.com/plugins/groups/">
+You need to install and activate the
+<a href="http://www.itthinx.com/plugins/groups/" target="_blank">
 <b>
 Groups
-</b></a>plugin
+</b></a>plugin to enable password protected user logins to your app.
 </div><?php } else { ?>
 
 <div class="stuffbox" id="ml_admin_subscriptions_options">

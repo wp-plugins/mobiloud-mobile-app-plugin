@@ -1,25 +1,32 @@
-@import url("http://fonts.googleapis.com/css?family=Lato:400,700,700italic,900,400italic,300");
+@import url(http://fonts.googleapis.com/css?family=Open+Sans);
 html {
-  color: #444444;
+  color: #333333;
   background: rgba(255, 255, 255, 0);
-  font-family: Lato;
-  font-size: 18px;
   padding-bottom: 80px; }
   @media all and (max-width: 320px) and (orientation: portrait) {
-    html {
+    body {
       font-size: 15px;
       line-height: 20px; } }
   @media all and (max-width: 320px) and (orientation: landscape) {
-    html {
+    body {
       font-size: 10px;
       line-height: 13px; } }
 
+body {
+  margin-top: 30px;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 16px;
+  text-align:left;
+  line-height: 25px;
+ }
+
 h1, h2, h3, h4, h5, h6 {
-  color: #444;
+  color: #333;
+  text-align:left;
   font-weight: bold; }
 
 h1 {
-  font-size: 1.6em;
+  font-size: 1.4em;
   line-height: 33px; }
 
 h2 {
@@ -39,7 +46,7 @@ h6 {
 
 #lazy_content_spinner {
   position: fixed;
-  top: 30%;
+  top: 50%;
   left: 50%; }
 
 .post-content {
@@ -53,24 +60,27 @@ h6 {
     left: 50%; }
 
 #post_header {
-  border-bottom: 1px solid #eee;
-  font-size: 18px; }
+/*  border-bottom: 1px solid #eee;*/
+  font-size: 16px; }
   #post_header .post-title {
-    margin-bottom: 50px;
-    text-align: start; }
+    margin-bottom: 20px;
+    text-align: start;
+	font-size: 1.2em;
+}
     @media all and (max-width: 320px) {
       #post_header .post-title {
-        font-size: 1.1em;
-        line-height: 1.3em; } }
+        font-size: 1.2em; } }
   #post_header .second-line {
     height: 20px; }
     #post_header .second-line .date {
       float: left;
-      font-size: 12px;
+	  color:#999999;
+     /* font-size: 12px;*/
       font-style: italic; }
     #post_header .second-line .author-name {
       float: right;
-      font-size: 14px; }
+	  color:#999999;
+      /*font-size: 14px;*/ }
 
 #main_content {
   margin-top: 40px; }
@@ -110,6 +120,17 @@ img {
     top: 40px !important;
     width: 80px;
     height: 80px; }
+
+.ml-banner {
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: -8px; }
+  .ml-banner.phone {
+    width: 320px;
+    height: 50px; }
+  .ml-banner.tablet {
+    width: 730px;
+    height: 90px; }
 
 .details {
   font-size: 15px;
