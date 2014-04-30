@@ -1,8 +1,8 @@
 === Mobiloud - WordPress Native Mobile Apps Builder (iPhone, iPad, Android) ===
-Contributors: alvises, psac50
+Contributors: psac50
 Tags: mobiloud, push, notifications, mobile, mobile app, native app, web app, iphone, ipad, iphone app, ipad app, android, tablet, windows mobile, mobile web, HTML5, mobile site, mobile plugin, wordpress mobile, admob, adsense, mobile theme, mobile template, mobile website, mobile theme, responsive, wptouch, ios app, app
 Requires at least: 3.2
-Tested up to: 3.8.1
+Tested up to: 3.9
 Stable tag: 2.1.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -11,13 +11,13 @@ Create real native mobile apps for iPhone, iPad and Android with your WordPress 
 
 == Description ==
 
-= Build real native mobile apps =
+= Build native mobile apps with Wordpress. No effort required. =
 
-Mobiloud is a premium WordPress plugin and mobile app publishing service. It's for those who want to build a branded **native mobile apps** for iOS and Android, offering content from their WordPress site (similar apps are published by TechCrunch, The Verge, The Huffington Post). **It's not a free service** (check out the [pricing](http://www.mobiloud.com/pricing.php?ref=plugindesc)), and it doesn't help you publish a mobile site. If it sounds like what you need, then read on.
+Mobiloud is a premium WordPress plugin and mobile app publishing service. It's for publishers and bloggers who want to build a branded **native mobile apps** for iOS and Android, offering content from their WordPress site (similar apps are published by TechCrunch, The Verge, The Huffington Post). **Note it's not a free service** (check out the [pricing](http://www.mobiloud.com/pricing.php?ref=plugindesc)). If it sounds like what you want, and it should, then read on.
 
-Mobiloud apps are fast, run smoothly and their look and feel matches the platform you publish them on, be it iOS or Android. The apps support **mobile ad networks** such as Admob and Adsense, allow you to add your own advertising, support **WordPress, Disqus and Facebook comments** and allow you to **automatically send push notifications** when you publish new content. Your users will be able to choose which categories to receive notifications for.
+Mobiloud apps are fast, run smoothly and their design is specific to the platform you run them on, be it iOS or Android (this is not the case with any other competitor). The apps support **mobile ad networks** such as Admob and Adsense, allow you to add your own advertising, support **WordPress, Disqus and Facebook comments** and allow you to **automatically send push notifications** when you publish new content.
 
-We're a team of app developers, so we can provide you with further **customisation for your apps and more functionalities** as required. If you're site has more functionality then a blog and you want it available on the app, then just let us know what you need. If you're an agency or developer, our Whitelabel Program allows you to resell Mobilouds apps to your customers, without any Mobiloud branding.
+We're a team of app developers, so we can provide you with further **customisation for your apps and more functionality** as required. If you're site has more functionality then a blog and you want it available on the app, then just let us know what you need. If you're an agency or developer, our Whitelabel Program allows you to resell Mobilouds apps to your customers, without any Mobiloud branding.
 
 Install the plugin now and you will be moments away from creating your mobile app.
 
@@ -52,16 +52,16 @@ http://vimeo.com/68758152
 = Build your own native iOS and Android apps =
 Smartphones and tablets are outselling PCs 4:1. Chances are you're getting 30-40% of your traffic from mobile devices today, rest assured, by 2015 it will be 50-60%. In short, **you need to be on mobile if you want to be where your readers are**.
 
-**Mobile users spend 80% of their time inside apps**. Users love the simplicty, speed and comfort apps can offer. With Mobiloud you can finally build mobile apps for your blog, apps which are as good as those published by major blogs and online publishers.
+**Mobile users spend 85% of their time inside apps** - it's clear apps have won user's hearts more than the mobile web. People love the simplicty, speed and comfort apps can offer. 
 
 = No programming necessary =
-With Mobiloud, you can create apps without any of the programming hassle. With Mobiloud's app builder it is incredibly easy to **design your app's launch screen, icon and user interface**. This is **your branded mobile app**, so make it yours!  
+With Mobiloud, you can create apps without any of the programming hassle. With Mobiloud's mobile app Configurator it is incredibly easy to **design your app's launch screen, icon and user interface**. This is **your branded mobile app**, so make it yours!  
 
 = Native mobile user experience =
-Your app will be a **real native mobile app**. A clean, professional design, easy swipe actions to navigate your content and one-tap access to features like favourite articles, commenting and sharing. Mobiloud apps are nothing like what our competitors offer, which are generally slow, scrappy mobile apps made with HTML.
+Your app built on Mobiloud is a **real native mobile app**. It will offer a clean, professional design, easy swipe actions to navigate your content and one-tap access to features like favourite articles, commenting and sharing. Mobiloud apps are nothing like what our competitors offer, which are generally slow, poorly designed apps made with HTML and close to zero native code. The difference is clear.
 
 = Have your visitors come back, again and again! =
-With your own mobile app, you can convert  visitors into loyal app users that stick and come back to your app and content. It's like a newsletter on steroids. **Send push notifications** to bring your mobile users back and keep them engaged.
+With your own mobile app, you can convert visitors into loyal app users that stick and come back to your app and content. It's like a newsletter on steroids. **Send push notifications** to bring your mobile users back and keep them engaged.
 
 = Increase your mobile traffic =
 Mobile app users tend to consume on average more content every time they load an app, compared to a desktop or mobile site (we see 5x more views/visit on apps). Your mobile app will also be featured in the App Store and Google's Play Store, giving you access to millions of mobile app users from right around the world.
@@ -70,10 +70,10 @@ Mobile app users tend to consume on average more content every time they load an
 We support Google's Admob and Adsense out of the box, and a number of other networks, but you can add any HTML code to display your banners!
 
 = Make it simple to share your content =
-To grow your site and business, sharing is everything. It's like free marketing! And with your mobile app, you'll encourage **sharing with a single tap** via all social media sites, email or SMS – simple!
+To grow your site and business, sharing is everything. It's like free marketing! And with your mobile app, you'll encourage **sharing with a single tap** via all social media sites, email or SMS – simple! We support all major social networks, Whatsapp, Readibility and Instapaper among other services.
 
 = App analytics =
-With support for Google Analytics, you will be able to **track downloads, usage, and other statistics** in real time – so you’ll have complete visibility and transparency over the success of your mobile app.
+With support for Google Analytics, you will be able to **track downloads, usage, and other statistics**, so you’ll have complete visibility and transparency over the success of your mobile app.
 
 
 = What some of our customers say about it =
