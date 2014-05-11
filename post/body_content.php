@@ -33,16 +33,16 @@
 	echo stripslashes(get_option('ml_html_post_before_details'));
 
 	// title, date, author, meta
-	echo get_option('ml_post_date_enabled') ? '<div class="post_meta"><time title="' . $post->post_date . '">' . human_time_diff(strtotime($post->post_date), time()) . ' ago</time></div>' : '';
-
+	echo get_option('ml_post_date_enabled')=='true' ? '<div class="post_meta"><time title="' . $post->post_date . '">' . human_time_diff(strtotime($post->post_date), time()) . ' ago</time></div>' : '';
+	
 	echo '<div class="post_meta right">'; eval(stripslashes(get_option('ml_post_right_of_date'))); echo '</div>';
 ?>
 	<div class="clear"></div>
 	<h1 class="gamma post_title"><?php echo $post->post_title; ?></h1>
 <?php
 
-	if( !isset($_POST['allow_lazy']) || isset($_GET['fullcontent'])){
-	echo get_option('ml_post_author_enabled') ? '<p class="post_meta">' . get_the_author_link() . '</p><div class="clear"></div>' : ''; // clear because .post_meta is floated
+	if( !isset($_POST['allow_lazy']) || isset($_GET['fullcontent']) || get_option('ml_eager_loading_enable')=='true' ){
+	echo get_option('ml_post_author_enabled')=='true' ? '<p class="post_meta">' . get_the_author_link() . '</p><div class="clear"></div>' : ''; // clear because .post_meta is floated
 
 	eval(stripslashes(get_option('ml_post_after_details')));
 	echo stripslashes(get_option('ml_html_post_after_details'));
