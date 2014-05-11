@@ -1,61 +1,70 @@
-<?php // header('Access-Control-Allow-Origin: *'); ?>
-<?php include_once(dirname(__FILE__)."/../../../../wp-blog-header.php"); ?>
-<?php if(isset($post_id) == false) { ?>
+<?php
 
-<?php $post_id = $_GET['post_id']; ?>
-<?php $post = get_post($post_id); ?>
-<?php } ?>
-<?php if(isset($post) == false) { ?>
+	setup_postdata($post); // enable author and other data
 
-<?php $post = get_post($post_id); ?>
-<?php } ?>
-<?php $post_type = get_post_type($post->ID); ?>
-<?php $post_content = wpautop($post->post_content); ?>
-<script type="text/javascript">
-<?php echo stripslashes(get_option('ml_post_custom_js')); ?>
+	if(!isset($custom_css)){
+		$custom_css = stripslashes(get_option('ml_post_custom_css'));
+		echo $custom_css ? '<style type="text/css" media="screen">' . $custom_css . '</style>' : '';
+	}
+	if(!isset($custom_js)){
+		$custom_js = stripslashes(get_option('ml_post_custom_js'));
+		echo $custom_js ? '<script>' . $custom_js . '</script>' : '';
+	}
 
-</script><style type="text/css">
-<?php echo stripslashes(get_option('ml_post_custom_css')); ?>
+	eval(stripslashes(get_option('ml_post_start_body')));
+	echo stripslashes(get_option('ml_html_post_start_body'));
 
-</style><?php eval(stripslashes(get_option('ml_post_start_body'))); ?>
-<?php echo stripslashes(get_option('ml_html_post_start_body')); ?>
+	eval(stripslashes(get_option('ml_post_before_top_banner')));
 
-<div class="post-content" id="post_content">
-<div id="loading_spinner">
-</div><div id="post_header">
-<?php eval(stripslashes(get_option('ml_post_before_details'))); ?>
-<?php echo stripslashes(get_option('ml_html_post_before_details')); ?>
+	// featured image banner
+	/*if(has_post_thumbnail()){
+		the_post_thumbnail(array(1024, 768), array( // device width largest width is a landscape ipad
+			'class' => 'post-featured-image',
+		));
+	}*/
 
-<h1 class="post-title">
-<?php echo $post->post_title; ?>
+	eval(stripslashes(get_option('ml_post_after_top_banner')));
 
-</h1><div class="second-line">
-<?php if(($post_type == 'post' && get_option('ml_post_date_enabled') == "true") || ($post_type == 'page' && get_option('ml_page_date_enabled') == "true")) { ?>
+?>
+<article>
+<?php
 
-<div class="date">
-<?php echo mysql2date('D, d M Y',$post->post_date); ?>
+	eval(stripslashes(get_option('ml_post_before_details')));
+	echo stripslashes(get_option('ml_html_post_before_details'));
 
-</div><?php } ?>
-<?php if(($post_type == 'post' && get_option('ml_post_author_enabled') == "true") || ($post_type == 'page' && get_option('ml_page_author_enabled') == "true")) { ?>
+	// title, date, author, meta
+	echo get_option('ml_post_date_enabled') ? '<div class="post_meta"><time title="' . $post->post_date . '">' . human_time_diff(strtotime($post->post_date), time()) . ' ago</time></div>' : '';
 
-<div class="author-name">
-<?php echo the_author_meta('display_name',$post->post_author); ?>
+	echo '<div class="post_meta right">'; eval(stripslashes(get_option('ml_post_right_of_date'))); echo '</div>';
+?>
+	<div class="clear"></div>
+	<h1 class="gamma post_title"><?php echo $post->post_title; ?></h1>
+<?php
 
-</div><?php } ?>
-<div class="clearfix">
-</div></div><div class="clearfix">
-</div><?php eval(stripslashes(get_option('ml_post_after_details'))); ?>
-<?php echo stripslashes(get_option('ml_html_post_after_details')); ?>
+	if( !isset($_POST['allow_lazy']) || isset($_GET['fullcontent'])){
+	echo get_option('ml_post_author_enabled') ? '<p class="post_meta">' . get_the_author_link() . '</p><div class="clear"></div>' : ''; // clear because .post_meta is floated
 
-</div><?php eval(stripslashes(get_option('ml_post_before_content'))); ?>
-<?php echo stripslashes(get_option('ml_html_post_before_content')); ?>
+	eval(stripslashes(get_option('ml_post_after_details')));
+	echo stripslashes(get_option('ml_html_post_after_details'));
 
-<div id="main_content">
-<?php echo do_shortcode($post_content); ?>
+	eval(stripslashes(get_option('ml_post_before_content')));
+	echo stripslashes(get_option('ml_html_post_before_content'));
 
-</div><?php eval(stripslashes(get_option('ml_post_after_content'))); ?>
-<?php echo stripslashes(get_option('ml_html_post_after_content')); ?>
+	// content
+	the_content();
 
-</div><?php eval(stripslashes(get_option('ml_post_end_body'))); ?>
-<?php echo stripslashes(get_option('ml_html_post_end_body')); ?>
+	eval(stripslashes(get_option('ml_post_after_content')));
+	echo stripslashes(get_option('ml_html_post_after_content'));
 
+	eval(stripslashes(get_option('ml_post_before_footer_banner')));
+
+	eval(stripslashes(get_option('ml_post_after_footer_banner')));
+
+	}
+?>
+</article>
+<?php
+
+	eval(stripslashes(get_option('ml_post_after_body')));
+	echo stripslashes(get_option('ml_html_post_after_body'));
+?>
