@@ -38,6 +38,11 @@ if(isset($_POST["limit"]))
 	if($user_limit > 30) $user_limit = 30;
 }
 
+//$lazy_load = true;
+
+if(isset($_POST["allow_lazy"])){
+	//$lazy_load
+}
 
 $published_post_count = wp_count_posts()->publish;
 
@@ -207,6 +212,12 @@ function print_posts($posts,$tot_count,$offset,$options)
 		$final_post["title"] = $post->post_title;
 		$final_post["date"] = $post->post_date;
 		
+		if(get_option('ml_eager_loading_enable') == 'true' || $eager_loading == "true" || $post_type == 'page' || isset($_POST['post_id'])){
+			
+		} else {
+			$final_post["lazy"] = "true";
+		}
+		
 		try {
 			$video_id = get_the_first_youtube_id($post);
 		}
@@ -242,10 +253,11 @@ function print_posts($posts,$tot_count,$offset,$options)
 		}		
 		
 		foreach ( (array) $images as $image ) {
-			$image = array();
-			$image["full"] = wp_get_attachment_image_src($image->ID,'full');
-			$image["thumb"] =  wp_get_attachment_image_src( $image->ID,'thumbnail');
-			$final_post["images"][] = $image;
+			$imageToAdd = array();
+			$imageToAdd["full"] = wp_get_attachment_image_src($image->ID,'full');
+			$imageToAdd["thumb"] =  wp_get_attachment_image_src( $image->ID,'thumbnail');
+			$imageToAdd["imageId"] = $image->ID;
+			$final_post["images"][] = $imageToAdd;
 		}	
 
 		//capturing the html output generated
