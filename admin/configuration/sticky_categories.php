@@ -13,7 +13,7 @@ function ml_configuration_sticky_categories_callback()
 
 	if(isset($_POST['sticky_category_2']))
 	{
-		ml_set_generic_option($_POST['sticky_category_2']);
+		ml_set_generic_option("sticky_category_2",$_POST['sticky_category_2']);
 		$sticky_category_2 = get_option('sticky_category_2');
 	}
 	
@@ -115,7 +115,7 @@ function ml_configuration_sticky_categories_div()
 		<tr valign="bottom">
 			<td><h2 style="margin-left:15px;">Second category</h2></td>
 
-			<td><select name="sticky_category1">
+			<td><select name="sticky_category_2">
 				<option value="0">Select a category</option>
 				<?php $categories = get_categories();?>
 				<?php 

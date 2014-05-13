@@ -27,6 +27,8 @@ PHP after top Banner
 PHP before post details
 </option><option value="ml_html_post_before_details">
 HTML before post details
+</option><option value="ml_post_right_of_date">
+PHP right of date
 </option><option value="ml_post_after_details">
 PHP after post details
 </option><option value="ml_html_post_after_details">
@@ -77,6 +79,9 @@ PHP Footer
 
 </textarea><textarea class="hidden" name="ml_html_post_before_details">
 <?php echo htmlspecialchars(get_option('ml_html_post_before_details')); ?>
+
+</textarea><textarea class="hidden" name="ml_post_right_of_date">
+<?php echo htmlspecialchars(get_option('ml_post_right_of_date')); ?>
 
 </textarea><textarea class="hidden" name="ml_post_after_details">
 <?php echo htmlspecialchars(get_option('ml_post_after_details')); ?>

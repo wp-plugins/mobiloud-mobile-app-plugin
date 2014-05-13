@@ -38,11 +38,7 @@ if(isset($_POST["limit"]))
 	if($user_limit > 30) $user_limit = 30;
 }
 
-//$lazy_load = true;
 
-if(isset($_POST["allow_lazy"])){
-	//$lazy_load
-}
 
 $published_post_count = wp_count_posts()->publish;
 
@@ -60,8 +56,9 @@ $new_posts_count = $published_post_count - $user_post_count;
 $real_offset = $user_offset + $new_posts_count;
 
 
+
 if($ml_content_redirect->ml_content_redirect_enable == "1" &&
-	 $ml_content_redirect->is_valid_version($app_version))
+	 $ml_content_redirect->is_valid_version($app_version) )
 {
 	$options = $_POST;
 	echo $ml_content_redirect->load_content($options);
@@ -241,14 +238,16 @@ function print_posts($posts,$tot_count,$offset,$options)
 			$final_post["videos"][] = $video_id;
 		}
 		
-		
+		if(get_option('ml_article_list_enable_featured_images',true)){
 		if($main_image_url != NULL)
 		{
+			
 			$image = array( 
 											"full" => $main_image_url, 
 											"thumb" => array("url" => $main_image_url),
 											"big-thumb" => array("url" => $main_image_url)
 										); 
+			
 			$final_post["images"][0] = $image;
 		}		
 		
@@ -259,7 +258,8 @@ function print_posts($posts,$tot_count,$offset,$options)
 			$imageToAdd["imageId"] = $image->ID;
 			$final_post["images"][] = $imageToAdd;
 		}	
-
+		}
+		
 		//capturing the html output generated
 		ob_start();
 		include("post/post.php");

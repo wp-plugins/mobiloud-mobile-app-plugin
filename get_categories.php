@@ -24,6 +24,10 @@ foreach($categories as $c)
 	}
 }
 
+$my_wp_query = new WP_Query();
+$all_wp_pages = $my_wp_query->query(array('post_type' => 'page'));
+				
+				
 //pages
 foreach($pages as $p)
 {
@@ -34,6 +38,34 @@ foreach($pages as $p)
 		$page["ml_link"] = plugins_url("get_page.php?page_ID=".$p->ID,__FILE__);
 		$page["ml_render"] = ml_page_get_render($p->ID);
 		$page["id"] = "$p->ID";
+		
+		if(get_option("ml_hierarchical_pages_enabled",true)==true){
+				
+				
+				
+				$children = get_page_children($p->ID,$all_wp_pages);
+			
+				$childarray = array();
+			
+				foreach($children as $child){
+						
+						if($child->post_title!=NULL&&$child->ID!=NULL){
+							$childobject = array();
+							$childobject["title"] = $child->post_title;
+							$childobject["link"] = get_permalink($child->ID);
+							$childobject["ml_link"] = plugins_url("get_page.php?page_ID=".$child->ID,__FILE__);
+							$childobject["ml_render"] = ml_page_get_render($child->ID);
+							$childobject["id"] = "$child->ID";
+						
+							array_push($childarray,$childobject);
+						}
+						
+				}
+				
+				$page["children"] = $childarray;
+				
+		}
+		
 		array_push($final_pages,$page);
 	}
 }
