@@ -9,6 +9,11 @@ function ml_configuration_general_callback()
 	global $ml_push_notification_enabled;
 	global $ml_html_banners_enable;
 
+	global $ml_article_list_enable_dates;
+	global $ml_article_list_enable_featured_images;
+	
+	global $ml_hierarchical_pages_enabled;
+	
 	if(isset($_POST['ml_automatic_image_resize']))
 	{
 		$ml_automatic_image_resize = $_POST['ml_automatic_image_resize'] == "true";
@@ -30,6 +35,26 @@ function ml_configuration_general_callback()
 		$ml_html_banners_enable = $_POST['ml_html_banners_enable'] == "true";
 		ml_set_generic_option("ml_html_banners_enable",
 							   $ml_html_banners_enable);
+	}
+	
+	if(isset($_POST['ml_article_list_enable_dates']))
+	{
+		$ml_article_list_enable_dates = $_POST['ml_article_list_enable_dates'] == "true";
+		ml_set_generic_option("ml_article_list_enable_dates",
+								$ml_article_list_enable_dates);
+	}
+	
+	if(isset($_POST['ml_article_list_enable_featured_images']))
+	{
+		$ml_article_list_enable_featured_images = $_POST['ml_article_list_enable_featured_images'] == "true";
+		ml_set_generic_option("ml_article_list_enable_featured_images",
+								$ml_article_list_enable_featured_images);
+	}
+
+	if(isset($_POST['ml_hierarchical_pages_enabled']))
+	{
+		$ml_hierarchical_pages_enabled = $_POST['ml_hierarchical_pages_enabled'] == "true";
+		ml_set_generic_option("ml_hierarchical_pages_enabled", $ml_hierarchical_pages_enabled);
 	}
 
 	//right to left text
@@ -111,7 +136,11 @@ function ml_configuration_general()
 				ml_push_notification_enabled: jQuery("#ml_push_notification_enabled").is(":checked"),
 				ml_html_banners_enable: jQuery("#ml_html_banners_enable").is(":checked"),
 				ml_rtl_text_enable: jQuery("#ml_rtl_text_enable").is(":checked"),
+				ml_article_list_enable_dates: jQuery("#ml_article_list_enable_dates").is(":checked"),
+				ml_article_list_enable_featured_images: jQuery("#ml_article_list_enable_featured_images").is(":checked"),
+				ml_hierarchical_pages_enabled: jQuery("#ml_hierarchical_pages_enabled").is(":checked"),
 			};
+			
 			
 			$.post(ajaxurl, data, function(response) {
 				//saving the result and reloading the div
@@ -160,11 +189,16 @@ function ml_configuration_general_div()
 	global $ml_automatic_image_resize;
 	global $ml_push_notification_enabled;
 	global $ml_html_banners_enable;
-
+	global $ml_article_list_enable_dates;
+	global $ml_article_list_enable_featured_images;
+	global $ml_hierarchical_pages_enabled;
 	$ml_automatic_image_resize = get_option('ml_automatic_image_resize');
 	$ml_push_notification_enabled = get_option('ml_push_notification_enabled');
 	$ml_html_banners_enable = get_option('ml_html_banners_enable');
 	$ml_rtl_text_enable = get_option('ml_rtl_text_enable');
+	$ml_article_list_enable_dates = get_option('ml_article_list_enable_dates',true);
+	$ml_article_list_enable_featured_images = get_option('ml_article_list_enable_featured_images',true);
+	$ml_hierarchical_pages_enabled = get_option('ml_hierarchical_pages_enabled',true);
 	?>
 	<h3 style="font-family:arial;font-size:20px;font-weight:normal;padding:10px;">General app settings</h3>
 	
@@ -212,7 +246,41 @@ function ml_configuration_general_div()
 		?>
 		/> Enable Right-To-Left text
 	</h2>
+   
+	<h2 style="font-size:20px;font-weight:normal;padding:10px;">
+	<input id="ml_article_list_enable_dates" type="checkbox"
+		<?php
+			if($ml_article_list_enable_dates)
+			{
+				echo " checked ";
+			}
+		?>
+		/> Show dates on article list
+	</h2>
+    
+    
+	<h2 style="font-size:20px;font-weight:normal;padding:10px;">
+	<input id="ml_article_list_enable_featured_images" type="checkbox"
+		<?php
+			if($ml_article_list_enable_featured_images)
+			{
+				echo " checked ";
+			}
+		?>
+		/> Enable featured images
+	</h2>
 
+	<h2 style="font-size:20px;font-weight:normal;padding:10px;">
+	<input id="ml_hierarchical_pages_enabled" type="checkbox"
+		<?php
+			if($ml_hierarchical_pages_enabled)
+			{
+				echo " checked ";
+			}
+		?>
+		/> Enable hierarchical page navigation
+	</h2>
+    
 	<div style="margin-right:20px;">
 		<p class="submit" align="right">
 			<input type="submit" id="ml_configuration_general_submit" 

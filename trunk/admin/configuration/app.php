@@ -130,7 +130,7 @@ simple and polished way. Once active, a banner promoting your app will be visibl
 	<h2 style="font-size:20px;font-weight:normal;padding:10px;">
 		App ID
 	</h2>
-	<input id="ml_popup_message_on_mobile_appid" placeholder="Type here the App ID" 
+	<input id="ml_popup_message_on_mobile_appid" placeholder="Type the App ID here" 
 			name="ml_popup_message_on_mobile_appid" type="text" size="8" 
 	value="<?php echo $ml_popup_message_on_mobile_appid;?>" 
 	style="padding:5px;font-size:15px;margin-left:5%;width:50%;"/>
@@ -139,7 +139,7 @@ simple and polished way. Once active, a banner promoting your app will be visibl
 	<!-- DESCRIPTION -->
 	<div style="font-size:20px;padding:5px;;margin-top:20px;margin-bottom:20px;width:70%;
 		text-align:justify;">
-	  <p>Need to find your App-ID? <a href="http://mobiloud.com/faq.php#faq-14" target="_blank">Read how to</a>.</p>
+	  <p>Need to find your App-ID? <a href="http://mobiloud.com/faq.php#faq-14" target="_blank">Read how</a>.</p>
     </div>
 	
 	<div style="margin-right:20px;">

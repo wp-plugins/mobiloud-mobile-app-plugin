@@ -30,12 +30,14 @@
     var $lazy_info, host, http, mobiloudLazyLoadContent, post_id, relative_url, slashes, url;
     $lazy_info = $('#mobiloud_lazy_load');
     relative_url = $lazy_info.data('url');
+	
     post_id = $lazy_info.data('post_id');
     http = location.protocol;
     slashes = http.concat("//");
     host = slashes.concat(window.location.hostname);
     // url = "" + host + ":" + location.port + "/" + relative_url;
     url = relative_url;
+	
     makePageSpinner();
     mobiloudLazyLoadContent = function(data) {
       $('#lazy_body').hide().html(data).show();

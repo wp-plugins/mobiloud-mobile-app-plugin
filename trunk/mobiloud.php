@@ -1,14 +1,14 @@
 <?php
 /**
  * @package Mobiloud
- * @version 2.1.1
+ * @version 2.1.2
  */
 /*
 Plugin Name: Mobiloud
 Plugin URI: http://www.mobiloud.com
 Description: Turn your WordPress site into beautiful native mobile apps. No coding needed.
 Author: 50pixels
-Version: 2.1.1
+Version: 2.1.2
 Author URI: http://www.mobiloud.com
 */
 
@@ -235,12 +235,38 @@ function mobiloud_plugin_init()
 	global $ml_push_notification_enabled;
 	global $ml_html_banners_enable;
 	
+	global $ml_article_list_enable_dates;
+	global $ml_article_list_enable_featured_images;
+	
+	global $ml_home_article_list_enabled;
+	global $ml_home_page_enabled;
+	global $ml_home_url_enabled;
+
+	global $ml_home_page_id;
+	global $ml_home_url;
+	
+	$ml_home_article_list_enabled = get_option("ml_home_article_list_enabled",true);
+	$ml_home_page_enabled = get_option("ml_home_page_enabled",false);
+	$ml_home_url_enabled = get_option("ml_home_url_enabled",false);
+
+	$ml_home_page_id = get_option("ml_home_page_id");
+	$ml_home_url = get_option("ml_home_url");
+	
+	
+	global $ml_hierarchical_pages_enabled;
+	$ml_hierarchical_pages_enabled = get_option("ml_hierarchical_pages_enabled",true);
+	
 	//content redirect
 	global $ml_content_redirect_enable;
 	global $ml_content_redirect_url;
 	global $ml_content_redirect_category;
 
 	$ml_html_banners_enable = get_option("ml_html_banners_enable");
+	$ml_article_list_enable_dates = get_option("ml_article_list_enable_dates",true);
+	$ml_article_list_enable_featured_images = get_option("ml_article_list_enable_featured_images",true);
+	
+	
+	
 	
 	$ml_cert_type = "development";
 	$ml_server_host = "https://api.mobiloud.com";

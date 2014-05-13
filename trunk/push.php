@@ -25,6 +25,8 @@ function ml_is_notified($post_id)
 function ml_post_published_notification($post_id)
 {
 	$post = get_post($post_id,OBJECT);
+	if(($_POST['post_status'] == 'publish') && ($_POST['original_post_status'] != 'publish')){ // only send push if it's a new publish
+		
 	
 	$alert = $post->post_title;
 	$custom_properties = array('post_id' => $post_id);
@@ -48,6 +50,7 @@ function ml_post_published_notification($post_id)
 	// ml_send_notification($alert, true,NULL,$custom_properties,$tags,$post_id);
 	ml_send_notification($alert, true,NULL,$custom_properties,NULL,$post_id);
 
+	}
 }
 
 

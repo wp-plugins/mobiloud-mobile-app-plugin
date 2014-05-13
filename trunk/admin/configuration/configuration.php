@@ -5,6 +5,7 @@ include_once dirname( __FILE__ ) . '/app.php';
 include_once dirname( __FILE__ ) . '/general/general.php';
 include_once dirname( __FILE__ ) . '/categories.php';
 include_once dirname( __FILE__ ) . '/pages.php';
+include_once dirname( __FILE__ ) . '/homepage.php';
 include_once dirname( __FILE__ ) . '/sticky_categories.php';
 // include_once dirname( __FILE__ ) . '/facebook.php';
 
@@ -32,6 +33,11 @@ function mobiloud_configuration_page()
 			<div id="ml_configuration_general" class="stuffbox" style="padding:20px;">
 				<?php ml_configuration_general_ajax_load(); ?>
 			</div>
+            
+            <!-- HOME PAGE -->
+            <div id="ml_configuration_home" class="stuffbox" style="padding:20px;">
+            	<?php ml_configuration_home_ajax_load(); ?>
+            </div>
 
 			<!-- CATEGORIES -->
 			<div id="ml_configuration_categories" class="stuffbox" style="padding:20px;">
