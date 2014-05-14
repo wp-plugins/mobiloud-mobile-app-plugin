@@ -191,7 +191,8 @@ function ml_facebook_install()
 
 function mobiloud_plugin_menu() 
 {	
-	add_object_page("Mobiloud", "Mobiloud",NULL, "mobiloud_menu","activate_plugins",MOBILOUD_PLUGIN_URL."/menu_logo.png",25);
+	//add_object_page( $page_title, $menu_title, $capability, $menu_slug, $function, $icon_url );
+	add_object_page("Mobiloud", "Mobiloud", "none", "mobiloud_menu","activate_plugins",MOBILOUD_PLUGIN_URL."/menu_logo.png",25);
 	add_submenu_page( 'mobiloud_menu', 'Mobiloud Homepage', 'Design your app', "activate_plugins", 'mobiloud_menu_homepage', 'mobiloud_home_page');	
 	add_submenu_page( 'mobiloud_menu', 'Mobiloud Configuration', 'Configuration', "activate_plugins", 'mobiloud_menu_configuration', 'mobiloud_configuration_page');
 	add_submenu_page( 'mobiloud_menu', 'Mobiloud License', 'License', "activate_plugins", 'mobiloud_menu_license', 'ml_admin_license_page');
@@ -242,16 +243,23 @@ function mobiloud_plugin_init()
 	global $ml_home_page_enabled;
 	global $ml_home_url_enabled;
 
+	global $ml_home_page_full;
 	global $ml_home_page_id;
 	global $ml_home_url;
+	
+	global $ml_show_article_list_menu_item;
+	global $ml_article_list_menu_item_title;
 	
 	$ml_home_article_list_enabled = get_option("ml_home_article_list_enabled",true);
 	$ml_home_page_enabled = get_option("ml_home_page_enabled",false);
 	$ml_home_url_enabled = get_option("ml_home_url_enabled",false);
 
+	$ml_home_page_full = get_option("ml_home_page_full",false);
 	$ml_home_page_id = get_option("ml_home_page_id");
 	$ml_home_url = get_option("ml_home_url");
 	
+	$ml_show_article_list_menu_item = get_option("ml_show_article_list_menu_item",true);
+	$ml_article_list_menu_item_title = get_option("ml_article_list_menu_item_title","Articles");
 	
 	global $ml_hierarchical_pages_enabled;
 	$ml_hierarchical_pages_enabled = get_option("ml_hierarchical_pages_enabled",true);
