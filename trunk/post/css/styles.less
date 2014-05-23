@@ -14,7 +14,7 @@ article {
 	padding:2em;
 
 	.post_meta {
-		font-size:80%;
+		font-size:90%;
 		color:#999;
 		float:left;
 
@@ -25,6 +25,7 @@ article {
 
 	h1.post_title {
 		padding:0.5em 0;
+		line-height:1.25em;
 	}
 
 	a {
@@ -76,6 +77,15 @@ article {
 			&:first-of-type {
 				border-left:0;
 			}
+		}
+	}
+
+	.media-container {
+		width:100% !important;
+
+		img, embed, object, video {
+			max-width:100% !important;
+			height:auto !important;
 		}
 	}
 
