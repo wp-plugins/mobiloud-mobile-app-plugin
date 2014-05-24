@@ -96,19 +96,14 @@ else {
 			  'category__not_in' => $excludeCategories,
 			  's' => $user_search
 			);
-	$posts = query_posts($query_array);
+			
 	$posts_options = array();
-	
-	//SINGLE POST REQUEST
-	if(isset($_POST["post_id"]))
-	{
-		$single_post_id = $_POST['post_id'];
-		$posts = array();
-		$posts[0] = get_post($single_post_id);
-	}
-	
-	
-	if($user_category == NULL)
+	if(!isset($_POST["post_id"])){
+		$posts = query_posts($query_array);
+		$posts_options = array();
+		
+		
+		if($user_category == NULL)
 	{
 		$sticky_category_1 = get_option('sticky_category_1');
 		$sticky_category_2 = get_option('sticky_category_2');		
@@ -161,6 +156,15 @@ else {
 
 		}
 	}
+		
+	} else {
+		$single_post_id = $_POST['post_id'];
+		$posts = array();
+		$posts[0] = get_post($single_post_id);
+	}
+	
+	
+	
 	//subscriptions system enabled?
 	if(ml_subscriptions_enable()) {
 		//user login using
