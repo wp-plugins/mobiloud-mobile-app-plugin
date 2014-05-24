@@ -7,6 +7,7 @@ include_once dirname( __FILE__ ) . '/categories.php';
 include_once dirname( __FILE__ ) . '/pages.php';
 include_once dirname( __FILE__ ) . '/homepage.php';
 include_once dirname( __FILE__ ) . '/sticky_categories.php';
+include_once dirname( __FILE__ ) . '/article_list.php';
 // include_once dirname( __FILE__ ) . '/facebook.php';
 
 
@@ -52,6 +53,11 @@ function mobiloud_configuration_page()
 			<!-- STICKY CATEGORIES -->
 			<div id="ml_configuration_sticky_categories" class="stuffbox" style="padding:20px;">
 				<?php ml_configuration_sticky_categories_ajax_load(); ?>
+			</div>
+            
+            <!-- ARTICLE LIST FILTERING -->
+			<div id="ml_configuration_article_list" class="stuffbox" style="padding:20px;">
+				<?php ml_configuration_article_list_ajax_load(); ?>
 			</div>
 			
 			<!-- APP REDIRECT -->
