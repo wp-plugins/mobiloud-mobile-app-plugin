@@ -46,13 +46,13 @@ if(!isset($_GET["page_ID"])){
 	<h1 class="gamma post_title"><?php echo $post->post_title; ?></h1>
 <?php
 
-	if( !isset($_POST['allow_lazy']) || isset($_GET['fullcontent']) || get_option('ml_eager_loading_enable')=='true' || isset($_GET["page_ID"]) ){
+	if( !isset($_POST['allow_lazy']) || isset($_GET['fullcontent']) || get_option('ml_eager_loading_enable')=='true' || isset($_GET["page_ID"]) || isset($_POST['post_id'])){
 		
-	if(!isset($_GET["page_ID"])){
-	echo get_option('ml_post_author_enabled')=='true' ? '<p class="post_meta">' . get_the_author_link() . '</p><div class="clear"></div>' : ''; // clear because .post_meta is floated
-	} else {
-		echo get_option('ml_page_author_enabled')=='true' ? '<p class="post_meta">' . get_the_author_link() . '</p><div class="clear"></div>' : ''; // clear because .post_meta is floated
-	}
+		if(!isset($_GET["page_ID"])){
+			echo get_option('ml_post_author_enabled')=='true' ? '<p class="post_meta">' . get_the_author_link() . '</p><div class="clear"></div>' : ''; // clear because .post_meta is floated
+		} else {
+			echo get_option('ml_page_author_enabled')=='true' ? '<p class="post_meta">' . get_the_author_link() . '</p><div class="clear"></div>' : ''; // clear because .post_meta is floated
+		}
 
 	eval(stripslashes(get_option('ml_post_after_details')));
 	echo stripslashes(get_option('ml_html_post_after_details'));
