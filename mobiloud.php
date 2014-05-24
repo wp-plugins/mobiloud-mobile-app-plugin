@@ -45,6 +45,7 @@ include_once dirname( __FILE__ ) . '/admin/license/license.php';
 include_once dirname( __FILE__ ) . '/admin/subscriptions/subscriptions.php';
 
 include_once dirname( __FILE__ ) . '/admin/configuration/configuration.php';
+include_once dirname( __FILE__ ) . '/admin/menu/menu.php';
 include_once dirname( __FILE__ ) . '/push_notifications/menu.php';
 
 //include_once dirname( __FILE__ ) . '/configuration/home_menu/home_menu.php';
@@ -195,6 +196,7 @@ function mobiloud_plugin_menu()
 	add_object_page("Mobiloud", "Mobiloud", "none", "mobiloud_menu","activate_plugins",MOBILOUD_PLUGIN_URL."/menu_logo.png",25);
 	add_submenu_page( 'mobiloud_menu', 'Mobiloud Homepage', 'Design your app', "activate_plugins", 'mobiloud_menu_homepage', 'mobiloud_home_page');	
 	add_submenu_page( 'mobiloud_menu', 'Mobiloud Configuration', 'Configuration', "activate_plugins", 'mobiloud_menu_configuration', 'mobiloud_configuration_page');
+	add_submenu_page( 'mobiloud_menu', 'Mobiloud Menu', 'Menu Configuration', "activate_plugins", 'mobiloud_menu_menu_configuration', 'mobiloud_menu_configuration_page');
 	add_submenu_page( 'mobiloud_menu', 'Mobiloud License', 'License', "activate_plugins", 'mobiloud_menu_license', 'ml_admin_license_page');
 	
 	add_submenu_page( 'mobiloud_menu', 'Mobiloud Post Customization', 'Post Customization', "activate_plugins", 'mobiloud_menu_post', 'ml_admin_post_page');
@@ -271,6 +273,11 @@ function mobiloud_plugin_init()
 	global $ml_article_list_exclude_categories;
 	$ml_article_list_exclude_categories = get_option("ml_article_list_exclude_categories","");
 	
+	global $ml_menu_show_favorites;
+	$ml_menu_show_favorites = get_option("ml_menu_show_favorites",true);
+	
+	global $ml_menu_urls;
+	$ml_menu_urls = get_option("ml_menu_urls",array());
 	
 	//content redirect
 	global $ml_content_redirect_enable;
