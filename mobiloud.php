@@ -264,6 +264,14 @@ function mobiloud_plugin_init()
 	global $ml_hierarchical_pages_enabled;
 	$ml_hierarchical_pages_enabled = get_option("ml_hierarchical_pages_enabled",true);
 	
+	
+	global $ml_article_list_include_post_types;
+	$ml_article_list_include_post_types = get_option("ml_article_list_include_post_types","post");
+	
+	global $ml_article_list_exclude_categories;
+	$ml_article_list_exclude_categories = get_option("ml_article_list_exclude_categories","");
+	
+	
 	//content redirect
 	global $ml_content_redirect_enable;
 	global $ml_content_redirect_url;

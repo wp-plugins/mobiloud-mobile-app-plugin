@@ -69,13 +69,31 @@ if($ml_content_redirect->ml_content_redirect_enable == "1" &&
 
 else {
 	//not cached 
+	$includedPostTypes = explode(",",get_option("ml_article_list_include_post_types","post"));
+	
+	$categoryNames = array();
+	$excludeCategories = array();
+	
+	if($user_category){
+		array_push($categoryNames,$user_category);
+	} else {
+		foreach(explode(",",get_option("ml_article_list_exclude_categories","")) as $cname){
+			array_push($excludeCategories,get_cat_ID($cname));	
+		}
+		
+	}
+	
+	
+	
+	
 	$query_array = array('showposts' => $user_limit,
 			  'orderby' => 'post_date',
 			  'order' => 'DESC',
-			  'post_type' => 'post',
+			  'post_type' => $includedPostTypes,
 			  'post_status' => 'publish',
 			  'offset' => $real_offset,
-			  'category_name' => $user_category,
+			  'category_name' => $categoryNames,
+			  'category__not_in' => $excludeCategories,
 			  's' => $user_search
 			);
 	$posts = query_posts($query_array);
