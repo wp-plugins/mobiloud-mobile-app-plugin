@@ -38,7 +38,16 @@ if(isset($_POST["limit"]))
 	if($user_limit > 30) $user_limit = 30;
 }
 
+if(isset($_POST["permalink"])){
 
+	$postIDfromURL = url_to_postid( $_POST["permalink"] );
+	if($postIDfromURL){
+		$_POST["post_id"] = $postIDfromURL;
+	} else {
+		return;
+	}
+	
+}
 
 $published_post_count = wp_count_posts()->publish;
 
@@ -216,6 +225,8 @@ function print_posts($posts,$tot_count,$offset,$options)
 		$final_post["author"] = array();
 		$final_post["author"]["name"] = get_author_name($post->post_author);
 		$final_post["author"]["author_id"] = $post->post_author;
+		
+		$final_post["post_type"] = $post->post_type;
 		
 		$final_post["categories"] = array();
 				
