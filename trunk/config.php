@@ -39,6 +39,7 @@ if(get_option("ml_home_article_list_enabled",false)==true){
 }
 
 $return_config["enable_hierarchical_pages"] = get_option('ml_hierarchical_pages_enabled',true);
+$return_config["show_favorites"] = get_option('ml_menu_show_favorites',true);
 
 $json_string = json_encode($return_config);
 echo $json_string;

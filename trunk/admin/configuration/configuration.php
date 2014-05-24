@@ -39,17 +39,7 @@ function mobiloud_configuration_page()
             <div id="ml_configuration_home" class="stuffbox" style="padding:20px;">
             	<?php ml_configuration_home_ajax_load(); ?>
             </div>
-
-			<!-- CATEGORIES -->
-			<div id="ml_configuration_categories" class="stuffbox" style="padding:20px;">
-				<?php ml_configuration_categories_ajax_load(); ?>
-			</div>
-
-			<!-- PAGES -->
-			<div id="ml_configuration_pages" class="stuffbox" style="padding:20px;">
-				<?php ml_configuration_pages_ajax_load(); ?>
-			</div>
-		
+            
 			<!-- STICKY CATEGORIES -->
 			<div id="ml_configuration_sticky_categories" class="stuffbox" style="padding:20px;">
 				<?php ml_configuration_sticky_categories_ajax_load(); ?>

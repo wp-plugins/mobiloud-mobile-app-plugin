@@ -44,6 +44,10 @@ $final_categories = array();
 $pages = ml_pages();
 $final_pages = array();
 
+$final_urls = array();
+
+$final_options = array();
+
 //categories
 foreach($categories as $c)
 {
@@ -97,8 +101,18 @@ foreach($pages as $p)
 	}
 }
 
+$urls = get_option("ml_menu_urls",array());
+foreach($urls as $url){
+	$urlObject = array();
+	$urlObject["url"] = $url["url"];
+	$urlObject["title"] = $url["urlTitle"];	
+	array_push($final_urls,$urlObject);
+}
 
-echo json_encode(array("categories" => $final_categories, "pages" => $final_pages));
+$final_options = array();
+$final_options["showFavorites"] = get_option('ml_menu_show_favorites',true);
+
+echo json_encode(array("categories" => $final_categories, "pages" => $final_pages, "urls" => $final_urls, "options" => $final_options));
 
 
 ?>
