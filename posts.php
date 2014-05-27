@@ -108,7 +108,7 @@ else {
 			
 	$posts_options = array();
 	if(!isset($_POST["post_id"])){
-		$posts = query_posts($query_array);
+		$posts = get_posts($query_array);
 		$posts_options = array();
 		
 		
@@ -117,7 +117,7 @@ else {
 		$sticky_category_1 = get_option('sticky_category_1');
 		$sticky_category_2 = get_option('sticky_category_2');		
 	}
-
+wp_reset_postdata();
 	//must be the second, first because the first will be prepended
 	if($sticky_category_2 && ($real_offset == NULL || $real_offset == 0))
 	{
@@ -127,7 +127,7 @@ else {
 		{
 			$query_array['showposts'] = 3;
 			$query_array['category_name'] = $cat->slug;
-			$cat_2_posts = query_posts($query_array);
+			$cat_2_posts = get_posts($query_array);
 			foreach($cat_2_posts as $p)
 			{
 				$p->sticky = true;
@@ -139,6 +139,7 @@ else {
   
 			}
 			$posts = array_merge($cat_2_posts,$posts);
+			wp_reset_postdata();
 		}
 	}
 
@@ -150,7 +151,7 @@ else {
 		{
 			$query_array['showposts'] = 3;
 			$query_array['category_name'] = $cat->slug;
-			$cat_1_posts = query_posts($query_array);
+			$cat_1_posts = get_posts($query_array);
 			foreach($cat_1_posts as $p)
 			{
 				$p->sticky = true;
@@ -162,7 +163,7 @@ else {
   
 			}
 			$posts = array_merge($cat_1_posts,$posts);
-
+			wp_reset_postdata();
 		}
 	}
 		

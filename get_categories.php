@@ -12,11 +12,11 @@ function build_page_object($dic){
 	$childobject["ml_render"] = ml_page_get_render($dic->ID);
 	$childobject["id"] = "$dic->ID";
 	
-	$my_wp_query = new WP_Query();
-	$all_wp_pages = $my_wp_query->query(array('post_type' => 'page'));
+	//$my_wp_query = new WP_Query();
+	//$all_wp_pages = $my_wp_query->query(array('post_type' => 'page'));
 
-	$children = get_page_children($dic->ID,$all_wp_pages);
-			
+	//$children = get_page_children($dic->ID,$all_wp_pages);
+	$children = get_pages(array('parent' => $dic->ID));
 	
 	$childarray = array();
 			
@@ -29,6 +29,8 @@ function build_page_object($dic){
 		}
 						
 	}
+	
+	wp_reset_postdata();
 	
 	$childobject["children"] = $childarray;
 						
@@ -60,10 +62,11 @@ foreach($categories as $c)
 	}
 }
 
-$my_wp_query = new WP_Query();
-$all_wp_pages = $my_wp_query->query(array('post_type' => 'page'));
-				
-				
+//$my_wp_query = new WP_Query();
+//$all_wp_pages = $my_wp_query->query(array('post_type' => 'page'));
+		wp_reset_postdata();
+		
+		
 //pages
 foreach($pages as $p)
 {
@@ -79,8 +82,14 @@ foreach($pages as $p)
 				
 				
 				
-				$children = get_page_children($p->ID,$all_wp_pages);
+				//$children = get_page_children($p->ID,$all_wp_pages);
+				
+				//
+				
+				//$children = get_posts(array('posts_per_page'   => -1));
 			
+			//echo json_encode($children);
+				$children = get_pages(array('parent' => $p->ID));
 				$childarray = array();
 			
 				foreach($children as $child){
@@ -95,6 +104,7 @@ foreach($pages as $p)
 				
 				$page["children"] = $childarray;
 				
+				wp_reset_postdata();
 		}
 		
 		array_push($final_pages,$page);
