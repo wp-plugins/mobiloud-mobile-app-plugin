@@ -1,5 +1,5 @@
 <?php
-	$info = array("version" => "2.1.1");
+	$info = array("version" => "2.2");
 	$callback = $_GET['callback'];
 	if($callback) {
 		echo $callback."(";
