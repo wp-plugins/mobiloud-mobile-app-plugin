@@ -1,5 +1,5 @@
 <?php
-//returns 
+//returns
 //WP_User if login successful
 //WP_Error if error
 function ml_login_wordpress($username, $password) {
@@ -16,7 +16,7 @@ function ml_has_groups_library() {
 }
 
 function ml_subscriptions_enable() {
-	return (ml_has_groups_library() && get_option('ml_subscriptions_enable'));
+	return (ml_has_groups_library() && get_option('ml_subscriptions_enable') !== 'false');
 }
 
 
@@ -26,7 +26,7 @@ function ml_subscriptions_filter_posts($posts,$user_id) {
 	foreach($posts as $post) {
 		if(Groups_Post_Access::user_can_read_post($post->ID,$user_id))
 		{
-			$filtered_posts[] = $post;			
+			$filtered_posts[] = $post;
 		}
 	}
 	return $filtered_posts;
