@@ -35,11 +35,11 @@
 if(!isset($_GET["page_ID"])){
 	// title, date, author, meta
 	echo get_option('ml_post_date_enabled')=='true' ? '<div class="post_meta"><time title="' . $post->post_date . '">' . human_time_diff(strtotime($post->post_date), time()) . ' ago</time></div>' : '';
-	
+
 } else {
 	echo get_option('ml_page_date_enabled')=='true' ? '<div class="post_meta"><time title="' . $post->post_date . '">' . human_time_diff(strtotime($post->post_date), time()) . ' ago</time></div>' : '';
 }
-	
+
 	echo '<div class="post_meta right">'; eval(stripslashes(get_option('ml_post_right_of_date'))); echo '</div>';
 ?>
 	<div class="clear"></div>
@@ -47,7 +47,7 @@ if(!isset($_GET["page_ID"])){
 <?php
 
 	if( !isset($_POST['allow_lazy']) || isset($_GET['fullcontent']) || get_option('ml_eager_loading_enable')=='true' || isset($_GET["page_ID"]) || isset($_POST['post_id'])){
-		
+
 		if(!isset($_GET["page_ID"])){
 			echo get_option('ml_post_author_enabled')=='true' ? '<p class="post_meta">' . get_the_author_link() . '</p><div class="clear"></div>' : ''; // clear because .post_meta is floated
 		} else {
@@ -78,3 +78,21 @@ if(!isset($_GET["page_ID"])){
 	eval(stripslashes(get_option('ml_post_after_body')));
 	echo stripslashes(get_option('ml_html_post_after_body'));
 ?>
+<script>
+    var iframes = document.getElementsByTagName('iframe')
+        , frameRatios = []
+        , container = document.getElementsByTagName('article')[0];
+    for(var i = 0; i < iframes.length; i++){
+        var frame = iframes[i];
+        frameRatios[i] = frame.offsetHeight / frame.offsetWidth;
+        frame.style.width = '100%';
+    }
+    window.onresize = function(){
+        var containerWidth = container.offsetWidth;
+        for(var i = 0; i < iframes.length; i++){
+            var frame = iframes[i];
+            frame.style.height = (containerWidth * frameRatios[i]) + 'px';
+        }
+    };
+    window.onresize();
+</script>
