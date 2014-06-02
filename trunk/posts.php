@@ -82,9 +82,11 @@ else {
 	
 	$categoryNames = array();
 	$excludeCategories = array();
+	$categoryName = "";
 	
 	if($user_category){
 		array_push($categoryNames,$user_category);
+		$categoryName = get_cat_ID($user_category);
 	} else {
 		foreach(explode(",",get_option("ml_article_list_exclude_categories","")) as $cname){
 			array_push($excludeCategories,get_cat_ID($cname));	
@@ -93,18 +95,19 @@ else {
 	}
 	
 	
-	
-	
-	$query_array = array('showposts' => $user_limit,
+	$query_array = array('posts_per_page' => $user_limit,
 			  'orderby' => 'post_date',
 			  'order' => 'DESC',
 			  'post_type' => $includedPostTypes,
 			  'post_status' => 'publish',
 			  'offset' => $real_offset,
-			  'category_name' => $categoryNames,
+			  'category' => $categoryName,
 			  'category__not_in' => $excludeCategories,
 			  's' => $user_search
 			);
+			
+			
+			//echo json_encode($query_array);
 			
 	$posts_options = array();
 	if(!isset($_POST["post_id"])){
@@ -125,8 +128,9 @@ wp_reset_postdata();
 		$cat = ml_get_category($sticky_category_2);
 		if($cat)
 		{
-			$query_array['showposts'] = 3;
-			$query_array['category_name'] = $cat->slug;
+			$query_array['posts_per_page'] = 3;
+			//$query_array['category_name'] = $cat->slug;
+			$query_array['category'] = get_cat_ID($cat->slug);
 			$cat_2_posts = get_posts($query_array);
 			foreach($cat_2_posts as $p)
 			{
@@ -149,8 +153,9 @@ wp_reset_postdata();
 		$cat = get_category($sticky_category_1);
 		if($cat)
 		{
-			$query_array['showposts'] = 3;
-			$query_array['category_name'] = $cat->slug;
+			$query_array['posts_per_age'] = 3;
+			//$query_array['category_name'] = $cat->slug;
+			$query_array['category'] = get_cat_ID($cat->slug);
 			$cat_1_posts = get_posts($query_array);
 			foreach($cat_1_posts as $p)
 			{
