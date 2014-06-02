@@ -61,6 +61,8 @@ if(!isset($_GET["page_ID"])){
 	echo stripslashes(get_option('ml_html_post_before_content'));
 
 	// content
+	global $more;
+    $more = 1; 
 	the_content();
 
 	eval(stripslashes(get_option('ml_post_after_content')));
