@@ -86,7 +86,8 @@ else {
 	
 	if($user_category){
 		array_push($categoryNames,$user_category);
-		$categoryName = get_cat_ID($user_category);
+		$catObj = get_category_by_slug($user_category); 
+  		$categoryName = $catObj->cat_ID;
 	} else {
 		foreach(explode(",",get_option("ml_article_list_exclude_categories","")) as $cname){
 			array_push($excludeCategories,get_cat_ID($cname));	
@@ -120,7 +121,7 @@ else {
 		$sticky_category_1 = get_option('sticky_category_1');
 		$sticky_category_2 = get_option('sticky_category_2');		
 	}
-wp_reset_postdata();
+//wp_reset_postdata();
 	//must be the second, first because the first will be prepended
 	if($sticky_category_2 && ($real_offset == NULL || $real_offset == 0))
 	{
@@ -143,7 +144,7 @@ wp_reset_postdata();
   
 			}
 			$posts = array_merge($cat_2_posts,$posts);
-			wp_reset_postdata();
+			//wp_reset_postdata();
 		}
 	}
 
@@ -168,7 +169,7 @@ wp_reset_postdata();
   
 			}
 			$posts = array_merge($cat_1_posts,$posts);
-			wp_reset_postdata();
+			//wp_reset_postdata();
 		}
 	}
 		
