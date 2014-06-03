@@ -6,7 +6,7 @@
 
 	function ml_render_iphone_comment($comment){
 ?>
-	<article class="comment">
+	<article class="comment ml_comment">
 		<?php
 			$uid_or_email = $comment->user_id != 0 ? $comment->user_id : $comment->comment_author_email;
 			$link = ml_facebook_get_picture_url($uid_or_email);
