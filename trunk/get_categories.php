@@ -30,7 +30,7 @@ function build_page_object($dic){
 						
 	}
 	
-	wp_reset_postdata();
+	//wp_reset_postdata();
 	
 	$childobject["children"] = $childarray;
 						
@@ -64,7 +64,7 @@ foreach($categories as $c)
 
 //$my_wp_query = new WP_Query();
 //$all_wp_pages = $my_wp_query->query(array('post_type' => 'page'));
-		wp_reset_postdata();
+//		wp_reset_postdata();
 		
 		
 //pages
@@ -104,7 +104,7 @@ foreach($pages as $p)
 				
 				$page["children"] = $childarray;
 				
-				wp_reset_postdata();
+				//wp_reset_postdata();
 		}
 		
 		array_push($final_pages,$page);
