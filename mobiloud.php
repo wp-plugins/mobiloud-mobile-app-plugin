@@ -77,8 +77,6 @@ function mobiloud_install()
 	
 }
 
-
-
 register_activation_hook(__FILE__, 'mobiloud_activate');
 add_action('admin_init', 'mobiloud_redirect');
 
@@ -101,20 +99,20 @@ function ml_notifications_install()
 {
 	global $wpdb;
 	$table_name = $wpdb->prefix . "mobiloud_notifications";
-	
-	if($wpdb->get_var("SHOW TABLES LIKE '$table_name'") != $table_name) {
-		//install della tabella
-		$sql = "CREATE TABLE " . $table_name . " (
-			  id bigint(11) NOT NULL AUTO_INCREMENT,
-			  time bigint(11) DEFAULT '0' NOT NULL,
-			  post_id bigint(11) NOT NULL,
-			  UNIQUE KEY id (id)
-			);";
-			
-		require_once(ABSPATH . 'wp-admin/includes/upgrade.php');
-		dbDelta($sql);
-	}
+    //install della tabella
+    $sql = "CREATE TABLE " . $table_name . " (
+          id bigint(11) NOT NULL AUTO_INCREMENT,
+          time bigint(11) DEFAULT '0' NOT NULL,
+          post_id bigint(11),
+          msg blob,
+          android varchar(1) NOT NULL,
+          ios varchar(1) NOT NULL,
+          tags blob,
+          UNIQUE KEY id (id)
+        );";
 
+    require_once(ABSPATH . 'wp-admin/includes/upgrade.php');
+    dbDelta($sql);
 }
 
 function ml_categories_install()
@@ -218,6 +216,7 @@ function mobiloud_plugin_init()
 	ml_categories_install();
 
 	global $ml_api_key, $ml_secret_key, $ml_server_host, $ml_server_port;
+    global $ml_pb_app_id, $ml_pb_secret_key;
 	global $ml_last_post_id;
 	
 	global $ml_push_url;
@@ -252,6 +251,8 @@ function mobiloud_plugin_init()
 	global $ml_show_article_list_menu_item;
 	global $ml_article_list_menu_item_title;
 	
+    ml_check_pb_updated();
+    
 	$ml_home_article_list_enabled = get_option("ml_home_article_list_enabled",true);
 	$ml_home_page_enabled = get_option("ml_home_page_enabled",false);
 	$ml_home_url_enabled = get_option("ml_home_url_enabled",false);
@@ -305,6 +306,9 @@ function mobiloud_plugin_init()
 	$ml_api_key = get_option('ml_api_key');
 	$ml_secret_key = get_option('ml_secret_key');
 	
+    $ml_pb_app_id = get_option('ml_pb_app_id');
+	$ml_pb_secret_key = get_option('ml_pb_secret_key');
+    
 	$ml_last_post_id = get_option('ml_last_post_id');
 	
 	$ml_fb_app_id = get_option("ml_fb_app_id");
@@ -332,9 +336,15 @@ function mobiloud_plugin_init()
 
 	//push notifications
 	$ml_push_notification_enabled = get_option("ml_push_notification_enabled");
+
 	if($ml_push_notification_enabled)
 	{
-		add_action('publish_post','ml_post_published_notification');
+        if(ml_has_updated_to_pb()) {
+            add_action('publish_post','ml_pb_post_published_notification');
+        } else {
+            add_action('publish_post','ml_post_published_notification');
+        }
+		
 	}
 
 	//cache
@@ -377,6 +387,18 @@ function ml_set_secret_key($new_secret_key)
 {
 	$ml_secret_key= $new_secret_key;
 	ml_set_generic_option('ml_secret_key',$ml_secret_key);	
+}
+
+function ml_set_pb_app_id($new_app_id)
+{
+	$ml_pb_app_id = $new_app_id;
+	ml_set_generic_option('ml_pb_app_id',$ml_pb_app_id);
+}
+
+function ml_set_pb_secret_key($new_secret_key)
+{
+	$ml_pb_secret_key= $new_secret_key;
+	ml_set_generic_option('ml_pb_secret_key',$ml_pb_secret_key);	
 }
 
 function ml_set_server_host($new_server_host)
@@ -440,6 +462,30 @@ function ml_init_automatic_image_resize()
 	
 	$ml_automatic_image_resize = false;
 	ml_set_generic_option("ml_automatic_image_resize",$ml_automatic_image_resize);
+}
+
+function ml_pb_update_notice() {
+    echo '<div class="updated">
+
+       <p>Please update your Mobiloud license details by <a href="'.admin_url().'admin.php?page=mobiloud_menu_license">clicking here</a> with the new keys that have been issued to you.</p>
+
+    </div>';
+}
+
+//check if license has been updated to use the new Pushbot keys
+function ml_check_pb_updated() {
+    if(strlen(get_option('ml_pb_app_id')) < 10 || strlen(get_option('ml_pb_secret_key')) < 10) {
+        if(strlen(get_option('ml_api_key')) > 0) {
+            add_action('admin_notices', 'ml_pb_update_notice');
+        }
+    }
+}
+
+function ml_has_updated_to_pb() {
+    if(strlen(get_option('ml_pb_app_id')) < 10 || strlen(get_option('ml_pb_secret_key')) < 10) {
+        return false;
+    } 
+    return true;
 }
 
 

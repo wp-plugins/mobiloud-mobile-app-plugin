@@ -119,20 +119,19 @@ PHP Footer
 </textarea></div><div class="wrap">
 <div class="narrow">
 <div class="stuffbox" id="ml_admin_post_options" style="padding:20px;">
-<h3>
-Options
-<h2 style="text-decoration:underline">
+    <h3>Options</h3>
+<h3 style="text-decoration:underline">
 Posts
-</h2><h2>
+</h3><h3>
 <input data-checked="<?php echo get_option('ml_eager_loading_enable',false); ?>" name="ml_eager_loading_enable" type="checkbox" />Preload the content
-</h2><h2>
+</h3><h3>
 <input data-checked="<?php echo get_option('ml_post_author_enabled',true); ?>" name="ml_post_author_enabled" type="checkbox" />Show author name
-</h2><h2>
+</h3><h3>
 <input data-checked="<?php echo get_option('ml_post_date_enabled',true); ?>" name="ml_post_date_enabled" type="checkbox" />Show date
-</h2><h2 style="text-decoration:underline">
+</h3><h3 style="text-decoration:underline">
 Pages
-</h2><h2>
+</h3><h3>
 <input data-checked="<?php echo get_option('ml_page_author_enabled',false); ?>" name="ml_page_author_enabled" type="checkbox" />Show author name
-</h2><h2>
+</h3><h3>
 <input data-checked="<?php echo get_option('ml_page_date_enabled',false); ?>" name="ml_page_date_enabled" type="checkbox" />Show date
-</h2></h3><input class="button button-primary button-large" data-label="Save" data-saving-label="Saving..." type="submit" value="Save" /></div></div></div>
+</h3><input class="button button-primary button-large" data-label="Save" data-saving-label="Saving..." type="submit" value="Save" /></div></div></div>

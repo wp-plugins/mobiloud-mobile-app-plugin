@@ -4,20 +4,20 @@
 
 	function ml_admin_license_callback()
 	{
-		global $ml_api_key, $ml_secret_key;
+		global $ml_pb_app_id, $ml_pb_secret_key;
 		
-		//save api key
-		if(isset($_POST['ml_api_key']))
+		//save app id
+		if(isset($_POST['ml_pb_app_id']))
 		{
-			ml_set_api_key($_POST['ml_api_key']);
-			$ml_api_key = get_option('ml_api_key');
+			ml_set_pb_app_id($_POST['ml_pb_app_id']);
+			$ml_pb_app_id = get_option('ml_pb_app_id');
 		}
 
 		//save api secret
-		if(isset($_POST['ml_secret_key']))
+		if(isset($_POST['ml_pb_secret_key']))
 		{
-			ml_set_secret_key($_POST['ml_secret_key']);
-			$ml_secret_key = get_option('ml_secret_key');
+			ml_set_pb_secret_key($_POST['ml_pb_secret_key']);
+			$ml_pb_secret_key = get_option('ml_pb_secret_key');
 		}
 		
 		ml_admin_license_page();
@@ -29,7 +29,7 @@
 	}
 
 	function ml_admin_license_page() {
-		global $ml_api_key, $ml_secret_key;	
+		global $ml_pb_app_id, $ml_pb_secret_key;
 
 		echo "<div id='ml_admin_license_page'>";	
 		wp_register_style('mobiloud_admin_license', MOBILOUD_PLUGIN_URL . '/admin/license/license.css');
