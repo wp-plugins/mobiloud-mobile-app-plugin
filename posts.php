@@ -278,7 +278,7 @@ function print_posts($posts,$tot_count,$offset,$options)
 			$final_post["videos"][] = $video_id;
 		}
 		
-		if(get_option('ml_article_list_enable_featured_images',true)){
+		
 		if($main_image_url != NULL)
 		{
 			
@@ -298,7 +298,7 @@ function print_posts($posts,$tot_count,$offset,$options)
 			$imageToAdd["imageId"] = $image->ID;
 			$final_post["images"][] = $imageToAdd;
 		}	
-		}
+		
 		
 		//capturing the html output generated
 		ob_start();
