@@ -1,5 +1,8 @@
 <?php
 if(strlen(get_option('ml_pb_app_id'))>10 && strlen(get_option('ml_pb_secret_key'))) {
+    
+    wp_register_script('google_chart', 'https://www.google.com/jsapi');
+    wp_enqueue_script('google_chart');
 ?>
 <link rel='stylesheet' href="<?php echo MOBILOUD_PLUGIN_URL.'/notifications.css';?>" type='text/css' media='all' />
 <div class="wrap">

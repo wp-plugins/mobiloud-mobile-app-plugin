@@ -3,13 +3,13 @@ include_once dirname( __FILE__ ) . '/../../categories.php';
 include_once dirname( __FILE__ ) . '/../../pages.php';
 include_once dirname( __FILE__ ) . '/app.php';
 include_once dirname( __FILE__ ) . '/general/general.php';
+include_once dirname( __FILE__ ) . '/push_notifications/push_notifications.php';
 include_once dirname( __FILE__ ) . '/categories.php';
 include_once dirname( __FILE__ ) . '/pages.php';
 include_once dirname( __FILE__ ) . '/homepage.php';
 include_once dirname( __FILE__ ) . '/sticky_categories.php';
 include_once dirname( __FILE__ ) . '/article_list.php';
 // include_once dirname( __FILE__ ) . '/facebook.php';
-
 
 
 function mobiloud_configuration_page()
@@ -33,6 +33,11 @@ function mobiloud_configuration_page()
 			<!-- GENERAL -->
 			<div id="ml_configuration_general" class="stuffbox" style="padding:20px;">
 				<?php ml_configuration_general_ajax_load(); ?>
+			</div>
+            
+            <!-- PUSH NOTIFICATIONS -->
+			<div id="ml_configuration_push_notifications" class="stuffbox" style="padding:20px;">
+				<?php ml_configuration_push_notifications_ajax_load(); ?>
 			</div>
             
             <!-- HOME PAGE -->
@@ -128,5 +133,4 @@ function ml_stop_service()
 											 'body' => $parameters) );
 	
 }
-
 ?>

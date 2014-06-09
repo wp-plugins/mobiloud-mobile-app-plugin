@@ -6,7 +6,6 @@ add_action('wp_ajax_ml_configuration_connection_test', 'ml_configuration_connect
 function ml_configuration_general_callback()
 {
 	global $ml_automatic_image_resize;
-	global $ml_push_notification_enabled;
 	global $ml_html_banners_enable;
 
 	global $ml_article_list_enable_dates;
@@ -19,14 +18,6 @@ function ml_configuration_general_callback()
 		$ml_automatic_image_resize = $_POST['ml_automatic_image_resize'] == "true";
 		ml_set_generic_option("ml_automatic_image_resize",
 							   $ml_automatic_image_resize);
-	}
-
-	//push notifications enabled
-	if(isset($_POST['ml_push_notification_enabled']))
-	{
-		$ml_push_notification_enabled = $_POST['ml_push_notification_enabled'] == "true";
-		ml_set_generic_option("ml_push_notification_enabled",
-							   $ml_push_notification_enabled);
 	}
 
 	//html banners
@@ -133,7 +124,6 @@ function ml_configuration_general()
 			var data = {
 				action: 'ml_configuration_general',
 				ml_automatic_image_resize:  jQuery("#ml_automatic_image_resize_active").is(":checked"),
-				ml_push_notification_enabled: jQuery("#ml_push_notification_enabled").is(":checked"),
 				ml_html_banners_enable: jQuery("#ml_html_banners_enable").is(":checked"),
 				ml_rtl_text_enable: jQuery("#ml_rtl_text_enable").is(":checked"),
 				ml_article_list_enable_dates: jQuery("#ml_article_list_enable_dates").is(":checked"),
@@ -187,13 +177,11 @@ function ml_configuration_general()
 function ml_configuration_general_div()
 {
 	global $ml_automatic_image_resize;
-	global $ml_push_notification_enabled;
 	global $ml_html_banners_enable;
 	global $ml_article_list_enable_dates;
 	global $ml_article_list_enable_featured_images;
 	global $ml_hierarchical_pages_enabled;
 	$ml_automatic_image_resize = get_option('ml_automatic_image_resize');
-	$ml_push_notification_enabled = get_option('ml_push_notification_enabled');
 	$ml_html_banners_enable = get_option('ml_html_banners_enable');
 	$ml_rtl_text_enable = get_option('ml_rtl_text_enable');
 	$ml_article_list_enable_dates = get_option('ml_article_list_enable_dates',true);
@@ -211,17 +199,6 @@ function ml_configuration_general_div()
 				}
 			?>
 			/> Automatically resize image thumbnails
-	</h2>
-
-	<h2 style="font-size:20px;font-weight:normal;padding:10px;">
-	<input id="ml_push_notification_enabled" type="checkbox"
-		<?php
-			if($ml_push_notification_enabled)
-			{
-				echo " checked ";
-			}
-		?>
-		/> Enable push notifications
 	</h2>
 
 	<h2 style="font-size:20px;font-weight:normal;padding:10px;">

@@ -34,7 +34,6 @@ function ml_push_notification_manual_send_callback()
         }
         if($postId != null) {
             $tags = ml_get_post_tags($postId);
-            $tags[] = 'all';
         }
         
         $payload = array();
@@ -52,6 +51,7 @@ function ml_push_notification_manual_send_callback()
             'msg'=>trim($_POST['ml_push_notification_msg']),
             'sound'=>true,
             'badge'=>null,
+            'notags'=>true,
             'tags'=>$tags,
             'payload'=>$payload
         );
@@ -107,7 +107,56 @@ function ml_push_notification_history_ajax_load()
 	<?php
 }
 
+function ml_push_notification_chart() {
+    ?>
+    
+    <script type="text/javascript">
+     google.load("visualization", "1", {packages:["corechart"], callback: drawChart});
+      
+      function drawChart() {
+        <?php ml_push_notification_chart_data(); ?>
+        
+
+        var options = {
+          title: 'Latest Notifications',
+          hAxis: {title: 'Notifications'}
+        };
+
+        var chart = new google.visualization.ColumnChart(document.getElementById('notifications_chart'));
+        chart.draw(data, options);
+      }
+    </script>
+    <div id="notifications_chart" style="width: 100%; height: 200px; margin: 0 auto; margin-bottom: 20px;"></div>
+    <?Php
+}
+
+function ml_push_notification_chart_data() {
+    $data = 'var data = google.visualization.arrayToDataTable([
+        [\'Date\', \'Count\'],';
+            
+    $notifications = ml_notifications(100);
+    $dates = array();
+    if(count($notifications)) {
+        foreach($notifications as $notification) {
+            if(date('mY') === date('mY', $notification->time)) {
+                //same month so group by day
+                $dates[date('d M Y', $notification->time)] += 1;
+            } else {
+                $dates[date('M Y', $notification->time)] += 1;
+            }
+        }
+    }
+    $dates = array_reverse($dates);
+    foreach($dates as $date=>$count) {
+        $data .= '[\''.$date.'\', '.$count.'],';
+    }
+    $data = rtrim($data, ",");
+    $data .= ']);';
+    echo $data;
+}
+
 function ml_push_notification_history() {
+    ml_push_notification_chart();
     ?>
     <table class="wp-list-table widefat fixed posts">
         <thead>
@@ -131,7 +180,7 @@ function ml_push_notification_history() {
         </tfoot>
 
         <tbody id="the-list">
-            <?php $notifications = ml_notifications(); ?>
+            <?php $notifications = ml_notifications(100); ?>
             <?php if(count($notifications)): ?>
                 <?php foreach($notifications as $notification): ?>
                 <?php
