@@ -108,26 +108,30 @@ function ml_push_notification_history_ajax_load()
 }
 
 function ml_push_notification_chart() {
-    ?>
+    $notifications = ml_notifications(100);
     
-    <script type="text/javascript">
-     google.load("visualization", "1", {packages:["corechart"], callback: drawChart});
-      
-      function drawChart() {
-        <?php ml_push_notification_chart_data(); ?>
-        
+    if(is_array($notifications) && count($notifications) > 0) {
+        ?>
 
-        var options = {
-          title: 'Latest Notifications',
-          hAxis: {title: 'Notifications'}
-        };
+        <script type="text/javascript">
+         google.load("visualization", "1", {packages:["corechart"], callback: drawChart});
 
-        var chart = new google.visualization.ColumnChart(document.getElementById('notifications_chart'));
-        chart.draw(data, options);
-      }
-    </script>
-    <div id="notifications_chart" style="width: 100%; height: 200px; margin: 0 auto; margin-bottom: 20px;"></div>
-    <?Php
+          function drawChart() {
+            <?php ml_push_notification_chart_data(); ?>
+
+
+            var options = {
+              title: 'Latest Notifications',
+              hAxis: {title: 'Notifications'}
+            };
+
+            var chart = new google.visualization.ColumnChart(document.getElementById('notifications_chart'));
+            chart.draw(data, options);
+          }
+        </script>
+        <div id="notifications_chart" style="width: 100%; height: 200px; margin: 0 auto; margin-bottom: 20px;"></div>
+        <?Php
+    }
 }
 
 function ml_push_notification_chart_data() {
@@ -265,9 +269,9 @@ function ml_push_notification_manual_send()
         });
         
         jQuery("#ml_push_notification_manual_send .handle").toggle(function() {
-            jQuery(".ml_send_notification_box").removeClass('closed');
-        }, function() {
             jQuery(".ml_send_notification_box").addClass('closed');
+        }, function() {
+            jQuery(".ml_send_notification_box").removeClass('closed');
         });
         
         jQuery("#ml_push_notification_data_id").change(function() {
@@ -391,7 +395,7 @@ function ml_push_notification_manual_send_div()
 {
 	?>
     
-    <div class="ml_send_notification_box closed">
+    <div class="ml_send_notification_box">
         <div class="handle">
             <div class="handlediv" title="Click to toggle"><br></div>
             <h3>Send Manual Notification</h3>
@@ -405,7 +409,7 @@ function ml_push_notification_manual_send_div()
                         <label for="ml_push_notification_msg">Message</label>
                     </th>
                     <td>
-                        <input id="ml_push_notification_msg" placeholder="Your message" name="ml_push_notification_msg" type="text" class='regular-text'/>
+                        <input id="ml_push_notification_msg" placeholder="Your message" name="ml_push_notification_msg" type="text" style="width: 100%" class='regular-text'/>
                         <p id="ml_notification_chars" class="description">107 character(s) left.</p>
                     </td>
                 </tr>
