@@ -1,4 +1,5 @@
 <?php
+include_once dirname( __FILE__ ) . '/notification_categories.php';
 
 //function that sets the last notified post
 function ml_set_post_id_as_notified($postID)
@@ -53,7 +54,7 @@ function ml_post_published_notification($post_id)
 }
 
 function ml_pb_post_published_notification($post_id) {
-    if(ml_is_notified($post_id)) {
+    if(ml_is_notified($post_id) || !ml_check_post_notification_required($post_id)) {
         return;
     }
     $post = get_post($post_id,OBJECT);
@@ -68,12 +69,12 @@ function ml_pb_post_published_notification($post_id) {
             $payload['featured_image'] = $image[0];
         }  
         $tags = ml_get_post_tags($post_id);
-        $tags[] = 'all';
         $data = array(
             'platform'=>array(0,1),
             'msg'=>trim($post->post_title),
             'sound'=>true,
             'badge'=>null,
+            'notags'=>true,
             'tags'=>$tags,
             'payload'=>$payload
         );
@@ -121,8 +122,7 @@ function ml_send_notification($alert, $sound=true, $badge=NULL, $custom_properti
 } 
 
 function ml_pb_send_batch_notification($data) {
-    ml_pb_update_device_tags();
-    
+ 
     $json_data = json_encode($data);
     $headers = array(
         'X-PUSHBOTS-APPID' => get_option('ml_pb_app_id'),
@@ -182,10 +182,14 @@ function ml_registered_devices_count() {
     return count($devices);
 }
 
-function ml_notifications() {
+function ml_notifications($limit=null) {
     global $wpdb;
     $table_name = $wpdb->prefix . "mobiloud_notifications";
-    return $wpdb->get_results("SELECT * FROM $table_name ORDER BY time DESC");
+    $sql = "SELECT * FROM $table_name ORDER BY time DESC";
+    if($limit != null) {
+        $sql .= " LIMIT " . $limit;
+    }
+    return $wpdb->get_results($sql);
 }
 
 function ml_get_notification_by($filter=array()) {
@@ -206,59 +210,6 @@ function ml_get_notification_by($filter=array()) {
     return $results;
 }
 
-//tag all pushbots devices with specified tag
-function ml_pb_update_device_tags() {
-    $devices = ml_registered_devices();
-    
-    if(is_array($devices) && count($devices) > 0) {
-        foreach($devices as $device) {            
-            if(!is_array($device->tags) || count($device->tags) == 0) {
-                $body = array(
-                    'platform'=>$device->platform,
-                    'tag'=>'all',
-                    'token'=>$device->token
-                );
-                $json_body = json_encode($body);
-                $request = new WP_Http;
-                $headers = array(
-                    'X-PUSHBOTS-APPID' => get_option('ml_pb_app_id'),
-                    'Content-Type'=> 'application/json',
-                    'Content-Length'=> strlen($json_body)
-                );
-                $url = 'https://api.pushbots.com/tag';
-                $result = $request->request($url, array(
-                    'method'=>'PUT',
-                    'timeout' => 10,
-                    'headers' => $headers,
-                    'sslverify'=>false,
-                    'body'=>$json_body
-                ));
-            } elseif(in_array('all', $device->tags) && count($device->tags) >= 2) {
-                $body = array(
-                    'platform'=>$device->platform,
-                    'tag'=>'all',
-                    'token'=>$device->token
-                );
-                $json_body = json_encode($body);
-                $request = new WP_Http;
-                $headers = array(
-                    'X-PUSHBOTS-APPID' => get_option('ml_pb_app_id'),
-                    'Content-Type'=> 'application/json',
-                    'Content-Length'=> strlen($json_body)
-                );
-                $url = 'https://api.pushbots.com/tag/del';
-                $result = $request->request($url, array(
-                    'method'=>'PUT',
-                    'timeout' => 10,
-                    'headers' => $headers,
-                    'sslverify'=>false,
-                    'body'=>$json_body
-                ));
-            }
-        }
-    }     
-}
-
 function ml_get_post_tags($postId) {
     $post_categories = wp_get_post_categories( $postId );
     $tags = array();
@@ -268,5 +219,24 @@ function ml_get_post_tags($postId) {
         $tags[] = $cat->slug;
     }
     return $tags;
+}
+
+function ml_check_post_notification_required($postId) {
+    $notification_categories = ml_get_push_notification_categories();
+    if(is_array($notification_categories) && count($notification_categories) > 0) {
+        $post_categories = wp_get_post_categories( $postId );
+        $found = false;
+        if(is_array($post_categories) && count($post_categories) > 0) {
+            foreach($post_categories as $post_category_id) {
+                foreach($notification_categories as $notification_category) {
+                    if($notification_category->cat_ID == $post_category_id) {
+                        $found = true;
+                    }
+                }
+            }
+        }
+        return $found;
+    }
+    return true;
 }
 ?>

@@ -66,6 +66,9 @@ function mobiloud_install()
 	ml_notifications_install();
 
 	ml_categories_install();
+    
+    ml_notification_categories_install();
+    
 	//ml_home_menu_install();
 	ml_pages_install();
 
@@ -113,6 +116,22 @@ function ml_notifications_install()
 
     require_once(ABSPATH . 'wp-admin/includes/upgrade.php');
     dbDelta($sql);
+}
+
+function ml_notification_categories_install() {
+    global $wpdb;
+	$table_name = $wpdb->prefix . "mobiloud_notification_categories";
+    
+    if($wpdb->get_var("SHOW TABLES LIKE '$table_name'") != $table_name) {
+        $sql = "CREATE TABLE " . $table_name . " (
+              id bigint(11) NOT NULL AUTO_INCREMENT,
+			  cat_ID bigint(11) NOT NULL,
+			  UNIQUE KEY id (id)
+            );";
+
+        require_once(ABSPATH . 'wp-admin/includes/upgrade.php');
+        dbDelta($sql);
+    }
 }
 
 function ml_categories_install()
@@ -326,8 +345,13 @@ function mobiloud_plugin_init()
 	wp_register_style('mobiloud-iphone', MOBILOUD_PLUGIN_URL . "/css/iphone.css");
 	wp_enqueue_style("mobiloud.css");
 	wp_enqueue_style("mobiloud-iphone");
+    
+    wp_register_script('jquerychosen', MOBILOUD_PLUGIN_URL.'/libs/chosen/chosen.jquery.min.js', array('jquery'));
+    wp_enqueue_script('jquerychosen');
 
-
+    wp_register_style('jquerychosen-css', MOBILOUD_PLUGIN_URL . "/libs/chosen/chosen.css");
+    wp_enqueue_style("jquerychosen-css");
+    
 	if( !class_exists( 'WP_Http' ) )
 	    include_once( ABSPATH . WPINC. '/class-http.php' );
 
@@ -487,6 +511,4 @@ function ml_has_updated_to_pb() {
     } 
     return true;
 }
-
-
 ?>

@@ -3,8 +3,8 @@
 <div class="wrap">
     <div style="margin-top:20px;">
         <img src="<?php echo MOBILOUD_PLUGIN_URL;?>/mobiloud_36.png" style="float:left;margin-top:5px;">
-        <h1 style="float:left;margin-left:20px;color:#555">Mobiloud License</h3>
-        <div style="clear:both;">
+        <h1 style="float:left;margin-left:20px;color:#555">Mobiloud License</h1>
+        <div style="clear:both;"></div>
     </div>
     <div class="narrow">
         <div class="stuffbox" id="ml_admin_license">
