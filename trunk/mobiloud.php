@@ -293,6 +293,9 @@ function mobiloud_plugin_init()
 	global $ml_article_list_exclude_categories;
 	$ml_article_list_exclude_categories = get_option("ml_article_list_exclude_categories","");
 	
+	global $ml_include_pages_in_search;
+	$ml_include_pages_in_search = get_option("ml_include_pages_in_search",false);
+	
 	global $ml_menu_show_favorites;
 	$ml_menu_show_favorites = get_option("ml_menu_show_favorites",true);
 	
