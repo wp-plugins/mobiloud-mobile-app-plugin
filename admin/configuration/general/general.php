@@ -13,6 +13,8 @@ function ml_configuration_general_callback()
 	
 	global $ml_hierarchical_pages_enabled;
 	
+	global $ml_include_pages_in_search;
+	
 	if(isset($_POST['ml_automatic_image_resize']))
 	{
 		$ml_automatic_image_resize = $_POST['ml_automatic_image_resize'] == "true";
@@ -46,6 +48,12 @@ function ml_configuration_general_callback()
 	{
 		$ml_hierarchical_pages_enabled = $_POST['ml_hierarchical_pages_enabled'] == "true";
 		ml_set_generic_option("ml_hierarchical_pages_enabled", $ml_hierarchical_pages_enabled);
+	}
+	
+	if(isset($_POST['ml_include_pages_in_search']))
+	{
+		$ml_include_pages_in_search = $_POST['ml_include_pages_in_search'] == "true";
+		ml_set_generic_option("ml_include_pages_in_search", $ml_include_pages_in_search);
 	}
 
 	//right to left text
@@ -129,6 +137,7 @@ function ml_configuration_general()
 				ml_article_list_enable_dates: jQuery("#ml_article_list_enable_dates").is(":checked"),
 				ml_article_list_enable_featured_images: jQuery("#ml_article_list_enable_featured_images").is(":checked"),
 				ml_hierarchical_pages_enabled: jQuery("#ml_hierarchical_pages_enabled").is(":checked"),
+				ml_include_pages_in_search: jQuery("#ml_include_pages_in_search").is(":checked"),
 			};
 			
 			
@@ -181,12 +190,14 @@ function ml_configuration_general_div()
 	global $ml_article_list_enable_dates;
 	global $ml_article_list_enable_featured_images;
 	global $ml_hierarchical_pages_enabled;
+	global $ml_include_pages_in_search;
 	$ml_automatic_image_resize = get_option('ml_automatic_image_resize');
 	$ml_html_banners_enable = get_option('ml_html_banners_enable');
 	$ml_rtl_text_enable = get_option('ml_rtl_text_enable');
 	$ml_article_list_enable_dates = get_option('ml_article_list_enable_dates',true);
 	$ml_article_list_enable_featured_images = get_option('ml_article_list_enable_featured_images',true);
 	$ml_hierarchical_pages_enabled = get_option('ml_hierarchical_pages_enabled',true);
+	$ml_include_pages_in_search = get_option('ml_include_pages_in_search',false);
 	?>
 	<h3 style="font-family:arial;font-size:20px;font-weight:normal;padding:10px;">General app settings</h3>
 	
@@ -258,6 +269,17 @@ function ml_configuration_general_div()
 		/> Enable hierarchical page navigation
 	</h2>
     
+    <h2 style="font-size:20px;font-weight:normal;padding:10px;">
+	<input id="ml_include_pages_in_search" type="checkbox"
+		<?php
+			if($ml_include_pages_in_search)
+			{
+				echo " checked ";
+			}
+		?>
+		/> Include pages in search results (in addition to posts)
+	</h2>
+ 
 	<div style="margin-right:20px;">
 		<p class="submit" align="right">
 			<input type="submit" id="ml_configuration_general_submit" 

@@ -95,6 +95,11 @@ else {
 		
 	}
 	
+	if(strlen($user_search)>0 && !in_array("page",$includedPostTypes) && (get_option("ml_include_pages_in_search","false")=="true"||get_option("ml_include_pages_in_search","false")==true)){
+		array_push($includedPostTypes,"page");
+	}
+	//echo('post types ' . json_encode($includedPostTypes) . ' ..');
+	
 	
 	$query_array = array('posts_per_page' => $user_limit,
 			  'orderby' => 'post_date',
