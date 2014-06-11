@@ -12,6 +12,13 @@ function build_page_object($dic){
 	$childobject["ml_render"] = ml_page_get_render($dic->ID);
 	$childobject["id"] = "$dic->ID";
 	
+	$comments_count = wp_count_comments($dic->ID);
+
+	$childobject["comments-count"] = 0;
+	if($comments_count) {
+		$childobject["comments-count"] = intval($comments_count->approved);
+	}
+		
 	//$my_wp_query = new WP_Query();
 	//$all_wp_pages = $my_wp_query->query(array('post_type' => 'page'));
 
@@ -77,6 +84,13 @@ foreach($pages as $p)
 		$page["ml_link"] = plugins_url("get_page.php?page_ID=".$p->ID,__FILE__);
 		$page["ml_render"] = ml_page_get_render($p->ID);
 		$page["id"] = "$p->ID";
+		
+		$comments_count = wp_count_comments($p->ID);
+
+		$page["comments-count"] = 0;
+		if($comments_count) {
+			$page["comments-count"] = intval($comments_count->approved);
+		}
 		
 		if(get_option("ml_hierarchical_pages_enabled",true)==true){
 				
