@@ -159,7 +159,7 @@ else {
 		$cat = get_category($sticky_category_1);
 		if($cat)
 		{
-			$query_array['posts_per_age'] = 3;
+			$query_array['posts_per_page'] = 3;
 			//$query_array['category_name'] = $cat->slug;
 			$query_array['category'] = get_cat_ID($cat->slug);
 			$cat_1_posts = get_posts($query_array);
