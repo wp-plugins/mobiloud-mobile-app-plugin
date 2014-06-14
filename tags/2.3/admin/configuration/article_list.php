@@ -97,10 +97,10 @@ function ml_configuration_article_list()
 function ml_configuration_article_list_div()
 {	
 	?>
-	<h3 style="font-family:arial;font-size:20px;font-weight:normal;padding:10px;">Article List</h3>
+	<h3 style="font-family:arial;font-size:20px;font-weight:normal;padding:10px;">Article List Configuration</h3>
 
 
-	<div style="margin-left"><p><span style="font-size:20px;font-weight:normal;padding:10px;">Show Post Types</span></p>
+	<div style="margin-left"><p><span style="font-size:20px;font-weight:normal;padding:10px;">Select which post types to include</span></p>
 	<?php
 	
     $posttypes = get_post_types('','names'); 
@@ -126,7 +126,7 @@ function ml_configuration_article_list_div()
 	?>
 	</div>
     
-	<div style="margin-left;margin-top:20px"><p><span style="font-size:20px;font-weight:normal;padding:10px;">Show Categories</span></p>
+	<div style="margin-left;margin-top:20px"><p><span style="font-size:20px;font-weight:normal;padding:10px;">Select which categories to include</span></p>
 	<?php
 	
     $categories = get_categories('orderby=name');  
