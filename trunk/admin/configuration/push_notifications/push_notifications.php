@@ -90,7 +90,7 @@ function ml_configuration_push_notifications_div() {
     $ml_push_notification_enabled = get_option('ml_push_notification_enabled');
 
     ?>
-    <h3 style="font-family:arial;font-size:20px;font-weight:normal;padding:10px;">Push Notification Settings</h3>
+    <h3 style="font-family:arial;font-size:20px;font-weight:normal;padding:10px;">Automatic Push Notification Settings</h3>
     <h2 style="font-size:20px;font-weight:normal;padding:10px;">
 	<input id="ml_push_notification_enabled" type="checkbox"
 		<?php
@@ -99,10 +99,10 @@ function ml_configuration_push_notifications_div() {
 				echo " checked ";
 			}
 		?>
-		/> Enable push notifications
+		/> Send push notifications when a new post is published
 	</h2>
     
-    <p><span style="font-size:20px;font-weight:normal;padding:10px;">Select Categories for Push Notifications (Leave empty for all)</span></p>
+    <p><span style="font-size:20px;font-weight:normal;padding:10px;">Select which categories will generate a push notification (leave empty for all)</span></p>
     <div>
         <select id="ml_push_notification_categories" data-placeholder="Select Categories..." style="width:350px;" multiple class="chosen-select">
             <option></option>

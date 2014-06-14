@@ -62,7 +62,7 @@ function mobiloud_home_page()
 						</div>
 					  </div>
 					  
-						<input type="submit" value="Build your mobile app" id="submitted" name="submitted" class="btn-submit">
+						<input type="submit" value="Get Started and See A Demo" id="submitted" name="submitted" class="btn-submit">
 	  			 					  
 					</form>
 					

@@ -96,7 +96,7 @@ function ml_configuration_menu_general_div()
 				echo " checked ";
 			}
 		?>
-		/> Enable favorites
+		/> Show Favorites in the app menu
 	</h2>
     
 	<div style="margin-right:20px;">
