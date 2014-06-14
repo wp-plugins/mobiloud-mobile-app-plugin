@@ -3,7 +3,7 @@
 <div class="narrow">
 <div id="ml_admin_subscriptions">
 <h1>
-Membership Login
+Membership Options
 </h1><?php if(ml_has_groups_library() == false) { ?>
 
 <div class="update-nag">
@@ -15,8 +15,6 @@ WP Groups
 </div><?php } else { ?>
 
 <div class="stuffbox" id="ml_admin_subscriptions_options">
-<h3>
-Options
 <h2 style="text-decoration:underline">
 Options
 </h2><h2>

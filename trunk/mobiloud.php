@@ -218,7 +218,7 @@ function mobiloud_plugin_menu()
 	
 	add_submenu_page( 'mobiloud_menu', 'Mobiloud Post Customization', 'Post Customization', "activate_plugins", 'mobiloud_menu_post', 'ml_admin_post_page');
 	add_submenu_page( 'mobiloud_menu', 'Mobiloud Push Notifications', 'Push Notifications', "activate_plugins", 'mobiloud_menu_push_notifications', 'mobiloud_push_notifications_page');
-	add_submenu_page( 'mobiloud_menu', 'Mobiloud Subscriptions', 'Subscriptions', "activate_plugins", 'mobiloud_menu_subscriptions', 'ml_admin_subscriptions_page');		
+	add_submenu_page( 'mobiloud_menu', 'Mobiloud Subscriptions', 'Membership Options', "activate_plugins", 'mobiloud_menu_subscriptions', 'ml_admin_subscriptions_page');		
 	//add_submenu_page('mobiloud_menu', 'Mobiloud Analytics',"Analytics", "activate_plugins",'mobiloud_charts' , "mobiloud_charts"); 	
 	//add_submenu_page( 'mobiloud_menu', 'Mobiloud Banners', 'Banners', "activate_plugins", 'mobiloud_menu_banners', 'ml_admin_banners_page');
 	//add_submenu_page( 'mobiloud_menu', 'Mobiloud Categories and Pages', 'Categories & Pages', "activate_plugins", 'mobiloud_menu_categories_pages', 'ml_admin_categories_pages_page');
