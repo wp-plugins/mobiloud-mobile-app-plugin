@@ -135,9 +135,9 @@ function ml_configuration_home_div()
 	$ml_home_url = get_option("ml_home_url");
 	
 	?>
-	<h3 style="font-family:arial;font-size:20px;font-weight:normal;padding:10px;">Select a home page</h3>
+	<h3 style="font-family:arial;font-size:20px;font-weight:normal;padding:10px;">Select a home screen</h3>
 
-	<p><span style="font-size:20px;font-weight:normal;padding:10px;">Choose which page to start your app on.
+	<p><span style="font-size:20px;font-weight:normal;padding:10px;">Choose what to show on your app's home screen.
 
 </span></p>
 	<h2 style="font-size:20px;font-weight:normal;padding:10px;">

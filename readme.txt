@@ -2,8 +2,8 @@
 Contributors: psac50
 Tags: mobiloud, push, notifications, mobile, mobile app, native app, web app, iphone, ipad, iphone app, ipad app, android, tablet, windows mobile, mobile web, HTML5, mobile site, mobile plugin, wordpress mobile, admob, adsense, mobile theme, mobile template, mobile website, mobile theme, responsive, wptouch, ios app, app
 Requires at least: 3.2
-Tested up to: 3.9
-Stable tag: 2.1.1
+Tested up to: 3.9.1
+Stable tag: 2.3
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -11,13 +11,13 @@ Create real native mobile apps for iPhone, iPad and Android with your WordPress 
 
 == Description ==
 
-= Build native mobile apps with Wordpress. No effort required. =
+= Build native mobile apps with Wordpress in one click. No effort required. =
 
 Mobiloud is a premium WordPress plugin and mobile app publishing service. It's for publishers and bloggers who want to build a branded **native mobile apps** for iOS and Android, offering content from their WordPress site (similar apps are published by TechCrunch, The Verge, The Huffington Post). **Note it's not a free service** (check out the [pricing](http://www.mobiloud.com/pricing.php?ref=plugindesc)). If it sounds like what you want, and it should, then read on.
 
 Mobiloud apps are fast, run smoothly and their design is specific to the platform you run them on, be it iOS or Android (this is not the case with any other competitor). The apps support **mobile ad networks** such as Admob and Adsense, allow you to add your own advertising, support **WordPress, Disqus and Facebook comments** and allow you to **automatically send push notifications** when you publish new content.
 
-We're a team of app developers, so we can provide you with further **customisation for your apps and more functionality** as required. If you're site has more functionality then a blog and you want it available on the app, then just let us know what you need. If you're an agency or developer, our Whitelabel Program allows you to resell Mobilouds apps to your customers, without any Mobiloud branding.
+We're a team of app developers, so we can provide you with further **customisation for your apps and more functionality** as required. If you're site has more functionality then a blog and you want it available on the app, then just let us know what you need. If you're an agency or developer, you can resell Mobilouds apps to your customers, without any Mobiloud branding.
 
 Install the plugin now and you will be moments away from creating your mobile app.
 
@@ -41,13 +41,12 @@ Check out our [online demo](http://www.mobiloud.com/demo.php?ref=plugindesc), or
 = How it works =
 
 1. **Install and Activate** the plugin
-2. Click on **Build your mobile app** on the plugin's homepage and start designing your mobile app.
-3. Test-drive a **live preview of your mobile app** online, from your browser.
-4. When you're ready **publish your mobile app** on the App Store and Google Play.
-5. We build the apps in a matter of days and submit them for you to the stores.
+2. Test-drive a **demo mobile app** online, from your browser.
+4. When you're ready, **Sign Up with no risk** (we offer a 30 day money back guarantee)
+5. We build your app and have you test it
+6. In a matter of days we'll submit the app for you to Android and Google Play.
 
 http://vimeo.com/68758152
-
 
 = Build your own native iOS and Android apps =
 Smartphones and tablets are outselling PCs 4:1. Chances are you're getting 30-40% of your traffic from mobile devices today, rest assured, by 2015 it will be 50-60%. In short, **you need to be on mobile if you want to be where your readers are**.
@@ -55,7 +54,7 @@ Smartphones and tablets are outselling PCs 4:1. Chances are you're getting 30-40
 **Mobile users spend 85% of their time inside apps** - it's clear apps have won user's hearts more than the mobile web. People love the simplicty, speed and comfort apps can offer. 
 
 = No programming necessary =
-With Mobiloud, you can create apps without any of the programming hassle. With Mobiloud's mobile app Configurator it is incredibly easy to **design your app's launch screen, icon and user interface**. This is **your branded mobile app**, so make it yours!  
+With Mobiloud, you can create apps without any of the programming hassle. With Mobiloud, it's a **one-click process**, and we help you with getting the design exactly as you want. This is **your branded mobile app**, so make it yours!  
 
 = Native mobile user experience =
 Your app built on Mobiloud is a **real native mobile app**. It will offer a clean, professional design, easy swipe actions to navigate your content and one-tap access to features like favourite articles, commenting and sharing. Mobiloud apps are nothing like what our competitors offer, which are generally slow, poorly designed apps made with HTML and close to zero native code. The difference is clear.
@@ -102,11 +101,8 @@ For any questions, don’t hesitate to get in touch with us at [hello@mobiloud.c
 
 2. **Activate** the plugin through the ‘Plugins’ menu on WordPress.
 
-3. Click on **Build your mobile app** on the 'Mobiloud' menu page on your site, and start designing your app online. It only takes a few minutes.
+3. Click on **Get Started** on the 'Mobiloud' menu page on your site.
 
-4. You'll get to see a **live preview** of your mobile app which you can test online.
-
-5. Choose one of our **pricing plans** and publish your mobile app on the App Store (we do all the work for you!). 
 
 = Any questions? =
 You can contact us at [hello@mobiloud.com](mailto:hello@mobiloud.com)
@@ -126,15 +122,13 @@ The following plugins are all compatible with Mobiloud: WP-Touch, WordPress Mobi
 Your app will automatically show the latest content from your site, with no need for you to update it manually. Your app will display posts and pages, comments and categories. Your users will be able to read content online and offline, share it with a single tap, save their favourites, leave comments on your articles and, most importantly, receive push notifications alerting them to new content.
 
 = Can I test out my app online before I buy? =
-Yes, after installing the plugin, start designing your app and you can quickly get a live preview of your app over the web. Even before that, you can also try our [example application](http://www.mobiloud.com/demo.php?ref=plugindesc) to get a feel of how Mobiloud apps work.
+Yes, after installing the plugin and signing up you'll be able to test your app. Even before that, you can try our [example application](http://www.mobiloud.com/demo.php?ref=plugindesc) to get a feel of how Mobiloud apps work.
 
 = Can I try an example app on my iPhone or iPad? =
-Sure, we have published many apps you can try directly. Just open up App Store on your phone or iPad and search for *9clouds*, *Armenian Weekly* or *Cardinal Connect*.
-
-Check out the [Examples page](http://www.mobiloud.com/examples.php?ref=plugindesc) on our site for more apps to try.
+Sure, we have published many apps you can try directly. Just open up App Store on your phone or iPad and search for *Speckyboy*.
 
 = Can I have advertising on my app? =
-Of course! We support **Admob and Adwords**, out of the box. You can also add your own code for HTML banners.
+Of course! We support **Admob and Adwords**, out of the box. You can also add your own code for any kind of HTML banners.
 
 = Can you add more functionality to the app? =
 Yes, we can easily integrate additional content or functionality in your app, such as your Twitter feed, podcast, image or video galleries. Get in touch at [hello@mobiloud.com](mailto:hello@mobiloud.com) to get a quote.
@@ -151,12 +145,6 @@ With a mobile app you'll be able to convert casual visitors into loyal followers
 Mobiloud apps, on every platform, are native mobile apps. Most competing solutions instead give you HTML5 apps, which means really mobile sites re-packaged as apps. The big difference is in performance and user experience.
 
 Native apps are fast, run smoothly on the devices they are designed for, and make full use of each platform's capabilities. They're also easier to use, because they're designed to look and feel familiar on each mobile platform, be it iOS or Android. A Mobiloud app allows your users to receive push notifications, share with a single tap, quickly comment on articles and access content offline. In short, if you want to impress your users, go native and build a real mobile app!
-
-= Do I need to know how to code? =
-No, no programming required! With Mobiloud you design and build your mobile app online, using our simple Configurator. Content comes automatically from your WordPress site.
-
-= Do I need a designer? =
-Not really! With Mobiloud's Configurator you can create your own unique app design by selecting colors, choosing background templates and uploading your logo or images, it's really simple and you can get a great result in a few minutes. If you can design with Photoshop, though, or have a designer who can help you out, you can also upload your own custom images for icon and launch screens.
 
 = Can I use Disqus or Facebook comments? =
 Yes, you can use Disqus or Facebook for comments on your app to replace the standard Wordpress commenting system.
@@ -186,7 +174,17 @@ You can contact us at [hello@mobiloud.com](mailto:hello@mobiloud.com)
 2. 
 3. 
 
+
 == Changelog ==
+
+= 2.3 =
+* improved Push Notifications admin panel
+* Ability to have a page or URL as the app's home screen
+* Page hierarchy navigation
+* Image gallery support
+* Support for custom post types
+* Improved automatic push notifications
+
 
 = 2.1 =
 * improved support for javascript
