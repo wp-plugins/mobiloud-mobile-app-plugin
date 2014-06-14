@@ -232,7 +232,7 @@ function ml_configuration_general_div()
 				echo " checked ";
 			}
 		?>
-		/> Enable Right-To-Left text
+		/> Enable Right-To-Left for Arabic and Hebrew
 	</h2>
    
 	<h2 style="font-size:20px;font-weight:normal;padding:10px;">
@@ -255,7 +255,7 @@ function ml_configuration_general_div()
 				echo " checked ";
 			}
 		?>
-		/> Enable featured images
+		/> Show featured images in article list
 	</h2>
 
 	<h2 style="font-size:20px;font-weight:normal;padding:10px;">
@@ -266,7 +266,7 @@ function ml_configuration_general_div()
 				echo " checked ";
 			}
 		?>
-		/> Enable hierarchical page navigation
+		/> Enable users to navigate page hierarchy
 	</h2>
     
     <h2 style="font-size:20px;font-weight:normal;padding:10px;">
