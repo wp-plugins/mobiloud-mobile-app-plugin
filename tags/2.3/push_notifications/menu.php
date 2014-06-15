@@ -49,7 +49,7 @@ function ml_push_notification_manual_send_callback()
         $data = array(            
             'platform'=>$platform,
             'msg'=>trim($_POST['ml_push_notification_msg']),
-            'sound'=>true,
+            'sound'=>'default',
             'badge'=>null,
             'notags'=>true,
             'tags'=>$tags,

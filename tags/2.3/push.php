@@ -73,7 +73,7 @@ function ml_pb_post_published_notification($post_id) {
         $data = array(
             'platform'=>array(0,1),
             'msg'=>trim($post->post_title),
-            'sound'=>true,
+            'sound'=>'default',
             'badge'=>null,
             'notags'=>true,
             'tags'=>$tags,
