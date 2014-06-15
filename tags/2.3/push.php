@@ -69,6 +69,7 @@ function ml_pb_post_published_notification($post_id) {
             $payload['featured_image'] = $image[0];
         }  
         $tags = ml_get_post_tags($post_id);
+        $tags[] = 'all';
         $data = array(
             'platform'=>array(0,1),
             'msg'=>trim($post->post_title),
