@@ -123,8 +123,9 @@ function ml_send_notification($alert, $sound=true, $badge=NULL, $custom_properti
 } 
 
 function ml_pb_send_batch_notification($data) {
- 
+    $data['msg'] = stripslashes($data['msg']);
     $json_data = json_encode($data);
+    
     $headers = array(
         'X-PUSHBOTS-APPID' => get_option('ml_pb_app_id'),
         'X-PUSHBOTS-SECRET' => get_option('ml_pb_secret_key'),
