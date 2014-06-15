@@ -35,7 +35,7 @@ function ml_push_notification_manual_send_callback()
         if($postId != null) {
             $tags = ml_get_post_tags($postId);
         }
-        
+        $tags[] = 'all';
         $payload = array();
         if($postId !== null) {
             $image = wp_get_attachment_image_src( get_post_thumbnail_id( $postId ), 'single-post-thumbnail' );
