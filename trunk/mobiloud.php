@@ -233,7 +233,9 @@ function mobiloud_plugin_menu()
 function mobiloud_plugin_init()
 {
 	ml_categories_install();
-
+    ml_notifications_install();
+    ml_notification_categories_install();
+    
 	global $ml_api_key, $ml_secret_key, $ml_server_host, $ml_server_port;
     global $ml_pb_app_id, $ml_pb_secret_key;
 	global $ml_last_post_id;
