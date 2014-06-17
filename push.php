@@ -170,7 +170,13 @@ function ml_registered_devices() {
         'headers' => $headers,
         'sslverify'=>false
     ));
-    if(isset($result['response']['code']) && $result['response']['code'] === 200) {
+    $responseCode = null;
+    if(is_object($result)) {
+        $responseCode = $result->response->code;
+    } elseif(is_array($result) && isset($result['response']['code'])) {
+        $responseCode = $result['response']['code'];
+    }
+    if($responseCode === 200) {
         $body = json_decode($result['body']);
         return $body;
     } else {
