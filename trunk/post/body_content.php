@@ -62,7 +62,7 @@ if(!isset($_GET["page_ID"])){
 
 	// content
 	global $more;
-    $more = 1; 
+    $more = 1;
 	the_content();
 
 	eval(stripslashes(get_option('ml_post_after_content')));
@@ -83,11 +83,21 @@ if(!isset($_GET["page_ID"])){
 <script>
     var iframes = document.getElementsByTagName('iframe')
         , frameRatios = []
-        , container = document.getElementsByTagName('article')[0];
+        , container = document.getElementsByTagName('article')[0]
+        , imgs = document.getElementsByTagName('img');
     for(var i = 0; i < iframes.length; i++){
         var frame = iframes[i];
         frameRatios[i] = frame.offsetHeight / frame.offsetWidth;
         frame.style.width = '100%';
+    }
+    for(var i = 0; i < imgs.length; i++){
+        var img = imgs[i];
+        img.removeAttribute('width').removeAttribute('height');
+        do {
+            if(/^attachment_[0-9]+$/.test(img.id)){
+                img.removeAttribute('style');
+            }
+        } while(img = img.parentNode);
     }
     window.onresize = function(){
         var containerWidth = container.offsetWidth;
