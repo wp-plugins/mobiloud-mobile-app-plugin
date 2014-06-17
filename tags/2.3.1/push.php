@@ -19,8 +19,8 @@ function ml_is_notified($post_id)
 {
 	global $wpdb;
 	$table_name = $wpdb->prefix . "mobiloud_notifications";
-	$num = $wpdb->get_var( $wpdb->prepare( "SELECT COUNT(*) FROM %s WHERE post_id = %d",$table_name, $post_id));
-	return $num > 0;
+    $num = $wpdb->get_var( $wpdb->prepare( "SELECT COUNT(*) FROM $table_name WHERE post_id = %d", $post_id));
+    return $num > 0;
 }
 
 function ml_post_published_notification($post_id)
@@ -59,7 +59,7 @@ function ml_pb_post_published_notification($post_id) {
     }
     $post = get_post($post_id,OBJECT);
     
-	if(($_POST['post_status'] == 'publish') && ($_POST['original_post_status'] != 'publish')) { // only send push if it's a new publish
+	if($post->post_status == 'publish') {  // only send push if it's a new publish
         $payload = array(
             'post_id' => $post_id,            
         );
