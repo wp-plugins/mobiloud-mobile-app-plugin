@@ -14,26 +14,16 @@ if(strlen(get_option('ml_pb_app_id'))>10 && strlen(get_option('ml_pb_secret_key'
         <div style="clear:both;"></div>
     </div>
     <p>&nbsp;</p>
-    <?php if(!ml_check_pb_keys()): ?>
-    <div class="wrap">
-            <div class="stuffbox" id="ml_admin_push" style="padding:50px">
+    <div id="success-message" class="updated" style="display: none;">Your message has been sent!</div>
 
-            The license details which you have entered seem to be invalid. Please <a href="admin.php?page=mobiloud_menu_license">click here</a> to enter them again or contact Mobiloud support.
-
-            </div>
+    <!-- SEND MANUAL NOTIFICATION -->
+    <div id="ml_push_notification_manual_send" class="stuffbox">            
+        <?php ml_push_notification_manual_send_ajax_load(); ?>
+    </div> 
+    <!-- NOTIFICATIONS LIST -->
+    <div id="ml_push_notification_history">
+        <?php ml_push_notification_history_ajax_load(); ?>
     </div>
-    <?php else: ?>
-        <div id="success-message" class="updated" style="display: none;">Your message has been sent!</div>
-
-        <!-- SEND MANUAL NOTIFICATION -->
-        <div id="ml_push_notification_manual_send" class="stuffbox">            
-            <?php ml_push_notification_manual_send_ajax_load(); ?>
-        </div> 
-        <!-- NOTIFICATIONS LIST -->
-        <div id="ml_push_notification_history">
-            <?php ml_push_notification_history_ajax_load(); ?>
-        </div>
-    <?php endif; ?>
 </div>
 <?php
 } else if (strlen(get_option('ml_api_key'))>10 && strlen(get_option('ml_secret_key')) ) { ?>
