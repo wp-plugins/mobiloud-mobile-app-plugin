@@ -1,0 +1,59 @@
+/* home menu */
+ul.ml-home-menu {
+	float:left;
+	width:40%;
+}
+
+.ml-home-menu li.menu-item {
+	padding:10px 10px 10px 20px;
+
+	font-size: 17px;
+	background-color:#eee;
+	border:1px solid #ddd;
+}
+
+.ml-home-menu-fields input[name=menu[title]] {
+	width:100px;
+}
+
+/* home menu simulator */
+.ml-iphone5 {
+	position: relative;
+	float:right;
+	margin-top:5%;
+	margin-left: 8%;
+	margin-right: 8%;
+}
+
+
+.ml-ipad-mini {
+	position:relative;
+	float:right;
+	margin-left: 8%;
+	margin-right: 8%;
+}
+
+#ml_create_home_menu_item {margin-top:50px; float:left;}
+#ml_create_home_menu_item .ml-home-menu-fields {
+	display: none;
+	margin-top:20px;
+	padding:10px;
+	background-color:#eee;
+	border:1px solid #ddd;
+}
+
+#ml_create_home_menu_item .ml-home-menu-fields .page { display: none; margin-bottom:20px}
+#ml_create_home_menu_item .page select { width:100%;}
+
+#ml_create_home_menu_item .ml-home-menu-fields .image img {
+	height:150px;
+	text-align: center;
+}
+
+.clearfix:after {
+   content: " "; /* Older browser do not support empty content */
+   visibility: hidden;
+   display: block;
+   height: 0;
+   clear: both;
+}
