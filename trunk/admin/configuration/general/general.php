@@ -5,6 +5,7 @@ add_action('wp_ajax_ml_configuration_connection_test', 'ml_configuration_connect
 
 function ml_configuration_general_callback()
 {
+    global $ml_pb_use_ssl;
 	global $ml_automatic_image_resize;
 	global $ml_html_banners_enable;
 
@@ -15,6 +16,13 @@ function ml_configuration_general_callback()
 	
 	global $ml_include_pages_in_search;
 	
+    if(isset($_POST['ml_pb_use_ssl']))
+	{
+		$ml_pb_use_ssl = $_POST['ml_pb_use_ssl'] == "true";
+		ml_set_generic_option("ml_pb_use_ssl",
+							   $ml_pb_use_ssl);
+	}
+    
 	if(isset($_POST['ml_automatic_image_resize']))
 	{
 		$ml_automatic_image_resize = $_POST['ml_automatic_image_resize'] == "true";
@@ -131,6 +139,7 @@ function ml_configuration_general()
 			
 			var data = {
 				action: 'ml_configuration_general',
+                ml_pb_use_ssl:  jQuery("#ml_pb_use_ssl_active").is(":checked"),
 				ml_automatic_image_resize:  jQuery("#ml_automatic_image_resize_active").is(":checked"),
 				ml_html_banners_enable: jQuery("#ml_html_banners_enable").is(":checked"),
 				ml_rtl_text_enable: jQuery("#ml_rtl_text_enable").is(":checked"),
@@ -185,12 +194,14 @@ function ml_configuration_general()
 
 function ml_configuration_general_div()
 {
+    global $ml_pb_use_ssl;
 	global $ml_automatic_image_resize;
 	global $ml_html_banners_enable;
 	global $ml_article_list_enable_dates;
 	global $ml_article_list_enable_featured_images;
 	global $ml_hierarchical_pages_enabled;
 	global $ml_include_pages_in_search;
+    $ml_pb_use_ssl = get_option('ml_pb_use_ssl');
 	$ml_automatic_image_resize = get_option('ml_automatic_image_resize');
 	$ml_html_banners_enable = get_option('ml_html_banners_enable');
 	$ml_rtl_text_enable = get_option('ml_rtl_text_enable');
@@ -280,6 +291,17 @@ function ml_configuration_general_div()
 		/> Include pages in search results (in addition to posts)
 	</h2>
  
+    <h2 style="font-size:20px;font-weight:normal;padding:10px;">
+	<input id="ml_pb_use_ssl_active" type="checkbox"
+		<?php
+			if($ml_pb_use_ssl)
+			{
+				echo " checked ";
+			}
+		?>
+		/> Enable Push Notification Requests Over SSL
+	</h2>
+    
 	<div style="margin-right:20px;">
 		<p class="submit" align="right">
 			<input type="submit" id="ml_configuration_general_submit" 
