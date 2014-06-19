@@ -10,7 +10,12 @@ if(strlen(get_option('ml_pb_app_id'))>10 && strlen(get_option('ml_pb_secret_key'
         <img src="<?php echo MOBILOUD_PLUGIN_URL;?>/mobiloud_36.png" style="float:left;margin-top:5px;">
         <h1 style="float:left;margin-left:20px;color:#555">Mobiloud Push Notifications</h1>
         <?php $registeredDevicesCount = ml_registered_devices_count(); ?>
-        <h3 style="float:right;">Registered Devices: <?php echo $registeredDevicesCount ? $registeredDevicesCount : 'Unknown'; ?></h3>
+        <div style="float:right;"> 
+            <h3 style="float:right;"><u>Registered Devices</u><br/>
+            Android: <?php echo $registeredDevicesCount['android'] !== null ? ($registeredDevicesCount['android'] == 0 ? 'No Devices Registered' : $registeredDevicesCount['android']) : 'Unknown'; ?><br/>
+            iOS: <?php echo $registeredDevicesCount['ios'] !== null ? ($registeredDevicesCount['ios'] == 0 ? 'No Devices Registered' : $registeredDevicesCount['ios']) : 'Unknown'; ?>
+            </h3>
+        </div>
         <div style="clear:both;"></div>
     </div>
     <p>&nbsp;</p>
