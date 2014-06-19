@@ -92,12 +92,13 @@ if(!isset($_GET["page_ID"])){
     }
     for(var i = 0; i < imgs.length; i++){
         var img = imgs[i];
-        img.removeAttribute('width').removeAttribute('height');
-        do {
+        img.removeAttribute('width');
+        img.removeAttribute('height');
+        while(img = img.parentNode){
             if(/^attachment_[0-9]+$/.test(img.id)){
                 img.removeAttribute('style');
             }
-        } while(img = img.parentNode);
+        }
     }
     window.onresize = function(){
         var containerWidth = container.offsetWidth;
