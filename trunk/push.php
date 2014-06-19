@@ -185,9 +185,44 @@ function ml_registered_devices() {
 }
 
 function ml_registered_devices_count() {    
-    $devices = ml_registered_devices();
+    $request = new WP_Http;
+    $headers = array(
+        'X-PUSHBOTS-APPID' => get_option('ml_pb_app_id'),
+        'X-PUSHBOTS-SECRET' => get_option('ml_pb_secret_key'),
+        'platform'=>0
+    );
+    $url = MOBILOUD_PB_URL . '/deviceToken/count';
+    $result = $request->get($url, array(
+        'timeout' => 10,
+        'headers' => $headers,
+        'sslverify'=>false
+    ));
+    $iosCount = null;
     
-    return count($devices);
+    if(isset($result['body'])) {
+        $responseJson = json_decode($result['body']);
+        $iosCount = $responseJson->count;
+    }
+    
+    $request = new WP_Http;
+    $headers = array(
+        'X-PUSHBOTS-APPID' => get_option('ml_pb_app_id'),
+        'X-PUSHBOTS-SECRET' => get_option('ml_pb_secret_key'),
+        'platform'=>1
+    );
+    $url = MOBILOUD_PB_URL . '/deviceToken/count';
+    $result = $request->get($url, array(
+        'timeout' => 10,
+        'headers' => $headers,
+        'sslverify'=>false
+    ));
+    $androidCount = null;
+    if(isset($result['body'])) {
+        $responseJson = json_decode($result['body']);
+        $androidCount = $responseJson->count;
+    }
+    
+    return array('ios'=>$iosCount, 'android'=>$androidCount);
 }
 
 function ml_notifications($limit=null) {
