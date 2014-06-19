@@ -1,0 +1,7 @@
+posts/mobile.coffee		../post/js/
+posts/lazy_load.coffee ../post/js/
+admin/license/license.coffee    ../admin/license/
+admin/post/post.coffee    ../admin/post/
+admin/categories_pages/categories_pages.coffee    ../admin/categories_pages/
+admin/banners/banners.coffee    ../admin/banners/
+admin/subscriptions/subscriptions.coffee  ../admin/subscriptions/
