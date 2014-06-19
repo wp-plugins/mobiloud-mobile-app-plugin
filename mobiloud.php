@@ -25,7 +25,8 @@ define('MOBILOUD_PUSH_API_PUBLISH_URL', "https://push.mobiloud.com/api/notificat
 //define('MOBILOUD_POST_ASSETS_URL', "http://www.mobiloud.com/api/post");
 define('MOBILOUD_POST_ASSETS_URL', MOBILOUD_PLUGIN_URL."/post");
 
-
+define('MOBILOUD_PB_NOSSL_URL', 'http://api.pushbots.com');
+define('MOBILOUD_PB_SSL_URL', 'https://api.pushbots.com');
 
 //define('MOBILOUD_HOME_MENU_URL', MOBILOUD_PLUGIN_URL."/configuration/home_menu");
 
@@ -288,7 +289,14 @@ function mobiloud_plugin_init()
 	global $ml_hierarchical_pages_enabled;
 	$ml_hierarchical_pages_enabled = get_option("ml_hierarchical_pages_enabled",true);
 
-
+    global $ml_pb_use_ssl;
+    $ml_pb_use_ssl = get_option('ml_pb_use_ssl', false);
+    if($ml_pb_use_ssl) {
+        define('MOBILOUD_PB_URL', MOBILOUD_PB_SSL_URL);
+    } else {
+        define('MOBILOUD_PB_URL', MOBILOUD_PB_NOSSL_URL);
+    }
+    
 	global $ml_article_list_include_post_types;
 	$ml_article_list_include_post_types = get_option("ml_article_list_include_post_types","post");
 

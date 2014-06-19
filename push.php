@@ -132,7 +132,7 @@ function ml_pb_send_batch_notification($data) {
         'Content-Type'=> 'application/json',
         'Content-Length'=> strlen($json_data)
     );
-    $url = 'https://api.pushbots.com/push/all';
+    $url = MOBILOUD_PB_URL . '/push/all';
     
     $request = new WP_Http;
     $result = $request->post($url, array(
@@ -164,7 +164,7 @@ function ml_registered_devices() {
         'Content-Type'=> 'application/json',
         'Content-Length'=> 0
     );
-    $url = 'https://api.pushbots.com/deviceToken/all';
+    $url = MOBILOUD_PB_URL . '/deviceToken/all';
     $result = $request->get($url, array(
         'timeout' => 10,
         'headers' => $headers,
