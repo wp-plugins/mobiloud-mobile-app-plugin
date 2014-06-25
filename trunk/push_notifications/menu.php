@@ -24,6 +24,7 @@ function ml_push_notification_manual_send_callback()
             break;
         }
         $tags = array();
+        $tagNames = array();
         $postId = null;
         if(strlen($_POST['ml_push_notification_data_id']) > 0) {
             if(strpos($_POST['ml_push_notification_data_id'], 'custom') !== false) {
@@ -33,9 +34,11 @@ function ml_push_notification_manual_send_callback()
             }
         }
         if($postId != null) {
-            $tags = ml_get_post_tags($postId);
+            $tags = ml_get_post_tag_ids($postId);
+            $tagNames = ml_get_post_tags($postId);
         }
         $tags[] = 'all';
+        $tagNames[] = 'all';
         $payload = array();
         if($postId !== null) {
             $image = wp_get_attachment_image_src( get_post_thumbnail_id( $postId ), 'single-post-thumbnail' );
@@ -55,7 +58,7 @@ function ml_push_notification_manual_send_callback()
             'tags'=>$tags,
             'payload'=>$payload
         );
-		ml_pb_send_batch_notification($data);
+		ml_pb_send_batch_notification($data, $tagNames);
 	}
 
 	ml_push_notification_manual_send();
