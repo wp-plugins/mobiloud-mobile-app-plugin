@@ -68,8 +68,10 @@ function ml_pb_post_published_notification($post_id) {
         if(is_array($image)) {
             $payload['featured_image'] = $image[0];
         }  
-        $tags = ml_get_post_tags($post_id);
+        $tags = ml_get_post_tag_ids($post_id);
         $tags[] = 'all';
+        $tagNames = ml_get_post_tags($post_id);
+        $tagNames[] = 'all';
         $data = array(
             'platform'=>array(0,1),
             'msg'=>trim($post->post_title),
@@ -79,7 +81,7 @@ function ml_pb_post_published_notification($post_id) {
             'tags'=>$tags,
             'payload'=>$payload
         );
-        ml_pb_send_batch_notification($data);
+        ml_pb_send_batch_notification($data, $tagNames);
     }
 }
 
@@ -122,7 +124,7 @@ function ml_send_notification($alert, $sound=true, $badge=NULL, $custom_properti
 	return false;
 } 
 
-function ml_pb_send_batch_notification($data) {
+function ml_pb_send_batch_notification($data, $tagNames=array()) {
     $data['msg'] = stripslashes($data['msg']);
     $json_data = json_encode($data);
     
@@ -151,7 +153,7 @@ function ml_pb_send_batch_notification($data) {
             'msg'=>$data['msg'],
             'android'=> is_array($data['platform']) && in_array(1, $data['platform']) ? 'Y' : 'N',
             'ios'=> is_array($data['platform']) && in_array(0, $data['platform']) ? 'Y' : 'N',
-            'tags'=> is_array($data['tags']) && count($data['tags']) > 0 ? implode(",", $data['tags']) : ''
+            'tags'=> count($tagNames) > 0 ? implode(",", $tagNames) : ''
 		)
 	);    
 }
@@ -260,6 +262,15 @@ function ml_get_post_tags($postId) {
     foreach($post_categories as $c){
         $cat = get_category( $c );
         $tags[] = $cat->slug;
+    }
+    return $tags;
+}
+
+function ml_get_post_tag_ids($postId) {
+    $post_categories = wp_get_post_categories( $postId );
+    $tags = array();
+    foreach($post_categories as $c){
+        $tags[] = $c;
     }
     return $tags;
 }
