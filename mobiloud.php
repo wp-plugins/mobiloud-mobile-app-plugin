@@ -1,14 +1,14 @@
 <?php
 /**
  * @package Mobiloud
- * @version 2.3.4
+ * @version 2.3.5
  */
 /*
 Plugin Name: Mobiloud
 Plugin URI: http://www.mobiloud.com
 Description: Turn your WordPress site into beautiful native mobile apps. No coding required.
 Author: 50pixels
-Version: 2.3.4
+Version: 2.3.5
 Author URI: http://www.mobiloud.com
 */
 
@@ -19,7 +19,7 @@ define('MOBILOUD_PLUGIN_URL', plugins_url()."/mobiloud-mobile-app-plugin");
 define('MOBILOUD_PLUGIN_RELATIVE_URL',"/wp-content/plugins/mobiloud-mobile-app-plugin");
 
 
-define('MOBILOUD_PLUGIN_VERSION', "2.3.4");
+define('MOBILOUD_PLUGIN_VERSION', "2.3.5");
 define('MOBILOUD_PUSH_API_PUBLISH_URL', "https://push.mobiloud.com/api/notifications/publish");
 
 //define('MOBILOUD_POST_ASSETS_URL', "http://www.mobiloud.com/api/post");
@@ -296,7 +296,7 @@ function mobiloud_plugin_init()
     } else {
         define('MOBILOUD_PB_URL', MOBILOUD_PB_NOSSL_URL);
     }
-    
+
 	global $ml_article_list_include_post_types;
 	$ml_article_list_include_post_types = get_option("ml_article_list_include_post_types","post");
 
