@@ -16,9 +16,9 @@ function mobiloud_menu_configuration_page()
 
 	<div class="wrap">
 		<div id="mobiloud_analytics_title" style="margin-top:20px;">
-			<img src="<?php echo MOBILOUD_PLUGIN_URL;?>/mobiloud_36.png" style="float:left;margin-top:5px;">
-			<h1 style="float:left;margin-left:20px;color:#555">App Menu Configuration</h3>
-			<div style="clear:both;">
+			<h1 style="float: left;">App Menu Configuration</h1>
+			<a id="intercom" style="float: right;" class="ml-contact-button button button-primary" href="mailto:h89uu5zu@incoming.intercom.io">Contact Us</a>       
+            <div style="clear:both;"></div>
 		</div>
 
 		<p>&nbsp;</p>

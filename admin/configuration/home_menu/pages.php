@@ -110,6 +110,7 @@ function ml_configuration_pages()
 				};
 				jQuery.post(ajaxurl, data, function(response) {
 					//saving the result and reloading the div
+                    
 					jQuery("#ml_configuration_pages").html(response).fadeIn();
 					jQuery("#ml_configuration_pages_add").val("<?php _e('Add'); ?>");
 					jQuery("#ml_configuration_pages_add").attr("disabled", false);

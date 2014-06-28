@@ -1,0 +1,379 @@
+.stuffbox {
+    padding: 20px;
+}
+
+.submit .button {
+    font-weight: bold;
+}
+
+.ml-contact-button {
+    float: right;
+    margin-top: 20px !important;
+}
+
+.ml-preview-app-design {
+    float: left;
+    width: 48%;   
+}
+
+.ml-preview-app {
+    float: left;
+    width: 48%;
+    min-width: 400px;
+}
+.button-start {
+    background: #66ff33;
+    border-color: #33cc00;
+    -webkit-box-shadow: inset 0 1px 0 rgba(120,200,230,.5),0 1px 0 rgba(0,0,0,.15);
+    box-shadow: inset 0 1px 0 rgba(120,200,230,.5),0 1px 0 rgba(0,0,0,.15);
+    color: #fff;
+    text-decoration: none;
+}
+
+.os-selection .radio-wrap {
+    float: left;
+    margin-left:40px;
+}
+
+.os-selection .radio-wrap:first-child {
+    margin-left: 0px;
+}
+
+.os-selection .radio-wrap input {
+    float: left;
+    margin: 0;
+    margin-top: 0px;
+}
+
+.os-selection .radio-wrap label {
+    float: left;
+    margin-left: 10px;
+}
+
+.ml-preview {
+    width: 340px;
+    height: 692px;
+    margin: 0 auto;
+    margin-top: 20px;
+    position: relative;
+}
+
+.ml-preview.android {    
+    background-image: url(../images/android_preview.png);
+    background-repeat: no-repeat;
+}
+
+.ml-preview.android .ml-preview-body {
+    background-color: #ececec;
+    width: 307px;
+    height: 482px;
+    position: absolute;
+    top: 88px;
+    left: 16px;
+    overflow: hidden;
+}
+
+.ml-preview.android .ml-preview-top-bar {
+    display: none;
+}
+
+.ml-preview.android .ml-preview-menu-bar {
+    height: 38px;
+    width: 100%;
+    margin: 0;
+    border-bottom: 1px solid #666;
+    position: relative;
+}
+
+.ml-preview.android .ml-preview-menu-bar-overlay {
+    position: absolute;
+    height: 19px;
+    width: 100%;
+    top: 0;
+    left: 0;
+    background-color: white;
+    opacity: 0.1;
+}
+
+.ml-preview.android .ml-preview-logo-holder {
+    display: block;
+    width: 200px;
+    height: 100%;
+    float: left;
+    cursor: default;
+}
+
+.ml-preview.android .ml-preview-logo {    
+    max-width: 120px;
+    max-height: 90%;
+    margin: 5px 0pt 0pt 5px;    
+}
+
+.ml-preview.android .ml-icon {
+    width: 24px;
+    height: 24px;
+    margin: 8px 0;
+    float: left;
+    background-repeat: no-repeat;
+    background-size: 24px 24px;
+    cursor: default;
+}
+
+.ml-preview.android .ml-icon-menu {
+    margin-left: 0px;
+    margin-right: 5px;
+}
+
+.ml-preview.android .ml-icon-search {
+    float: right;
+    margin-right: 8px;
+    display: none;
+}
+
+.ml-preview.android .ml-icon-menu.ml-icon-white {
+    background-image: url(../images/icons/android_menu_icon_white.png);    
+}
+
+.ml-preview.android .ml-icon-menu.ml-icon-dark {
+    background-image: url(../images/icons/android_menu_icon_dark.png);    
+}
+
+.ml-preview.android .ml-icon-search.ml-icon-white {
+    background-image: url(../images/icons/android_search_icon_white.png);    
+}
+
+.ml-preview.android .ml-icon-search.ml-icon-dark {
+    background-image: url(../images/icons/android_search_icon_dark.png);    
+}
+
+.ml-preview.android .ml-preview-article-list {
+    position: relative;
+    width: 100%;
+    height: 442px;
+    overflow: hidden;
+}
+
+.ml-preview.android .ml-preview-article-list .scroller {
+    position: absolute;
+    width: 100%;
+}
+
+.ml-preview.android .ml-preview-article {
+    margin: 16px 10px;
+    background-color: white;
+    -webkit-box-shadow: 0px 1px 1px 0px rgba(150,150,150,1);
+    -moz-box-shadow: 0px 1px 1px 0px rgba(150,150,150,1);
+    box-shadow: 0px 1px 1px 0px rgba(150,150,150,1);
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    border-radius: 2px;
+}
+.ml-preview.android .ml-preview-article:first-child {
+    margin-top: 12px;
+}
+
+.ml-preview.android .ml-preview-article-body {    
+    padding: 5px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.ml-preview.android .ml-preview-article img {
+    max-width: 100%;
+}
+
+.ml-preview.android .ml-preview-article h3 {
+    padding: 0;
+    margin: 0;
+    color: #555;
+    font-weight: bold;
+    font-size: 1em;
+}
+
+.ml-preview.android .ml-preview-article .ml-article-date {
+    color: #999;
+    font-weight: bold;
+    font-size: 0.8em;
+}
+
+.ml-preview.ios {    
+    background-image: url(../images/ios_preview.png);
+    background-repeat: no-repeat;
+}
+
+.ml-preview.ios .ml-preview-body {
+    background-color: #ececec;
+    width: 273px;
+    height: 484px;
+    position: absolute;
+    top: 102px;
+    left: 33px;
+    overflow: hidden;
+}
+
+.ml-preview.ios .ml-preview-top-bar {
+    width: 100%;
+    height: 17px;
+    background-size: 274px 17px;
+}
+
+.ml-preview.ios .ml-preview-top-bar.ml-icon-dark {
+    background-image: url(../images/icons/ios_top_bar_dark.png);
+}
+
+.ml-preview.ios .ml-preview-top-bar.ml-icon-white {
+    background-image: url(../images/icons/ios_top_bar_white.png);
+}
+
+.ml-preview.ios .ml-preview-menu-bar {
+    height: 38px;
+    width: 100%;
+    margin: 0;
+    border-bottom: 1px solid #666;
+    position: relative;
+}
+
+.ml-preview.ios .ml-preview-menu-bar-overlay {
+    position: absolute;
+    height: 19px;
+    width: 100%;
+    top: 0;
+    left: 0;
+    background-color: white;
+    opacity: 0.1;
+}
+
+.ml-preview.ios .ml-preview-logo-holder {
+    display: block;
+    width: 200px;
+    height: 100%;
+    float: left;
+    cursor: default;
+}
+
+.ml-preview.ios .ml-preview-logo {    
+    max-width: 120px;
+    max-height: 90%;
+    margin: 5px 0pt 0pt 5px;    
+}
+
+.ml-preview.ios .ml-icon {
+    width: 24px;
+    height: 24px;
+    margin: 8px 0;
+    float: left;
+    background-repeat: no-repeat;
+    background-size: 24px 24px;
+    cursor: default;
+}
+
+.ml-preview.ios .ml-icon-menu {
+    margin-left: 8px;
+    margin-right: 5px;
+}
+
+.ml-preview.ios .ml-icon-refresh {
+    float: right;
+    margin-right: 8px;
+}
+
+.ml-preview.ios .ml-icon-search {
+    float: right;
+    margin-right: 8px;
+}
+
+.ml-preview.ios .ml-icon-menu.ml-icon-white {
+    background-image: url(../images/icons/ios_menu_icon_white.png);    
+}
+
+.ml-preview.ios .ml-icon-menu.ml-icon-dark {
+    background-image: url(../images/icons/ios_menu_icon_dark.png);    
+}
+
+.ml-preview.ios .ml-icon-refresh.ml-icon-white {
+    background-image: url(../images/icons/ios_refresh_icon_white.png);    
+}
+
+.ml-preview.ios .ml-icon-refresh.ml-icon-dark {
+    background-image: url(../images/icons/ios_refresh_icon_dark.png);    
+}
+
+.ml-preview.ios .ml-icon-search.ml-icon-white {
+    background-image: url(../images/icons/ios_search_icon_white.png);    
+}
+
+.ml-preview.ios .ml-icon-search.ml-icon-dark {
+    background-image: url(../images/icons/ios_search_icon_dark.png);    
+}
+
+.ml-preview.ios .ml-preview-article-list {
+    position: relative;
+    width: 100%;
+    height: 432px;
+    overflow: hidden;
+}
+
+.ml-preview.ios .ml-preview-article-list .scroller {
+    position: absolute;
+    width: 100%;
+}
+
+.ml-preview.ios .ml-preview-article {
+    margin: 16px 10px;
+    background-color: white;
+    -webkit-box-shadow: 0px 1px 1px 0px rgba(150,150,150,1);
+    -moz-box-shadow: 0px 1px 1px 0px rgba(150,150,150,1);
+    box-shadow: 0px 1px 1px 0px rgba(150,150,150,1);
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    border-radius: 2px;
+}
+.ml-preview.ios .ml-preview-article:first-child {
+    margin-top: 12px;
+}
+
+.ml-preview.ios .ml-preview-article-body {    
+    padding: 5px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.ml-preview.ios .ml-preview-article img {
+    max-width: 100%;
+    -webkit-border-top-left-radius: 2px;
+    -webkit-border-top-right-radius: 2px;
+    -moz-border-radius-topleft: 2px;
+    -moz-border-radius-topright: 2px;
+    border-top-left-radius: 2px;
+    border-top-right-radius: 2px;
+}
+
+.ml-preview.ios .ml-preview-article h3 {
+    padding: 0;
+    margin: 0;
+    color: #555;
+    font-weight: bold;
+    font-size: 1em;
+}
+
+.ml-preview.ios .ml-preview-article .ml-article-date {
+    color: #888;
+    font-weight: bold;
+    font-size: 0.85em;
+    margin-top: 5px;
+    display: block;
+}
+
+#ml_preview_loading {
+    display: none;
+    width: 50px;
+    margin: 0 auto;
+    margin-top: 100px;
+}
+
+#ml_preview_loading img {
+    width: 50px;
+}
+
+.ml-preview-app #ml_preview_loading {
+    display: block;
+}
+

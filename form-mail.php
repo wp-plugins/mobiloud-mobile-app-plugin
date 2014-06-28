@@ -1,4 +1,4 @@
- <html>
+<html>
 
 	<body>
 		<?php
@@ -24,7 +24,6 @@
 			<input type='hidden' value="<?php echo $appname?>" name='app_name'/>
 
 		</form>
-
 		<script type="text/javascript">
 			document.getElementById("configurator-form").submit();
 		</script>

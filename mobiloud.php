@@ -78,7 +78,6 @@ function mobiloud_install()
 	ml_init_ios_app_redirect();
 	ml_init_automatic_image_resize();
 	ml_set_eager_loading("true");
-
 }
 
 register_activation_hook(__FILE__, 'mobiloud_activate');
@@ -361,10 +360,18 @@ function mobiloud_plugin_init()
 
     wp_register_script('jquerychosen', MOBILOUD_PLUGIN_URL.'/libs/chosen/chosen.jquery.min.js', array('jquery'));
     wp_enqueue_script('jquerychosen');
+    
+    wp_register_script('iscroll', MOBILOUD_PLUGIN_URL.'/libs/iscroll/iscroll.js', array('jquery'));
+    wp_enqueue_script('iscroll');
+    
+    wp_register_script('resizecrop', MOBILOUD_PLUGIN_URL.'/libs/jquery.resizecrop-1.0.3.min.js', array('jquery'));
+    wp_enqueue_script('resizecrop');
 
     wp_register_style('jquerychosen-css', MOBILOUD_PLUGIN_URL . "/libs/chosen/chosen.css");
     wp_enqueue_style("jquerychosen-css");
 
+    add_action( 'admin_enqueue_scripts', 'mobiloud_home_page_enqueue_scripts' );
+    
 	if( !class_exists( 'WP_Http' ) )
 	    include_once( ABSPATH . WPINC. '/class-http.php' );
 
@@ -396,7 +403,8 @@ function mobiloud_plugin_init()
 	$ml_content_redirect_slug = get_option("ml_content_redirect_slug");
 
 	add_action('wp_head', 'ml_add_ios_app_redirect');
-	add_action('admin_footer','ml_init_intercom');
+	add_action('admin_head','ml_init_intercom');
+    add_action('admin_head', 'ml_init_getvero');
 
 	add_filter('get_avatar', 'ml_get_avatar',10,2);
 

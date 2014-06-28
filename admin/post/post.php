@@ -35,7 +35,7 @@
 
 
 	function ml_admin_post_page() {
-		echo "<div id='ml_admin_post_page'>";	
+		echo "<div style='clear: both;'></div><div id='ml_admin_post_page'>";	
 		wp_register_style('mobiloud_admin_post', MOBILOUD_PLUGIN_URL . '/admin/post/post.css');
 		wp_enqueue_style("mobiloud_admin_post");
 		include(dirname( __FILE__ ).'/page.php');
