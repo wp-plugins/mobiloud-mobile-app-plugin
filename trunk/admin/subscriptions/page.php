@@ -1,10 +1,12 @@
 <script src="<?php echo MOBILOUD_PLUGIN_URL; ?>/admin/subscriptions/subscriptions.js" type="text/javascript">
 </script><div class="wrap">
+    <h1 style="float:left;">Membership Options</h1>
+    <a id="intercom" style="float: right;" class="ml-contact-button button button-primary" href="mailto:h89uu5zu@incoming.intercom.io">Contact Us</a>       
+     <div style="clear:both;"></div>
 <div class="narrow">
 <div id="ml_admin_subscriptions">
-<h1>
-Membership Options
-</h1><?php if(ml_has_groups_library() == false) { ?>
+    
+    <?php if(ml_has_groups_library() == false) { ?>
 
 <div class="update-nag">
 You need to install and activate the

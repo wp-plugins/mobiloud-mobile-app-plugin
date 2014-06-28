@@ -59,6 +59,8 @@ function ml_push_notification_manual_send_callback()
             'payload'=>$payload
         );
 		ml_pb_send_batch_notification($data, $tagNames);
+        ml_track_getvero('push_notification');
+        ml_track_intercom('push_notification');
 	}
 
 	ml_push_notification_manual_send();

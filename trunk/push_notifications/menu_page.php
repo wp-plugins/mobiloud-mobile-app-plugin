@@ -7,8 +7,10 @@ if(strlen(get_option('ml_pb_app_id'))>10 && strlen(get_option('ml_pb_secret_key'
 <link rel='stylesheet' href="<?php echo MOBILOUD_PLUGIN_URL.'/notifications.css';?>" type='text/css' media='all' />
 <div class="wrap">
     <div class="ml_header">
-        <img src="<?php echo MOBILOUD_PLUGIN_URL;?>/mobiloud_36.png" style="float:left;margin-top:5px;">
-        <h1 style="float:left;margin-left:20px;color:#555">Mobiloud Push Notifications</h1>
+        <h1 style="float: left;">Mobiloud Push Notifications</h1>
+        <a id="intercom" style="float: right;" class="ml-contact-button button button-primary" href="mailto:h89uu5zu@incoming.intercom.io">Contact Us</a>       
+        <div style="clear:both;"></div>
+        
         <?php $registeredDevicesCount = ml_registered_devices_count(); ?>
         <div style="float:right;"> 
             <h3 style="float:right;"><u>Registered Devices</u><br/>
