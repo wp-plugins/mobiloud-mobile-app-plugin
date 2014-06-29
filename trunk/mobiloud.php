@@ -384,9 +384,9 @@ function mobiloud_plugin_init()
 	if($ml_push_notification_enabled)
 	{
         if(ml_has_updated_to_pb()) {
-            add_action('publish_post','ml_pb_post_published_notification');
+            add_action('transition_post_status','ml_pb_post_published_notification', 10, 3);
         } else {
-            add_action('publish_post','ml_post_published_notification');
+            add_action('transition_post_status','ml_post_published_notification', 10, 3);
         }
 
 	}
