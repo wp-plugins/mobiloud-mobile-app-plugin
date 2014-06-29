@@ -23,13 +23,19 @@ function ml_is_notified($post_id)
     return $num > 0;
 }
 
-function ml_post_published_notification($post_id)
+function ml_post_published_notification($new_status, $old_status=null, $post=null)
 {
-	$post = get_post($post_id,OBJECT);
-	if(($_POST['post_status'] == 'publish') && ($_POST['original_post_status'] != 'publish')){ // only send push if it's a new publish
+    if($old_status === null || $post === null) {
+        return;
+    }
+    if(ml_is_notified($post->ID) || !ml_check_post_notification_required($post->ID)) {
+        return;
+    }
+    
+	if(($new_status == 'publish') && ($old_status != 'publish')){ // only send push if it's a new publish
 
 	$alert = $post->post_title;
-	$custom_properties = array('post_id' => $post_id);
+	$custom_properties = array('post_id' => $post->ID);
 	
 	//tags
 	$tags = array();
@@ -48,29 +54,33 @@ function ml_post_published_notification($post_id)
 	}
 
 	// ml_send_notification($alert, true,NULL,$custom_properties,$tags,$post_id);
-	ml_send_notification($alert, true,NULL,$custom_properties,NULL,$post_id);
+	ml_send_notification($alert, true,NULL,$custom_properties,NULL,$post->ID);
 
 	}
 }
 
-function ml_pb_post_published_notification($post_id) {
-    if(ml_is_notified($post_id) || !ml_check_post_notification_required($post_id)) {
+function ml_pb_post_published_notification($new_status, $old_status=null, $post=null) {
+
+    
+    if($old_status === null || $post === null) {
         return;
     }
-    $post = get_post($post_id,OBJECT);
+    if(ml_is_notified($post->ID) || !ml_check_post_notification_required($post->ID)) {
+        return;
+    }
     
-	if($post->post_status == 'publish') {  // only send push if it's a new publish
+	if($new_status == 'publish' && $old_status != 'publish') {  // only send push if it's a new publish
         $payload = array(
-            'post_id' => $post_id,            
+            'post_id' => $post->ID,            
         );
         
-        $image = wp_get_attachment_image_src( get_post_thumbnail_id( $post_id ), 'single-post-thumbnail' );
+        $image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'single-post-thumbnail' );
         if(is_array($image)) {
             $payload['featured_image'] = $image[0];
         }  
-        $tags = ml_get_post_tag_ids($post_id);
+        $tags = ml_get_post_tag_ids($post->ID);
         $tags[] = 'all';
-        $tagNames = ml_get_post_tags($post_id);
+        $tagNames = ml_get_post_tags($post->ID);
         $tagNames[] = 'all';
         $data = array(
             'platform'=>array(0,1),
