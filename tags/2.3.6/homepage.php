@@ -43,12 +43,13 @@ function ml_get_color_brightness($hex) {
 
 function mobiloud_home_page_process() {
     if(isset($_POST['ml_preview_upload_image'])) {
+        if($_POST['ml_preview_upload_image'] != get_option('ml_preview_upload_image')) {
+            ml_set_generic_option("ml_preview_upload_image_time", time());
+        }
         ml_set_generic_option("ml_preview_upload_image", $_POST['ml_preview_upload_image']);        
     }   
-    if(isset($_POST['ml_preview_theme_color'])) {
-        
-        ml_set_generic_option("ml_preview_theme_color", $_POST['ml_preview_theme_color']);
-        
+    if(isset($_POST['ml_preview_theme_color'])) {        
+        ml_set_generic_option("ml_preview_theme_color", $_POST['ml_preview_theme_color']);        
     }
     if(isset($_POST['ml_preview_os'])) {
         ml_set_generic_option("ml_preview_os", $_POST['ml_preview_os']);
