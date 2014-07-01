@@ -42,6 +42,7 @@ if(get_option("ml_home_article_list_enabled",false)==true){
 $return_config["enable_hierarchical_pages"] = get_option('ml_hierarchical_pages_enabled',true);
 $return_config["show_favorites"] = get_option('ml_menu_show_favorites',true);
 
+$return_config['interface_images_updated'] = date('c', get_option('ml_preview_upload_image_time'));
 $return_config['interface_images'] = array(
     'navigation_bar_logo'=>get_option("ml_preview_upload_image")
 );
