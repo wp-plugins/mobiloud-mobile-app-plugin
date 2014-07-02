@@ -1,7 +1,7 @@
 <?php
 /**
  * @package Mobiloud
- * @version 2.3.4
+ * @version 2.3.7
  */
 /*
 Plugin Name: Mobiloud
@@ -19,7 +19,7 @@ define('MOBILOUD_PLUGIN_URL', plugins_url()."/mobiloud-mobile-app-plugin");
 define('MOBILOUD_PLUGIN_RELATIVE_URL',"/wp-content/plugins/mobiloud-mobile-app-plugin");
 
 
-define('MOBILOUD_PLUGIN_VERSION', "2.3.4");
+define('MOBILOUD_PLUGIN_VERSION', "2.3.7");
 define('MOBILOUD_PUSH_API_PUBLISH_URL', "https://push.mobiloud.com/api/notifications/publish");
 
 //define('MOBILOUD_POST_ASSETS_URL', "http://www.mobiloud.com/api/post");

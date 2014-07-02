@@ -1,8 +1,18 @@
 jQuery(document).ready(function() {
-    jQuery("#contactForm").submit(function() {
-       
-        _veroq.push(['track', 'get_started']); 
-        Intercom("trackUserEvent", "get_started");
+
+    jQuery(".signup-button").on('click', function(e) {
+        var name = jQuery("#contactName").val();
+        var email = jQuery("#email").val();
+        var website = jQuery("#website").val();
+        var pluginUrl = jQuery("#mobiloud_plugin_url").val();
+        var pluginVersion = jQuery("#mobiloud_plugin_version").val();
+        
+        jQuery(this).attr('href', 'http://www.mobiloud.com/simulator/?'+ 'name=' + encodeURIComponent(name)
+                + '&email=' + encodeURIComponent(email)
+                + '&site=' + encodeURIComponent(website)
+                + '&p=' + encodeURIComponent(pluginUrl)
+                + '&v=' + encodeURIComponent(pluginVersion)
+                + '&TB_iframe=true&width=650&height=550');
     });
     var _custom_media = true,
             _orig_send_attachment = wp.media.editor.send.attachment;
