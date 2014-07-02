@@ -11,6 +11,8 @@ function mobiloud_home_page() {
         
 	$root_url = network_site_url('/');
 	$plugins_url = plugins_url();
+    $mobiloudPluginUrl = MOBILOUD_PLUGIN_URL;
+    $mobiloudPluginVersion = MOBILOUD_PLUGIN_VERSION;
 	$appname = get_bloginfo('name');
     
     mobiloud_home_page_process();
