@@ -88,8 +88,6 @@ function ml_configuration_categories()
 			
 			$.post(ajaxurl, data, function(response) {
 				//saving the result and reloading the div
-                _veroq.push(['track', "menuconfig_saved"]);
-                Intercom("trackUserEvent", "menuconfig_saved");
 				jQuery("#ml_configuration_categories").html(response).fadeIn();
 				jQuery("#ml_configuration_categories_add").val("<?php _e('Save'); ?>");
 				jQuery("#ml_configuration_categories_add").attr("disabled", false);
@@ -108,8 +106,6 @@ function ml_configuration_categories()
 			
 			$.post(ajaxurl, data, function(response) {
 				//saving the result and reloading the div
-                _veroq.push(['track', "menuconfig_saved"]);
-                Intercom("trackUserEvent", "menuconfig_saved");
 				jQuery("#ml_configuration_categories").html(response).fadeIn();
 
 			});			

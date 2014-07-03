@@ -2,8 +2,8 @@
 </script>
 <div class="wrap">
     <div style="margin-top:20px;">
-        <h1 style="float: left;">Mobiloud License Keys</h1>
-        <a id="intercom" style="float: right;" class="ml-contact-button button button-primary" href="mailto:h89uu5zu@incoming.intercom.io">Contact Us</a>       
+        <img src="<?php echo MOBILOUD_PLUGIN_URL;?>/mobiloud_36.png" style="float:left;margin-top:5px;">
+        <h1 style="float:left;margin-left:20px;color:#555">Mobiloud License Keys</h1>
         <div style="clear:both;"></div>
     </div>
     <div class="narrow">
