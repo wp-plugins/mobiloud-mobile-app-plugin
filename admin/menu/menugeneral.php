@@ -60,8 +60,6 @@ function ml_configuration_menu_general()
 			
 			$.post(ajaxurl, data, function(response) {
 				//saving the result and reloading the div
-                _veroq.push(['track', "menuconfig_saved"]);
-                Intercom("trackUserEvent", "menuconfig_saved");
 				jQuery("#ml_configuration_menu_general").html(response).fadeIn();
 				jQuery("#ml_configuration_menu_general_submit").val("<?php _e('Apply'); ?>");
 				jQuery("#ml_configuration_menu_general_submit").attr("disabled", false);

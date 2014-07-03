@@ -3,7 +3,6 @@
 include("../../../wp-blog-header.php");
 include_once("categories.php");
 include_once("filters.php");
-include_once("homepage.php");
 
 include_once dirname( __FILE__ ) . '/subscriptions/functions.php';
 
@@ -41,20 +40,6 @@ if(get_option("ml_home_article_list_enabled",false)==true){
 
 $return_config["enable_hierarchical_pages"] = get_option('ml_hierarchical_pages_enabled',true);
 $return_config["show_favorites"] = get_option('ml_menu_show_favorites',true);
-
-$return_config['interface_images_updated'] = date('c', get_option('ml_preview_upload_image_time'));
-$return_config['interface_images'] = array(
-    'navigation_bar_logo'=>get_option("ml_preview_upload_image")
-);
-
-$navigation_bar_text = '#000000';
-if(ml_get_color_brightness(get_option('ml_preview_theme_color')) < 190) {
-    $navigation_bar_text = '#FFFFFF';
-}
-$return_config['interface_colors'] = array(
-    'navigation_bar_background'=>get_option('ml_preview_theme_color'),
-    'navigation_bar_text'=>$navigation_bar_text
-);
 
 $json_string = json_encode($return_config);
 echo $json_string;

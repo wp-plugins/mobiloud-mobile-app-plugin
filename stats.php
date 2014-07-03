@@ -59,7 +59,8 @@ function mobiloud_display_charts()
 	
 	<script type="text/javascript" src="<?php echo $ml_host;?>/assets/highcharts.js"></script> 
 	<div id="mobiloud_analytics_title" style="margin-top:20px;">
-		<h1>Mobiloud Analytics</h1>
+		<img src="<?php echo MOBILOUD_PLUGIN_URL;?>/mobiloud_36.png" style="float:left;margin-top:5px;">
+		<h1 style="float:left;margin-left:20px;color:#555">Mobiloud Analytics</h3>
 		<div style="clear:both;">
 	</div>
 	<table width="100%">

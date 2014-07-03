@@ -1,5 +1,3 @@
-<a id="intercom" style="float: right;" class="ml-contact-button button button-primary" href="mailto:h89uu5zu@incoming.intercom.io">Contact Us</a>       
-<div style="clear:both; height: 20px;"></div>
 <h2 align="right">
 Preview
 </h2><div class="preview-selection">

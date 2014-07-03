@@ -23,19 +23,13 @@ function ml_is_notified($post_id)
     return $num > 0;
 }
 
-function ml_post_published_notification($new_status, $old_status=null, $post=null)
+function ml_post_published_notification($post_id)
 {
-    if($old_status === null || $post === null) {
-        return;
-    }
-    if(ml_is_notified($post->ID) || !ml_check_post_notification_required($post->ID)) {
-        return;
-    }
-    
-	if(($new_status == 'publish') && ($old_status != 'publish')){ // only send push if it's a new publish
+	$post = get_post($post_id,OBJECT);
+	if(($_POST['post_status'] == 'publish') && ($_POST['original_post_status'] != 'publish')){ // only send push if it's a new publish
 
 	$alert = $post->post_title;
-	$custom_properties = array('post_id' => $post->ID);
+	$custom_properties = array('post_id' => $post_id);
 	
 	//tags
 	$tags = array();
@@ -54,34 +48,28 @@ function ml_post_published_notification($new_status, $old_status=null, $post=nul
 	}
 
 	// ml_send_notification($alert, true,NULL,$custom_properties,$tags,$post_id);
-	ml_send_notification($alert, true,NULL,$custom_properties,NULL,$post->ID);
+	ml_send_notification($alert, true,NULL,$custom_properties,NULL,$post_id);
 
 	}
 }
 
-function ml_pb_post_published_notification($new_status, $old_status=null, $post=null) {
-
-    
-    if($old_status === null || $post === null) {
+function ml_pb_post_published_notification($post_id) {
+    if(ml_is_notified($post_id) || !ml_check_post_notification_required($post_id)) {
         return;
     }
-    if(ml_is_notified($post->ID) || !ml_check_post_notification_required($post->ID)) {
-        return;
-    }
+    $post = get_post($post_id,OBJECT);
     
-	if($new_status == 'publish' && $old_status != 'publish') {  // only send push if it's a new publish
+	if($post->post_status == 'publish') {  // only send push if it's a new publish
         $payload = array(
-            'post_id' => $post->ID,            
+            'post_id' => $post_id,            
         );
         
-        $image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'single-post-thumbnail' );
+        $image = wp_get_attachment_image_src( get_post_thumbnail_id( $post_id ), 'single-post-thumbnail' );
         if(is_array($image)) {
             $payload['featured_image'] = $image[0];
         }  
-        $tags = ml_get_post_tag_ids($post->ID);
+        $tags = ml_get_post_tags($post_id);
         $tags[] = 'all';
-        $tagNames = ml_get_post_tags($post->ID);
-        $tagNames[] = 'all';
         $data = array(
             'platform'=>array(0,1),
             'msg'=>trim($post->post_title),
@@ -91,7 +79,7 @@ function ml_pb_post_published_notification($new_status, $old_status=null, $post=
             'tags'=>$tags,
             'payload'=>$payload
         );
-        ml_pb_send_batch_notification($data, $tagNames);
+        ml_pb_send_batch_notification($data);
     }
 }
 
@@ -134,7 +122,7 @@ function ml_send_notification($alert, $sound=true, $badge=NULL, $custom_properti
 	return false;
 } 
 
-function ml_pb_send_batch_notification($data, $tagNames=array()) {
+function ml_pb_send_batch_notification($data) {
     $data['msg'] = stripslashes($data['msg']);
     $json_data = json_encode($data);
     
@@ -163,7 +151,7 @@ function ml_pb_send_batch_notification($data, $tagNames=array()) {
             'msg'=>$data['msg'],
             'android'=> is_array($data['platform']) && in_array(1, $data['platform']) ? 'Y' : 'N',
             'ios'=> is_array($data['platform']) && in_array(0, $data['platform']) ? 'Y' : 'N',
-            'tags'=> count($tagNames) > 0 ? implode(",", $tagNames) : ''
+            'tags'=> is_array($data['tags']) && count($data['tags']) > 0 ? implode(",", $data['tags']) : ''
 		)
 	);    
 }
@@ -197,44 +185,9 @@ function ml_registered_devices() {
 }
 
 function ml_registered_devices_count() {    
-    $request = new WP_Http;
-    $headers = array(
-        'X-PUSHBOTS-APPID' => get_option('ml_pb_app_id'),
-        'X-PUSHBOTS-SECRET' => get_option('ml_pb_secret_key'),
-        'platform'=>0
-    );
-    $url = MOBILOUD_PB_URL . '/deviceToken/count';
-    $result = $request->get($url, array(
-        'timeout' => 10,
-        'headers' => $headers,
-        'sslverify'=>false
-    ));
-    $iosCount = null;
+    $devices = ml_registered_devices();
     
-    if(isset($result['body'])) {
-        $responseJson = json_decode($result['body']);
-        $iosCount = $responseJson->count;
-    }
-    
-    $request = new WP_Http;
-    $headers = array(
-        'X-PUSHBOTS-APPID' => get_option('ml_pb_app_id'),
-        'X-PUSHBOTS-SECRET' => get_option('ml_pb_secret_key'),
-        'platform'=>1
-    );
-    $url = MOBILOUD_PB_URL . '/deviceToken/count';
-    $result = $request->get($url, array(
-        'timeout' => 10,
-        'headers' => $headers,
-        'sslverify'=>false
-    ));
-    $androidCount = null;
-    if(isset($result['body'])) {
-        $responseJson = json_decode($result['body']);
-        $androidCount = $responseJson->count;
-    }
-    
-    return array('ios'=>$iosCount, 'android'=>$androidCount);
+    return count($devices);
 }
 
 function ml_notifications($limit=null) {
@@ -272,15 +225,6 @@ function ml_get_post_tags($postId) {
     foreach($post_categories as $c){
         $cat = get_category( $c );
         $tags[] = $cat->slug;
-    }
-    return $tags;
-}
-
-function ml_get_post_tag_ids($postId) {
-    $post_categories = wp_get_post_categories( $postId );
-    $tags = array();
-    foreach($post_categories as $c){
-        $tags[] = $c;
     }
     return $tags;
 }

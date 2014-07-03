@@ -22,7 +22,7 @@ add_action('admin_enqueue_scripts','ml_enqueue_pointer_script_style');
 
 function ml_pointer_print_scripts() {
 	$pointer_content  = "<h3>See the demo, get your own native app!</h3>";
-  $pointer_content .= "<p>We’re not kidding about the \'one click\' thing.</p>";
+  $pointer_content .= "<p>We’re not kidding about the 'one click' thing.</p>";
   ?>
   <script type="text/javascript">
   jQuery(document).ready( function($) {

@@ -34,10 +34,10 @@
 
 if(!isset($_GET["page_ID"])){
 	// title, date, author, meta
-	echo get_option('ml_post_date_enabled')=='true' ? '<div class="post_meta"><time title="' . $post->post_date . '">' . human_time_diff(strtotime($post->post_date), time()) . '</time></div>' : '';
+	echo get_option('ml_post_date_enabled')=='true' ? '<div class="post_meta"><time title="' . $post->post_date . '">' . human_time_diff(strtotime($post->post_date), time()) . ' ago</time></div>' : '';
 
 } else {
-	echo get_option('ml_page_date_enabled')=='true' ? '<div class="post_meta"><time title="' . $post->post_date . '">' . human_time_diff(strtotime($post->post_date), time()) . '</time></div>' : '';
+	echo get_option('ml_page_date_enabled')=='true' ? '<div class="post_meta"><time title="' . $post->post_date . '">' . human_time_diff(strtotime($post->post_date), time()) . ' ago</time></div>' : '';
 }
 
 	echo '<div class="post_meta right">'; eval(stripslashes(get_option('ml_post_right_of_date'))); echo '</div>';

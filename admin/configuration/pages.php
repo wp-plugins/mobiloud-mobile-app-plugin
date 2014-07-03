@@ -87,8 +87,6 @@ function ml_configuration_pages()
 			
 			$.post(ajaxurl, data, function(response) {
 				//saving the result and reloading the div
-                _veroq.push(['track', "menuconfig_saved"]);
-                Intercom("trackUserEvent", "menuconfig_saved");
 				jQuery("#ml_configuration_pages").html(response).fadeIn();
 				jQuery("#ml_configuration_pages_add").val("<?php _e('Add'); ?>");
 				jQuery("#ml_configuration_pages_add").attr("disabled", false);
@@ -107,8 +105,6 @@ function ml_configuration_pages()
 			
 			$.post(ajaxurl, data, function(response) {
 				//saving the result and reloading the div
-                _veroq.push(['track', "menuconfig_saved"]);
-                Intercom("trackUserEvent", "menuconfig_saved");
 				jQuery("#ml_configuration_pages").html(response).fadeIn();
 
 			});			
