@@ -177,6 +177,9 @@ You can contact us at [hello@mobiloud.com](mailto:hello@mobiloud.com)
 
 == Changelog ==
 
+= 2.3.7 =
+* New feature: App simulator that allows you to preview your app
+
 = 2.3.1 =
 * Fluid width images in posts
 
