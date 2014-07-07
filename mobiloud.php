@@ -295,7 +295,7 @@ function mobiloud_plugin_init()
     } else {
         define('MOBILOUD_PB_URL', MOBILOUD_PB_NOSSL_URL);
     }
-    
+
 	global $ml_article_list_include_post_types;
 	$ml_article_list_include_post_types = get_option("ml_article_list_include_post_types","post");
 

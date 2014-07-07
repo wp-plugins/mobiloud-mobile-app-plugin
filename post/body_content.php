@@ -88,6 +88,8 @@ if(!isset($_GET["page_ID"])){
     for(var i = 0; i < iframes.length; i++){
         var frame = iframes[i];
         frameRatios[i] = frame.offsetHeight / frame.offsetWidth;
+        frame.removeAttribute('width');
+        frame.removeAttribute('height');
         frame.style.width = '100%';
     }
     for(var i = 0; i < imgs.length; i++){
