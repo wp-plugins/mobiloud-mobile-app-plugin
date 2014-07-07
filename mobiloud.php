@@ -1,14 +1,14 @@
 <?php
 /**
  * @package Mobiloud
- * @version 2.3.7
+ * @version 2.3.7.5
  */
 /*
 Plugin Name: Mobiloud
 Plugin URI: http://www.mobiloud.com
 Description: Turn your WordPress site into beautiful native mobile apps. No coding required.
 Author: 50pixels
-Version: 2.3.7
+Version: 2.3.7.5
 Author URI: http://www.mobiloud.com
 */
 
@@ -19,7 +19,7 @@ define('MOBILOUD_PLUGIN_URL', plugins_url()."/mobiloud-mobile-app-plugin");
 define('MOBILOUD_PLUGIN_RELATIVE_URL',"/wp-content/plugins/mobiloud-mobile-app-plugin");
 
 
-define('MOBILOUD_PLUGIN_VERSION', "2.3.7");
+define('MOBILOUD_PLUGIN_VERSION', "2.3.7.5");
 define('MOBILOUD_PUSH_API_PUBLISH_URL', "https://push.mobiloud.com/api/notifications/publish");
 
 //define('MOBILOUD_POST_ASSETS_URL', "http://www.mobiloud.com/api/post");
@@ -360,10 +360,10 @@ function mobiloud_plugin_init()
 
     wp_register_script('jquerychosen', MOBILOUD_PLUGIN_URL.'/libs/chosen/chosen.jquery.min.js', array('jquery'));
     wp_enqueue_script('jquerychosen');
-    
+
     wp_register_script('iscroll', MOBILOUD_PLUGIN_URL.'/libs/iscroll/iscroll.js', array('jquery'));
     wp_enqueue_script('iscroll');
-    
+
     wp_register_script('resizecrop', MOBILOUD_PLUGIN_URL.'/libs/jquery.resizecrop-1.0.3.min.js', array('jquery'));
     wp_enqueue_script('resizecrop');
 
@@ -371,7 +371,7 @@ function mobiloud_plugin_init()
     wp_enqueue_style("jquerychosen-css");
 
     add_action( 'admin_enqueue_scripts', 'mobiloud_home_page_enqueue_scripts' );
-    
+
 	if( !class_exists( 'WP_Http' ) )
 	    include_once( ABSPATH . WPINC. '/class-http.php' );
 
