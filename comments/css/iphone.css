@@ -1,0 +1,56 @@
+html 
+{
+    background:rgba(0,0,0,0);
+}
+
+body {
+    font-size:15px;
+    font-family:helvetica;
+    color:#444;
+    background:rgba(0,0,0,0);
+}
+
+#content
+{
+    padding: 0px 5px 5px 5px;
+    margin-left:10px;
+    margin-right:10px;                
+    background:rgba(200,200,200,0.0);
+    text-align:left;
+
+}
+
+ol{} ul{} li{}
+
+.iphone_img
+{
+    text-align:center;
+    width:20px;
+}
+
+
+
+.author {
+    font-size:12px;
+    color:gray;
+}
+.article_date
+{
+    font-size:12px;
+    color:gray;
+}
+
+a:link {color:gray;}
+a:visited {color:gray;}
+a:hover {color:gray;}
+
+
+.mobiloud_media
+{
+	min-height:150px;
+}  
+
+.mobiloud_loader
+{
+	text-align:center;
+}

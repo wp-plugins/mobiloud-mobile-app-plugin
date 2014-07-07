@@ -1,0 +1,50 @@
+//includes and post setting
+-header('Access-Control-Allow-Origin: *')
+-include_once(dirname(__FILE__)."/../../../../wp-blog-header.php")
+-if(isset($post_id) == false)
+	-$post_id = $_GET['post_id']
+	-$post = get_post($post_id)
+
+-if(isset($post) == false)
+	-$post = get_post($post_id)
+
+-$post_type = get_post_type($post->ID)
+-$post_content = wpautop($post->post_content)
+
+%script{:type=>"text/javascript"}=stripslashes(get_option('ml_post_custom_js'))
+%style{:type=>"text/css"}=stripslashes(get_option('ml_post_custom_css'))
+
+
+-eval(stripslashes(get_option('ml_post_start_body')))
+=stripslashes(get_option('ml_html_post_start_body'))
+#post_content{:class => 'post-content'}
+	#loading_spinner
+	#post_header
+		-eval(stripslashes(get_option('ml_post_before_details')))
+		=stripslashes(get_option('ml_html_post_before_details'))
+		%h1.post-title
+			=$post->post_title
+
+		.second-line
+			-if(($post_type == 'post' && get_option('ml_post_date_enabled') == "true") || ($post_type == 'page' && get_option('ml_page_date_enabled') == "true"))
+				.date
+					=mysql2date('F j Y',$post->post_date)
+
+			-if(($post_type == 'post' && get_option('ml_post_author_enabled') == "true") || ($post_type == 'page' && get_option('ml_page_author_enabled') == "true"))
+				.author-name
+					=the_author_meta('display_name',$post->post_author)
+			.clearfix
+		.clearfix
+		-eval(stripslashes(get_option('ml_post_after_details')))
+		=stripslashes(get_option('ml_html_post_after_details'))
+
+
+	-eval(stripslashes(get_option('ml_post_before_content')))
+	=stripslashes(get_option('ml_html_post_before_content'))
+	#main_content
+		=do_shortcode($post_content)
+	-eval(stripslashes(get_option('ml_post_after_content')))
+	=stripslashes(get_option('ml_html_post_after_content'))
+
+-eval(stripslashes(get_option('ml_post_end_body')))
+=stripslashes(get_option('ml_html_post_end_body'))
