@@ -25,10 +25,10 @@ function ml_is_notified($post_id)
 
 function ml_post_published_notification($new_status, $old_status=null, $post=null)
 {
-    if($old_status === null || $post === null) {
+    if($old_status === null || $post === null) {        
         return;
     }
-    if(ml_is_notified($post->ID) || !ml_check_post_notification_required($post->ID)) {
+    if(ml_is_notified($post->ID) || !ml_check_post_notification_required($post->ID) || $post->post_type != 'post') {
         return;
     }
     
@@ -60,15 +60,13 @@ function ml_post_published_notification($new_status, $old_status=null, $post=nul
 }
 
 function ml_pb_post_published_notification($new_status, $old_status=null, $post=null) {
-
-    
     if($old_status === null || $post === null) {
         return;
     }
-    if(ml_is_notified($post->ID) || !ml_check_post_notification_required($post->ID)) {
+    if(ml_is_notified($post->ID) || !ml_check_post_notification_required($post->ID) || $post->post_type != 'post') {
         return;
     }
-    
+   
 	if($new_status == 'publish' && $old_status != 'publish') {  // only send push if it's a new publish
         $payload = array(
             'post_id' => $post->ID,            
