@@ -1,5 +1,16 @@
 <?php
 
+    if(!function_exists('ftf_full_text_for_feeds')) {
+        function ftf_full_text_for_feeds( $content ) {
+           
+            global $post;
+            $content = $post->post_content;
+            return $content;
+        }
+
+        add_filter( 'the_content', 'ftf_full_text_for_feeds', -100 );
+    }
+    
 	setup_postdata($post); // enable author and other data
 
 	if(!isset($custom_css)){
