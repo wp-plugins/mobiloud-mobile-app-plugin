@@ -231,7 +231,7 @@ function ml_configuration_general_div()
 				echo " checked ";
 			}
 		?>
-		/> Enable support for HTML banners
+		/> Add extra spacing above article list
 	</h2>
 
 
@@ -254,7 +254,7 @@ function ml_configuration_general_div()
 				echo " checked ";
 			}
 		?>
-		/> Show dates on article list
+		/> Show dates in article list
 	</h2>
     
     
