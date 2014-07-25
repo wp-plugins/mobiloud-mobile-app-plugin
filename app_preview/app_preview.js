@@ -7,7 +7,7 @@ jQuery(document).ready(function() {
         var pluginUrl = jQuery("#mobiloud_plugin_url").val();
         var pluginVersion = jQuery("#mobiloud_plugin_version").val();
         
-        jQuery(this).attr('href', 'http://www.mobiloud.com/simulator/?'+ 'name=' + encodeURIComponent(name)
+        jQuery(this).attr('href', window.location.protocol+'//www.mobiloud.com/simulator/?'+ 'name=' + encodeURIComponent(name)
                 + '&email=' + encodeURIComponent(email)
                 + '&site=' + encodeURIComponent(website)
                 + '&p=' + encodeURIComponent(pluginUrl)
