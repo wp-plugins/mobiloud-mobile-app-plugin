@@ -7,15 +7,6 @@ if(!function_exists("file_get_html")) {
         require_once("libs/simple_html_dom.php");       
 }
 
-function ftf_full_text_for_feeds( $content ) {
-
-    global $post;
-    $content = $post->post_content;
-    return $content;
-}
-
-add_filter( 'the_content', 'ftf_full_text_for_feeds', -100 );
-
 include_once("libs/ml_content_redirect.php");
 
 include_once("categories.php");
