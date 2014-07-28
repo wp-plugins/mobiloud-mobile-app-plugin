@@ -8,8 +8,9 @@
 
 	if(!$post_id){
 		$post_id = htmlspecialchars(esc_attr($_GET['post_id'])); // sanitize
+        $post = get_post($post_id);
 	}
-	$post = get_post($post_id);
+	
 	if(!$post){
 		header("HTTP/1.1 404 Not Found");
 	}
