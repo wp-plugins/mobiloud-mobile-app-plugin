@@ -1,5 +1,6 @@
 <?php
-	setup_postdata($post); // enable author and other data
+
+	setup_postdata_custom($post); // enable author and other data
 
 	if(!isset($custom_css)){
 		$custom_css = stripslashes(get_option('ml_post_custom_css'));
