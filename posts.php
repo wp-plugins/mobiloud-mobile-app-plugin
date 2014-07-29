@@ -14,47 +14,6 @@ include_once("filters.php");
 
 include_once dirname( __FILE__ ) . '/subscriptions/functions.php';
 
-/**
- * Set up global post data.
- *
- * @since 1.5.0
- *
- * @param object $post Post data.
- * @uses do_action_ref_array() Calls 'the_post'
- * @return bool True when finished.
- */
-function setup_postdata_custom( $post ) {
-	global $id, $authordata, $currentday, $currentmonth, $page, $pages, $multipage, $more, $numpages;
-
-	$id = (int) $post->ID;
-
-	$authordata = get_userdata($post->post_author);
-
-	$currentday = mysql2date('d.m.y', $post->post_date, false);
-	$currentmonth = mysql2date('m', $post->post_date, false);
-	$numpages = 1;
-	$multipage = 0;
-	$page = get_query_var('page');
-	if ( ! $page )
-		$page = 1;
-	if ( is_single() || is_page() || is_feed() )
-		$more = 1;
-	$content = $post->post_content;
-	$pages = array( $post->post_content );
-	
-
-	/**
-	 * Fires once the post data has been setup.
-	 *
-	 * @since 2.8.0
-	 *
-	 * @param WP_Post &$post The Post object (passed by reference).
-	 */
-	do_action_ref_array( 'the_post', array( &$post ) );
-
-	return true;
-}
-
 $ml_content_redirect = new MLContentRedirect();
 
 /*** POSTS LIST ***/
