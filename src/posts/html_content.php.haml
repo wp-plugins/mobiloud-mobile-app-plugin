@@ -1,6 +1,6 @@
 //includes and post setting
 -if(isset($post_id) == false && isset($page) == false)
-	-$post_id = $_GET['post_id']
+	-$post_id = sanitize_text_field($_GET['post_id'])
 	-$post = get_post($post_id)
 
 -if(isset($post) == false)
@@ -8,7 +8,7 @@
 
 -$post_type = get_post_type($post->ID)
 -$post_content = $post->post_content
--$eager_loading = $_GET['eager']
+-$eager_loading = sanitize_text_field($_GET['eager'])
 
 %head
 	//meta tags

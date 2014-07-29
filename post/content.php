@@ -1,7 +1,7 @@
 <?php if($post_id == NULL) { ?>
 
 <?php include("../../../../wp-blog-header.php"); ?>
-<?php $post_id = $_GET['post_id']; ?>
+<?php $post_id = sanitize_text_field($_GET['post_id']); ?>
 <?php $post = get_post($post_id); ?>
 <?php } ?>
 <?php $post_type = get_post_type($post->ID); ?>

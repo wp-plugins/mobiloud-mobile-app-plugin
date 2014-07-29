@@ -1,7 +1,7 @@
 <?php
 include("../../../../wp-blog-header.php");
 
-$postID = $_GET["post_id"];
+$postID = sanitize_text_field($_GET["post_id"]);
 $site_url = network_site_url("/");
 $disqus_identifier_string = "$postID $site_url?p=$postID";
 $post_permalink = get_permalink($postID);
@@ -40,7 +40,7 @@ $post_title = get_the_title($postID);
 	</table>
 	<script type="text/javascript">
 
-		var disqus_shortname = "<?php echo $_GET['shortname'];?>";
+		var disqus_shortname = "<?php echo sanitize_text_field($_GET['shortname']);?>";
 	    var disqus_domain = 'disqus.com';
        
 		(function () {

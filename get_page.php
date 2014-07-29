@@ -2,7 +2,7 @@
 include("../../../wp-blog-header.php");
 
 
-$page_ID = $_GET["page_ID"];
+$page_ID = sanitize_text_field($_GET["page_ID"]);
 
 
 $page = get_page($page_ID);
