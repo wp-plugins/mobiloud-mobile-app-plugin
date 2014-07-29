@@ -2,7 +2,6 @@
 include("../../../wp-blog-header.php");
 ini_set('display_errors', 0);
 
-include_once("ml_facebook.php");
 include("comments/comment_iphone.php");
 
 function ml_render_comment($comment, $platform="iphone"){

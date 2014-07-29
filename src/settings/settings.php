@@ -33,9 +33,6 @@ if(get_option('ml_banners_enabled') == $true_value) {
 //ANALYTICS
 $settings['google_analytics'] =  get_option('ml_google_analytics_id',NULL);
 
-//FACEBOOK DETAILS
-$settings['facebook_app_id'] =  get_option('facebook_app_id',NULL);
-
 //CATEGORY LIST
 
 //PAGE LIST
