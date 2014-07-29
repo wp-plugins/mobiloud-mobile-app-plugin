@@ -42,6 +42,15 @@
            return true;
        }
     }
+    $current_permalink = get_permalink($post->ID);
+    if(!function_exists('ml_convert_relative_links')) {
+        function ml_convert_relative_links($content) {
+            global $current_permalink;
+            $content = preg_replace("#(<\s*a\s+[^>]*href\s*=\s*[\"'])(?!http|/)([^\"'>]+)([\"'>]+)#", '$1'.$current_permalink.'$2$3', $content);
+            return $content;
+        }
+        add_filter( 'the_content', 'ml_convert_relative_links' );
+    }
 
 	setup_postdata_custom($post); // enable author and other data
 
