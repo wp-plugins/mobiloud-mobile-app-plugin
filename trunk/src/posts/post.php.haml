@@ -19,7 +19,7 @@
 //includes and post setting
 -if($post_id == NULL && $page_id == NULL)
 	-include_once(dirname(__FILE__)."/../../../../wp-blog-header.php")
-	-$post_id = $_GET['post_id']
+	-$post_id = sanitize_text_field($_GET['post_id'])
 	-$post = get_post($post_id)
 
 -if(get_option('ml_debug') == 'true')

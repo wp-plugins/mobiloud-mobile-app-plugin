@@ -1,5 +1,5 @@
 <?php if(isset($post_id) == false && isset($page) == false) { ?>
-<?php $post_id = $_GET['post_id']; ?>
+<?php $post_id = sanitize_text_field($_GET['post_id']); ?>
 <?php $post = get_post($post_id); ?>
 <?php } ?>
 <?php if(isset($post) == false) { ?>
@@ -8,7 +8,7 @@
 <?php } ?>
 <?php $post_type = get_post_type($post->ID); ?>
 <?php $post_content = $post->post_content; ?>
-<?php $eager_loading = $_GET['eager']; ?>
+<?php $eager_loading = sanitize_text_field($_GET['eager']); ?>
 <head>
 <meta content="width=device-width, minimum-scale=1.0, maximum-scale=1.0" name="viewport" /><script src="<?php echo MOBILOUD_POST_ASSETS_URL; ?>/js/jquery.min.js" type="text/javascript">
 </script><link href="<?php echo MOBILOUD_POST_ASSETS_URL; ?>/css/mobile.css" media="all" rel="StyleSheet" type="text/css" /><script src="<?php echo MOBILOUD_POST_ASSETS_URL; ?>/js/spinner.js" type="text/javascript">

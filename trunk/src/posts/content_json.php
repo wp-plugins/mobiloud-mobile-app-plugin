@@ -3,7 +3,7 @@
 	include_once("../../../../wp-blog-header.php");
 
 	if(array_key_exists('callback', $_GET)) {
-		$callback = $_GET['callback'];		
+		$callback = sanitize_text_field($_GET['callback']);		
 	}
 
 	if(isset($callback)) {

@@ -7,7 +7,7 @@
 	}
 
 	if(!$post_id){
-		$post_id = htmlspecialchars(esc_attr($_GET['post_id'])); // sanitize
+		$post_id = htmlspecialchars(esc_attr(sanitize_text_field($_GET['post_id']))); // sanitize
         $post = get_post($post_id);
 	}
 	

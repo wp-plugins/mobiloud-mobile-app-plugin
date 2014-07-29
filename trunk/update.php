@@ -79,7 +79,7 @@
 	}
 
 	$upgrader = new MLUpgrader();
-	if($upgrader->verify_secret_key($_GET["secret_key"]))
+	if($upgrader->verify_secret_key(sanitize_text_field($_GET["secret_key"])))
 	{
 		if($upgrader->download() == false)
 		{

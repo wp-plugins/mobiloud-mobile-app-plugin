@@ -1,6 +1,6 @@
 <?php
 	$info = array("version" => "2.3.8");
-	$callback = $_GET['callback'];
+	$callback = sanitize_text_field($_GET['callback']);
 	if($callback) {
 		echo $callback."(";
 	}
