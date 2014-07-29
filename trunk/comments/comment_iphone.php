@@ -13,10 +13,8 @@
 	<article class="comment ml_comment">
 		<?php
 			$uid_or_email = $comment->user_id != 0 ? $comment->user_id : $comment->comment_author_email;
-			$link = ml_facebook_get_picture_url($uid_or_email);
-			if(!$link){
-			    $link = get_avatar_url($uid_or_email, 50);
-            }
+			$link = get_avatar_url($uid_or_email, 50);
+            
 			echo '<img src="' . $link . '" class="avatar avatar-50 photo">';
 		?>
 		<div class="comment_body">

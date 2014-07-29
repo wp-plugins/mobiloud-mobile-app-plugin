@@ -9,8 +9,6 @@ include_once dirname( __FILE__ ) . '/pages.php';
 include_once dirname( __FILE__ ) . '/homepage.php';
 include_once dirname( __FILE__ ) . '/sticky_categories.php';
 include_once dirname( __FILE__ ) . '/article_list.php';
-// include_once dirname( __FILE__ ) . '/facebook.php';
-
 
 function mobiloud_configuration_page()
 {
@@ -60,10 +58,6 @@ function mobiloud_configuration_page()
 				<?php ml_configuration_app_redirect_ajax_load(); ?>
 			</div>
 			
-			<!-- FACEBOOK -->
-			<!-- <div id="ml_facebook_keys" class="stuffbox">
-				<?php // ml_configuration_facebook_ajax_load(); ?>
-			</div> -->
 		</div>
 
 	</div>

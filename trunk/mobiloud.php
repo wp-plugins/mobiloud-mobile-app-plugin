@@ -35,7 +35,6 @@ include_once dirname( __FILE__ ) . '/push.php';
 //include_once dirname( __FILE__ ) . '/libs/cache.php';
 
 include_once dirname( __FILE__ ) . '/stats.php';
-include_once dirname( __FILE__ ) . '/ml_facebook.php';
 
 include_once dirname( __FILE__ ) . '/subscriptions/functions.php';
 
@@ -72,8 +71,6 @@ function mobiloud_install()
 
 	//ml_home_menu_install();
 	ml_pages_install();
-
-	ml_facebook_install();
 
 	ml_init_ios_app_redirect();
 	ml_init_automatic_image_resize();
@@ -182,31 +179,6 @@ function ml_pages_install()
 	}
 }
 
-function ml_facebook_install()
-{
-	global $wpdb;
-	$table_name = $wpdb->prefix . "mobiloud_fb_users";
-
-	if($wpdb->get_var("SHOW TABLES LIKE '$table_name'") != $table_name) {
-		//install della tabella
-		$sql = "CREATE TABLE " . $table_name . " (
-			  id bigint(11) NOT NULL AUTO_INCREMENT,
-			  fb_id varchar(255) NOT NULL,
-			  email varchar(255) NOT NULL,
-			  name varchar(255) NOT NULL,
-			  UNIQUE KEY id (id)
-			);";
-
-		require_once(ABSPATH . 'wp-admin/includes/upgrade.php');
-		dbDelta($sql);
-
-		$sql = "CREATE INDEX idx_fb_users ON $table_name(fb_id,email);";
-		dbDelta($sql);
-	}
-
-}
-
-
 function mobiloud_plugin_menu()
 {
 	//add_object_page( $page_title, $menu_title, $capability, $menu_slug, $function, $icon_url );
@@ -246,9 +218,6 @@ function mobiloud_plugin_init()
 	global $ml_has_prod_cert, $ml_has_dev_cert;
 
 	global $mobiloud_charts_url;
-
-	//facebook
-	global $ml_fb_app_id, $ml_fb_secret_key;
 
 	//mobile promotional message
 	global $ml_popup_message_on_mobile_active, $ml_popup_message_on_mobile_url;
@@ -452,29 +421,12 @@ function ml_set_server_host($new_server_host)
 	ml_set_generic_option('ml_server_host',$ml_server_host);
 }
 
-//facebook
-function ml_set_fb_app_id($new_fb_app_id)
-{
-	$ml_fb_app_id = $new_fb_app_id;
-	ml_set_generic_option('ml_fb_app_id',$ml_fb_app_id);
-}
-function ml_set_fb_secret_key($new_fb_secret_key)
-{
-	$ml_fb_secret_key = $new_fb_secret_key;
-	ml_set_generic_option('ml_fb_secret_key',$ml_fb_secret_key);
-}
-
 
 function ml_get_avatar($avatar,$comment)
 {
 	$id_or_email = $comment->comment_author_email != NULL ? $comment->comment_author_email : $comment->user_id ;
 
-	$link = ml_facebook_get_picture_url($id_or_email);
-	if($link)
-	{
-		//using fb
-		$avatar = "<img src='$link' class='avatar avatar-50 photo' height=50 width=50>";
-	}
+	
 	return $avatar;
 }
 
