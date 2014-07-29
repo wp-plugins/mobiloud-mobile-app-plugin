@@ -49,7 +49,7 @@
             $content = preg_replace("#(<\s*a\s+[^>]*href\s*=\s*[\"'])(?!http|/)([^\"'>]+)([\"'>]+)#", '$1'.$current_permalink.'$2$3', $content);
             return $content;
         }
-        add_filter( 'the_content', 'ml_convert_relative_links' );
+        add_filter( 'the_content', 'ml_convert_relative_links', 20 );
     }
 
 	setup_postdata_custom($post); // enable author and other data
