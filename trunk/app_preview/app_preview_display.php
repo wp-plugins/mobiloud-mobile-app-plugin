@@ -4,11 +4,8 @@
         <div class='ml-preview-menu-bar' style='background-color: <?php echo get_option('ml_preview_theme_color'); ?>;'>
             <a href='javascript:void(0);' class='ml-icon ml-icon-menu <?php echo $iconShade; ?>'></a>
             <a href='javascript:void(0);' class='ml-preview-logo-holder'>
-                <?php $logoSize = null;
+                <?php 
                 if(strlen(trim(get_option("ml_preview_upload_image"))) > 0) {
-                    $logoSize = @getimagesize(get_option("ml_preview_upload_image")); 
-                }
-                if(is_array($logoSize)) {
                     $logoPath = get_option("ml_preview_upload_image");
                 } else {
                     $logoPath =  MOBILOUD_PLUGIN_URL . '/images/ml_preview_nologo.png';
