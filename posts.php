@@ -21,6 +21,8 @@ $ml_content_redirect = new MLContentRedirect();
 $user_offset = $_POST["offset"];
 $user_post_count = $_POST["postcount"];
 $user_category = $_POST["category"];
+$user_category_id = $_POST["category_id"];
+$user_category_filter = $_POST["categories"];
 
 $user_search = $_POST["search"];
 
@@ -47,12 +49,29 @@ if(isset($_POST["permalink"])){
 
 $published_post_count = wp_count_posts()->publish;
 
-
-if($user_category) {
+if($user_category_id){
+	$category = get_category($user_category_id);
+} else if($user_category) {
 	$category = get_category_by_slug($user_category);
-	if($category) $published_post_count = get_post_count(array($category->cat_ID));
 } 
 
+
+if($category) $published_post_count = get_post_count(array($category->cat_ID));
+
+if($user_category_filter){
+	$arrayFilter = array();
+	$arrayFilterItems = explode(",",$user_category_filter);
+	foreach($arrayFilterItems as $afi){
+		$tcat = get_category_by_slug($afi);
+		if(!$tcat){
+			$tcat = get_category($afi);
+		}
+		if($tcat){
+			array_push($arrayFilter,$tcat->cat_ID);
+		}
+	}
+	$published_post_count = get_post_count($arrayFilter);
+}
 
 if($user_offset == NULL) $user_offset = 0;
 if($user_post_count == NULL) $user_post_count = $published_post_count;
@@ -84,11 +103,14 @@ else {
 		array_push($categoryNames,$user_category);
 		$catObj = get_category_by_slug($user_category); 
   		$categoryName = $catObj->cat_ID;
+	} else if($user_category_id){
+		$catObj = get_category($user_category_id);
+		array_push($categoryNames,$catObj->slug);
+		$categoryName = $catObj->cat_ID;
 	} else {
 		foreach(explode(",",get_option("ml_article_list_exclude_categories","")) as $cname){
 			array_push($excludeCategories,get_cat_ID($cname));	
 		}
-		
 	}
 	
 	if(strlen($user_search)>0 && !in_array("page",$includedPostTypes) && (get_option("ml_include_pages_in_search","false")=="true"||get_option("ml_include_pages_in_search","false")==true)){
@@ -103,10 +125,31 @@ else {
 			  'post_type' => $includedPostTypes,
 			  'post_status' => 'publish',
 			  'offset' => $real_offset,
-			  'category' => $categoryName,
 			  'category__not_in' => $excludeCategories,
 			  's' => $user_search
 			);
+	
+	$arrayFilter = array();
+	
+	if(isset($_POST["categories"])){
+		$arrayFilter = array();
+		$arrayFilterItems = explode(",",$user_category_filter);
+		foreach($arrayFilterItems as $afi){
+			$tcat = get_category_by_slug($afi);
+			if(!$tcat){
+				$tcat = get_category($afi);
+			}
+			if($tcat){
+				array_push($arrayFilter,$tcat->slug);
+			}
+		}
+		$arrayFilterList = implode(',',$arrayFilter);
+		$query_array['category_name'] = $arrayFilterList;
+	} else if(isset($_POST["category_id"])){
+		$query_array['cat'] = $categoryName;
+	} else if($categoryName){
+		$query_array['category'] = $categoryName;
+	}
 			
 			
 			//echo json_encode($query_array);
