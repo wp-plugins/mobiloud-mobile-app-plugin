@@ -1,4 +1,5 @@
 <?php
+header("HTTP/1.1 200 OK");
 include("../../../wp-blog-header.php");
 //include_once("libs/errors.php");
 ini_set('display_errors', 1);
