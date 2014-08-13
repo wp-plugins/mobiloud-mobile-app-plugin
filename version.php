@@ -1,6 +1,6 @@
 <?php
-include("../../../wp-blog-header.php");
-	$info = array("version" => "2.3.9");
+include("../../../wp-load.php");
+	$info = array("version" => "2.3.9.5");
 	$callback = sanitize_text_field($_GET['callback']);
 	if($callback) {
 		echo $callback."(";
