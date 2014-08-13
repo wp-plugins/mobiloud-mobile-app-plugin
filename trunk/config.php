@@ -53,7 +53,8 @@ if(ml_get_color_brightness(get_option('ml_preview_theme_color')) < 190) {
 }
 $return_config['interface_colors'] = array(
     'navigation_bar_background'=>get_option('ml_preview_theme_color'),
-    'navigation_bar_text'=>$navigation_bar_text
+    'navigation_bar_text'=>$navigation_bar_text,
+    'navigation_bar_button_text'=>$navigation_bar_text
 );
 
 $json_string = json_encode($return_config);
