@@ -1,0 +1,77 @@
+/**Push notifications page**/
+.ml_header {
+    margin-top: 20px;
+}
+
+.ml_send_notification_box .handle {
+    cursor: pointer;
+}
+.ml_send_notification_box .handlediv {
+    float: right;
+    width: 30px;
+    height: 39px;
+    color: #aaa;
+}
+
+.ml_send_notification_box .handlediv:before {
+    content: '\f142';
+    right: 12px;
+    font: 400 20px/1 dashicons;
+    speak: none;
+    display: inline-block;
+    padding: 9px 10px;
+    top: 0;
+    position: relative;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-decoration: none!important;
+}
+
+.ml_send_notification_box h3 {
+    padding: 8px 12px;
+    border-bottom: 1px solid #eee;
+    cursor: pointer !important;
+    margin: 0;
+}
+
+.ml_send_notification_box .inside {
+    padding: 20px;
+    margin: 0;
+}
+
+.ml_send_notification_box.closed .handlediv:before {
+    content: '\f140';
+}
+.ml_send_notification_box.closed .inside {
+    display: none;
+}
+
+#error-message.error {
+    color: red;
+    font-size: 14px;
+    line-height: 25px;
+}
+
+#success-message.updated {
+    font-size: 14px;
+    line-height: 25px;
+    color: green;
+}
+
+.tag-label {
+    display: inline;
+    padding: .25em .6em;
+    font-size: 75%;
+    font-weight: bold;
+    line-height: 1;
+    color: #ffffff;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: baseline;
+    border-radius: .25em;
+    margin-right: 3px;
+}
+
+.tag-label.info {
+    background-color: #5bc0de;
+}
