@@ -209,6 +209,9 @@ function ml_registered_devices_count() {
     ));
     $iosCount = null;
     
+    if(is_object($result)) {
+        $result['body'] = $result->body;
+    }
     if(isset($result['body'])) {
         $responseJson = json_decode($result['body']);
         $iosCount = $responseJson->count;
@@ -227,6 +230,10 @@ function ml_registered_devices_count() {
         'sslverify'=>false
     ));
     $androidCount = null;
+    
+    if(is_object($result)) {
+        $result['body'] = $result->body;
+    }
     if(isset($result['body'])) {
         $responseJson = json_decode($result['body']);
         $androidCount = $responseJson->count;
