@@ -290,7 +290,7 @@ function print_posts($posts,$tot_count,$offset,$options)
 				"slug" => $category->category_nicename);
 		}
 
-		$final_post["title"] = preg_replace('#<!--(.*?)-->#', strip_tags(html_entity_decode($post->post_title)));
+		$final_post["title"] = preg_replace('#<!--(.*?)-->#', '', strip_tags(html_entity_decode($post->post_title)));
 		$final_post["date"] = $post->post_date;
 
 		if(get_option('ml_eager_loading_enable') == 'true' || $eager_loading == "true" || $post_type == 'page' || isset($_POST['post_id'])){
