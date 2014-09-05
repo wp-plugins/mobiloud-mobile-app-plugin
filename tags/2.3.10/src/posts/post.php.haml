@@ -1,0 +1,33 @@
+//hooks
+//ml_post_head
+//ml_post_custom_js
+//ml_post_custom_css
+//ml_post_start_body
+//ml_post_before_top_banner
+//ml_post_after_top_banner
+//ml_post_before_details
+//ml_post_after_details
+
+//ml_post_before_content
+//ml_post_after_content
+
+//ml_post_before_footer_banner
+//ml_post_after_footer_banner
+//ml_post_end_body
+//ml_post_footer
+
+//includes and post setting
+-if($post_id == NULL && $page_id == NULL)
+	-include_once(dirname(__FILE__)."/../../../../wp-blog-header.php")
+	-$post_id = sanitize_text_field($_GET['post_id'])
+	-$post = get_post($post_id)
+
+-if(get_option('ml_debug') == 'true')
+	-ini_set('display_errors', 1);	
+
+-$post_type = get_post_type($post->ID)
+-$post_content = $post->post_content
+-$post_text_direction = (get_option('ml_rtl_text_enable') == 'true') ? 'RTL' : 'LTR'
+!!!
+%html{:dir => "#{$post_text_direction}"}
+	-include('html_content.php')
