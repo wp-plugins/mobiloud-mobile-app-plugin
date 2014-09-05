@@ -1,5 +1,10 @@
 <?php
 
+    // prevent newrelic injected JavaScript breaking JSON
+    if(extension_loaded('newrelic')){
+        newrelic_disable_autorum();
+    }
+
 	include_once(dirname(__FILE__)."/../../../../wp-blog-header.php");
 
 	if(get_option('ml_debug') == 'true'){
@@ -10,7 +15,7 @@
 		$post_id = htmlspecialchars(esc_attr(sanitize_text_field($_GET['post_id']))); // sanitize
         $post = get_post($post_id);
 	}
-	
+
 	if(!$post){
 		header("HTTP/1.1 404 Not Found");
 	}
@@ -31,10 +36,10 @@
 </head><body>
 
 
-<?php 
+<?php
 
-	 
+
 	include 'body_content.php';
-	
+
 ?>
 </body></html>
