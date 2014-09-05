@@ -4,7 +4,7 @@ include("../../../wp-load.php");
 ini_set('display_errors', 1);
 
 if(!function_exists("file_get_html")) {
-        require_once("libs/simple_html_dom.php");       
+        require_once("libs/simple_html_dom.php");
 }
 
 include_once("libs/ml_content_redirect.php");
@@ -44,7 +44,7 @@ if(isset($_POST["permalink"])){
 	} else {
 		return;
 	}
-	
+
 }
 
 $published_post_count = wp_count_posts()->publish;
@@ -53,7 +53,7 @@ if($user_category_id){
 	$category = get_category($user_category_id);
 } else if($user_category) {
 	$category = get_category_by_slug($user_category);
-} 
+}
 
 
 if($category) $published_post_count = get_post_count(array($category->cat_ID));
@@ -92,16 +92,16 @@ if($ml_content_redirect->ml_content_redirect_enable == "1" &&
 
 
 else {
-	//not cached 
+	//not cached
 	$includedPostTypes = explode(",",get_option("ml_article_list_include_post_types","post"));
-	
+
 	$categoryNames = array();
 	$excludeCategories = array();
 	$categoryName = "";
-	
+
 	if($user_category){
 		array_push($categoryNames,$user_category);
-		$catObj = get_category_by_slug($user_category); 
+		$catObj = get_category_by_slug($user_category);
   		$categoryName = $catObj->cat_ID;
 	} else if($user_category_id){
 		$catObj = get_category($user_category_id);
@@ -109,16 +109,16 @@ else {
 		$categoryName = $catObj->cat_ID;
 	} else {
 		foreach(explode(",",get_option("ml_article_list_exclude_categories","")) as $cname){
-			array_push($excludeCategories,get_cat_ID($cname));	
+			array_push($excludeCategories,get_cat_ID($cname));
 		}
 	}
-	
+
 	if(strlen($user_search)>0 && !in_array("page",$includedPostTypes) && (get_option("ml_include_pages_in_search","false")=="true"||get_option("ml_include_pages_in_search","false")==true)){
 		array_push($includedPostTypes,"page");
 	}
 	//echo('post types ' . json_encode($includedPostTypes) . ' ..');
-	
-	
+
+
 	$query_array = array('posts_per_page' => $user_limit,
 			  'orderby' => 'post_date',
 			  'order' => 'DESC',
@@ -128,9 +128,9 @@ else {
 			  'category__not_in' => $excludeCategories,
 			  's' => $user_search
 			);
-	
+
 	$arrayFilter = array();
-	
+
 	if(isset($_POST["categories"])){
 		$arrayFilter = array();
 		$arrayFilterItems = explode(",",$user_category_filter);
@@ -150,20 +150,20 @@ else {
 	} else if($categoryName){
 		$query_array['category'] = $categoryName;
 	}
-			
-			
+
+
 			//echo json_encode($query_array);
-			
+
 	$posts_options = array();
 	if(!isset($_POST["post_id"])){
 		$posts = get_posts($query_array);
 		$posts_options = array();
-		
-		
+
+
 		if($user_category == NULL)
 	{
 		$sticky_category_1 = get_option('sticky_category_1');
-		$sticky_category_2 = get_option('sticky_category_2');		
+		$sticky_category_2 = get_option('sticky_category_2');
 	}
 //wp_reset_postdata();
 	//must be the second, first because the first will be prepended
@@ -180,12 +180,12 @@ else {
 			foreach($cat_2_posts as $p)
 			{
 				$p->sticky = true;
-				foreach ( $posts as $i => $v ) 
+				foreach ( $posts as $i => $v )
 				{
-   	    	if ($v->ID == $p->ID) 
+   	    	if ($v->ID == $p->ID)
 		      	array_splice($posts, $i,1);
   			}
-  
+
 			}
 			$posts = array_merge($cat_2_posts,$posts);
 			//wp_reset_postdata();
@@ -205,26 +205,26 @@ else {
 			foreach($cat_1_posts as $p)
 			{
 				$p->sticky = true;
-				foreach ( $posts as $i => $v ) 
+				foreach ( $posts as $i => $v )
 				{
-   	    	if ($v->ID == $p->ID) 
+   	    	if ($v->ID == $p->ID)
 		      	array_splice($posts, $i,1);
   			}
-  
+
 			}
 			$posts = array_merge($cat_1_posts,$posts);
 			//wp_reset_postdata();
 		}
 	}
-		
+
 	} else {
 		$single_post_id = $_POST['post_id'];
 		$posts = array();
 		$posts[0] = get_post($single_post_id);
 	}
-	
-	
-	
+
+
+
 	//subscriptions system enabled?
 	if(ml_subscriptions_enable()) {
 		//user login using
@@ -233,7 +233,7 @@ else {
 		$user = ml_login_wordpress($_POST['username'],$_POST['password']);
 		if(get_class($user) == "WP_User") {
 			//loggedin
-			//subscriptions: filter posts using capabilities 		
+			//subscriptions: filter posts using capabilities
 			$posts = ml_subscriptions_filter_posts($posts,$user->ID);
 
 		} else {
@@ -248,7 +248,7 @@ function print_posts($posts,$tot_count,$offset,$options)
 {
 	/** JSON OUTPUT **/
 	$final_posts = array("posts" => array(), "post-count" => $tot_count);
-	
+
 	foreach($posts as $post)
 	{
 
@@ -261,7 +261,7 @@ function print_posts($posts,$tot_count,$offset,$options)
 			'post_type'      => 'attachment',
 			'post_mime_type' => 'image',
 		) );
-		
+
 		$final_post = array();
 		$final_post["post_id"] = "$post_id";
 		$comments_count = wp_count_comments($post_id);
@@ -270,17 +270,17 @@ function print_posts($posts,$tot_count,$offset,$options)
 		if($comments_count) {
 			$final_post["comments-count"] = intval($comments_count->approved);
 		}
-		
+
 		$final_post["permalink"] = get_permalink($post_id);
-		
+
 		$final_post["author"] = array();
 		$final_post["author"]["name"] = get_author_name($post->post_author);
 		$final_post["author"]["author_id"] = $post->post_author;
-		
+
 		$final_post["post_type"] = $post->post_type;
-		
+
 		$final_post["categories"] = array();
-				
+
 		$categories = get_the_category($post_id);
 		foreach($categories as $category)
 		{
@@ -290,20 +290,20 @@ function print_posts($posts,$tot_count,$offset,$options)
 				"slug" => $category->category_nicename);
 		}
 
-		$final_post["title"] = html_entity_decode($post->post_title);
+		$final_post["title"] = preg_replace('#<!--(.*?)-->#', strip_tags(html_entity_decode($post->post_title)));
 		$final_post["date"] = $post->post_date;
-		
+
 		if(get_option('ml_eager_loading_enable') == 'true' || $eager_loading == "true" || $post_type == 'page' || isset($_POST['post_id'])){
-			
+
 		} else {
 			$final_post["lazy"] = "true";
 		}
-		
+
 		try {
 			$video_id = get_the_first_youtube_id($post);
 		}
 		catch (Exception $e) {}
-		
+
 		try {
 
 			//featured image
@@ -321,38 +321,38 @@ function print_posts($posts,$tot_count,$offset,$options)
 		{
 			$final_post["videos"][] = $video_id;
 		}
-		
-		
+
+
 		if($main_image_url != NULL)
 		{
-			
-			$image = array( 
-											"full" => $main_image_url, 
+
+			$image = array(
+											"full" => $main_image_url,
 											"thumb" => array("url" => $main_image_url),
 											"big-thumb" => array("url" => $main_image_url)
-										); 
-			
+										);
+
 			$final_post["images"][0] = $image;
-		}		
-		
+		}
+
 		foreach ( (array) $images as $image ) {
 			$imageToAdd = array();
 			$imageToAdd["full"] = wp_get_attachment_image_src($image->ID,'full');
 			$imageToAdd["thumb"] =  wp_get_attachment_image_src( $image->ID,'thumbnail');
 			$imageToAdd["imageId"] = $image->ID;
 			$final_post["images"][] = $imageToAdd;
-		}	
-		
-		
+		}
+
+
 		//capturing the html output generated
 		ob_start();
 		include("post/post.php");
 		$html_content = ob_get_clean();
-        
+
         //replace relative URLs with absolute
         $html_content = preg_replace("#(<\s*a\s+[^>]*href\s*=\s*[\"'])(?!http|/)([^\"'>]+)([\"'>]+)#", '$1'.$final_post["permalink"].'/$2$3', $html_content);
 		$final_post["content"] = $html_content;
-		
+
 		//sticky ?
 		$final_post["sticky"] = is_sticky($post->ID) || $post->sticky;
 
@@ -383,8 +383,8 @@ function get_the_first_image($post) {
 	//if there is no featured image, check what's the first image
 	//inside the html.
 
-	$html = str_get_html($post->post_content);	
-	if($html == NULL) 
+	$html = str_get_html($post->post_content);
+	if($html == NULL)
 		return NULL;
 
 	$img_tags = $html->find('img');
@@ -393,7 +393,7 @@ function get_the_first_image($post) {
 		if($img && isset($img->src))
 		{
 			return $img->src;
-		}		
+		}
 	}
 	return NULL;
 }
@@ -405,7 +405,7 @@ function get_first_attachment_url($post_id)
 		'numberposts' => null,
 		'post_status' => null,
 		'post_parent' => $post_id
-	); 
+	);
 	$attachments = get_posts($args);
 	if ($attachments && count($attachments) > 0) {
 		$att = $attachments[0];
@@ -419,8 +419,8 @@ function get_first_attachment_url($post_id)
 }
 
 function get_the_first_youtube_id($post) {
-	$html = str_get_html($post->post_content);	
-	if($html == NULL) 
+	$html = str_get_html($post->post_content);
+	if($html == NULL)
 		return NULL;
 
 	$video_tags = $html->find('iframe');
@@ -437,9 +437,9 @@ function get_post_comment_count($post_id)
 {
 	global $wpdb;
 	$request = "SELECT * FROM $wpdb->comments WHERE comment_post_ID=".$post_id;
-	
+
 	$comments = $wpdb->get_results($request);
-	return count($comments);	
+	return count($comments);
 }
 
 
@@ -459,7 +459,7 @@ function get_post_count($categories) {
 			";
 			$result = $wpdb->get_var($querystr);
   		$post_count += $result;
-   endforeach; 
+   endforeach;
 
    return $post_count;
 }
@@ -489,7 +489,7 @@ function youtubeID_from_link($link) {
         [?=&+%\w-]*        # Consume any URL (query) remainder.
         ~ix',
         $link,$matches)) {
-	
+
 		if(count($matches) >= 2)
 		{
 			return $matches[1];
