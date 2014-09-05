@@ -1,0 +1,13 @@
+.ml-iphone5 {
+	width:273px;
+	height:576px;
+	background-image: url(../images/iphone5.png);
+	background-size: 100% 100%;
+}
+
+.ml-ipad-mini {
+	width:400px;
+	height:526px;
+	background-image: url(../images/ipad_mini.png);
+	background-size: 100% 100%;
+}
