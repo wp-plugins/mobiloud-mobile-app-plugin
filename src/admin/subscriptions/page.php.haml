@@ -1,0 +1,20 @@
+%script{:type => "text/javascript", :src => "#{MOBILOUD_PLUGIN_URL}/admin/subscriptions/subscriptions.js"}
+.wrap
+	.narrow
+		#ml_admin_subscriptions
+			%h1 Subscriptions
+			-if(ml_has_groups_library() == false)
+				.error 
+					You need to install or activate 
+					%a{:href => 'http://www.itthinx.com/plugins/groups/'}
+						%b Groups
+					plugin
+			-else
+				#ml_admin_subscriptions_options{:class => 'stuffbox'}
+					%h3 Options
+						%h2{:style => 'text-decoration:underline'} Options
+						%h2
+							%input{:type => 'checkbox', :name => 'ml_subscriptions_enable', :data-checked => "#{get_option('ml_subscriptions_enable',false)}"}
+							Enable Subscriptions System
+
+						%input{:type => 'submit', :value => "Save", :class => 'button button-primary button-large', :data-label => "Save", :data-saving-label => "Saving..."}
