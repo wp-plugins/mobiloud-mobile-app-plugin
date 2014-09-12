@@ -5,7 +5,7 @@
         newrelic_disable_autorum();
     }
 
-	include_once(dirname(__FILE__)."/../../../../wp-blog-header.php");
+	include_once(dirname(__FILE__)."/../../../../wp-load.php");
 
 	if(get_option('ml_debug') == 'true'){
 		ini_set('display_errors', true);
