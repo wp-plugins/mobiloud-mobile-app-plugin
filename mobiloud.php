@@ -99,20 +99,22 @@ function ml_notifications_install()
 {
 	global $wpdb;
 	$table_name = $wpdb->prefix . "mobiloud_notifications";
-    //install della tabella
-    $sql = "CREATE TABLE " . $table_name . " (
-          id bigint(11) NOT NULL AUTO_INCREMENT,
-          time bigint(11) DEFAULT '0' NOT NULL,
-          post_id bigint(11),
-          msg blob,
-          android varchar(1) NOT NULL,
-          ios varchar(1) NOT NULL,
-          tags blob,
-          UNIQUE KEY id (id)
-        );";
+    
+    if($wpdb->get_var("SHOW TABLES LIKE '$table_name'") != $table_name) {
+        $sql = "CREATE TABLE " . $table_name . " (
+              id bigint(11) NOT NULL AUTO_INCREMENT,
+              time bigint(11) DEFAULT '0' NOT NULL,
+              post_id bigint(11),
+              msg blob,
+              android varchar(1) NOT NULL,
+              ios varchar(1) NOT NULL,
+              tags blob,
+              UNIQUE KEY id (id)
+            );";
 
-    require_once(ABSPATH . 'wp-admin/includes/upgrade.php');
-    dbDelta($sql);
+        require_once(ABSPATH . 'wp-admin/includes/upgrade.php');
+        dbDelta($sql);
+    }
 }
 
 function ml_notification_categories_install() {
