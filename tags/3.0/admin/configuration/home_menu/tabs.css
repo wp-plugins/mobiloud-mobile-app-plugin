@@ -1,0 +1,28 @@
+#menu-tabs {
+	margin-top: 50px;
+	margin-left: 20px;
+	margin-right: 50px;
+	border-bottom:1px solid #ddd;
+}
+#menu-tabs ul li {
+	display: inline;
+}
+
+#menu-tabs ul li a:link,
+#menu-tabs ul li a:hover,
+#menu-tabs ul li a:visited {
+	font-size:20px;
+	background-color:#eee;
+	padding:10px;
+	text-decoration: none;
+	font-weight: bold;
+	color: #aaa;
+	border:1px solid #eee;
+}
+
+#menu-tabs ul li.ui-state-active a:link,
+#menu-tabs ul li.ui-state-active a:hover,
+#menu-tabs ul li.ui-state-active a:visited {
+	color: #1A749D;
+	border:1px solid #ddd;
+}
