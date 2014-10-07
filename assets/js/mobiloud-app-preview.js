@@ -1,19 +1,12 @@
 jQuery(document).ready(function() {
 
-    jQuery(".signup-button").on('click', function(e) {
-        var name = jQuery("#contactName").val();
-        var email = jQuery("#email").val();
-        var website = jQuery("#website").val();
-        var pluginUrl = jQuery("#mobiloud_plugin_url").val();
-        var pluginVersion = jQuery("#mobiloud_plugin_version").val();
-        
-        jQuery(this).attr('href', window.location.protocol+'//www.mobiloud.com/simulator/?'+ 'name=' + encodeURIComponent(name)
-                + '&email=' + encodeURIComponent(email)
-                + '&site=' + encodeURIComponent(website)
-                + '&p=' + encodeURIComponent(pluginUrl)
-                + '&v=' + encodeURIComponent(pluginVersion)
-                + '&TB_iframe=true&width=650&height='+(jQuery(window).height()-(jQuery(window).width()>850?60:20)));
+    checkHomeScreenSelect();
+    alignPreviewHolderLogo();
+    
+    jQuery("input[name='homepagetype']").click(function() {
+        checkHomeScreenSelect();
     });
+
     var _custom_media = true,
             _orig_send_attachment = wp.media.editor.send.attachment;
 
@@ -24,7 +17,8 @@ jQuery(document).ready(function() {
         _custom_media = true;
         wp.media.editor.send.attachment = function(props, attachment) {
             if (_custom_media) {
-                jQuery("#" + id).val(attachment.url);                
+                jQuery("#" + id).val(attachment.url);  
+                loadPreviewImage();                
                 ml_loadPreview();
             } else {
                 return _orig_send_attachment.apply(this, [props, attachment]);
@@ -35,7 +29,19 @@ jQuery(document).ready(function() {
         return false;
     });
     
+    jQuery(".ml-preview-image-remove-btn").click(function(e) {
+        e.preventDefault();
+        var confirmRemove = confirm('Are you sure you want to remove the image?');
+        if(confirmRemove) {
+            jQuery(".ml-preview-upload-image-row").hide();
+            jQuery(".ml-preview-image-holder img").attr('src', '');   
+            jQuery("#ml_preview_upload_image").val('');
+            ml_loadPreview();
+        }
+    });
+    
     jQuery("#ml_preview_upload_image").keyup(function() {
+        loadPreviewImage();
         ml_loadPreview();
     });
     
@@ -64,6 +70,25 @@ jQuery(document).ready(function() {
     
     ml_loadPreview();
 });
+
+var alignPreviewHolderLogo = function() {
+    var imageHolder = jQuery(".ml-preview-image-holder");
+    var image = jQuery("img", imageHolder);
+    if(imageHolder.length && image.length) {
+        if(image.height > image.width) {
+            image.height = '100%';
+            image.width = 'auto';
+        }
+    }   
+};
+
+var checkHomeScreenSelect = function() {
+    if(jQuery("#ml_home_page_enabled").is(':checked') || jQuery("#ml_home_url_enabled").is(':checked')) {
+        jQuery(".ml-home-screen-label").show();
+    } else {
+        jQuery(".ml-home-screen-label").hide();
+    }
+};
 
 var articleScrol;
 var loadIScroll = function() {
@@ -142,4 +167,14 @@ var cropPostImages = function(width) {
       height:100,
       vertical:"middle"
     });  
+};
+
+var loadPreviewImage = function() {
+    if(jQuery("#ml_preview_upload_image").val().length > 0) {
+        jQuery(".ml-preview-upload-image-row").show();
+        jQuery(".ml-preview-image-holder img").attr('src', jQuery("#ml_preview_upload_image").val());    
+        alignPreviewHolderLogo();
+    } else {
+        jQuery(".ml-preview-upload-image-row").hide();
+    } 
 };

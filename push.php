@@ -181,8 +181,8 @@ function ml_registered_devices() {
         'sslverify'=>false
     ));
     $responseCode = null;
-    if(is_object($result)) {
-        $responseCode = $result->response->code;
+    if($result instanceof WP_Error) {
+        $responseCode = null;
     } elseif(is_array($result) && isset($result['response']['code'])) {
         $responseCode = $result['response']['code'];
     }
@@ -209,10 +209,9 @@ function ml_registered_devices_count() {
     ));
     $iosCount = null;
     
-    if(is_object($result)) {
-        $result['body'] = $result->body;
-    }
-    if(isset($result['body'])) {
+    if($result instanceof WP_Error) {
+        $iosCount = null;
+    } elseif(isset($result['body'])) {
         $responseJson = json_decode($result['body']);
         $iosCount = $responseJson->count;
     }
@@ -230,11 +229,9 @@ function ml_registered_devices_count() {
         'sslverify'=>false
     ));
     $androidCount = null;
-    
-    if(is_object($result)) {
-        $result['body'] = $result->body;
-    }
-    if(isset($result['body'])) {
+    if($result instanceof WP_Error) {
+        $androidCount = null;
+    } elseif(isset($result['body'])) {
         $responseJson = json_decode($result['body']);
         $androidCount = $responseJson->count;
     }

@@ -63,9 +63,10 @@
 		echo $custom_js ? '<script>' . $custom_js . '</script>' : '';
 	}
 
+    echo stripslashes(get_option('ml_banner_above_content', ''));
 	eval(stripslashes(get_option('ml_post_start_body')));
-	echo stripslashes(get_option('ml_html_post_start_body'));
-
+	echo stripslashes(get_option('ml_html_post_start_body'));    
+    
 	eval(stripslashes(get_option('ml_post_before_top_banner')));
 
 	// featured image banner
@@ -86,24 +87,33 @@
 
 if(!isset($_GET["page_ID"])){
 	// title, date, author, meta
-	echo get_option('ml_post_date_enabled')=='true' ? '<div class="post_meta"><time title="' . $post->post_date . '">' . human_time_diff(strtotime($post->post_date), time()) . '</time></div>' : '';
+	echo get_option('ml_post_date_enabled') ? '<div class="post_meta"><time title="' . $post->post_date . '">' . human_time_diff(strtotime($post->post_date), time()) . '</time></div>' : '';
 
 } else {
-	echo get_option('ml_page_date_enabled')=='true' ? '<div class="post_meta"><time title="' . $post->post_date . '">' . human_time_diff(strtotime($post->post_date), time()) . '</time></div>' : '';
+	echo get_option('ml_page_date_enabled') ? '<div class="post_meta"><time title="' . $post->post_date . '">' . human_time_diff(strtotime($post->post_date), time()) . '</time></div>' : '';
 }
 
 	echo '<div class="post_meta right">'; eval(stripslashes(get_option('ml_post_right_of_date'))); echo '</div>';
 ?>
 	<div class="clear"></div>
-	<h1 class="gamma post_title"><?php echo $post->post_title; ?></h1>
+    <?php echo stripslashes(get_option('ml_banner_above_title', '')); ?>
+    <?php if(!isset($_GET["page_ID"])): ?>
+        <?php if(get_option('ml_post_title_enabled')): ?>
+            <h1 class="gamma post_title"><?php echo $post->post_title; ?></h1>
+        <?php endif; ?>
+    <?php else: ?>
+        <?php if(get_option('ml_page_title_enabled')): ?>
+            <h1 class="gamma post_title"><?php echo $post->post_title; ?></h1>
+        <?php endif; ?>
+    <?php endif; ?>      
 <?php
 
 	if( !isset($_POST['allow_lazy']) || isset($_GET['fullcontent']) || get_option('ml_eager_loading_enable')=='true' || isset($_GET["page_ID"]) || isset($_POST['post_id'])){
 
 		if(!isset($_GET["page_ID"])){
-			echo get_option('ml_post_author_enabled')=='true' ? '<p class="post_meta">' . get_the_author_link() . '</p><div class="clear"></div>' : ''; // clear because .post_meta is floated
+			echo get_option('ml_post_author_enabled') ? '<p class="post_meta">' . get_the_author_link() . '</p><div class="clear"></div>' : ''; // clear because .post_meta is floated
 		} else {
-			echo get_option('ml_page_author_enabled')=='true' ? '<p class="post_meta">' . get_the_author_link() . '</p><div class="clear"></div>' : ''; // clear because .post_meta is floated
+			echo get_option('ml_page_author_enabled') ? '<p class="post_meta">' . get_the_author_link() . '</p><div class="clear"></div>' : ''; // clear because .post_meta is floated
 		}
 
 	eval(stripslashes(get_option('ml_post_after_details')));
@@ -131,6 +141,7 @@ if(!isset($_GET["page_ID"])){
 
 	eval(stripslashes(get_option('ml_post_after_body')));
 	echo stripslashes(get_option('ml_html_post_after_body'));
+    echo stripslashes(get_option('ml_banner_below_content', ''));
 ?>
 <script>
     var iframes = document.getElementsByTagName('iframe')
