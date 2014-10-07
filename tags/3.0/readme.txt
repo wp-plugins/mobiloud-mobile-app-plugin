@@ -11,25 +11,38 @@ The simple and professional solution to build your own native mobile apps.
 
 == Description ==
 
-**Mobiloud is a premium (paid) WordPress plugin that allows publishers and bloggers to turn their WordPress site into a beautifully stylish mobile app. Mobiloud simply converts your website into a fully functional, fully native mobile app.**
+**Mobiloud is a premium (paid) service that allows publishers and bloggers to turn their WordPress site into a beautifully stylish mobile app. Mobiloud simply converts your website into a fully functional, fully native mobile app.**
 
 Smartphone users (there's 1.8 billion of them worldwide!) spend **80% of their time on their devices using apps**. If you don't have an app to complement your web presence, you're missing on a huge opportunity to reach new and existing readers and customers.
 
 Our apps are designed to provide the best possible user experience for your audience: fast loading, smooth running with an intuitive user interface. It's for publishers and bloggers who want to build a branded **native mobile apps** for iOS and Android, offering content from their WordPress site (similar apps are published by TechCrunch, The Verge, The Huffington Post).
 
-With Mobiloud, real native mobile apps are finally affordable ([prices](http://www.mobiloud.com/pricing/?ref=plugindesc) start at $89/month, compare that with a budget of several thousands!), and you won’t need any programming skills to get your app published.
+With Mobiloud, real native mobile apps are finally affordable ([prices](http://www.mobiloud.com/pricing/?ref=plugindesc) start at $89/month), and you won’t need any programming skills to get your app published - we take care of build and publication for you!
 
-Install the plugin now and you will be moments away from creating your own mobile app. For any questions, don’t hesitate to get in touch with us at [support@mobiloud.com](mailto:support@mobiloud.com)
+Install the plugin now and you will be moments away from creating your own mobile app.
 
-*Who this is for:*
-- Online magazines, news websites
-- Professional bloggers, podcasters
-- Content-rich website using posts or custom post types for their content
-- Lovers of great apps and design
+**Note the plugin is free to use to design, manage and preview your apps, but getting your apps built and published on App Store and Google Play is a paid service ([prices here](http://www.mobiloud.com/pricing/?ref=plugindesc))**
 
-*Who this is NOT a good fit for:*
-- People looking for a mobile site tool or template
-- Company sites with no blog or content
+For any questions, don’t hesitate to get in touch with us at [support@mobiloud.com](mailto:support@mobiloud.com)
+
+**Who Mobiloud is for:**
+
+* Online magazines, news websites
+
+* Professional bloggers, podcasters
+
+* Content-rich websites using posts or custom post types for their content
+
+* Lovers of great apps and design
+
+**Who it is *NOT* a good fit for:**
+
+* People looking for a mobile site tool or template
+
+* Company sites with no blog or content
+
+* Complex or heavily customised page-based websites
+
 
 = What you get with Mobiloud =
 
@@ -43,14 +56,15 @@ Install the plugin now and you will be moments away from creating your own mobil
 
 * **Use push notifications to bring people back to your content, send alerts and reach out to your users**. Mobile apps and push notifications are the best tool to build an audience on mobile. Think of it like a newsletter on steroids (open rates for push are close to 90%, compare that with email!). With Mobiloud you can send notifications automatically whenever you post new content (with optional filters) or manually, whenever you want. You can also attach a page or post to your notification, so you can use them for anything: alert your users to a new event, promotion or send urgent and important updates - it's a direct connection with your users!
 
-* **Admob, Adsense and other mobile advertising options**. We support HTML/Javascript/iframe ad units you can embed directly in your content (you're free to fit them wherever within articles/pages). Admob ad units for iOS and Android are available customers choosing the "Publisher" plans. We can integrate any other advertising SDK for you, including native ads networks and interstitials.
+* **MoPub, Google DFP, Admob, Adsense and other mobile advertising options**. We support HTML/Javascript/iframe ad units you can embed directly in your content (you're free to fit them wherever within articles/pages). Banner ads, interstitials and native ads are all supported with our MoPub and Google DFP integration.
+
 * **WordPress, Disqus and Facebook comments**. It doesn't matter what you use - your app will store your user's details so they can comment on your content in one tap!
 
 * **Easy social sharing options for your users**. To grow your site and business, sharing is everything. It's like free marketing! And with your mobile app, you'll encourage sharing with a single tap via all social media sites, email or SMS – simple! We support all major social networks, Whatsapp, Readibility and Instapaper among other services.
 
 * **Analytics**. With support for **Google Analytics** to track traffic on your app, you'll have a full view on how people use your app and what content works best.
 
-* **Advanced feautures** including support for custom post types, image galleries, your own HTML/CSS/PHP code to customise the article/page screens or add custom fields, support for subscriptions/membership sites and much more.
+* **Advanced feautures** including support for custom post types, image galleries, an advanced Editor you an use to add your own HTML/CSS/PHP code to customise the article/page screens or add custom fields, support for subscriptions/membership sites and much more.
 
 = How it works =
 
@@ -163,6 +177,12 @@ You can contact us at [support@mobiloud.com](mailto:support@mobiloud.com)
 
 
 == Changelog ==
+
+= 3.0 =
+* new simpler user interface
+* additional functionality including adding custom fields and excerpts to article lists
+* new Advertising functionality including support for MoPub and Google DFP
+* many more improvements and bug fixes
 
 = 2.3.9.5 =
 * Bug fix - 404 page on fetching posts through app
