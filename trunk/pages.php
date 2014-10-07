@@ -52,4 +52,10 @@
 		);
 	}
 
+    function ml_remove_all_pages() {
+		global $wpdb;
+		$table_name = $wpdb->prefix . "mobiloud_pages";
+
+		$wpdb->query( "DELETE FROM $table_name");
+	}
 ?>

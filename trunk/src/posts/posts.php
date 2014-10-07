@@ -177,7 +177,13 @@ function print_posts($posts,$tot_count,$offset,$options)
 		}
 		
 		$final_post["permalink"] = get_permalink($post_id);
-		
+		if(strlen(trim(get_option('ml_custom_field_url', ''))) > 0 ) {
+            $custom_url_value = get_post_meta($post->ID, get_option('ml_custom_field_url'), true);
+            if(strlen(trim($custom_url_value)) > 0) {
+                $final_post["permalink"] = $custom_url_value;
+            }
+        }
+        
 		$final_post["author"] = array();
 		$final_post["author"]["name"] = get_author_name($post->post_author);
 		$final_post["author"]["author_id"] = $post->post_author;
@@ -245,7 +251,15 @@ function print_posts($posts,$tot_count,$offset,$options)
 		//sticky ?
 		$final_post["sticky"] = is_sticky($post->ID) || $post->sticky;
 
-
+        //custom field?
+        if(strlen(get_option('ml_custom_field_name', '')) > 0) {
+            $custom_field_val = get_post_meta($post->ID, get_option('ml_custom_field_name', ''), true);
+            $final_post['custom1'] = $custom_field_val;
+        }
+        
+        //excerpt
+        $final_post['excerpt'] = get_the_excerpt();
+        
 		$final_posts["posts"][] = $final_post;
 	}
 

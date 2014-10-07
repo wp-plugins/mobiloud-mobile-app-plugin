@@ -59,8 +59,7 @@ function ml_push_notification_manual_send_callback()
             'payload'=>$payload
         );
 		ml_pb_send_batch_notification($data, $tagNames);
-        ml_track_getvero('push_notification');
-        ml_track_intercom('push_notification');
+        Mobiloud::track_user_event('push_notification');
 	}
 
 	ml_push_notification_manual_send();
@@ -218,7 +217,7 @@ function ml_push_notification_history() {
         </tbody>                  
     </table>
     <?php
-    die();
+    exit;
 }
 
 function ml_push_notification_check_duplicate() {
@@ -272,13 +271,7 @@ function ml_push_notification_manual_send()
         $("#ml_push_notification_msg").on("input", function () {
             limitChars(this, 107, 'ml_notification_chars');
         });
-        
-        jQuery("#ml_push_notification_manual_send .handle").toggle(function() {
-            jQuery(".ml_send_notification_box").addClass('closed');
-        }, function() {
-            jQuery(".ml_send_notification_box").removeClass('closed');
-        });
-        
+                
         jQuery("#ml_push_notification_data_id").change(function() {
             if($(this).val() === 'custom') {
                 jQuery("#ml_push_notification_post_id_row").show();
@@ -324,7 +317,10 @@ function ml_push_notification_manual_send()
                         }, 2000);
                     });		
                 }
-			}
+                return true;
+			} else {
+                return false;
+            }
 		});
         
         
@@ -401,11 +397,6 @@ function ml_push_notification_manual_send_div()
 	?>
     
     <div class="ml_send_notification_box">
-        <div class="handle">
-            <div class="handlediv" title="Click to toggle"><br></div>
-            <h3>Send Manual Notification</h3>
-        </div>
-        <div class="inside">
         <div id="error-message" class="error" style="display: none;"></div>
         <table class="form-table">
             <tbody>
@@ -479,14 +470,28 @@ function ml_push_notification_manual_send_div()
                     </th>
                     <td>
                         <p>
+                            <?php 
+                            $registeredDevicesCount = ml_registered_devices_count(); 
+                            $total_count = 0;
+                            $android_count = 0;
+                            $ios_count = 0;
+                            if($registeredDevicesCount['android'] !== null) {
+                                $total_count += $registeredDevicesCount['android'];
+                                $android_count = $registeredDevicesCount['android'];
+                            }
+                            if($registeredDevicesCount['ios'] !== null) {
+                                $total_count += $registeredDevicesCount['ios'];
+                                $ios_count = $registeredDevicesCount['ios'];
+                            }
+                            ?>
                             <label>
-                                <input id="ml_push_notification_os_all" type="radio" name='ml_push_notification_os' value="all" checked/> All
+                                <input id="ml_push_notification_os_all" type="radio" name='ml_push_notification_os' value="all" checked/> All (<?php echo $total_count; ?> total devices)
                             </label><br/>
                             <label>
-                                <input id="ml_push_notification_android" type="radio" name='ml_push_notification_os' value="android" /> Android only
+                                <input id="ml_push_notification_android" type="radio" name='ml_push_notification_os' value="android" /> Android only (<?php echo $android_count; ?> devices)
                             </label><br/>
                             <label>
-                                <input id="ml_push_notification_ios" type="radio" name='ml_push_notification_os' value="ios" /> iOS only
+                                <input id="ml_push_notification_ios" type="radio" name='ml_push_notification_os' value="ios" /> iOS only (<?php echo $ios_count; ?> devices)
                             </label>
                         </p>
 
@@ -498,7 +503,6 @@ function ml_push_notification_manual_send_div()
         <p class="submit">
             <input type="submit" class='button button-primary button-large' id="ml_push_notification_manual_send_submit" value="<?php _e('Send'); ?>" />
         </p>
-        </div>
     </div><!--.ml_send_notification_box-->
 	<?php
 }

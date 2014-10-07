@@ -46,6 +46,13 @@
 			$wpdb->prepare("DELETE FROM $table_name WHERE cat_ID = %d",$cat_ID)
 		);
 	}
+    
+    function ml_remove_all_categories() {
+        global $wpdb;
+		$table_name = $wpdb->prefix . "mobiloud_categories";
+
+		$wpdb->query( "DELETE FROM $table_name");
+    }
 
 	//a.cat_ID <-> b.cat_ID
 	function ml_switch_categories($cat_ID_a,$cat_ID_b)

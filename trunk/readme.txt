@@ -3,16 +3,15 @@ Contributors: psac50
 Tags: mobiloud, push, notifications, mobile, mobile app, native app, web app, iphone, ipad, iphone app, ipad app, android, tablet, windows mobile, mobile web, HTML5, mobile site, mobile plugin, wordpress mobile, admob, adsense, mobile theme, mobile template, mobile website, mobile theme, responsive, wptouch, ios app, app
 Requires at least: 3.2
 Tested up to: 4.0
-Stable tag: 2.3.10
+Stable tag: 3.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-The simple and professional solution to build your own native mobile apps. Takes just minutes and no coding.
+The simple and professional solution to build your own native mobile apps.
 
 == Description ==
 
-**Mobiloud is a premium WordPress plugin that allows publishers and bloggers to turn their WordPress site into a beautifully stylish mobile app. Mobiloud simply converts your website into a fully functional, native mobile app. Every piece of content you publish, every page, and every post (including custom post types) is accessible from within the app.**
-
+**Mobiloud is a premium (paid) WordPress plugin that allows publishers and bloggers to turn their WordPress site into a beautifully stylish mobile app. Mobiloud simply converts your website into a fully functional, fully native mobile app.**
 
 Smartphone users (there's 1.8 billion of them worldwide!) spend **80% of their time on their devices using apps**. If you don't have an app to complement your web presence, you're missing on a huge opportunity to reach new and existing readers and customers.
 
@@ -22,6 +21,15 @@ With Mobiloud, real native mobile apps are finally affordable ([prices](http://w
 
 Install the plugin now and you will be moments away from creating your own mobile app. For any questions, don’t hesitate to get in touch with us at [support@mobiloud.com](mailto:support@mobiloud.com)
 
+*Who this is for:*
+- Online magazines, news websites
+- Professional bloggers, podcasters
+- Content-rich website using posts or custom post types for their content
+- Lovers of great apps and design
+
+*Who this is NOT a good fit for:*
+- People looking for a mobile site tool or template
+- Company sites with no blog or content
 
 = What you get with Mobiloud =
 
@@ -47,11 +55,17 @@ Install the plugin now and you will be moments away from creating your own mobil
 = How it works =
 
 1. **Install and Activate** the plugin
-2. Customise your app and see a **preview mobile app** online, from your browser.
+2. Customise your app and test it on your own device
 4. **Sign Up with no risk** (we offer a 30 day money back guarantee)
 5. In a matter of days we'll submit the app for you to Android and Google Play.
 
 = What some of our customers say about it =
+
+*"The guys at Mobiloud are amazing. Not only have they created this crazily easy-to-use product that lets you build native iOS and Android apps for your website at an affordable price, but they work tirelessly with you to ensure you are happy with your apps. We can't recommend Mobiloud enough!"*
+― Stephan Whelan, Founder at DeeperBlue.com
+
+*"Mobiloud has made sure that creating a quality mobile app for your blog is as easy and as affordable as setting the blog up in the first place. They're a pleasure to work and offer timely customer service. Today, we enjoy thousands of installs of our apps and control how and when we notify our subscribers of important content through mobile alerts. If you are seeking an elegant mobile solution to accompany your WordPress blog, look no further."*
+― Jeremi Karnell, Partner & CMO, PTT Research
 
 *"They left no stone unturned in making our mobile app perfect! It has been a pleasure working with them."*
 ― Paul Andrew, Founder of Speckyboy Magazine

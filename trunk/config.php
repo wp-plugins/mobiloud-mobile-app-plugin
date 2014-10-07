@@ -5,6 +5,7 @@ include_once("categories.php");
 include_once("filters.php");
 include_once("homepage.php");
 
+require_once dirname( __FILE__ ) . '/class.mobiloud-app-preview.php';
 include_once dirname( __FILE__ ) . '/subscriptions/functions.php';
 
 
@@ -15,8 +16,14 @@ $app_version = $_POST['app_version'];
 	
 	
 $return_config = array();
+$return_config['app_name'] = get_option('ml_app_name');
 $return_config["enable_featured_images"] = get_option('ml_article_list_enable_featured_images',true);
 $return_config["enable_dates"] = get_option('ml_article_list_enable_dates',true);
+$return_config['show-android-cat-tabs'] = get_option('ml_show_android_cat_tabs', false);
+$return_config['google-tracking-id'] = get_option('ml_google_tracking_id', '');
+$return_config['show_custom_field'] = get_option('ml_custom_field_enable', false);
+$return_config['show_excerpts'] = get_option('ml_article_list_show_excerpt', false);
+$return_config['show_comments_count'] = get_option('ml_article_list_show_comment_count', false);
 
 if(get_option("ml_home_article_list_enabled",false)==true){
 	$return_config["home_page_type"] = "article_list";
@@ -39,6 +46,25 @@ if(get_option("ml_home_article_list_enabled",false)==true){
 	
 }
 
+//advertising
+$return_config['advertising_platform'] = Mobiloud::get_option('ml_advertising_platform');
+
+$return_config['ios_phone_banner_unit_id'] = Mobiloud::get_option('ml_ios_phone_banner_unit_id');
+$return_config['ios_tablet_banner_unit_id'] = Mobiloud::get_option('ml_ios_tablet_banner_unit_id');
+$return_config['ios_banner_position'] = Mobiloud::get_option('ml_ios_banner_position');
+$return_config['ios_interstitial_unit_id'] = Mobiloud::get_option('ml_ios_interstitial_unit_id');
+$return_config['ios_interstitial_interval'] = Mobiloud::get_option('ml_ios_interstitial_interval');
+$return_config['ios_native_ad_unit_id'] = Mobiloud::get_option('ml_ios_native_ad_unit_id');
+$return_config['ios_native_ad_interval'] = Mobiloud::get_option('ml_ios_native_ad_interval');
+
+$return_config['android_phone_banner_unit_id'] = Mobiloud::get_option('ml_android_phone_banner_unit_id');
+$return_config['android_tablet_banner_unit_id'] = Mobiloud::get_option('ml_android_tablet_banner_unit_id');
+$return_config['android_banner_position'] = Mobiloud::get_option('ml_android_banner_position');
+$return_config['android_interstitial_unit_id'] = Mobiloud::get_option('ml_android_interstitial_unit_id');
+$return_config['android_interstitial_interval'] = Mobiloud::get_option('ml_android_interstitial_interval');
+$return_config['android_native_ad_unit_id'] = Mobiloud::get_option('ml_android_native_ad_unit_id');
+$return_config['android_native_ad_interval'] = Mobiloud::get_option('ml_android_native_ad_interval');
+
 $return_config["enable_hierarchical_pages"] = get_option('ml_hierarchical_pages_enabled',true);
 $return_config["show_favorites"] = get_option('ml_menu_show_favorites',true);
 
@@ -48,7 +74,7 @@ $return_config['interface_images'] = array(
 );
 
 $navigation_bar_text = '#000000';
-if(ml_get_color_brightness(get_option('ml_preview_theme_color')) < 190) {
+if(Mobiloud_App_Preview::get_color_brightness(get_option('ml_preview_theme_color')) < 190) {
     $navigation_bar_text = '#FFFFFF';
 }
 $return_config['interface_colors'] = array(
@@ -59,6 +85,4 @@ $return_config['interface_colors'] = array(
 
 $json_string = json_encode($return_config);
 echo $json_string;
-
-
 ?>
