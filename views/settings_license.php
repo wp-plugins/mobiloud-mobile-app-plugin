@@ -1,7 +1,7 @@
 <div id="ml_settings_license" class="tabs-panel ml-compact">
     <form method="post" action="<?php echo admin_url('admin.php?page=mobiloud_settings&tab=license'); ?>">
         <?php wp_nonce_field('form-settings_license'); ?>
-        <h3>API Keys</h3>
+        <h3>License Keys</h3>
         <div class='ml-col-twothirds'>
             <p>Once you have signed up for one of our plans and your app has been published, enter here the License keys you've been sent.</p>
              <table class="form-table">

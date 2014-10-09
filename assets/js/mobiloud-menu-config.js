@@ -12,7 +12,7 @@ jQuery(document).ready(function() {
         if(selected_cat !== '' && jQuery(".ml-menu-categories-holder li[rel='"+selected_cat+"']").length <= 0) {
             var new_li = jQuery("<li>")
                     .attr('rel', selected_cat)
-                    .html("<span class='dashicons-before dashicons-sort'></span>"+selected_cat_text)
+                    .html("<span class='dashicons-before dashicons-menu'></span>"+selected_cat_text)
                     .appendTo(jQuery(".ml-menu-categories-holder"));
             jQuery("<input/>")
                     .attr('name', 'ml-menu-categories[]')
@@ -33,7 +33,7 @@ jQuery(document).ready(function() {
         if(selected_cat !== '' && jQuery(".ml-menu-pages-holder li[rel='"+selected_cat+"']").length <= 0) {
             var new_li = jQuery("<li>")
                     .attr('rel', selected_cat)
-                    .html("<span class='dashicons-before dashicons-sort'></span>"+selected_cat_text)
+                    .html("<span class='dashicons-before dashicons-menu'></span>"+selected_cat_text)
                     .appendTo(jQuery(".ml-menu-pages-holder"));
             jQuery("<input/>")
                     .attr('name', 'ml-menu-pages[]')
@@ -54,7 +54,7 @@ jQuery(document).ready(function() {
         if(link_title !== '' && link_url !== '' && jQuery(".ml-menu-links-holder li[rel='"+link_title+"']").length <= 0) {
             var new_li = jQuery("<li>")
                     .attr('rel', link_url)
-                    .html("<span class='dashicons-before dashicons-sort'></span>"+link_title+" - <span class='ml-sub-title'>"+link_url+"</span>")
+                    .html("<span class='dashicons-before dashicons-menu'></span>"+link_title+" - <span class='ml-sub-title'>"+link_url+"</span>")
                     .appendTo(jQuery(".ml-menu-links-holder"));
             jQuery("<input/>")
                     .attr('name', 'ml-menu-links[]')
