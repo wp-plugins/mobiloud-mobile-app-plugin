@@ -39,6 +39,7 @@ include_once MOBILOUD_PLUGIN_DIR . 'admin_pointer.php';
 require_once(MOBILOUD_PLUGIN_DIR . 'class.mobiloud-app-preview.php');
 
 require_once(MOBILOUD_PLUGIN_DIR . 'class.mobiloud.php');
+register_activation_hook(__FILE__, array('Mobiloud', 'mobiloud_activate'));
 add_action( 'init', array( 'Mobiloud', 'init' ) );
 
 if ( is_admin() ) {
