@@ -18,9 +18,7 @@ class Mobiloud {
 	 */
 	private static function init_hooks() {
 		self::$initiated = true;
-        
-        register_activation_hook(__FILE__, array('Mobiloud', 'mobiloud_activate'));
-        
+                
         add_filter('get_avatar', array('Mobiloud', 'get_avatar'),10,2);
         
         if(get_option('ml_push_notification_enabled'))
@@ -71,9 +69,8 @@ class Mobiloud {
         }
     }
     
-    private static function run_db_install() {
+    private static function run_db_install() {        
         global $wpdb;
-        
         require_once(ABSPATH . 'wp-admin/includes/upgrade.php');
         
         $table_name = $wpdb->prefix . "mobiloud_notifications";
