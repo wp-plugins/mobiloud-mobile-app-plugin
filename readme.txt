@@ -3,7 +3,7 @@ Contributors: psac50
 Tags: mobiloud, push, notifications, mobile, mobile app, native app, web app, iphone, ipad, iphone app, ipad app, android, tablet, windows mobile, mobile web, HTML5, mobile site, mobile plugin, wordpress mobile, admob, adsense, mobile theme, mobile template, mobile website, mobile theme, responsive, wptouch, ios app, app
 Requires at least: 3.2
 Tested up to: 4.0
-Stable tag: 3.0.1
+Stable tag: 3.0.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -190,6 +190,9 @@ You can contact us at [support@mobiloud.com](mailto:support@mobiloud.com)
 
 
 == Changelog ==
+
+= 3.0.2 =
+* Fixed a bug in menu configuration
 
 = 3.0.1 =
 * Fixed a bug in menu configuration

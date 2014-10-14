@@ -80,7 +80,7 @@ class Mobiloud_Admin {
     
     public static function admin_menu() {
         add_submenu_page( 'mobiloud', 'Get Started', 'Get Started', "activate_plugins", 'mobiloud', array('Mobiloud_Admin', 'menu_get_started'));
-        add_menu_page('Mobiloud', 'Mobiloud', 'activate_plugins', 'mobiloud', array('Mobiloud_Admin', 'menu_get_started'), MOBILOUD_PLUGIN_URL."assets/img/ml-menu-icon.png", '25.9'); 
+        add_menu_page('Mobiloud', 'Mobiloud', 'activate_plugins', 'mobiloud', array('Mobiloud_Admin', 'menu_get_started'), MOBILOUD_PLUGIN_URL."assets/img/ml-menu-icon.png"); 
         add_submenu_page( 'mobiloud', 'Settings', 'Settings', "activate_plugins", 'mobiloud_settings', array('Mobiloud_Admin', 'menu_settings'));
         add_submenu_page( 'mobiloud', 'Push Notification', 'Push Notifications', "activate_plugins", 'mobiloud_push', array('Mobiloud_Admin', 'menu_push'));
     }
