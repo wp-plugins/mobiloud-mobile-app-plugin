@@ -3,19 +3,31 @@ Contributors: psac50
 Tags: mobiloud, push, notifications, mobile, mobile app, native app, web app, iphone, ipad, iphone app, ipad app, android, tablet, windows mobile, mobile web, HTML5, mobile site, mobile plugin, wordpress mobile, admob, adsense, mobile theme, mobile template, mobile website, mobile theme, responsive, wptouch, ios app, app
 Requires at least: 3.2
 Tested up to: 4.0
-Stable tag: 3.0
+Stable tag: 3.0.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-The simple and professional solution to build your own native mobile apps.
+Beautiful mobile apps for your WordPress blog or news site.
 
 == Description ==
 
-**Mobiloud is a premium (paid) service that allows publishers and bloggers to turn their WordPress site into a beautifully stylish mobile app. Mobiloud simply converts your website into a fully functional, fully native mobile app.**
+**Mobiloud is a premium (paid) service that allows publishers and bloggers to turn their WordPress site into a beautifully stylish mobile app.**
 
-Smartphone users (there's 1.8 billion of them worldwide!) spend **80% of their time on their devices using apps**. If you don't have an app to complement your web presence, you're missing on a huge opportunity to reach new and existing readers and customers.
+Mobiloud is the only native app solution exclusively dedicated to WordPress, which means we understand the platform your site and business runs on better than anyone else.
 
-Our apps are designed to provide the best possible user experience for your audience: fast loading, smooth running with an intuitive user interface. It's for publishers and bloggers who want to build a branded **native mobile apps** for iOS and Android, offering content from their WordPress site (similar apps are published by TechCrunch, The Verge, The Huffington Post).
+You've read the stats. 2 billion smartphone users today spend 85% of their time on their devices using apps.
+
+If you don't have an app to complement your web presence, you're missing on a huge opportunity to reach new and existing customers.
+
+You've heard for years that mobile is the next big thing. You've seen your mobile traffic rise from 10% to 40% or even 50% of your traffic. And you know you can do better than just optimising your site.
+
+**You've been looking for something designed just for you, a simple and well designed mobile application for your WordPress blog or news site.**
+
+The problem is all the app building solutions you've tried have one or both of these problems: either their app design tools are complex and unintuitive, or the apps they create are low-quality because they use non-native technologies like HTML5. These apps don’t look and feel like the native apps you enjoy using every day.
+
+Mobiloud is the Wordpress mobile app solution built for you.
+
+**Unlike other solutions, Mobiloud gives you a completely "native" app. Native apps look and feel great on Android and iOS, and don't have the sluggish and glitchy behaviour of non-native apps.**
 
 With Mobiloud, real native mobile apps are finally affordable ([prices](http://www.mobiloud.com/pricing/?ref=plugindesc) start at $89/month), and you won’t need any programming skills to get your app published - we take care of build and publication for you!
 
@@ -27,21 +39,19 @@ For any questions, don’t hesitate to get in touch with us at [support@mobiloud
 
 **Who Mobiloud is for:**
 
-* Online magazines, news websites
-
+* Professional online publishers
+* Online magazines, high traffic news websites
 * Professional bloggers, podcasters
-
 * Content-rich websites using posts or custom post types for their content
-
 * Lovers of great apps and design
 
 **Who it is *NOT* a good fit for:**
 
 * People looking for a mobile site tool or template
-
 * Company sites with no blog or content
-
-* Complex or heavily customised page-based websites
+* WooCommerce or Buddypress websites (we're working on that!)
+* Heavily customised websites that look nothing like what WordPress was built for
+* Those who like slow, clunky apps
 
 
 = What you get with Mobiloud =
@@ -100,10 +110,13 @@ For any questions, don’t hesitate to get in touch with us at [support@mobiloud
 
 
 == Installation ==
-
-1. **Install** the plugin from the Plugin Directory, or downloand the files and upload them to /wp-content/plugins/
-
-2. **Activate** the plugin through the ‘Plugins’ menu on WordPress.
+1. Go to WordPress Control Panel
+2. Click "Plugins", then "Add New"
+3. Type in "Mobiloud" and click "Search Plugins"
+4. Download and install the Plugin
+5. Click the "Activate Plugin" link
+6. Move to the "Mobiloud" section in the menu
+7. Done! Now you can start designing and testing your app
 
 = Any questions? =
 You can contact us at [support@mobiloud.com](mailto:support@mobiloud.com)
@@ -117,7 +130,7 @@ The Mobile App Plugin is free to install. You can also design your own app at no
 = Does Mobiloud help me build a mobile site? =
 We don't provide a mobile site together with your app. It's a good idea to have a mobile site, so casual visitors can still have a decent experience on your site when using a mobile device. Of course, we recommend you also build a mobile app, to convert those casual visitors into loyal followers, increase your traffic and keep growing your audience.
 
-The following plugins are all compatible with Mobiloud: WP-Touch, WordPress Mobile Edition, WordPress Mobile Pack, Mobile Press.
+The following plugins are all compatible with Mobiloud: Wptouch, WordPress Mobile Edition, WordPress Mobile Pack, Mobile Press.
 
 = What functionality will my mobile app offer? =
 Your app will automatically show the latest content from your site, with no need for you to update it manually. Your app will display posts and pages, comments and categories. Your users will be able to read content online and offline, share it with a single tap, save their favourites, leave comments on your articles and, most importantly, receive push notifications alerting them to new content.
@@ -177,6 +190,9 @@ You can contact us at [support@mobiloud.com](mailto:support@mobiloud.com)
 
 
 == Changelog ==
+
+= 3.0.1 =
+* Fixed a bug in menu configuration
 
 = 3.0 =
 * new simpler user interface
