@@ -1,4 +1,4 @@
-=== Mobiloud - Build Native Mobile Apps for WordPress (iPhone, iPad, Android) ===
+=== Mobiloud - Build Native Mobile Apps for your WordPress site (iPhone, iPad, Android) ===
 Contributors: psac50
 Tags: mobiloud, push, notifications, mobile, mobile app, native app, web app, iphone, ipad, iphone app, ipad app, android, tablet, windows mobile, mobile web, HTML5, mobile site, mobile plugin, wordpress mobile, admob, adsense, mobile theme, mobile template, mobile website, mobile theme, responsive, wptouch, ios app, app
 Requires at least: 3.2
