@@ -42,7 +42,7 @@ For any questions, don’t hesitate to get in touch with us at [support@mobiloud
 * People looking for a mobile site tool or template
 * Company sites with no blog or content
 * WooCommerce or Buddypress websites
-* Heavily customised websites that look nothing like what WordPress was built for
+* Heavily customised websites with no content
 * Those who like slow, clunky apps
 
 
