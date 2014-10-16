@@ -1,4 +1,11 @@
 <?php
+
+
+// prevent newrelic injected JavaScript breaking JSON
+if(extension_loaded('newrelic')){
+    newrelic_disable_autorum();
+}
+
 include("../../../wp-load.php");
 //include_once("libs/errors.php");
 ini_set('display_errors', 1);

@@ -2,9 +2,9 @@
 /*
 Plugin Name: Mobiloud
 Plugin URI: http://www.mobiloud.com
-Description: Turn your WordPress site into beautiful native mobile apps. No coding required.
+Description: Beautiful mobile apps for your WordPress blog or news site. No coding required.
 Author: 50pixels
-Version: 3.0.2
+Version: 3.0.3
 Author URI: http://www.mobiloud.com
 */
 

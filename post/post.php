@@ -1,5 +1,10 @@
 <?php
 
+	// prevent newrelic injected JavaScript breaking JSON
+	if(extension_loaded('newrelic')){
+	    newrelic_disable_autorum();
+	}
+
 	include_once(dirname(__FILE__)."/../../../../wp-blog-header.php");
 
 	if(get_option('ml_debug') == 'true'){

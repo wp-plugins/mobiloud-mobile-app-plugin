@@ -1,9 +1,9 @@
-=== Mobiloud - WordPress Native Mobile Apps Builder (iPhone, iPad, Android) ===
+=== Mobiloud - Build Native Mobile Apps for WordPress (iPhone, iPad, Android) ===
 Contributors: psac50
 Tags: mobiloud, push, notifications, mobile, mobile app, native app, web app, iphone, ipad, iphone app, ipad app, android, tablet, windows mobile, mobile web, HTML5, mobile site, mobile plugin, wordpress mobile, admob, adsense, mobile theme, mobile template, mobile website, mobile theme, responsive, wptouch, ios app, app
 Requires at least: 3.2
 Tested up to: 4.0
-Stable tag: 3.0.2
+Stable tag: 3.0.3
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -11,25 +11,17 @@ Beautiful mobile apps for your WordPress blog or news site.
 
 == Description ==
 
-**Mobiloud is a premium (paid) service that allows publishers and bloggers to turn their WordPress site into a beautifully stylish mobile app.**
+**Mobiloud is a premium (paid) service that allows publishers and bloggers to turn their WordPress site into a beautifully stylish mobile app. 
 
-Mobiloud is the only native app solution exclusively dedicated to WordPress, which means we understand the platform your site and business runs on better than anyone else.
+Mobiloud is easy to use, with no coding required. It's also the only real native app solution exclusively dedicated to WordPress.**
 
-You've read the stats. 2 billion smartphone users today spend 85% of their time on their devices using apps.
+2 billion smartphone users today spend 85% of their time on their devices using apps. If you don't have an app to complement your web presence, you're missing on a huge opportunity to reach new and existing readers.
 
-If you don't have an app to complement your web presence, you're missing on a huge opportunity to reach new and existing customers.
+**Mobiloud is designed just for you, a simple and well designed mobile application for your WordPress blog or news site.**
 
-You've heard for years that mobile is the next big thing. You've seen your mobile traffic rise from 10% to 40% or even 50% of your traffic. And you know you can do better than just optimising your site.
+Unlike other solutions, Mobiloud gives you a completely "native" app. Native apps look and feel great on Android and iOS, and don't have the sluggish and glitchy behaviour of non-native apps. Support for Android Wear smartwatches and Apple Watch is coming soon!
 
-**You've been looking for something designed just for you, a simple and well designed mobile application for your WordPress blog or news site.**
-
-The problem is all the app building solutions you've tried have one or both of these problems: either their app design tools are complex and unintuitive, or the apps they create are low-quality because they use non-native technologies like HTML5. These apps don’t look and feel like the native apps you enjoy using every day.
-
-Mobiloud is the Wordpress mobile app solution built for you.
-
-**Unlike other solutions, Mobiloud gives you a completely "native" app. Native apps look and feel great on Android and iOS, and don't have the sluggish and glitchy behaviour of non-native apps.**
-
-With Mobiloud, real native mobile apps are finally affordable ([prices](http://www.mobiloud.com/pricing/?ref=plugindesc) start at $89/month), and you won’t need any programming skills to get your app published - we take care of build and publication for you!
+With Mobiloud, real native mobile apps are affordable ([prices](http://www.mobiloud.com/pricing/?ref=plugindesc) start at $89/month), and you won’t need any programming skills to get your app published - we take care of build and publication for you!
 
 Install the plugin now and you will be moments away from creating your own mobile app.
 
@@ -49,7 +41,7 @@ For any questions, don’t hesitate to get in touch with us at [support@mobiloud
 
 * People looking for a mobile site tool or template
 * Company sites with no blog or content
-* WooCommerce or Buddypress websites (we're working on that!)
+* WooCommerce or Buddypress websites
 * Heavily customised websites that look nothing like what WordPress was built for
 * Those who like slow, clunky apps
 
@@ -190,6 +182,9 @@ You can contact us at [support@mobiloud.com](mailto:support@mobiloud.com)
 
 
 == Changelog ==
+
+= 3.0.3 =
+* Fix for New Relic users
 
 = 3.0.2 =
 * Fixed a bug in menu configuration
