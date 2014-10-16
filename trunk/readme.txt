@@ -11,7 +11,7 @@ Beautiful mobile apps for your WordPress blog or news site.
 
 == Description ==
 
-**Mobiloud is a premium (paid) service that allows publishers and bloggers to turn their WordPress site into a beautifully stylish mobile app. **
+**Mobiloud is a premium (paid) service that allows publishers and bloggers to turn their WordPress site into a beautifully stylish mobile app.**
 
 **Mobiloud is easy to use, with no coding required. It's also the only real native app solution exclusively dedicated to WordPress.**
 
