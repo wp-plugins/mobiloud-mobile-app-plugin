@@ -382,13 +382,13 @@ class Mobiloud_Admin {
                         $include_post_types = implode(",", $_POST['postypes']);
                     }
                     Mobiloud::set_option('ml_article_list_include_post_types', sanitize_text_field($include_post_types));
-                    
+
                     $categories = get_categories();  
                     $exclude_categories = array();
                     if(count($categories)) {
                         foreach($categories as $category) {
                             if(!isset($_POST['categories']) || count($_POST['categories']) === 0 
-                                    || (isset($_POST['categories']) && !in_array($category->cat_name, $_POST['categories']))) {
+                                    || (isset($_POST['categories']) && !in_array(html_entity_decode($category->cat_name), $_POST['categories']))) {
                                 $exclude_categories[] = $category->cat_name;
                             }
                         }
