@@ -2,8 +2,8 @@
     jQuery(function() {
         var ml_allow_initial_close = false;
         jQuery( "#ml-initial-details" ).dialog({
-          dialogClass: 'ml-initial-details-dialog',
-          modal: true,
+          dialogClass: 'ml-initial-details-dialog wp-dialog',
+          modal: false,
           width: 500,
           title: 'Your details',
           beforeClose: function() {
@@ -51,7 +51,7 @@
         });
     });
 </script>
-<div id='ml-initial-details' style="display:none;">
+<div id='ml-initial-details' style="display:none;" class="ui-dialog">
     <table class="form-table">
         <tbody>
             <tr valign="top">
