@@ -403,6 +403,9 @@
 /*------------------------------------------------------
 | Initial Details Form
 ------------------------------------------------------*/
+#ml-initial-details {
+    padding: 10px;
+}
 .ml-initial-details-dialog .ui-dialog-titlebar-close {
     display: none;
 }
