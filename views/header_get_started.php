@@ -1,9 +1,6 @@
 <div id="ml-sub-header">
-    <div class="ml-intro-text">
-        <p>With Mobiloud you can easily and quickly <strong>build a native mobile application</strong> for your website. Use the plugin to <strong>customize and manage your own app</strong>. You can test your app for free (no credit card required) and <a href="http://www.mobiloud.com/pricing/" target="_blank">sign up for a paid plan</a> when you're ready to publish it your app.</p>
+    <div class="ml-intro-text">Use the plugin to <strong>customize and manage your own app</strong>. You can test your app for free and <a href="http://www.mobiloud.com/pricing/" target="_blank">sign up</a> when you're ready to publish it your app.</p>
         <p>For more information on Mobiloud, read <a href="http://www.mobiloud.com/how-it-works/" target="_blank">How It Works</a>, our <a href="http://www.mobiloud.com/features/" target="_blank">Features Tour</a> and for any questions see the <a href="http://www.mobiloud.com/help/" target="_blank">Help &amp; Support site</a>.</p>
-			
-		 <p>Need any help?  <a class="ml-intercom" href="mailto:h89uu5zu@incoming.intercom.io"><strong>Send us a message</strong></a>.</p>
     </div>
     <?php if(strlen(Mobiloud::get_option('ml_pb_app_id')) <= 0 && strlen(Mobiloud::get_option('ml_pb_secret_key')) <= 0): ?>
     <div class="ml-task-list">
