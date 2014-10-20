@@ -1,9 +1,9 @@
 === Mobiloud - Build Native Mobile Apps for your WordPress site (iPhone, iPad, Android) ===
 Contributors: psac50
 Tags: mobiloud, push, notifications, mobile, mobile app, native app, web app, iphone, ipad, iphone app, ipad app, android, tablet, windows mobile, mobile web, HTML5, mobile site, mobile plugin, wordpress mobile, admob, adsense, mobile theme, mobile template, mobile website, mobile theme, responsive, wptouch, ios app, app
-Requires at least: 3.5
+Requires at least: 3.2
 Tested up to: 4.0
-Stable tag: 3.0.3
+Stable tag: 3.0.4
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -13,15 +13,13 @@ Beautiful mobile apps for your WordPress blog or news site.
 
 **Mobiloud is a premium (paid) service that allows publishers and bloggers to turn their WordPress site into a beautifully stylish mobile app.**
 
-**Mobiloud is easy to use, with no coding required. It's also the only real native app solution exclusively dedicated to WordPress.**
+**Mobiloud is easy to use, with no coding required. It's also the only real native mobile app solution exclusively dedicated to WordPress.**
 
-2 billion smartphone users today spend 85% of their time on their devices using apps. If you don't have an app to complement your web presence, you're missing on a huge opportunity to reach new and existing readers.
+2 billion smartphone users today spend 85% of their time on their devices using apps. If you don't have a mobile app to complement your web presence, you're missing on a huge opportunity to reach new and existing readers.
 
-**Mobiloud is designed just for you, a simple and well designed mobile application for your WordPress blog or news site.**
+**Unlike other solutions, Mobiloud gives you a completely "native" mobile app**. Native mobile apps look and feel great on Android and iOS, and don't have the sluggish and glitchy behaviour of non-native apps.
 
-Unlike other solutions, Mobiloud gives you a completely "native" app. Native apps look and feel great on Android and iOS, and don't have the sluggish and glitchy behaviour of non-native apps. Support for Android Wear smartwatches and Apple Watch is coming soon!
-
-With Mobiloud, real native mobile apps are affordable ([prices](http://www.mobiloud.com/pricing/?ref=plugindesc) start at $89/month), and you won’t need any programming skills to get your app published - we take care of build and publication for you!
+With Mobiloud, real native mobile apps are finally affordable, and you won’t need any programming skills to get your app published - we take care of build and publication for you!
 
 Install the plugin now and you will be moments away from creating your own mobile app.
 
