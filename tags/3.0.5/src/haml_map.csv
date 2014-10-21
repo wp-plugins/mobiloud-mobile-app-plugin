@@ -1,0 +1,11 @@
+posts/post.php.haml		../post/post.php
+posts/body_content.php.haml		../post/body_content.php
+posts/html_content.php.haml		../post/html_content.php
+posts/post_list.php.haml		../post_list.php
+admin/push_notifications/menu_page.php.haml		../push_notifications/menu_page.php
+admin/license/page.php.haml		../admin/license/page.php
+admin/post/page.php.haml		../admin/post/page.php
+admin/post/preview.php.haml		../admin/post/preview.php
+admin/categories_pages/page.php.haml		../admin/categories_pages/page.php
+admin/banners/page.php.haml		../admin/banners/page.php
+admin/subscriptions/page.php.haml  ../admin/subscriptions/page.php
