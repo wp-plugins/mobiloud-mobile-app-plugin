@@ -75,7 +75,7 @@
             <tr>
                 <td colspan='2' class='ml-maillist-block'>
                     <input type='checkbox' id='ml-join-mailinglist' name='ml-join-mailinglist' value='true' checked/>
-                    <p>Join the <strong>App Success Academy</strong> and learn all about designing, launching and promoting mobile apps to success. As always, we respect your privacy, and you can unsubscribe at any time.</p>
+                    <p>Get the <strong>Mobile App Success</strong> free email course and learn all about designing, launching and promoting mobile apps to success. As always, we respect your privacy and you can unsubscribe at any time.</p>
                 </td>
             </tr>
             <tr>

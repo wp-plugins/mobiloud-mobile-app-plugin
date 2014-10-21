@@ -3,6 +3,12 @@
         <?php wp_nonce_field('form-settings_analytics'); ?>
         <h3>Google Analytics</h3>
         <div class='ml-col-twothirds'>
+		    <?php if( strlen(Mobiloud::get_option('ml_pb_app_id')) > 0 && Mobiloud::get_option('ml_pb_app_id') < "543e7b3f1d0ab16d148b4599"): ?>			
+	        <div class='update-nag'>
+	            <p> The settings below are only available for recently published apps.</p>
+				<p> Your app was built wih a pre-configured Analytics ID, get in touch at <a href='mailto:support@mobiloud.com'>support@mobiloud.com</a> to know more.</p>
+	        </div>
+	        <?php endif; ?>
             <p>Configure your Google Analytics tracking code below to track page and article views and user activity on your app 
                 within Google Analytics.</p>  
             <p>You'll need to <a target="_blank" href="https://support.google.com/analytics/answer/2614741?hl=en-GB">setup a new Google Analytics property</a> and select "App" as the type of property you 

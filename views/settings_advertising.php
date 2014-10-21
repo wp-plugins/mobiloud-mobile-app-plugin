@@ -1,15 +1,23 @@
 <div id="ml_settings_advertising" class="tabs-panel ml-compact">
     <form method="post" action="<?php echo admin_url('admin.php?page=mobiloud_settings&tab=advertising'); ?>">
         <?php wp_nonce_field('form-settings_advertising'); ?>
-		<p>With Mobiloud's support for <a target="_blank" href="http://www.mopub.com/">MoPub</a>, <a target="_blank" href="https://www.google.com/doubleclick/">Google DFP</a> and the possibility of adding any image, javascript or HTML based ads (including Adsense) within the contents of your app, the possibilities to monetise your content are endless! Should you have any questions or require our assistance, get in touch at <a href='mailto:support@mobiloud.com'>support@mobiloud.com</a>.</p>
+		<p>With Mobiloud's support for a number of networks and ad servers and the possibility of adding any image, javascript or HTML based ads (including Adsense) within the contents of your app, the possibilities to monetize your content are endless! Should you have any questions or require our assistance, get in touch at <a href='mailto:support@mobiloud.com'>support@mobiloud.com</a>.</p>
 		
         <h3>Banner, Interstitial and Native ads</h3>
-        <p>With both MoPub and Google DFP you'll be able to sell your own ad inventory or display banners from a range of mobile ad networks.</p>
+	    <?php if( strlen(Mobiloud::get_option('ml_pb_app_id')) > 0 && Mobiloud::get_option('ml_pb_app_id') < "543e7b3f1d0ab16d148b4599"): ?>			
+        <div class='update-nag'>
+            <p> The settings below are only available for recently published apps. Use the section "Embed HTML ads" to add your own banners or Adsense code.</p>
+			<p> Should you have any questions, get in touch at <a href='mailto:support@mobiloud.com'>support@mobiloud.com</a>.</p>
+        </div>
+        <?php endif; ?>
+		
+		
+        <p>With AdMob, MoPub and Google DFP you'll be able to sell your own ad inventory or display banners from a range of mobile ad networks.</p>
         <p>The following ad types are supported:</p>
         <ul class="ml-info-list">
-            <li><strong>Banners and interstitials</strong>: MoPub and Google DFP support all of the major ad networks (including popular choices like Admob and 
-Adsense) as well as the campaign management, budgeting and targeting features you need to sell your own ad inventory.</li>
-            <li><strong>Native ads (MoPub only)</strong>, letting you easily monetize your app in a way that’s consistent with its design. Ads are displayed in the article list and look and feel like the rest of your content!</li>
+			<li><strong>AdMob</strong>: AdMob is a leading global mobile advertising network that helps you monetize your mobile apps. Banner ads and interstitials are supported. <a href="https://www.google.com/ads/admob/index.html" target="_blank">Read more</a></li>
+			<li><strong>MoPub</strong>: MoPub is a hosted ad serving solution built specifically for mobile publishers. As an ad server, MoPub allows you to monetize with your own inventory of ads or combine multiple ad networks. Banner ads, interstitials and native ads are supported. <a href="http://www.mopub.com/" target="_blank">Read more</a></li>
+			<li><strong>Google DFP</strong>: DoubleClick for Publishers by Google (DFP), can be used as an ad server but also provides a variety of useful features for managing the sales process of online ads using your dedicated sales team. Banner ads and, interstitials are supported. <a href="https://www.google.com/dfp" target="_blank">Read more</a></li>
         </ul>
         <table class="form-table">
             <tbody>
@@ -17,6 +25,7 @@ Adsense) as well as the campaign management, budgeting and targeting features yo
                     <th scope="row">Select Advertising Platform</th>
                     <td>
                         <select id="ml_advertising_platform" name="ml_advertising_platform">
+                            <option value="admob" <?php echo Mobiloud::get_option('ml_advertising_platform') === 'admob' ? 'selected="selected"' : ''; ?>>AdMob</option>
                             <option value="mopub" <?php echo Mobiloud::get_option('ml_advertising_platform') === 'mopub' ? 'selected="selected"' : ''; ?>>MoPub</option>
                             <option value="gdfp" <?php echo Mobiloud::get_option('ml_advertising_platform') === 'gdfp' ? 'selected="selected"' : ''; ?>>Google DoubleClick (DFP)</option>
                         </select>
@@ -192,7 +201,6 @@ Adsense) as well as the campaign management, budgeting and targeting features yo
                 </div>
             </div>
         </div>
-        <p>We can help you integrate any third party ad network or ad solution into your app, for more information, contact <a href="mailto:support@mobiloud.com">support@mobiloud.com</a>.</p>
         <h3>Embed HTML ads within the content</h3>
         <div class='ml-col-twothirds'>
             <p>You can use the editor to add HTML or Javascript code in a number of ad positions within the post and page screens.</p>
