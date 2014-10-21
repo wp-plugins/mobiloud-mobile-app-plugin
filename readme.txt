@@ -181,7 +181,7 @@ You can contact us at [support@mobiloud.com](mailto:support@mobiloud.com)
 
 == Changelog ==
 
-= 3.0.4 =
+= 3.0.5 =
 * Admob configuration
 
 = 3.0.4 =
