@@ -51,7 +51,7 @@
         });
     });
 </script>
-<div id='ml-initial-details' style="display:none;" class="ui-dialog">
+<div id='ml-initial-details' style="display:none;">
     <table class="form-table">
         <tbody>
             <tr valign="top">

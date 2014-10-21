@@ -74,7 +74,7 @@ class Mobiloud_Admin {
     
     public static function admin_init() {
         self::set_default_options();
-        self::admin_redirect();
+        //self::admin_redirect();
         self::register_scripts();
     }
     
