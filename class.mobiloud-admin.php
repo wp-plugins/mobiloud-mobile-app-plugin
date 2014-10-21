@@ -74,7 +74,7 @@ class Mobiloud_Admin {
     
     public static function admin_init() {
         self::set_default_options();
-        //self::admin_redirect();
+        self::admin_redirect();
         self::register_scripts();
     }
     
@@ -99,11 +99,11 @@ class Mobiloud_Admin {
     
     private static function admin_redirect() {
         if(!defined('DOING_AJAX') || !DOING_AJAX) {
-            if(!self::initial_details_saved()) {
-                if(!isset($_GET['page']) || (isset($_GET['page']) && $_GET['page'] !== 'mobiloud')) {
-                    wp_redirect('admin.php?page=mobiloud');
-                }            
-            }
+            // if(!self::initial_details_saved()) {
+            //     if(!isset($_GET['page']) || (isset($_GET['page']) && $_GET['page'] !== 'mobiloud')) {
+            //         wp_redirect('admin.php?page=mobiloud');
+            //     }
+            // }
             if (get_option('mobiloud_do_activation_redirect', false)) {
                 delete_option('mobiloud_do_activation_redirect');
                 if(!isset($_GET['activate-multi'])) { 
