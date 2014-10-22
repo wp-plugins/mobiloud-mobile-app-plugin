@@ -180,4 +180,12 @@ class Mobiloud {
         return update_option(self::$option_key, $options);*/
         return update_option($name, $value);
     } 
+    
+    public static function trim_string($string, $length=30) {
+        if(strlen($string) <= $length) {
+            return $string;
+        } else {
+            return substr($string, 0, $length) . '...';
+        }
+    }
 }
