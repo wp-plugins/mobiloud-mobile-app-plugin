@@ -185,7 +185,7 @@ function print_posts($posts,$tot_count,$offset,$options)
         }
         
 		$final_post["author"] = array();
-		$final_post["author"]["name"] = get_author_name($post->post_author);
+		$final_post["author"]["name"] = html_entity_decode(get_author_name($post->post_author));
 		$final_post["author"]["author_id"] = $post->post_author;
 		
 		$final_post["categories"] = array();
@@ -258,7 +258,7 @@ function print_posts($posts,$tot_count,$offset,$options)
         }
         
         //excerpt
-        $final_post['excerpt'] = get_the_excerpt();
+        $final_post['excerpt'] = html_entity_decode(get_the_excerpt());
         
 		$final_posts["posts"][] = $final_post;
 	}

@@ -54,7 +54,7 @@ jQuery(document).ready(function() {
         if(link_title !== '' && link_url !== '' && jQuery(".ml-menu-links-holder li[rel='"+link_title+"']").length <= 0) {
             var new_li = jQuery("<li>")
                     .attr('rel', link_url)
-                    .html("<span class='dashicons-before dashicons-menu'></span>"+link_title+" - <span class='ml-sub-title'>"+link_url+"</span>")
+                    .html("<span class='dashicons-before dashicons-menu'></span>"+link_title+" - <span class='ml-sub-title'>"+trim_string(link_url, 50)+"</span>")
                     .appendTo(jQuery(".ml-menu-links-holder"));
             jQuery("<input/>")
                     .attr('name', 'ml-menu-links[]')
@@ -73,3 +73,11 @@ jQuery(document).ready(function() {
         jQuery(this).parents('li').remove();
     });
 });
+
+var trim_string = function(string, length) {
+    if(string.length <= length) {
+        return string;
+    } else {
+        return string.substring(0, length) + '...';
+    }
+};

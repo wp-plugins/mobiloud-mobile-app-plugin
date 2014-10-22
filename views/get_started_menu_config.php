@@ -80,7 +80,7 @@
                     foreach ($menu_urls as $menu_url) {
                         ?>
                         <li rel="<?php echo $menu_url['url']; ?>">
-                            <span class="dashicons-before dashicons-menu"></span><?php echo esc_html($menu_url['urlTitle']); ?> - <span class="ml-sub-title"><?php echo esc_html($menu_url['url']); ?></span>
+                            <span class="dashicons-before dashicons-menu"></span><?php echo esc_html($menu_url['urlTitle']); ?> - <span class="ml-sub-title"><?php echo Mobiloud::trim_string(esc_html($menu_url['url']), 50); ?></span>
                             <input type="hidden" name="ml-menu-links[]" value="<?php echo esc_attr($menu_url['urlTitle']) . ':=:' . esc_attr($menu_url['url']); ?>"/>
                             <a href="#" class="dashicons-before dashicons-trash ml-item-remove"></a>
                         </li>
