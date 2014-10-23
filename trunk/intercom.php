@@ -1,4 +1,5 @@
 <?php 
+
 function ml_init_intercom() {
     
     //var_dump($user);exit;
@@ -15,6 +16,8 @@ function ml_init_intercom() {
                 site: "<?php echo esc_js($user_site); ?>",                
                 sitename: "<?php echo get_bloginfo('name'); ?>",
                 version: "<?php echo MOBILOUD_PLUGIN_VERSION;?>",
+				post_count: "<?php echo wp_count_posts()->publish; ?>",
+				homepage_type: "<?php echo get_option( 'show_on_front '); ?>",
                 app_id: "h89uu5zu",
                 user_id: "<?php echo esc_js($user_email); ?>",
                 user_hash: "<?php echo hash_hmac("sha256", $user_email, "2d8ReoNHhovD4NhWCb72DgrghadvKVwGJsR0t6YR"); ?>",
@@ -48,6 +51,10 @@ function ml_init_getvero() {
                 name: "<?php echo esc_js($user_name); ?>",
                 website: "<?php echo esc_js($user_site); ?>",
                 website_name: "<?php echo get_bloginfo('name'); ?>",
+				post_count: "<?php echo wp_count_posts()->publish; ?>",
+				homepage_type: "<?php echo get_option( 'show_on_front '); ?>",
+                sitename: "<?php echo get_bloginfo('name'); ?>",
+                version: "<?php echo MOBILOUD_PLUGIN_VERSION;?>",
                 user_lever: 'administrator',
                 version: "<?php echo MOBILOUD_PLUGIN_VERSION;?>",
               }]);
