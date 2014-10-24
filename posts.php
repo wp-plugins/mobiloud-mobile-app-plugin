@@ -376,8 +376,16 @@ function print_posts($posts,$tot_count,$offset,$options)
 
         //custom field?
         if(strlen(get_option('ml_custom_field_name', '')) > 0) {
-            $custom_field_val = get_post_meta($post->ID, get_option('ml_custom_field_name', ''), true);
-            $final_post['custom1'] = $custom_field_val;
+            
+			if (get_option('ml_custom_field_name', '') == "excerpt") {
+//				setup_postdata( $post->ID );
+				$custom_field_val = html_entity_decode(get_post_excerpt($post->ID));
+	            $final_post['custom1'] = $custom_field_val;			
+			} else {
+				$custom_field_val = get_post_meta($post->ID, get_option('ml_custom_field_name', ''), true);
+	            $final_post['custom1'] = $custom_field_val;				
+			}
+			
         }
         
         //excerpt
