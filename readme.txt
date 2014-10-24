@@ -1,29 +1,29 @@
-=== Mobiloud - Build Native Mobile Apps for your WordPress site (iPhone, iPad, Android) ===
+=== Mobiloud - Native Mobile Apps for your WordPress site (iPhone, iPad, Android) ===
 Contributors: psac50
-Tags: mobiloud, push, notifications, mobile, mobile app, native app, web app, iphone, ipad, iphone app, ipad app, android, tablet, windows mobile, mobile web, HTML5, mobile site, mobile plugin, wordpress mobile, admob, adsense, mobile theme, mobile template, mobile website, mobile theme, responsive, wptouch, ios app, app
+Tags: mobiloud, push, notifications, mobile, mobile app, native app, web app, iphone, ipad, iphone app, ipad app, android, tablet, windows mobile, mobile web, HTML5, mobile site, mobile plugin, wordpress mobile, adsense, mobile theme, mobile template, mobile website, mobile theme, responsive, wptouch, ios app, wiziapp, app, wordpress blog app, build wordpress app, create blog app, native app plugin
 Requires at least: 3.2
 Tested up to: 4.0
-Stable tag: 3.0.5
+Stable tag: 3.0.6
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-Beautiful mobile apps for your WordPress blog or news site.
+Delight your readers with beautiful native mobile apps for your blog or news site.
 
 == Description ==
 
 **Mobiloud is a premium (paid) service that allows publishers and bloggers to turn their WordPress site into a beautifully stylish mobile app.**
 
-**Mobiloud is easy to use, with no coding required. It's also the only real native mobile app solution exclusively dedicated to WordPress.**
+**Mobiloud is easy to use, with no coding required.**
 
 2 billion smartphone users today spend 85% of their time on their devices using apps. If you don't have a mobile app to complement your web presence, you're missing on a huge opportunity to reach new and existing readers.
 
 **Unlike other solutions, Mobiloud gives you a completely "native" mobile app**. Native mobile apps look and feel great on Android and iOS, and don't have the sluggish and glitchy behaviour of non-native apps.
 
-With Mobiloud, real native mobile apps are finally affordable, and you won’t need any programming skills to get your app published - we take care of build and publication for you!
+With Mobiloud, native mobile apps are finally affordable, and you won’t need any programming skills to get your app published - we take care of the app build and submission for you!
 
 Install the plugin now and you will be moments away from creating your own mobile app.
 
-**Note the plugin is free to use to design, manage and preview your apps, but getting your apps built and published on App Store and Google Play is a paid service ([prices here](http://www.mobiloud.com/pricing/?ref=plugindesc))**
+**Note the plugin is free to use to design, manage and preview your apps, but getting your mobile app built and published on App Store and Google Play is a paid service ([prices here](http://www.mobiloud.com/pricing/?ref=plugindesc))**
 
 For any questions, don’t hesitate to get in touch with us at [support@mobiloud.com](mailto:support@mobiloud.com)
 
@@ -37,7 +37,6 @@ For any questions, don’t hesitate to get in touch with us at [support@mobiloud
 
 **Who it is *NOT* a good fit for:**
 
-* People looking for a mobile site tool or template
 * Company sites with no blog or content
 * WooCommerce or Buddypress websites
 * Heavily customised websites with no content
@@ -46,7 +45,7 @@ For any questions, don’t hesitate to get in touch with us at [support@mobiloud
 
 = What you get with Mobiloud =
 
-* **Your WordPress site instantly converted into real mobile apps**. The Mobiloud WordPress plugin will automatically feed your app with your latest content. Any new articles will be listed in the app as soon as they're published; changes to your app's menu and configuration will be instantly made available. With Mobiloud, you publish your content from your WordPress site, with the convenience of having your app automatically updated. No extra work required.
+* **Your WordPress site quickly converted into real mobile apps**. The Mobiloud WordPress plugin will automatically feed your app with your latest content. Any new articles will be listed in the app as soon as they're published; changes to your app's menu and configuration will be instantly made available. With Mobiloud, you publish your content from your WordPress site, with the convenience of having your app automatically updated. No extra work required.
 
 * **Customise your app with your style and brand**. It's your own app, so customise it with your own colors, add your logo, create a custom icon and launch image, and with your content in there, it will be unique!
 
@@ -180,6 +179,9 @@ You can contact us at [support@mobiloud.com](mailto:support@mobiloud.com)
 
 
 == Changelog ==
+
+= 3.0.6 =
+* Article date follows wp settings, style fix for image galleries, excerpt formatting fix, author name fix and more
 
 = 3.0.5 =
 * Admob configuration

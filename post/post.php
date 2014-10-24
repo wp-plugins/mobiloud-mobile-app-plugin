@@ -15,7 +15,7 @@
 		$post_id = htmlspecialchars(esc_attr(sanitize_text_field($_GET['post_id']))); // sanitize
         $post = get_post($post_id);
 	}
-	
+
 	if(!$post){
 		header("HTTP/1.1 404 Not Found");
 	}
@@ -33,13 +33,8 @@
 
 	eval(stripslashes(get_option('ml_post_head'))); // PHP in HEAD
 ?>
-</head><body>
-
-
-<?php 
-
-	 
+</head><body class="mb_body">
+<?php
 	include 'body_content.php';
-	
 ?>
 </body></html>
