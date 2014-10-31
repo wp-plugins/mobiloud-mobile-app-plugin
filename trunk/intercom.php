@@ -13,7 +13,8 @@ function ml_init_intercom() {
               window.intercomSettings = {
                 email: "<?php echo esc_js($user_email); ?>",
                 name: "<?php echo esc_js($user_name); ?>",
-                site: "<?php echo esc_js($user_site); ?>",                
+                site: "<?php echo esc_js($user_site); ?>",
+				installurl: "<?php echo get_site_url(); ?>",              
                 sitename: "<?php echo get_bloginfo('name'); ?>",
                 version: "<?php echo MOBILOUD_PLUGIN_VERSION;?>",
 				post_count: "<?php echo wp_count_posts()->publish; ?>",
@@ -50,6 +51,7 @@ function ml_init_getvero() {
                 email: "<?php echo esc_js($user_email); ?>", 
                 name: "<?php echo esc_js($user_name); ?>",
                 website: "<?php echo esc_js($user_site); ?>",
+				installurl: "<?php echo get_site_url(); ?>",              
                 website_name: "<?php echo get_bloginfo('name'); ?>",
 				post_count: "<?php echo wp_count_posts()->publish; ?>",
 				homepage_type: "<?php echo get_option( 'show_on_front '); ?>",
