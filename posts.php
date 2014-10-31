@@ -380,7 +380,7 @@ function print_posts($posts,$tot_count,$offset,$options)
 			if (get_option('ml_custom_field_name', '') == "excerpt") {
 //				setup_postdata( $post->ID );
 				$custom_field_val = html_entity_decode(urldecode(strip_tags(get_post_excerpt($post->ID))));
-				$custom_field_val = preg_replace_callback("/(&#[0-9]+;)/", function($m) { return mb_convert_encoding($m[1], "UTF-8", "HTML-ENTITIES"); }, $custom_field_val); 
+//				$custom_field_val = preg_replace_callback("/(&#[0-9]+;)/", function($m) { return mb_convert_encoding($m[1], "UTF-8", "HTML-ENTITIES"); }, $custom_field_val); 
 
 	            $final_post['custom1'] = $custom_field_val;			
 			} else {

@@ -14,11 +14,13 @@
 
 			<ol style="text-align:left;">
 				<li> <strong>Download the <a href="https://itunes.apple.com/us/app/mobiloud/id903667370?mt=8">Mobiloud app from the App Store</a></strong> or the <a href="https://play.google.com/store/apps/details?id=com.mobiloud.android"><strong>Android app from Google Play</strong></a> on your own device.</li>
-				<li>Open the Mobiloud app and once it's loaded... </li>
-				<li><strong>Shake your device</strong>. </li>
+				<li>Open the Mobiloud app. You'll see the contents and design of the Mobiloud blog.</li>
+				<li>Now <strong>shake your device</strong>. </li>
 				<li>A screen named <strong>Preview your app</strong> will become accessible. </li>
-				<li>Now <strong>enter your own site's URL</strong> and test your own app on your device!</li>
+				<li>Now <strong>enter your own site's URL</strong>, the app will reload so you can see your own design and content on your device!</li>
+				<input name="siteurl" type="url" id="siteurl" value="<?php echo get_site_url(); ?>" class="regular-text code" />
 			</ol>
+			<p>Need any help? Email us at <a href="mailto:support@mobiloud.com">support@mobiloud.com</a>.</p>
 		
 			<i>Hint: we've sent you an email with links to the apps, open it from your phone to make things easier.</i>
 	        <?php if($loadDemo): ?>
