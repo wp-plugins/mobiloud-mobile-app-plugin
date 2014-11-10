@@ -1,11 +1,7 @@
 <div id="get_started_design" class="tabs-panel">
     <div class="get_started_options">
         <form method="post" action="<?php echo admin_url('admin.php?page=mobiloud'); ?>">
-            <?php wp_nonce_field( 'form-get_started_design' ); ?>
-            <div class="ml-form-row">
-                <label>Enter Your App Name</label>
-                <input id="ml_app_name" type="text" size="36" name="ml_app_name" value="<?php echo Mobiloud::get_option("ml_app_name", $appname); ?>" />
-            </div>
+            <?php wp_nonce_field( 'form-get_started_design' ); ?>            
             <div class="ml-form-row">
                 <label>Upload Your Logo</label>
                 <input id="ml_preview_upload_image" type="text" size="36" name="ml_preview_upload_image" value="<?php echo get_option("ml_preview_upload_image"); ?>" />
@@ -65,6 +61,17 @@
                     <label for="ml_show_article_list_menu_item">Show 'Article' list menu item</label>
                 </div>
                 <input type='text' id='ml_article_list_menu_item_title' name='ml_article_list_menu_item_title' value='<?php echo Mobiloud::get_option('ml_article_list_menu_item_title', 'Articles'); ?>'/>
+            </div>
+            <div class="ml-form-row">
+                <label>Article List View Type</label>
+                <div class="ml-radio-wrap">
+                    <input type="radio" id="ml_article_list_view_type_extended" name="ml_article_list_view_type" value="extended" <?php echo get_option('ml_article_list_view_type', 'extended') == 'extended' ? 'checked' : ''; ?>/>
+                    <label for="ml_article_list_view_type_extended">Extended</label>
+                </div>
+                <div class="ml-radio-wrap">
+                    <input type="radio" id="ml_article_list_view_type_compact" name="ml_article_list_view_type" value="compact" <?php echo get_option('ml_article_list_view_type') == 'compact' ? 'checked' : ''; ?>/>
+                    <label for="ml_article_list_view_type_compact">Compact</label>
+                </div>                
             </div>
             <p class="submit"><input type="submit" name="submit" id="submit" class="button button-primary" value="Save Changes"></p>
         </form>

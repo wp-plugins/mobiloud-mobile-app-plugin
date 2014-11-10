@@ -1,9 +1,9 @@
 === Mobiloud - Native Mobile Apps for your WordPress site (iPhone, iPad, Android) ===
 Contributors: psac50
 Tags: mobiloud, push, notifications, mobile, mobile app, native app, web app, iphone, ipad, iphone app, ipad app, android, tablet, windows mobile, mobile web, HTML5, mobile site, mobile plugin, wordpress mobile, adsense, mobile theme, mobile template, mobile website, mobile theme, responsive, ios app, app, wordpress blog app, build wordpress app, create blog app, native app plugin
-Requires at least: 3.2
+Requires at least: 3.5
 Tested up to: 4.0
-Stable tag: 3.0.6
+Stable tag: 3.0.7
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -179,6 +179,11 @@ You can contact us at [support@mobiloud.com](mailto:support@mobiloud.com)
 
 
 == Changelog ==
+
+= 3.0.7 =
+* Updated minimum required WP version to 3.5
+* Fixed alignment and display issues inside Admin interface for WP3.8 and lower
+* Fixed push message HTML output (removed HTML)
 
 = 3.0.6 =
 * Article date follows wp settings, style fix for image galleries, excerpt formatting fix, author name fix and more

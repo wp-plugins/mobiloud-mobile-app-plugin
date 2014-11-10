@@ -9,6 +9,7 @@ class Mobiloud_Admin {
     );
     public static $settings_tabs = array(
         'general'=>'General',
+        'posts'=>'Posts and Content',
         'advertising'=>'Advertising',
         'analytics'=>'Analytics',
         'editor'=>'Editor',
@@ -139,7 +140,7 @@ class Mobiloud_Admin {
         
         wp_enqueue_script('mobiloud',MOBILOUD_PLUGIN_URL.'mobiloud.js',array('jquery','jquery-ui'),MOBILOUD_PLUGIN_VERSION);
 
-        wp_register_style('mobiloud', MOBILOUD_PLUGIN_URL . 'mobiloud.css');
+        wp_register_style('mobiloud.css', MOBILOUD_PLUGIN_URL . 'mobiloud.css');
         wp_register_style('mobiloud-iphone', MOBILOUD_PLUGIN_URL . "/css/iphone.css");
         wp_enqueue_style("mobiloud.css");
         wp_enqueue_style("mobiloud-iphone");
@@ -159,7 +160,10 @@ class Mobiloud_Admin {
         wp_register_style('jquerychosen-css', MOBILOUD_PLUGIN_URL . "/libs/chosen/chosen.css");
         wp_enqueue_style("jquerychosen-css");
         
-        wp_register_style('mobiloud-style', MOBILOUD_PLUGIN_URL . "/assets/css/mobiloud-style.css", array('dashicons'));
+        wp_register_style('mobiloud-dashicons', MOBILOUD_PLUGIN_URL . "/libs/dashicons/css/dashicons.css");
+        wp_enqueue_style("mobiloud-dashicons");
+        
+        wp_register_style('mobiloud-style', MOBILOUD_PLUGIN_URL . "/assets/css/mobiloud-style.css");
         wp_enqueue_style("mobiloud-style");
         
         wp_register_style('mobiloud_admin_post', MOBILOUD_PLUGIN_URL . '/admin/post/post.css');
@@ -239,8 +243,7 @@ class Mobiloud_Admin {
                 /**
                  * Process Form
                  */
-                if(count($_POST) && check_admin_referer('form-get_started_design')) {
-                    Mobiloud::set_option('ml_app_name', sanitize_text_field($_POST['ml_app_name']));
+                if(count($_POST) && check_admin_referer('form-get_started_design')) {                    
                     Mobiloud::set_option('ml_preview_upload_image', sanitize_text_field($_POST['ml_preview_upload_image']));
                     Mobiloud::set_option('ml_preview_theme_color', sanitize_text_field($_POST['ml_preview_theme_color']));        
                     switch($_POST['homepagetype']) {
@@ -260,6 +263,8 @@ class Mobiloud_Admin {
                             Mobiloud::set_option('ml_home_url_enabled', true);    
                             break;
                     }
+                    Mobiloud::set_option('ml_article_list_view_type', sanitize_text_field($_POST['ml_article_list_view_type'])); 
+                    
                     Mobiloud::set_option('ml_home_page_id', sanitize_text_field($_POST['ml_home_page_id']));
                     Mobiloud::set_option('ml_home_url', sanitize_text_field($_POST['ml_home_url']));
                     
@@ -362,10 +367,16 @@ class Mobiloud_Admin {
         switch($tab) {
             default:
             case 'general':
+                wp_register_script('mobiloud-general', MOBILOUD_PLUGIN_URL.'/assets/js/mobiloud-general.js', array('jquery'));
+                wp_enqueue_script('mobiloud-general');
                 /**
                  * Process Form
                  */
                 if(count($_POST) && check_admin_referer('form-settings_general')) {
+                    Mobiloud::set_option('ml_app_name', sanitize_text_field($_POST['ml_app_name']));
+                    Mobiloud::set_option('ml_show_email_contact_link', isset($_POST['ml_show_email_contact_link']));
+                    Mobiloud::set_option('ml_contact_link_email', sanitize_text_field($_POST['ml_contact_link_email']));
+                    Mobiloud::set_option('ml_copyright_string', sanitize_text_field($_POST['ml_copyright_string']));
                     Mobiloud::set_option('ml_article_list_enable_dates', isset($_POST['ml_article_list_enable_dates']));
                     Mobiloud::set_option('ml_article_list_enable_featured_images', isset($_POST['ml_article_list_enable_featured_images']));
                     Mobiloud::set_option('ml_automatic_image_resize_active', isset($_POST['ml_automatic_image_resize_active']));
@@ -395,7 +406,18 @@ class Mobiloud_Admin {
                     }
                     
                     Mobiloud::set_option('ml_article_list_exclude_categories', implode(",", $exclude_categories));
-                    
+                }
+                self::render_view('settings_general', 'settings');
+                self::track_user_event('view_settings_general');
+                break;
+            case 'posts':
+                wp_enqueue_media();
+                wp_register_script('mobiloud-posts', MOBILOUD_PLUGIN_URL.'/assets/js/mobiloud-posts.js', array('jquery'));
+                wp_enqueue_script('mobiloud-posts');
+                /**
+                 * Process Form
+                 */
+                if(count($_POST) && check_admin_referer('form-settings_posts')) {
                     Mobiloud::set_option('ml_eager_loading_enable', isset($_POST['ml_eager_loading_enable']));
                     Mobiloud::set_option('ml_hierarchical_pages_enabled', isset($_POST['ml_hierarchical_pages_enabled']));
                     Mobiloud::set_option('ml_post_author_enabled', isset($_POST['ml_post_author_enabled']));
@@ -409,9 +431,13 @@ class Mobiloud_Admin {
                     Mobiloud::set_option('ml_custom_field_name', sanitize_text_field($_POST['ml_custom_field_name']));
                     
                     Mobiloud::set_option('ml_custom_field_url', sanitize_text_field($_POST['ml_custom_field_url']));
+                    Mobiloud::set_option('ml_custom_featured_image', sanitize_text_field($_POST['ml_custom_featured_image']));
+                    
+                    Mobiloud::set_option('ml_comments_system', sanitize_text_field($_POST['ml_comments_system']));
+                    Mobiloud::set_option('ml_disqus_shortname', sanitize_text_field($_POST['ml_disqus_shortname']));
                 }
-                self::render_view('settings_general', 'settings');
-                self::track_user_event('view_settings_general');
+                self::render_view('settings_posts', 'settings');
+                self::track_user_event('view_settings_posts');
                 break;
             case 'analytics':
                 /**
@@ -504,6 +530,8 @@ class Mobiloud_Admin {
                                 ml_push_notification_categories_add($categoryID);
                             }
                         }
+                    } else {
+                         ml_push_notification_categories_clear();
                     }
                 }
                 self::render_view('push_settings', 'push');
@@ -557,7 +585,7 @@ class Mobiloud_Admin {
     
     private static function isJson($string) { 
         json_decode($string);
-        return strlen($string) > 0 && (json_last_error() == JSON_ERROR_NONE);
+        return strlen($string) > 0;
     }
     
     public static function initial_details_saved() {

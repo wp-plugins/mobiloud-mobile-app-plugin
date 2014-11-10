@@ -40,6 +40,9 @@ class Mobiloud_App_Preview {
         if(isset($_POST['ml_preview_os'])) {
             update_option("ml_preview_os", $_POST['ml_preview_os']);
         }
+        if(isset($_POST['ml_article_list_view_type'])) {
+            Mobiloud::set_option('ml_article_list_view_type', sanitize_text_field($_POST['ml_article_list_view_type'])); 
+        }
     }    
     
     public static function get_preview_posts() {

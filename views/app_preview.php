@@ -15,7 +15,8 @@
             </a>
             <a href='javascript:void(0);' class='ml-icon ml-icon-search <?php echo $iconShade; ?>'></a>
         </div>
-        <div class='ml-preview-article-list'>
+        <div class='ml-preview-article-list <?php 
+            echo get_option('ml_article_list_view_type', 'extended') == 'extended' ? 'ml-view-extended' : 'ml-view-compact'; ?>'>
             <div class='scroller'>
                 <?php
                 $posts = Mobiloud_App_Preview::get_preview_posts();
@@ -32,7 +33,7 @@
                             <?php if($imageUrl): ?>
                             <img class='ml-preview-img' src='<?php echo $imageUrl; ?>'/>   
                             <?php endif; ?>
-                            <div class='ml-preview-article-body'>
+                            <div class='ml-preview-article-body' <?php echo !$imageUrl ? 'style="width:100%;"' : ''; ?>>
                                 <h3><?php echo $post->post_title; ?></h3>
                                 <span class='ml-article-date'><?php echo Mobiloud_App_Preview::how_long_ago(strtotime($post->post_date)); ?></span>
                             </div>

@@ -82,7 +82,7 @@ function ml_pb_post_published_notification($new_status, $old_status=null, $post=
         $tagNames[] = 'all';
         $data = array(
             'platform'=>array(0,1),
-            'msg'=>trim($post->post_title),
+            'msg'=>strip_tags(trim($post->post_title)),
             'sound'=>'default',
             'badge'=>null,
             'notags'=>true,
@@ -107,7 +107,7 @@ function ml_send_notification($alert, $sound=true, $badge=NULL, $custom_properti
 	{
 		return false;
 	}
-	$notification = array('alert' => $alert);
+	$notification = array('alert' => strip_tags($alert));
 	if($sound) $notification['sound'] = $sound;
 	if($badge) $notification['badge'] = $badge;
 	if($custom_properties) $notification['custom_properties'] = $custom_properties;

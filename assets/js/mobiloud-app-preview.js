@@ -44,6 +44,9 @@ jQuery(document).ready(function() {
         loadPreviewImage();
         ml_loadPreview();
     });
+    jQuery("input[name='ml_article_list_view_type']").click(function() {
+        ml_loadPreview();
+    });
     
     jQuery("#ml_preview_os_ios").click(function() {
         ml_loadPreview();
@@ -134,7 +137,8 @@ var ml_loadPreview = function() {
         action: 'ml_preview_app_display',
         ml_preview_upload_image: jQuery("#ml_preview_upload_image").val(),
         ml_preview_theme_color: jQuery("#ml_preview_theme_color").val(),
-        ml_preview_os: jQuery("input[name='ml_preview_os']:checked").val()
+        ml_preview_os: jQuery("input[name='ml_preview_os']:checked").val(),
+        ml_article_list_view_type: jQuery("input[name='ml_article_list_view_type']:checked").val()
     };
     jQuery(".ml-preview-app").append(jQuery("#ml_preview_loading"));
 
@@ -145,9 +149,22 @@ var ml_loadPreview = function() {
                 alignPreviewLogo(jQuery('.ml-preview-logo'));
             });
             jQuery('.ml-preview-img').load(function() {
-                var cropWidth = 253;
-                if(jQuery("input[name='ml_preview_os']:checked").val() === 'android') {
-                    cropWidth = 287;
+                var viewType = jQuery("input[name='ml_article_list_view_type']:checked").val();
+                var cropWidth;
+                switch(viewType) {
+                    default:
+                    case 'extended':
+                        cropWidth = 253;
+                        if(jQuery("input[name='ml_preview_os']:checked").val() === 'android') {
+                            cropWidth = 287;
+                        }
+                        break;
+                    case 'compact':
+                        cropWidth = 113;
+                        if(jQuery("input[name='ml_preview_os']:checked").val() === 'android') {
+                            cropWidth = 137;
+                        }
+                        break;
                 }
                 
                 cropPostImages(cropWidth);

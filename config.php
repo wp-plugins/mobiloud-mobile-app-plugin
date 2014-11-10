@@ -24,6 +24,15 @@ $return_config['google-tracking-id'] = get_option('ml_google_tracking_id', '');
 $return_config['show_custom_field'] = get_option('ml_custom_field_enable', false);
 $return_config['show_excerpts'] = get_option('ml_article_list_show_excerpt', false);
 $return_config['show_comments_count'] = get_option('ml_article_list_show_comment_count', false);
+$return_config['show_article_featuredimage'] = get_option('ml_show_article_featuredimage', true);
+$return_config['copyright_string'] = get_option('ml_copyright_string', '');
+$return_config['list_format'] = get_option('ml_article_list_view_type', 'extended');
+$return_config['comments_system'] = get_option('ml_comments_system', 'wordpress');
+$return_config['disqus_shortname'] = get_option('ml_disqus_shortname', '');
+$return_config['show_contact_email'] = get_option('ml_show_email_contact_link', false);
+$return_config['contact_email'] = get_option('ml_contact_link_email', '');
+
+$return_config['custom_featured_image'] = get_option('ml_custom_featured_image', '');
 
 if(get_option("ml_home_article_list_enabled",false)==true){
 	$return_config["home_page_type"] = "article_list";
@@ -33,7 +42,7 @@ if(get_option("ml_home_article_list_enabled",false)==true){
 	$return_config["home_page_id"] = get_option("ml_home_page_id");
 	$return_config["home_page_full"] = get_option("ml_home_page_full");
 	
-	$return_config["show_article_list_menu_item"] = get_option("ml_show_article_list_menu_item",true);
+	$return_config["show_article_list_menu_item"] = get_option("ml_show_article_list_menu_item", false);
 	$return_config["article_list_menu_item_title"] = get_option("ml_article_list_menu_item_title","Articles");
 	
 	
