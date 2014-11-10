@@ -29,7 +29,11 @@ class Mobiloud {
  
     public static function mobiloud_activate() {
         add_option('mobiloud_do_activation_redirect', true);
-        
+        if(!self::get_option('ml_activation_tracked', false)) {
+            self::set_option('ml_activation_tracked', true);
+            ml_init_mixpanel();
+            ml_track_mixpanel('plugin activated');
+        }
         self::run_db_install();
     }
     

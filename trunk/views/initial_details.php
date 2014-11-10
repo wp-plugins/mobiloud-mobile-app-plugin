@@ -1,11 +1,19 @@
 <script>
     jQuery(function() {
+        jQuery( window ).resize(function() {
+            jQuery( "#ml-initial-details" ).dialog( "option", "position", jQuery( "#ml-initial-details" ).dialog( "option", "position" ) );
+        });
+
         var ml_allow_initial_close = false;
         jQuery( "#ml-initial-details" ).dialog({
           dialogClass: 'ml-initial-details-dialog wp-dialog',
           modal: false,
           width: 500,
           title: 'Your details',
+          position: {
+              at: 'center',
+              of: '.mobiloud'
+          },
           beforeClose: function() {
               return ml_allow_initial_close;
           },

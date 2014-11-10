@@ -308,7 +308,7 @@ function print_posts($posts,$tot_count,$offset,$options)
 				"slug" => $category->category_nicename);
 		}
 
-		$final_post["title"] = html_entity_decode($post->post_title);
+		$final_post["title"] = strip_tags($post->post_title);
 		$final_post["date"] = $post->post_date;
 		
 		if(get_option('ml_eager_loading_enable') == 'true' || $eager_loading == "true" || $post_type == 'page' || isset($_POST['post_id'])){
@@ -352,6 +352,15 @@ function print_posts($posts,$tot_count,$offset,$options)
 			
 			$final_post["images"][0] = $image;
 		}		
+        
+        if(strlen(get_option('ml_custom_featured_image', '')) > 0) {
+            $custom_featured_image_url = get_post_meta($post->ID, get_option('ml_custom_featured_image', ''), true);
+            $final_post["images"][0] = array(
+                "full" => $custom_featured_image_url, 
+                "thumb" => array("url" => $custom_featured_image_url),
+                "big-thumb" => array("url" => $custom_featured_image_url)
+            );
+        }
 		
 		foreach ( (array) $images as $image ) {
 			$imageToAdd = array();

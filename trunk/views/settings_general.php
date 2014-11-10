@@ -1,6 +1,46 @@
 <div id="ml_settings_general" class="tabs-panel ml-compact">
     <form method="post" action="<?php echo admin_url('admin.php?page=mobiloud_settings'); ?>">
         <?php wp_nonce_field('form-settings_general'); ?>
+        <h3>Application details</h3>
+        <h4>App Name</h4>
+        <div class='ml-col-row'>
+            <div class='ml-col-half'>
+                <p>Enter the name of your App.</p>            
+            </div>
+            <div class='ml-col-half'>
+                <div class="ml-form-row">                
+                    <input id="ml_app_name" type="text" size="36" name="ml_app_name" value="<?php echo esc_attr(Mobiloud::get_option("ml_app_name", $appname)); ?>" />
+                </div>
+            </div>
+        </div>
+        <h4>Email Contact</h4>
+        <div class='ml-col-row'>
+            <div class='ml-col-half'>
+                <p>Setup email contact details.</p>            
+            </div>
+            <div class='ml-col-half'>              
+                <div class="ml-form-row ml-checkbox-wrap">
+                    <input type="checkbox" id="ml_show_email_contact_link" name="ml_show_email_contact_link" value="true" <?php echo Mobiloud::get_option('ml_show_email_contact_link') ? 'checked' : ''; ?>/>
+                    <label for="ml_show_email_contact_link">Show email contact link?</label>
+                </div>
+                <div class="ml-email-contact-row ml-form-row" <?php 
+                    echo !Mobiloud::get_option('ml_show_email_contact_link') ? 'style="display:none;"' : ''; ?>>
+                    <label for="ml_contact_link_email">Enter public email address</label>
+                    <input id="ml_contact_link_email" type="text" size="36" name="ml_contact_link_email" value="<?php echo esc_attr(Mobiloud::get_option("ml_contact_link_email", '')); ?>" />
+                </div>
+            </div>
+        </div>
+        <h4>Copyright Notice</h4>
+        <div class='ml-col-row'>
+            <div class='ml-col-half'>
+                <p>Copyright Notice</p>            
+            </div>
+            <div class='ml-col-half'>
+                <div class="ml-form-row">                
+                    <textarea id="ml_copyright_string" name="ml_copyright_string" rows="4" style="width:100%"><?php echo esc_attr(Mobiloud::get_option("ml_copyright_string", '')); ?></textarea>
+                </div>
+            </div>
+        </div>     
         <h3>Article List settings</h3>
         <h4>List preferences</h4>
         <div class='ml-col-row'>
@@ -144,80 +184,7 @@
                 }
                 ?>
             </div>
-        </div>
-        <h3>Post and Page screen settings</h3>
-        <h4>Content loading settings</h4>
-        <div class='ml-col-row'>
-            <div class='ml-col-half'>
-                <p>You can increase loading speed by disabling the pre-loading of posts when your app starts. Content will load on request.</p> 
-                <p><em>Note: if you'd like recently loaded posts to be accessible offline when no connection is available, then make sure to 
-                        pre-load post contents.</em></p>
-            </div>
-            <div class='ml-col-half'>
-                <div class="ml-form-row ml-checkbox-wrap">
-                    <input type="checkbox" id="ml_eager_loading_enable" name="ml_eager_loading_enable" value="true" <?php echo Mobiloud::get_option('ml_eager_loading_enable') ? 'checked' : ''; ?>/>
-                    <label for="ml_eager_loading_enable">Preload post contents when the app starts</label>
-                </div>
-            </div>
-        </div>
-        <h4>Children page navigation</h4>
-        <div class='ml-col-row'>
-            <div class='ml-col-half'>
-                <p>The page hierarchy navigation feature allows users to see a list of children pages at the bottom of every page within your app. This is useful for websites with a complex hierarchy of pages.</p>
-            </div>
-            <div class='ml-col-half'>
-                <div class="ml-form-row ml-checkbox-wrap">
-                    <input type="checkbox" id="ml_hierarchical_pages_enabled" name="ml_hierarchical_pages_enabled" value="true" <?php echo Mobiloud::get_option('ml_hierarchical_pages_enabled') ? 'checked' : ''; ?>/>
-                    <label for="ml_hierarchical_pages_enabled">Enable page hierarchy navigation</label>
-                </div>
-            </div>
-        </div>
-        <h4>Post and page meta information</h4>
-        <div class='ml-col-row'>
-            <div class='ml-col-half'>
-                <p>Change which meta elements of your posts and pages should be displayed in the post and page screens.</p>
-            </div>
-            <div class='ml-col-half'>
-                <div class="ml-form-row ml-checkbox-wrap">
-                    <input type="checkbox" id="ml_post_author_enabled" name="ml_post_author_enabled" value="true" <?php echo Mobiloud::get_option('ml_post_author_enabled') ? 'checked' : ''; ?>/>
-                    <label for="ml_post_author_enabled">Show author in posts</label>
-                </div>
-                <div class="ml-form-row ml-checkbox-wrap no-margin">
-                    <input type="checkbox" id="ml_page_author_enabled" name="ml_page_author_enabled" value="true" <?php echo Mobiloud::get_option('ml_page_author_enabled') ? 'checked' : ''; ?>/>
-                    <label for="ml_page_author_enabled">Show author in pages</label>
-                </div>
-                <div class="ml-form-row ml-checkbox-wrap no-margin">
-                    <input type="checkbox" id="ml_post_date_enabled" name="ml_post_date_enabled" value="true" <?php echo Mobiloud::get_option('ml_post_date_enabled') ? 'checked' : ''; ?>/>
-                    <label for="ml_post_date_enabled">Show date in posts</label>
-                </div>
-                <div class="ml-form-row ml-checkbox-wrap no-margin">
-                    <input type="checkbox" id="ml_page_date_enabled" name="ml_page_date_enabled" value="true" <?php echo Mobiloud::get_option('ml_page_date_enabled') ? 'checked' : ''; ?>/>
-                    <label for="ml_page_date_enabled">Show date in pages</label>
-                </div>
-                <div class="ml-form-row ml-checkbox-wrap no-margin">
-                    <input type="checkbox" id="ml_post_title_enabled" name="ml_post_title_enabled" value="true" <?php echo Mobiloud::get_option('ml_post_title_enabled') ? 'checked' : ''; ?>/>
-                    <label for="ml_post_title_enabled">Show title in posts</label>
-                </div>
-                <div class="ml-form-row ml-checkbox-wrap no-margin">
-                    <input type="checkbox" id="ml_page_title_enabled" name="ml_page_title_enabled" value="true" <?php echo Mobiloud::get_option('ml_page_title_enabled') ? 'checked' : ''; ?>/>
-                    <label for="ml_page_title_enabled">Show title in pages</label>
-                </div>
-            </div>
-        </div>
-        <h4>Override Article/Page URL with a custom field</h4>
-        <div class='ml-col-row'>
-            <div class='ml-col-half'>
-                <p>When sharing your content, users will normally share the article's URL. For curation-based publications,
-                    though, you might want users to share the source for that story.</p>
-                <p>Enter a custom field name to the right which you can fill for every post with the URL you want users to share.</p>
-            </div>
-            <div class='ml-col-half'>
-                <div class="ml-form-row ml-left-align clearfix">
-                    <label class='ml-width-120' for="ml_custom_field_url">URL Field Name</label>
-                    <input type="text" placeholder="Custom Field Name" id="ml_custom_field_url" name="ml_custom_field_url" value="<?php echo esc_attr(Mobiloud::get_option('ml_custom_field_url')); ?>"/>
-                </div>
-            </div>
-        </div>
+        </div>        
         <p class="submit"><input type="submit" name="submit" id="submit" class="button button-primary" value="Save Changes"></p>
     </form>
 </div>

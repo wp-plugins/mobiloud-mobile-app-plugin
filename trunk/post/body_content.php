@@ -111,9 +111,9 @@
 	if( !isset($_POST['allow_lazy']) || isset($_GET['fullcontent']) || get_option('ml_eager_loading_enable')=='true' || isset($_GET["page_ID"]) || isset($_POST['post_id'])){
 
 		if(!isset($_GET["page_ID"])){
-			echo get_option('ml_post_author_enabled') ? '<p class="mb_post_meta">' . get_the_author_link() . '</p><div class="mb_clear"></div>' : ''; // clear because .post_meta is floated
+			echo get_option('ml_post_author_enabled') ? '<p class="mb_post_meta">' . get_the_author() . '</p><div class="mb_clear"></div>' : ''; // clear because .post_meta is floated
 		} else {
-			echo get_option('ml_page_author_enabled') ? '<p class="mb_post_meta">' . get_the_author_link() . '</p><div class="mb_clear"></div>' : ''; // clear because .post_meta is floated
+			echo get_option('ml_page_author_enabled') ? '<p class="mb_post_meta">' . get_the_author() . '</p><div class="mb_clear"></div>' : ''; // clear because .post_meta is floated
 		}
 
 	eval(stripslashes(get_option('ml_post_after_details')));
