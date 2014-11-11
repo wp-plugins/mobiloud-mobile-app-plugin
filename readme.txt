@@ -3,7 +3,7 @@ Contributors: psac50
 Tags: mobiloud, push notifications, wordpress mobile, wordpress mobile app, mobile plugin, wordpress android app, wordpress ios app, wordpress to app, mobile app with WordPress, mobile app for wordpress, native app, wordpress app, iphone, ipad, iphone app, ipad app, android, wordpress iphone app, wordpress android app, windows mobile, mobile web, app for wordpress, mobile site, mobile plugin, wordpress mobile, wordpress ios app, mobile theme, mobile website, mobile theme, wordpress to android app, wordpress to mobile app, mobile app, mobile app plugin, wordpress app builder, wordpress apps, wordpress app maker, ios app, wordpress mobile, wordpress to mobile app, wordpress blog app, build wordpress app, build mobile apps, create blog app, native app plugin, website to mobile app, native mobile app, build an app
 Requires at least: 3.5
 Tested up to: 4.0
-Stable tag: 3.0.7
+Stable tag: 3.0.6
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
