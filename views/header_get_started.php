@@ -1,11 +1,11 @@
 <div id="ml-sub-header">
     <div class="ml-intro-text">
 		<p>
-		Mobiloud lets you easily publish your own mobile apps. Start by customizing the design, configuring the menu and testing your app on your device.</p>
+		Mobiloud is the easy solution to publish your own mobile apps. Start by customizing the design, configuring the menu and testing your app on your device.</p>
         <p>For more information, see <a href="http://www.mobiloud.com/how-it-works/?utm_source=wp-plugin-admin&utm_medium=web&utm_campaign=plugin-admin-get-started
 " target="_blank">How It Works</a>, our <a href="http://www.mobiloud.com/features/?utm_source=wp-plugin-admin&utm_medium=web&utm_campaign=plugin-admin-get-started
-" target="_blank">Features Tour</a> and for any questions see the <a href="http://www.mobiloud.com/help/?utm_source=wp-plugin-admin&utm_medium=web&utm_campaign=plugin-admin-get-started
-" target="_blank">Help &amp; Support site</a>.</p>
+" target="_blank">Features</a> and for any questions see our <a href="http://www.mobiloud.com/help/?utm_source=wp-plugin-admin&utm_medium=web&utm_campaign=plugin-admin-get-started
+" target="_blank">Help &amp; Support</a> pages.</p>
     </div>
     <?php if(strlen(Mobiloud::get_option('ml_pb_app_id')) <= 0 && strlen(Mobiloud::get_option('ml_pb_secret_key')) <= 0): ?>
     <div class="ml-task-list">

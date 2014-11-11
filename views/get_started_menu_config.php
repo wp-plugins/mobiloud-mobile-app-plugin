@@ -4,7 +4,7 @@
         <h3>Menu Structure</h3>
         <p>Drag each item into the order you prefer.</p>
         <div class='ml-col-row'>
-            <div class="ml-col-half">
+            <div class="ml-col-twothirds">
                 <h4>Categories</h4>
                 <div class="ml-form-row">
                     <select name="ml-category" class="ml-select-add">

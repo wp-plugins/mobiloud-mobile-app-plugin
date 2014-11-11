@@ -16,18 +16,22 @@
                 </div>
             </div>
         </div>
-        <h4>Children page navigation</h4>
+		
+		
+        <h4>Featured image in the article screen</h4>
         <div class='ml-col-row'>
             <div class='ml-col-half'>
-                <p>The page hierarchy navigation feature allows users to see a list of children pages at the bottom of every page within your app. This is useful for websites with a complex hierarchy of pages.</p>
+                <p>You can switch display or hide the featured image in the article screen. You can also add featured images manually using the Editor functionality, <a target="_blank" href="http://www.mobiloud.com/help/knowledge-base/featured-images/?utm_source=wp-plugin-admin&utm_medium=web&utm_campaign=content_page">read our guide</a>.</p>
             </div>
             <div class='ml-col-half'>
                 <div class="ml-form-row ml-checkbox-wrap">
-                    <input type="checkbox" id="ml_hierarchical_pages_enabled" name="ml_hierarchical_pages_enabled" value="true" <?php echo Mobiloud::get_option('ml_hierarchical_pages_enabled') ? 'checked' : ''; ?>/>
-                    <label for="ml_hierarchical_pages_enabled">Enable page hierarchy navigation</label>
+                    <input type="checkbox" id="ml_show_article_featuredimage" name="ml_show_article_featuredimage" value="true" <?php echo Mobiloud::get_option('ml_show_article_featuredimage') ? 'checked' : ''; ?>/>
+                    <label for="ml_show_article_featuredimage">Show featured image</label>
                 </div>
             </div>
         </div>
+		
+     
         <h4>Post and page meta information</h4>
         <div class='ml-col-row'>
             <div class='ml-col-half'>
@@ -60,50 +64,26 @@
                 </div>
             </div>
         </div>
-        <h4>Override Article/Page URL with a custom field</h4>
+		
+		
+        <h4>Children page navigation</h4>
         <div class='ml-col-row'>
             <div class='ml-col-half'>
-                <p>When sharing your content, users will normally share the article's URL. For curation-based publications,
-                    though, you might want users to share the source for that story.</p>
-                <p>Enter a custom field name to the right which you can fill for every post with the URL you want users to share.</p>
-            </div>
-            <div class='ml-col-half'>
-                <div class="ml-form-row ml-left-align clearfix">
-                    <label class='ml-width-120' for="ml_custom_field_url">URL Field Name</label>
-                    <input type="text" placeholder="Custom Field Name" id="ml_custom_field_url" name="ml_custom_field_url" value="<?php echo esc_attr(Mobiloud::get_option('ml_custom_field_url')); ?>"/>
-                </div>
-            </div>
-        </div>
-        <h4>Show article featured image</h4>
-        <div class='ml-col-row'>
-            <div class='ml-col-half'>
-                <p>You can switch display or hide the featured image in the article list.</p>
+                <p>The page hierarchy navigation feature allows users to see a list of children pages at the bottom of every page within your app. This is useful for websites with a complex hierarchy of pages.</p>
             </div>
             <div class='ml-col-half'>
                 <div class="ml-form-row ml-checkbox-wrap">
-                    <input type="checkbox" id="ml_show_article_featuredimage" name="ml_show_article_featuredimage" value="true" <?php echo Mobiloud::get_option('ml_show_article_featuredimage') ? 'checked' : ''; ?>/>
-                    <label for="ml_show_article_featuredimage">Show article featured image?</label>
+                    <input type="checkbox" id="ml_hierarchical_pages_enabled" name="ml_hierarchical_pages_enabled" value="true" <?php echo Mobiloud::get_option('ml_hierarchical_pages_enabled') ? 'checked' : ''; ?>/>
+                    <label for="ml_hierarchical_pages_enabled">Enable page hierarchy navigation</label>
                 </div>
             </div>
         </div>
-        <h4>Override Featured Image</h4>
-        <div class='ml-col-row'>
-            <div class='ml-col-half'>
-                <p>You can override the featured image for each post with an image from a custom field inside the post.</p>
-                <p>Enter a custom field name to the right which you can fill for every post with the custom featured image.</p>
-            </div>
-            <div class='ml-col-half'>
-                <div class="ml-form-row ml-left-align clearfix">
-                    <label class='ml-width-120' for="ml_custom_featured_image">URL Field Name</label>
-                    <input type="text" placeholder="Custom Field Name" id="ml_custom_featured_image" name="ml_custom_featured_image" value="<?php echo esc_attr(Mobiloud::get_option('ml_custom_featured_image')); ?>"/>
-                </div>
-            </div>            
-        </div>        
+	
+		        
         <h3>Commenting settings</h3>
-        <h4>Select Commenting type</h4>
         <div class='ml-col-row'>
             <div class='ml-col-half'>
-                <p>Select Commenting type.</p>
+                <p>Select the commenting system you'd like to use in your app.</p>
             </div>
             <div class='ml-col-half'>
                 <div class="ml-form-row">
@@ -117,7 +97,7 @@
                     </div> 
                     <div class="ml-radio-wrap">
                         <input type="radio" id="ml_comments_system_facebook" name="ml_comments_system" value="facebook" <?php echo get_option('ml_comments_system', 'wordpress') == 'facebook' ? 'checked' : ''; ?>/>
-                        <label for="ml_comments_system_facebook">Facebook</label>
+                        <label for="ml_comments_system_facebook">Facebook Comments</label>
                     </div>
                     <div class="ml-radio-wrap">
                         <input type="radio" id="ml_comments_system_disabled" name="ml_comments_system" value="disabled" <?php echo get_option('ml_comments_system', 'wordpress') == 'disabled' ? 'checked' : ''; ?>/>
@@ -132,6 +112,44 @@
                 </div>
             </div>
         </div>
+	    <?php if( strlen(Mobiloud::get_option('ml_pb_app_id')) > 0 && Mobiloud::get_option('ml_pb_app_id') < "543e7b3f1d0ab16d148b4599"): ?>			
+        <div class='update-nag'>
+            <p>The functionality above is new. Your app might require to be updated for these settings to take effect.</p>
+			<p>Should you have any questions or to request an update, get in touch at <a href='mailto:support@mobiloud.com'>support@mobiloud.com</a>.</p>
+        </div>
+        <?php endif; ?>
+		
+        <h3>Advanced settings</h3>
+        <h4>Override Featured Image</h4>
+        <div class='ml-col-row'>
+            <div class='ml-col-half'>
+                <p>You can override the featured image for each post with an image from a custom field inside the post.</p>
+                <p>Enter a custom field name to the right which you can fill for every post with the custom featured image URL. This will take effect on the article list thumbnail too.</p>
+            </div>
+            <div class='ml-col-half'>
+                <div class="ml-form-row ml-left-align clearfix">
+                    <label class='ml-width-120' for="ml_custom_featured_image">URL Field Name</label>
+                    <input type="text" placeholder="Custom Field Name" id="ml_custom_featured_image" name="ml_custom_featured_image" value="<?php echo esc_attr(Mobiloud::get_option('ml_custom_featured_image')); ?>"/>
+                </div>
+            </div>            
+        </div>
+		
+        <h4>Override Article/Page URL with a custom field</h4>
+        <div class='ml-col-row'>
+            <div class='ml-col-half'>
+                <p>When sharing your content, users will normally share the article's URL. For curation-based publications,
+                    though, you might want users to share the source for that story.</p>
+                <p>Enter a custom field name to the right which you can fill for every post with the URL you want users to share.</p>
+            </div>
+            <div class='ml-col-half'>
+                <div class="ml-form-row ml-left-align clearfix">
+                    <label class='ml-width-120' for="ml_custom_field_url">URL Field Name</label>
+                    <input type="text" placeholder="Custom Field Name" id="ml_custom_field_url" name="ml_custom_field_url" value="<?php echo esc_attr(Mobiloud::get_option('ml_custom_field_url')); ?>"/>
+                </div>
+            </div>
+        </div>
+		
+		
         
         <p class="submit"><input type="submit" name="submit" id="submit" class="button button-primary" value="Save Changes"></p>
     </form>

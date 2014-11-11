@@ -2,14 +2,14 @@
 class Mobiloud_Admin {
     private static $initiated = false;
     private static $get_started_tasks = array(
-        'design'=>array('nav_text'=>'Design Your App', 'task_text'=>'Design your app'),
-        'menu_config'=>array('nav_text'=>'Configure The Menu', 'task_text'=>'Configure the menu'),
+        'design'=>array('nav_text'=>'Design', 'task_text'=>'Design your app'),
+        'menu_config'=>array('nav_text'=>'Menu Configuration', 'task_text'=>'Configure the menu'),
         'test_app'=>array('nav_text'=>'Test The App', 'task_text'=>'Test the app on your device'),
-        'publish'=>array('nav_text'=>'Sign Up &amp; Publish', 'task_text'=>'Publish your app')
+        'publish'=>array('nav_text'=>'Publish Your App', 'task_text'=>'Publish your app')
     );
     public static $settings_tabs = array(
         'general'=>'General',
-        'posts'=>'Posts and Content',
+        'posts'=>'Content',
         'advertising'=>'Advertising',
         'analytics'=>'Analytics',
         'editor'=>'Editor',
@@ -25,8 +25,8 @@ class Mobiloud_Admin {
         'ml_post_head'=>'PHP Inside HEAD tag',
         'ml_post_custom_js'=>'Custom JS',
         'ml_post_custom_css'=>'Custom CSS',
-        'ml_post_start_body'=>'PHP at the beginning of BODY tag',
-        'ml_html_post_start_body'=>'HTML at the beginning of BODY tag',
+        'ml_post_start_body'=>'PHP at the start of body tag',
+        'ml_html_post_start_body'=>'HTML at the start of body tag',
         'ml_post_before_details'=>'PHP before post details',
         'ml_html_post_before_details'=>'HTML before post details',
         'ml_post_right_of_date'=>'PHP right of date',
@@ -36,8 +36,8 @@ class Mobiloud_Admin {
         'ml_html_post_before_content'=>'HTML before Content',
         'ml_post_after_content'=>'PHP after Content',
         'ml_html_post_after_content'=>'HTML after Content',
-        'ml_post_after_body'=>'PHP at the end of BODY tag',
-        'ml_html_post_after_body'=>'HTML at the end of BODY tag',
+        'ml_post_after_body'=>'PHP at the end of body tag',
+        'ml_html_post_after_body'=>'HTML at the end of body tag',
         'ml_post_footer'=>'PHP Footer'
     );
     
