@@ -63,22 +63,29 @@
                 <input type='text' id='ml_article_list_menu_item_title' name='ml_article_list_menu_item_title' value='<?php echo Mobiloud::get_option('ml_article_list_menu_item_title', 'Articles'); ?>'/>
             </div>
             <div class="ml-form-row">
-                <label>Article List View Type</label>
+                <label>Article List Style</label>
                 <div class="ml-radio-wrap">
                     <input type="radio" id="ml_article_list_view_type_extended" name="ml_article_list_view_type" value="extended" <?php echo get_option('ml_article_list_view_type', 'extended') == 'extended' ? 'checked' : ''; ?>/>
-                    <label for="ml_article_list_view_type_extended">Extended</label>
+                    <label for="ml_article_list_view_type_extended">Extended (large thumbnails)</label>
                 </div>
                 <div class="ml-radio-wrap">
                     <input type="radio" id="ml_article_list_view_type_compact" name="ml_article_list_view_type" value="compact" <?php echo get_option('ml_article_list_view_type') == 'compact' ? 'checked' : ''; ?>/>
-                    <label for="ml_article_list_view_type_compact">Compact</label>
+                    <label for="ml_article_list_view_type_compact">Compact (square thumbnails)</label>
                 </div>                
             </div>
             <p class="submit"><input type="submit" name="submit" id="submit" class="button button-primary" value="Save Changes"></p>
         </form>
+	    <?php if( strlen(Mobiloud::get_option('ml_pb_app_id')) > 0 && Mobiloud::get_option('ml_pb_app_id') < "543e7b3f1d0ab16d148b4599"): ?>			
+        <div class='update-nag'>
+            <p>Some of the functionality above applies only to new apps. Your app might require to be updated for these settings to take effect.</p>
+			<p>Should you have any questions or to request an update, get in touch at <a href='mailto:support@mobiloud.com'>support@mobiloud.com</a>.</p>
+        </div>
+        <?php endif; ?>
     </div>
     <div class="get_started_preview">
         <div class="ml-form-row">
             <label>Quick preview of the app design</label>
+            <p>This is only a mockup. <a href="./admin.php?page=mobiloud&tab=test_app">Click here</a> to test your app on your own device.</p>
             <div class="os-selection">
                 <div class="radio-wrap">
                     <input type="radio" id='ml_preview_os_ios' name="ml_preview_os" value='ios' checked/>

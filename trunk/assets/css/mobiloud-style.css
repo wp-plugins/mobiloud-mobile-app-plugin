@@ -28,6 +28,14 @@
     overflow: auto;
 }
 
+
+.mobiloud .update-nag {
+	text-align:left;
+	margin:20px 0px;
+	padding:10px 10px;
+	display: inline-block;
+}
+
 .ml-sub-title {
     font-size: 12px;
     color: #aaa;
@@ -113,8 +121,8 @@
 }
 
 .mobiloud .nav-tab {
-    font-weight: bold;
-    padding: 6px 32px;
+    font-weight: 500;
+    padding: 6px 10px;
 }
 
 .mobiloud h2 .nav-tab {

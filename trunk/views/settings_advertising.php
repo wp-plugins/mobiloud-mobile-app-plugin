@@ -1,23 +1,19 @@
 <div id="ml_settings_advertising" class="tabs-panel ml-compact">
     <form method="post" action="<?php echo admin_url('admin.php?page=mobiloud_settings&tab=advertising'); ?>">
         <?php wp_nonce_field('form-settings_advertising'); ?>
-		<p>With Mobiloud's support for a number of networks and ad servers and the possibility of adding any image, javascript or HTML based ads (including Adsense) within the contents of your app, the possibilities to monetize your content are endless! Should you have any questions or require our assistance, get in touch at <a href='mailto:support@mobiloud.com'>support@mobiloud.com</a>.</p>
+		<p>With Mobiloud's support for a number of networks and ad servers and the possibility of adding any image, javascript or HTML based ads (including Adsense) within the contents of your app, the possibilities to monetize your content are endless!</p>
+			
+			<p>For help to set up advertising in your app, <a href="http://www.mobiloud.com/help/knowledge-base/ads-banners/?utm_source=wp-plugin-admin&utm_medium=web&utm_campaign=ads_page" target="_blank">read our guide</a></li></p>
+			
+			Should you have any questions or require our assistance, get in touch at <a href='mailto:support@mobiloud.com'>support@mobiloud.com</a>.</p>
 		
-        <h3>Banner, Interstitial and Native ads</h3>
-	    <?php if( strlen(Mobiloud::get_option('ml_pb_app_id')) > 0 && Mobiloud::get_option('ml_pb_app_id') < "543e7b3f1d0ab16d148b4599"): ?>			
-        <div class='update-nag'>
-            <p> The settings below are only available for recently published apps. Use the section "Embed HTML ads" to add your own banners or Adsense code.</p>
-			<p> Should you have any questions, get in touch at <a href='mailto:support@mobiloud.com'>support@mobiloud.com</a>.</p>
-        </div>
-        <?php endif; ?>
-		
-		
+        <h3>Banner, Interstitial and Native ads</h3>	
         <p>With AdMob, MoPub and Google DFP you'll be able to sell your own ad inventory or display banners from a range of mobile ad networks.</p>
         <p>The following ad types are supported:</p>
         <ul class="ml-info-list">
-			<li><strong>AdMob</strong>: AdMob is a leading global mobile advertising network that helps you monetize your mobile apps. Banner ads and interstitials are supported. <a href="https://www.google.com/ads/admob/index.html" target="_blank">Read more</a></li>
-			<li><strong>MoPub</strong>: MoPub is a hosted ad serving solution built specifically for mobile publishers. As an ad server, MoPub allows you to monetize with your own inventory of ads or combine multiple ad networks. Banner ads, interstitials and native ads are supported. <a href="http://www.mopub.com/" target="_blank">Read more</a></li>
-			<li><strong>Google DFP</strong>: DoubleClick for Publishers by Google (DFP), can be used as an ad server but also provides a variety of useful features for managing the sales process of online ads using your dedicated sales team. Banner ads and, interstitials are supported. <a href="https://www.google.com/dfp" target="_blank">Read more</a></li>
+			<li><strong>AdMob</strong>: AdMob is a leading global mobile advertising network that helps you monetize your mobile apps. Banner ads and interstitials are supported.  </li>
+			<li><strong>MoPub</strong>: MoPub is a hosted ad serving solution built specifically for mobile publishers. As an ad server, MoPub allows you to monetize with your own inventory of ads or combine multiple ad networks. Banner ads, interstitials and native ads are supported. </li>
+			<li><strong>Google DFP</strong>: DoubleClick for Publishers by Google (DFP), can be used as an ad server but also provides a variety of useful features for managing the sales process of online ads using your dedicated sales team. Banner ads and, interstitials are supported. </li>
         </ul>
         <table class="form-table">
             <tbody>
@@ -201,6 +197,15 @@
                 </div>
             </div>
         </div>
+	    <?php if( strlen(Mobiloud::get_option('ml_pb_app_id')) > 0 && Mobiloud::get_option('ml_pb_app_id') < "543e7b3f1d0ab16d148b4599"): ?>			
+        <div class='update-nag'>
+            <p>The functionality above is new. Your app might require to be updated for these settings to take effect.</p>
+			<p>Should you have any questions or to request an update, get in touch at <a href='mailto:support@mobiloud.com'>support@mobiloud.com</a>.</p>
+        </div>
+        <?php endif; ?>
+		
+		
+		
         <h3>Embed HTML ads within the content</h3>
         <div class='ml-col-twothirds'>
             <p>You can use the editor to add HTML or Javascript code in a number of ad positions within the post and page screens.</p>

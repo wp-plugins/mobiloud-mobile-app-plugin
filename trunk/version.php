@@ -1,4 +1,4 @@
-<?php
+re<?php
 include("../../../wp-load.php");
 	$info = array("version" => "3.0.7");
 	$callback = sanitize_text_field($_GET['callback']);
