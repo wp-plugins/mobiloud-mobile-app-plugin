@@ -2,7 +2,7 @@
     <?php if(strlen(Mobiloud::get_option('ml_pb_app_id')) <= 0 && strlen(Mobiloud::get_option('ml_pb_secret_key')) <= 0): ?>
     <div id="ml_admin_push" style="padding-top:30px">
 
-		<p>This page will be accessible once you have <a target='_blank' href="http://www.mobiloud.com/pricing/?utm_source=wp-plugin-admin&utm_medium=web&utm_campaign=plugin-admin-push">purchased your app</a> and <a href="./admin.php?page=mobiloud_settings&tab=license">entered a valid license key</a>.
+		<p>This page will be accessible once you have <a target='_blank' href="http://www.mobiloud.com/pricing/?utm_source=wp-plugin-admin&utm_medium=web&utm_campaign=plugin-admin-push">purchased your app</a> and <a href="./admin.php?page=mobiloud_settings&tab=license">entered a valid license key</a>. Note notifications cannot be tested using the preview app, as they will only be available once your app is published.
 			
 		<br/><br/>
 		
