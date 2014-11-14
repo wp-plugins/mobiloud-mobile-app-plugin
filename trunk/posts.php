@@ -261,7 +261,7 @@ function print_posts($posts,$tot_count,$offset,$options)
 {
 	/** JSON OUTPUT **/
 	$final_posts = array("posts" => array(), "post-count" => $tot_count);
-	
+	$eager_loading = isset($_GET['allow_lazy']) ? $_GET['allow_lazy'] : false;
 	foreach($posts as $post)
 	{
 
@@ -311,7 +311,7 @@ function print_posts($posts,$tot_count,$offset,$options)
 		$final_post["title"] = strip_tags($post->post_title);
 		$final_post["date"] = $post->post_date;
 		
-		if(get_option('ml_eager_loading_enable') == 'true' || $eager_loading == "true" || $post_type == 'page' || isset($_POST['post_id'])){
+		if(get_option('ml_eager_loading_enable') == true || $eager_loading == "true" || $post_type == 'page' || isset($_POST['post_id'])){
 			
 		} else {
 			$final_post["lazy"] = "true";
@@ -369,16 +369,27 @@ function print_posts($posts,$tot_count,$offset,$options)
 			$imageToAdd["imageId"] = $image->ID;
 			$final_post["images"][] = $imageToAdd;
 		}	
-		
-		
-		//capturing the html output generated
-		ob_start();
-		include("post/post.php");
-		$html_content = ob_get_clean();
         
-        //replace relative URLs with absolute
-        $html_content = preg_replace("#(<\s*a\s+[^>]*href\s*=\s*[\"'])(?!http|/)([^\"'>]+)([\"'>]+)#", '$1'.$final_post["permalink"].'/$2$3', $html_content);
-		$final_post["content"] = $html_content;
+        if($eager_loading == "true") {
+            if(get_option('ml_eager_loading_enable') == true) {
+                $final_post["lazy"] = "true";
+            } else {
+                $final_post["lazy"] = "false";
+            }
+        } else {
+            $final_post["lazy"] = "false";
+        }
+        
+        if($final_post["lazy"] == 'true') {
+            //capturing the html output generated
+            ob_start();
+            include("post/post.php");
+            $html_content = ob_get_clean();        
+
+            //replace relative URLs with absolute
+            $html_content = preg_replace("#(<\s*a\s+[^>]*href\s*=\s*[\"'])(?!http|/)([^\"'>]+)([\"'>]+)#", '$1'.$final_post["permalink"].'/$2$3', $html_content);
+            $final_post["content"] = $html_content;
+        }
 		
 		//sticky ?
 		$final_post["sticky"] = is_sticky($post->ID) || $post->sticky;

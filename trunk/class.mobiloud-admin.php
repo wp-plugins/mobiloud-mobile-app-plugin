@@ -140,7 +140,6 @@ class Mobiloud_Admin {
         
         wp_enqueue_script('mobiloud',MOBILOUD_PLUGIN_URL.'mobiloud.js',array('jquery','jquery-ui'),MOBILOUD_PLUGIN_VERSION);
 
-        wp_register_style('mobiloud.css', MOBILOUD_PLUGIN_URL . 'mobiloud.css');
         wp_register_style('mobiloud-iphone', MOBILOUD_PLUGIN_URL . "/css/iphone.css");
         wp_enqueue_style("mobiloud.css");
         wp_enqueue_style("mobiloud-iphone");
@@ -378,7 +377,6 @@ class Mobiloud_Admin {
                     Mobiloud::set_option('ml_contact_link_email', sanitize_text_field($_POST['ml_contact_link_email']));
                     Mobiloud::set_option('ml_copyright_string', sanitize_text_field($_POST['ml_copyright_string']));
                     Mobiloud::set_option('ml_article_list_enable_dates', isset($_POST['ml_article_list_enable_dates']));
-                    Mobiloud::set_option('ml_article_list_enable_featured_images', isset($_POST['ml_article_list_enable_featured_images']));
                     Mobiloud::set_option('ml_automatic_image_resize_active', isset($_POST['ml_automatic_image_resize_active']));
                     Mobiloud::set_option('ml_article_list_show_excerpt', isset($_POST['ml_article_list_show_excerpt']));
                     Mobiloud::set_option('ml_article_list_show_comment_count', isset($_POST['ml_article_list_show_comment_count']));                    

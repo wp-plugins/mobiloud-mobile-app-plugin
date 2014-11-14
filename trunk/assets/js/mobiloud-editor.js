@@ -18,7 +18,7 @@ jQuery(document).ready(function() {
                 value: jQuery("textarea[name='"+selected_editor+"']").val()
             };
             jQuery.post(ajaxurl, data, function(response) {
-                jQuery('#ml_settings_editor').trigger('reinitialize.areYouSure');
+                jQuery('#ml_settings_editor form').trigger('reinitialize.areYouSure');
                 alert('Saved!');
             });
         }

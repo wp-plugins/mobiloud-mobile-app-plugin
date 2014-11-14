@@ -17,14 +17,13 @@ $app_version = $_POST['app_version'];
 	
 $return_config = array();
 $return_config['app_name'] = get_option('ml_app_name');
-$return_config["enable_featured_images"] = get_option('ml_article_list_enable_featured_images',true);
+$return_config["enable_featured_images"] = get_option('ml_show_article_featuredimage',true);
 $return_config["enable_dates"] = get_option('ml_article_list_enable_dates',true);
 $return_config['show-android-cat-tabs'] = get_option('ml_show_android_cat_tabs', false);
 $return_config['google-tracking-id'] = get_option('ml_google_tracking_id', '');
 $return_config['show_custom_field'] = get_option('ml_custom_field_enable', false);
 $return_config['show_excerpts'] = get_option('ml_article_list_show_excerpt', false);
 $return_config['show_comments_count'] = get_option('ml_article_list_show_comment_count', false);
-$return_config['show_article_featuredimage'] = get_option('ml_show_article_featuredimage', true);
 $return_config['copyright_string'] = get_option('ml_copyright_string', '');
 $return_config['list_format'] = get_option('ml_article_list_view_type', 'extended');
 $return_config['comments_system'] = get_option('ml_comments_system', 'wordpress');

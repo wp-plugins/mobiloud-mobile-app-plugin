@@ -64,10 +64,6 @@
                     <label for="ml_article_list_enable_dates">Show post dates in the list</label>
                 </div>
                 <div class="ml-form-row ml-checkbox-wrap no-margin">
-                    <input type="checkbox" id="ml_article_list_enable_featured_images" name="ml_article_list_enable_featured_images" value="true" <?php echo Mobiloud::get_option('ml_article_list_enable_featured_images') ? 'checked' : ''; ?>/>
-                    <label for="ml_article_list_enable_featured_images">Show featured images in the list</label>
-                </div>
-                <div class="ml-form-row ml-checkbox-wrap no-margin">
                     <input type="checkbox" id="ml_automatic_image_resize_active" name="ml_automatic_image_resize_active" value="true" <?php echo Mobiloud::get_option('ml_automatic_image_resize_active') ? 'checked' : ''; ?>/>
                     <label for="ml_automatic_image_resize_active">Automatically resize image thumbnails</label>
                 </div>
