@@ -7,9 +7,9 @@
              <table class="form-table">
                 <tbody>
                     <tr valign="top">
-                        <th scope="row">App ID</th>
+                        <th scope="row">License Key</th>
                         <td>
-                            <input size="36" type="text" id="ml_pb_app_id" name="ml_pb_app_id" placeholder="Enter App ID" value='<?php echo Mobiloud::get_option('ml_pb_app_id'); ?>'>
+                            <input size="36" type="text" id="ml_pb_app_id" name="ml_pb_app_id" placeholder="Enter License Key" value='<?php echo Mobiloud::get_option('ml_pb_app_id'); ?>'>
                         </td>
                     </tr>
                     <tr valign="top">
