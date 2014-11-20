@@ -124,12 +124,12 @@
         <div class='ml-col-row'>
             <div class='ml-col-half'>
                 <p>You can override the featured image for each post with an image from a custom field inside the post.</p>
-                <p>Enter a custom field name to the right which you can fill for every post with the custom featured image URL. This will take effect on the article list thumbnail too.</p>
+                <p>Enter the ID of the Image Placeholder to the right which you can fill for every post with the custom featured image. This will take effect on the article list thumbnail too.</p>
             </div>
             <div class='ml-col-half'>
                 <div class="ml-form-row ml-left-align clearfix">
-                    <label class='ml-width-120' for="ml_custom_featured_image">URL Field Name</label>
-                    <input type="text" placeholder="Custom Field Name" id="ml_custom_featured_image" name="ml_custom_featured_image" value="<?php echo esc_attr(Mobiloud::get_option('ml_custom_featured_image')); ?>"/>
+                    <label class='ml-width-120' for="ml_custom_featured_image">Image ID</label>
+                    <input type="text" placeholder="Image ID" id="ml_custom_featured_image" name="ml_custom_featured_image" value="<?php echo esc_attr(Mobiloud::get_option('ml_custom_featured_image')); ?>"/>
                 </div>
             </div>            
         </div>

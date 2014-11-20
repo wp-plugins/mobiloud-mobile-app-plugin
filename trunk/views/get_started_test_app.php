@@ -1,4 +1,16 @@
 <div id="get_started_menu_config" class="tabs-panel">
+    <h3>Test your app in the simulator</h3>
+    <?php
+    $user_email = Mobiloud::get_option('ml_user_email');
+    $user_name = Mobiloud::get_option('ml_user_name');
+    $user_site = Mobiloud::get_option('ml_user_site');
+    $plugin_url = Mobiloud::get_plugin_url();
+    $plugin_version = MOBILOUD_PLUGIN_VERSION;
+    ?>
+    <?php add_thickbox(); ?>
+    <a href="http://www.mobiloud.com/simulator/?name=<?php echo urlencode(esc_attr($user_name)); ?>&email=<?php echo urlencode(esc_attr($user_email)); ?>&site=<?php echo urlencode(esc_url($user_site)); ?>&p=<?php echo urlencode(esc_url($plugin_url)); ?>&v=<?php echo urlencode(esc_attr($plugin_version)); ?>" target="_blank" class="sim-btn thickbox button button-hero button-primary">
+            See Live Preview &amp; Sign Up
+        </a>
     <h3>Test your app on your own device</h3>
     <div class="">
         <img src="<?php echo MOBILOUD_PLUGIN_URL . '/assets/img/demo_app.png'; ?>" width="250" height="528" alt="Preview your own app" class="test_img"><br>
