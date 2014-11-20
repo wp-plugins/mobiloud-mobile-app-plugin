@@ -112,4 +112,11 @@ class Mobiloud_App_Preview {
 
         return $r;
     }
+    
+    public static function trim_post_title($title, $length=null) {
+        if($length === null || strlen($title) <= $length) {
+            return $title;
+        }
+        return substr($title, 0, $length) . '...';
+    }
 }

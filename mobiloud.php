@@ -36,6 +36,8 @@ include_once MOBILOUD_PLUGIN_DIR . 'intercom.php';
 
 include_once MOBILOUD_PLUGIN_DIR . 'admin_pointer.php';
 
+require_once MOBILOUD_PLUGIN_DIR . 'libs/mixpanel/Mixpanel.php';
+
 require_once(MOBILOUD_PLUGIN_DIR . 'class.mobiloud-app-preview.php');
 
 require_once(MOBILOUD_PLUGIN_DIR . 'class.mobiloud.php');

@@ -182,7 +182,7 @@ var cropPostImages = function(width) {
     jQuery('img.ml-preview-img').resizecrop({
       width:width,
       height:100,
-      vertical:"middle"
+      wrapperCSS: {"vertical-align":"top"}
     });  
 };
 

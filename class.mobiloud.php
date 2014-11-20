@@ -31,13 +31,15 @@ class Mobiloud {
         add_option('mobiloud_do_activation_redirect', true);
         if(!self::get_option('ml_activation_tracked', false)) {
             self::set_option('ml_activation_tracked', true);
-            ml_init_mixpanel();
             ml_track_mixpanel('plugin activated');
         }
         self::run_db_install();
     }
     
     public static function set_default_options() {
+        if(Mobiloud::get_option('ml_custom_featured_image', 'none') == 'none') {
+            Mobiloud::set_option('ml_custom_featured_image', 'secondary-image');
+        }
         if(Mobiloud::get_option('ml_menu_show_favorites', 'none') == 'none') {
             Mobiloud::set_option('ml_menu_show_favorites', true);
         }
@@ -191,5 +193,9 @@ class Mobiloud {
         } else {
             return substr($string, 0, $length) . '...';
         }
+    }
+    
+    public static function get_plugin_url() {
+        return MOBILOUD_PLUGIN_URL;
     }
 }
