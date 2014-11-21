@@ -361,6 +361,19 @@ function print_posts($posts,$tot_count,$offset,$options)
                 "big-thumb" => array("url" => $custom_featured_image_url)
             );
         }
+        
+        if (strlen(Mobiloud::get_option('ml_custom_featured_image')) > 0 && class_exists('MultiPostThumbnails')) {
+            $customImageUrl = MultiPostThumbnails::get_post_thumbnail_url(
+                    get_post_type($post->ID), Mobiloud::get_option('ml_custom_featured_image'), $post->ID
+            );
+            if($customImageUrl !== false) {
+                $final_post["images"][0] = array(
+                    "full" => $customImageUrl, 
+                    "thumb" => array("url" => $customImageUrl),
+                    "big-thumb" => array("url" => $customImageUrl)
+                );
+            }
+        }
 		
 		foreach ( (array) $images as $image ) {
 			$imageToAdd = array();
