@@ -261,7 +261,7 @@ function print_posts($posts,$tot_count,$offset,$options)
 {
 	/** JSON OUTPUT **/
 	$final_posts = array("posts" => array(), "post-count" => $tot_count);
-	$eager_loading = isset($_GET['allow_lazy']) ? $_GET['allow_lazy'] : false;
+	$eager_loading = isset($_GET['allow_lazy']) ? $_POST['allow_lazy'] : false;
 	foreach($posts as $post)
 	{
 
@@ -364,7 +364,7 @@ function print_posts($posts,$tot_count,$offset,$options)
         
         if (strlen(get_option('ml_custom_featured_image')) > 0 && class_exists('MultiPostThumbnails')) {
             $customImageUrl = MultiPostThumbnails::get_post_thumbnail_url(
-                    get_post_type($post->ID), Mobiloud::get_option('ml_custom_featured_image'), $post->ID
+                    get_post_type($post->ID), Mobiloud::get_option('ml_custom_featured_image'), $post->ID, 'large'
             );
             if($customImageUrl !== false) {
                 $final_post["images"][0] = array(
@@ -393,7 +393,7 @@ function print_posts($posts,$tot_count,$offset,$options)
             $final_post["lazy"] = "false";
         }
         
-        if($final_post["lazy"] == 'true') {
+        if($final_post["lazy"] == 'true' || isset($_POST["post_id"])) {
             //capturing the html output generated
             ob_start();
             include("post/post.php");
@@ -403,7 +403,7 @@ function print_posts($posts,$tot_count,$offset,$options)
             $html_content = preg_replace("#(<\s*a\s+[^>]*href\s*=\s*[\"'])(?!http|/)([^\"'>]+)([\"'>]+)#", '$1'.$final_post["permalink"].'/$2$3', $html_content);
             $final_post["content"] = $html_content;
         } else {
-            $final_post['content'] = '';
+            $final_post['content'] = 'k';
         }
 		
 		//sticky ?
