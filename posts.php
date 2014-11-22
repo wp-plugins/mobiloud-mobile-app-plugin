@@ -362,7 +362,7 @@ function print_posts($posts,$tot_count,$offset,$options)
             );
         }
         
-        if (strlen(Mobiloud::get_option('ml_custom_featured_image')) > 0 && class_exists('MultiPostThumbnails')) {
+        if (strlen(get_option('ml_custom_featured_image')) > 0 && class_exists('MultiPostThumbnails')) {
             $customImageUrl = MultiPostThumbnails::get_post_thumbnail_url(
                     get_post_type($post->ID), Mobiloud::get_option('ml_custom_featured_image'), $post->ID
             );
