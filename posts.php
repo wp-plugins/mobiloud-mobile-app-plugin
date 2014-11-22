@@ -402,6 +402,8 @@ function print_posts($posts,$tot_count,$offset,$options)
             //replace relative URLs with absolute
             $html_content = preg_replace("#(<\s*a\s+[^>]*href\s*=\s*[\"'])(?!http|/)([^\"'>]+)([\"'>]+)#", '$1'.$final_post["permalink"].'/$2$3', $html_content);
             $final_post["content"] = $html_content;
+        } else {
+            $final_post['content'] = '';
         }
 		
 		//sticky ?
