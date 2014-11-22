@@ -261,7 +261,7 @@ function print_posts($posts,$tot_count,$offset,$options)
 {
 	/** JSON OUTPUT **/
 	$final_posts = array("posts" => array(), "post-count" => $tot_count);
-	$eager_loading = isset($_GET['allow_lazy']) ? $_POST['allow_lazy'] : false;
+	$eager_loading = isset($_POST['allow_lazy']) ? $_POST['allow_lazy'] : false;
 	foreach($posts as $post)
 	{
 
@@ -383,7 +383,7 @@ function print_posts($posts,$tot_count,$offset,$options)
 			$final_post["images"][] = $imageToAdd;
 		}	
         
-        if($eager_loading == "true") {
+        if($eager_loading) {
             if(get_option('ml_eager_loading_enable') == true) {
                 $final_post["lazy"] = "true";
             } else {
@@ -403,7 +403,7 @@ function print_posts($posts,$tot_count,$offset,$options)
             $html_content = preg_replace("#(<\s*a\s+[^>]*href\s*=\s*[\"'])(?!http|/)([^\"'>]+)([\"'>]+)#", '$1'.$final_post["permalink"].'/$2$3', $html_content);
             $final_post["content"] = $html_content;
         } else {
-            $final_post['content'] = 'k';
+            $final_post['content'] = '';
         }
 		
 		//sticky ?
