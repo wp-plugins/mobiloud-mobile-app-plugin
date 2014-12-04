@@ -103,6 +103,7 @@ else {
 	
 	$categoryNames = array();
 	$excludeCategories = array();
+    $includedCategories  =array();
 	$categoryName = "";
 	
 	if($user_category){
@@ -114,9 +115,15 @@ else {
 		array_push($categoryNames,$catObj->slug);
 		$categoryName = $catObj->cat_ID;
 	} else {
-		foreach(explode(",",get_option("ml_article_list_exclude_categories","")) as $cname){
-			array_push($excludeCategories,get_cat_ID($cname));	
-		}
+        $all_cats = get_categories('orderby=name');  
+        if(!empty($all_cats)) {
+            $excluded_cats = explode(",",get_option("ml_article_list_exclude_categories",""));
+            foreach($all_cats as $cat) {
+                if(!array_search($cat->cat_ID, $excluded_cats)) {
+                    $includedCategories[$cat->cat_ID] = $cat->cat_ID;
+                }
+            }
+        }
 	}
 	
 	if(strlen($user_search)>0 && !in_array("page",$includedPostTypes) && (get_option("ml_include_pages_in_search","false")=="true"||get_option("ml_include_pages_in_search","false")==true)){
@@ -131,9 +138,13 @@ else {
 			  'post_type' => $includedPostTypes,
 			  'post_status' => 'publish',
 			  'offset' => $real_offset,
-			  'category__not_in' => $excludeCategories,
+			  
 			  's' => $user_search
 			);
+    
+    if(!empty($includedCategories)) {
+        $query_array['cat'] = implode(",",$includedCategories);
+    }
 	
 	$arrayFilter = array();
 	
@@ -169,6 +180,7 @@ else {
 	$posts_options = array();
 	if(!isset($_POST["post_id"])){
 		$posts = get_posts($query_array);
+        
 		$posts_options = array();
 		
 		
