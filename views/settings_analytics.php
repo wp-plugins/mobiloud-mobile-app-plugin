@@ -2,7 +2,6 @@
     <form method="post" action="<?php echo admin_url('admin.php?page=mobiloud_settings&tab=analytics'); ?>">
         <?php wp_nonce_field('form-settings_analytics'); ?>
         <h3>Google Analytics</h3>
-        <div class='ml-col-twothirds'>
             <p>Configure your Google Analytics tracking code below to track page and article views and user activity on your app 
                 within Google Analytics.</p>  
             <p>You'll need to <a target="_blank" href="https://support.google.com/analytics/answer/2614741?hl=en-GB">setup a new Google Analytics property</a> and select "App" as the type of property you 
@@ -25,12 +24,9 @@
 	        </div>
 	        <?php endif; ?>
 			
-        </div>
-        <h3>Other Analytics tools</h3>
-        <div class='ml-col-twothirds'>    
+			<h3>Other Analytics tools</h3>
             Beyond Google Analytics, our developers can setup other Analytics solutions for your app, for more information, 
             contact <a href="mailto:support@mobiloud.com">support@mobiloud.com</a>.
-        </div>
-        <p class="submit"><input type="submit" name="submit" id="submit" class="button button-primary" value="Save Changes"></p>
+			<p class="submit"><input type="submit" name="submit" id="submit" class="button button-primary" value="Save Changes"></p>
     </form>
 </div>

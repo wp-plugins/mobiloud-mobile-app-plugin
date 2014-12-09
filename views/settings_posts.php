@@ -80,7 +80,7 @@
         </div>
 	
 		        
-        <h3>Commenting settings</h3>
+        <!-- <h3>Commenting settings</h3>
         <div class='ml-col-row'>
             <div class='ml-col-half'>
                 <p>Select the commenting system you'd like to use in your app.</p>
@@ -94,7 +94,7 @@
                     <div class="ml-radio-wrap">
                         <input type="radio" id="ml_comments_system_disqus" name="ml_comments_system" value="disqus" <?php echo get_option('ml_comments_system', 'wordpress') == 'disqus' ? 'checked' : ''; ?>/>
                         <label for="ml_comments_system_disqus">Disqus</label>
-                    </div> 
+                    </div>
                     <div class="ml-radio-wrap">
                         <input type="radio" id="ml_comments_system_facebook" name="ml_comments_system" value="facebook" <?php echo get_option('ml_comments_system', 'wordpress') == 'facebook' ? 'checked' : ''; ?>/>
                         <label for="ml_comments_system_facebook">Facebook Comments</label>
@@ -107,24 +107,26 @@
                 <div class="ml-disqus-row ml-form-row" <?php echo Mobiloud::get_option('ml_comments_system', 'wordpress') == 'disqus' ? '' : 'style="display: none;"'; ?>>
                     <label>Disqus shortname <span class="required">*</span></label>
                     <input name="ml_disqus_shortname" id="ml_disqus_shortname" type="text" value="<?php echo get_option("ml_disqus_shortname", ''); ?>" />
-                    <p>A shortname is the unique identifier assigned to a Disqus site. All the comments posted to a site are referenced with the shortname. 
+                    <p>A shortname is the unique identifier assigned to a Disqus site. All the comments posted to a site are referenced with the shortname.
                     See <a href="#">how to find your shortname</a>.</p>
                 </div>
             </div>
         </div>
-	    <?php if( strlen(Mobiloud::get_option('ml_pb_app_id')) > 0 && Mobiloud::get_option('ml_pb_app_id') < "543e7b3f1d0ab16d148b4599"): ?>			
+	    <?php if( strlen(Mobiloud::get_option('ml_pb_app_id')) > 0 && Mobiloud::get_option('ml_pb_app_id') < "543e7b3f1d0ab16d148b4599"): ?>
         <div class='update-nag'>
             <p>The functionality above is new. Your app might require to be updated for these settings to take effect.</p>
 			<p>Should you have any questions or to request an update, get in touch at <a href='mailto:support@mobiloud.com'>support@mobiloud.com</a>.</p>
         </div>
-        <?php endif; ?>
+        <?php endif; ?> -->
 		
         <h3>Advanced settings</h3>
-        <h4>Override Featured Image</h4>
+        <h4>Alternative Featured Image</h4>
         <div class='ml-col-row'>
             <div class='ml-col-half'>
-                <p>You can override the featured image for each post with an image from a custom field inside the post.</p>
-                <p>Enter the ID of the Image Placeholder to the right which you can fill for every post with the custom featured image. This will take effect on the article list thumbnail too.</p>
+                <p>You can override the featured image used in article lists and at the top of every article with a secondary image you can define for every post.</p>
+                <p>Install the <a href="https://wordpress.org/plugins/multiple-post-thumbnails/">Multiple Post Thumbnails</a> plugin and enter the ID of the secondary featured image field you've setup, normally "secondary-image".</p>
+                <p>Alternatively enter the name of a custom field where you'll enter, for each post, the full URL of the alternative image.</p>
+				
             </div>
             <div class='ml-col-half'>
                 <div class="ml-form-row ml-left-align clearfix">

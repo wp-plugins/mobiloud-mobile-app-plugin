@@ -405,7 +405,7 @@ function print_posts($posts,$tot_count,$offset,$options)
             $final_post["lazy"] = "false";
         }
         
-        if($final_post["lazy"] == 'true' || isset($_POST["post_id"])) {
+        // if($final_post["lazy"] == 'true' || isset($_POST["post_id"])) {
             //capturing the html output generated
             ob_start();
             include("post/post.php");
@@ -414,9 +414,9 @@ function print_posts($posts,$tot_count,$offset,$options)
             //replace relative URLs with absolute
             $html_content = preg_replace("#(<\s*a\s+[^>]*href\s*=\s*[\"'])(?!http|/)([^\"'>]+)([\"'>]+)#", '$1'.$final_post["permalink"].'/$2$3', $html_content);
             $final_post["content"] = $html_content;
-        } else {
-            $final_post['content'] = '';
-        }
+        // } else {
+        //     $final_post['content'] = '';
+        // }
 		
 		//sticky ?
 		$final_post["sticky"] = is_sticky($post->ID) || $post->sticky;
