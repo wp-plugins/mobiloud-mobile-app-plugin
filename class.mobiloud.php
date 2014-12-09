@@ -38,7 +38,7 @@ class Mobiloud {
     
     public static function set_default_options() {
         if(Mobiloud::get_option('ml_custom_featured_image', 'none') == 'none') {
-            Mobiloud::set_option('ml_custom_featured_image', 'secondary-image');
+            Mobiloud::set_option('ml_custom_featured_image', '');
         }
         if(Mobiloud::get_option('ml_menu_show_favorites', 'none') == 'none') {
             Mobiloud::set_option('ml_menu_show_favorites', true);

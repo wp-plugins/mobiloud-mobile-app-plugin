@@ -1,5 +1,9 @@
 <div id="get_started_menu_config" class="tabs-panel">
     <h3>Test your app in the simulator</h3>
+    <p>
+	   Test-drive your app in the simulator before signing up and publishing it.
+    </p>
+	
     <?php
     $user_email = Mobiloud::get_option('ml_user_email');
     $user_name = Mobiloud::get_option('ml_user_name');
@@ -9,20 +13,13 @@
     ?>
     <?php add_thickbox(); ?>
     <a href="http://www.mobiloud.com/simulator/?name=<?php echo urlencode(esc_attr($user_name)); ?>&email=<?php echo urlencode(esc_attr($user_email)); ?>&site=<?php echo urlencode(esc_url($user_site)); ?>&p=<?php echo urlencode(esc_url($plugin_url)); ?>&v=<?php echo urlencode(esc_attr($plugin_version)); ?>" target="_blank" class="sim-btn thickbox button button-hero button-primary">
-            See Live Preview &amp; Sign Up
+            See Live Preview
         </a>
-    <h3>Test your app on your own device</h3>
+    <h3>Test it on your own device</h3>
     <div class="">
         <img src="<?php echo MOBILOUD_PLUGIN_URL . '/assets/img/demo_app.png'; ?>" width="250" height="528" alt="Preview your own app" class="test_img"><br>
-		
-        <p>
-		   Test-drive your native iOS and Android app on your device before signing up and publishing it.
-        </p>
-		
-  
-		
 		<div>
-        <p>To get a preview of your app, follow the steps below:</p>
+        <p>To get a preview of your app for iOS or Android, follow the steps below:</p>
 
 			<ol style="text-align:left;">
 				<li> <strong>Download the <a href="https://itunes.apple.com/us/app/mobiloud/id903667370?mt=8">Mobiloud app from the App Store</a></strong> or the <a href="https://play.google.com/store/apps/details?id=com.mobiloud.android"><strong>Android app from Google Play</strong></a> on your own device.</li>

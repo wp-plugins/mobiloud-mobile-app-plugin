@@ -3,7 +3,7 @@ Contributors: psac50
 Tags: mobiloud, push notifications, wordpress mobile, wordpress mobile app, mobile plugin, wordpress android app, wordpress ios app, wordpress to app, mobile app with WordPress, mobile app for wordpress, native app, wordpress app, iphone, ipad, iphone app, ipad app, android, wordpress iphone app, wordpress android app, windows mobile, mobile web, app for wordpress, mobile site, mobile plugin, wordpress mobile, wordpress ios app, mobile theme, mobile website, mobile theme, wordpress to android app, wordpress to mobile app, mobile app, mobile app plugin, wordpress app builder, wordpress apps, wordpress app maker, ios app, wordpress mobile, wordpress to mobile app, wordpress blog app, build wordpress app, build mobile apps, create blog app, native app plugin, website to mobile app, native mobile app, build an app
 Requires at least: 3.5
 Tested up to: 4.0
-Stable tag: 3.0.6
+Stable tag: 3.0.7
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -22,21 +22,6 @@ With Mobiloud, native mobile apps are finally affordable, and you won’t need a
 Install the plugin now and you will be moments away from creating your own mobile app.
 
 For any questions, don’t hesitate to get in touch with us at [support@mobiloud.com](mailto:support@mobiloud.com)
-
-**Who Mobiloud is for:**
-
-* Online magazines, news websites
-* Professional bloggers, podcasters
-* Content-rich websites
-* Lovers of great apps and design
-
-**Who it is *NOT* a good fit for:**
-
-* Company sites with no blog or content
-* WooCommerce or Buddypress websites
-* Heavily customised websites with no content
-* Those who like slow, clunky apps
-
 
 = What you get with Mobiloud =
 
@@ -132,44 +117,82 @@ You can contact us at [support@mobiloud.com](mailto:support@mobiloud.com)
 
 == Frequently Asked Questions ==
 
-= How much does it cost? =
-The Mobile App Plugin is free to install. You can also design your own app at no cost and with no risk. Once you have designed your app and would like to publish it on the App Store or Google Play, we have simple pricing plans you can choose from. Check the [pricing plans on Mobiloud.com](http://www.mobiloud.com/pricing/?ref=plugindesc).
+= What is a native mobile app? =
+Mobiloud apps, on every platform, are native mobile apps. Most competing solutions instead give you HTML5 apps, which means really mobile sites re-packaged as apps. The big difference is in performance and user experience.
 
-= Does Mobiloud help me build a mobile site? =
-We don't provide a mobile site together with your app. It's a good idea to have a mobile site, so casual visitors can still have a decent experience on your site when using a mobile device. Of course, we recommend you also build a mobile app, to convert those casual visitors into loyal followers, increase your traffic and keep growing your audience.
-
-The following plugins are all compatible with Mobiloud: Wptouch, WordPress Mobile Edition, WordPress Mobile Pack, Mobile Press.
-
-= What functionality will my mobile app offer? =
-Your app will automatically show the latest content from your site, with no need for you to update it manually. Your app will display posts and pages, comments and categories. Your users will be able to read content online and offline, share it with a single tap, save their favourites, leave comments on your articles and, most importantly, receive push notifications alerting them to new content.
-
-= Can I test out my app online before I buy? =
-Yes, after installing the plugin you'll be able to test your own app on your device.
-
-= Can I try an example app on my iPhone or iPad? =
-Sure, we have published many apps you can try directly. Just open up App Store on your phone or iPad and search for *Speckyboy*.
-
-= Can I have advertising on my app? =
-Of course! We support **Admob and Adwords**, out of the box. You can also add your own code for any kind of HTML banners.
-
-= Can you add more functionality to the app? =
-Yes, we can easily integrate additional content or functionality in your app, such as your Twitter feed, podcast, image or video galleries. Get in touch at [hello@mobiloud.com](mailto:hello@mobiloud.com) to get a quote.
-
-= Can you design my app for me? =
-Yes, we offer a VIP setup option which includes icon and app design, with 2 revisions from our designers. Just email us at [design@mobiloud.com](mailto:design@mobiloud.com) for a quote.
+Native apps are fast, run smoothly on the devices they are designed for, and make full use of each platform's capabilities. They're also easier to use, because they're designed to look and feel familiar on each mobile platform, be it iOS or Android. A Mobiloud app allows your users to receive push notifications, share with a single tap, quickly comment on articles and access content offline. In short, if you want to impress your users, go native and build a real mobile app!
 
 = Why should I build a mobile app for my blog? =
 More and more, people are choosing to use their smartphones and tablets to read online content. Not only these devices make reading more comfortable, which explains why people prefer them to PCs, but there are now millions of mobile users who have just started accessing online content, as they never really used a PC before. On these mobile devices, users spend 80% of their time on apps. So no wonder, they expect to find your content in the form of a mobile app!
 
 With a mobile app you'll be able to convert casual visitors into loyal followers. Why? Because your app will be front and center, easily accessible from the home screen of their device. And because you can alert with push notifications whenever you post something new.
 
-= What is a native mobile app? =
-Mobiloud apps, on every platform, are native mobile apps. Most competing solutions instead give you HTML5 apps, which means really mobile sites re-packaged as apps. The big difference is in performance and user experience.
+= How much does it cost? =
+The Mobile App Plugin is free to install. You can design your app and test it online and your own device, for free. Once you're happy with the result and would like to publish it on the App Store or Google Play, we have simple pricing plans you can choose from. Check the [pricing plans on Mobiloud.com](http://www.mobiloud.com/pricing/?ref=plugindesc).
 
-Native apps are fast, run smoothly on the devices they are designed for, and make full use of each platform's capabilities. They're also easier to use, because they're designed to look and feel familiar on each mobile platform, be it iOS or Android. A Mobiloud app allows your users to receive push notifications, share with a single tap, quickly comment on articles and access content offline. In short, if you want to impress your users, go native and build a real mobile app!
+= Is there a quick demo? =
+Yes, check out our [demo page](http://www.mobiloud.com/demo/).
+
+= Can I test out my app before I buy? =
+Yes, after installing the plugin you'll be able to test your own app on your device. You can also get a quick preview in a simulator.
+
+= Can I try an example app on my iPhone or iPad? =
+Sure, we have published many apps you can try directly. Just open up App Store on your phone or iPad and search for *Speckyboy*.
+
+= What functionality will my mobile app offer? =
+Your app will automatically show the latest content from your site, with no need for you to update it manually. Your app will display posts and pages, comments and categories. Your users will be able to read content online and offline, share it with a single tap, save their favourites, leave comments on your articles and, most importantly, receive push notifications alerting them to new content.
+
+= Are push notifications supported? = 
+With Mobiloud you can send notifications automatically whenever you post new content (with optional filters) or manually, whenever you want. You can also attach a page or post to your notification, so you can use them for anything: alert your users to a new event, promotion or send urgent and important updates - it's a direct connection with your users!
+
+= Can I show my pages or an external URL in the app? =
+Your site is built with pages rather than articles? No problem, you can set a page as your app's home screen, add pages to the app's menu and allow your users to easily navigate a whole hierarchy of pages. Use it to build apps for a company site, catalogues and any sort of reference apps.
+
+Beyond pages and articles, you can now use any URL as your app's home screen or as an entry in your app's menu. Use it to embed functionality from any web app into your app, like forms, widgets or your profile on social networks, the possibilities are endless!
+
+= Are image galleries supported? =
+Image galleries are supported natively, with a simple design that enhances your photography and lets the user quickly browse your images.
+
+Users can swipe between images, save or share them and quickly get an overview of all the images you attached to your articles.
+
+= Can I modify the code or add my own CSS? =
+Sure, click on Settings/Editor to add your own HTML/PHP/CSS code and customise the contents and looks of your app's screens. You can easily pull in content from custom fields and add any functionality and styling adjustments you need.
+
+= Are custom fields supported? =
+Yes, you can easily add custom fields to the article list (one field supported) or anywhere and in any number within the content of posts or pages. You can add your own code using our Editor, or we can help you out.
+
+= Can I show custom post types in the app? =
+Yes, custom post types are supported, simply select which post types to show in the article list by adjusting the relevant options in the plugin Settings.
+
+= Can I have advertising on my app? =
+Of course! We support **MoPub, Google DFP, Admob and Adwords**, out of the box. You can also add your own code for any kind of HTML banners.
+
+= Can you add more functionality to the app? =
+Yes, we can easily integrate additional content or functionality in your app. Get in touch at [hello@mobiloud.com](mailto:hello@mobiloud.com) to get a quote.
+
+= What languages are supported? =
+Mobiloud apps are multi-language and support RTL for Arabic and Hebrew. We add language all the time, write us now to inquire about support for your own language.
+
+Languages currently supported include: English, Arabic, French, Dutch, Spanish, Italian, German, Swedish and Portuguese. We add new ones all the time, as they're requested.
+
+= Do you take care of the app submission? =
+Yes, we handle the complicated submission process for you. But you can also do it yourself if you want to.
+
+Would you like to submit your own app? That’s possible too.
+
+= How long does it take to publish an app with Mobiloud? =
+From your order to submitting the apps we take 5-10 business days. Note Apple then takes 5-10 business days to approve your app for the App Store. Publishing on Google Play requires generally about a day for the store to update.
+
+= Can you design my app for me? =
+Yes, we offer a VIP setup option which includes icon and app design, with 2 revisions from our designers. Just email us at [design@mobiloud.com](mailto:design@mobiloud.com) for a quote.
 
 = Can I use Disqus or Facebook comments? =
-Yes, you can use Disqus or Facebook for comments on your app to replace the standard Wordpress commenting system.
+Yes, you can use Disqus or Facebook for comments on your app in place of the standard Wordpress commenting system.
+
+= Does Mobiloud help me build a mobile site? =
+We don't provide a mobile site together with your app. It's a good idea to have a mobile site, so casual visitors can still have a decent experience on your site when using a mobile device. Of course, we recommend you also build a mobile app, to convert those casual visitors into loyal followers, increase your traffic and keep growing your audience.
+
+The following plugins are all compatible with Mobiloud: Wptouch, WordPress Mobile Edition, WordPress Mobile Pack, Mobile Press.
 
 = Can I use my own Apple or Google Play account? =
 Yes, we recommend you register your own Apple developer account, though it's not requried. You can get yours [here](https://developer.apple.com/programs/ios/).
@@ -181,7 +204,7 @@ No contracts here! You pay month-to-month, and if you're unhappy with the servic
 Here is our [Terms and Conditions](http://www.mobiloud.com/terms/?ref=plugindesc) and [Privacy Policy](http://www.mobiloud.com/privacy/?ref=plugindesc).
 
 = Where are you based? =
-We're a UK company based in London. Mobiloud a trademark of Fifty Pixels Ltd. Come meet us at Clerkenwell Workshops, 31 Clerkenwell Close, London, EC1R 0AT.
+We're a UK company based in London. Mobiloud is a trademark of Fifty Pixels Ltd.
 
 = Can I contact you over the phone? =
 Just call us on **+1 415 5130 886**.
@@ -202,10 +225,14 @@ You can contact us at [support@mobiloud.com](mailto:support@mobiloud.com)
 = 3.0.7 =
 * Updated minimum required WP version to 3.5
 * Fixed alignment and display issues inside Admin interface for WP3.8 and lower
-* Fixed push message HTML output (removed HTML)
+* Fixed push message HTML output
+* Added alternative featured image functionality
 
 = 3.0.6 =
-* Article date follows wp settings, style fix for image galleries, excerpt formatting fix, author name fix and more
+* Article date follows wp settings
+* style fix for image galleries
+* excerpt formatting fix
+* author name fix and more
 
 = 3.0.5 =
 * Admob configuration

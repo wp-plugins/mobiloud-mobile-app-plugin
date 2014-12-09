@@ -4,7 +4,7 @@ class Mobiloud_Admin {
     private static $get_started_tasks = array(
         'design'=>array('nav_text'=>'Design', 'task_text'=>'Design your app'),
         'menu_config'=>array('nav_text'=>'Menu Configuration', 'task_text'=>'Configure the menu'),
-        'test_app'=>array('nav_text'=>'Test The App', 'task_text'=>'Test the app on your device'),
+        'test_app'=>array('nav_text'=>'Test The App', 'task_text'=>'Test the app'),
         'publish'=>array('nav_text'=>'Publish Your App', 'task_text'=>'Publish your app')
     );
     public static $settings_tabs = array(

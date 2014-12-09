@@ -1,16 +1,16 @@
 <div id="ml_settings_general" class="tabs-panel ml-compact">
     <form method="post" action="<?php echo admin_url('admin.php?page=mobiloud_settings'); ?>">
         <?php wp_nonce_field('form-settings_general'); ?>
-		
-        <h3>Application details</h3>
-				
+	
+<!--        <h3>Application details</h3>
+
         <h4>App Name</h4>
         <div class='ml-col-row'>
             <div class='ml-col-half'>
-                <p>Enter the name of your App.</p>            
+                <p>Enter the name of your App.</p>
             </div>
             <div class='ml-col-half'>
-                <div class="ml-form-row">                
+                <div class="ml-form-row">
                     <input id="ml_app_name" type="text" size="36" name="ml_app_name" value="<?php echo esc_attr(Mobiloud::get_option("ml_app_name", $appname)); ?>" />
                 </div>
             </div>
@@ -18,14 +18,14 @@
         <h4>Email Contact</h4>
         <div class='ml-col-row'>
             <div class='ml-col-half'>
-                <p>Setup email contact details.</p>            
+                <p>Setup email contact details.</p>
             </div>
-            <div class='ml-col-half'>              
+            <div class='ml-col-half'>
                 <div class="ml-form-row ml-checkbox-wrap">
                     <input type="checkbox" id="ml_show_email_contact_link" name="ml_show_email_contact_link" value="true" <?php echo Mobiloud::get_option('ml_show_email_contact_link') ? 'checked' : ''; ?>/>
                     <label for="ml_show_email_contact_link">Show email contact link?</label>
                 </div>
-                <div class="ml-email-contact-row ml-form-row" <?php 
+                <div class="ml-email-contact-row ml-form-row" <?php
                     echo !Mobiloud::get_option('ml_show_email_contact_link') ? 'style="display:none;"' : ''; ?>>
                     <label for="ml_contact_link_email">Enter public email address</label>
                     <input id="ml_contact_link_email" type="text" size="36" name="ml_contact_link_email" value="<?php echo esc_attr(Mobiloud::get_option("ml_contact_link_email", '')); ?>" />
@@ -35,22 +35,22 @@
         <h4>Copyright Notice</h4>
         <div class='ml-col-row'>
             <div class='ml-col-half'>
-                <p>Enter the copyright notice which will be displayed in your app settings screen.</p>            
+                <p>Enter the copyright notice which will be displayed in your app settings screen.</p>
             </div>
             <div class='ml-col-half'>
-                <div class="ml-form-row">                
+                <div class="ml-form-row">
                     <textarea id="ml_copyright_string" name="ml_copyright_string" rows="4" style="width:100%"><?php echo esc_attr(Mobiloud::get_option("ml_copyright_string", '')); ?></textarea>
                 </div>
             </div>
-        </div>     
-		
-		
-	    <?php if( strlen(Mobiloud::get_option('ml_pb_app_id')) > 0 && Mobiloud::get_option('ml_pb_app_id') < "543e7b3f1d0ab16d148b4599"): ?>			
+        </div>
+
+
+	    <?php if( strlen(Mobiloud::get_option('ml_pb_app_id')) > 0 && Mobiloud::get_option('ml_pb_app_id') < "543e7b3f1d0ab16d148b4599"): ?>
         <div class='update-nag'>
             <p>The functionality above is new. Your app might require to be updated for these settings to take effect.</p>
 			<p>Should you have any questions or to request an update, get in touch at <a href='mailto:support@mobiloud.com'>support@mobiloud.com</a>.</p>
         </div>
-        <?php endif; ?>
+        <?php endif; ?> -->
 		
         <h3>Article List settings</h3>
         <h4>List preferences</h4>
@@ -65,11 +65,11 @@
                 </div>
                 <div class="ml-form-row ml-checkbox-wrap no-margin">
                     <input type="checkbox" id="ml_automatic_image_resize_active" name="ml_automatic_image_resize_active" value="true" <?php echo Mobiloud::get_option('ml_automatic_image_resize_active') ? 'checked' : ''; ?>/>
-                    <label for="ml_automatic_image_resize_active">Automatically resize image thumbnails</label>
+                    <label for="ml_automatic_image_resize_active">Compress image thumbnails</label>
                 </div>
                 <div class="ml-form-row ml-checkbox-wrap no-margin">
                     <input type="checkbox" id="ml_article_list_show_excerpt" name="ml_article_list_show_excerpt" value="true" <?php echo Mobiloud::get_option('ml_article_list_show_excerpt') ? 'checked' : ''; ?>/>
-                    <label for="ml_article_list_show_excerpt">Show excerpt in article list</label>
+                    <label for="ml_article_list_show_excerpt">Show excerpts in article list</label>
                 </div>
                 <div class="ml-form-row ml-checkbox-wrap no-margin">
                     <input type="checkbox" id="ml_article_list_show_comment_count" name="ml_article_list_show_comment_count" value="true" <?php echo Mobiloud::get_option('ml_article_list_show_comment_count') ? 'checked' : ''; ?>/>
