@@ -1,0 +1,14 @@
+#ml_admin_subscriptions_options {
+  margin-top: 50px; }
+  #ml_admin_subscriptions_options h3, #ml_admin_subscriptions_options h2 {
+    padding: 10px;
+    font-size: 20px; }
+    #ml_admin_subscriptions_options h3 input, #ml_admin_subscriptions_options h2 input {
+      margin-right: 10px; }
+  #ml_admin_subscriptions_options p {
+    font-size: 14px;
+    margin-left: 5%; }
+  #ml_admin_subscriptions_options input[type='submit'] {
+    margin-top: 30px;
+    margin-left: 10px;
+    margin-bottom: 30px; }
