@@ -365,14 +365,14 @@ function print_posts($posts,$tot_count,$offset,$options)
 			$final_post["images"][0] = $image;
 		}		
         
-        if(strlen(get_option('ml_custom_featured_image', '')) > 0) {
+        /* if(strlen(get_option('ml_custom_featured_image', '')) > 0) {
             $custom_featured_image_url = get_post_meta($post->ID, get_option('ml_custom_featured_image', ''), true);
             $final_post["images"][0] = array(
                 "full" => $custom_featured_image_url, 
                 "thumb" => array("url" => $custom_featured_image_url),
                 "big-thumb" => array("url" => $custom_featured_image_url)
             );
-        }
+        } */
         
         if (strlen(get_option('ml_custom_featured_image')) > 0 && class_exists('MultiPostThumbnails')) {
             $customImageUrl = MultiPostThumbnails::get_post_thumbnail_url(
