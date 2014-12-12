@@ -28,7 +28,7 @@
                 <div class="ml-radio-wrap">
                     <input type="radio" id="ml_home_page_enabled" name="homepagetype" value="ml_home_page_enabled" <?php echo get_option('ml_home_page_enabled') ? 'checked' : ''; ?>/>
                     <label for="ml_home_page_enabled">Page</label>
-                    <select name="ml_home_page_id">
+                    <select name="ml_home_page_id" style="max-width: 460px;">
                         <option value="">Select a page</option>
                         <?php $pages = get_pages();?>
                         <?php 
@@ -62,7 +62,7 @@
                 </div>
                 <input type='text' id='ml_article_list_menu_item_title' name='ml_article_list_menu_item_title' value='<?php echo Mobiloud::get_option('ml_article_list_menu_item_title', 'Articles'); ?>'/>
             </div>
-            <!-- <div class="ml-form-row">
+            <!--<div class="ml-form-row">
                 <label>Article List Style</label>
                 <div class="ml-radio-wrap">
                     <input type="radio" id="ml_article_list_view_type_extended" name="ml_article_list_view_type" value="extended" <?php echo get_option('ml_article_list_view_type', 'extended') == 'extended' ? 'checked' : ''; ?>/>
@@ -72,7 +72,7 @@
                     <input type="radio" id="ml_article_list_view_type_compact" name="ml_article_list_view_type" value="compact" <?php echo get_option('ml_article_list_view_type') == 'compact' ? 'checked' : ''; ?>/>
                     <label for="ml_article_list_view_type_compact">Compact (square thumbnails)</label>
                 </div>
-            </div> -->
+            </div>-->
             <p class="submit"><input type="submit" name="submit" id="submit" class="button button-primary" value="Save Changes"></p>
         </form>
 	    <!-- <?php if( strlen(Mobiloud::get_option('ml_pb_app_id')) > 0 && Mobiloud::get_option('ml_pb_app_id') < "543e7b3f1d0ab16d148b4599"): ?>

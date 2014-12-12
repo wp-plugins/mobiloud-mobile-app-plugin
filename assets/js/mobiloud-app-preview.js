@@ -160,7 +160,7 @@ var ml_loadPreview = function() {
                         }
                         break;
                     case 'compact':
-                        cropWidth = 113;
+                        cropWidth = '113';
                         if(jQuery("input[name='ml_preview_os']:checked").val() === 'android') {
                             cropWidth = 137;
                         }
@@ -179,11 +179,8 @@ var ml_loadPreview = function() {
 };
 
 var cropPostImages = function(width) {
-    jQuery('img.ml-preview-img').resizecrop({
-      width:width,
-      height:100,
-      wrapperCSS: {"vertical-align":"top"}
-    });  
+    jQuery('.ml-post-img-wrapper').css('width', width).css('height', 100);
+    jQuery('.ml-post-img-wrapper').imgLiquid({fill: true});
 };
 
 var loadPreviewImage = function() {

@@ -99,7 +99,7 @@ if($ml_content_redirect->ml_content_redirect_enable == "1" &&
 
 else {
 	//not cached 
-	$includedPostTypes = explode(",",get_option("ml_article_list_include_post_types","post"));
+	$includedPostTypes = explode(",",get_option("ml_article_list_include_post_types"));
 	
 	$categoryNames = array();
 	$excludeCategories = array();
@@ -119,7 +119,7 @@ else {
         if(!empty($all_cats)) {
             $excluded_cats = explode(",",get_option("ml_article_list_exclude_categories",""));
             foreach($all_cats as $cat) {
-                if(!array_search($cat->cat_ID, $excluded_cats)) {
+                if(array_search($cat->cat_name, $excluded_cats) === false) {
                     $includedCategories[$cat->cat_ID] = $cat->cat_ID;
                 }
             }
@@ -131,7 +131,9 @@ else {
 	}
 	//echo('post types ' . json_encode($includedPostTypes) . ' ..');
 	
-	
+	if(empty($includedPostTypes) || (isset($includedPostTypes[0]) && $includedPostTypes[0] == '')) {
+        return;
+    }
 	$query_array = array('posts_per_page' => $user_limit,
 			  'orderby' => 'post_date',
 			  'order' => 'DESC',
@@ -145,7 +147,7 @@ else {
     if(!empty($includedCategories)) {
         $query_array['cat'] = implode(",",$includedCategories);
     }
-	
+    
 	$arrayFilter = array();
 	
 	if(isset($_POST["categories"])){

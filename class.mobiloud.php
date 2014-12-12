@@ -23,7 +23,8 @@ class Mobiloud {
         
         if(get_option('ml_push_notification_enabled'))
         {
-            add_action('transition_post_status','ml_pb_post_published_notification', 10, 3);           
+            add_action('transition_post_status','ml_pb_post_published_notification');    
+            add_action('publish_future_post','ml_pb_post_published_notification_future');   
         }
     }
  
@@ -37,6 +38,9 @@ class Mobiloud {
     }
     
     public static function set_default_options() {
+        if(Mobiloud::get_option('ml_article_list_include_post_types', 'none') == 'none') {
+            Mobiloud::set_option('ml_article_list_include_post_types', 'post');
+        }
         if(Mobiloud::get_option('ml_custom_featured_image', 'none') == 'none') {
             Mobiloud::set_option('ml_custom_featured_image', '');
         }
