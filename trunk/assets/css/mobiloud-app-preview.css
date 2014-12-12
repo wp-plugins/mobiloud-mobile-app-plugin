@@ -403,3 +403,7 @@ body.mobiloud_page_mobiloud_menu_homepage #TB_title .tb-close-icon {
 .ml-preview-app #ml_preview_loading {
     display: block;
 }
+
+.ml-view-compact .ml-post-img-wrapper {
+    float: left;
+}

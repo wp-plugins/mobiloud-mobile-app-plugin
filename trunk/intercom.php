@@ -1,4 +1,5 @@
 <?php 
+//use Intercom\IntercomBasicAuthClient;
 
 function ml_init_intercom() {
     
@@ -7,6 +8,11 @@ function ml_init_intercom() {
 		$user_email = Mobiloud::get_option('ml_user_email');
         $user_name = Mobiloud::get_option('ml_user_name');
         $user_site = Mobiloud::get_option('ml_user_site');
+        
+        /*$intercom = IntercomBasicAuthClient::factory(array(
+            'app_id' => 'h89uu5zu',
+            'api_key' => '2d8ReoNHhovD4NhWCb72DgrghadvKVwGJsR0t6YR'
+        ));*/
         ?>
             <script>(function(){var w=window;var d=document;var i=function(){i.c(arguments)};i.q=[];i.c=function(args){i.q.push(args)};w.Intercom=i;function l(){var s=d.createElement('script');s.type='text/javascript';s.async=true;s.src='https://api.intercom.io/api/js/library.js';var x=d.getElementsByTagName('script')[0];x.parentNode.insertBefore(s,x);}if(w.attachEvent){w.attachEvent('onload',l);}else{w.addEventListener('load',l,false);}})();</script>	
             <script id="IntercomSettingsScriptTag">

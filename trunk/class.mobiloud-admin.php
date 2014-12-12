@@ -153,6 +153,9 @@ class Mobiloud_Admin {
         wp_register_script('resizecrop', MOBILOUD_PLUGIN_URL.'/libs/jquery.resizecrop-1.0.3.min.js', array('jquery'));
         wp_enqueue_script('resizecrop');
         
+        wp_register_script('imgliquid', MOBILOUD_PLUGIN_URL.'/libs/imgliquid/jquery.imgliquid.js', array('jquery'));
+        wp_enqueue_script('imgliquid');
+        
         wp_register_script('areyousure', MOBILOUD_PLUGIN_URL.'libs/jquery.are-you-sure.js', array('jquery'));
         wp_enqueue_script('areyousure');
         
@@ -418,6 +421,7 @@ class Mobiloud_Admin {
                 if(count($_POST) && check_admin_referer('form-settings_posts')) {
                     Mobiloud::set_option('ml_eager_loading_enable', isset($_POST['ml_eager_loading_enable']));
                     Mobiloud::set_option('ml_hierarchical_pages_enabled', isset($_POST['ml_hierarchical_pages_enabled']));
+                    Mobiloud::set_option('ml_show_article_featuredimage', isset($_POST['ml_show_article_featuredimage']));
                     Mobiloud::set_option('ml_post_author_enabled', isset($_POST['ml_post_author_enabled']));
                     Mobiloud::set_option('ml_page_author_enabled', isset($_POST['ml_page_author_enabled']));
                     Mobiloud::set_option('ml_post_date_enabled', isset($_POST['ml_post_date_enabled']));

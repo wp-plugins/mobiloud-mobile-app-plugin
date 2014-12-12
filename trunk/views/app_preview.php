@@ -37,13 +37,16 @@
                         }
                         ?>
                         <div class='ml-preview-article'>
-                        <?php if ($imageUrl): ?>
-                                <img class='ml-preview-img' src='<?php echo $imageUrl; ?>'/>   
+                            <?php if ($imageUrl): ?>
+                                <div class="ml-post-img-wrapper">
+                                    <img class='ml-preview-img' src='<?php echo $imageUrl; ?>'/>   
+                                </div>
                             <?php endif; ?>
                             <div class='ml-preview-article-body' <?php echo!$imageUrl ? 'style="width:100%;"' : ''; ?>>
                                 <h3><?php echo Mobiloud_App_Preview::trim_post_title($post->post_title, get_option('ml_article_list_view_type', 'extended') == 'extended' ? null : 45); ?></h3>
                                 <span class='ml-article-date'><?php echo Mobiloud_App_Preview::how_long_ago(strtotime($post->post_date)); ?></span>
                             </div>
+                            <div class="clear"></div>
                         </div>
         <?php
     }
