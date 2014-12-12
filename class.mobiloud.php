@@ -23,8 +23,9 @@ class Mobiloud {
         
         if(get_option('ml_push_notification_enabled'))
         {
-            add_action('transition_post_status','ml_pb_post_published_notification');    
-            add_action('publish_future_post','ml_pb_post_published_notification_future');   
+            add_action('transition_post_status', 'ml_pb_post_published_notification', 10, 3);
+            //add_action('transition_post_status','ml_pb_post_published_notification');    
+            //add_action('publish_future_post','ml_pb_post_published_notification_future');   
         }
     }
  

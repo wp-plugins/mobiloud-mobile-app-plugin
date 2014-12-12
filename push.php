@@ -63,12 +63,8 @@ function ml_pb_post_published_notification_future($post) {
     ml_pb_post_published_notification('publish', 'future', $post, true);
 }
 
-function ml_pb_post_published_notification($new_status, $old_status=null, $post=null) {
-    
-    if($old_status === null || $post === null) {
-        return;
-    }
-    
+function ml_pb_post_published_notification($new_status, $old_status, $post) {
+        
     if(ml_is_notified($post->ID) || !ml_check_post_notification_required($post->ID)) {
         return;
     }

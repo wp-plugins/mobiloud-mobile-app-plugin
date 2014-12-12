@@ -200,8 +200,9 @@ else {
 		if($cat)
 		{
 			$query_array['posts_per_page'] = get_option('ml_sticky_category_2_posts', 3);
-			//$query_array['category_name'] = $cat->slug;
-			$query_array['category'] = get_cat_ID($cat->slug);
+			$query_array['category_name'] = null;
+			$query_array['category'] = null;
+			$query_array['cat'] = $cat->cat_ID;
 			$cat_2_posts = get_posts($query_array);
 			foreach($cat_2_posts as $p)
 			{
@@ -225,8 +226,9 @@ else {
 		if($cat)
 		{
 			$query_array['posts_per_page'] = get_option('ml_sticky_category_1_posts', 3);;
-			//$query_array['category_name'] = $cat->slug;
-			$query_array['category'] = get_cat_ID($cat->slug);
+			$query_array['category_name'] = null;
+			$query_array['category'] = null;
+			$query_array['cat'] = $cat->cat_ID;
 			$cat_1_posts = get_posts($query_array);
 			foreach($cat_1_posts as $p)
 			{
