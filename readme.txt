@@ -3,7 +3,7 @@ Contributors: psac50
 Tags: mobiloud, push notifications, wordpress mobile, wordpress mobile app, mobile plugin, wordpress android app, wordpress ios app, wordpress to app, mobile app with WordPress, mobile app for wordpress, native app, wordpress app, iphone, ipad, iphone app, ipad app, android, wordpress iphone app, wordpress android app, windows mobile, mobile web, app for wordpress, mobile site, mobile plugin, wordpress mobile, wordpress ios app, mobile theme, mobile website, mobile theme, wordpress to android app, wordpress to mobile app, mobile app, mobile app plugin, wordpress app builder, wordpress apps, wordpress app maker, ios app, wordpress mobile, wordpress to mobile app, wordpress blog app, build wordpress app, build mobile apps, create blog app, native app plugin, website to mobile app, native mobile app, build an app
 Requires at least: 3.5
 Tested up to: 4.0
-Stable tag: 3.0.8
+Stable tag: 3.0.9
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -223,8 +223,15 @@ You can contact us at [support@mobiloud.com](mailto:support@mobiloud.com)
 == Changelog ==
 
 
+= 3.0.9 =
+* Bug fix: saving featured image in article preferences
+* Bug fix affecting category filter, custom post type filter and sticky categories functionality
+
+= 3.0.8 =
+* Bug fixes: minor fixes
+
 = 3.0.7 =
-* Bug fixes
+* Bug fixes: minor fixes
 
 = 3.0.7 =
 * Updated minimum required WP version to 3.5
@@ -239,25 +246,25 @@ You can contact us at [support@mobiloud.com](mailto:support@mobiloud.com)
 * author name fix and more
 
 = 3.0.5 =
-* Admob configuration
+* Now you can add Admob banners to your app via the 
 
 = 3.0.4 =
-* Bug fixes
+* Bug fixes: minor fixes
 
 = 3.0.3 =
 * Fix for New Relic users
 
 = 3.0.2 =
-* Fixed a bug in menu configuration
+* Bug fixes: minor fixes
 
 = 3.0.1 =
 * Fixed a bug in menu configuration
 
 = 3.0 =
-* new simpler user interface
-* additional functionality including adding custom fields and excerpts to article lists
-* new Advertising functionality including support for MoPub and Google DFP
-* many more improvements and bug fixes
+* Improved and simplified user interface
+* Now you can add custom fields and excerpts to article lists
+* New Advertising functionality including support for MoPub and Google DFP
+* Minor bug fixes
 
 = 2.3.9.5 =
 * Bug fix - 404 page on fetching posts through app
