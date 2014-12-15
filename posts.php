@@ -8,7 +8,7 @@ if(extension_loaded('newrelic')){
 
 include("../../../wp-load.php");
 //include_once("libs/errors.php");
-ini_set('display_errors', 1);
+//ini_set('display_errors', 1);
 
 if(!function_exists("file_get_html")) {
         require_once("libs/simple_html_dom.php");       

@@ -1,6 +1,6 @@
 <?php
 ini_set('display_errors', 1);
-include_once("../../../../wp-blog-header.php");
+include("../../../../wp-load.php");
 include_once('functions.php');
 
 $username = $_POST['username'];

@@ -4,7 +4,7 @@ Plugin Name: Mobiloud
 Plugin URI: http://www.mobiloud.com
 Description: Beautiful mobile apps for your WordPress blog or news site. No coding required.
 Author: 50pixels
-Version: 3.0.8
+Version: 3.0.9
 Author URI: http://www.mobiloud.com
 */
 
