@@ -107,8 +107,17 @@
         <?php endif; ?>
     <?php endif; ?>
 <?php
-
-	if( !isset($_POST['allow_lazy']) || isset($_GET['fullcontent']) || get_option('ml_eager_loading_enable')=='true' || isset($_GET["page_ID"]) || isset($_POST['post_id'])){
+    $show_full_body = false;
+    if(get_option('ml_eager_loading_enable') || isset($_GET['fullcontent'])) {
+        //Preload content option is enabled so always load the full body 
+        //OR fullcontent $_GET is set
+        $show_full_body = true;
+    } elseif(isset($_POST['allow_lazy']) && !get_option('ml_eager_loading_enable')) {
+        $show_full_body = true;
+    }
+    
+    if($show_full_body) {
+	//if( !isset($_POST['allow_lazy']) || isset($_GET['fullcontent']) || get_option('ml_eager_loading_enable')=='true' || isset($_GET["page_ID"]) || isset($_POST['post_id'])){
 
 		if(!isset($_GET["page_ID"])){
 			echo get_option('ml_post_author_enabled') ? '<p class="mb_post_meta">' . get_the_author() . '</p><div class="mb_clear"></div>' : ''; // clear because .post_meta is floated
