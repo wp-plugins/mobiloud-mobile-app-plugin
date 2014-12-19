@@ -1,23 +1,23 @@
-=== Mobiloud - WordPress Mobile App Builder (iPhone, iPad, Android) ===
+=== Mobiloud - Mobile Apps for your WordPress site (iPhone, iPad, Android) ===
 Contributors: psac50
-Tags: mobiloud, push notifications, wordpress mobile, wordpress mobile app, mobile plugin, wordpress android app, wordpress ios app, wordpress to app, mobile app with WordPress, mobile app for wordpress, native app, wordpress app, iphone, ipad, iphone app, ipad app, android, wordpress iphone app, wordpress android app, windows mobile, mobile web, app for wordpress, mobile site, mobile plugin, wordpress mobile, wordpress ios app, mobile theme, mobile website, mobile theme, wordpress to android app, wordpress to mobile app, mobile app, mobile app plugin, wordpress app builder, wordpress apps, wordpress app maker, ios app, wordpress mobile, wordpress to mobile app, wordpress blog app, build wordpress app, build mobile apps, create blog app, native app plugin, website to mobile app, native mobile app, build an app
+Tags: mobiloud, push notifications, WordPress mobile, WordPress mobile app, mobile plugin, WordPress android app, WordPress ios app, WordPress to app, mobile app with wordpre, mobile app for WordPress, native app, WordPress app, iphone, ipad, iphone app, ipad app, android, WordPress iphone app, WordPress android app, windows mobile, mobile web, app for WordPress, mobile site, mobile plugin, WordPress mobile, WordPress ios app, mobile theme, mobile website, mobile theme, WordPress to android app, WordPress to mobile app, mobile app, mobile app plugin, WordPress app builder, WordPress apps, WordPress app maker, ios app, WordPress mobile, WordPress to mobile app, WordPress blog app, build WordPress app, build mobile apps, create blog app, native app plugin, website to mobile app, native mobile app, build an app
 Requires at least: 3.5
-Tested up to: 4.0
-Stable tag: 3.0.9
+Tested up to: 4.1
+Stable tag: 3.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-Delight your readers with real native mobile apps for your blog or news site.
+Delight your readers with native mobile apps for your blog or site.
 
 == Description ==
 
-**Mobiloud is a premium service to convert your WordPress site into a native mobile app on iOS and Android. Mobiloud is easy to use, with no coding required.**
+**[Mobiloud](http://www.mobiloud.com/?ref=plugindesc) is a premium service designed to convert your WordPress site into a native mobile app for iOS and Android. Mobiloud is easy to use, with no coding required.**
 
-2 billion smartphone users today spend 85% of their time on their devices using apps. If you don't have a mobile app to complement your web presence, you're missing on a huge opportunity to reach new and existing readers.
+If you don't have an app to complement your web presence, you're missing on a huge opportunity to retain your readers and a reach a new audience on App Store and Google Play.
 
 **Unlike other solutions, Mobiloud gives you a completely "native" mobile app**. Native mobile apps look and feel great on Android and iOS, and don't have the sluggish and glitchy behaviour of non-native apps.
 
-With Mobiloud, native mobile apps are finally affordable, and you won’t need any programming skills to get your app published - we take care of the app build and submission for you.
+With Mobiloud, native mobile apps are finally affordable, **and you won’t need any programming skills to get your app published - we take care of the app build and submission for you**.
 
 Install the plugin now and you will be moments away from creating your own mobile app.
 
@@ -43,7 +43,9 @@ For any questions, don’t hesitate to get in touch with us at [support@mobiloud
 
 * **Analytics**. With support for **Google Analytics** to track traffic on your app, you'll have a full view on how people use your app and what content works best.
 
-* **Advanced feautures** including support for custom post types, image galleries, an advanced Editor you an use to add your own HTML/CSS/PHP code to customise the article/page screens or add custom fields, support for subscriptions/membership sites and much more.
+* **Support for WordPress features** such as custom post types, custom fields and most WordPress plugins (some customisation might be required).
+
+* **Advanced feautures** including an advanced Editor you an use to add your own HTML/CSS/PHP code to customise the article/page screens or add custom fields, support for subscriptions/membership sites and much more.
 
 
 = All the features =
@@ -64,7 +66,7 @@ For any questions, don’t hesitate to get in touch with us at [support@mobiloud
 * User favourite posts
 * Multilanguage apps, including English, Arabic, French, Spanish, Italian, German, Swedish and Portuguese.
 * RTL support for Arabic and Israeli
-* Create a members only, login protected app with access to your wordpress user database
+* Create a members only, login protected app with access to your WordPress user database
 * App Submission service to App Store and Google Play (we do all for you)
 * Ability to publish with your own Developer accounts on Google Play and App Store
 
@@ -87,7 +89,7 @@ For any questions, don’t hesitate to get in touch with us at [support@mobiloud
 *"They left no stone unturned in making our mobile app perfect! It has been a pleasure working with them."*
 ― Paul Andrew, Founder of Speckyboy Magazine
 
-*“I had previously worked with four different mobile app developers and none of them were able to get the job done for me the way I wanted it. It took just two days for Mobiloud to get my wordpress website into an iPhone App."*
+*“I had previously worked with four different mobile app developers and none of them were able to get the job done for me the way I wanted it. It took just two days for Mobiloud to get my WordPress website into an iPhone App."*
 ― Nick Coffey, The Cardinal Connect
 
 *"The team at Mobiloud built astonishing apps for the main blogs in our network. Fast development, great support, and of course beautiful mobile apps. What more could we ask for?"*
@@ -187,7 +189,7 @@ From your order to submitting the apps we take 5-10 business days. Note Apple th
 Yes, we offer a VIP setup option which includes icon and app design, with 2 revisions from our designers. Just email us at [design@mobiloud.com](mailto:design@mobiloud.com) for a quote.
 
 = Can I use Disqus or Facebook comments? =
-Yes, you can use Disqus or Facebook for comments on your app in place of the standard Wordpress commenting system.
+Yes, you can use Disqus or Facebook for comments on your app in place of the standard WordPress commenting system.
 
 = Does Mobiloud help me build a mobile site? =
 We don't provide a mobile site together with your app. It's a good idea to have a mobile site, so casual visitors can still have a decent experience on your site when using a mobile device. Of course, we recommend you also build a mobile app, to convert those casual visitors into loyal followers, increase your traffic and keep growing your audience.
@@ -222,6 +224,10 @@ You can contact us at [support@mobiloud.com](mailto:support@mobiloud.com)
 
 == Changelog ==
 
+= 3.1 =
+* Added automatic push notifications for custom post types
+* Bug fix: filtering content types for push notifications
+* Bug fix: fix for lazy loading
 
 = 3.0.9 =
 * Bug fix: saving featured image in article preferences
@@ -365,7 +371,7 @@ You can contact us at [support@mobiloud.com](mailto:support@mobiloud.com)
 * Filters engine
 
 = 1.6.2 =
-* Fixed problem during posting in wordpress 3.5
+* Fixed problem during posting in WordPress 3.5
 
 = 1.6.1 =
 * Fixed another problem in comments and layout
@@ -398,7 +404,7 @@ You can contact us at [support@mobiloud.com](mailto:support@mobiloud.com)
 * General configuration tab
 
 = 1.3.7 =
-* Now wordpress could be installed on a subdirectory.
+* Now WordPress could be installed on a subdirectory.
 
 = 1.3.6 =
 * New thumbs dimension
