@@ -1,0 +1,20 @@
+#ml_admin_banners input[type='text'] {
+  padding: 10px;
+  font-size: 17px;
+  margin-left: 5%;
+  margin-bottom: 20px; }
+#ml_admin_banners textarea {
+  width: 300px;
+  height: 200px;
+  margin-left: 5%;
+  margin-bottom: 20px; }
+#ml_admin_banners #ml_admin_banners_service_select {
+  margin-top: 50px; }
+#ml_admin_banners #ml_admin_banners_admob, #ml_admin_banners #ml_admin_banners_html {
+  margin-top: 10px; }
+#ml_admin_banners .stuffbox h3 {
+  padding: 10px;
+  font-size: 25px;
+  color: #444; }
+#ml_admin_banners .stuffbox h2 {
+  margin-left: 5%; }
