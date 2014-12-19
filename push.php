@@ -69,29 +69,34 @@ function ml_pb_post_published_notification($new_status, $old_status, $post) {
         return;
     }
    
-	if($new_status == 'publish' && $old_status != 'publish') {  // only send push if it's a new publish
-        $payload = array(
-            'post_id' => $post->ID,            
-        );
+    $push_types = Mobiloud::get_option("ml_push_post_types","post");
+    if(strlen($push_types) > 0) {
+        $push_types = explode(",", $push_types);
         
-        $image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'single-post-thumbnail' );
-        if(is_array($image)) {
-            $payload['featured_image'] = $image[0];
-        }  
-        $tags = ml_get_post_tag_ids($post->ID);
-        $tags[] = 'all';
-        $tagNames = ml_get_post_tags($post->ID);
-        $tagNames[] = 'all';
-        $data = array(
-            'platform'=>array(0,1),
-            'msg'=>strip_tags(trim($post->post_title)),
-            'sound'=>'default',
-            'badge'=>null,
-            'notags'=>true,
-            'tags'=>$tags,
-            'payload'=>$payload
-        );
-        ml_pb_send_batch_notification($data, $tagNames);
+        if($new_status == 'publish' && $old_status != 'publish' && in_array($post->post_type, $push_types)) {  // only send push if it's a new publish
+            $payload = array(
+                'post_id' => $post->ID,            
+            );
+
+            $image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'single-post-thumbnail' );
+            if(is_array($image)) {
+                $payload['featured_image'] = $image[0];
+            }  
+            $tags = ml_get_post_tag_ids($post->ID);
+            $tags[] = 'all';
+            $tagNames = ml_get_post_tags($post->ID);
+            $tagNames[] = 'all';
+            $data = array(
+                'platform'=>array(0,1),
+                'msg'=>strip_tags(trim($post->post_title)),
+                'sound'=>'default',
+                'badge'=>null,
+                'notags'=>true,
+                'tags'=>$tags,
+                'payload'=>$payload
+            );
+            ml_pb_send_batch_notification($data, $tagNames);
+        }
     }
 }
 

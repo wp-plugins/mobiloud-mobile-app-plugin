@@ -32,6 +32,32 @@
                 </select>
             </div>
         </div>
+        <h4>Push Post Types</h4>
+        <div class='ml-col-row'>
+            <div class='ml-col-half'>
+                <p>Select which post types should be pushed.</p>                
+            </div>
+            <div class='ml-col-half'>
+                <?php
+                $posttypes = get_post_types('','names'); 
+                $includedPostTypes = explode(",",Mobiloud::get_option("ml_push_post_types","post"));
+                foreach( $posttypes as $v ) {
+                    if($v!="attachment" && $v!="revision" && $v!="nav_menu_item"){
+                        $checked = '';
+                        if(in_array($v,$includedPostTypes)){
+                            $checked = "checked";
+                        }                         
+                        ?>
+                        <div class="ml-form-row ml-checkbox-wrap no-margin">
+                            <input type="checkbox" id='postypes_<?php echo esc_attr($v); ?>' name="postypes[]" value="<?php echo esc_attr($v); ?>" <?php echo $checked; ?>/>
+                            <label for="postypes_<?php echo esc_attr($v); ?>"><?php echo esc_html($v); ?></label>
+                        </div>
+                        <?php
+                    }
+                }
+                ?>
+            </div>
+        </div>
         <h4>Security settings (advanced)</h4>
         <div class='ml-col-row'>
             <div class='ml-col-half'>

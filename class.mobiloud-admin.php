@@ -525,6 +525,12 @@ class Mobiloud_Admin {
                     Mobiloud::set_option('ml_push_notification_enabled', isset($_POST['ml_push_notification_enabled']));
                     Mobiloud::set_option('ml_pb_use_ssl', isset($_POST['ml_pb_use_ssl']));
                     
+                    $include_post_types = '';
+                    if(isset($_POST['postypes']) && count($_POST['postypes'])) {
+                        $include_post_types = implode(",", $_POST['postypes']);
+                    }
+                    Mobiloud::set_option('ml_push_post_types', sanitize_text_field($include_post_types));
+                    
                     if(isset($_POST['ml_push_notification_categories'])) {
                         ml_push_notification_categories_clear();
                         if(is_array($_POST['ml_push_notification_categories'])) {
