@@ -19,9 +19,10 @@ If you don't have an app to complement your web presence, you're missing on a hu
 
 With Mobiloud, native mobile apps are finally affordable, **and you won’t need any programming skills to get your app published - we take care of the app build and submission for you**.
 
-Install the plugin now and you will be moments away from creating your own mobile app.
+= Pricing =
+Install the plugin and design your mobile app for free. Try it as long as you want. Test it online and on your own device. To publish your app on App Store or Google Play, we charge affordable fees. Check the [pricing plans on Mobiloud.com](http://www.mobiloud.com/pricing/?ref=plugindesc).
 
-For any questions, don’t hesitate to get in touch with us at [support@mobiloud.com](mailto:support@mobiloud.com)
+For any questions, don’t hesitate to get in touch with us at [support@mobiloud.com](mailto:support@mobiloud.com).
 
 = What you get with Mobiloud =
 
@@ -97,11 +98,6 @@ For any questions, don’t hesitate to get in touch with us at [support@mobiloud
 
 *"Fantastic plugin and service. We now have great looking native iOS and Android app that stays up-to-date with our site automatically. Mobiloud allowed us to focus on our content without writing a single line of code to get our apps built."*
 ― Luke Wheeler, Editor of Compare The Cloud
-
-= Pricing =
-Install the plugin and design your mobile app for free. Try it as long as you want. To publish your app on App Store or Google Play, we charge affordable fees. Check the [pricing plans on Mobiloud.com](http://www.mobiloud.com/pricing/?ref=plugindesc).
-
-For any questions, don’t hesitate to get in touch with us at [support@mobiloud.com](mailto:support@mobiloud.com)
 
 
 == Installation ==
