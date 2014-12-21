@@ -16,7 +16,7 @@ $app_version = $_POST['app_version'];
 	
 	
 $return_config = array();
-$return_config['app_name'] = get_option('ml_app_name');
+$return_config['app_name'] = get_option('ml_app_name', '');
 $return_config["enable_featured_images"] = get_option('ml_show_article_featuredimage',true);
 $return_config["enable_dates"] = get_option('ml_article_list_enable_dates',true);
 $return_config['show-android-cat-tabs'] = get_option('ml_show_android_cat_tabs', false);
@@ -90,6 +90,14 @@ $return_config['interface_colors'] = array(
     'navigation_bar_text'=>$navigation_bar_text,
     'navigation_bar_button_text'=>$navigation_bar_text
 );
+
+if(!empty($return_config)) {
+    foreach($return_config as $key=>$val) {
+        if($val === null) {
+            $return_config[$key] = '';
+        }
+    }
+}
 
 $json_string = json_encode($return_config);
 echo $json_string;
