@@ -35,7 +35,10 @@ class Mobiloud_App_Preview {
             update_option("ml_preview_upload_image", $_POST['ml_preview_upload_image']);        
         }   
         if(isset($_POST['ml_preview_theme_color'])) {        
-            update_option("ml_preview_theme_color", $_POST['ml_preview_theme_color']);        
+            update_option("ml_preview_theme_color", $_POST['ml_preview_theme_color']);   
+            if($_POST['ml_preview_theme_color'] != get_option('ml_preview_theme_color')) {
+                ml_track_mixpanel('menubar_color_change');
+            }
         }
         if(isset($_POST['ml_preview_os'])) {
             update_option("ml_preview_os", $_POST['ml_preview_os']);

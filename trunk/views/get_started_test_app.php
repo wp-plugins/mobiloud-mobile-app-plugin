@@ -10,9 +10,14 @@
     $user_site = Mobiloud::get_option('ml_user_site');
     $plugin_url = Mobiloud::get_plugin_url();
     $plugin_version = MOBILOUD_PLUGIN_VERSION;
+    
+    $http_prefix = 'http';
+    if( isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] == 'on' ) {
+        $http_prefix = 'https';
+    }
     ?>
     <?php add_thickbox(); ?>
-    <a href="http://www.mobiloud.com/simulator/?name=<?php echo urlencode(esc_attr($user_name)); ?>&email=<?php echo urlencode(esc_attr($user_email)); ?>&site=<?php echo urlencode(esc_url($user_site)); ?>&p=<?php echo urlencode(esc_url($plugin_url)); ?>&v=<?php echo urlencode(esc_attr($plugin_version)); ?>" target="_blank" class="sim-btn thickbox button button-hero button-primary">
+    <a href="<?php echo $http_prefix; ?>://www.mobiloud.com/simulator/?name=<?php echo urlencode(esc_attr($user_name)); ?>&email=<?php echo urlencode(esc_attr($user_email)); ?>&site=<?php echo urlencode(esc_url($user_site)); ?>&p=<?php echo urlencode(esc_url($plugin_url)); ?>&v=<?php echo urlencode(esc_attr($plugin_version)); ?>" target="_blank" class="sim-btn thickbox button button-hero button-primary">
             See Live Preview
         </a>
     <h3>Test it on your own device</h3>

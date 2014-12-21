@@ -64,6 +64,7 @@ class Mobiloud_Admin {
         add_action('admin_init', array('Mobiloud_Admin', 'admin_init'));
         add_action('admin_menu', array('Mobiloud_Admin', 'admin_menu'));
         
+        add_action('admin_head','ml_init_olark');
         add_action('admin_head','ml_init_intercom');
         add_action('admin_head', 'ml_init_getvero');
         add_action('admin_head', array('Mobiloud_Admin', 'check_mailing_list_alert'));
@@ -622,6 +623,7 @@ class Mobiloud_Admin {
     
     public static function track_user_event($event) {
         if(Mobiloud::get_option('ml_initial_details_saved')) {
+            ml_track_mixpanel($event);
             ?>
             <script type='text/javascript'>
                 _veroq.push(['track', "<?php echo esc_js($event); ?>"]);
