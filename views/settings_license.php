@@ -3,7 +3,7 @@
         <?php wp_nonce_field('form-settings_license'); ?>
         <h3>License Keys</h3>
         <div class='ml-col-twothirds'>
-            <p>Once you have <a target="_blank" href="http://www.mobiloud.com/pricing/?utm_source=wp-plugin-admin&utm_medium=web&utm_campaign=license_page">signed up</a> for one of our plans and your app has been published, enter here the License keys we have sent you.</p>
+            <p>Once you have <a target="_blank" href="http://www.mobiloud.com/publish/?utm_source=wp-plugin-admin&utm_medium=web&utm_campaign=license_page">signed up</a> for one of our plans and your app has been published, enter here the License keys we have sent you.</p>
              <table class="form-table">
                 <tbody>
                     <tr valign="top">

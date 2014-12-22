@@ -2,7 +2,7 @@
     <h3>Ready to publish your app?</h3>
     <div class="ml-col-twothirds">
         <p>To get your app published you’ll need to sign up for one of our pricing plans or purchase a lifetime license.</p>    
-        <a href="http://www.mobiloud.com/pricing/" target="_blank" class="pricing-btn button button-hero button-primary">
+        <a href="http://www.mobiloud.com/publish/" target="_blank" class="pricing-btn button button-hero button-primary">
             See Pricing &amp; Publish Your App
         </a>
         <p>With our <strong>money-back guarantee</strong> there's really no risk - Don't like your app? No worries. 
