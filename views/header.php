@@ -5,7 +5,7 @@
         </a>
         
         <?php if(strlen(Mobiloud::get_option('ml_pb_app_id')) <= 0 && strlen(Mobiloud::get_option('ml_pb_secret_key')) <= 0): ?>
-        <a href="http://www.mobiloud.com/pricing/?utm_source=wp-plugin-admin&utm_medium=web&utm_campaign=plugin-admin-header
+        <a href="http://www.mobiloud.com/publish/?utm_source=wp-plugin-admin&utm_medium=web&utm_campaign=plugin-admin-header
 " target="_blank" class="pricing-btn button-primary">
             See Pricing &amp; Publish Your App
         </a>        

@@ -3,7 +3,7 @@ Contributors: psac50
 Tags: mobiloud, push notifications, WordPress mobile, WordPress mobile app, mobile plugin, WordPress android app, WordPress ios app, WordPress to app, mobile app with wordpre, mobile app for WordPress, native app, WordPress app, iphone, ipad, iphone app, ipad app, android, WordPress iphone app, WordPress android app, windows mobile, mobile web, app for WordPress, mobile site, mobile plugin, WordPress mobile, WordPress ios app, mobile theme, mobile website, mobile theme, WordPress to android app, WordPress to mobile app, mobile app, mobile app plugin, WordPress app builder, WordPress apps, WordPress app maker, ios app, WordPress mobile, WordPress to mobile app, WordPress blog app, build WordPress app, build mobile apps, create blog app, native app plugin, website to mobile app, native mobile app, build an app
 Requires at least: 3.5
 Tested up to: 4.1
-Stable tag: 3.1
+Stable tag: 3.1.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -20,7 +20,7 @@ If you don't have an app to complement your web presence, you're missing on a hu
 With Mobiloud, native mobile apps are finally affordable, **and you won’t need any programming skills to get your app published - we take care of the app build and submission for you**.
 
 = Pricing =
-Install the plugin and design your mobile app for free. Try it as long as you want. Test it online and on your own device. To publish your app on App Store or Google Play, we charge affordable fees. Check the [pricing plans on Mobiloud.com](http://www.mobiloud.com/pricing/?ref=plugindesc).
+Install the plugin and design your mobile app for free. Try it as long as you want. Test it online and on your own device. To publish your app on App Store or Google Play, we charge affordable fees. Check the [pricing plans on Mobiloud.com](http://www.mobiloud.com/publish/?ref=plugindesc).
 
 For any questions, don’t hesitate to get in touch with us at [support@mobiloud.com](mailto:support@mobiloud.com).
 
@@ -126,7 +126,7 @@ More and more, people are choosing to use their smartphones and tablets to read 
 With a mobile app you'll be able to convert casual visitors into loyal followers. Why? Because your app will be front and center, easily accessible from the home screen of their device. And because you can alert with push notifications whenever you post something new.
 
 = How much does it cost? =
-The Mobile App Plugin is free to install. You can design your app and test it online and your own device, for free. Once you're happy with the result and would like to publish it on the App Store or Google Play, we have simple pricing plans you can choose from. Check the [pricing plans on Mobiloud.com](http://www.mobiloud.com/pricing/?ref=plugindesc).
+The Mobile App Plugin is free to install. You can design your app and test it online and your own device, for free. Once you're happy with the result and would like to publish it on the App Store or Google Play, we have simple pricing plans you can choose from. Check the [pricing plans on Mobiloud.com](http://www.mobiloud.com/publish/?ref=plugindesc).
 
 = Is there a quick demo? =
 Yes, check out our [demo page](http://www.mobiloud.com/demo/).
@@ -219,6 +219,11 @@ You can contact us at [support@mobiloud.com](mailto:support@mobiloud.com)
 
 
 == Changelog ==
+
+
+= 3.1.1 =
+* Added support for loading the simulator in an https site
+* Minor fixes and additions
 
 = 3.1 =
 * Added automatic push notifications for custom post types
