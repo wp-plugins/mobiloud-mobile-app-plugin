@@ -32,12 +32,10 @@ loader: "static.olark.com/jsclient/loader0.js",name:"olark",methods:["configure"
 /* custom configuration goes here (www.olark.com/documentation) */
 olark('api.visitor.updateEmailAddress', {emailAddress: "<?php echo esc_js($user_email); ?>"});
 olark('api.visitor.updateFullName', {fullName: "<?php echo esc_js($user_name); ?>"});
-olark('api.visitor.updateCustomFields', {
-    userSite: "<?php echo esc_js($user_site); ?>", 
-    installUrl: "<?php echo get_site_url(); ?>", 
-    version: "<?php echo MOBILOUD_PLUGIN_VERSION;?>",
-    post_count: "<?php echo wp_count_posts()->publish; ?>",
-    homepage_type: "<?php echo get_option( 'show_on_front '); ?>"});
+olark('api.chat.onBeginConversation', function() {
+olark('api.chat.sendNotificationToOperator', {
+    body: 'Customer Information... User site: ' + "<?php echo esc_js($user_site); ?>" + ' Install URL: ' + "<?php echo get_site_url(); ?>" + ' Version: ' + "<?php echo MOBILOUD_PLUGIN_VERSION;?>" + ' Post Count: ' + "<?php echo wp_count_posts()->publish; ?>" + ' Homepage Type: ' + "<?php echo get_option( 'show_on_front '); ?>"});
+});
 olark.identify('6896-984-10-6494');/*]]>*/</script><noscript><a href="https://www.olark.com/site/6896-984-10-6494/contact" title="Contact us" target="_blank">Questions? Feedback?</a> powered by <a href="http://www.olark.com?welcome" title="Olark live chat software">Olark live chat software</a></noscript>
 <!-- end olark code -->
         <?php
