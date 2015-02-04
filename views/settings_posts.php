@@ -80,7 +80,7 @@
         </div>
 	
 		        
-        <!-- <h3>Commenting settings</h3>
+        <h3>Commenting settings</h3>
         <div class='ml-col-row'>
             <div class='ml-col-half'>
                 <p>Select the commenting system you'd like to use in your app.</p>
@@ -117,7 +117,7 @@
             <p>The functionality above is new. Your app might require to be updated for these settings to take effect.</p>
 			<p>Should you have any questions or to request an update, get in touch at <a href='mailto:support@mobiloud.com'>support@mobiloud.com</a>.</p>
         </div>
-        <?php endif; ?> -->
+        <?php endif; ?>
 		
         <h3>Advanced settings</h3>
         <h4>Alternative Featured Image</h4>

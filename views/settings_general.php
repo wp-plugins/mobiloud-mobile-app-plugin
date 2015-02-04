@@ -2,9 +2,9 @@
     <form method="post" action="<?php echo admin_url('admin.php?page=mobiloud_settings'); ?>">
         <?php wp_nonce_field('form-settings_general'); ?>
 	
-<!--        <h3>Application details</h3>
+       <h3>Application details</h3>
 
-        <h4>App Name</h4>
+        <!-- <h4>App Name</h4>
         <div class='ml-col-row'>
             <div class='ml-col-half'>
                 <p>Enter the name of your App.</p>
@@ -14,7 +14,7 @@
                     <input id="ml_app_name" type="text" size="36" name="ml_app_name" value="<?php echo esc_attr(Mobiloud::get_option("ml_app_name", $appname)); ?>" />
                 </div>
             </div>
-        </div>
+        </div> -->
         <h4>Email Contact</h4>
         <div class='ml-col-row'>
             <div class='ml-col-half'>
@@ -50,7 +50,7 @@
             <p>The functionality above is new. Your app might require to be updated for these settings to take effect.</p>
 			<p>Should you have any questions or to request an update, get in touch at <a href='mailto:support@mobiloud.com'>support@mobiloud.com</a>.</p>
         </div>
-        <?php endif; ?> -->
+        <?php endif; ?>
 		
         <h3>Article List settings</h3>
         <h4>List preferences</h4>

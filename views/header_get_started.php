@@ -2,8 +2,7 @@
     <div class="ml-intro-text">
 		<p>
 		Mobiloud is the easy solution to publish your own mobile apps. Start by customizing the design, then configure the menu and test a live preview of your app.</p>
-        <p>For more information, see <a href="http://www.mobiloud.com/how-it-works/?utm_source=wp-plugin-admin&utm_medium=web&utm_campaign=plugin-admin-get-started
-" target="_blank">How It Works</a>, our <a href="http://www.mobiloud.com/features/?utm_source=wp-plugin-admin&utm_medium=web&utm_campaign=plugin-admin-get-started
+        <p>For more information, see <a href="http://www.mobiloud.com/help/knowledge-base/customize/?utm_source=wp-plugin-admin&utm_medium=web&utm_campaign=plugin-admin-get-started" target="_blank">How To Get Started</a> (video), our <a href="http://www.mobiloud.com/features/?utm_source=wp-plugin-admin&utm_medium=web&utm_campaign=plugin-admin-get-started
 " target="_blank">Features page</a> and for any questions see our <a href="http://www.mobiloud.com/help/?utm_source=wp-plugin-admin&utm_medium=web&utm_campaign=plugin-admin-get-started
 " target="_blank">Help &amp; Support</a> pages.</p>
     </div>
