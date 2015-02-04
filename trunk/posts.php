@@ -53,7 +53,12 @@ if(isset($_POST["permalink"])){
 	
 }
 
-$published_post_count = wp_count_posts()->publish;
+$includedPostTypes = explode(",",get_option("ml_article_list_include_post_types","post"));
+
+$published_post_count = 0;
+foreach($includedPostTypes as $incPostType) {
+    $published_post_count += wp_count_posts($incPostType)->publish;
+}
 
 if($user_category_id){
 	$category = get_category($user_category_id);

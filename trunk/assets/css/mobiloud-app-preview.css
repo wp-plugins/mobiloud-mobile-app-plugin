@@ -196,10 +196,10 @@ body.mobiloud_page_mobiloud_menu_homepage #TB_title .tb-close-icon {
     max-width: 100%;
 }
 
-.ml-preview.android .ml-view-compact .ml-preview-article-body {
+/*.ml-preview.android .ml-view-compact .ml-preview-article-body {
     width: 130px;
     display: inline-block;
-}
+}*/
 
 .ml-preview.android .ml-preview-article h3 {
     padding: 0;
@@ -367,10 +367,10 @@ body.mobiloud_page_mobiloud_menu_homepage #TB_title .tb-close-icon {
     border-top-right-radius: 2px;
 }
 
-.ml-preview.ios .ml-view-compact .ml-preview-article-body {
+/*.ml-preview.ios .ml-view-compact .ml-preview-article-body {
     width: 120px;
     display: inline-block;
-}
+}*/
 
 .ml-preview.ios .ml-preview-article h3 {
     padding: 0;
@@ -404,6 +404,6 @@ body.mobiloud_page_mobiloud_menu_homepage #TB_title .tb-close-icon {
     display: block;
 }
 
-.ml-view-compact .ml-post-img-wrapper {
+/*.ml-view-compact .ml-post-img-wrapper {
     float: left;
-}
+}*/
