@@ -1,7 +1,53 @@
 jQuery(document).ready(function() {
+    
     jQuery(".ml-menu-holder").sortable({
         update: function( event, ui ) {
             jQuery("#get_started_menu_config form").trigger('setDirty.areYouSure');
+        }
+    });
+    
+    jQuery("select[name='ml-tax-group']").change(function() {
+        var group = jQuery(this).val();
+        if(group !== '') {
+            jQuery("select[name='ml-terms']").find("option[value!='']").remove();
+            jQuery(".ml-tax-group-row").hide();
+            var data = {
+                action: 'ml_tax_list',
+                group: group
+            };
+            jQuery.post(ajaxurl, data, function(response) {
+                if(response.terms !== undefined) {
+                    for(term_id in response.terms) {
+                        jQuery("select[name='ml-terms']").append(jQuery('<option></option>').val(term_id).html(response.terms[term_id]));
+                    }
+                    jQuery(".ml-tax-group-row").show();
+                }
+            });
+        } else {
+            jQuery(".ml-tax-group-row").hide();
+            jQuery("select[name='ml-terms']").find('option').remove();
+        }
+    });
+    
+    jQuery(".ml-add-term-btn").click(function(e) {
+        e.preventDefault();
+        var selected_term = jQuery(".ml-select-add[name='ml-terms']").val();
+        var selected_term_text = jQuery(".ml-select-add[name='ml-terms'] option:selected").text();
+        var selected_tax = jQuery(".ml-select-add[name='ml-tax-group']").val();
+        if(selected_term !== '' && jQuery(".ml-menu-terms-holder li[rel='"+selected_term+"']").length <= 0) {
+            var new_li = jQuery("<li>")
+                    .attr('rel', selected_term)
+                    .html("<span class='dashicons-before dashicons-menu'></span>"+selected_term_text)
+                    .appendTo(jQuery(".ml-menu-terms-holder"));
+            jQuery("<input/>")
+                    .attr('name', 'ml-menu-terms[]')
+                    .attr('value', selected_tax + "=" + selected_term)
+                    .attr('type', 'hidden')
+                    .appendTo(new_li);
+            jQuery("<a>")
+                    .attr('href', '#')
+                    .attr('class', 'dashicons-before dashicons-trash ml-item-remove')
+                    .appendTo(new_li);
         }
     });
     

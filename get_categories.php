@@ -69,6 +69,21 @@ foreach($categories as $c)
 	}
 }
 
+$terms = get_option('ml_menu_terms', array());
+foreach($terms as $term) {
+    $term_data = explode("=", $term);
+    $taxonomy = $term_data[0];
+    $term_id = $term_data[1];
+    $term_object = get_term_by('id', $term_id, $taxonomy);
+    if($term_object) {
+        $final_categories[] = array(
+            'name'=>$term_object->name,
+            'slug'=>$term_object->slug,
+            'id'=>$term_object->term_id
+        );
+    }
+}
+
 //$my_wp_query = new WP_Query();
 //$all_wp_pages = $my_wp_query->query(array('post_type' => 'page'));
 //		wp_reset_postdata();

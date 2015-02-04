@@ -36,7 +36,42 @@
                     }
                     ?>
                 </ul>
-
+                <h4>Custom Taxonomies</h4>
+                <div class="ml-form-row">
+                    <select name="ml-tax-group" class="ml-select-add">
+                        <option value="">Select Taxonomy</option>
+                        <?php $taxonomies = get_taxonomies(array('_builtin'=>false), 'objects');  ?>
+                        <?php
+                        foreach ($taxonomies as $tax) {
+                            echo "<option value='$tax->query_var'>$tax->label</option>";
+                        }
+                        ?>
+                    </select>
+                </div>
+                <div class="ml-form-row ml-tax-group-row" style="display:none;">
+                    <select name="ml-terms" class="ml-select-add">
+                        <option value="">Select Term</option>                        
+                    </select>
+                    <a href="#" class="button-secondary ml-add-term-btn">Add</a>
+                </div>
+                <ul class="ml-menu-holder ml-menu-terms-holder">
+                    <?php
+                    $menu_terms = Mobiloud::get_option('ml_menu_terms', array());
+                    foreach ($menu_terms as $menu_term_data) {
+                        $menu_term_data_ex = explode("=", $menu_term_data);
+                        $menu_term_object = get_term_by('id', $menu_term_data_ex[1], $menu_term_data_ex[0]);
+                        ?>
+                        <li rel="<?php echo $menu_term_object->term_id; ?>">
+                            <span class="dashicons-before dashicons-menu"></span><?php echo $menu_term_object->name; ?>
+                            <input type="hidden" name="ml-menu-terms[]" value="<?php echo $menu_term_data; ?>"/>
+                            <a href="#" class="dashicons-before dashicons-trash ml-item-remove"></a>
+                        </li>
+                        <?php
+                        
+                    }
+                    ?>
+                </ul>
+                
                 <h4>Pages</h4>
                 <div class="ml-form-row">
                     <select name="ml-page" class="ml-select-add">
