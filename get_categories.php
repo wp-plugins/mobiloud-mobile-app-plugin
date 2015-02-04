@@ -79,7 +79,7 @@ foreach($terms as $term) {
         $final_categories[] = array(
             'name'=>$term_object->name,
             'slug'=>$term_object->slug,
-            'id'=>$term_object->term_id
+            'id'=>$term_object->term_id . ""
         );
     }
 }

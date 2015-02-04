@@ -60,14 +60,16 @@ foreach($includedPostTypes as $incPostType) {
     $published_post_count += wp_count_posts($incPostType)->publish;
 }
 
+$term_arr = array();
 if($user_category_id){
-	$category = get_category($user_category_id);
+        $term_arr = ml_get_term_by('id', $user_category_id);
+	$category = $term_arr['term'];
 } else if($user_category) {
-	$category = get_category_by_slug($user_category);
+        $term_arr = ml_get_term_by('slug', $user_category);
+	$category = $term_arr['term'];
 } 
 
-
-if($category) $published_post_count = get_post_count(array($category->cat_ID));
+if($category) $published_post_count = get_post_count(array($category->term_id));
 
 if($user_category_filter){
 	$arrayFilter = array();
@@ -113,12 +115,12 @@ else {
 	
 	if($user_category){
 		array_push($categoryNames,$user_category);
-		$catObj = get_category_by_slug($user_category); 
-  		$categoryName = $catObj->cat_ID;
+		$catObj = $category;
+  		$categoryName = $catObj->term_id;
 	} else if($user_category_id){
-		$catObj = get_category($user_category_id);
+		$catObj = $category;
 		array_push($categoryNames,$catObj->slug);
-		$categoryName = $catObj->cat_ID;
+		$categoryName = $catObj->term_id;
 	} else {
         $all_cats = get_categories('orderby=name');  
         if(!empty($all_cats)) {
@@ -169,19 +171,16 @@ else {
 		}
 		$arrayFilterList = implode(',',$arrayFilter);
 		$query_array['category_name'] = $arrayFilterList;
-	} else if(isset($_POST["category_id"])){
+	} else if(count($term_arr) && $term_arr['term']){
 		$query_array['tax_query'] = array(
-            array(
-                'taxonomy' => 'category', 
-                'field' => 'term_id', 
-                'terms' => $categoryName
-            )            
-        );
+                    array(
+                        'taxonomy' => $term_arr['tax'], 
+                        'field' => 'term_id', 
+                        'terms' => $term_arr['term']->term_id
+                    )            
+                );
         
-	} else if($categoryName){
-		$query_array['category'] = $categoryName;
 	}
-			
 			
 			//echo json_encode($query_array);
 	$posts_options = array();
@@ -598,5 +597,25 @@ function youtubeID_from_link($link) {
 	else return NULL;
 }
 
+function ml_get_term_by($by, $term_ref) {
+    $taxes = ml_get_used_taxonomies();
+    foreach($taxes as $tax) {
+        $term = get_term_by($by, $term_ref, $tax);
+        if($term) {
+            return array('term'=>$term, 'tax'=>$tax);
+        }
+    }
+        
+    return array('term'=>false, 'tax'=>false);
+}
 
+function ml_get_used_taxonomies() {
+    $taxes = array('category');
+    $menu_terms = get_option('ml_menu_terms', array());
+    foreach($menu_terms as $term) {
+        $term_data = explode("=", $term);
+        $taxes[] = $term_data[0];
+    }
+    return $taxes;
+}
 ?>
