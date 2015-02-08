@@ -138,7 +138,7 @@ else {
 	}
 	//echo('post types ' . json_encode($includedPostTypes) . ' ..');
 	
-	if(empty($includedPostTypes) || (isset($includedPostTypes[0]) && $includedPostTypes[0] == '')) {
+	if((empty($includedPostTypes) || (isset($includedPostTypes[0]) && $includedPostTypes[0] == '')) && !(count($term_arr) && $term_arr['term'])) {
         return;
     }
 	$query_array = array('posts_per_page' => $user_limit,
@@ -151,6 +151,10 @@ else {
 			  's' => $user_search
 			);
     
+        if(count($term_arr) && $term_arr['term']) {
+            unset($query_array['post_type']);
+        }
+        
     if(!empty($includedCategories)) {
         $query_array['cat'] = implode(",",$includedCategories);
     }
@@ -451,7 +455,7 @@ function print_posts($posts,$tot_count,$offset,$options)
 		$final_posts["posts"][] = $final_post;
 	}
 
-	$json_string = json_encode($final_posts);
+	$json_string = json_encode($final_posts, JSON_UNESCAPED_UNICODE);
 	echo $json_string;
 
 	//caching json string if is main posts
@@ -610,7 +614,7 @@ function ml_get_term_by($by, $term_ref) {
 }
 
 function ml_get_used_taxonomies() {
-    $taxes = array('category');
+    $taxes = array('category', 'post_tag');
     $menu_terms = get_option('ml_menu_terms', array());
     foreach($menu_terms as $term) {
         $term_data = explode("=", $term);

@@ -78,6 +78,22 @@ class Mobiloud {
         if(Mobiloud::get_option('ml_page_title_enabled', 'none') == 'none') {
             Mobiloud::set_option('ml_page_title_enabled', true);
         }
+        
+        if(Mobiloud::get_option('ml_article_list_view_type', 'none') == 'none') {
+            Mobiloud::set_option('ml_article_list_view_type', 'extended');
+        }
+        if(Mobiloud::get_option('ml_show_email_contact_link', 'none') == 'none') {
+            Mobiloud::set_option('ml_show_email_contact_link', true);
+        }
+        if(Mobiloud::get_option('ml_contact_link_email', 'none') == 'none') {
+            Mobiloud::set_option('ml_contact_link_email', get_bloginfo('admin_email'));
+        }
+        if(Mobiloud::get_option('ml_copyright_string', 'none') == 'none') {
+            Mobiloud::set_option('ml_copyright_string', '&copy; ' . date('Y') . ' ' . get_bloginfo('name'));
+        }
+        if(Mobiloud::get_option('ml_comments_system', 'none') == 'none') {
+            Mobiloud::set_option('ml_comments_system', 'wordpress');
+        }        
     }
     
     private static function run_db_install() {        

@@ -314,6 +314,14 @@ class Mobiloud_Admin {
                     }
                     Mobiloud::set_option('ml_menu_terms', $menu_terms);
 
+                    $menu_tags = array();
+                    if (count($_POST['ml-menu-tags'])) {
+                        foreach ($_POST['ml-menu-tags'] as $tag) {
+                            $menu_tags[] = $tag;
+                        }
+                    }
+                    Mobiloud::set_option('ml_menu_tags', $menu_tags);
+                    
                     ml_remove_all_pages();
                     if (count($_POST['ml-menu-pages'])) {
                         foreach ($_POST['ml-menu-pages'] as $page_ID) {
@@ -646,8 +654,16 @@ class Mobiloud_Admin {
             $group = sanitize_text_field($_POST['group']);
             $terms = get_terms($group, array('hide_empty'=>false));
             if(count($terms)) {
+                
                 foreach($terms as $term) {
-                    $list[$term->term_id] = $term->name;
+                   $parent_name = '';
+                   if($term->parent) {
+                       $parent_term = get_term_by('id', $term->parent, $group);
+                       if($parent_term) {
+                           $parent_name = $parent_term->name . ' - ';
+                       }
+                   }
+                   $list[$term->term_id] = $parent_name.$term->name;
                 }
             }
         }

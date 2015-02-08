@@ -51,6 +51,27 @@ jQuery(document).ready(function() {
         }
     });
     
+    jQuery(".ml-add-tag-btn").click(function(e) {
+        e.preventDefault();
+        var selected_term = jQuery(".ml-select-add[name='ml-tags']").val();
+        var selected_term_text = jQuery(".ml-select-add[name='ml-tags'] option:selected").text();
+        if(selected_term !== '' && jQuery(".ml-menu-tags-holder li[rel='"+selected_term+"']").length <= 0) {
+            var new_li = jQuery("<li>")
+                    .attr('rel', selected_term)
+                    .html("<span class='dashicons-before dashicons-menu'></span>"+selected_term_text)
+                    .appendTo(jQuery(".ml-menu-tags-holder"));
+            jQuery("<input/>")
+                    .attr('name', 'ml-menu-tags[]')
+                    .attr('value', selected_term)
+                    .attr('type', 'hidden')
+                    .appendTo(new_li);
+            jQuery("<a>")
+                    .attr('href', '#')
+                    .attr('class', 'dashicons-before dashicons-trash ml-item-remove')
+                    .appendTo(new_li);
+        }
+    });
+    
     jQuery(".ml-add-category-btn").click(function(e) {
         e.preventDefault();
         var selected_cat = jQuery(".ml-select-add[name='ml-category']").val();

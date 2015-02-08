@@ -12,7 +12,14 @@
                         <?php $categories = get_categories(); ?>
                         <?php
                         foreach ($categories as $c) {
-                            echo "<option value='$c->cat_ID'>$c->cat_name</option>";
+                            $parent_cat_name = '';
+                            if($c->parent) {
+                                $parent_category = get_the_category_by_ID($c->parent);
+                                if($parent_category) {
+                                    $parent_cat_name = $parent_category . ' - ';
+                                }
+                            }
+                            echo '<option value='.$c->cat_ID.'>'.$parent_cat_name.$c->cat_name.'</option>';
                         }
                         ?>
                     </select>
@@ -26,9 +33,16 @@
                     $ml_categories = ml_categories();
                     $ml_prev_cat = 0;
                     foreach ($ml_categories as $cat) {
+                        $parent_cat_name = '';
+                        if($cat->parent) {
+                            $parent_category = get_the_category_by_ID($cat->parent);
+                            if($parent_category) {
+                                $parent_cat_name = $parent_category . ' - ';
+                            }
+                        }
                         ?>
                         <li rel="<?php echo $cat->cat_ID; ?>">
-                            <span class="dashicons-before dashicons-menu"></span><?php echo $cat->name; ?>
+                            <span class="dashicons-before dashicons-menu"></span><?php echo $parent_cat_name.$cat->name; ?>
                             <input type="hidden" name="ml-menu-categories[]" value="<?php echo $cat->cat_ID; ?>"/>
                             <a href="#" class="dashicons-before dashicons-trash ml-item-remove"></a>
                         </li>
@@ -42,7 +56,7 @@
                         <option value="">Select Taxonomy</option>
                         <?php $taxonomies = get_taxonomies(array('_builtin'=>false), 'objects');  ?>
                         <?php
-                        foreach ($taxonomies as $tax) {
+                        foreach ($taxonomies as $tax) {                            
                             echo "<option value='$tax->query_var'>$tax->label</option>";
                         }
                         ?>
@@ -60,14 +74,50 @@
                     foreach ($menu_terms as $menu_term_data) {
                         $menu_term_data_ex = explode("=", $menu_term_data);
                         $menu_term_object = get_term_by('id', $menu_term_data_ex[1], $menu_term_data_ex[0]);
+                        $parent_name = '';
+                        if($menu_term_object->parent) {
+                            $parent_term = get_term_by('id', $menu_term_object->parent, $menu_term_data_ex[0]);
+                            if($parent_term) {
+                                $parent_name = $parent_term->name . ' - ';
+                            }
+                        }
                         ?>
                         <li rel="<?php echo $menu_term_object->term_id; ?>">
-                            <span class="dashicons-before dashicons-menu"></span><?php echo $menu_term_object->name; ?>
+                            <span class="dashicons-before dashicons-menu"></span><?php echo $parent_name.$menu_term_object->name; ?>
                             <input type="hidden" name="ml-menu-terms[]" value="<?php echo $menu_term_data; ?>"/>
                             <a href="#" class="dashicons-before dashicons-trash ml-item-remove"></a>
                         </li>
                         <?php
                         
+                    }
+                    ?>
+                </ul>
+                
+                <h4>Tags</h4>
+                <div class="ml-form-row">
+                    <select name="ml-tags" class="ml-select-add">
+                        <option value="">Select Tag</option>
+                        <?php $tags = get_terms('post_tag');  ?>
+                        <?php
+                        foreach ($tags as $tag) {                            
+                            echo "<option value='$tag->term_id'>$tag->name</option>";
+                        }
+                        ?>
+                    </select>
+                    <a href="#" class="button-secondary ml-add-tag-btn">Add</a>
+                </div>
+                <ul class="ml-menu-holder ml-menu-tags-holder">
+                    <?php
+                    $menu_tags = Mobiloud::get_option('ml_menu_tags', array());
+                    foreach ($menu_tags as $menu_tag) {
+                        $menu_tag_object = get_term_by('id', $menu_tag, 'post_tag');
+                        ?>
+                        <li rel="<?php echo $menu_tag_object->term_id; ?>">
+                            <span class="dashicons-before dashicons-menu"></span><?php echo $menu_tag_object->name; ?>
+                            <input type="hidden" name="ml-menu-tags[]" value="<?php echo $menu_tag_object->term_id; ?>"/>
+                            <a href="#" class="dashicons-before dashicons-trash ml-item-remove"></a>
+                        </li>
+                        <?php                        
                     }
                     ?>
                 </ul>
