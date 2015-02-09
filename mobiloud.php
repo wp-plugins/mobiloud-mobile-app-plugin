@@ -2,13 +2,13 @@
 /*
 Plugin Name: Mobiloud
 Plugin URI: http://www.mobiloud.com
-Description: Beautiful mobile apps for your WordPress blog or news site. No coding required.
+Description: Build native mobile apps for your WordPress blog or news site. No coding required.
 Author: 50pixels
-Version: 3.1.2
+Version: 3.1.3
 Author URI: http://www.mobiloud.com
 */
 
-define('MOBILOUD_PLUGIN_VERSION', "3.1.2");
+define('MOBILOUD_PLUGIN_VERSION', "3.1.3");
 define('MOBILOUD_PLUGIN_URL', plugin_dir_url( __FILE__ ) );
 define('MOBILOUD_PLUGIN_DIR', plugin_dir_path( __FILE__ ) );
 define('MOBILOUD_PLUGIN_RELATIVE_URL',"/wp-content/plugins/mobiloud-mobile-app-plugin");
