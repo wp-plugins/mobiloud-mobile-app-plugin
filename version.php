@@ -1,6 +1,6 @@
 <?php
 include("../../../wp-load.php");
-	$info = array("version" => "3.1.2");
+	$info = array("version" => "3.1.3");
 	$callback = sanitize_text_field($_GET['callback']);
 	if($callback) {
 		echo $callback."(";
