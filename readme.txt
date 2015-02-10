@@ -3,17 +3,15 @@ Contributors: psac50
 Tags: mobiloud, push notifications, WordPress mobile, WordPress mobile app, mobile plugin, WordPress android app, WordPress ios app, WordPress to app, mobile app with wordpre, mobile app for WordPress, native app, WordPress app, iphone, ipad, iphone app, ipad app, android, WordPress iphone app, WordPress android app, windows mobile, mobile web, app for WordPress, mobile site, mobile plugin, WordPress mobile, WordPress ios app, mobile theme, mobile website, mobile theme, WordPress to android app, WordPress to mobile app, mobile app, mobile app plugin, WordPress app builder, WordPress apps, WordPress app maker, ios app, WordPress mobile, WordPress to mobile app, WordPress blog app, build WordPress app, build mobile apps, create blog app, native app plugin, website to mobile app, native mobile app, build an app
 Requires at least: 3.5
 Tested up to: 4.1
-Stable tag: 3.1.3
+Stable tag: 3.1.4
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-Delight your readers with native mobile apps for your blog or site.
+Delight your readers with native mobile apps for your site.
 
 == Description ==
 
 **[Mobiloud](http://www.mobiloud.com/?ref=plugindesc) is a premium service designed to convert your WordPress site into a native mobile app for iOS and Android. Mobiloud is easy to use, with no coding required.**
-
-If you don't have an app to complement your web presence, you're missing on a huge opportunity to retain your readers and a reach a new audience on App Store and Google Play.
 
 **Unlike other solutions, Mobiloud gives you a completely "native" mobile app**. Native mobile apps look and feel great on Android and iOS, and don't have the sluggish and glitchy behaviour of non-native apps.
 
@@ -44,21 +42,21 @@ For any questions, don’t hesitate to get in touch with us at [support@mobiloud
 
 * **Analytics**. With support for **Google Analytics** to track traffic on your app, you'll have a full view on how people use your app and what content works best.
 
-* **Support for WordPress features** such as custom post types, custom fields and most WordPress plugins (some customisation might be required).
+* **Support for WordPress features** such as custom post types, custom fields, tags, categories, custom taxonomies and most WordPress plugins (some customisation might be required).
 
 * **Advanced feautures** including an advanced Editor you an use to add your own HTML/CSS/PHP code to customise the article/page screens or add custom fields, support for subscriptions/membership sites and much more.
 
 
 = All the features =
 * Your own design for icon, launch images, logo and UI colors
-* Unlimited automatic and manual push notifications
+* Unlimited automatic and manual push notifications (compatible with posts and custom post types)
+* Customisable app menu with pages, categories, tags, custom taxonomies and links
 * User preferences for push notifications (by category)
 * Support for posts, pages, categories, custom post types and custom fields
 * Advertising with AdMob, Adsense, MoPub, Google DFP or your own custom HTML ads
 * Banner, interstitial and native ads supported
 * Offline access to your content
 * Support for Google Analytics with complete app usage statistics
-* Customisable app menu with pages, categories and links
 * Custom HTML/PHP/CSS in the article contents (add all the functionality you need)
 * WordPress, Facebook and Disqus comments supported
 * Social Sharing features (one tap to share to Facebook, Twitter, Whatsapp, email and more)
@@ -221,6 +219,10 @@ You can contact us at [support@mobiloud.com](mailto:support@mobiloud.com)
 
 
 == Changelog ==
+
+
+= 3.1.4 =
+* Fixed bug causing issues with JSON encoding for some users
 
 = 3.1.3 =
 * Added support for tags in the app menu

@@ -455,7 +455,7 @@ function print_posts($posts,$tot_count,$offset,$options)
 		$final_posts["posts"][] = $final_post;
 	}
 
-	$json_string = json_encode($final_posts, JSON_UNESCAPED_UNICODE);
+	$json_string = json_encode($final_posts);
 	echo $json_string;
 
 	//caching json string if is main posts
