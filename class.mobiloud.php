@@ -91,7 +91,7 @@ class Mobiloud {
         if(Mobiloud::get_option('ml_copyright_string', 'none') == 'none') {
             Mobiloud::set_option('ml_copyright_string', '&copy; ' . date('Y') . ' ' . get_bloginfo('name'));
         }
-        if(Mobiloud::get_option('ml_comments_system', 'none') == 'none') {
+        if(Mobiloud::get_option('ml_comments_system', 'none') == 'none' || Mobiloud::get_option('ml_comments_system', 'none') == '') {
             Mobiloud::set_option('ml_comments_system', 'wordpress');
         }        
     }
