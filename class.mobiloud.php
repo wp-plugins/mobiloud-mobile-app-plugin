@@ -54,8 +54,8 @@ class Mobiloud {
         if(Mobiloud::get_option('ml_article_list_enable_dates', 'none') == 'none') {
             Mobiloud::set_option('ml_article_list_enable_dates', true);
         }
-        if(Mobiloud::get_option('ml_article_list_enable_featured_images', 'none') == 'none') {
-            Mobiloud::set_option('ml_article_list_enable_featured_images', true);
+        if(Mobiloud::get_option('ml_show_article_featuredimage', 'none') == 'none') {
+            Mobiloud::set_option('ml_show_article_featuredimage', true);
         }
         if(Mobiloud::get_option('ml_eager_loading_enable', 'none') == 'none') {
             Mobiloud::set_option('ml_eager_loading_enable', true);
