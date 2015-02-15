@@ -55,10 +55,12 @@ body.mobiloud_page_mobiloud_menu_homepage #TB_title .tb-close-icon {
     float: left;
     margin: 0;
     margin-top: 0px;
+    display: inline-block;
 }
 
 .os-selection .radio-wrap label {
     float: left;
+    display: inline-block;
     margin-left: 10px;
     margin-top: 0;
 }

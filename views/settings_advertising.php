@@ -228,24 +228,40 @@
             <h4>Preview the results</h4>
             <p>Select a post or page to preview the results of your edits.</p>
             <select id="preview_popup_post_select">
-                <?php $posts = get_posts(array('posts_per_page' => 10,'orderby' => 'post_date','order' => 'DESC','post_type' => 'post')); ?>
+                <?php 
+                $posts_query = array(
+                    'posts_per_page' => 10,'orderby' => 'post_date','order' => 'DESC','post_type'
+                );
+                $included_post_types = explode(",", Mobiloud::get_option('ml_article_list_include_post_types', array()));
+                foreach($included_post_types as $post_type) {
+                    $posts_query['post_type'] = $post_type;
+                    $posts = get_posts($posts_query); 
+                    if(count($posts) > 0) {
+                        ?>                    
+                        <optgroup label="<?php echo ucfirst($post_type); ?>">
+                        <?php foreach($posts as $post) { ?>
+
+                        <option value="<?php echo MOBILOUD_PLUGIN_URL; ?>post/post.php?post_id=<?php echo $post->ID; ?>">
+                        <?php if(strlen($post->post_title) > 40) { ?>
+
+                        <?php echo substr($post->post_title,0,40); ?>
+
+                        ..
+                        <?php } else { ?>
+
+                        <?php echo $post->post_title; ?>
+
+                        <?php } ?>
+                        </option><?php } ?>
+                        </optgroup>
+                        <?php
+                    }
+                }
+                
+                
+                ?>
                 <?php $pages = get_pages(array('sort_order' => 'ASC', 'sort_column' => 'post_title', 'post_type' => 'page','post_status' => 'publish')); ?>
-                <optgroup label="Posts">
-                <?php foreach($posts as $post) { ?>
-
-                <option value="<?php echo MOBILOUD_PLUGIN_URL; ?>post/post.php?post_id=<?php echo $post->ID; ?>">
-                <?php if(strlen($post->post_title) > 40) { ?>
-
-                <?php echo substr($post->post_title,0,40); ?>
-
-                ..
-                <?php } else { ?>
-
-                <?php echo $post->post_title; ?>
-
-                <?php } ?>
-                </option><?php } ?>
-                </optgroup><optgroup label="Pages">
+                <optgroup label="Pages">
                 <?php foreach($pages as $page) { ?>
 
                 <option value="<?php echo MOBILOUD_PLUGIN_URL; ?>post/post.php?post_id=<?php echo $page->ID; ?>">
