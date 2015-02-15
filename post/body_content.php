@@ -108,7 +108,7 @@
     <?php endif; ?>
 <?php
     $show_full_body = false;
-    if(get_option('ml_eager_loading_enable') || isset($_GET['fullcontent'])) {
+    if(get_option('ml_eager_loading_enable') || isset($_GET['fullcontent']) || isset($_GET["page_ID"])) {
         //Preload content option is enabled so always load the full body 
         //OR fullcontent $_GET is set
         $show_full_body = true;
