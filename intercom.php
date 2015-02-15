@@ -6,6 +6,21 @@ function ml_using_mobiloud() {
     return isset($_GET['page']) && strpos($_GET['page'], 'mobiloud') !== false;
 }
 
+function ml_init_perfect_audience() {
+    if(is_admin() && current_user_can('administrator') && Mobiloud::get_option('ml_initial_details_saved') && ml_using_mobiloud()) {
+        ?>
+<script type="text/javascript">
+  (function() {
+    window._pa = window._pa || {};
+    var pa = document.createElement('script'); pa.type = 'text/javascript'; pa.async = true;
+    pa.src = ('https:' == document.location.protocol ? 'https:' : 'http:') + "//tag.perfectaudience.com/serve/52ac92a5a6c82451b400007e.js";
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(pa, s);
+  })();
+</script>
+        <?php
+    }
+}
+
 function ml_init_olark() {
     if(is_admin() && current_user_can('administrator') && Mobiloud::get_option('ml_initial_details_saved') && ml_using_mobiloud()) {
         $user_email = Mobiloud::get_option('ml_user_email');
@@ -111,6 +126,25 @@ function ml_init_getvero() {
     }
 }
 
+function ml_track($action, $services=array(), $loadInit=false) {
+    foreach($services as $service) {
+        switch($service) {
+            case 'mixpanel':
+                ml_track_mixpanel($action);
+                break;
+            case 'getvero':
+                ml_track_getvero($action, $loadInit);
+                break;
+            case 'intercom':
+                ml_track_intercom($action, $loadInit);
+                break;
+            case 'perfect_audience':
+                ml_track_perfect_audience($action, $loadInit);
+                break;
+        }
+    }
+}
+
 function ml_track_mixpanel($action) {
     // get the Mixpanel class instance, replace with your project token
     $mp = Mixpanel::getInstance("3e7cc38a0abe4ea3a16a0e7538144f23");
@@ -141,6 +175,21 @@ function ml_track_intercom($action, $loadInit=false) {
         ?>
         <script type="text/javascript">
             Intercom("trackUserEvent", "<?php echo $action; ?>");
+        </script>
+        <?php
+    }
+}
+
+function ml_track_perfect_audience($action, $loadInit=false) {
+    if(is_admin() && current_user_can('administrator')) {
+        $user = wp_get_current_user();
+        if($loadInit) {
+            ml_init_perfect_audience();
+        }
+        ?>
+        <script type="text/javascript">
+            window._pq = window._pq || [];
+            _pq.push(['track', '<?php echo $action; ?>']);
         </script>
         <?php
     }

@@ -19,7 +19,7 @@
                                     $parent_cat_name = $parent_category . ' - ';
                                 }
                             }
-                            echo '<option value='.$c->cat_ID.'>'.$parent_cat_name.$c->cat_name.'</option>';
+                            echo '<option value='.$c->cat_ID.' title="'.esc_attr($c->cat_name).'">'.$parent_cat_name.$c->cat_name.'</option>';
                         }
                         ?>
                     </select>
@@ -33,16 +33,9 @@
                     $ml_categories = ml_categories();
                     $ml_prev_cat = 0;
                     foreach ($ml_categories as $cat) {
-                        $parent_cat_name = '';
-                        if($cat->parent) {
-                            $parent_category = get_the_category_by_ID($cat->parent);
-                            if($parent_category) {
-                                $parent_cat_name = $parent_category . ' - ';
-                            }
-                        }
                         ?>
                         <li rel="<?php echo $cat->cat_ID; ?>">
-                            <span class="dashicons-before dashicons-menu"></span><?php echo $parent_cat_name.$cat->name; ?>
+                            <span class="dashicons-before dashicons-menu"></span><?php echo $cat->name; ?>
                             <input type="hidden" name="ml-menu-categories[]" value="<?php echo $cat->cat_ID; ?>"/>
                             <a href="#" class="dashicons-before dashicons-trash ml-item-remove"></a>
                         </li>
@@ -74,16 +67,10 @@
                     foreach ($menu_terms as $menu_term_data) {
                         $menu_term_data_ex = explode("=", $menu_term_data);
                         $menu_term_object = get_term_by('id', $menu_term_data_ex[1], $menu_term_data_ex[0]);
-                        $parent_name = '';
-                        if($menu_term_object->parent) {
-                            $parent_term = get_term_by('id', $menu_term_object->parent, $menu_term_data_ex[0]);
-                            if($parent_term) {
-                                $parent_name = $parent_term->name . ' - ';
-                            }
-                        }
+                        
                         ?>
                         <li rel="<?php echo $menu_term_object->term_id; ?>">
-                            <span class="dashicons-before dashicons-menu"></span><?php echo $parent_name.$menu_term_object->name; ?>
+                            <span class="dashicons-before dashicons-menu"></span><?php echo $menu_term_object->name; ?>
                             <input type="hidden" name="ml-menu-terms[]" value="<?php echo $menu_term_data; ?>"/>
                             <a href="#" class="dashicons-before dashicons-trash ml-item-remove"></a>
                         </li>

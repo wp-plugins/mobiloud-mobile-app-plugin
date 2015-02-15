@@ -33,7 +33,11 @@ class Mobiloud {
         add_option('mobiloud_do_activation_redirect', true);
         if(!self::get_option('ml_activation_tracked', false)) {
             self::set_option('ml_activation_tracked', true);
-            ml_track_mixpanel('plugin activated');
+            ml_track('plugin activated', array('mixpanel'));
+        }
+        if(!self::get_option('ml_activation_tracked_pa', false)) {
+            self::set_option('ml_activation_tracked_pa', true);
+            ml_track('Plugin installed', array('perfect_audience'));
         }
         self::run_db_install();
     }

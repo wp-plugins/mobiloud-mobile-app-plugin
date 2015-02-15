@@ -67,6 +67,7 @@ class Mobiloud_Admin {
         add_action('admin_head', 'ml_init_olark');
         add_action('admin_head', 'ml_init_intercom');
         add_action('admin_head', 'ml_init_getvero');
+        add_action('admin_head', 'ml_init_perfect_audience');
         add_action('admin_head', array('Mobiloud_Admin', 'check_mailing_list_alert'));
 
         add_action('wp_ajax_ml_save_initial_data', array('Mobiloud_Admin', 'save_initial_data'));
@@ -89,6 +90,11 @@ class Mobiloud_Admin {
     }
 
     private static function set_default_options() {
+        if (is_null(get_option('ml_license_tracked', null)) && strlen(Mobiloud::get_option('ml_pb_app_id')) >= 0 
+                && strlen(Mobiloud::get_option('ml_pb_secret_key')) >= 0) {
+            ml_track('License details saved', array('perfect_audience'));
+            update_option('ml_license_tracked', true);
+        }
         if (is_null(get_option('ml_eager_loading_enable', null))) {
             add_option('ml_eager_loading_enable', true);
         }
@@ -663,7 +669,7 @@ class Mobiloud_Admin {
                            $parent_name = $parent_term->name . ' - ';
                        }
                    }
-                   $list[$term->term_id] = $parent_name.$term->name;
+                   $list[$term->term_id] = array('id'=>$term->term_id, 'fullname'=>$parent_name.$term->name, 'title'=>$term->name);
                 }
             }
         }

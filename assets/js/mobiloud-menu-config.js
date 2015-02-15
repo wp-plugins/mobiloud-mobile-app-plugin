@@ -18,7 +18,8 @@ jQuery(document).ready(function() {
             jQuery.post(ajaxurl, data, function(response) {
                 if(response.terms !== undefined) {
                     for(term_id in response.terms) {
-                        jQuery("select[name='ml-terms']").append(jQuery('<option></option>').val(term_id).html(response.terms[term_id]));
+                        var term = response.terms[term_id];
+                        jQuery("select[name='ml-terms']").append(jQuery('<option></option>').val(term.id).attr('title', term.title).html(term.fullname));
                     }
                     jQuery(".ml-tax-group-row").show();
                 }
@@ -32,7 +33,7 @@ jQuery(document).ready(function() {
     jQuery(".ml-add-term-btn").click(function(e) {
         e.preventDefault();
         var selected_term = jQuery(".ml-select-add[name='ml-terms']").val();
-        var selected_term_text = jQuery(".ml-select-add[name='ml-terms'] option:selected").text();
+        var selected_term_text = jQuery(".ml-select-add[name='ml-terms'] option:selected").attr('title');
         var selected_tax = jQuery(".ml-select-add[name='ml-tax-group']").val();
         if(selected_term !== '' && jQuery(".ml-menu-terms-holder li[rel='"+selected_term+"']").length <= 0) {
             var new_li = jQuery("<li>")
@@ -75,7 +76,7 @@ jQuery(document).ready(function() {
     jQuery(".ml-add-category-btn").click(function(e) {
         e.preventDefault();
         var selected_cat = jQuery(".ml-select-add[name='ml-category']").val();
-        var selected_cat_text = jQuery(".ml-select-add[name='ml-category'] option:selected").text();
+        var selected_cat_text = jQuery(".ml-select-add[name='ml-category'] option:selected").attr('title');
         if(selected_cat !== '' && jQuery(".ml-menu-categories-holder li[rel='"+selected_cat+"']").length <= 0) {
             var new_li = jQuery("<li>")
                     .attr('rel', selected_cat)
