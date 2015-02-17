@@ -89,12 +89,7 @@ class Mobiloud_Admin {
         add_submenu_page('mobiloud', 'Push Notification', 'Push Notifications', "activate_plugins", 'mobiloud_push', array('Mobiloud_Admin', 'menu_push'));
     }
 
-    private static function set_default_options() {
-        if (is_null(get_option('ml_license_tracked', null)) && strlen(Mobiloud::get_option('ml_pb_app_id')) >= 0 
-                && strlen(Mobiloud::get_option('ml_pb_secret_key')) >= 0) {
-            ml_track('License details saved', array('perfect_audience'));
-            update_option('ml_license_tracked', true);
-        }
+    private static function set_default_options() {        
         if (is_null(get_option('ml_eager_loading_enable', null))) {
             add_option('ml_eager_loading_enable', true);
         }
@@ -232,6 +227,7 @@ class Mobiloud_Admin {
     }
 
     public static function menu_get_started() {
+        
         $tab = sanitize_text_field($_GET['tab']);
         switch ($tab) {
             default:
@@ -383,6 +379,15 @@ class Mobiloud_Admin {
                 self::render_view('get_started_publish', 'get_started');
                 self::track_user_event('view_get_started_publish');
                 break;
+        }
+        if(Mobiloud::get_option('ml_activation_tracked_pa') == 'activated') {
+            ml_track('Plugin installed', array('perfect_audience'));
+            Mobiloud::set_option('ml_activation_tracked_pa', true);
+        }
+        if (is_null(get_option('ml_license_tracked', null)) && strlen(Mobiloud::get_option('ml_pb_app_id')) >= 0 
+                && strlen(Mobiloud::get_option('ml_pb_secret_key')) >= 0) {
+            ml_track('License details saved', array('perfect_audience'));
+            update_option('ml_license_tracked', true);
         }
     }
 

@@ -7,7 +7,7 @@ function ml_using_mobiloud() {
 }
 
 function ml_init_perfect_audience() {
-    if(is_admin() && current_user_can('administrator') && Mobiloud::get_option('ml_initial_details_saved') && ml_using_mobiloud()) {
+    if(is_admin() && current_user_can('administrator') && ml_using_mobiloud()) {
         ?>
 <script type="text/javascript">
   (function() {
@@ -188,8 +188,8 @@ function ml_track_perfect_audience($action, $loadInit=false) {
         }
         ?>
         <script type="text/javascript">
-            window._pq = window._pq || [];
-            _pq.push(['track', '<?php echo $action; ?>']);
+            pa = pa || [];
+            pa.push(['track', '<?php echo $action; ?>']);
         </script>
         <?php
     }

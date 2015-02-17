@@ -36,13 +36,12 @@ class Mobiloud {
             ml_track('plugin activated', array('mixpanel'));
         }
         if(!self::get_option('ml_activation_tracked_pa', false)) {
-            self::set_option('ml_activation_tracked_pa', true);
-            ml_track('Plugin installed', array('perfect_audience'));
+            self::set_option('ml_activation_tracked_pa', 'activated');
         }
         self::run_db_install();
     }
     
-    public static function set_default_options() {
+    public static function set_default_options() {        
         if(Mobiloud::get_option('ml_article_list_include_post_types', 'none') == 'none') {
             Mobiloud::set_option('ml_article_list_include_post_types', 'post');
         }
