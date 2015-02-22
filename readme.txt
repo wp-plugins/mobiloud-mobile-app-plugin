@@ -72,7 +72,7 @@ For any questions, don’t hesitate to get in touch with us at [support@mobiloud
 
 = How it works =
 
-[youtube https://www.youtube.com/watch?v=JeM3scfarjs]
+[youtube https://www.youtube.com/watch?v=gzKh2BSvX-E]
 
 1. **Install and Activate** the plugin
 2. Customise your app and test it on your own device
