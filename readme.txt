@@ -13,12 +13,13 @@ Publish iPhone and Android mobile apps for your site in 5 minutes.
 
 **[Mobiloud](http://www.mobiloud.com/?ref=plugindesc) is a premium service designed to convert your WordPress site into a native mobile app for iOS and Android. Mobiloud is easy to use, with no coding required.**
 
+= Is this not free? =
+Install the plugin and design and preview your mobile app for free. Try it as long as you want. Test it online and on your own device. To publish your app on App Store or Google Play, we charge affordable fees. Check the [pricing plans on Mobiloud.com](http://www.mobiloud.com/publish/?ref=plugindesc).
+
+= How is it different? =
 **Unlike other solutions, Mobiloud gives you a completely "native" mobile app**. Native mobile apps look and feel great on Android and iOS, and don't have the sluggish and glitchy behaviour of non-native apps.
 
-With Mobiloud, native mobile apps are finally affordable, **and you won’t need any programming skills to get your app published - we take care of the app build and submission for you**.
-
-= Pricing =
-Install the plugin and design your mobile app for free. Try it as long as you want. Test it online and on your own device. To publish your app on App Store or Google Play, we charge affordable fees. Check the [pricing plans on Mobiloud.com](http://www.mobiloud.com/publish/?ref=plugindesc).
+With Mobiloud, you can really build high quality native mobile apps in 5 minutes, **and you won’t need any programming skills to get your app published - we take care of the app build and submission for you**.
 
 For any questions, don’t hesitate to get in touch with us at [support@mobiloud.com](mailto:support@mobiloud.com).
 
