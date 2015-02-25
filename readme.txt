@@ -1,4 +1,4 @@
-=== Mobiloud Mobile App - Native iPhone Apps and Android Apps for your WordPress site ===
+=== Mobiloud Mobile App Plugin - Native iPhone Apps and Android Apps for your WordPress site ===
 Contributors: psac50
 Tags: mobile, mobiloud, push notifications, WordPress mobile, WordPress mobile app, mobile plugin, WordPress android app, WordPress ios app, WordPress to app, mobile app with wordpre, mobile app for WordPress, native app, WordPress app, iphone, ipad, iphone app, ipad app, android, WordPress iphone app, WordPress android app, windows mobile, mobile web, app for WordPress, mobile site, mobile plugin, WordPress mobile, WordPress ios app, mobile theme, mobile website, mobile theme, WordPress to android app, WordPress to mobile app, mobile app, mobile app plugin, WordPress app builder, WordPress apps, WordPress app maker, ios app, WordPress mobile, WordPress to mobile app, WordPress blog app, build WordPress app, build mobile apps, create blog app, native app plugin, website to mobile app, native mobile app, build an app
 Requires at least: 3.5
@@ -7,19 +7,19 @@ Stable tag: 3.1.5
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-Publish iPhone and Android mobile apps for your site in 5 minutes.
+Publish iOS and Android mobile apps for your site in 5 minutes.
 
 == Description ==
 
-**[Mobiloud](http://www.mobiloud.com/?ref=plugindesc) is a premium service designed to convert your WordPress site into a native mobile app for iOS and Android. Mobiloud is easy to use, with no coding required.**
+**[Mobiloud](http://www.mobiloud.com/?ref=plugindesc) is a service designed to convert your WordPress site into a native mobile app for iOS and Android (including iPhone, iPad, Android phones and tablets). Mobiloud is easy to use, with no coding required.**
 
-= Is this not free? =
-Install the plugin and design and preview your mobile app for free. Try it as long as you want. Test it online and on your own device. To publish your app on App Store or Google Play, we charge affordable fees. Check the [pricing plans on Mobiloud.com](http://www.mobiloud.com/publish/?ref=plugindesc).
+= Is this free? =
+Install the plugin for free and design and preview your mobile app. Try it as long as you want. Test it online and on your own device. To publish your app on App Store or Google Play, we charge affordable fees. You'll get your app built and published for you, push notifications and unmatched support. Check the [pricing plans on Mobiloud.com](http://www.mobiloud.com/publish/?ref=plugindesc).
 
-= How is it different? =
+= How is Mobiloud different? =
 **Unlike other solutions, Mobiloud gives you a completely "native" mobile app**. Native mobile apps look and feel great on Android and iOS, and don't have the sluggish and glitchy behaviour of non-native apps.
 
-With Mobiloud, you can really build high quality native mobile apps in 5 minutes, **and you won’t need any programming skills to get your app published - we take care of the app build and submission for you**.
+**With Mobiloud, you can really build high quality native mobile apps in 5 minutes**, and you won’t need any programming skills to get your app published - we take care of the app build and submission for you.
 
 For any questions, don’t hesitate to get in touch with us at [support@mobiloud.com](mailto:support@mobiloud.com).
 
@@ -248,89 +248,89 @@ You can contact us at [support@mobiloud.com](mailto:support@mobiloud.com)
 == Changelog ==
 
 
-= Mobiloud Mobile App 3.1.5 =
+= Mobiloud Mobile App Plugin 3.1.5 =
 * Fixed small plugin UI glitches
 
-= Mobiloud Mobile App 3.1.4 =
+= Mobiloud Mobile App Plugin 3.1.4 =
 * Fixed bug causing issues with JSON encoding for some users
 
-= Mobiloud Mobile App 3.1.3 =
+= Mobiloud Mobile App Plugin 3.1.3 =
 * Added support for tags in the app menu
 * Minor improvements to default settings
 
-= Mobiloud Mobile App 3.1.2 =
+= Mobiloud Mobile App Plugin 3.1.2 =
 * Added support for custom taxonomies and terms in app menu
 * Fixed issue with infinite scroll on article list for lists with custom post types
 
-= Mobiloud Mobile App 3.1.1 =
+= Mobiloud Mobile App Plugin 3.1.1 =
 * Added support for loading the simulator in an https site
 * Minor fixes and additions
 
-= Mobiloud Mobile App 3.1 =
+= Mobiloud Mobile App Plugin 3.1 =
 * Added automatic push notifications for custom post types
 * Bug fix: filtering content types for push notifications
 * Bug fix: fix for lazy loading
 
-= Mobiloud Mobile App 3.0.9 =
+= Mobiloud Mobile App Plugin 3.0.9 =
 * Bug fix: saving featured image in article preferences
 * Bug fix affecting category filter, custom post type filter and sticky categories functionality
 
-= Mobiloud Mobile App 3.0.8 =
+= Mobiloud Mobile App Plugin 3.0.8 =
 * Bug fixes: minor fixes
 
-= Mobiloud Mobile App 3.0.7 =
+= Mobiloud Mobile App Plugin 3.0.7 =
 * Bug fixes: minor fixes
 
-= Mobiloud Mobile App 3.0.7 =
+= Mobiloud Mobile App Plugin 3.0.7 =
 * Updated minimum required WP version to 3.5
 * Fixed alignment and display issues inside Admin interface for WP3.8 and lower
 * Fixed push message HTML output
 * Added alternative featured image functionality
 
-= Mobiloud Mobile App 3.0.6 =
+= Mobiloud Mobile App Plugin 3.0.6 =
 * Article date follows wp settings
 * style fix for image galleries
 * excerpt formatting fix
 * author name fix and more
 
-= Mobiloud Mobile App 3.0.5 =
+= Mobiloud Mobile App Plugin 3.0.5 =
 * Now you can add Admob banners to your app via the 
 
-= Mobiloud Mobile App 3.0.4 =
+= Mobiloud Mobile App Plugin 3.0.4 =
 * Bug fixes: minor fixes
 
-= Mobiloud Mobile App 3.0.3 =
+= Mobiloud Mobile App Plugin 3.0.3 =
 * Fix for New Relic users
 
-= Mobiloud Mobile App 3.0.2 =
+= Mobiloud Mobile App Plugin 3.0.2 =
 * Bug fixes: minor fixes
 
-= Mobiloud Mobile App 3.0.1 =
+= Mobiloud Mobile App Plugin 3.0.1 =
 * Fixed a bug in menu configuration
 
-= Mobiloud Mobile App 3.0 =
+= Mobiloud Mobile App Plugin 3.0 =
 * Improved and simplified user interface
 * Now you can add custom fields and excerpts to article lists
 * New Advertising functionality including support for MoPub and Google DFP
 * Minor bug fixes
 
-= Mobiloud Mobile App 2.3.9.5 =
+= Mobiloud Mobile App Plugin 2.3.9.5 =
 * Bug fix - 404 page on fetching posts through app
 * Bug fix - Incorrect button colors fetched from plugin config for app
 
-= Mobiloud Mobile App 2.3.8 =
+= Mobiloud Mobile App Plugin 2.3.8 =
 * Security patches
 
-= Mobiloud Mobile App 2.3.8 =
+= Mobiloud Mobile App Plugin 2.3.8 =
 * Bug fixes
 
-= Mobiloud Mobile App 2.3.7 =
+= Mobiloud Mobile App Plugin 2.3.7 =
 * New feature: App simulator that allows you to preview your app
 
-= Mobiloud Mobile App 2.3.1 =
+= Mobiloud Mobile App Plugin 2.3.1 =
 * Fluid width images in posts
 
-= Mobiloud Mobile App 2.3 =
+= Mobiloud Mobile App Plugin 2.3 =
 * improved Push Notifications admin panel
 * Ability to have a page or URL as the app's home screen
 * Page hierarchy navigation
@@ -339,143 +339,143 @@ You can contact us at [support@mobiloud.com](mailto:support@mobiloud.com)
 * Improved automatic push notifications
 
 
-= Mobiloud Mobile App 2.1 =
+= Mobiloud Mobile App Plugin 2.1 =
 * improved support for javascript
 * customise article content with CSS, PHP, HTML
 * push notifications admin panel
 
-= Mobiloud Mobile App 1.9.1 =
+= Mobiloud Mobile App Plugin 1.9.1 =
 * fixed security issue
 
-= Mobiloud Mobile App 1.9.0 =
+= Mobiloud Mobile App Plugin 1.9.0 =
 * improved post html
  
-= Mobiloud Mobile App 1.8.16 =
+= Mobiloud Mobile App Plugin 1.8.16 =
 * app_menu.php fix
 
-= Mobiloud Mobile App 1.8.15 =
+= Mobiloud Mobile App Plugin 1.8.15 =
 * posts.php fix
 
-= Mobiloud Mobile App 1.8.14 =
+= Mobiloud Mobile App Plugin 1.8.14 =
 * Admin pointer
 * posts.php fixed
 
-= Mobiloud Mobile App 1.8.12 =
+= Mobiloud Mobile App Plugin 1.8.12 =
 * Add file cache embedded system
 * Add error tracer
 
-= Mobiloud Mobile App 1.8.11 =
+= Mobiloud Mobile App Plugin 1.8.11 =
 * Fix in post html function
 
-= Mobiloud Mobile App 1.8.10 =
+= Mobiloud Mobile App Plugin 1.8.10 =
 * Posts fix
 
-= Mobiloud Mobile App 1.8.9 =
+= Mobiloud Mobile App Plugin 1.8.9 =
 * Post content extraction fixed
 
-= Mobiloud Mobile App 1.8.8 =
+= Mobiloud Mobile App Plugin 1.8.8 =
 * Integration for Android app
 
-= Mobiloud Mobile App 1.8.7 =
+= Mobiloud Mobile App Plugin 1.8.7 =
 * Integration with Mobiloud app configurator
 
-= Mobiloud Mobile App 1.8.6 =
+= Mobiloud Mobile App Plugin 1.8.6 =
 * API to download one specific post
 
-= Mobiloud Mobile App 1.8.5 =
+= Mobiloud Mobile App Plugin 1.8.5 =
 * Categories and pages managed by plugin. Sticky categories.
 
-= Mobiloud Mobile App 1.8.2 =
+= Mobiloud Mobile App Plugin 1.8.2 =
 * Content redirect
 
-= Mobiloud Mobile App 1.8.1 =
+= Mobiloud Mobile App Plugin 1.8.1 =
 * New remote update url
 
-= Mobiloud Mobile App 1.8.0 =
+= Mobiloud Mobile App Plugin 1.8.0 =
 * Update by remote
 
-= Mobiloud Mobile App 1.7.6 =
+= Mobiloud Mobile App Plugin 1.7.6 =
 * New options under general settings
 
-= Mobiloud Mobile App 1.7.5 =
+= Mobiloud Mobile App Plugin 1.7.5 =
 * Changed date format
 
-= Mobiloud Mobile App 1.7.4 =
+= Mobiloud Mobile App Plugin 1.7.4 =
 * Appstore and shortcut filter
 
-= Mobiloud Mobile App 1.7.2 =
+= Mobiloud Mobile App Plugin 1.7.2 =
 * Example filter
 
-= Mobiloud Mobile App 1.7.1 =
+= Mobiloud Mobile App Plugin 1.7.1 =
 * Filters engine fix
 
-= Mobiloud Mobile App 1.7 =
+= Mobiloud Mobile App Plugin 1.7 =
 * Filters engine
 
-= Mobiloud Mobile App 1.6.2 =
+= Mobiloud Mobile App Plugin 1.6.2 =
 * Fixed problem during posting in WordPress 3.5
 
-= Mobiloud Mobile App 1.6.1 =
+= Mobiloud Mobile App Plugin 1.6.1 =
 * Fixed another problem in comments and layout
 
-= Mobiloud Mobile App 1.6 =
+= Mobiloud Mobile App Plugin 1.6 =
 * Fixed Facebook comments integration * Added connection test to mobiloud server
 
-= Mobiloud Mobile App 1.5.4 =
+= Mobiloud Mobile App Plugin 1.5.4 =
 * Push notification only when api key is set
 
-= Mobiloud Mobile App 1.5.3 =
+= Mobiloud Mobile App Plugin 1.5.3 =
 * Fixed admin errors
 
-= Mobiloud Mobile App 1.5.2 =
+= Mobiloud Mobile App Plugin 1.5.2 =
 * Push notification only when api key is set
 
-= Mobiloud Mobile App 1.5.1 =
+= Mobiloud Mobile App Plugin 1.5.1 =
 * Smart App banner
 
-= Mobiloud Mobile App 1.5 =
+= Mobiloud Mobile App Plugin 1.5 =
 * Fixed thumbs url when resized
 
-= Mobiloud Mobile App 1.4.1 =
+= Mobiloud Mobile App Plugin 1.4.1 =
 * Fixed thumbs url inside JSON structure
 
-= Mobiloud Mobile App 1.4 =
+= Mobiloud Mobile App Plugin 1.4 =
 * Fixed thumbnails bug * Fixed comments bug * Fixed configuration API keys bug
 
-= Mobiloud Mobile App 1.3.8 =
+= Mobiloud Mobile App Plugin 1.3.8 =
 * General configuration tab
 
-= Mobiloud Mobile App 1.3.7 =
+= Mobiloud Mobile App Plugin 1.3.7 =
 * Now WordPress could be installed on a subdirectory.
 
-= Mobiloud Mobile App 1.3.6 =
+= Mobiloud Mobile App Plugin 1.3.6 =
 * New thumbs dimension
 
-= Mobiloud Mobile App 1.3.5 =
+= Mobiloud Mobile App Plugin 1.3.5 =
 * Fixed bug about app smart redirect
 * New configuration screen with ajax save
 
-= Mobiloud Mobile App 1.3 =
+= Mobiloud Mobile App Plugin 1.3 =
 * iTunes app smart redirect for mobile devices
 * cache manifest for offline mode
 * [caption] on iPad
 
-= Mobiloud Mobile App 1.2.7 =
+= Mobiloud Mobile App Plugin 1.2.7 =
 * [caption] fixes
 
-= Mobiloud Mobile App 1.2.6 =
+= Mobiloud Mobile App Plugin 1.2.6 =
 * Layout HTML fixes
 
-= Mobiloud Mobile App 1.2.5 =
+= Mobiloud Mobile App Plugin 1.2.5 =
 * Disqus comments count
 
-= Mobiloud Mobile App 1.2.4 =
+= Mobiloud Mobile App Plugin 1.2.4 =
 * Disqus support
 
-= Mobiloud Mobile App 1.2.3 =
+= Mobiloud Mobile App Plugin 1.2.3 =
 * iPad support
 
-= Mobiloud Mobile App 1.0 =
+= Mobiloud Mobile App Plugin 1.0 =
 * Initial public release
 * REST API calls with JSON output
 * Push notifications for iOS
