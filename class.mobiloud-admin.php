@@ -433,6 +433,9 @@ class Mobiloud_Admin {
                     }
 
                     Mobiloud::set_option('ml_article_list_exclude_categories', implode(",", $exclude_categories));
+                    
+                    Mobiloud::set_option('ml_custom_field_enable', isset($_POST['ml_custom_field_enable']));
+                    Mobiloud::set_option('ml_custom_field_name', sanitize_text_field($_POST['ml_custom_field_name']));
                 }
                 self::render_view('settings_general', 'settings');
                 self::track_user_event('view_settings_general');
@@ -454,9 +457,6 @@ class Mobiloud_Admin {
                     Mobiloud::set_option('ml_page_date_enabled', isset($_POST['ml_page_date_enabled']));
                     Mobiloud::set_option('ml_post_title_enabled', isset($_POST['ml_post_title_enabled']));
                     Mobiloud::set_option('ml_page_title_enabled', isset($_POST['ml_page_title_enabled']));
-
-                    Mobiloud::set_option('ml_custom_field_enable', isset($_POST['ml_custom_field_enable']));
-                    Mobiloud::set_option('ml_custom_field_name', sanitize_text_field($_POST['ml_custom_field_name']));
 
                     Mobiloud::set_option('ml_custom_field_url', sanitize_text_field($_POST['ml_custom_field_url']));
                     Mobiloud::set_option('ml_custom_featured_image', sanitize_text_field($_POST['ml_custom_featured_image']));
