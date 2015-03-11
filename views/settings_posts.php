@@ -124,8 +124,8 @@
         <div class='ml-col-row'>
             <div class='ml-col-half'>
                 <p>You can override the featured image used in article lists and at the top of every article with a secondary image you can define for every post.</p>
-                <p>Install the <a href="https://wordpress.org/plugins/multiple-post-thumbnails/">Multiple Post Thumbnails</a> plugin and enter the ID of the secondary featured image field you've setup, normally "secondary-image".</p>
-                <!-- <p>Alternatively enter the name of a custom field where you'll enter, for each post, the full URL of the alternative image.</p> -->
+                <p>Install the <a href="https://wordpress.org/plugins/multiple-post-thumbnails/">Multiple Post Thumbnails</a> plugin and enter the ID of the secondary featured image field you've setup, normally "secondary-image".</p>				
+                <p>Alternatively enter the name of a custom field where you'll enter, for each post, the full URL of the alternative image.</p>
 				
             </div>
             <div class='ml-col-half'>
