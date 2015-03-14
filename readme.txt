@@ -75,10 +75,25 @@ For any questions, don’t hesitate to get in touch with us at [support@mobiloud
 
 [youtube https://www.youtube.com/watch?v=gzKh2BSvX-E]
 
-1. **Install and Activate** the plugin
-2. Customise your mobile app and test it on your own device
-4. **Sign Up with no risk** (we offer a 30 day money back guarantee)
-5. In a matter of days we'll submit the app for you to Android and Google Play.
+**1. Install and Activate the plugin**
+
+More than 50,000 people have downloaded our plugin, join them to get started and preview your own mobile app.
+
+**2. Customise your mobile app and test it on your own device**
+
+From the plugin's page, choose your app's main color and upload your logo to customise your app. You'll be able to add an icon and launch image later on in the process.
+
+**3. Preview your app**
+
+From the plugin's page, click on "Test Your App" and follow the instructions to test your app online or on your own mobile devices (iOS and Android).
+
+Happy with the result? Go ahead and sign up for one of our plans. No worries, you can always make changes later.
+
+**4. Sign Up for one of our plans**
+
+To get your app built and submitted, sign up for one of our pricing plans or choose to purchase a lifetime license.
+
+In a matter of days we'll submit the app for you to Android and Google Play.
 
 = What some of our customers say about it =
 
@@ -257,8 +272,6 @@ You can contact us at [support@mobiloud.com](mailto:support@mobiloud.com)
 
 == Other Notes ==
 
-= About Mobiloud =
-
 Did you know that there are 2 billion worldwide mobile users and that they spend 85% of time on their mobile devices using apps? If you’re a professional blogger or have a news site and don’t have a mobile app to compliment your web presence, you’re missing out on opportunities to increase traffic and grow your engagement with your readers.
 
 Not only apps give you an opportunity to be found on App Store and Google Play, but thanks to push notifications mobile apps are the best retention tool available to publishers these days. Think of it like a newsletter on steroids: open rates for push are close to 90%, compare that with email!
@@ -276,6 +289,7 @@ Complimenting your existing WordPress site with a mobile app doesn't need tobe d
 Mobiloud offer an easy-to-use mobile app solution that allows full integration with your existing WordPress site.
 
 Let’s talk features:
+
 * Gather content automatically from your WordPress site.
 * Display posts and pages including custom post types.
 * Support custom fields and editable code, to allow customisation of the mobile app.
@@ -287,7 +301,7 @@ Let’s talk features:
 * Support video content and give you amazing image galleries.
  
 
-How Does Mobiloud Work?
+= How Does Mobiloud Work? =
 
 Mobiloud makes it simple and quick to build real native mobile apps on iOS and Android. By taking a series of easy steps, you can design, preview and publish your own app:
 
@@ -297,10 +311,9 @@ Mobiloud makes it simple and quick to build real native mobile apps on iOS and A
 4. Submit to App Store and Google Play
 5. Mobiloud will upload your app and design an icon and launch screen for you on the online stores. Or, you can request the binaries if you want to do it yourself.
 
-How much does it cost?
+= How much does it cost? =
 
-With Mobiloud, you’ll get an app at a price to suit your budget. You can purchase a lifetime licence or sign-up for a rolling contact. There are no unexpected surprises.
-
+With Mobiloud, you’ll get an app at a price to suit your budget. You can [purchase a lifetime licence](www.mobiloud.com/lifetime-license/?ref=plugindesc) or [sign-up for a monthly subscription](http://www.mobiloud.com/pricing/?ref=plugindesc).
 
 
 == Screenshots ==
@@ -312,6 +325,8 @@ With Mobiloud, you’ll get an app at a price to suit your budget. You can purch
 
 == Changelog ==
 
+= Mobiloud Mobile App Plugin 3.1.8 =
+* Minor bug fixes
 
 = Mobiloud Mobile App Plugin 3.1.7 =
 * Minor bug fixes
