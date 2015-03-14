@@ -76,21 +76,15 @@ For any questions, don’t hesitate to get in touch with us at [support@mobiloud
 [youtube https://www.youtube.com/watch?v=gzKh2BSvX-E]
 
 **1. Install and Activate the plugin**
-
 More than 50,000 people have downloaded our plugin, join them to get started and preview your own mobile app.
 
 **2. Customise your mobile app and test it on your own device**
-
 From the plugin's page, choose your app's main color and upload your logo to customise your app. You'll be able to add an icon and launch image later on in the process.
 
 **3. Preview your app**
-
 From the plugin's page, click on "Test Your App" and follow the instructions to test your app online or on your own mobile devices (iOS and Android).
 
-Happy with the result? Go ahead and sign up for one of our plans. No worries, you can always make changes later.
-
 **4. Sign Up for one of our plans**
-
 To get your app built and submitted, sign up for one of our pricing plans or choose to purchase a lifetime license.
 
 In a matter of days we'll submit the app for you to Android and Google Play.
