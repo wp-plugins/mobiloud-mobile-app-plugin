@@ -73,7 +73,7 @@ $return_config['android_interstitial_interval'] = Mobiloud::get_option('ml_andro
 $return_config['android_native_ad_unit_id'] = Mobiloud::get_option('ml_android_native_ad_unit_id');
 $return_config['android_native_ad_interval'] = Mobiloud::get_option('ml_android_native_ad_interval');
 
-$return_config["enable_hierarchical_pages"] = get_option('ml_hierarchical_pages_enabled',true);
+$return_config["enable_hierarchical_pages"] = get_option('ml_hierarchical_pages_enabled',false);
 $return_config["show_favorites"] = get_option('ml_menu_show_favorites',true);
 
 $return_config['interface_images_updated'] = date('c', get_option('ml_preview_upload_image_time'));
