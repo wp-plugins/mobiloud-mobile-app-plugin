@@ -19,7 +19,7 @@ class Mobiloud {
 	private static function init_hooks() {
 		self::$initiated = true;
                 
-        add_filter('get_avatar', array('Mobiloud', 'get_avatar'),10,2);
+        //add_filter('get_avatar', array('Mobiloud', 'get_avatar'),10,2);
         
         if(get_option('ml_push_notification_enabled'))
         {
