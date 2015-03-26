@@ -67,13 +67,13 @@ class Mobiloud {
             Mobiloud::set_option('ml_post_author_enabled', true);
         }
         if(Mobiloud::get_option('ml_page_author_enabled', 'none') == 'none') {
-            Mobiloud::set_option('ml_page_author_enabled', true);
+            Mobiloud::set_option('ml_page_author_enabled', false);
         }
         if(Mobiloud::get_option('ml_post_date_enabled', 'none') == 'none') {
             Mobiloud::set_option('ml_post_date_enabled', true);
         }
         if(Mobiloud::get_option('ml_page_date_enabled', 'none') == 'none') {
-            Mobiloud::set_option('ml_page_date_enabled', true);
+            Mobiloud::set_option('ml_page_date_enabled', false);
         }
         if(Mobiloud::get_option('ml_post_title_enabled', 'none') == 'none') {
             Mobiloud::set_option('ml_post_title_enabled', true);
