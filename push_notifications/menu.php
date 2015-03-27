@@ -59,7 +59,7 @@ function ml_push_notification_manual_send_callback()
             'payload'=>$payload
         );
 		ml_pb_send_batch_notification($data, $tagNames);
-        Mobiloud::track_user_event('push_notification');
+        Mobiloud_Admin::track_user_event('push_notification');
 	}
 
 	ml_push_notification_manual_send();
