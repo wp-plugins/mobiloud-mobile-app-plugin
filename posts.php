@@ -156,7 +156,7 @@ else {
         }
         
     if(!empty($includedCategories)) {
-        $query_array['cat'] = implode(",",$includedCategories);
+        $query_array['category__in'] = $includedCategories;
     }
     
 	$arrayFilter = array();
