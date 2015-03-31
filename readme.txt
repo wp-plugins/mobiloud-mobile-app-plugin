@@ -3,7 +3,7 @@ Contributors: psac50
 Tags: mobile, mobiloud, push notifications, WordPress mobile, WordPress mobile app, mobile plugin, WordPress android app, WordPress ios app, WordPress to app, mobile app for WordPress, native app, WordPress app, iphone, ipad, iphone app, ipad app, android, WordPress iphone app, WordPress android app, windows mobile, mobile web, app for WordPress, mobile site, mobile plugin, WordPress mobile, WordPress ios app, mobile theme, mobile website, mobile theme, WordPress to android app, WordPress to mobile app, mobile app, mobile app plugin, WordPress app builder, WordPress apps, WordPress app maker, ios app, WordPress mobile, WordPress to mobile app, WordPress blog app, build WordPress app, build mobile apps, create blog app, native app plugin, website to mobile app, native mobile app, build an app
 Requires at least: 3.5
 Tested up to: 4.1.1
-Stable tag: 3.1.8
+Stable tag: 3.1.9
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -318,6 +318,11 @@ With Mobiloud, you’ll get an app at a price to suit your budget. You can [purc
 
 
 == Changelog ==
+
+= Mobiloud Mobile App Plugin 3.1.9 =
+* Fix a bug in the manual push notifications interface
+* Enabled alternative featured images based on the contents of a custom field
+* Minor bug fixes
 
 = Mobiloud Mobile App Plugin 3.1.8 =
 * Minor bug fixes
