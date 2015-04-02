@@ -426,7 +426,7 @@ class Mobiloud_Admin {
                     $exclude_categories = array();
                     if (count($categories)) {
                         foreach ($categories as $category) {
-                            if (!isset($_POST['categories']) || count($_POST['categories']) === 0 || (isset($_POST['categories']) && !in_array(html_entity_decode($category->cat_name), $_POST['categories']))) {
+                            if (!isset($_POST['categories']) || count($_POST['categories']) === 0 || (isset($_POST['categories']) && !in_array(wp_slash(html_entity_decode($category->cat_name)), $_POST['categories']))) {
                                 $exclude_categories[] = $category->cat_name;
                             }
                         }
