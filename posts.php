@@ -149,11 +149,7 @@ if ($ml_content_redirect->ml_content_redirect_enable == "1" &&
     if (count($term_arr) && $term_arr['term']) {
         unset($query_array['post_type']);
     }
-
-    if (!empty($includedCategories)) {
-        $query_array['category__in'] = $includedCategories;
-    }
-
+    
     $arrayFilter = array();
 
     if (isset($_POST["categories"])) {
@@ -185,6 +181,34 @@ if ($ml_content_redirect->ml_content_redirect_enable == "1" &&
         wp_reset_postdata();
         $query = new WP_Query($query_array);
         $posts = $query->get_posts();
+        
+        $remove_posts = array();
+        if (!empty($includedCategories)) {
+            foreach($posts as $post) {
+                if($post->post_type == 'post') {
+                    $post_cats = wp_get_post_categories($post->ID);
+                    $filtered = false;
+                    foreach($post_cats as $post_cat) {
+                        if(isset($includedCategories[$post_cat])) {
+                            $filtered = true;
+                        }
+                    }
+                    if(!$filtered) {
+                        $remove_posts[$post->ID] = $post->ID;
+                    }
+                }
+            }
+        }
+        
+        if(!empty($remove_posts)) {
+            $new_posts = array();
+            foreach($posts as $post) {
+                if(!isset($remove_posts[$post->ID])) {
+                    $new_posts[] = $post;
+                }
+            }
+            $posts = $new_posts;
+        }
         $posts_options = array();
 
 
