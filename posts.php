@@ -67,9 +67,10 @@ if ($user_category_id) {
     $category = $term_arr['term'];
 }
 
-if ($category)
+if ($category) {
     $published_post_count = get_post_count(array($category->term_id));
-
+    $published_post_count += ml_get_category_child_post_count($category->term_id, $term_arr['tax']);
+}
 if ($user_category_filter) {
     $arrayFilter = array();
     $arrayFilterItems = explode(",", $user_category_filter);
@@ -83,6 +84,12 @@ if ($user_category_filter) {
         }
     }
     $published_post_count = get_post_count($arrayFilter);
+    foreach($arrayFilter as $arrayFilterId) {
+        $tmp_term = ml_get_term_by('id', $arrayFilterId);
+        if($tmp_term['term']) {
+            $published_post_count += ml_get_category_child_post_count($arrayFilterId, $tmp_term['tax']);
+        }        
+    }
 }
 
 if ($user_offset == NULL)
@@ -611,6 +618,15 @@ function ml_get_used_taxonomies() {
         $taxes[] = $term_data[0];
     }
     return $taxes;
+}
+
+function ml_get_category_child_post_count($parent_id, $taxonomy='category') {
+    $count = 0;
+    $tax_terms = get_terms($taxonomy,array('child_of'=>$parent_id));
+    foreach ($tax_terms as $tax_term) {
+        $count +=$tax_term->count;
+    }
+    return $count;    
 }
 
 ?>
