@@ -2,6 +2,10 @@
     <form method="post" action="<?php echo admin_url('admin.php?page=mobiloud_settings'); ?>">
         <?php wp_nonce_field('form-settings_general'); ?>
 	
+	<p>The options on this page let you define exactly what content is presented in the app's main article list, including adding custom post types, filtering content by category and adding a custom field to the list.</p>
+	<p>Any questions or need some help? <a class="ml-intercom" href="mailto:h89uu5zu@incoming.intercom.io">Send us a message</a></p>
+	
+	
        <h3>Application details</h3>
 
         <!-- <h4>App Name</h4>
@@ -35,7 +39,7 @@
         <h4>Copyright Notice</h4>
         <div class='ml-col-row'>
             <div class='ml-col-half'>
-                <p>Enter the copyright notice which will be displayed in your app settings screen.</p>
+                <p>Enter the copyright notice which will be displayed in your app's settings screen.</p>
             </div>
             <div class='ml-col-half'>
                 <div class="ml-form-row">

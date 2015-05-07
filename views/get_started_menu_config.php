@@ -2,7 +2,7 @@
     <form method="post" action="<?php echo admin_url('admin.php?page=mobiloud&tab=menu_config'); ?>">
         <?php wp_nonce_field('form-get_started_menu_config'); ?>
         <h3>Menu Structure</h3>
-        <p>Drag each item into the order you prefer.</p>
+        <p>Drag each item into the order you prefer. Any questions or need some help with the app's menu configuration? <a class="ml-intercom" href="mailto:h89uu5zu@incoming.intercom.io">Send us a message</a> to contact our support team.</p>
         <div class='ml-col-row'>
             <div class="ml-col-twothirds">
                 <h4>Categories</h4>

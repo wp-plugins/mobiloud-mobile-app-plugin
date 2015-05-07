@@ -435,9 +435,7 @@ function print_posts($posts, $tot_count, $offset, $options) {
         //excerpt
         $final_post['excerpt'] = html_entity_decode(urldecode(strip_tags(get_post_excerpt($post->ID))));
 
-        $final_posts["posts"][] = $final_post;
-    }
-    if ($eager_loading) {
+        if ($eager_loading) {
         if (get_option('ml_eager_loading_enable') == true) {
             $final_post["lazy"] = "true";
         } else {
@@ -459,6 +457,10 @@ function print_posts($posts, $tot_count, $offset, $options) {
     // } else {
     //     $final_post['content'] = '';
     // }
+    
+        $final_posts["posts"][] = $final_post;
+    }
+    
 
 
 

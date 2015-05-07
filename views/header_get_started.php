@@ -1,12 +1,12 @@
+<?php if(strlen(Mobiloud::get_option('ml_pb_app_id')) <= 0 && strlen(Mobiloud::get_option('ml_pb_secret_key')) <= 0): ?>
 <div id="ml-sub-header">
     <div class="ml-intro-text">
 		<p>
 		Mobiloud is the easy solution to publish your own mobile apps. Start by customizing the design, then configure the menu and test a live preview of your app.</p>
         <p>For more information, see <a href="http://www.mobiloud.com/help/knowledge-base/customize/?utm_source=wp-plugin-admin&utm_medium=web&utm_campaign=plugin-admin-get-started" target="_blank">How To Get Started</a> (video), our <a href="http://www.mobiloud.com/features/?utm_source=wp-plugin-admin&utm_medium=web&utm_campaign=plugin-admin-get-started
-" target="_blank">Features page</a> and for any questions see our <a href="http://www.mobiloud.com/help/?utm_source=wp-plugin-admin&utm_medium=web&utm_campaign=plugin-admin-get-started
-" target="_blank">Help &amp; Support</a> pages.</p>
+" target="_blank">Features page</a> and for any questions <a class="ml-intercom" href="mailto:h89uu5zu@incoming.intercom.io">contact our support team</a> (or check out our <a href="http://www.mobiloud.com/help/?utm_source=wp-plugin-admin&utm_medium=web&utm_campaign=plugin-admin-get-started
+" target="_blank">Help and Support site</a>).</p>
     </div>
-    <?php if(strlen(Mobiloud::get_option('ml_pb_app_id')) <= 0 && strlen(Mobiloud::get_option('ml_pb_secret_key')) <= 0): ?>
     <div class="ml-task-list">
         <h3>Get Started Here</h3>
         <ul>
@@ -19,10 +19,11 @@
             </li>
             <?php endforeach; ?>
         </ul>
-        <p>Any questions? <a class="ml-intercom" href="mailto:h89uu5zu@incoming.intercom.io">Contact Us</a></p>
+		
     </div>
-    <?php endif; ?>
 </div>
+<?php endif; ?>
+
 <h2 class="nav-tab-wrapper get-started-tabs">
     <?php foreach(Mobiloud_Admin::get_started_tasks() as $task_key=>$task): ?>
     <?php
@@ -33,4 +34,7 @@
     ?>
     <a class="nav-tab <?php echo $active_task; ?>" href="<?php echo admin_url('admin.php?page=mobiloud&tab=' . $task_key); ?>"><?php echo esc_html($task['nav_text']); ?></a>
     <?php endforeach; ?>
+	<a href="<?php echo admin_url('admin.php?page=mobiloud_settings'); ?>" class="more-button">More Settings</a>
+	<a class="ml-intercom more-button" href="mailto:h89uu5zu@incoming.intercom.io">Contact Support</a>
+	
 </h2>
