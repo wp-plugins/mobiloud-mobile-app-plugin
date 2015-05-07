@@ -64,9 +64,9 @@ class Mobiloud_Admin {
         add_action('admin_init', array('Mobiloud_Admin', 'admin_init'));
         add_action('admin_menu', array('Mobiloud_Admin', 'admin_menu'));
 
-        add_action('admin_head', 'ml_init_olark');
+//        add_action('admin_head', 'ml_init_olark');
+//        add_action('admin_head', 'ml_init_getvero');
         add_action('admin_head', 'ml_init_intercom');
-        add_action('admin_head', 'ml_init_getvero');
         add_action('admin_head', 'ml_init_perfect_audience');
         add_action('admin_head', array('Mobiloud_Admin', 'check_mailing_list_alert'));
 
@@ -168,7 +168,7 @@ class Mobiloud_Admin {
         wp_register_style('mobiloud-dashicons', MOBILOUD_PLUGIN_URL . "/libs/dashicons/css/dashicons.css");
         wp_enqueue_style("mobiloud-dashicons");
 
-        wp_register_style('mobiloud-style', MOBILOUD_PLUGIN_URL . "/assets/css/mobiloud-style.css");
+        wp_register_style('mobiloud-style', MOBILOUD_PLUGIN_URL . "/assets/css/mobiloud-style-32.css");
         wp_enqueue_style("mobiloud-style");
 
         wp_register_style('mobiloud_admin_post', MOBILOUD_PLUGIN_URL . '/admin/post/post.css');

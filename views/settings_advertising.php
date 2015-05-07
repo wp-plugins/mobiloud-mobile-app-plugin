@@ -1,9 +1,8 @@
 <div id="ml_settings_advertising" class="tabs-panel ml-compact">
     <form method="post" action="<?php echo admin_url('admin.php?page=mobiloud_settings&tab=advertising'); ?>">
         <?php wp_nonce_field('form-settings_advertising'); ?>
-		<p>With Mobiloud's support for a number of networks and ad servers and the possibility of adding any image, javascript or HTML based ads within the contents of your app, the possibilities to monetize your content are endless!</p>
-			
-			<p>For help to set up advertising in your app, <a href="http://www.mobiloud.com/help/knowledge-base/ads-banners/?utm_source=wp-plugin-admin&utm_medium=web&utm_campaign=ads_page" target="_blank">read our guide</a></li></p>
+		<p>With Mobiloud's support for a number of networks and ad servers and the possibility of adding any image, javascript or HTML based ads within the contents of your app, the possibilities to monetize your content are endless!</p>		
+			<p>For help setting up advertising in your app, <a href="http://www.mobiloud.com/help/knowledge-base/ads-banners/?utm_source=wp-plugin-admin&utm_medium=web&utm_campaign=ads_page" target="_blank">read our guide</a> or <a class="ml-intercom" href="mailto:h89uu5zu@incoming.intercom.io">contact our support team</a>.</p>
 					
         <h3>Banner, Interstitial and Native ads</h3>	
         <p>The following ad platforms are supported:</p>

@@ -4,6 +4,7 @@
         <h3>License Keys</h3>
         <div class='ml-col-twothirds'>
             <p>Once you have <a target="_blank" href="http://www.mobiloud.com/publish/?utm_source=wp-plugin-admin&utm_medium=web&utm_campaign=license_page">signed up</a> for one of our plans and your app has been published, enter here the License keys we have sent you.</p>
+			
              <table class="form-table">
                 <tbody>
                     <tr valign="top">
@@ -21,8 +22,8 @@
                 </tbody>
              </table>
 			 
-			 <p> Need help? Email 
-                <a href='mailto:support@mobiloud.com'>support@mobiloud.com</a></p>
+			<p>Can't find your license keys? <a class="ml-intercom" href="mailto:h89uu5zu@incoming.intercom.io">Request your keys</a> from our support team.</p>
+
         </div>       
         <p class="submit"><input type="submit" name="submit" id="submit" class="button button-primary" value="Save Changes"></p>
     </form>

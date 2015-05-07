@@ -11,6 +11,6 @@
         </a>        
         <p class='ml-trial-msg'>Design and test your app for free. Choose your plan when you're ready to publish it.</p>
         <?php else: ?>
-        <a class="ml-intercom ml-contact-button button button-primary" href="mailto:h89uu5zu@incoming.intercom.io" data-intercom_original_html="Contact Us" style="visibility: visible;">Contact Us</a>
+        <!-- <a class="ml-intercom ml-contact-button button button-primary" href="mailto:h89uu5zu@incoming.intercom.io" data-intercom_original_html="Contact Us" style="visibility: visible;">Contact Us</a> -->
 	<?php endif; ?>
    </div>

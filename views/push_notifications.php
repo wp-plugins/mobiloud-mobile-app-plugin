@@ -7,6 +7,9 @@
 		<br/><br/>
 		
 		 You'll be able to send manual push notification messages to your users, attaching posts and pages to every message. You'll also find here a convenient log of all messages previously sent.</p>
+ 		
+		<p>Any questions on push notifications? <a class="ml-intercom" href="mailto:h89uu5zu@incoming.intercom.io">Ask us anything</a>.</p>
+		 
 			
     </div>
     <?php else: ?>

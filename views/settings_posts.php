@@ -1,6 +1,11 @@
 <div id="ml_settings_posts" class="tabs-panel ml-compact">
     <form method="post" action="<?php echo admin_url('admin.php?page=mobiloud_settings&tab=posts'); ?>">
-        <?php wp_nonce_field('form-settings_posts'); ?>        
+        <?php wp_nonce_field('form-settings_posts'); ?>  
+		
+		<p>This page lets you configure a number of options affecting how content is displayed in your app, including whether featured images, post meta information like author and date are shown on screen.</p>
+		
+		<p>Any questions or need some help? <a class="ml-intercom" href="mailto:h89uu5zu@incoming.intercom.io">Send us a message</a></p>
+		      
         <h3>Post and Page screen settings</h3>
         <h4>Content loading settings</h4>
         <div class='ml-col-row'>
