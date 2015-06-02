@@ -292,6 +292,9 @@ else {
         }
     }
 
+    $current_user = wp_get_current_user();
+    $posts = apply_filters('ml_posts',$posts,$current_user);
+
     print_posts($posts,$published_post_count,$user_offset,$posts_options,$taxonomy,$permalinkIsTaxonomy);
 }
 
