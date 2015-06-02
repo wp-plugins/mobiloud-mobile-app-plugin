@@ -22,6 +22,8 @@ include_once dirname( __FILE__ ) . '/subscriptions/functions.php';
 
 $ml_content_redirect = new MLContentRedirect();
 
+$permalinkIsTaxonomy = false;
+
 /*** POSTS LIST ***/
 $user_offset = $_POST["offset"];
 $user_post_count = $_POST["postcount"];
@@ -29,10 +31,16 @@ $user_category = $_POST["category"];
 $user_category_id = $_POST["category_id"];
 
 /* If we didn't get a category ID, but got a category permalink, set the category ID, if we can get it */
-if (empty($user_category_id) && isset($_POST['category_permalink'])) { 
-    $user_category_permalink = $_POST["category_permalink"];
+if (empty($user_category_id) && isset($_POST['permalink'])) { 
+    $user_category_permalink = $_POST["permalink"];
     $c = get_category_by_path($user_category_permalink, false);
-    if ($c) $user_category_id = $c->term_id;
+
+    // So is it a category? Let's also tell the permalink parser we already figured it out
+    if ($c) {
+        $user_category_id = $c->term_id;
+        $permalinkIsTaxonomy = true;
+        $taxonomy = $c->taxonomy;
+    }
 }
 
 $user_category_filter = $_POST["categories"];
@@ -49,15 +57,14 @@ if(isset($_POST["limit"]))
     if($user_limit > 30) $user_limit = 30;
 }
 
-if(isset($_POST["permalink"])){
-
+// Process the permalink parameter, unless we already did as a taxonomy
+if(isset($_POST["permalink"]) && !$permalinkIsTaxonomy) {
     $postIDfromURL = url_to_postid( $_POST["permalink"] );
     if($postIDfromURL){
         $_POST["post_id"] = $postIDfromURL;
     } else {
         return;
     }
-    
 }
 
 $includedPostTypes = explode(",",get_option("ml_article_list_include_post_types","post"));
@@ -69,10 +76,10 @@ foreach($includedPostTypes as $incPostType) {
 
 $term_arr = array();
 if($user_category_id){
-        $term_arr = ml_get_term_by('id', $user_category_id);
+    $term_arr = ml_get_term_by('id', $user_category_id);
     $category = $term_arr['term'];
 } else if($user_category) {
-        $term_arr = ml_get_term_by('slug', $user_category);
+    $term_arr = ml_get_term_by('slug', $user_category);
     $category = $term_arr['term'];
 } 
 
@@ -285,10 +292,10 @@ else {
         }
     }
 
-    print_posts($posts,$published_post_count,$user_offset,$posts_options);
+    print_posts($posts,$published_post_count,$user_offset,$posts_options,$taxonomy,$permalinkIsTaxonomy);
 }
 
-function print_posts($posts,$tot_count,$offset,$options)
+function print_posts($posts,$tot_count,$offset,$options,$taxonomy,$permalinkIsTaxonomy)
 {
     /** JSON OUTPUT **/
     $final_posts = array("posts" => array(), "post-count" => $tot_count);
@@ -460,6 +467,11 @@ function print_posts($posts,$tot_count,$offset,$options)
         $final_post['excerpt'] = html_entity_decode(urldecode(strip_tags(get_post_excerpt($post->ID))));
         
         $final_posts["posts"][] = $final_post;
+    }
+
+    // Add a top-level attribute for the taxonomy if we had a taxonomy permalink request
+    if ($permalinkIsTaxonomy) {
+        $final_posts['taxonomy'] = $taxonomy;
     }
 
     $json_string = json_encode($final_posts);
