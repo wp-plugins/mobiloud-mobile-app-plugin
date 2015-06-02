@@ -29,7 +29,7 @@ $user_category = $_POST["category"];
 $user_category_id = $_POST["category_id"];
 
 /* If we didn't get a category ID, but got a category permalink, set the category ID, if we can get it */
-if ($user_category_id && in_array('category_permalink',$_POST)) { 
+if (empty($user_category_id) && isset($_POST['category_permalink'])) { 
     $user_category_permalink = $_POST["category_permalink"];
     $c = get_category_by_path($user_category_permalink, false);
     if ($c) $user_category_id = $c->term_id;
