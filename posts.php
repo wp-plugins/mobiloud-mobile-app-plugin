@@ -83,7 +83,10 @@ if($user_category_id){
     $category = $term_arr['term'];
 } 
 
-if($category) $published_post_count = get_post_count(array($category->term_id));
+if($category) {
+    $published_post_count = get_post_count(array($category->term_id));
+    $published_post_count += ml_get_category_child_post_count($category->term_id, $term_arr['tax']);
+}
 
 if($user_category_filter){
     $arrayFilter = array();
@@ -644,4 +647,14 @@ function ml_get_used_taxonomies() {
     }
     return $taxes;
 }
+
+function ml_get_category_child_post_count($parent_id, $taxonomy='category') {
+    $count = 0;
+    $tax_terms = get_terms($taxonomy,array('child_of'=>$parent_id));
+    foreach ($tax_terms as $tax_term) {
+        $count +=$tax_term->count;
+    }
+    return $count;
+}
+
 ?>
