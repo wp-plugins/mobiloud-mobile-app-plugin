@@ -141,7 +141,7 @@ class Mobiloud_Admin {
         wp_register_script('mobiloud-app-simulator', MOBILOUD_PLUGIN_URL . 'assets/js/mobiloud-app-simulator.js');
         wp_enqueue_script('mobiloud-app-simulator');
 
-        wp_enqueue_script('mobiloud', MOBILOUD_PLUGIN_URL . 'mobiloud.js', array('jquery', 'jquery-ui'), MOBILOUD_PLUGIN_VERSION);
+        wp_enqueue_script('mobiloud', MOBILOUD_PLUGIN_URL . 'mobiloud.js', array('jquery', 'jquery-ui-core'), MOBILOUD_PLUGIN_VERSION);
 
         wp_register_style('mobiloud-iphone', MOBILOUD_PLUGIN_URL . "/css/iphone.css");
         wp_enqueue_style("mobiloud.css");

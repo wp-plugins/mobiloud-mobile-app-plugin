@@ -25,7 +25,7 @@
 	}
 
 	function ml_admin_license_enqueue_script() {
-		wp_enqueue_script('mobiloud_admin_license',MOBILOUD_PLUGIN_URL.'admin/license/license.js',array('jquery','jquery-ui'),MOBILOUD_PLUGIN_VERSION);
+		wp_enqueue_script('mobiloud_admin_license',MOBILOUD_PLUGIN_URL.'admin/license/license.js',array('jquery','jquery-ui-core'),MOBILOUD_PLUGIN_VERSION);
 	}
 
 	function ml_admin_license_page() {
