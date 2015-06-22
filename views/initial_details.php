@@ -65,7 +65,7 @@
             <tr valign="top">
                 <th scope="row">Your name</th>
                 <td>
-                    <input size="36" type="text" id="ml-user-name" name="contactName" placeholder="Enter your name" value='<?php echo Mobiloud::get_option('ml_user_name', $current_user->display_name); ?>' required>
+                    <input size="36" type="text" id="ml-user-name" name="contactName" placeholder="Enter your name" value='' required>
                 </td>
             </tr>
             <tr valign="top">
@@ -83,12 +83,12 @@
             <tr>
                 <td colspan='2' class='ml-maillist-block'>
                     <input type='checkbox' id='ml-join-mailinglist' name='ml-join-mailinglist' value='true' checked/>
-                    <p>Get the <strong>Mobile App Success</strong> free email course and learn all about designing, launching and promoting mobile apps to success. As always, we respect your privacy and you can unsubscribe at any time.</p>
+                    <p>Get the our free email course and learn all about designing, launching and promoting mobile apps to success.</p>
                 </td>
             </tr>
             <tr>
                 <td colspan='2'>
-                    <small>By using Mobiloud you agree to Mobiloud's <a target="_blank" href="http://www.mobiloud.com/terms/">Terms of service</a> and <a href="http://www.mobiloud.com/privacy/">Privacy policy</a> </small>
+                    <small>By using Mobiloud you agree to Mobiloud's <a target="_blank" href="http://www.mobiloud.com/terms/">Terms of service</a> and <a target="_blank" href="http://www.mobiloud.com/privacy/">Privacy policy</a> </small>
                 </td>
             </tr>
         </tbody>
