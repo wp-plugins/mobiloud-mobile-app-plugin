@@ -197,7 +197,7 @@ else {
                     array(
                         'taxonomy' => $term_arr['tax'], 
                         'field' => 'term_id', 
-                        'terms' => $term_arr['term']->term_id
+                        'terms' => array($term_arr['term']->term_id)
                     )            
                 );
         
@@ -206,8 +206,11 @@ else {
             //echo json_encode($query_array);
     $posts_options = array();
     if(!isset($_POST["post_id"])){
-        $posts = get_posts($query_array);
-        
+
+        wp_reset_postdata();
+        $query = new WP_Query($query_array);
+        $posts = $query->get_posts();
+
         $posts_options = array();
         
         
