@@ -23,6 +23,7 @@ include_once dirname( __FILE__ ) . '/subscriptions/functions.php';
 $ml_content_redirect = new MLContentRedirect();
 
 $permalinkIsTaxonomy = false;
+$permalinkIsCustomTaxonomy = false;
 
 /*** POSTS LIST ***/
 $user_offset = $_POST["offset"];
@@ -33,9 +34,19 @@ $user_category_id = $_POST["category_id"];
 /* If we didn't get a category ID, but got a category permalink, set the category ID, if we can get it */
 if (empty($user_category_id) && isset($_POST['permalink'])) { 
     $user_category_permalink = $_POST["permalink"];
+
     $c = get_category_by_path($user_category_permalink, false);
 
-    // So is it a category? Let's also tell the permalink parser we already figured it out
+
+    //If getting category fails, trying to get custom taxonomy
+    if ($c==NULL){
+        $c = get_taxonomy_by_path($user_category_permalink);
+    if ($c) {
+            $permalinkIsCustomTaxonomy = true;
+        }
+    }
+
+    // So is it a category/taxonomy? Let's also tell the permalink parser we already figured it out
     if ($c) {
         $user_category_id = $c->term_id;
         $permalinkIsTaxonomy = true;
@@ -76,10 +87,10 @@ foreach($includedPostTypes as $incPostType) {
 
 $term_arr = array();
 if($user_category_id){
-    $term_arr = ml_get_term_by('id', $user_category_id);
+    $term_arr = ml_get_term_by('id', $user_category_id, $taxonomy);
     $category = $term_arr['term'];
 } else if($user_category) {
-    $term_arr = ml_get_term_by('slug', $user_category);
+    $term_arr = ml_get_term_by('slug', $user_category, $taxonomy);
     $category = $term_arr['term'];
 } 
 
@@ -629,8 +640,9 @@ function youtubeID_from_link($link) {
     else return NULL;
 }
 
-function ml_get_term_by($by, $term_ref) {
-    $taxes = ml_get_used_taxonomies();
+function ml_get_term_by($by, $term_ref, $taxonomy_used) {
+    $taxes = ml_get_used_taxonomies($taxonomy_used);
+
     foreach($taxes as $tax) {
         $term = get_term_by($by, $term_ref, $tax);
         if($term) {
@@ -641,8 +653,8 @@ function ml_get_term_by($by, $term_ref) {
     return array('term'=>false, 'tax'=>false);
 }
 
-function ml_get_used_taxonomies() {
-    $taxes = array('category', 'post_tag');
+function ml_get_used_taxonomies($taxonomy_used) {
+    $taxes = array('category', 'post_tag', $taxonomy_used);
     $menu_terms = get_option('ml_menu_terms', array());
     foreach($menu_terms as $term) {
         $term_data = explode("=", $term);
@@ -658,6 +670,35 @@ function ml_get_category_child_post_count($parent_id, $taxonomy='category') {
         $count +=$tax_term->count;
     }
     return $count;
+}
+
+/**
+ * Retrieve taxonomy based on URL containing the taxonomy slug.
+ *
+ * Breaks the $taxonomy_path parameter up to get the taxonomy slug.
+ *
+ * @since 3.2.3
+ *
+ * @param string $taxonomy_path URL containing taxonomy slugs.
+ * @param string $output Optional. Constant OBJECT, ARRAY_A, or ARRAY_N
+ * @return null|object|array Null on failure. Type is based on $output value.
+ */
+function get_taxonomy_by_path( $taxonomy_path, $output = OBJECT ) {
+    $taxonomy_path = rawurlencode( urldecode( $taxonomy_path ) );
+    $taxonomy_path = str_replace( '%2F', '/', $taxonomy_path );
+    $taxonomy_path = str_replace( '%20', ' ', $taxonomy_path );
+    $taxonomy_paths = '/' . trim( $taxonomy_path, '/' );
+    $leaf_path  = sanitize_title( basename( $taxonomy_paths ) );
+    $taxonomies = get_taxonomies();
+
+    $taxonomies = get_terms( $taxonomies, array('get' => 'all', 'slug' => $leaf_path ) );
+
+    if ( empty( $taxonomies ) )
+        return null;
+
+    $taxonomy = get_term( reset( $taxonomies )->term_id, reset( $taxonomies )->taxonomy, $output );
+
+    return $taxonomy;
 }
 
 ?>
