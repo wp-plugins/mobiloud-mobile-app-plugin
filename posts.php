@@ -494,6 +494,12 @@ function print_posts($posts,$tot_count,$offset,$options,$taxonomy,$permalinkIsTa
     $current_user = wp_get_current_user();
     $final_posts = apply_filters('ml_posts',$final_posts,$current_user);
 
+    //Preprocessing text for avoid "Invalid UTF-8" errors
+    $charset = 'UTF-8';
+    array_walk_recursive($final_posts,function(&$data) use ($charset){
+            $data = iconv($charset, 'UTF-8//IGNORE', $data);
+        });
+
     $json_string = json_encode($final_posts);
     echo $json_string;
 
