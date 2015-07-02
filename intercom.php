@@ -80,6 +80,8 @@ function ml_init_intercom() {
                 app_id: "h89uu5zu",
                 user_id: "<?php echo esc_js($user_email); ?>",
                 user_hash: "<?php echo hash_hmac("sha256", $user_email, "2d8ReoNHhovD4NhWCb72DgrghadvKVwGJsR0t6YR"); ?>",
+                haswoocommerce:<?php echo (is_plugin_active('woocommerce/woocommerce.php') || class_exists('Woocommerce') ? '"yes"' : '"no"'); ?>,
+                hasbuddypress:<?php echo (is_plugin_active('buddypress/bp-loader.php') || class_exists('BuddyPress') ? '"yes"' : '"no"'); ?>,
                 widget: {
                     activator: ".ml-intercom"
                 }
