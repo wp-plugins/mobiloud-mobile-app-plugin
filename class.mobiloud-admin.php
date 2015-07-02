@@ -631,7 +631,6 @@ class Mobiloud_Admin {
         Mobiloud::set_option('ml_user_name', sanitize_text_field($_POST['ml_name']));
         Mobiloud::set_option('ml_user_email', sanitize_text_field($_POST['ml_email']));
         Mobiloud::set_option('ml_user_site', sanitize_text_field($_POST['ml_site']));
-        Mobiloud::set_option('ml_join_mailinglist', sanitize_text_field($_POST['ml_maillist']));
     }
 
     public static function save_editor() {

@@ -25,8 +25,7 @@
                       var ml_name = jQuery("#ml-user-name").val();
                       var ml_email = jQuery("#ml-user-email").val();
                       var ml_site = jQuery("#ml-user-site").val();
-                      var ml_maillist = jQuery("#ml-join-mailinglist").is(':checked');
-                      
+
                       if(ml_name.length <= 0 || ml_email.length <= 0 || ml_site.length <= 0) {
                           alert('You must enter all the details');
                           return false;
@@ -35,23 +34,13 @@
                               action: "ml_save_initial_data",
                               ml_name: ml_name,
                               ml_email: ml_email,
-                              ml_site: ml_site,
-                              ml_maillist: ml_maillist
+                              ml_site: ml_site
                           };
                           jQuery.post(ajaxurl, data, function(response) {
                               ml_allow_initial_close = true;
                               jQuery( "#ml-initial-details" ).dialog( "close" );
                           });
                           
-                          if(ml_maillist) {
-                            var drip_data = {
-                                fields: {
-                                    email: ml_email
-                                }
-                            };
-                            jQuery.post('https://www.getdrip.com/forms/7486138/submissions', drip_data, function(response) {
-                            });
-                          }
                       }
                   }
               }
@@ -78,12 +67,6 @@
                 <th scope="row">Your website</th>
                 <td>
                     <input size="36" type="text" id="ml-user-site" name="website" placeholder="Enter your website" value='<?php echo Mobiloud::get_option('ml_site_url', get_site_url()); ?>'>
-                </td>
-            </tr>
-            <tr>
-                <td colspan='2' class='ml-maillist-block'>
-                    <input type='checkbox' id='ml-join-mailinglist' name='ml-join-mailinglist' value='true' checked/>
-                    <p>Get the our free email course and learn all about designing, launching and promoting mobile apps to success.</p>
                 </td>
             </tr>
             <tr>
