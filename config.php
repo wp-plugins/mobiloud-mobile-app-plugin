@@ -31,6 +31,8 @@ $return_config['disqus_shortname'] = get_option('ml_disqus_shortname', '');
 $return_config['show_contact_email'] = get_option('ml_show_email_contact_link', false);
 $return_config['contact_email'] = get_option('ml_contact_link_email', '');
 $return_config['timezone'] = get_option('gmt_offset');
+$return_config['datetype'] = get_option('ml_datetype', 'prettydate');
+$return_config['dateformat'] = get_option('ml_dateformat', 'F j, Y');
 
 $return_config['custom_featured_image'] = get_option('ml_custom_featured_image', '');
 

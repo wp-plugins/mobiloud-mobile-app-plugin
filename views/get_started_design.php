@@ -73,6 +73,19 @@
                     <label for="ml_article_list_view_type_compact">Compact (square thumbnails)</label>
                 </div>
             </div>
+            <div class="ml-form-row">
+                <label>Date display options</label>
+                <div class="ml-radio-wrap">
+                    <input type="radio" id="ml_date_type_pretty" name="ml_datetype" value="prettydate" <?php echo get_option('ml_datetype', 'prettydate') == 'prettydate' ? 'checked' : ''; ?>/>
+                    <label for="ml_date_type_pretty">Show pretty dates (e.g. "2 hours ago")</label>
+                </div>
+                <div class="ml-radio-wrap">
+                    <input type="radio" id="ml_date_type_date" name="ml_datetype" value="datetime" <?php echo get_option('ml_datetype', 'prettydate') == 'datetime' ? 'checked' : ''; ?>/>
+                    <label for="ml_date_type_date">Show full dates</label>
+                    <input name="ml_dateformat" id="ml_dateformat" type="text" value="<?php echo get_option("ml_dateformat", 'F j, Y'); ?>" />
+                </div>
+            </div>
+
             <p class="submit"><input type="submit" name="submit" id="submit" class="button button-primary" value="Save Changes"></p>
         </form>
 	    <?php if( strlen(Mobiloud::get_option('ml_pb_app_id')) > 0 && Mobiloud::get_option('ml_pb_app_id') < "543e7b3f1d0ab16d148b4599"): ?>

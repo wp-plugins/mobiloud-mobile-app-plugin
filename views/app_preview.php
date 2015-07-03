@@ -44,7 +44,7 @@
                             <?php endif; ?>
                             <div class='ml-preview-article-body' <?php echo!$imageUrl ? 'style="width:100%;"' : ''; ?>>
                                 <h3><?php echo Mobiloud_App_Preview::trim_post_title($post->post_title, get_option('ml_article_list_view_type', 'extended') == 'extended' ? null : 45); ?></h3>
-                                <span class='ml-article-date'><?php echo Mobiloud_App_Preview::how_long_ago(strtotime($post->post_date)); ?></span>
+                                <span class='ml-article-date'><?php echo (get_option('ml_datetype', 'prettydate') == 'prettydate' ? Mobiloud_App_Preview::how_long_ago(strtotime($post->post_date)) : date_i18n( get_option('ml_dateformat', 'F j, Y') , strtotime($post->post_date), get_option('gmt_offset'))); ?></span>
                             </div>
                             <div class="clear"></div>
                         </div>

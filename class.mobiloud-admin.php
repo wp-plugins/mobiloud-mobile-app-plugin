@@ -270,6 +270,9 @@ class Mobiloud_Admin {
                     }
                     Mobiloud::set_option('ml_article_list_view_type', sanitize_text_field($_POST['ml_article_list_view_type']));
 
+                    Mobiloud::set_option('ml_datetype', sanitize_text_field($_POST['ml_datetype']));
+                    Mobiloud::set_option('ml_dateformat', sanitize_text_field($_POST['ml_dateformat']));
+
                     Mobiloud::set_option('ml_home_page_id', sanitize_text_field($_POST['ml_home_page_id']));
                     Mobiloud::set_option('ml_home_url', sanitize_text_field($_POST['ml_home_url']));
 

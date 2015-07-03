@@ -48,6 +48,13 @@ jQuery(document).ready(function() {
         ml_loadPreview();
     });
     
+    jQuery("input[name='ml_datetype']").click(function() {
+        ml_loadPreview();
+    });
+
+    jQuery("#ml_dateformat").keyup(function() {
+        ml_loadPreview();
+    });
     jQuery("#ml_preview_os_ios").click(function() {
         ml_loadPreview();
     });
@@ -138,7 +145,10 @@ var ml_loadPreview = function() {
         ml_preview_upload_image: jQuery("#ml_preview_upload_image").val(),
         ml_preview_theme_color: jQuery("#ml_preview_theme_color").val(),
         ml_preview_os: jQuery("input[name='ml_preview_os']:checked").val(),
-        ml_article_list_view_type: jQuery("input[name='ml_article_list_view_type']:checked").val()
+        ml_article_list_view_type: jQuery("input[name='ml_article_list_view_type']:checked").val(),
+        ml_datetype: jQuery("input[name='ml_datetype']:checked").val(),
+        ml_dateformat: jQuery("input[name='ml_dateformat']").val()
+
     };
     jQuery(".ml-preview-app").append(jQuery("#ml_preview_loading"));
 

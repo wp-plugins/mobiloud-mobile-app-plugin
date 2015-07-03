@@ -34,7 +34,7 @@
                             <?php endif; ?>
                             <div class='ml-preview-article-body'>
                                 <h3><?php echo $post->post_title; ?></h3>
-                                <span class='ml-article-date'><?php echo how_long_ago(strtotime($post->post_date)); ?></span>
+                                <span class='ml-article-date'><?php echo (get_option('ml_datetype', 'prettydate') == 'prettydate' ? Mobiloud_App_Preview::how_long_ago(strtotime($post->post_date)) : date_i18n( get_option('ml_dateformat', 'F j, Y') , strtotime($post->post_date), get_option('gmt_offset'))); ?></span>
                             </div>
                         </div>
                         <?php

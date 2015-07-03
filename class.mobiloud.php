@@ -85,6 +85,15 @@ class Mobiloud {
         if(Mobiloud::get_option('ml_article_list_view_type', 'none') == 'none') {
             Mobiloud::set_option('ml_article_list_view_type', 'extended');
         }
+
+        if(Mobiloud::get_option('ml_datetype', 'none') == 'none') {
+            Mobiloud::set_option('ml_datetype', 'prettydate');
+        }
+
+        if(Mobiloud::get_option('ml_dateformat', 'none') == 'none') {
+            Mobiloud::set_option('ml_dateformat', 'F j, Y');
+        }
+
         if(Mobiloud::get_option('ml_show_email_contact_link', 'none') == 'none') {
             Mobiloud::set_option('ml_show_email_contact_link', true);
         }

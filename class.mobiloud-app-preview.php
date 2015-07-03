@@ -46,7 +46,17 @@ class Mobiloud_App_Preview {
         if(isset($_POST['ml_article_list_view_type'])) {
             Mobiloud::set_option('ml_article_list_view_type', sanitize_text_field($_POST['ml_article_list_view_type'])); 
         }
-    }    
+
+        if(isset($_POST['ml_datetype'])) {
+            Mobiloud::set_option('ml_datetype', sanitize_text_field($_POST['ml_datetype']));
+        }
+
+        if(isset($_POST['ml_dateformat'])) {
+            Mobiloud::set_option('ml_dateformat', sanitize_text_field($_POST['ml_dateformat']));
+        }
+
+
+    }
     
     public static function get_preview_posts() {
         $args = array(

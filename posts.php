@@ -366,6 +366,10 @@ function print_posts($posts,$tot_count,$offset,$options,$taxonomy,$permalinkIsTa
         $final_post["title"] = strip_tags($post->post_title);
         $final_post["date"] = $post->post_date;
         
+        if (get_option('ml_datetype', 'prettydate') == 'datetime'){
+            $final_post["date_display"] = date_i18n( get_option('ml_dateformat', 'F j, Y') , strtotime($post->post_date), get_option('gmt_offset'));
+        }
+
         if(get_option('ml_eager_loading_enable') == true || $eager_loading == "true" || $post_type == 'page' || isset($_POST['post_id'])){
             
         } else {
