@@ -363,6 +363,18 @@ function print_posts($posts,$tot_count,$offset,$options,$taxonomy,$permalinkIsTa
                 "slug" => $category->category_nicename);
         }
 
+        if ($taxonomy!=='category' && !empty($taxonomy)) {
+            $terms = wp_get_post_terms( $post_id, $taxonomy);
+
+            foreach($terms as $term)
+            {
+                $final_post["categories"][] = array(
+                    "cat_id" => "$term->term_id",
+                    "name" => $term->name,
+                    "slug" => $term->slug);
+            }
+        }
+
         $final_post["title"] = strip_tags($post->post_title);
         $final_post["date"] = $post->post_date;
         
