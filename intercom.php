@@ -148,10 +148,12 @@ function ml_track($action, $services=array(), $loadInit=false) {
 }
 
 function ml_track_mixpanel($action) {
-    // get the Mixpanel class instance, replace with your project token
-    $mp = Mixpanel::getInstance("3e7cc38a0abe4ea3a16a0e7538144f23");
-    // track an event
-    $mp->track($action); 
+    if (function_exists('curl_version')) {
+        // get the Mixpanel class instance, replace with your project token
+        $mp = Mixpanel::getInstance("3e7cc38a0abe4ea3a16a0e7538144f23");
+        // track an event
+        $mp->track($action);
+    }
 }
 
 function ml_track_getvero($action, $loadInit=false) {
