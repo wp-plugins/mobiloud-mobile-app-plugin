@@ -376,6 +376,8 @@ function print_posts($posts,$tot_count,$offset,$options,$taxonomy,$permalinkIsTa
         }
 
         $final_post["title"] = strip_tags($post->post_title);
+        $final_post["title"] = html_entity_decode($final_post["title"]);
+
         $final_post["date"] = $post->post_date;
         
         if (get_option('ml_datetype', 'prettydate') == 'datetime'){
