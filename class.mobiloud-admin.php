@@ -453,6 +453,7 @@ class Mobiloud_Admin {
                 if (count($_POST) && check_admin_referer('form-settings_posts')) {
                     Mobiloud::set_option('ml_eager_loading_enable', isset($_POST['ml_eager_loading_enable']));
                     Mobiloud::set_option('ml_hierarchical_pages_enabled', isset($_POST['ml_hierarchical_pages_enabled']));
+                    Mobiloud::set_option('ml_rtl_text_enable', isset($_POST['ml_rtl_text_enable']));
                     Mobiloud::set_option('ml_show_article_featuredimage', isset($_POST['ml_show_article_featuredimage']));
                     Mobiloud::set_option('ml_post_author_enabled', isset($_POST['ml_post_author_enabled']));
                     Mobiloud::set_option('ml_page_author_enabled', isset($_POST['ml_page_author_enabled']));

@@ -140,7 +140,17 @@
                 </div>
             </div>            
         </div>
-		
+
+        <h4>RTL writing system</h4>
+        <div class='ml-col-row'>
+            <div class='ml-col-half'>
+                <div class="ml-form-row ml-checkbox-wrap">
+                    <input type="checkbox" id="ml_rtl_text_enable" name="ml_rtl_text_enable" value="true" <?php echo Mobiloud::get_option('ml_rtl_text_enable') ? 'checked' : ''; ?>/>
+                    <label for="ml_rtl_text_enable">Enable Right-To-Left for Arabic and Hebrew</label>
+                </div>
+            </div>
+        </div>
+
         <h4>Override Article/Page URL with a custom field</h4>
         <div class='ml-col-row'>
             <div class='ml-col-half'>
