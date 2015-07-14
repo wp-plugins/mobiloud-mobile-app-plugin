@@ -35,6 +35,8 @@
 ?>
 </head><body class="mb_body">
 <?php
+    wp_head();
 	include 'body_content.php';
+    wp_footer();
 ?>
 </body></html>
