@@ -14,10 +14,8 @@ if(!function_exists("file_get_html")) {
 }
 
 include_once("libs/ml_content_redirect.php");
-
 include_once("categories.php");
 include_once("filters.php");
-
 include_once dirname( __FILE__ ) . '/subscriptions/functions.php';
 
 $ml_content_redirect = new MLContentRedirect();
@@ -55,11 +53,8 @@ if (empty($user_category_id) && isset($_POST['permalink'])) {
 }
 
 $user_category_filter = $_POST["categories"];
-
 $user_search = $_POST["search"];
-
 $app_version = $_POST['app_version'];
-
 $user_limit = 15;
 
 if(isset($_POST["limit"]))
@@ -130,8 +125,6 @@ if($ml_content_redirect->ml_content_redirect_enable == "1" &&
     return;
 }
 
-
-
 else {
     //not cached 
     $includedPostTypes = explode(",",get_option("ml_article_list_include_post_types"));
@@ -139,16 +132,16 @@ else {
     $categoryNames = array();
     $excludeCategories = array();
     $includedCategories  =array();
-    $categoryName = "";
+    $currentTerm = "";
     
     if($user_category){
         array_push($categoryNames,$user_category);
         $catObj = $category;
-        $categoryName = $catObj->term_id;
+        $currentTerm = $catObj;
     } else if($user_category_id){
         $catObj = $category;
         array_push($categoryNames,$catObj->slug);
-        $categoryName = $catObj->term_id;
+        $currentTerm = $catObj;
     } else {
         $all_cats = get_categories('orderby=name');  
         if(!empty($all_cats)) {
@@ -164,18 +157,35 @@ else {
     if(strlen($user_search)>0 && !in_array("page",$includedPostTypes) && (get_option("ml_include_pages_in_search","false")=="true"||get_option("ml_include_pages_in_search","false")==true)){
         array_push($includedPostTypes,"page");
     }
-    //echo('post types ' . json_encode($includedPostTypes) . ' ..');
-    
+
     if((empty($includedPostTypes) || (isset($includedPostTypes[0]) && $includedPostTypes[0] == '')) && !(count($term_arr) && $term_arr['term'])) {
         return;
     }
+
+    $excluded_cats_ids = array();
+
+    foreach ($excluded_cats as $cat) {
+        $cat = get_term_by('name', $cat, 'category');
+        if (!empty($cat)) {
+            array_push($excluded_cats_ids, $cat->term_taxonomy_id);
+        }
+    }
+
     $query_array = array('posts_per_page' => $user_limit,
+                         'tax_query' => array(
+                             array(
+                                 'taxonomy' => 'category',
+                                 'field'    => 'term_id',
+                                 'terms'    => $excluded_cats_ids,
+                                 'operator' => 'NOT IN',
+                                 'include_children' => false
+                             ),
+                         ),
               'orderby' => 'post_date',
               'order' => 'DESC',
               'post_type' => $includedPostTypes,
               'post_status' => 'publish',
               'offset' => $real_offset,
-              
               's' => $user_search
             );
     
@@ -183,10 +193,30 @@ else {
             unset($query_array['post_type']);
         }
         
-    if(!empty($includedCategories)) {
-        $query_array['cat'] = implode(",",$includedCategories);
+    if(!empty($excluded_cats)) {
+        $count_query_array = array(
+                             'posts_per_page' => 5000,
+                             'tax_query' => array(
+                                 array(
+                                     'taxonomy' => 'category',
+                                     'field'    => 'term_id',
+                                     'terms'    => $excluded_cats_ids,
+                                     'operator' => 'NOT IN',
+                                     'include_children' => false
+                                 ),
+                             ),
+                             'post_type' => $includedPostTypes,
+                             'post_status' => 'publish',
+                             's' => $user_search
+        );
+        wp_reset_postdata();
+        $query = new WP_Query($count_query_array);
+        $published_post_count = $query->found_posts;
+        wp_reset_postdata();
+
     }
     
+
     $arrayFilter = array();
     
     if(isset($_POST["categories"])){
@@ -217,21 +247,21 @@ else {
             //echo json_encode($query_array);
     $posts_options = array();
     if(!isset($_POST["post_id"])){
-        $posts = get_posts($query_array);
+        wp_reset_postdata();
+        $query = new WP_Query($query_array);
 
-       // wp_reset_postdata();
-       // $query = new WP_Query($query_array);
-       // $posts = $query->get_posts();
+        $posts = $query->get_posts();
+
+        wp_reset_postdata();
 
         $posts_options = array();
-        
         
         if($user_category == NULL)
     {
         $sticky_category_1 = get_option('sticky_category_1');
         $sticky_category_2 = get_option('sticky_category_2');       
     }
-//wp_reset_postdata();
+
     //must be the second, first because the first will be prepended
     if($sticky_category_2 && ($real_offset == NULL || $real_offset == 0))
     {
@@ -310,13 +340,23 @@ else {
         }
     }
 
-    print_posts($posts,$published_post_count,$user_offset,$posts_options,$taxonomy,$permalinkIsTaxonomy);
+    print_posts($posts,$published_post_count,$user_offset,$posts_options,$taxonomy,$permalinkIsTaxonomy, $_POST, $currentTerm);
 }
 
-function print_posts($posts,$tot_count,$offset,$options,$taxonomy,$permalinkIsTaxonomy)
+function print_posts($posts,$tot_count,$offset,$options,$taxonomy,$permalinkIsTaxonomy, $query, $currentTerm)
 {
     /** JSON OUTPUT **/
-    $final_posts = array("posts" => array(), "post-count" => $tot_count);
+    $final_posts = array("posts" => array(), "post-count" => $tot_count, "request_parameters"=>$query);
+
+    if (!empty($currentTerm) ){
+        if (!empty($currentTerm->slug) ) $final_posts["request_parameters"]["term_slug"] = $currentTerm->slug;
+        if (!empty($currentTerm->name) ) $final_posts["request_parameters"]["term_name"] = $currentTerm->name;
+        $final_posts["request_parameters"]["term_taxonomy"] = $taxonomy;
+        if ($taxonomy!=='category') $final_posts["request_parameters"]["is_custom_taxonomy"] = True;
+    }
+
+
+
     $eager_loading = isset($_POST['allow_lazy']) ? $_POST['allow_lazy'] : false;
     foreach($posts as $post)
     {
