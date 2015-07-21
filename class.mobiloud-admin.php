@@ -74,6 +74,45 @@ class Mobiloud_Admin {
         add_action('wp_ajax_ml_save_editor', array('Mobiloud_Admin', 'save_editor'));
         add_action('wp_ajax_ml_save_banner', array('Mobiloud_Admin', 'save_banner'));
         add_action('wp_ajax_ml_tax_list', array('Mobiloud_Admin', 'get_tax_list'));
+
+        add_action('save_post', array('Mobiloud_Admin', 'flush_cache_on_save') );
+        add_action('transition_post_status',  array('Mobiloud_Admin','flush_cache_on_transition'), 10, 3 );
+    }
+
+    public static function flush_cache_on_save( $post_id ) {
+
+        global $wpdb;
+
+        $json_transients = $wpdb->get_results(
+            "SELECT option_name AS name FROM $wpdb->options
+              WHERE option_name LIKE '_transient_ml_json%'"
+        );
+
+        foreach ($json_transients as $transient) {
+            delete_transient( trim($transient->name,'_transient_') );
+        }
+
+        $key = http_build_query(array('post_id'=>"$post_id", "type"=>"ml_post") );
+        $hash = hash('crc32', $key);
+        delete_transient( 'ml_post_'.$hash );
+    }
+
+    public static function flush_cache_on_transition( $new_status, $old_status, $post ) {
+
+        global $wpdb;
+
+        $json_transients = $wpdb->get_results(
+            "SELECT option_name AS name FROM $wpdb->options
+              WHERE option_name LIKE '_transient_ml_json%'"
+        );
+
+        foreach ($json_transients as $transient) {
+            delete_transient( trim($transient->name,'_transient_') );
+        }
+
+        $key = http_build_query(array('post_id'=>"$post->ID", "type"=>"ml_post") );
+        $hash = hash('crc32', $key);
+        delete_transient( 'ml_post_'.$hash );
     }
 
     public static function admin_init() {
