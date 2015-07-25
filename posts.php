@@ -21,15 +21,6 @@ if (!empty($cache)) {
 
 //Redirect processing
 if(!function_exists("file_get_html")) require_once("libs/simple_html_dom.php");
-include_once("libs/ml_content_redirect.php");
-
-$ml_content_redirect = new MLContentRedirect();
-if($ml_content_redirect->ml_content_redirect_enable == "1" && $ml_content_redirect->is_valid_version($_POST['app_version']) )
-{
-    $options = $_POST;
-    echo $ml_content_redirect->load_content($options);
-    return;
-}
 
 include_once("categories.php");
 include_once("filters.php");
@@ -151,7 +142,7 @@ function get_excluded_cats()
         foreach ($excluded_cats as $cat) {
             $cat = get_term_by('name', $cat, 'category');
             if (!empty($cat)) {
-                array_push($excluded_cats_ids, $cat->term_taxonomy_id);
+                array_push($excluded_cats_ids, $cat->term_id);
             }
         }
     }
@@ -923,9 +914,9 @@ function echo_content($data)
 {
     global $benchmarking_enabled;
     if (!isset($benchmarking_enabled) || $benchmarking_enabled == false) {
-        ob_start("ob_gzhandler");
+        //ob_start("ob_gzhandler");
         echo $data;
-        ob_end_flush();
+        //ob_end_flush();
     }
 }
 
