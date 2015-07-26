@@ -4,7 +4,7 @@ Plugin Name: Mobiloud
 Plugin URI: http://www.mobiloud.com
 Description: Build native mobile apps for your WordPress site in 5 minutes. No coding required.
 Author: 50pixels
-Version: 3.2.2
+Version: 3.3
 Author URI: http://www.mobiloud.com
 */
 
