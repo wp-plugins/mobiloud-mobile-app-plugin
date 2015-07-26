@@ -8,7 +8,7 @@ Version: 3.2.2
 Author URI: http://www.mobiloud.com
 */
 
-define('MOBILOUD_PLUGIN_VERSION', "3.2.3");
+define('MOBILOUD_PLUGIN_VERSION', "3.3");
 define('MOBILOUD_PLUGIN_URL', plugin_dir_url( __FILE__ ) );
 define('MOBILOUD_PLUGIN_DIR', plugin_dir_path( __FILE__ ) );
 define('MOBILOUD_PLUGIN_RELATIVE_URL',"/wp-content/plugins/mobiloud-mobile-app-plugin");
