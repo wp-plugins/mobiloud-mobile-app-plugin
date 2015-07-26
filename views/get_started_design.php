@@ -73,6 +73,7 @@
                     <label for="ml_article_list_view_type_compact">Compact (square thumbnails)</label>
                 </div>
             </div>
+            <!--
             <div class="ml-form-row">
                 <label>Date display options</label>
                 <div class="ml-radio-wrap">
@@ -85,6 +86,7 @@
                     <input name="ml_dateformat" id="ml_dateformat" type="text" value="<?php echo get_option("ml_dateformat", 'F j, Y'); ?>" />
                 </div>
             </div>
+            -->
 
             <p class="submit"><input type="submit" name="submit" id="submit" class="button button-primary" value="Save Changes"></p>
         </form>
