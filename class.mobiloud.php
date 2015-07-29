@@ -27,8 +27,28 @@ class Mobiloud {
             //add_action('transition_post_status','ml_pb_post_published_notification');    
             //add_action('publish_future_post','ml_pb_post_published_notification_future');   
         }
+
+        add_action( 'comment_post', array('Mobiloud','my_comment_callback') );
+        add_action( 'comment_edit', array('Mobiloud','my_comment_callback') );
+
     }
  
+    public static function my_comment_callback($id) {
+        global $wpdb;
+
+        $json_transients = $wpdb->get_results(
+            "SELECT option_name AS name FROM $wpdb->options
+              WHERE option_name LIKE '_transient_ml_json%'"
+        );
+
+        foreach ($json_transients as $transient) {
+            delete_transient( trim($transient->name,'_transient_') );
+        }
+
+        $key = http_build_query(array('post_id'=>"$id", "type"=>"ml_post") );
+        $hash = hash('crc32', $key);
+        delete_transient( 'ml_post_'.$hash );
+    }
     public static function mobiloud_activate() {
         add_option('mobiloud_do_activation_redirect', true);
         if(!self::get_option('ml_activation_tracked', false)) {
