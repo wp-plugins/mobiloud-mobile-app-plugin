@@ -118,7 +118,7 @@ function init_api()
     $posts = ml_get_posts($query_array, $user_category, $real_offset);
     set_snapshot('Get posts', 'general');
 
-    if(!empty($excluded_cats_ids)) {
+    if(!empty($excluded_cats_ids) || !empty($user_search)) {
         $published_post_count = count_posts_by_query($excluded_cats_ids, $includedPostTypes, $user_search);
         set_snapshot('Count posts', 'general');
     }
@@ -159,6 +159,11 @@ function get_excluded_cats()
  */
 function count_posts_by_filter($includedPostTypes, $category, $term_arr, $user_category_filter)
 {
+
+    remove_all_filters( 'pre_get_posts' );
+    remove_all_filters( 'posts_request' );
+    remove_all_filters( 'the_posts' );
+
     $published_post_count = 0;
     foreach ($includedPostTypes as $incPostType) {
         $published_post_count += wp_count_posts($incPostType)->publish;
@@ -265,6 +270,10 @@ function get_query_array($user_limit, $excluded_cats_ids, $includedPostTypes, $r
  */
 function count_posts_by_query($excluded_cats_ids, $includedPostTypes, $user_search)
 {
+    remove_all_filters( 'pre_get_posts' );
+    remove_all_filters( 'posts_request' );
+    remove_all_filters( 'the_posts' );
+
     $count_query_array = array(
         'posts_per_page' => 5000,
         'tax_query'      => array(
@@ -286,8 +295,6 @@ function count_posts_by_query($excluded_cats_ids, $includedPostTypes, $user_sear
     wp_reset_postdata();
     return $published_post_count;
 }
-
-
 
 /**
  * Get posts from database
