@@ -115,6 +115,21 @@ class Mobiloud_Admin {
         delete_transient( 'ml_post_'.$hash );
     }
 
+    public static function flush_cache() {
+
+        global $wpdb;
+
+        $json_transients = $wpdb->get_results(
+            "SELECT option_name AS name FROM $wpdb->options
+              WHERE (option_name LIKE '_transient_ml_json%' OR option_name LIKE '_transient_ml_post%')"
+        );
+
+        foreach ($json_transients as $transient) {
+            delete_transient( trim($transient->name,'_transient_') );
+        }
+
+    }
+
     public static function admin_init() {
         self::set_default_options();
         self::admin_redirect();
@@ -266,7 +281,9 @@ class Mobiloud_Admin {
     }
 
     public static function menu_get_started() {
-        
+        if (count($_POST)) {
+            self::flush_cache();
+        }
         $tab = sanitize_text_field($_GET['tab']);
         switch ($tab) {
             default:
@@ -434,6 +451,10 @@ class Mobiloud_Admin {
     }
 
     public static function menu_settings() {
+        if (count($_POST)) {
+            self::flush_cache();
+        }
+
         $tab = sanitize_text_field($_GET['tab']);
         switch ($tab) {
             default:
@@ -579,6 +600,10 @@ class Mobiloud_Admin {
     }
 
     public static function menu_push() {
+        if (count($_POST)) {
+            self::flush_cache();
+        }
+
         $tab = sanitize_text_field($_GET['tab']);
         switch ($tab) {
             default:
