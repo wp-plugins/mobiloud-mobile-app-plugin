@@ -89,7 +89,7 @@ class Mobiloud_Admin {
         );
 
         foreach ($json_transients as $transient) {
-            delete_transient( trim($transient->name,'_transient_') );
+            delete_transient( str_replace("_transient_","",$transient->name) );
         }
 
         $key = http_build_query(array('post_id'=>"$post_id", "type"=>"ml_post") );
@@ -107,7 +107,7 @@ class Mobiloud_Admin {
         );
 
         foreach ($json_transients as $transient) {
-            delete_transient( trim($transient->name,'_transient_') );
+            delete_transient( str_replace("_transient_","",$transient->name) );
         }
 
         $key = http_build_query(array('post_id'=>"$post->ID", "type"=>"ml_post") );
@@ -125,7 +125,7 @@ class Mobiloud_Admin {
         );
 
         foreach ($json_transients as $transient) {
-            delete_transient( trim($transient->name,'_transient_') );
+            delete_transient(  str_replace("_transient_","",$transient->name) );
         }
 
     }

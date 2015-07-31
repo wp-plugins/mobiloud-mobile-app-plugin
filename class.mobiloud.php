@@ -42,7 +42,7 @@ class Mobiloud {
         );
 
         foreach ($json_transients as $transient) {
-            delete_transient( trim($transient->name,'_transient_') );
+            delete_transient( str_replace("_transient_","",$transient->name) );
         }
         $id = get_comment($id)->comment_post_ID;
         $key = http_build_query(array('post_id'=>"$id", "type"=>"ml_post") );
