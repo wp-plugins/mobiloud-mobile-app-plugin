@@ -78,6 +78,7 @@ $return_config['android_native_ad_interval'] = Mobiloud::get_option('ml_android_
 
 $return_config["enable_hierarchical_pages"] = get_option('ml_hierarchical_pages_enabled',false);
 $return_config["show_favorites"] = get_option('ml_menu_show_favorites',true);
+$return_config["followimagelinks"] = get_option('ml_followimagelinks',true);
 
 $return_config['interface_images_updated'] = date('c', get_option('ml_preview_upload_image_time'));
 $return_config['interface_images'] = array(

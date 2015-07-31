@@ -70,7 +70,6 @@
             </div>
         </div>
 		
-		
         <h4>Children page navigation</h4>
         <div class='ml-col-row'>
             <div class='ml-col-half'>
@@ -84,7 +83,6 @@
             </div>
         </div>
 	
-		        
         <h3>Commenting settings</h3>
         <div class='ml-col-row'>
             <div class='ml-col-half'>
@@ -151,6 +149,16 @@
             </div>
         </div>
 
+        <h4>Image links</h4>
+        <div class='ml-col-row'>
+            <div class='ml-col-half'>
+                <div class="ml-form-row ml-checkbox-wrap">
+                    <input type="checkbox" id="ml_followimagelinks" name="ml_followimagelinks" value="true" <?php echo Mobiloud::get_option('ml_followimagelinks') ? 'checked' : ''; ?>/>
+                    <label for="ml_followimagelinks">Load links instead of image gallery for image links</label>
+                </div>
+            </div>
+        </div>
+
         <h4>Override Article/Page URL with a custom field</h4>
         <div class='ml-col-row'>
             <div class='ml-col-half'>
@@ -165,8 +173,7 @@
                 </div>
             </div>
         </div>
-		
-		
+
         
         <p class="submit"><input type="submit" name="submit" id="submit" class="button button-primary" value="Save Changes"></p>
     </form>
