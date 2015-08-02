@@ -152,6 +152,13 @@
 	echo stripslashes(get_option('ml_html_post_after_body'));
     echo stripslashes(get_option('ml_banner_below_content', ''));
 ?>
+<?php if (get_post_format($post)=="image" ): ?>
+
+<style>
+.mb_article{max-width: inherit;!important;}
+</style>
+<?php endif; ?>
+
 <script>
     var iframes = document.getElementsByTagName('iframe')
         , frameRatios = []
@@ -182,4 +189,23 @@
         }
     };
     window.onresize();
+
+    <?php if (get_post_format($post)=="image" ): ?>
+
+    var imgs = document.getElementsByTagName('img');
+
+    for(var i = 0; i < imgs.length; i++) {
+        var img=imgs[i].parentElement.parentElement.parentElement.removeAttribute('width');
+        var img=imgs[i].parentElement.parentElement.parentElement.removeAttribute('max-width');
+        var img=imgs[i].parentElement.parentElement.parentElement.style.width = '100%';
+        var img=imgs[i].parentElement.parentElement.removeAttribute('width');
+        var img=imgs[i].parentElement.parentElement.style.width = '100%';
+        var img=imgs[i].parentElement.removeAttribute('width');
+        var img=imgs[i].parentElement.style.width = '100%';
+        var img=imgs[i].removeAttribute('width');
+        var img=imgs[i].style.width = '100%';
+    }
+
+    <?php endif; ?>
+
 </script>

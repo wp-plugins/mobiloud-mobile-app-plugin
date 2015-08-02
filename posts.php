@@ -668,14 +668,18 @@ function get_final_posts($posts, $offset, $taxonomy, $eager_loading, $final_post
         }
         set_snapshot('Define custom', 'posts_loop', True);
 
+        //excerpt
+        $final_post['excerpt'] = html_entity_decode(urldecode(strip_tags(get_post_excerpt($post->ID))));
+
+
         if (get_post_format($post) == 'status') {
             $final_post["title"] = $post->post_content;
             $final_post["content"] = "";
             $final_post['custom1'] = "";
+            $final_post['excerpt'] = "";
+
         }
 
-        //excerpt
-        $final_post['excerpt'] = html_entity_decode(urldecode(strip_tags(get_post_excerpt($post->ID))));
 
         set_snapshot('Define excerpt', 'posts_loop', True);
 
