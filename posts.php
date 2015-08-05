@@ -1,4 +1,7 @@
 <?php
+
+error_reporting(1);
+
 // prevent newrelic injected JavaScript breaking JSON
 if(extension_loaded('newrelic')){
     newrelic_disable_autorum();
@@ -27,8 +30,6 @@ include_once("filters.php");
 include_once dirname( __FILE__ ) . '/subscriptions/functions.php';
 
 set_snapshot('Include files', 'general');
-
-//error_reporting(1);
 
 init_api();
 
