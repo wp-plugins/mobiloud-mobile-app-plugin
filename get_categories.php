@@ -62,7 +62,7 @@ foreach($categories as $c)
 {
 	$cat = array();
 	if($c->cat_name != NULL && $c->slug != NULL && $c->cat_ID != NULL) {
-		$cat["name"] = $c->cat_name;
+		$cat["name"] = html_entity_decode($c->cat_name);
 		$cat["slug"] = $c->slug;
 		$cat["id"] = "$c->cat_ID";
 		array_push($final_categories,$cat);
@@ -77,7 +77,7 @@ foreach($terms as $term) {
     $term_object = get_term_by('id', $term_id, $taxonomy);
     if($term_object) {
         $final_categories[] = array(
-            'name'=>$term_object->name,
+            'name'=>html_entity_decode($term_object->name),
             'slug'=>$term_object->slug,
             'id'=>$term_object->term_id . ""
         );
@@ -89,7 +89,7 @@ foreach($tags as $tag) {
     $term_object = get_term_by('id', $tag, 'post_tag');
     if($term_object) {
         $final_categories[] = array(
-            'name'=>$term_object->name,
+            'name'=>html_entity_decode($term_object->name),
             'slug'=>$term_object->slug,
             'id'=>$term_object->term_id . ""
         );
