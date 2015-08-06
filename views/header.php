@@ -6,7 +6,7 @@
         
         <?php if(strlen(Mobiloud::get_option('ml_pb_app_id')) <= 0 && strlen(Mobiloud::get_option('ml_pb_secret_key')) <= 0): ?>
         <a href="http://www.mobiloud.com/publish/?utm_source=wp-plugin-admin&utm_medium=web&utm_campaign=plugin-admin-header
-" target="_blank" class="pricing-btn button-primary">
+<?php echo get_option('affiliate_link', null); ?>" target="_blank" class="pricing-btn button-primary">
             See Pricing &amp; Publish Your App
         </a>        
         <p class='ml-trial-msg'>Design and test your app for free. Choose your plan when you're ready to publish it.</p>

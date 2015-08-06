@@ -85,5 +85,5 @@
     </div>
     <div id="ml_preview_loading"><img src="<?php echo MOBILOUD_PLUGIN_URL; ?>/images/spinner.gif" alt="Loading..."/><br/>Loading Preview...</div>
 
-    <small> By using Mobiloud you agree to Mobiloud's <a href="http://mobiloud.com/terms.php">terms of service</a> and <a href="https://www.iubenda.com/privacy-policy/435863/legal">privacy policy</span></a> </small>
+    <small> By using Mobiloud you agree to Mobiloud's <a href="http://mobiloud.com/terms.php<?php echo get_option('affiliate_link', null); ?>">terms of service</a> and <a href="https://www.iubenda.com/privacy-policy/435863/legal">privacy policy</span></a> </small>
 </div>

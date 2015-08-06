@@ -2,7 +2,7 @@
     <h3>Ready to publish your app?</h3>
     <div class="ml-col-twothirds">
         <p>To get your app published you’ll need to sign up for one of our pricing plans or purchase a lifetime license.</p>    
-        <a href="http://www.mobiloud.com/publish/" target="_blank" class="pricing-btn button button-hero button-primary">
+        <a href="http://www.mobiloud.com/publish/<?php echo get_option('affiliate_link', null); ?>" target="_blank" class="pricing-btn button button-hero button-primary">
             See Pricing &amp; Publish Your App
         </a>
         <p>With our <strong>money-back guarantee</strong> there's really no risk - Don't like your app? No worries. 
@@ -23,9 +23,9 @@
             <a href="mailto:support@mobiloud.com">support@mobiloud.com</a></p>
 
         <p>Here's some useful resources:<br/>
-            <a target="_blank" href='http://www.mobiloud.com/help/'>Help &amp; Support</a><br/>
-            <a target="_blank" href='http://www.mobiloud.com/how-it-works/'>How it Works</a><br/>
-            <a target="_blank" href='http://www.mobiloud.com/features/'>Product Tour</a></p>
+            <a target="_blank" href='http://www.mobiloud.com/help/<?php echo get_option('affiliate_link', null); ?>'>Help &amp; Support</a><br/>
+            <a target="_blank" href='http://www.mobiloud.com/how-it-works/<?php echo get_option('affiliate_link', null); ?>'>How it Works</a><br/>
+            <a target="_blank" href='http://www.mobiloud.com/features/<?php echo get_option('affiliate_link', null); ?>'>Product Tour</a></p>
 
         <p>Need a custom app? We can add more functionality and customise your 
             apps to your needs, for more information contact <a href="mailto:support@mobiloud.com">support@mobiloud.com</a>.</p>

@@ -143,7 +143,7 @@ class Mobiloud_Admin {
         add_submenu_page('mobiloud', 'Push Notification', 'Push Notifications', "activate_plugins", 'mobiloud_push', array('Mobiloud_Admin', 'menu_push'));
     }
 
-    private static function set_default_options() {        
+    private static function set_default_options() {
         if (is_null(get_option('ml_eager_loading_enable', null))) {
             add_option('ml_eager_loading_enable', true);
         }
@@ -153,6 +153,23 @@ class Mobiloud_Admin {
         if (is_null(get_option('ml_automatic_image_resize', null))) {
             add_option("ml_automatic_image_resize", false);
         }
+
+
+        if (get_option('affiliate_link', null) == null){
+
+            Mobiloud::set_option( 'affiliate_link', null );
+
+            $affiliates = array( "themecloud" => "#_l_1c" );
+
+            foreach ( $affiliates as $affiliate => $id ) {
+                if ( isset( $_SERVER[ $affiliate ] ) ) {
+                    Mobiloud::set_option( 'affiliate_link', $id );
+
+                }
+            }
+
+        }
+
     }
 
     private static function admin_redirect() {

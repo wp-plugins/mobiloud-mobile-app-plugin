@@ -71,7 +71,7 @@
             </tr>
             <tr>
                 <td colspan='2'>
-                    <small>By using Mobiloud you agree to Mobiloud's <a target="_blank" href="http://www.mobiloud.com/terms/">Terms of service</a> and <a target="_blank" href="http://www.mobiloud.com/privacy/">Privacy policy</a> </small>
+                    <small>By using Mobiloud you agree to Mobiloud's <a target="_blank" href="http://www.mobiloud.com/terms/<?php echo get_option('affiliate_link', null); ?>">Terms of service</a> and <a target="_blank" href="http://www.mobiloud.com/privacy/<?php echo get_option('affiliate_link', null); ?>">Privacy policy</a> </small>
                 </td>
             </tr>
         </tbody>

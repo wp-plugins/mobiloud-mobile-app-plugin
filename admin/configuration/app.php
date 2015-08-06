@@ -139,7 +139,7 @@ simple and polished way. Once active, a banner promoting your app will be visibl
 	<!-- DESCRIPTION -->
 	<div style="font-size:20px;padding:5px;;margin-top:20px;margin-bottom:20px;width:70%;
 		text-align:justify;">
-	  <p>Need to find your App-ID? <a href="http://mobiloud.com/faq.php#faq-14" target="_blank">Read how</a>.</p>
+	  <p>Need to find your App-ID? <a href="http://mobiloud.com/faq.php#faq-14<?php echo get_option('affiliate_link', null); ?>" target="_blank">Read how</a>.</p>
     </div>
 	
 	<div style="margin-right:20px;">

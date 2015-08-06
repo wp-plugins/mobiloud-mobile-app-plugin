@@ -3,8 +3,8 @@
     <div class="ml-intro-text">
 		<p>
 		Mobiloud is the easy solution to publish your own mobile apps. Start by customizing the design, then configure the menu and test a live preview of your app.</p>
-        <p>For more information, see <a href="http://www.mobiloud.com/help/knowledge-base/customize/?utm_source=wp-plugin-admin&utm_medium=web&utm_campaign=plugin-admin-get-started" target="_blank">How To Get Started</a> (video), our <a href="http://www.mobiloud.com/features/?utm_source=wp-plugin-admin&utm_medium=web&utm_campaign=plugin-admin-get-started
-" target="_blank">Features page</a> and for any questions <a class="ml-intercom" href="mailto:h89uu5zu@incoming.intercom.io">contact our support team</a> (or check out our <a href="http://www.mobiloud.com/help/?utm_source=wp-plugin-admin&utm_medium=web&utm_campaign=plugin-admin-get-started
+        <p>For more information, see <a href="http://www.mobiloud.com/help/knowledge-base/customize/?utm_source=wp-plugin-admin&utm_medium=web&utm_campaign=plugin-admin-get-started<?php echo get_option('affiliate_link', null); ?>" target="_blank">How To Get Started</a> (video), our <a href="http://www.mobiloud.com/features/?utm_source=wp-plugin-admin&utm_medium=web&utm_campaign=plugin-admin-get-started<?php echo get_option('affiliate_link', null); ?>
+" target="_blank">Features page</a> and for any questions <a class="ml-intercom" href="mailto:h89uu5zu@incoming.intercom.io">contact our support team</a> (or check out our <a href="http://www.mobiloud.com/help/?utm_source=wp-plugin-admin&utm_medium=web&utm_campaign=plugin-admin-get-started<?php echo get_option('affiliate_link', null); ?>
 " target="_blank">Help and Support site</a>).</p>
     </div>
     <div class="ml-task-list">
