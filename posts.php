@@ -409,10 +409,12 @@ function print_posts($posts, $tot_count, $offset, $taxonomy, $permalinkIsTaxonom
     $final_posts = apply_filters('ml_posts',$final_posts,$current_user);
 
     //Preprocessing text for avoid "Invalid UTF-8" errors
-    $charset = 'UTF-8';
-    array_walk_recursive($final_posts,function(&$data) use ($charset){
-            $data = iconv($charset, 'UTF-8//IGNORE', $data);
-        });
+    /*
+        $charset = 'UTF-8';
+        array_walk_recursive( $final_posts, function ( &$data ) use ( $charset ) {
+            $data = iconv( $charset, 'UTF-8//IGNORE', $data );
+        } );
+    */
 
     $json_string = json_encode($final_posts);
     set_snapshot('Final json', 'general');
@@ -974,6 +976,7 @@ function get_cache($type, $key) {
  * @param $collection String
  */
 function stop_snapshots($collection) {
+    /*
     global $benchmarking_enabled;
 
     if ($benchmarking_enabled==True) {
@@ -983,6 +986,7 @@ function stop_snapshots($collection) {
             \PHPBenchmark\Monitor::instance()->shutdown();
         }
     }
+    */
 }
 
 /**
@@ -994,6 +998,7 @@ function stop_snapshots($collection) {
  * @param $once Bool - avoid multiple checkpoints in loop
  */
 function set_snapshot($name, $collection, $once = False) {
+    /*
     global $benchmarking_enabled;
 
     if ($benchmarking_enabled==True) {
@@ -1008,5 +1013,6 @@ function set_snapshot($name, $collection, $once = False) {
             \PHPBenchmark\Monitor::instance()->snapshot($name);
         }
     }
+    */
 }
 ?>
